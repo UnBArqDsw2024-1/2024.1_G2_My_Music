@@ -1,0 +1,67 @@
+# Entrevista
+
+## Introdução
+A entrevista é uma das técnicas mais utilizadas de coleta de dados e levantamento de requisitos. Trata-se de uma conversa guiada por um roteiro de perguntas ou tópicos, na qual um entrevistador busca obter informação de um entrevistado (Seidman1, 1998). A entrevista permite uma interação direta com os usuários para compreender suas necessidades e expectativas em relação ao sistema.
+
+## Metodologia
+A metodologia adotada para a elaboração deste artefato de elicitação de requisitos envolveu uma combinação de questões com foco na experiência atual dos usuários com aplicativos de músicas, sendo os recursos mais utilizados, problemas, experiência e impacto deste tipo de aplicação no seu dia a dia.
+
+As entrevistas foram realizadas no dia 06/04/2024 e contou com a participação de dois usuários de aplicativos de música, que foram entrevistado pelo Vinícius Mendes, acompanhado do escrivão Luis Miranda, onde ambos construíram o roteiro juntos. Na tabela 1 pode ser visto o cronograma executado das entrevistas e as informações sobre cada uma. 
+
+Antes do início da entrevista foi lido um termo de consentimento ao participante, para que assim possamos coletar os seus dados de forma ética e consentida, além de explicar também os motivos e objetivos da entrevista. 
+
+A entrevista foi projetada com um roteiro de 19 perguntas abertas e fechadas, sendo 4 delas para definição de perfil e 15 com foco em elicitar requisitos em relação a aplicativos de música, assim explorando a experiência dos usuários e suas necessidades. A plataforma utilizada foi o Teams para a gravação e condução da entrevista.
+
+Após a coleta de dados das respostas dos participantes, foram transcritas e delas elicitamos requisitos para o projeto.
+
+### Cronograma executado
+
+**Tabela 1** - Cronograma executado para a Entrevista (Elicitação de Requisitos)
+
+| Data       | Horário       | Entrevistado         | Entrevistador   | Escrivão        | Entrevista                           |
+| ---------- | ------------- | -------------------- | --------------- | --------------- | ------------------------------------ |
+| 06/04/2024 | 11:40 - 11:55 | Lucas de Paula       | Vinícius Mendes | Luis Miranda    | [Link](https://youtu.be/cGiAc7GOP58) |
+| 06/04/2024 | 13:00 - 13:15 | Mateus Souza Santana | Vinícius Mendes | Vinícius Mendes | [Link](https://youtu.be/cJttnDfV3DA) |
+|            |               |                      |                 |                 |                                      |
+Fonte: Vinícius Mendes, 2024.
+
+## Roteiro
+A estrutura da entrevista realizada foi de:
+ - Apresentação - Parte essa onde o apresentador e o escrivão se apresentaram para o entrevistado e foi feita a leitura do termo de consentimento
+ - Definição do Perfil - Etapa feita de perguntas para conhecer o perfil do entrevistado
+ - Entrevista Principal - Etapa onde as perguntas focadas sobre experiência e necessidades do usuário em relação a aplicativos de música foram feitas
+ - Comentário - Etapa feita para o entrevistado comentar algo que deixamos de foram ou que ele se sentiu a vontade de compartilhar
+ - Conclusão - Final da entrevistado onde o entrevistador e o escrivão agradeceram o entrevistado pelo seu tempo e o término da gravação e entrevista. 
+
+Logo abaixo será apresentado a tabela 2 que contém a estrutura das perguntas utilizadas para conduzir a entrevista.
+
+**Tabela 2** - Estrutura das perguntas
+
+| Partes     | Perguntas                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Perfil     | 1. Qual o seu nome?<br>    <br>2. Quantos anos você tem?<br>    <br>3. Qual gênero você se identifica?<br>    <br>4. Qual a sua profissão?                                                                                                                                                                                                                                                                         |
+| O que      | 1. Quais recursos você espera em um aplicativo de música? (Resposta aberta)<br>    <br>2. Quais recursos você mais utiliza? (Resposta aberta)<br>    <br>3. Quais problemas você já teve com aplicativos de música? (Resposta aberta)                                                                                                                                                                              |
+| Quando     | 1. Quando você quer procurar uma música, você utiliza aplicativos de música? (Sim/Não)<br>    <br>2. Quando você precisa saber da letra de uma música, onde você procura? (Resposta aberta)                                                                                                                                                                                                                        |
+| Como       | 1. Como você procura saber das novidades dos seus artistas favoritos? (Resposta aberta)<br>    <br>2. Você recomendaria músicas por aplicativo de música? (Sim/Não)<br>    <br>3. Como você procura uma música caso não saiba o nome dela ( gostaria que tivesse opção de filtros? ( álbum, etc )) (Resposta aberta)<br>    <br>4. Como você procura saber das músicas mais tocadas do momentos? (Pergunta aberta) |
+| Onde       | 1. Onde você guarda suas músicas preferidas? (Resposta aberta)<br>    <br>2. Onde você escuta música? (Resposta aberta)<br>    <br>3. Por onde você explora novos gêneros musicais? (Resposta aberta)                                                                                                                                                                                                              |
+| Quem       | 1. Quem são as pessoas que você espera que utilizem o aplicativo de música? (Ouvintes/Músicos/Produtores/Todos esses)                                                                                                                                                                                                                                                                                              |
+| Por quê    | 1. Os aplicativos de escutar música impactaram você de alguma forma? (Pergunta aberta)<br>    <br>2. Você acha que uma experiência personalizada ( focada para seus gostos ) em um aplicativo de música é importante? (Sim/Não)                                                                                                                                                                                    |
+| Comentário | 1. Você sentiu que deixamos de aborda alguma parte das suas experiências/necessidades? Se sim, quais?                                                                                                                                                                                                                                                                                                              |
+Fonte: Vinícius Mendes e Luis Miranda, 2024.
+## Requisitos Elicitados
+Após a realização da entrevista com os usuários de aplicativos de músicas, foi possível elicitar requisitos apresentados na Tabela 3. Onde cada requisito é classificado por uma sigla formada por "ENT" + um número, em que "ENT" é uma sigla para entrevista, e para representar o tipo de requisito, será usado as siglas "RF" ou "RNF" que representam os Requisitos Funcionais e Não Funcionais. 
+
+**Tabela 3** - Requisitos Elicitados
+
+| Identificador | Requisito | Tipo |
+| ------------- | --------- | ---- |
+|               |           |      |
+Fonte: Luis Miranda, 2024.
+
+
+## Histórico de versões
+
+| Versão | Data       | Descrição           | Autor(es)                      | Revisor(es) |
+| ------ | ---------- | ------------------- | ------------------------------ | ----------- |
+| 1.0    | 06/04/2024 | Criação do artefato | Vinícius Mendes e Luis Miranda |             |
+|        |            |                     |                                |             |
