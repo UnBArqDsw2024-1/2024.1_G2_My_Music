@@ -22,7 +22,8 @@ Após a coleta de dados das respostas dos participantes, foram transcritas e del
 | ---------- | ------------- | -------------------- | --------------- | --------------- | ------------------------------------ |
 | 06/04/2024 | 11:40 - 11:55 | Lucas de Paula       | Vinícius Mendes | Luis Miranda    | [Link](https://youtu.be/cGiAc7GOP58) |
 | 06/04/2024 | 13:00 - 13:15 | Mateus Souza Santana | Vinícius Mendes | Vinícius Mendes | [Link](https://youtu.be/cJttnDfV3DA) |
-|            |               |                      |                 |                 |                                      |
+
+
 Fonte: Vinícius Mendes, 2024.
 
 ## Roteiro
@@ -46,8 +47,11 @@ Logo abaixo será apresentado a tabela 2 que contém a estrutura das perguntas u
 | Onde       | 1. Onde você guarda suas músicas preferidas? (Resposta aberta)<br>    <br>2. Onde você escuta música? (Resposta aberta)<br>    <br>3. Por onde você explora novos gêneros musicais? (Resposta aberta)                                                                                                                                                                                                              |
 | Quem       | 1. Quem são as pessoas que você espera que utilizem o aplicativo de música? (Ouvintes/Músicos/Produtores/Todos esses)                                                                                                                                                                                                                                                                                              |
 | Por quê    | 1. Os aplicativos de escutar música impactaram você de alguma forma? (Pergunta aberta)<br>    <br>2. Você acha que uma experiência personalizada ( focada para seus gostos ) em um aplicativo de música é importante? (Sim/Não)                                                                                                                                                                                    |
-| Comentário | 1. Você sentiu que deixamos de aborda alguma parte das suas experiências/necessidades? Se sim, quais?                                                                                                                                                                                                                                                                                                              |
+| Comentário | 1. Você sentiu que deixamos de aborda alguma parte das suas experiências/necessidades? Se sim, quais?                                                      |
+
+
 Fonte: Vinícius Mendes e Luis Miranda, 2024.
+
 ## Requisitos Elicitados
 Após a realização da entrevista com os usuários de aplicativos de músicas, foi possível elicitar requisitos apresentados na Tabela 3. Onde cada requisito é classificado por uma sigla formada por "ENT" + um número, em que "ENT" é uma sigla para entrevista, e para representar o tipo de requisito, será usado as siglas "RF" ou "RNF" que representam os Requisitos Funcionais e Não Funcionais. 
 
@@ -56,6 +60,8 @@ Após a realização da entrevista com os usuários de aplicativos de músicas, 
 | Identificador | Requisito | Tipo |
 | ------------- | --------- | ---- |
 |               |           |      |
+
+
 Fonte: Luis Miranda, 2024.
 
 
@@ -64,4 +70,3 @@ Fonte: Luis Miranda, 2024.
 | Versão | Data       | Descrição           | Autor(es)                      | Revisor(es) |
 | ------ | ---------- | ------------------- | ------------------------------ | ----------- |
 | 1.0    | 06/04/2024 | Criação do artefato | Vinícius Mendes e Luis Miranda |             |
-|        |            |                     |                                |             |
