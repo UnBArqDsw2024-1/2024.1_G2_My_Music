@@ -20,7 +20,7 @@ O objetivo deste repositório é fornecer uma plataforma centralizada para o arm
 | 200020927   | [João Vítor Motta Souto Maior](https://github.com/Jvsoutomaior) | <img src="https://github.com/Jvsoutomaior.png" width="120px">                             |
 | 200040201   | [Limíro Correia Guimarães](https://github.com/LimirioGuimaraes) | <img src="https://github.com/LimirioGuimaraes.png" width="120px">                         |
 | 211062141   | [Lucas Alves Vilela](https://github.com/Lucas-AV) | <img src="https://github.com/Lucas-AV.png" width="120px">                                 |
-| 211063200   | [Luís Eduardo Carneiro Miranda](https://github.com/LuisMiranda10) | <img src="https://github.com/LuisMiranda10.png" width="120px">                           |
+| 211063200   | [Luis Eduardo Carneiro Miranda](https://github.com/LuisMiranda10) | <img src="https://github.com/LuisMiranda10.png" width="120px">                           |
 | 150138202   | [Luiz Guilherme Palhares Pettengill](https://github.com/luizpettengill) | <img src="https://github.com/luizpettengill.png" width="120px">                         |
 | 211062339   | [Milena Baruc Rodrigues Morais](https://github.com/MilenaBaruc) | <img src="https://github.com/MilenaBaruc.png" width="120px">                             |
 | 200026551   | [Rafael Xavier Canabrava](https://github.com/rafaelxavierr) | <img src="https://github.com/rafaelxavierr.png" width="120px">                           |
