@@ -84,4 +84,4 @@ A próxima reunião ficou marcada para o dia 12/04/2024, às 20:00.
 
 | Versão | Data      | Descrição | Autor | Revisor |
 | :-:    | :-----:   | :------   | ----  | ------- |
-| `1.0`    |05/04/2024 | Ata de reunião| [Limírio Guimarães](https://github.com/LimirioGuimaraes) | [revisor]() |
+| `1.0`    |05/04/2024 | Ata de reunião| [Limírio Guimarães](https://github.com/LimirioGuimaraes) |  [Luis Eduardo](https://github.com/LuisMiranda10) |
