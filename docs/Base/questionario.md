@@ -3,7 +3,7 @@
 O questionário é uma das principais técnicas tradicionais de elicitação de requisitos, utilizado quando já existe um conhecimento prévio sobre o domínio de negócio a ser abordado e um grande número de usuários, além também de possibilitar análises a partir de estatísticas, apesar de ter uma desvantagem que é a limitação do universo de respostas e pouca interação entre a equipe e os usuário. O questionário é documento estruturado em questões abertas e fechadas, para assim coletar informações organizadas e quantificáveis, o que auxilia na interpretação dos dados obtidos. E como foi dito no começo, o questionário permite que um grande número de usuários consigam responder de forma eficiente.
 
 ## Metodologia
-A equipe realizou a elaboração de um questionário online através do serviço google forms¹ no dia 05/04/2024, no qual o foco é avaliação dos perfis de usuários que utilizam aplicativos de música. O questionário foi estruturado com 8 perguntas, sendo algumas para conhecer o perfil dos usuários e o restante acerca da experiência e necessidades dos usuários. O questionário foi divulgado em grupo diversos, sendo um deles a comunidade acadêmica da UnB - FGA, através de aplicativos de mensagem Whatsapp e Telegram, entre o período de 05 a 07 de abril de 2024.
+A equipe realizou a elaboração de um questionário online através do serviço google forms¹ no dia 05/04/2024, no qual o foco é avaliação dos perfis de usuários que utilizam aplicativos de música. O questionário foi estruturado com 8 perguntas, sendo algumas para conhecer o perfil dos usuários e o restante acerca da experiência e necessidades dos usuários. O questionário foi divulgado em grupo diversos, sendo um deles a comunidade acadêmica da UnB - FGA, através de aplicativos de mensagem WhatsApp e Telegram, entre o período de 05 a 07 de abril de 2024.
 
 ### Perguntas Realizadas
 A tabela 1 contém a seleção das perguntas utilizadas no questionário.
@@ -90,7 +90,7 @@ Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 20
 #### Questão 7 - O que você espera de um aplicativo de streaming de música?
 De acordo com a figura 7, as funcionalidades que os usuários mais esperam de um aplicativo de música são (mais da metade dos usuários (25) responderam como muito relevante)
 - Ouvir música, 46 usuários julgaram como muito relevante.
-- Conseguir ouvir música offline, 44 usuário julgaram como muito relevante.
+- Conseguir ouvir música offline, 44 usuários julgaram como muito relevante.
 - Pesquisar músicas/artistas/playlist's/álbuns, 37 usuários julgaram como muito relevante.
 - Montar playlist's, 33 usuários julgaram como muito relevante.
 - Montar uma fila de reprodução, 27 usuários julgaram como muito relevante.
@@ -115,7 +115,7 @@ Analisando a figura 8, 12 usuários sugeriram outras funcionalidades além do qu
 - Escutar música com outras pessoas através do app;
 - Possibilidade de ver a letra da música (se possível com tradução), compartilhar músicas, fazer buscas pela letra da música;
 - Chat de texto para poder recomendar músicas para amigos;
-- playlist de download automática pelas mais ouvidas, com opção de quantas musicas quwr “playlist offline”;
+- playlist de download automática pelas mais ouvidas, com opção de quantas musicas quer “playlist offline”;
 
 **Figura 8** - Pergunta 8
 
@@ -145,5 +145,5 @@ Após a análise dos resultados obtidos identificamos o seguinte perfil para os 
 
 | Versão | Data       | Descrição                         | Autor(es)       | Revisor(es) |
 | ------ | ---------- | --------------------------------- | --------------- | ----------- |
-| 1.0    | 07/04/2024 | Criação do documento questionário | Vinícius Mendes |             |
+| 1.0    | 07/04/2024 | Criação do documento questionário | Vinícius Mendes | João Vítor  |
 
