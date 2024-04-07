@@ -58,17 +58,17 @@ A técnica de brainstorming foi empregada para coletar dados e elicitar os requi
 
 ## Resultados
 
-
-
 <font size="3"><p style="text-align: center">Tabela 2: Resultados Obtidos.</p></font>
 
 <center>
 
-tabela aqui
+| Usuário | Gostaria que tivesse | Poderia melhorar | Navegação do site | Responsividade | Acessibilidade | Clareza de informações | Funcionalidade interativas | Design estético | Integração com mídias sociais |
+|---------|----------------------|------------------|--------------------|----------------|----------------|------------------------|---------------------------|-----------------|-------------------------------|
+|         |                      |                  |                    |                |                |                        |                           |                 |                               |
 
 </center>
 
-<font size="3"><p style="text-align: center">Fonte: [Limirio Guimarães](https://github.com/LimirioGuimaraes).</p></font>
+<font size="3"><p style="text-align: center">Fonte: [Luis Miranda](https://github.com/LuisMiranda10).</p></font>
 
 ## Bibliografia
 
@@ -83,5 +83,6 @@ tabela aqui
 Versão  | Data | Descrição | Autor(es) | Revisor(es)
 ---------- | -----  | ------ | ---------- | ----------
  `1.0` | 07/04/2024 | Adicionado a Introdução, explicação da técnica de elicitação, definação de papéis e detalhamento da metodologia utilizada. |[Limirio Guimarães](https://github.com/LimirioGuimaraes)  | [Revisor](https://github.com/)
+ `1.1` | 07/04/2024 | Adicionado os resultados obtidos |[Luis Miranda](https://github.com/LuisMiranda10)  | [Revisor](https://github.com/)
  
  
