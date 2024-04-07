@@ -59,7 +59,30 @@ Após a realização da entrevista com os usuários de aplicativos de músicas, 
 
 | Identificador | Requisito | Tipo |
 | ------------- | --------- | ---- |
-|               |           |      |
+| ENT01              | Disponibilizar música          |  RF    |
+| ENT02              | Salvar música          | RF     |
+| ENT03              | Criar uma PlayList de música          |  RF    |
+| ENT04              | Baixar a música para ouvir offline          |  RF    |
+| ENT05              | Buscar música          | RF     |
+| ENT06              | Ver letra de determinada música          |  RF    |
+| ENT07              | Editar PlayList          |  RF    |
+| ENT08              | Deletar PlayList          | RF     |
+| ENT09              | Compartilhar PlayList via link          | RF     |
+| ENT10              | Pesquisar PlayList          |  RF    |
+| ENT11              | Salvar PlayList          | RF     |
+| ENT12              | Criar um usuário          | RF     |
+| ENT13              | Editar usuário          | RF     |
+| ENT14              | Deletar usuário          | RF     |
+| ENT15              | Pesquisar artista          | RF     |
+| ENT16              | Ver perfil de artista          | RF     |
+| ENT17              | Pesquisar álbum de músicas          | RF     |
+| ENT18              | Filtrar pesquisa por artista/álbum/música          |  RF    |
+| ENT19              | Deve conter as músicas mais ouvidas no seu país/mundo          | RFN     |
+| ENT20              |           |      |
+
+
+
+
 
 
 Fonte: Luis Miranda, 2024.
