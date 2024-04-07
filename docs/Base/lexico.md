@@ -30,7 +30,7 @@ Tabela 2: Modelo dos léxicos (Fonte: Rafael Xavier)
 
 ## Léxicos
 
-Os léxicos do My Music, apresentados nas tabelas 3 a 16 foram identificados a partir do uso do aplicativo e dos requisitos elicitados na etapa anterior.
+Os léxicos do My Music, apresentados nas tabelas 3 a 22 foram identificados a partir do uso do aplicativo e dos requisitos elicitados na etapa anterior.
 
 ### L01 - Reproduzir música
 
