@@ -62,9 +62,15 @@ A técnica de brainstorming foi empregada para coletar dados e elicitar os requi
 
 <center>
 
-| Usuário | Gostaria que tivesse | Poderia melhorar | Navegação do site | Responsividade | Acessibilidade | Clareza de informações | Funcionalidade interativas | Design estético | Integração com mídias sociais |
+| Usuário | Gostaria que tivesse | Poderia melhorar | Navegação no aplicativo | Responsividade | Acessibilidade | Clareza de informações | Funcionalidade interativas | Design estético | Integração com mídias sociais |
 |---------|----------------------|------------------|--------------------|----------------|----------------|------------------------|---------------------------|-----------------|-------------------------------|
-|         |                      |                  |                    |                |                |                        |                           |                 |                               |
+| Breno Alexandre        | Conseguir reproduzir todas as músicas da PlayList novamente                    |                  |                    |                |                |                        |                           |                 |                               |
+| Breno Queiroz        | Uma maneira de criar Playlist                     |                  |                    |                |                |                        |                           |                 |                               |
+| Gabriel Castelo        | Estatísticas de qual músicas mais ouve                     |                  |                    |                |                |                        |                           |                 |                               |
+| Janaína Rabelo        |  Uma forma de salvar a playlist e colocaar o modo escuro                   |                  |                    |                |                |                        |                           |                 |                               |
+| João Barreto         |  Repetição aleatória de músicas                    |                  |                    |                |                |                        |                           |                 |                               |
+| Mayara Alves        | Uma forma de ouvir música de maneira offline                     |                  |                    |                |                |                        |                           |                 |                               
+ |
 
 </center>
 
