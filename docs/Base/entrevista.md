@@ -28,9 +28,16 @@ Fonte: Vinícius Mendes, 2024.
 
 ### Perfil dos Entrevistados
 
-  - Lucas de Paula, Estudante do segundo semestre, 18 anos, Homem cis.
+A tabela 2 contém as informações dos entrevistados, que foram no geral homens jovens e estudantes.
 
-  - Mateus Souza Santana, Estudante de Engenharia Eletronica, 23 anos, Homem cis, Estagiario na CAESB e Diretor de projetos na Eletronjun.
+**Tabela 2** - Informações dos perfis entrevistados
+
+| Entrevistado | Gênero | Idade | Ocupação |
+|--------------|--------|-------|----------|
+|Lucas de Paula| Homem cis| 18| Estudante |
+|Mateus Souza Santana|Homem cis| 23 | Estudante e estágio na CAESB|
+
+Fonte: Vinícius Mendes, 2024.
 
 ## Roteiro
 A estrutura da entrevista realizada foi de:
@@ -40,9 +47,9 @@ A estrutura da entrevista realizada foi de:
  - Comentário - Etapa feita para o entrevistado comentar algo que deixamos de foram ou que ele se sentiu a vontade de compartilhar
  - Conclusão - Final da entrevistado onde o entrevistador e o escrivão agradeceram o entrevistado pelo seu tempo e o término da gravação e entrevista. 
 
-Logo abaixo será apresentado a tabela 2 que contém a estrutura das perguntas utilizadas para conduzir a entrevista.
+Logo abaixo será apresentado a tabela 3 que contém a estrutura das perguntas utilizadas para conduzir a entrevista.
 
-**Tabela 2** - Estrutura das perguntas
+**Tabela 3** - Estrutura das perguntas
 
 | Partes     | Perguntas                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -59,9 +66,9 @@ Logo abaixo será apresentado a tabela 2 que contém a estrutura das perguntas u
 Fonte: Vinícius Mendes e Luis Miranda, 2024.
 
 ## Requisitos Elicitados
-Após a realização da entrevista com os usuários de aplicativos de músicas, foi possível elicitar requisitos apresentados na Tabela 3. Onde cada requisito é classificado por uma sigla formada por "ENT" + um número, em que "ENT" é uma sigla para entrevista, e para representar o tipo de requisito, será usado as siglas "RF" ou "RNF" que representam os Requisitos Funcionais e Não Funcionais. 
+Após a realização da entrevista com os usuários de aplicativos de músicas, foi possível elicitar requisitos apresentados na Tabela 4. Onde cada requisito é classificado por uma sigla formada por "ENT" + um número, em que "ENT" é uma sigla para entrevista, e para representar o tipo de requisito, será usado as siglas "RF" ou "RNF" que representam os Requisitos Funcionais e Não Funcionais. 
 
-**Tabela 3** - Requisitos Elicitados
+**Tabela 4** - Requisitos Elicitados
 
 | Identificador | Requisito | Tipo |
 | ------------- | --------- | ---- |
@@ -91,6 +98,9 @@ Após a realização da entrevista com os usuários de aplicativos de músicas, 
 
 Fonte: Luis Miranda, 2024.
 
+## Referência Bibliográfica
+
+> SEIDMAN, I. Interviewing as Qualitative Research: a guide for researchers in Education and the Social Sciences. New York, NY: Teachers College Press, 1998
 
 ## Histórico de versões
 
