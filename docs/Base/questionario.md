@@ -20,7 +20,6 @@ A tabela 1 contém a seleção das perguntas utilizadas no questionário.
 | 6   | Como você descobre novas músicas?                             |
 | 7   | O que você espera de um aplicativo de música?                 |
 | 8   | Você tem alguma outra funcionalidade que gostaria de sugerir? |
-|     |                                                               |
 
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
@@ -37,7 +36,7 @@ De acordo com o gráfico apresentado na figura 1 que representa a idade dos usu�
 
 **Figura 1** - Pergunta 1.
 
-![[./imagens/questao1.png]]
+![](./imagens/questao1.png)
 
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
@@ -48,8 +47,7 @@ De acordo com o gráfico apresentado na figura 2 que representa o grau de escola
 
 **Figura 2** - Pergunta 2.
 
-![[./imagens/questao2.png]]
-
+![](./imagens/questao2.png)
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
 #### Questão 3 - Qual gênero você se identifica?
@@ -57,7 +55,7 @@ A quantidade de usuários que se identificam do gênero feminino são 25 usuári
 
 **Figura 3** - Pergunta 3.
 
-![[./imagens/questao3.png]]
+![](./imagens/questao3.png)
 
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
@@ -66,7 +64,7 @@ De acordo com a figura 4, o gênero musical mais votado é o Pop com 38 usuário
 
 **Figura 4** - Pergunta 4.
 
-![[./imagens/questao4.png]]
+![](./imagens/questao4.png)
 
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
@@ -75,7 +73,7 @@ Analisando a figura 5, a maioria dos usuários consomem música por aplicativos 
 
 **Figura 5** - Pergunta 5
 
-![[./imagens/questao5.png]]
+![](./imagens/questao5.png)
 
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
@@ -85,7 +83,7 @@ De acordo com a figura 6, a maioria dos usuários (21 pessoas) descobrem música
 
 **Figura 6** - Pergunta 6
 
-![[./imagens/questao6.png]]
+![](./imagens/questao6.png)
 
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
@@ -99,7 +97,7 @@ De acordo com a figura 7, as funcionalidades que os usuários mais esperam de um
 
 **Figura 7** - Pergunta 7
 
-![[./imagens/questao7.png]]
+![](./imagens/questao7.png)
 
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
@@ -121,7 +119,7 @@ Analisando a figura 8, 12 usuários sugeriram outras funcionalidades além do qu
 
 **Figura 8** - Pergunta 8
 
-![[./imagens/questao8.png]]
+![](./imagens/questao8.png)
 
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
