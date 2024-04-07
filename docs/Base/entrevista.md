@@ -26,6 +26,12 @@ Após a coleta de dados das respostas dos participantes, foram transcritas e del
 
 Fonte: Vinícius Mendes, 2024.
 
+### Perfil dos Entrevistados
+
+  - Lucas de Paula, Estudante do segundo semestre, 18 anos, Homem cis.
+
+  - Mateus Souza Santana, Estudante de Engenharia Eletronica, 23 anos, Homem cis, Estagiario na CAESB e Diretor de projetos na Eletronjun.
+
 ## Roteiro
 A estrutura da entrevista realizada foi de:
  - Apresentação - Parte essa onde o apresentador e o escrivão se apresentaram para o entrevistado e foi feita a leitura do termo de consentimento
@@ -77,13 +83,11 @@ Após a realização da entrevista com os usuários de aplicativos de músicas, 
 | ENT16              | Ver perfil de artista          | RF     |
 | ENT17              | Pesquisar álbum de músicas          | RF     |
 | ENT18              | Filtrar pesquisa por artista/álbum/música          |  RF    |
-| ENT19              | Deve conter as músicas mais ouvidas no seu país/mundo          | RFN     |
-| ENT20              |           |      |
-
-
-
-
-
+| ENT19              | Baixar PlayList para ouvir offline         | RF     |
+| ENT20              | Deve conter as músicas mais ouvidas no seu país/mundo          | RFN     |
+| ENT21              | Eficiência na busca e filtragem de músicas de acordo com as preferências do usuário          | RFN     |
+| ENT22              | Garantir que as músicas/PlayLists baixadas estejam disponíveis         | RFN     |
+| ENT23              | Interface intuitiva para busca/filtragem de música         | RFN     |
 
 Fonte: Luis Miranda, 2024.
 
