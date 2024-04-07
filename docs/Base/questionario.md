@@ -123,6 +123,16 @@ Analisando a figura 8, 12 usuários sugeriram outras funcionalidades além do qu
 
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
+## Definição do Perfil de Usuário
+
+Após a análise dos resultados obtidos identificamos o seguinte perfil para os usuários de aplicativos de música:
+
+- Idade: Entre 19 e 25 anos
+- Gênero: Um empate entre o público masculino e feminino.
+- Grau de escolaridade: Finalizaram ou ainda estão cursando no ensino superior.
+- Experiência: A maior utiliza aplicativos de música para ouvir/descobrir músicas.
+- Tarefas primárias: Ouvir música online e offline.
+
 ## Referência bibliográfica
 >  Google LLC. Google Forms. Disponível em: [https://www.google.com/intl/pt-BR/forms/about/](https://www.google.com/intl/pt-BR/forms/about/). Acesso em: 05/04/2024.
 
