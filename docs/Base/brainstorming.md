@@ -89,6 +89,6 @@ A técnica de brainstorming foi empregada para coletar dados e elicitar os requi
 Versão  | Data | Descrição | Autor(es) | Revisor(es)
 ---------- | -----  | ------ | ---------- | ----------
  `1.0` | 07/04/2024 | Adicionado a Introdução, explicação da técnica de elicitação, definação de papéis e detalhamento da metodologia utilizada. |[Limirio Guimarães](https://github.com/LimirioGuimaraes)  | [Revisor](https://github.com/)
- `1.1` | 07/04/2024 | Adicionado os resultados obtidos |[Luis Miranda](https://github.com/LuisMiranda10)  | [Revisor](https://github.com/)
+ `1.1` | 07/04/2024 | Adicionado os resultados obtidos |[Luis Miranda](https://github.com/LuisMiranda10) e [Israel Thalles](https://github.com/IsraelThalles) | [Revisor](https://github.com/)
  
  
