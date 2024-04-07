@@ -374,3 +374,11 @@ Este documento tem como objetivo fornecer uma lista de termos chave úteis aplic
 ### 122 - Widget de Música:
 -  Um pequeno aplicativo ou componente que pode ser adicionado à tela inicial de um dispositivo para controle rápido da reprodução de música.
 
+## Histórico de versões
+
+| Versão | Data       | Descrição                         | Autor(es)       | Revisor(es) |
+| ------ | ---------- | --------------------------------- | --------------- | ----------- |
+| 1.0    | 07/04/2024 | Criação do glossário, cadastro dos 122 termos iniciais | Lucas Alves Vilela | Vinícius Mendes |
+
+
+
