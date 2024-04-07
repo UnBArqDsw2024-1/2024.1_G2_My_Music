@@ -291,6 +291,6 @@ Tabela 22: Léxico 20 (Fonte: Rafael)
 
 | Versão  | Data       | Descrição                  | Autor                    | Revisor   |
 |---------|------------|----------------------------|-------------|-----------|
-| 1.0     | 07/04/2024 | Criação do documento | Rafael Xavier |  |
+| 1.0     | 07/04/2024 | Criação do documento | Rafael Xavier | Ana Luiza Rodrigues |
 
 </center>
