@@ -72,7 +72,7 @@
 | 7      |  Mapa Mental |João Vitor | 07/04/2024 |
 | 8     | Documentar Formulário | Vinicíus Mendes | 07/04/2024 |
 | 9     | Realizar configuração do git pages |Henrique Sandoval e Carlos Mendes | 07/04/2024 |
-| 10     | Documentar políticas de contribuição do projeto | Luis Miranda e Carlos Godoy | 07/04/2024 |
+| 10     | Documentar políticas de contribuição do projeto | Luiz Guilherme e Carlos Godoy | 07/04/2024 |
 
 </center>
 
