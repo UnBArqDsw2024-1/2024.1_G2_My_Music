@@ -97,6 +97,10 @@ Optamos pela Licença MIT devido à sua simplicidade e permissividade, promovend
 
 ## Gerenciamento de Problemas
 
+O sistema de gerenciamento de problemas garante que os problemas sejam identificados, priorizados e tratados.
+Tendo os problemas etiquetados facilita na busca, por meio de filtros, dos problemas que ocorreram durante o projeto.
+Além disso, um sistema de gerenciamento também auxilia a resolver solicitações de suporte, por exemplo, auxiliar usuários com problemas técnicos. 
+
 
 ## Revisão de Código
 
