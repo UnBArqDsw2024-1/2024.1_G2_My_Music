@@ -38,4 +38,4 @@ Para construção do Rich Picture utilizado nas figuras 1 foi utilizada a ferram
 
 | Versão | Data       | Descrição                         | Autor(es)       | Revisor(es) |
 | ------ | ---------- | --------------------------------- | --------------- | ----------- |
-| 1.0    | 07/04/2024 | Criação do documento rich picture | Milena Baruc    |  |
+| 1.0    | 07/04/2024 | Criação do documento rich picture | Milena Baruc    |  Vinícius Mendes|
