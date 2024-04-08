@@ -1,38 +1,66 @@
-Our pledge
-We, as members, pledge to provide a healthy and welcoming environment for all participants. We strive to create a respectful, kind and inclusive environment where everyone is valued and heard. We are committed to providing a hassle-free experience for all, regardless of age, body size, disability, ethnicity, gender and description, level of experience, nationality, personal appearance, race, religion, or sexual identity and preference . . . .
+## Code of Conduct
 
-Expected behavior
-We expect all members of our community to:
+### Our Pledge
 
-Respect others and be considerate of others.
-Be empathetic and understanding in your interactions with your fellow community members.
-Communicate clearly and constructively while providing positive and constructive feedback.
-Be mindful of the impact our actions and words can have on others, and try to maintain a supportive atmosphere.
+In the interest of fostering an open and welcoming environment, we as
+contributors and maintainers pledge to make participation in our project and
+our community a harassment-free experience for everyone, regardless of age, body
+size, disability, ethnicity, gender identity and expression, level of experience,
+nationality, personal appearance, race, religion, or sexual identity and
+orientation.
 
-Unacceptable behavior
-Examples of unacceptable behavior include, but are not limited to:
+### Our Standards
 
-Harassment, discrimination, or anything offensive.
-Threats, threats, or derogatory comments directed at individuals or groups.
-Personal attacks, insults, or trolling.
-Unwanted comments about a person’s personality, lifestyle, or choices.
-Any form of unwanted sexual attention of advances.
-Intentionally threatening, stalking, or pursuing.
-Unauthorized disclosure of private information of others such as physical and electronic addresses.
-Any other behavior that violates the principles of respect, kindness and inclusion that we aim to uphold in our community.
+Examples of behavior that contributes to creating a positive environment
+include:
 
-Reporting Guidelines
+* Using welcoming and inclusive language
+* Being respectful of differing viewpoints and experiences
+* Gracefully accepting constructive criticism
+* Focusing on what is best for the community
+* Showing empathy towards other community members
 
-If you experience or witness behavior that violates this Code of Conduct, please report it.
-All reports will be handled with discretion and confidentiality.
+Examples of unacceptable behavior by participants include:
 
-Consequences of Unacceptable Behavior
+* The use of sexualized language or imagery and unwelcome sexual attention or
+advances
+* Trolling, insulting/derogatory comments, and personal or political attacks
+* Public or private harassment
+* Publishing others' private information, such as a physical or electronic
+  address, without explicit permission
+* Other conduct which could reasonably be considered inappropriate in a
+  professional setting
 
-Verbal or written warnings.
-Temporary or permanent expulsion from the community.
-Removal of contributions or contributions being rejected.
+### Our Responsibilities
 
-Acknowledgement
+Project maintainers are responsible for clarifying the standards of acceptable
+behavior and are expected to take appropriate and fair corrective action in
+response to any instances of unacceptable behavior.
 
-By participating in our community, you agree to abide by this code of conduct.
-Your commitment to creating a welcoming and respectful environment for all members is deeply appreciated.
+Project maintainers have the right and responsibility to remove, edit, or
+reject comments, commits, code, wiki edits, issues, and other contributions
+that are not aligned to this Code of Conduct, or to ban temporarily or
+permanently any contributor for other behaviors that they deem inappropriate,
+threatening, offensive, or harmful.
+
+### Scope
+
+This Code of Conduct applies both within project spaces and in public spaces
+when an individual is representing the project or its community. Examples of
+representing a project or community include using an official project e-mail
+address, posting via an official social media account or acting as an appointed
+representative at an online or offline event. Representation of a project may be
+further defined and clarified by project maintainers.
+
+### Enforcement
+
+Instances of abusive, harassing, or otherwise, unacceptable behavior may be
+reported by contacting the project team at contact@dnx.solutions. All
+complaints will be reviewed and investigated and will result in a response that
+is deemed necessary and appropriate to the circumstances. The project team is
+obligated to maintain confidentiality with regard to the reporter of an incident.
+Further details of specific enforcement policies may be posted separately.
+
+Project maintainers who do not follow or enforce the Code of Conduct in good
+faith may face temporary or permanent repercussions as determined by other
+members of the project's leadership.

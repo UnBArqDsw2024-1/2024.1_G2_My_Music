@@ -63,8 +63,8 @@
 
 | **N°** | **Compromisso**       | **Responsáveis**   | **Data de entrega**    |
 |-------|----------------------|------------------|------------|
-| 1      | Brainstorm | Limírio Guimarães, Luís Miranda e Israel Thalles| 07/04/2024 |
-| 2      | Entrevista com usuários para elicitação de requisitos | Vinícius Mendes e Luís Miranda| 07/04/2024 |
+| 1      | Brainstorm | Limírio Guimarães, Luis Miranda e Israel Thalles| 07/04/2024 |
+| 2      | Entrevista com usuários para elicitação de requisitos | Vinícius Mendes e Luis Miranda| 07/04/2024 |
 | 3      | 5W2H |Ana Luíza | 07/04/2024 |
 | 4      |  Glossário |Lucas Vilela | 07/04/2024 |
 | 5      |  Léxicos |Rafael Xavier | 07/04/2024 |
@@ -72,7 +72,7 @@
 | 7      |  Mapa Mental |João Vitor | 07/04/2024 |
 | 8     | Documentar Formulário | Vinicíus Mendes | 07/04/2024 |
 | 9     | Realizar configuração do git pages |Henrique Sandoval e Carlos Mendes | 07/04/2024 |
-| 10     | Documentar políticas de contribuição do projeto | Luiz Miranda e Carlos Godoy | 07/04/2024 |
+| 10     | Documentar políticas de contribuição do projeto | Luiz Guilherme e Carlos Godoy | 07/04/2024 |
 
 </center>
 
