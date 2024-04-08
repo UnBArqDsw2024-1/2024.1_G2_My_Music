@@ -64,14 +64,14 @@ Questionário: Para coletar feedback quantitativo e métricas de desempenho do p
 
 | Logo | Nome          | Uso Planejado                                      |
 |------|---------------|-----------------------------------------------------|
-| ![Miro]() | Miro          | Colaboração em diagramas, prototipagem e brainstorming |
-| ![Lucidchart]() | Lucidchart    | Criação de diagramas, fluxogramas e wireframes      |
-| ![Discord]() | Discord       | Comunicação em tempo real, organização de equipes e compartilhamento de informações |
-| ![VS Code]() | VS Code       | Desenvolvimento de software, edição de código-fonte  |
-| ![Whatsapp]() | Whatsapp      | Comunicação em equipe, compartilhamento de informações |
-| ![Github]() | Github        | Gerenciamento de código-fonte, controle de versão e colaboração em projetos |
-| ![Canva]() | Canva         | Design gráfico, criação de materiais visuais         |
-| ![Figma]() | Figma         | Prototipagem, design de interfaces e colaboração em tempo real |
+| ![Miro](/docs/Assets/miro.png){width=100}   | Miro          | Colaboração em diagramas, prototipagem e brainstorming |
+| ![Lucidchart](/docs/Assets/lucidchart.png){width=100}  | Lucidchart    | Criação de diagramas, fluxogramas e wireframes      |
+| ![Discord](/docs/Assets/discord.png){width=100} | Discord       | Comunicação em tempo real, organização de equipes e compartilhamento de informações |
+| ![VSCode](/docs/Assets/vscode.png){width=100}  | VS Code       | Desenvolvimento de software, edição de código-fonte  |
+| ![Whatsapp](/docs/Assets/wpp.png){width=100}  | Whatsapp      | Comunicação em equipe, compartilhamento de informações |
+| ![Github](/docs/Assets/github.png){width=100}  | Github        | Gerenciamento de código-fonte, controle de versão e colaboração em projetos |
+| ![Canva](/docs/Assets/canva.png){width=100}  | Canva         | Design gráfico, criação de materiais visuais         |
+| ![Figma](/docs/Assets/figma.png){width=100}  | Figma         | Prototipagem, design de interfaces e colaboração em tempo real |
 
 
 ## 5. Referências Bibliográficas
