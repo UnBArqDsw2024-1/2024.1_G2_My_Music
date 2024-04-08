@@ -36,8 +36,7 @@ De acordo com o gráfico apresentado na figura 1 que representa a idade dos usu�
 
 **Figura 1** - Pergunta 1.
 
-![](../../docs/Base/images/questao1.png)
-
+![](/docs/Base/images/questao1.png)
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
 #### Questão 2 - Qual a sua escolaridade?
@@ -47,7 +46,7 @@ De acordo com o gráfico apresentado na figura 2 que representa o grau de escola
 
 **Figura 2** - Pergunta 2.
 
-![](../../docs/Base/images/questao2.png)
+![](/docs/Base/images/questao2.png)
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
 #### Questão 3 - Qual gênero você se identifica?
@@ -55,7 +54,7 @@ A quantidade de usuários que se identificam do gênero feminino são 25 usuári
 
 **Figura 3** - Pergunta 3.
 
-![](../../docs/Base/images/questao3.png)
+![](/docs/Base/images/questao3.png)
 
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
@@ -64,7 +63,7 @@ De acordo com a figura 4, o gênero musical mais votado é o Pop com 38 usuário
 
 **Figura 4** - Pergunta 4.
 
-![](../../docs/Base/images/questao4.png)
+![](/docs/Base/images/questao4.png)
 
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
@@ -73,7 +72,7 @@ Analisando a figura 5, a maioria dos usuários consomem música por aplicativos 
 
 **Figura 5** - Pergunta 5
 
-![](../../docs/Base/images/questao5.png)
+![](/docs/Base/images/questao5.png)
 
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
@@ -83,7 +82,7 @@ De acordo com a figura 6, a maioria dos usuários (21 pessoas) descobrem música
 
 **Figura 6** - Pergunta 6
 
-![](../../docs/Base/images/questao6.png)
+![](/docs/Base/images/questao6.png)
 
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
@@ -97,7 +96,7 @@ De acordo com a figura 7, as funcionalidades que os usuários mais esperam de um
 
 **Figura 7** - Pergunta 7
 
-![](../../docs/Base/images/questao7.png)
+![](/docs/Base/images/questao7.png)
 
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
@@ -119,7 +118,7 @@ Analisando a figura 8, 12 usuários sugeriram outras funcionalidades além do qu
 
 **Figura 8** - Pergunta 8
 
-![](../../docs/Base/images/questao8.png)
+![](/docs/Base/images/questao8.png)
 
 Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
 
