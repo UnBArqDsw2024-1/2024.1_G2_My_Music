@@ -1,0 +1,54 @@
+site_name: My Music
+theme:
+  name: material
+  language: pt-BR
+  logo: 
+
+  palette: 
+
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - footnotes
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.extra 
+
+nav:
+  - Sobre o projeto: index.md
+  - Atas:
+    - Ata 01: atas/ata_1.md
+  - Entrega 1:
+    - Design Sprint: Entrega-01/Design Sprint.md
+    - 5w2h: Entrega-01/5w2h.md
+    - Brainstorming: Entrega-01/brainstorming.md
+    - Entrevista: Entrega-01/Entrevista.md
+    - Glossário: Entrega-01/glossário.md
+    - Léxicos: Entrega-01/lexico.md
+    - Mapa Mental: Entrega-01/mapa_mental.md
+    - Participações: Entrega-01/participações.md
+    - Questionário: Entrega-01/questionário.md
+    - Rich Picture: Entrega-01/richpicture.md
