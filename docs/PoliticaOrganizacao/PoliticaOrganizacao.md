@@ -104,6 +104,8 @@ Além disso, um sistema de gerenciamento também auxilia a resolver solicitaçõ
 
 ## Revisão de Código
 
+Membros da equipe MyMusic que estejam preparados com conhecimentos necessários para revisar um trecho de código são responsáveis por revisar o código dos outros membros.
+Além disso, o código deve seguir diversos critérios de aceitação, por exemplo adesão aos padrões de codificação da equipe, passar nos testes automatizados, manuntenibilidade.
 
 ## Lançamento de Versões
 
