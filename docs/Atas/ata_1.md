@@ -63,7 +63,7 @@
 
 | **N°** | **Compromisso**       | **Responsáveis**   | **Data de entrega**    |
 |-------|----------------------|------------------|------------|
-| 1      | Brainstorm | Limírio Guimarães, Luís Miranda e Israel Thalles| 07/04/2024 |
+| 1      | Brainstorm | Limírio Guimarães, Luis Miranda e Israel Thalles| 07/04/2024 |
 | 2      | Entrevista com usuários para elicitação de requisitos | Vinícius Mendes e Luis Miranda| 07/04/2024 |
 | 3      | 5W2H |Ana Luíza | 07/04/2024 |
 | 4      |  Glossário |Lucas Vilela | 07/04/2024 |
