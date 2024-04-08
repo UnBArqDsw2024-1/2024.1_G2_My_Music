@@ -48,6 +48,20 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
     // Marked
+    // Create a new renderer
+    const renderer = new marked.Renderer();
+        
+    // Save the original table renderer
+    const originalTableRenderer = renderer.table;
+        
+    // Override the table renderer
+    renderer.table = (header, body) => {
+        return originalTableRenderer.call(renderer, header, body).replace('<table>', '<table class="table table-striped">');
+    };
+    
+    // Use the new renderer
+    marked.use({ renderer });
+    
     marked.use({ mangle: false, headerIds: false })
     section_names.forEach((name, idx) => {
         fetch(content_dir + name + '.md')

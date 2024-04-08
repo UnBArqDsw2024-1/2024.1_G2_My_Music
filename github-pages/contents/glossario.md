@@ -1,4 +1,3 @@
-# Glossário
 Um artefato de glossário em arquitetura e desenho de software é um recurso vital que tem como objetivo definir os termos técnicos, conceitos e elementos específicos usados durante o processo de desenvolvimento de software em um projeto.
 
 Este documento tem como objetivo fornecer uma lista de termos chave úteis aplicados no contexto do nosso projeto, cada item neste glossário é composto por: um índice, um termo ou palavra-chave e uma definição (resumo).
