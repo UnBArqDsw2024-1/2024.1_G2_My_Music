@@ -109,8 +109,11 @@ Além disso, o código deve seguir diversos critérios de aceitação, por exemp
 
 ## Lançamento de Versões
 
-Novas versões englobam a adição de artefatos desenvolvidos, melhorias no projeto, correções de bugs.
-É importante comunicar aos usuários os lançamentos, fornecendo um curto guia de instalação, e aonde encontrar a documentação relevante.
+Seguir o padrão para a seguir para as versões lançadas
+
+| Versão  | Data       | Descrição                  | Autor                    | Revisor   |
+|---------|------------|----------------------------|-------------|-----------|
+|         |            |                            |             |           |
 
 ## Comunicação
 
