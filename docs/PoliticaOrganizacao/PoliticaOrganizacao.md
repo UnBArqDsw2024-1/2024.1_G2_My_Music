@@ -109,5 +109,13 @@ Além disso, o código deve seguir diversos critérios de aceitação, por exemp
 
 ## Lançamento de Versões
 
+Novas versões englobam a adição de artefatos desenvolvidos, melhorias no projeto, correções de bugs.
+É importante comunicar aos usuários os lançamentos, fornecendo um curto guia de instalação, e aonde encontrar a documentação relevante.
 
 ## Comunicação
+
+Canais de comunicação
+
+- **Whatsapp**: Utilizado para comunicações rápidas e curtas
+- **Discord**:  Quando é necessário mais tempo para reuniões
+
