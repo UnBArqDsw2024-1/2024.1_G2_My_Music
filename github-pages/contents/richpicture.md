@@ -14,7 +14,7 @@ Para construção do Rich Picture utilizado nas figuras 1 foi utilizada a ferram
 
 **Figura 1** - Rich Picture
 
-![Rich Picture](/docs/Base/images/RichPicture.png)
+![Rich Picture](../docs/Base/images/RichPicture.png)
 
 **Fonte:** Milena Baruc.
 
@@ -24,7 +24,7 @@ Para construção do Rich Picture utilizado nas figuras 1 foi utilizada a ferram
 
 **Figura 1** - Legenda
 
-![Legenda](/docs/Base/images/RichPictureLEG.png)
+![Legenda](../docs/Base/images/RichPictureLEG.png)
 
 **Fonte:** Milena Baruc.
 
