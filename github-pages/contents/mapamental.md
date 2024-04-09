@@ -6,7 +6,7 @@ A seguir, encontra-se na figura 1 o mapa mental produzido pelo discente João V�
 
 ## Mapa
 
-![Alt text](../../docs/Base/images/mapa_mental.jpg)
+![Alt text](../docs/Base/images/mapa_mental.jpg)
 
 <div style="text-align: center">
 <p> Figura 1: Mapa Mental do My Music. (Fonte: João Vítor Motta, 2024). </p>

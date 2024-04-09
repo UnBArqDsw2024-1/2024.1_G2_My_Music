@@ -2,7 +2,7 @@
 
 const content_dir = 'contents/'
 const config_file = 'config.yml'
-const section_names = ['home', 'designsprint',  'glossario', '5w2h', 'brainstorming', 'artefatos', 'lexico', 'mapamental', 'richpicture',  'equipe']
+const section_names = ['home', 'designsprint',  'glossario', 'artefato5w2h', 'brainstorming', 'artefatos', 'lexico', 'mapamental', 'richpicture',  'equipe']
 
 
 window.addEventListener('DOMContentLoaded', event => {
@@ -48,10 +48,8 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
     // Marked
-    // Create a new renderer
     const renderer = new marked.Renderer();
         
-    // Save the original table renderer
     const originalTableRenderer = renderer.table;
         
     // Override the table renderer
@@ -59,9 +57,17 @@ window.addEventListener('DOMContentLoaded', event => {
         return originalTableRenderer.call(renderer, header, body).replace('<table>', '<table class="table table-striped">');
     };
     
+    const originalImageRenderer = renderer.image;
+    
+    // Override the image renderer
+    renderer.image = (href, title, text) => {
+        return originalImageRenderer.call(renderer, href, title, text).replace('<img', '<img class="img-fluid"');
+    };
+    
     // Use the new renderer
     marked.use({ renderer });
-    
+
+
     marked.use({ mangle: false, headerIds: false })
     section_names.forEach((name, idx) => {
         fetch(content_dir + name + '.md')
