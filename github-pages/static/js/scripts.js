@@ -1,6 +1,6 @@
 
 
-const content_dir = '../docs/Base'
+const content_dir = '../docs/Base/'
 
 const config_file = 'config.yml'
 const section_names = ['designSprint',  'glossario', 'artefato5w2h', 'brainstorming', 'questionario','entrevista', 'lexico', 'mapaMental', 'richpicture',  'equipe']
