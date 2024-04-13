@@ -15,7 +15,7 @@ A figura 1 a seguir representa a modelagem da atividade de cadastro no aplicativ
 
 **Figura 1** - Diagrama de cadastro
 
-[Figura 1](../Assets/Diagrama de Atividades - Cadastro.jpeg)
+[Figura 1](../Assets/DiagramadeAtividades-Cadastro.jpeg)
 
 Fonte: Vinícius Mendes, 2024.
 
@@ -24,7 +24,7 @@ A figura 2 a seguir representa a modelagem da atividade de login no aplicativo M
 
 **Figura 2** - Diagrama de login
 
-[Figura 2](../Assets/Diagrama de Atividades - Login.jpeg)
+[Figura 2](../Assets/DiagramadeAtividades-Login.jpeg)
 
 Fonte: Vinícius Mendes, 2024.
 
@@ -33,7 +33,7 @@ A figura 3 a seguir representa a modelagem da atividade de buscar música/artist
 
 **Figura 3** - Diagrama de busca
 
-[Figura 3](../Assets/Diagrama de Atividades - Busca.jpeg)
+[Figura 3](../Assets/DiagramadeAtividades-Busca.jpeg)
 
 Fonte: Vinícius Mendes, 2024.
 
@@ -42,7 +42,7 @@ A figura 4 a seguir representa a modelagem da atividade de ouvir música, seja a
 
 **Figura 4** - Diagrama de ouvir música
 
-[Figura 4](../Assets/Diagrama de Atividades - Ouvir musica.jpeg)
+[Figura 4](../Assets/DiagramadeAtividades-Ouvir musica.jpeg)
 
 Fonte: Vinícius Mendes, 2024.
 
@@ -51,7 +51,7 @@ A figura 5 a seguir representa a modelagem da atividade de criar playlist.
 
 **Figura 5** - Diagrama de criar playlist
 
-[Figura 5](../Assets/Diagrama de Atividades - Criar playlist.jpeg)
+[Figura 5](../Assets/DiagramadeAtividades-Criarplaylist.jpeg)
 
 Fonte: Vinícius Mendes, 2024.
 
