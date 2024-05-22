@@ -1,0 +1,80 @@
+site_name: My Docs
+theme:
+  name: material
+  language: pt-BR
+  logo: docs/assets/background.jpg
+
+  palette: 
+
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - footnotes
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.extra 
+
+nav:
+- Sobre o projeto: index.md
+- Base:
+  - 1. Desenho de Software (Base): 1.Base.md
+  - 1.1. Módulo Projeto Não Orientado a Abordagens Específicas:
+    - 1.1.1. Design Sprint: Design Sprint.md
+    - 1.1.2. Técnicas de Elicitação:
+      - 1.1.2.1. Brainstorming: brainstorming.md
+      - 1.1.2.2. Entrevista: entrevista.md
+      - 1.1.2.3. Questionario: questionario.md
+    - 1.1.3. Artefatos Independentes:
+      - 1.1.3.1. Glossário: glossário.md
+      - 1.1.3.2. 5w2h: 5w2h.md
+      - 1.1.3.3. Léxico: lexico.md
+      - 1.1.3.4. Rich Picture: richpicture.md
+      - 1.1.3.5. Mapa Mental: mapa_mental.md
+  - 1.2. Módulo Processos/Metodologias/Abordagens:
+      - 1.2.1. Metodologia: 1.2.ProcessosMetodologiasAbordagens.md
+  - 1.3. Participações Base:
+      - 1.3.1. Participações: 1.3.ParticipacoesBase.md
+- Modelagem:
+  - 2. Desenho de Software (Modelagem): 2.Modelagem.md
+    - 2.1. Módulo Projeto Orientado a Abordagens Tradicionais: 2.1.ModelagemTradicional.md
+      - 2.1.1. Notação UML - Diagramas Estáticos: 2.1.1.UMLEstaticos.md
+        - 2.1.1.1. Diagrama de Pacotes:
+        - 2.1.1.2. Diagrama de Classes:
+      - 2.1.2. Notação UML - Diagramas Dinâmicos: 2.1.2.UMLDinamicos.md
+        - 2.1.2.1. Diagrama de Sequência:
+        - 2.1.2.2. Diagrama de Atividade: diagramaAtividades.md
+    - 2.2. Participações - Modelagem: 2.2.ParticipacoesModelagem.md
+- Padrões de projeto:
+  - 3. Desenho de Software (Padrões de Projeto): 3.PadroesDeProjeto.md
+    - 3.1. Módulo Padrões de Projeto GoFs Criacionais: 3.1.GoFsCriacionais.md
+    - 3.2. Módulo Padrões de Projeto GoFs Estruturais: 3.2.GoFsEstruturais.md
+    - 3.3. Módulo Padrões de Projeto GoFs Comportamentais: 3.3.GoFsComportamentais.md
+    - 3.4. Participações - Padrões de Projeto: 3.4.ParticipacoesPadroes.md
+
+- Arquitetura de Software e Reutilização:
+- Reuniões:
+  - Ata 01: Atas/ata_1.md
+
