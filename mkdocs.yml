@@ -39,7 +39,7 @@ markdown_extensions:
 
 
 nav:
-  - Sobre o projeto: 'docs/index.md'
+  - Sobre o projeto: index.md
   - Base:
     - 1. Desenho de Software (Base): 'docs/Base/1.Base.md'
     - 1.1. Módulo Projeto Não Orientado a Abordagens Específicas:
