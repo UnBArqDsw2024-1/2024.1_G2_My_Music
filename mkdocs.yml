@@ -39,44 +39,44 @@ markdown_extensions:
 
 
 nav:
-  - Sobre o projeto: 'docs/index.md'
+  - Sobre o projeto: 'index.md'
   - Base:
-    - 1. Desenho de Software (Base): 'docs/Base/1.Base.md'
+    - 1. Desenho de Software (Base): 'Base/1.Base.md'
     - 1.1. Módulo Projeto Não Orientado a Abordagens Específicas:
-      - 1.1.1. Design Sprint: 'docs/Base/Design Sprint.md'
+      - 1.1.1. Design Sprint: 'Base/Design Sprint.md'
       - 1.1.2. Técnicas de Elicitação:
-        - 1.1.2.1. Brainstorming: 'docs/Base/brainstorming.md'
-        - 1.1.2.2. Entrevista: 'docs/Base/entrevista.md'
-        - 1.1.2.3. Questionário: 'docs/Base/questionario.md'
+        - 1.1.2.1. Brainstorming: 'Base/brainstorming.md'
+        - 1.1.2.2. Entrevista: 'Base/entrevista.md'
+        - 1.1.2.3. Questionário: 'Base/questionario.md'
       - 1.1.3. Artefatos Independentes:
-        - 1.1.3.1. Glossário: 'docs/Base/glossario.md'
-        - 1.1.3.2. 5W2H: 'docs/Base/5w2h.md'
-        - 1.1.3.3. Léxico: 'docs/Base/lexico.md'
-        - 1.1.3.4. Rich Picture: 'docs/Base/richpicture.md'
-        - 1.1.3.5. Mapa Mental: 'docs/Base/mapa_mental.md'
+        - 1.1.3.1. Glossário: 'Base/glossario.md'
+        - 1.1.3.2. 5W2H: 'Base/5w2h.md'
+        - 1.1.3.3. Léxico: 'Base/lexico.md'
+        - 1.1.3.4. Rich Picture: 'Base/richpicture.md'
+        - 1.1.3.5. Mapa Mental: 'Base/mapa_mental.md'
     - 1.2. Módulo Processos/Metodologias/Abordagens:
-      - 1.2.1. Metodologia: 'docs/Base/1.2.ProcessosMetodologiasAbordagens.md'
+      - 1.2.1. Metodologia: 'Base/1.2.ProcessosMetodologiasAbordagens.md'
     - 1.3. Participações Base:
-      - 1.3.1. Participações: 'docs/Base/1.3.ParticipacoesBase.md'
+      - 1.3.1. Participações: 'Base/1.3.ParticipacoesBase.md'
   - Modelagem:
-    - 2. Desenho de Software (Modelagem): 'docs/Modelagem/2.Modelagem.md'
-    - 2.1. Módulo Projeto Orientado a Abordagens Tradicionais: 'docs/Modelagem/2.1.ModelagemTradicional.md'
-    - 2.1.1. Notação UML - Diagramas Estáticos: 'docs/Modelagem/2.1.1.UMLEstaticos.md'
-    - 2.1.1.1. Diagrama de Pacotes: 'docs/Modelagem/diagramaPacotes.md'
-    - 2.1.1.2. Diagrama de Classes: 'docs/Modelagem/diagramaClasses.md'
-    - 2.1.2. Notação UML - Diagramas Dinâmicos: 'docs/Modelagem/2.1.2.UMLDinamicos.md'
-    - 2.1.2.1. Diagrama de Sequência: 'docs/Modelagem/diagramaSequencia.md'
-    - 2.1.2.2. Diagrama de Atividade: 'docs/Modelagem/diagramaAtividades.md'
-    - 2.2. Participações - Modelagem: 'docs/Modelagem/2.2.ParticipacoesModelagem.md'
+    - 2. Desenho de Software (Modelagem): 'Modelagem/2.Modelagem.md'
+    - 2.1. Módulo Projeto Orientado a Abordagens Tradicionais: 'Modelagem/2.1.ModelagemTradicional.md'
+    - 2.1.1. Notação UML - Diagramas Estáticos: 'Modelagem/2.1.1.UMLEstaticos.md'
+    - 2.1.1.1. Diagrama de Pacotes: 'Modelagem/diagramaPacotes.md'
+    - 2.1.1.2. Diagrama de Classes: 'Modelagem/diagramaClasses.md'
+    - 2.1.2. Notação UML - Diagramas Dinâmicos: 'Modelagem/2.1.2.UMLDinamicos.md'
+    - 2.1.2.1. Diagrama de Sequência: 'Modelagem/diagramaSequencia.md'
+    - 2.1.2.2. Diagrama de Atividade: 'Modelagem/diagramaAtividades.md'
+    - 2.2. Participações - Modelagem: 'Modelagem/2.2.ParticipacoesModelagem.md'
   - Padrões de Projeto:
-    - 3. Desenho de Software (Padrões de Projeto): 'docs/PadroesDeProjeto/3.PadroesDeProjeto.md'
-    - 3.1. Módulo Padrões de Projeto GoFs Criacionais: 'docs/PadroesDeProjeto/3.1.GoFsCriacionais.md'
-    - 3.2. Módulo Padrões de Projeto GoFs Estruturais: 'docs/PadroesDeProjeto/3.2.GoFsEstruturais.md'
-    - 3.3. Módulo Padrões de Projeto GoFs Comportamentais: 'docs/PadroesDeProjeto/3.3.GoFsComportamentais.md'
-    - 3.4. Participações - Padrões de Projeto: 'docs/PadroesDeProjeto/3.4.ParticipacoesPadroes.md'
+    - 3. Desenho de Software (Padrões de Projeto): 'PadroesDeProjeto/3.PadroesDeProjeto.md'
+    - 3.1. Módulo Padrões de Projeto GoFs Criacionais: 'PadroesDeProjeto/3.1.GoFsCriacionais.md'
+    - 3.2. Módulo Padrões de Projeto GoFs Estruturais: 'PadroesDeProjeto/3.2.GoFsEstruturais.md'
+    - 3.3. Módulo Padrões de Projeto GoFs Comportamentais: 'PadroesDeProjeto/3.3.GoFsComportamentais.md'
+    - 3.4. Participações - Padrões de Projeto: 'PadroesDeProjeto/3.4.ParticipacoesPadroes.md'
   - Arquitetura de Software e Reutilização: []
   - Reuniões:
-    - Ata 01: 'docs/Atas/ata_1.md'
+    - Ata 01: 'Atas/ata_1.md'
 
 # nav:
   # - Sobre o projeto: 'index.md'
