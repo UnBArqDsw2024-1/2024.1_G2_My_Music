@@ -2,10 +2,10 @@
 
 ## Introdução
 
-O diagrama de componentes da UML demonstra a organização das classes em termos de componentes de trabalho. Ele especifica, por exemplo, quais classes são representadas por cada componente. Esse diagrama é utilizado para modelar dados tanto do código fonte quanto do código executável do software. Mas por que fazer o diagrama? Para responder essa pergunta temos três pontos:
+O diagrama de componentes da UML demonstra a organização das classes em termos de componentes de trabalho e suas interações. Ele especifica como os diferentes componentes estão interligados e quais interfaces eles fornecem e requerem. Esse diagrama é utilizado para modelar dados tanto do código fonte quanto do código executável do software. Mas por que fazer o diagrama? Para responder essa pergunta temos três pontos:
 
 - Ajuda a ter uma visão de alto nível, direcionamento a como montar a aplicação
-- Definir plano de escala
+- Auxilia no planejamento e definição de planos de escalabilidade
 - Ajuda a fazer um plano de distribuição, plano de entrega do produto
 
 ## Metodologia
@@ -29,4 +29,4 @@ Logo abaixo é apresentado o diagrama (figura 1) em que representa o relacioname
 
 |   Versão  |    Data   | Descrição | Autor(es) | Revisor(es)|
 | --------- | --------- | --------- | --------- | ---------- |
-|   `1.0`   | 06/07/2023| Criação da página | [Luis Miranda](https://github.com/LuisMiranda10) & [Milena Baruc](https://github.com/MilenaBaruc) | [](https://github.com/)|
+|   `1.0`   | 06/07/2023| Criação da página | [Luis Miranda](https://github.com/LuisMiranda10) & [Milena Baruc](https://github.com/MilenaBaruc) | [Vinícius Mendes](https://github.com/yabamiah)|
