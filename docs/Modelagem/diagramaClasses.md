@@ -9,16 +9,22 @@ modelagem essencial para o desenvolvimento do projeto, ela pode sofrer alteraç�
 
 ## Metodologia
 
-Para realizar a modelagem do Diagrama de Classe, a equipe utilizou a ferramenta [LucidChart](https://www.lucidchart.com/pages/pt),um site de 
-modelagem de diagramas, que permite ao seus clientes utilizarem a linguagem UML e oferece um serviço de compartilhamento ao vivo com outros usuários. 
+Para realizar a modelagem do Diagrama de Classe, a equipe utilizou a ferramenta [LucidChart](https://www.lucidchart.com/pages/pt),um site de modelagem de diagramas, que permite ao seus clientes utilizarem a linguagem UML e oferece um serviço de compartilhamento ao vivo com outros usuários. 
 A modelagem foi feita seguindo o seguinte padrão apresentado na figura 1:
 
 <div style="text-align: center">
-  <img src="../../Assets/diagramaClasseEx.png" alt="Diagrama de classe" title="Título da Imagem" />
+  <img src="../../docs/Assets/diagramaClasseEx.png" alt="Diagrama de classe" title="Título da Imagem" />
   <p>Figura 1: Exemplo de classe (Fonte: SpaceProgrammer, 2017)²</p>
 </div>
 
 ## Diagrama de classe   
+
+Logo abaixo, na figura 2, temos o diagrama de classes elaborado para o aplicativo:
+
+<div style="text-align: center">
+  <img src="../../docs/Assets/diagramaClasses.png" alt="Diagrama de classe" title="Título da Imagem" />
+  <p>Figura 2: Diagrama de classes do aplicativo My Music  (Fonte: Ana Luiza Rodrigues e Rafael Xavier, 2024)</p>
+</div>
 
 ## Referências Bibliográficas
 
