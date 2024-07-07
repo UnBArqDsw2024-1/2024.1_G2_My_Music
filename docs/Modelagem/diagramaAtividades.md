@@ -15,7 +15,7 @@ A figura 1 a seguir representa a modelagem da atividade de cadastro no aplicativ
 
 **Figura 1** - Diagrama de cadastro
 
-![Figura 1](../Assets/DiagramadeAtividades-Cadastro.jpeg)
+![Figura 1](../Assets/DiagramadeAtividades-Cadastro.png)
 
 Fonte: Vinícius Mendes, 2024.
 
@@ -24,34 +24,25 @@ A figura 2 a seguir representa a modelagem da atividade de login no aplicativo M
 
 **Figura 2** - Diagrama de login
 
-![Figura 2](../Assets/DiagramadeAtividades-Login.jpeg)
-
-Fonte: Vinícius Mendes, 2024.
-
-### Diagrama de Busca
-A figura 3 a seguir representa a modelagem da atividade de buscar música/artista/álbum/playlist, utilizando ou não filtro.
-
-**Figura 3** - Diagrama de busca
-
-![Figura 3](../Assets/DiagramadeAtividades-Busca.jpeg)
+![Figura 2](../Assets/DiagramadeAtividades-Login.png)
 
 Fonte: Vinícius Mendes, 2024.
 
 ### Diagrama de Ouvir Música
-A figura 4 a seguir representa a modelagem da atividade de ouvir música, seja acessando-a diretamente, ou indiretamente através de artista/álbum/playlist ou nas músicas recentes do usuário.
+A figura 3 a seguir representa a modelagem da atividade de ouvir música, seja acessando-a diretamente, ou indiretamente através de artista/álbum/playlist ou nas músicas recentes do usuário.
 
-**Figura 4** - Diagrama de ouvir música
+**Figura 3** - Diagrama de ouvir música
 
-![Figura 4](../Assets/DiagramadeAtividades-Ouvirmusica.jpeg)
+![Figura 3](../Assets/DiagramadeAtividades-Ouvirmusica.png)
 
 Fonte: Vinícius Mendes, 2024.
 
 ### Diagrama de Criar Playlist
-A figura 5 a seguir representa a modelagem da atividade de criar playlist.
+A figura 4 a seguir representa a modelagem da atividade de criar playlist.
 
-**Figura 5** - Diagrama de criar playlist
+**Figura 4** - Diagrama de criar playlist
 
-![Figura 5](../Assets/DiagramadeAtividades-Criarplaylist.jpeg)
+![Figura 4](../Assets/DiagramadeAtividades-Criarplaylist.png)
 
 Fonte: Vinícius Mendes, 2024.
 
@@ -62,5 +53,6 @@ Fonte: Vinícius Mendes, 2024.
 
 | Versão | Data       | Descrição                                   | Autor(es)       | Revisor(es) |
 | ------ | ---------- | ------------------------------------------- | --------------- | ----------- |
-| 1.0    | 12/04/2024 | Criação do documento Diagrama de Atividades | Vinícius Mendes |             |
+| 1.0    | 12/04/2024 | Criação do documento Diagrama de Atividades | [Vinícius Mendes](https://github.com/yabamiah) |             |
+| 2.0    | 07/07/2024 | Atualização do documento Diagrama de Atividades | [Vinícius Mendes](https://github.com/yabamiah) |             |
 
