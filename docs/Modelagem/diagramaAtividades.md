@@ -53,6 +53,6 @@ Fonte: Vinícius Mendes, 2024.
 
 | Versão | Data       | Descrição                                   | Autor(es)       | Revisor(es) |
 | ------ | ---------- | ------------------------------------------- | --------------- | ----------- |
-| 1.0    | 12/04/2024 | Criação do documento Diagrama de Atividades | [Vinícius Mendes](https://github.com/yabamiah) |             |
-| 2.0    | 07/07/2024 | Atualização do documento Diagrama de Atividades | [Vinícius Mendes](https://github.com/yabamiah) |             |
+| 1.0    | 12/04/2024 | Criação do documento Diagrama de Atividades | [Vinícius Mendes](https://github.com/yabamiah) | [Luis Miranda](https://github.com/LuisMiranda10)            |
+| 2.0    | 07/07/2024 | Atualização do documento Diagrama de Atividades | [Vinícius Mendes](https://github.com/yabamiah) | [Luis Miranda](https://github.com/LuisMiranda10)            |
 
