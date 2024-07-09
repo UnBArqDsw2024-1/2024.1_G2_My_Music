@@ -10,7 +10,7 @@ Diagramas de pacotes são diagramas estruturais usados para mostrar, em uma form
 
 ## Metodologia
 
-Para realizar a modelagem do Diagrama de Pacotes, a equipe utilizou a ferramente [LucidChart](https://www.lucidchart.com/pages/pt), que é um site de modelagem de diagramas, que permite ao seus clientes utilizarem a linguagem UML e oferece um serviço de compartilhamento ao vivo com outros usuários.
+Para realizar a modelagem do Diagrama de Pacotes, a equipe utilizou a ferramenta [LucidChart](https://www.lucidchart.com/pages/pt), que é um site de modelagem de diagramas, que permite ao seus clientes utilizarem a linguagem UML e oferece um serviço de compartilhamento ao vivo com outros usuários.
 
 ## Diagrama de Pacotes
 
@@ -38,4 +38,4 @@ Note que essa visão detalhada é apenas um escopo inicial e ainda sera refatora
 
 |   Versão  |    Data   | Descrição | Autor(es) | Revisor(es)|
 | --------- | --------- | --------- | --------- | ---------- |
-|   `1.0`   | 08/07/2023| Criação da página | [João Maior](https://github.com/Jvsoutomaior) | - |
+|   `1.0`   | 08/07/2023| Criação da página | [João Maior](https://github.com/Jvsoutomaior) | [Israel Thalles](https://github.com/IsraelThalles) |
