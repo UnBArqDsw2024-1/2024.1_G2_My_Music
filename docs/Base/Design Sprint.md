@@ -67,7 +67,7 @@ Questionário: Para coletar feedback quantitativo e métricas de desempenho do p
 | ![Miro](../Assets/miro.png){width=100}   | Miro          | Colaboração em diagramas, prototipagem e brainstorming |
 | ![Lucidchart](../Assets/lucidchart.png){width=100}  | Lucidchart    | Criação de diagramas, fluxogramas e wireframes      |
 | ![Discord](../Assets/discord.png){width=100} | Discord       | Comunicação em tempo real, organização de equipes e compartilhamento de informações |
-| ![VSCode](..Assets/vscode.png){width=100}  | VS Code       | Desenvolvimento de software, edição de código-fonte  |
+| ![VSCode](../Assets/vscode.png){width=100}  | VS Code       | Desenvolvimento de software, edição de código-fonte  |
 | ![Whatsapp](../Assets/wpp.png){width=100}  | Whatsapp      | Comunicação em equipe, compartilhamento de informações |
 | ![Github](../Assets/github.png){width=100}  | Github        | Gerenciamento de código-fonte, controle de versão e colaboração em projetos |
 | ![Canva](../Assets/canva.png){width=100}  | Canva         | Design gráfico, criação de materiais visuais         |
