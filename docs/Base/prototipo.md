@@ -17,8 +17,6 @@ O modelo do nosso protótipo de alta fidelidade pode ser visto completo através
 
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FRgy9ZXiV9unFaOLX2vY4pF%2FProt%25C3%25B3tipo-MyMusic%3Fnode-id%3D0-1%26t%3DOd9EekrWcF3rvdEx-1" allowfullscreen></iframe>
 
-**Fonte**: [Luis Miranda](https://github.com/LuisMiranda10) & [Vinícius Mendes](https://github.com/yabamiah)
-
 ## Referências
 
 1. BARBOSA, Simone; DINIZ, Bruno. Interação Humano-Computador, Editora Elsevier, Rio de Janeiro, 2010. Acesso em: 15/06/2024.
