@@ -29,4 +29,4 @@ O modelo do nosso protótipo de alta fidelidade pode ser visto completo através
 
 |   Versão  |    Data   | Descrição | Autor(es) | Revisor(es)|
 | --------- | --------- | --------- | --------- | ---------- |
-|   `1.0`   | 15/06/2023| Criação da página | [Luis Miranda](https://github.com/LuisMiranda10) & [Vinícius Mendes](https://github.com/yabamiah)|  |
+|   `1.0`   | 15/06/2023| Criação da página | [Luis Miranda](https://github.com/LuisMiranda10) & [Vinícius Mendes](https://github.com/yabamiah)| [Limírio Guimarães](https://github.com/LimirioGuimaraes) |
