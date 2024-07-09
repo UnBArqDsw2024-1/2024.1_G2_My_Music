@@ -14,7 +14,7 @@ Para realizar a modelagem do Diagrama de Componentes, a equipe utilizou a ferram
 
 ## Diagrama de Componentes
 
-Logo abaixo é apresentado o diagrama (figura 1) em que representa o relacionamento entre diferentes componentes de subsistemas independentes.
+Logo abaixo é apresentado o diagrama (figura 1) em que representa o relacionamento entre diferentes componentes de subsistemas.
 
 ![Diagrama](../Assets/DiagramaComponentes.png)
 
