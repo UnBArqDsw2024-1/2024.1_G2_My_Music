@@ -18,7 +18,7 @@ Logo abaixo é apresentado o diagrama (figura 1) em que representa o relacioname
 
 ![Diagrama](../Assets/DiagramaComponentes.png)
 
-**Fonte**: [Luis Miranda](https://github.com/LuisMiranda10) & [Milena Baruc](https://github.com/MilenaBaruc)
+**Figura 1** - Diagrama de Componentes. (Fonte: Luis Miranda & Milena Baruc, 2024)
 
 ## Referências Bibliográficas
 
