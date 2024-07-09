@@ -13,38 +13,30 @@ Logo abaixo você encontra as figuras que representam atividades do aplicativo M
 ### Diagrama de Cadastro
 A figura 1 a seguir representa a modelagem da atividade de cadastro no aplicativo My Music.
 
-**Figura 1** - Diagrama de cadastro
+**Figura 1** - Diagrama de cadastro. (Fonte: Vinícius Mendes, 2024)
 
 ![Figura 1](../Assets/DiagramadeAtividades-Cadastro.png)
-
-Fonte: Vinícius Mendes, 2024.
 
 ### Diagrama de Login
 A figura 2 a seguir representa a modelagem da atividade de login no aplicativo My Music.
 
-**Figura 2** - Diagrama de login
+**Figura 2** - Diagrama de login. (Fonte: Vinícius Mendes, 2024)
 
 ![Figura 2](../Assets/DiagramadeAtividades-Login.png)
-
-Fonte: Vinícius Mendes, 2024.
 
 ### Diagrama de Ouvir Música
 A figura 3 a seguir representa a modelagem da atividade de ouvir música, seja acessando-a diretamente, ou indiretamente através de artista/álbum/playlist ou nas músicas recentes do usuário.
 
-**Figura 3** - Diagrama de ouvir música
+**Figura 3** - Diagrama de ouvir música. (Fonte: Vinícius Mendes, 2024)
 
 ![Figura 3](../Assets/DiagramadeAtividades-Ouvirmusica.png)
-
-Fonte: Vinícius Mendes, 2024.
 
 ### Diagrama de Criar Playlist
 A figura 4 a seguir representa a modelagem da atividade de criar playlist.
 
-**Figura 4** - Diagrama de criar playlist
+**Figura 4** - Diagrama de criar playlist. (Fonte: Vinícius Mendes, 2024)
 
 ![Figura 4](../Assets/DiagramadeAtividades-Criarplaylist.png)
-
-Fonte: Vinícius Mendes, 2024.
 
 ## Bibliografia 
 > The Unified Modeling Languag Org. Activity Diagrams, 2011. Disponível em: https://www.uml-diagrams.org/activity-diagrams.html. Acesso em: 12 de Abril.
