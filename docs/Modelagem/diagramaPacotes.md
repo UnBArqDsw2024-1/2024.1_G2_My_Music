@@ -16,19 +16,19 @@ Para realizar a modelagem do Diagrama de Pacotes, a equipe utilizou a ferramenta
 
 ### Visão Geral
 
-Logo abaixo é apresentado o diagrama (figura 1) em que representa a visão geral do diagrama de pacotes
+Na figura 1 é apresentado o diagrama (figura 1) em que representa a visão geral do diagrama de pacotes
 
-![Diagrama](Imagens/Diagrama_de_Pacotes_1.png)
+![Figura 1: Diagrama de Pacote geral. (Fonte: João, 2024)](Imagens/Diagrama_de_Pacotes_1.png)
 
-**Fonte**: [João Maior](https://github.com/Jvsoutomaior)
+**Fonte**: João Maior
 
 ### Visão mais detalhada do Frontend e Backend
 
-![Diagrama de Pacotes Frontend com Backend](Imagens/Diagrama_de_Pacotes_2.png)
+![Figura 2: Diagrama de Pacotes do Frontend com Backend. (Fonte: João, 2024)](Imagens/Diagrama_de_Pacotes_2.png)
 
-Note que essa visão detalhada é apenas um escopo inicial e ainda sera refatorado ao longo do desenvolvimento do projeto, note tambem que nessa visão não inclui o a camada de banco de dados.
+Note que a Figura 1 e 2 é apenas um escopo inicial e ainda será refatorado ao longo do desenvolvimento do projeto, note também que a Figura 2 não inclui a camada de banco de dados.
 
-**Fonte**: [João Maior](https://github.com/Jvsoutomaior)
+**Fonte**: João Maior
 
 ## Referências Bibliográficas
 
@@ -38,4 +38,5 @@ Note que essa visão detalhada é apenas um escopo inicial e ainda sera refatora
 
 |   Versão  |    Data   | Descrição | Autor(es) | Revisor(es)|
 | --------- | --------- | --------- | --------- | ---------- |
-|   `1.0`   | 08/07/2023| Criação da página | [João Maior](https://github.com/Jvsoutomaior) | [Israel Thalles](https://github.com/IsraelThalles) |
+|   `1.0`   | 08/07/2023| Criação da página | [João Maior](https://github.com/Jvsoutomaior) | [Israel Thalles](https://github.com/IsraelThalles) e [Ana Luiza Rodrigues](https://github.com/analuizargds) |
+|   `1.1`   | 09/07/2023| correção de alguns erros de português e algumas melhorias| [João Maior](https://github.com/Jvsoutomaior) | [Israel Thalles](https://github.com/IsraelThalles) e [Ana Luiza Rodrigues](https://github.com/analuizargds)  |
