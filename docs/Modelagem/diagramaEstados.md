@@ -44,4 +44,4 @@ Fonte: Lucas Vilela, Henrique Hida, Luiz Guilherme, 2024.
 
 | Versão | Data       | Descrição                                   | Autor(es)       | Revisor(es) |
 | ------ | ---------- | ------------------------------------------- | --------------- | ----------- |
-| 1.0    | 08/07/2024 | Criação do documento Diagrama de Estados | [Lucas Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida), [Luiz Guilherme](https://github.com/luizpettengill)  |             |     |
+| 1.0    | 08/07/2024 | Criação do documento Diagrama de Estados | [Lucas Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida), [Luiz Guilherme](https://github.com/luizpettengill)  |             |  [Carlos Eduardo](https://github.com/CarlosEduardoMendesdeMesquita)   |
