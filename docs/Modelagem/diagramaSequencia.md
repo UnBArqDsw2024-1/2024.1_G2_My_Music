@@ -52,4 +52,4 @@ Logo abaixo são apresentados alguns diagramas de sequência (figura 1) que repr
 
 |   Versão  |    Data   | Descrição | Autor(es) | Revisor(es)|
 | --------- | --------- | --------- | --------- | ---------- |
-|   `1.0`   | 08/07/2023| Criação da página | [Limírio Guimarães](https://github.com/LimirioGuimaraes) | *--*|
+|   `1.0`   | 08/07/2023| Criação da página | [Limírio Guimarães](https://github.com/LimirioGuimaraes) | [Carlos Nascimento](https://github.com/CDGodoy)|
