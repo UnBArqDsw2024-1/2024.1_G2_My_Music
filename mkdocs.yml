@@ -41,6 +41,7 @@ nav:
     - 1. Desenho de Software (Base): Base/1.Base.md
     - 1.1. Módulo Projeto Não Orientado a Abordagens Específicas:
       - 1.1.1. Design Sprint: Base/Design Sprint.md
+        - 1.1.1.1. Prototipo: Base/prototipo.md
       - 1.1.2. Técnicas de Elicitação:
         - 1.1.2.1. Brainstorming: Base/brainstorming.md
         - 1.1.2.2. Entrevista: Base/entrevista.md
