@@ -1,12 +1,6 @@
-# Glossário
 Um artefato de glossário em arquitetura e desenho de software é um recurso vital que tem como objetivo definir os termos técnicos, conceitos e elementos específicos usados durante o processo de desenvolvimento de software em um projeto.
 
 Este documento tem como objetivo fornecer uma lista de termos chave úteis aplicados no contexto do nosso projeto, cada item neste glossário é composto por: um índice, um termo ou palavra-chave e uma definição (resumo).
-
-## Integrantes
-| Data       | Intregante         | Matrícula | Atividades                                             | 
-| ---------- | ------------------ | --------- | ------------------------------------------------------ |
-| 07/04/2024 | Lucas Alves Vilela | 211062141 | Criação do glossário, cadastro dos 122 termos iniciais |
 
 ## Termos-chave
 ### 1 - Álbum:
@@ -378,7 +372,7 @@ Este documento tem como objetivo fornecer uma lista de termos chave úteis aplic
 
 | Versão | Data       | Descrição                         | Autor(es)       | Revisor(es) |
 | ------ | ---------- | --------------------------------- | --------------- | ----------- |
-| 1.0    | 07/04/2024 | Criação do glossário, cadastro dos 122 termos iniciais | Lucas Alves Vilela | Vinícius Mendes |
+| 1.0    | 07/04/2024 | Criação do glossário, cadastro dos 122 termos iniciais | [Lucas Alves Vilela](https://github.com/Lucas-AV) | [Vinícius Mendes](https://github.com/yabamiah) |
 
 
 

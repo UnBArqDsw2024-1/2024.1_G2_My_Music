@@ -1,5 +1,3 @@
-# 4.1. Módulo Estilos e Padrões Arquiteturais
-
 Foco_01: Arquitetura de Software
 
 Entrega Mínina:  Especificação de 2 Visões do DAS (ESCOPO: necessariamente a Lógica, e mais uma (Processo; Implementação; Implantação ou Dados)).

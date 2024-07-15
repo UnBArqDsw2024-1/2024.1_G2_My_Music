@@ -12,21 +12,21 @@ Para construção do Rich Picture utilizado nas figuras 1 foi utilizada a ferram
 
 <center>
 
-**Figura 1** - Rich Picture
-
 ![Rich Picture](./images/RichPicture.png)
 
-**Fonte:** Milena Baruc.
+<div style="text-align: center">
+  <p>Figura 1: Rich Picture. (Fonte: Milena Baruc, 2024)</p>
+</div>
 
 </center>
 
 <center>
 
-**Figura 1** - Legenda
-
 ![Legenda](./images/RichPictureLEG.png)
 
-**Fonte:** Milena Baruc.
+<div style="text-align: center">
+  <p>Figura 2: Legenda. (Fonte: Milena Baruc, 2024)</p>
+</div>
 
 </center>
 
@@ -38,4 +38,5 @@ Para construção do Rich Picture utilizado nas figuras 1 foi utilizada a ferram
 
 | Versão | Data       | Descrição                         | Autor(es)       | Revisor(es) |
 | ------ | ---------- | --------------------------------- | --------------- | ----------- |
-| 1.0    | 07/04/2024 | Criação do documento rich picture | Milena Baruc    |  Vinícius Mendes|
+| 1.0    | 07/04/2024 | Criação do documento rich picture | [Milena Baruc](https://github.com/MilenaBaruc)    |  [Vinícius Mendes](https://github.com/yabamiah)|
+| 1.1    | 15/07/2024 | Padronização das legendas | [Ana Luíza Rodrigues](https://github.com/analuizargds)    |  - |

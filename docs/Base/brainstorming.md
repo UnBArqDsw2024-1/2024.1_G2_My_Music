@@ -8,14 +8,12 @@ O brainstorming é uma técnica criativa que visa estimular o surgimento de idei
 
 Simone e Silva no livro Interação Humano-Computador e Experiência do Usuário¹, recomenda que uma seção de brainstorming envolva entre 8 e 12 usuários finais, de preferência com perfil semelhante. No entanto por conta da falta de disponibilidade dos usuários só foi possível realizar a dinâmica com 6 usuários.
 
-<font size="3"><p style="text-align: center">Tabela 1: Participantes.</p></font>
-
 <center>
 
 Nome| Função|
 -----|---------|
 [Limirio Guimarães](https://github.com/LimirioGuimaraes) |  Moderador
-[Luis Eduardo](https://github.com/LuisMiranda10) |  Secretário
+[Luis Miranda](https://github.com/LuisMiranda10) |  Secretário
 [Israel Thalles ](https://github.com/IsraelThalles) |  Secretário
 <span style = "color: blue"> Breno Alexandre</span>      |  Usuário
 <span style = "color: blue"> Breno Queiroz</span>      |  Usuário
@@ -24,12 +22,11 @@ Nome| Função|
 <span style = "color: blue"> João Barreto </span>     |  Usuário
 <span style = "color: blue"> Mayara Alves</span>      |  Usuário
 
-
-
+<div style="text-align: center">
+  <p>Tabela 1: Participantes. (Fonte: Limirio Guimarães, 2024)</p>
+</div>
 
 </center>
-
-<font size="3"><p style="text-align: center">Fonte: [Limirio Guimarães](https://github.com/LimirioGuimaraes).</p></font>
 
 ### Funções
 
@@ -58,8 +55,6 @@ A técnica de brainstorming foi empregada para coletar dados e elicitar os requi
 
 ## Resultados
 
-<font size="3"><p style="text-align: center">Tabela 2: Resultados Obtidos.</p></font>
-
 <center>
 
 | Usuário | Gostaria que tivesse | Navegação no aplicativo | Acessibilidade | Clareza de informações | Funcionalidade iterativas|
@@ -70,11 +65,13 @@ A técnica de brainstorming foi empregada para coletar dados e elicitar os requi
 | Janaína Rabelo        |  Uma forma de salvar a playlist                    | Concorda com sugestões de outros membros                 | Opção de modo escuro                   |  Incluir uma barra de pesquisa bem localizada                |  Possibilidade de criar várias pastas dentro de uma Playlist              |                                                                                              
 | João Barreto         |  Repetição aleatória de músicas                    | Concorda com sugestões de outros membros                 |                    | Concorda com sugestões de outros membros                 |  QR code para compartilhar uma música                      |                                                                           
 | Mayara Alves        | Uma forma de ouvir música de maneira offline                     | Concorda com sugestões de outros membros                 |                    | Concorda com sugestões de outros membros                |  Incluir um botão para que conseguir descobrir a música que está tocando no som ambiente                     |                                                            
- 
 
 </center>
 
-<font size="3"><p style="text-align: center">Fonte: [Luis Miranda](https://github.com/LuisMiranda10).</p></font>
+<div style="text-align: center">
+  <p>Tabela 2: Resultados Obtidos. (Fonte: Luis Miranda, 2024)</p>
+</div>
+
 
 ## Bibliografia
 
@@ -84,11 +81,12 @@ A técnica de brainstorming foi empregada para coletar dados e elicitar os requi
 
 > <a id=“RP1” href=“#TEC1”>1.</a> Barbosa, S. D. J.; Silva, B. S. da; Silveira, M. S.; Gasparini, I.; Darin, T.; Barbosa, G. D. J. (2021) Interação Humano-Computador e Experiência do usuário.
 
-## 📑 Histórico de Versões
+## Histórico de Versões
 
 Versão  | Data | Descrição | Autor(es) | Revisor(es)
 ---------- | -----  | ------ | ---------- | ----------
- `1.0` | 07/04/2024 | Adicionado a Introdução, explicação da técnica de elicitação, definação de papéis e detalhamento da metodologia utilizada. |[Limirio Guimarães](https://github.com/LimirioGuimaraes)  | [Vinícius Mendes](https://github.com/yabamiah)
- `1.1` | 07/04/2024 | Adicionado os resultados obtidos |[Luis Miranda](https://github.com/LuisMiranda10) e [Israel Thalles](https://github.com/IsraelThalles) | [Vinícius Mendes](https://github.com/yabamiah)
+ 1.0 | 07/04/2024 | Adicionado a Introdução, explicação da técnica de elicitação, definação de papéis e detalhamento da metodologia utilizada. |[Limirio Guimarães](https://github.com/LimirioGuimaraes)  | [Vinícius Mendes](https://github.com/yabamiah)
+ 1.1 | 07/04/2024 | Adicionado os resultados obtidos |[Luis Miranda](https://github.com/LuisMiranda10) e [Israel Thalles](https://github.com/IsraelThalles) | [Vinícius Mendes](https://github.com/yabamiah)
+ 1.2 | 12/07/2024 | Padronização da legenda das tabelas |[Ana Luíza Rodrigues](https://github.com/analuizargds) | -
  
  

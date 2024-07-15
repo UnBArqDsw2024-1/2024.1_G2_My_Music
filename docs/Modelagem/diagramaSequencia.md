@@ -1,5 +1,3 @@
-# Diagrama de Sequência
-
 ## Introdução
 
 O diagrama de sequência é uma ferramenta essencial na modelagem dinâmica da UML (Unified Modeling Language), amplamente utilizada devido ao seu foco nas linhas de vida – representações dos processos e objetos que coexistem durante uma interação – e nas mensagens trocadas entre eles para realizar uma determinada função. Este tipo de diagrama ilustra de forma clara e concisa a ordem em que as mensagens são enviadas entre os objetos, facilitando a visualização do fluxo de comunicação.
@@ -12,44 +10,34 @@ Para realizar a modelagem do Diagrama de Sequência, a equipe utilizou a ferrame
 
 ## Diagrama de Sequência
 
-Logo abaixo são apresentados alguns diagramas de sequência (figura 1) que representam alguns casos de uso do aplicativo.
+Logo abaixo são apresentados alguns diagramas de sequência que representam alguns casos de uso do aplicativo.
 <center>
-<font size="3"><p style="text-align: center">Figura 1: Representa o caso do usuário realizar um cadastro no MyMusic </p></font>
 
 ![Diagrama](../Assets/SequenceDiagram1.jpg)
-
-**Fonte**: [Limírio Guimarães](https://github.com/LimirioGuimaraes)
-
-<font size="3"><p style="text-align: center">Figura 2: Representa o caso do usuário realizar o login no MyMusic </p></font>
-
+<font size="3"><p style="text-align: center">Figura 1: Representa o caso do usuário realizar um cadastro no MyMusic. (Fonte: Limírio Guimarães, 2024) </p></font>
 
 ![Diagrama](../Assets/SequenceDiagram2.jpg)
-
-**Fonte**: [Limírio Guimarães](https://github.com/LimirioGuimaraes)
-
-<font size="3"><p style="text-align: center">Figura 3: Representa o caso do usuário realizar a busca das músicas de um determinado artista </p></font>
-
+<font size="3"><p style="text-align: center">Figura 2: Representa o caso do usuário realizar o login no MyMusic. (Fonte: Limírio Guimarães, 2024) </p></font>
 
 ![Diagrama](../Assets/SequenceDiagram3.jpg)
-
-**Fonte**: [Limírio Guimarães](https://github.com/LimirioGuimaraes)
-
-<font size="3"><p style="text-align: center">Figura 4: Representa o caso do usuário realizar a reprodução de uma faixa de uma playlist presente no MyMusic </p></font>
-
+<font size="3"><p style="text-align: center">Figura 3: Representa o caso do usuário realizar a busca das músicas de um determinado artista. (Fonte: Limírio Guimarães, 2024) </p></font>
 
 ![Diagrama](../Assets/SequenceDiagram4.jpg)
+<font size="3"><p style="text-align: center">Figura 4: Representa o caso do usuário realizar a reprodução de uma faixa de uma playlist presente no MyMusic. (Fonte: Limírio Guimarães, 2024) </p></font>
 
-**Fonte**: [Limírio Guimarães](https://github.com/LimirioGuimaraes)
 </center>
 
-## Referências Bibliográficas
+## Bibliografia
 
-1. IBM. Diagramas de Sequência. IBM, 2024. Disponível em: https://www.ibm.com/docs/pt-br/rsm/7.5.0?topic=uml-sequence-diagrams. Acesso em: 08 jul. 2024.
-2. LUCIDCHART. Diagramas de Sequência. Lucidchart, 2024. Disponível em: https://www.lucidchart.com/pages/pt/o-que-e-diagrama-de-sequencia-uml. Acesso em: 08 jul. 2024.
-3. Bóson Treinamentos. Diagrama de Sequência UML. YouTube, 2023. Disponível em: https://youtu.be/LeV6RO-6Tn4?si=3wu3DmQJCnZKXue1. Acesso em: 08 jul. 2024.
+> IBM. Diagramas de Sequência. IBM, 2024. Disponível em: https://www.ibm.com/docs/pt-br/rsm/7.5.0?topic=uml-sequence-diagrams. Acesso em: 08 jul. 2024.
+
+> LUCIDCHART. Diagramas de Sequência. Lucidchart, 2024. Disponível em: https://www.lucidchart.com/pages/pt/o-que-e-diagrama-de-sequencia-uml. Acesso em: 08 jul. 2024.
+
+> Bóson Treinamentos. Diagrama de Sequência UML. YouTube, 2023. Disponível em: https://youtu.be/LeV6RO-6Tn4?si=3wu3DmQJCnZKXue1. Acesso em: 08 jul. 2024.
 
 ## Histórico de versões 
 
 |   Versão  |    Data   | Descrição | Autor(es) | Revisor(es)|
 | --------- | --------- | --------- | --------- | ---------- |
-|   `1.0`   | 08/07/2023| Criação da página | [Limírio Guimarães](https://github.com/LimirioGuimaraes) | [Carlos Nascimento](https://github.com/CDGodoy)|
+|   1.0   | 08/07/2023| Criação da página | [Limírio Guimarães](https://github.com/LimirioGuimaraes) | [Carlos Nascimento](https://github.com/CDGodoy)|
+|   1.1   | 15/07/2023| Padronização das legendas | [Ana Luíza Rodrigues](https://github.com/analuizargds) | -|

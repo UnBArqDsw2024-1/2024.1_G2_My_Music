@@ -16,28 +16,27 @@ Após a coleta de dados das respostas dos participantes, foram transcritas e del
 
 ### Cronograma executado
 
-**Tabela 1** - Cronograma executado para a Entrevista (Elicitação de Requisitos)
-
 | Data       | Horário       | Entrevistado         | Entrevistador   | Escrivão        | Entrevista                           |
 | ---------- | ------------- | -------------------- | --------------- | --------------- | ------------------------------------ |
 | 06/04/2024 | 11:40 - 11:55 | Lucas de Paula       | Vinícius Mendes | Luis Miranda    | [Link](https://youtu.be/cGiAc7GOP58) |
 | 06/04/2024 | 13:00 - 13:15 | Mateus Souza Santana | Vinícius Mendes | Vinícius Mendes | [Link](https://youtu.be/cJttnDfV3DA) |
 
-
-Fonte: Vinícius Mendes, 2024.
+<div style="text-align: center">
+  <p>Tabela 1: Cronograma executado para a Entrevista (Elicitação de Requisitos). (Fonte: Vinícius Mendes, 2024)</p>
+</div>
 
 ### Perfil dos Entrevistados
 
 A tabela 2 contém as informações dos entrevistados, que foram no geral homens jovens e estudantes.
-
-**Tabela 2** - Informações dos perfis entrevistados
 
 | Entrevistado | Gênero | Idade | Ocupação |
 |--------------|--------|-------|----------|
 |Lucas de Paula| Homem cis| 18| Estudante |
 |Mateus Souza Santana|Homem cis| 23 | Estudante e estágio na CAESB|
 
-Fonte: Vinícius Mendes, 2024.
+<div style="text-align: center">
+  <p>Tabela 2: Informações dos perfis entrevistados. (Fonte: Vinícius Mendes, 2024)</p>
+</div>
 
 ## Roteiro
 A estrutura da entrevista realizada foi de:
@@ -48,8 +47,6 @@ A estrutura da entrevista realizada foi de:
  - Conclusão - Final da entrevistado onde o entrevistador e o escrivão agradeceram o entrevistado pelo seu tempo e o término da gravação e entrevista. 
 
 Logo abaixo será apresentado a tabela 3 que contém a estrutura das perguntas utilizadas para conduzir a entrevista.
-
-**Tabela 3** - Estrutura das perguntas
 
 | Partes     | Perguntas                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -62,13 +59,12 @@ Logo abaixo será apresentado a tabela 3 que contém a estrutura das perguntas u
 | Por quê    | 1. Os aplicativos de escutar música impactaram você de alguma forma? (Pergunta aberta)<br>    <br>2. Você acha que uma experiência personalizada ( focada para seus gostos ) em um aplicativo de música é importante? (Sim/Não)                                                                                                                                                                                    |
 | Comentário | 1. Você sentiu que deixamos de aborda alguma parte das suas experiências/necessidades? Se sim, quais?                                                      |
 
-
-Fonte: Vinícius Mendes e Luis Miranda, 2024.
+<div style="text-align: center">
+  <p>Tabela 3: Estrutura das perguntas. (Fonte: Vinícius Mendes e Luis Miranda, 2024)</p>
+</div>
 
 ## Requisitos Elicitados
 Após a realização da entrevista com os usuários de aplicativos de músicas, foi possível elicitar requisitos apresentados na Tabela 4. Onde cada requisito é classificado por uma sigla formada por "ENT" + um número, em que "ENT" é uma sigla para entrevista, e para representar o tipo de requisito, será usado as siglas "RF" ou "RNF" que representam os Requisitos Funcionais e Não Funcionais. 
-
-**Tabela 4** - Requisitos Elicitados
 
 | Identificador | Requisito | Tipo |
 | ------------- | --------- | ---- |
@@ -96,9 +92,11 @@ Após a realização da entrevista com os usuários de aplicativos de músicas, 
 | ENT22              | Garantir que as músicas/PlayLists baixadas estejam disponíveis         | RFN     |
 | ENT23              | Interface intuitiva para busca/filtragem de música         | RFN     |
 
-Fonte: Luis Miranda, 2024.
+<div style="text-align: center">
+  <p>Tabela 4: Requisitos elicitados. (Fonte: Luis Miranda, 2024)</p>
+</div>
 
-## Referência Bibliográfica
+## Referênciaa Bibliográfica
 
 > SEIDMAN, I. Interviewing as Qualitative Research: a guide for researchers in Education and the Social Sciences. New York, NY: Teachers College Press, 1998
 
@@ -106,4 +104,5 @@ Fonte: Luis Miranda, 2024.
 
 | Versão | Data       | Descrição           | Autor(es)                      | Revisor(es) |
 | ------ | ---------- | ------------------- | ------------------------------ | ----------- |
-| 1.0    | 06/04/2024 | Criação do artefato | Vinícius Mendes e Luis Miranda | João Vítor  |
+| 1.0    | 06/04/2024 | Criação do artefato | [Vinícius Mendes](https://github.com/yabamiah) e [Luis Miranda](https://github.com/LuisMiranda10) | [João Vítor](https://github.com/Jvsoutomaior)  |
+| 1.1    | 12/07/2024 | Padronização das legendas das tabelas | [Ana Luíza Rodrigues](https://github.com/analuizargds) | -  |

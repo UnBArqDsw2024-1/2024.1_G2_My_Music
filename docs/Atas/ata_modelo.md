@@ -1,6 +1,6 @@
 # Ata da  X° reunião da disciplina "Arquitetura e Desenho de Software"
 
-[//]: # (**Ordem do escrivão da ata:** Ana Luíza, Carlos Daniel, Carlos Eduardo, Henrique Sandoval, Israel Thalles, João Vítor, Limíro Guimarães, Lucas Alves, Luís Eduardo, Luiz Guilherme, Milena Baruc, Rafael Xavier, Vinícius Mendes.)
+[//]: # (**Ordem do escrivão da ata:** Ana Luíza, Carlos Daniel, Carlos Eduardo, Henrique Hida, Israel Thalles, João Vítor, Limíro Guimarães, Lucas Alves Vilela, Luís Miranda, Luiz Guilherme, Milena Baruc, Rafael Xavier, Vinícius Mendes.)
 
 **Data**:   xx/xx/2024 **Local**: Teams <br>
 **Projeto**: My_music <br>

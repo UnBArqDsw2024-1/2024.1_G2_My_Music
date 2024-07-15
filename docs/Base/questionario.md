@@ -1,4 +1,3 @@
-# Questionário
 ## Introdução
 O questionário é uma das principais técnicas tradicionais de elicitação de requisitos, utilizado quando já existe um conhecimento prévio sobre o domínio de negócio a ser abordado e um grande número de usuários, além também de possibilitar análises a partir de estatísticas, apesar de ter uma desvantagem que é a limitação do universo de respostas e pouca interação entre a equipe e os usuário. O questionário é documento estruturado em questões abertas e fechadas, para assim coletar informações organizadas e quantificáveis, o que auxilia na interpretação dos dados obtidos. E como foi dito no começo, o questionário permite que um grande número de usuários consigam responder de forma eficiente.
 
@@ -7,8 +6,6 @@ A equipe realizou a elaboração de um questionário online através do serviço
 
 ### Perguntas Realizadas
 A tabela 1 contém a seleção das perguntas utilizadas no questionário.
-
-**Tabela 1** - Perguntas do questionário
 
 | ID  | Pergunta                                                      |
 | --- | ------------------------------------------------------------- |
@@ -21,7 +18,9 @@ A tabela 1 contém a seleção das perguntas utilizadas no questionário.
 | 7   | O que você espera de um aplicativo de música?                 |
 | 8   | Você tem alguma outra funcionalidade que gostaria de sugerir? |
 
-Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
+<div style="text-align: center">
+  <p>Tabela 1: Perguntas do questionário. (Fonte: <a href="https://forms.gle/qj2o5261fd45MaEK8">Formulário feito pelo grupo 2, 2024)</a></p>
+</div>
 
 ### Resultado do questionário
 
@@ -34,58 +33,59 @@ De acordo com o gráfico apresentado na figura 1 que representa a idade dos usu�
 - 3 usuários possuem até 18 anos idade
 - 1 usuário possui 61 ou mais anos de idade
 
-**Figura 1** - Pergunta 1.
-
 ![](./images/questao1.png)
 
-Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
+<div style="text-align: center">
+  <p>Figura 1: Pergunta 1. (Fonte: <a href="https://forms.gle/qj2o5261fd45MaEK8">Formulário feito pelo grupo 2, 2024)</a></p>
+</div>
 
 #### Questão 2 - Qual a sua escolaridade?
 De acordo com o gráfico apresentado na figura 2 que representa o grau de escolaridade dos usuário, os resultados foram:
 - 43 usuários possuem o ensino superior completo ou ainda estão cursando
 - 7 usuários possuem o ensino médio completo ou ainda estão cursando
 
-**Figura 2** - Pergunta 2.
-
 ![](./images/questao2.png)
-Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
+
+<div style="text-align: center">
+  <p>Figura 2: Pergunta 2. (Fonte: <a href="https://forms.gle/qj2o5261fd45MaEK8">Formulário feito pelo grupo 2, 2024)</a></p>
+</div>
 
 #### Questão 3 - Qual gênero você se identifica?
 A quantidade de usuários que se identificam do gênero feminino são 25 usuários, 24 usuários se identificam com o gênero masculino 1 prefere não dizer.
 
-**Figura 3** - Pergunta 3.
-
 ![](./images/questao3.png)
 
-Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
+<div style="text-align: center">
+  <p>Figura 3: Pergunta 3. (Fonte: <a href="https://forms.gle/qj2o5261fd45MaEK8">Formulário feito pelo grupo 2, 2024)</a></p>
+</div>
 
 #### Questão 4 - Quais seus gostos musicais?
 De acordo com a figura 4, o gênero musical mais votado é o Pop com 38 usuários.
 
-**Figura 4** - Pergunta 4.
-
 ![](./images/questao4.png)
 
-Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
+<div style="text-align: center">
+  <p>Figura 4: Pergunta 4. (Fonte: <a href="https://forms.gle/qj2o5261fd45MaEK8">Formulário feito pelo grupo 2, 2024)</a></p>
+</div>
 
 #### Questão 5 - Como você mais consome música no dia a dia?
 Analisando a figura 5, a maioria dos usuários consomem música por aplicativos de streaming de música, e o meio menos utilizado é o de mídia física.
 
-**Figura 5** - Pergunta 5
-
 ![](./images/questao5.png)
 
-Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
+<div style="text-align: center">
+  <p>Figura 5: Pergunta 5. (Fonte: <a href="https://forms.gle/qj2o5261fd45MaEK8">Formulário feito pelo grupo 2, 2024)</a></p>
+</div>
 
 
 #### Questão 6 - Como você descobre novas músicas?
 De acordo com a figura 6, a maioria dos usuários (21 pessoas) descobrem músicas novas a partir de recomendações automáticas de aplicativos de música.
 
-**Figura 6** - Pergunta 6
-
 ![](./images/questao6.png)
 
-Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
+<div style="text-align: center">
+  <p>Figura 6: Pergunta 6. (Fonte: <a href="https://forms.gle/qj2o5261fd45MaEK8">Formulário feito pelo grupo 2, 2024)</a></p>
+</div>
 
 #### Questão 7 - O que você espera de um aplicativo de streaming de música?
 De acordo com a figura 7, as funcionalidades que os usuários mais esperam de um aplicativo de música são (mais da metade dos usuários (25) responderam como muito relevante)
@@ -95,11 +95,11 @@ De acordo com a figura 7, as funcionalidades que os usuários mais esperam de um
 - Montar playlist's, 33 usuários julgaram como muito relevante.
 - Montar uma fila de reprodução, 27 usuários julgaram como muito relevante.
 
-**Figura 7** - Pergunta 7
-
 ![](./images/questao7.png)
 
-Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
+<div style="text-align: center">
+  <p>Figura 7: Pergunta 7. (Fonte: <a href="https://forms.gle/qj2o5261fd45MaEK8">Formulário feito pelo grupo 2, 2024)</a></p>
+</div>
 
 #### Questão 8 - Você tem alguma outra funcionalidade que gostaria de sugerir?
 Analisando a figura 8, 12 usuários sugeriram outras funcionalidades além do que o formulário já cobria, que foram:
@@ -117,11 +117,11 @@ Analisando a figura 8, 12 usuários sugeriram outras funcionalidades além do qu
 - Chat de texto para poder recomendar músicas para amigos;
 - playlist de download automática pelas mais ouvidas, com opção de quantas musicas quer “playlist offline”;
 
-**Figura 8** - Pergunta 8
-
 ![](./images/questao8.png)
 
-Fonte: [Formulário](https://forms.gle/qj2o5261fd45MaEK8) feito pelo grupo 2, 2024.
+<div style="text-align: center">
+  <p>Figura 8: Pergunta 8. (Fonte: <a href="https://forms.gle/qj2o5261fd45MaEK8">Formulário feito pelo grupo 2, 2024)</a></p>
+</div>
 
 ## Definição do Perfil de Usuário
 
@@ -133,8 +133,8 @@ Após a análise dos resultados obtidos identificamos o seguinte perfil para os 
 - Experiência: A maior utiliza aplicativos de música para ouvir/descobrir músicas.
 - Tarefas primárias: Ouvir música online e offline.
 
-## Referência bibliográfica
->  Google LLC. Google Forms. Disponível em: [https://www.google.com/intl/pt-BR/forms/about/](https://www.google.com/intl/pt-BR/forms/about/). Acesso em: 05/04/2024.
+## Referência Bibliográfica
+>  1. Google LLC. Google Forms. Disponível em: [https://www.google.com/intl/pt-BR/forms/about/](https://www.google.com/intl/pt-BR/forms/about/). Acesso em: 05/04/2024.
 
 ## Bibliografia 
 > Ferreira, Daniel. Métodos e Técnicas de Elicitação de Requisitos e sua Aderência ao CMMi. Pernambuco, Universidade Federal de Pernambuco, 2012. Acesso em: 07/04/2024.
@@ -145,5 +145,6 @@ Após a análise dos resultados obtidos identificamos o seguinte perfil para os 
 
 | Versão | Data       | Descrição                         | Autor(es)       | Revisor(es) |
 | ------ | ---------- | --------------------------------- | --------------- | ----------- |
-| 1.0    | 07/04/2024 | Criação do documento questionário | Vinícius Mendes | João Vítor  |
+| 1.0    | 07/04/2024 | Criação do documento questionário | [Vinícius Mendes](https://github.com/yabamiah) | [João Vítor](https://github.com/Jvsoutomaior)  |
+| 1.1    | 15/07/2024 | Padronização de legendas | [Ana Luíza Rodrigues](https://github.com/analuizargds) | -  |
 

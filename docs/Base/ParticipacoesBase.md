@@ -23,6 +23,10 @@ Módulo Projeto Não Orientado a Abordagens Específicas
 | Rafael Xavier Canabrava                  | 1. Artefato Generalista ([Léxicos](./lexico.md)), Revisão ([5W2H](./5w2h.md), [Mapa mental](./mapa_mental.md)), Design Sprint, BPMN                       | Excelente                                                                      |
 | Vinícius Mendes Martins                  | 2.Elicitação ([Entrevista](./entrevista.md), [Questionário](./questionario.md)), Revisão Geral, Design Sprint, BPMN                                       | Excelente                                                                      |
 
+<div style="text-align: center">
+  <p>Tabela 1: Participações de cada membro na entrega Base. (Fonte: Autores, 2024)</p>
+</div>
+
 ## Histórico de versão
 
 | Versão | Data       | Descrição                           | Autor(es)                                         | Revisor(es)        |
@@ -30,3 +34,4 @@ Módulo Projeto Não Orientado a Abordagens Específicas
 | 1.0    | 07/04/2024 | Criação do documento                | [Lucas Alves Vilela](https://github.com/Lucas-AV) | [Carlos Eduardo]() |
 | 1.1    | 07/04/2024 | Adição de participantes do gitpages | [Lucas Alves Vilela](https://github.com/Lucas-AV) | [Carlos Eduardo]() |
 | 1.2    | 07/04/2024 | Adição de contribuição              | [Lucas Alves Vilela](https://github.com/Lucas-AV) | [Carlos Eduardo]() |
+| 1.3    | 12/07/2024 | Adição de legenda na tabela              | [Ana Luíza Rodrigues](https://github.com/analuizargds) | - |

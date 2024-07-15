@@ -1,5 +1,3 @@
-# Diagrama de Componentes
-
 ## Introdução
 
 O diagrama de componentes da UML demonstra a organização das classes em termos de componentes de trabalho e suas interações. Ele especifica como os diferentes componentes estão interligados e quais interfaces eles fornecem e requerem. Esse diagrama é utilizado para modelar dados tanto do código fonte quanto do código executável do software. Mas por que fazer o diagrama? Para responder essa pergunta temos três pontos:
@@ -16,17 +14,18 @@ Para realizar a modelagem do Diagrama de Componentes, a equipe utilizou a ferram
 
 Logo abaixo é apresentado o diagrama (figura 1) em que representa o relacionamento entre diferentes componentes de subsistemas.
 
+<center>
 ![Diagrama](../Assets/DiagramaComponentes.png)
+Figura 1 - Diagrama de Componentes. (Fonte: Luis Miranda e Milena Baruc, 2024)
+</center>
 
-**Figura 1** - Diagrama de Componentes. (Fonte: Luis Miranda & Milena Baruc, 2024)
+## Bibliografia
 
-## Referências Bibliográficas
-
-1. WIKIPEDIA. Diagrama de componentes. Wikipedia, 2024. Disponível em: https://pt.wikipedia.org/wiki/Diagrama_de_componentes. Acesso em: 06 jul. 2024.
-2. Pisani da ArcH. Diagrama de Componentes. YouTube, 2023. Disponível em: https://youtu.be/yjFpwFZHGtw?si=fWfoXAkt2zvV0PuC. Acesso em: 06 jul. 2024.
+> 1. WIKIPEDIA. Diagrama de componentes. Wikipedia, 2024. Disponível em: https://pt.wikipedia.org/wiki/Diagrama_de_componentes. Acesso em: 06 jul. 2024.
+> 2. Pisani da ArcH. Diagrama de Componentes. YouTube, 2023. Disponível em: https://youtu.be/yjFpwFZHGtw?si=fWfoXAkt2zvV0PuC. Acesso em: 06 jul. 2024.
 
 ## Histórico de versões 
 
 |   Versão  |    Data   | Descrição | Autor(es) | Revisor(es)|
 | --------- | --------- | --------- | --------- | ---------- |
-|   `1.0`   | 06/07/2023| Criação da página | [Luis Miranda](https://github.com/LuisMiranda10) & [Milena Baruc](https://github.com/MilenaBaruc) | [Vinícius Mendes](https://github.com/yabamiah)|
+|   1.0   | 06/07/2023| Criação da página | [Luis Miranda](https://github.com/LuisMiranda10) & [Milena Baruc](https://github.com/MilenaBaruc) | [Vinícius Mendes](https://github.com/yabamiah)|

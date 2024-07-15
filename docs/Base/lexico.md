@@ -40,7 +40,7 @@ Os léxicos do My Music, apresentados nas tabelas 3 a 22 foram identificados a p
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Reproduzir música | Tocar música | Iniciar a reprodução de uma faixa de áudio | Permite ao usuário ouvir a música selecionada | Verbo |
 
-Tabela 3: Léxico 1 (Fonte: Rafael)
+Tabela 3: Léxico 1 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -52,7 +52,7 @@ Tabela 3: Léxico 1 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Adicionar à lista de reprodução | Adicionar à fila, Enfileirar | Inserir uma música na lista de reprodução atual | A música é incluída na ordem de reprodução do usuário | Verbo |
 
-Tabela 4: Léxico 2 (Fonte: Rafael)
+Tabela 4: Léxico 2 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -64,7 +64,7 @@ Tabela 4: Léxico 2 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Pesquisar | Buscar | Procurar por uma música específica, artistas ou álbuns | Ajuda o usuário a encontrar músicas, artistas ou álbuns desejados | Verbo |
 
-Tabela 5: Léxico 3 (Fonte: Rafael)
+Tabela 5: Léxico 3 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -76,7 +76,7 @@ Tabela 5: Léxico 3 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Criar playlist | Criar lista de reprodução | Compor uma lista personalizada de músicas | Permite ao usuário organizar suas músicas de acordo com suas preferências | Verbo |
 
-Tabela 6: Léxico 4 (Fonte: Rafael)
+Tabela 6: Léxico 4 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -88,7 +88,7 @@ Tabela 6: Léxico 4 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Compartilhar música | Enviar música | Divulgar uma música para outras pessoas | Permite ao usuário compartilhar músicas com amigos ou em redes sociais | Verbo |
 
-Tabela 7: Léxico 5 (Fonte: Rafael)
+Tabela 7: Léxico 5 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -100,7 +100,7 @@ Tabela 7: Léxico 5 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Favoritar música | Adicionar aos favoritos | Marcar uma música como favorita | Permite ao usuário acessar facilmente suas músicas favoritas | Verbo |
 
-Tabela 8: Léxico 6 (Fonte: Rafael)
+Tabela 8: Léxico 6 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -112,7 +112,7 @@ Tabela 8: Léxico 6 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Modo aleatório | Embaralhar | Reproduzir músicas em uma ordem aleatória | Oferece variedade na reprodução das músicas | Estado |
 
-Tabela 9: Léxico 7 (Fonte: Rafael)
+Tabela 9: Léxico 7 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -124,7 +124,7 @@ Tabela 9: Léxico 7 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Letra da música | Lyrics | Texto com as palavras da música | Permite ao usuário acompanhar a letra enquanto a música é reproduzida | Objeto |
 
-Tabela 10: Léxico 8 (Fonte: Rafael)
+Tabela 10: Léxico 8 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -136,7 +136,7 @@ Tabela 10: Léxico 8 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Configurações de áudio | Ajustes de som | Opções para modificar a qualidade e a equalização do áudio | Permite ao usuário personalizar a experiência sonora | Objeto |
 
-Tabela 11: Léxico 9 (Fonte: Rafael)
+Tabela 11: Léxico 9 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -148,7 +148,7 @@ Tabela 11: Léxico 9 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Álbum | Disco | Coleção de músicas organizadas por um artista ou tema | Facilita a navegação e a descoberta de músicas relacionadas | Objeto |
 
-Tabela 12: Léxico 10 (Fonte: Rafael)
+Tabela 12: Léxico 10 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -160,7 +160,7 @@ Tabela 12: Léxico 10 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Artista | Cantor, grupo, banda | Indivíduo ou grupo responsável pela criação das músicas | Permite ao usuário explorar músicas de seus artistas favoritos | Sujeito |
 
-Tabela 13: Léxico 11 (Fonte: Rafael)
+Tabela 13: Léxico 11 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -172,7 +172,7 @@ Tabela 13: Léxico 11 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Gênero musical | Estilo musical | Categoria que classifica as características musicais de uma música | Auxilia na organização e na busca por músicas específicas | Objeto |
 
-Tabela 14: Léxico 12 (Fonte: Rafael)
+Tabela 14: Léxico 12 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -184,7 +184,7 @@ Tabela 14: Léxico 12 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Playlist | Lista de reprodução | Conjunto de músicas organizadas de acordo com uma temática ou preferência | Permite ao usuário criar coleções personalizadas de músicas | Objeto |
 
-Tabela 15: Léxico 13 (Fonte: Rafael)
+Tabela 15: Léxico 13 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -196,7 +196,7 @@ Tabela 15: Léxico 13 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Usuário | Cliente | Pessoa que utiliza o aplicativo de música | Interage com as funcionalidades do aplicativo para ouvir e gerenciar músicas | Sujeito |
 
-Tabela 16: Léxico 14 (Fonte: Rafael)
+Tabela 16: Léxico 14 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -208,7 +208,7 @@ Tabela 16: Léxico 14 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Recomendação de música | Sugestão de música | Indicação de músicas com base nos gostos do usuário | Ajuda o usuário a descobrir novas músicas que possam ser do seu interesse | Verbo |
 
-Tabela 17: Léxico 15 (Fonte: Rafael)
+Tabela 17: Léxico 15 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -220,7 +220,7 @@ Tabela 17: Léxico 15 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Equalizador | Controle de equalização | Ferramenta para ajustar o balanço entre frequências de áudio | Permite ao usuário personalizar a qualidade do som de acordo com suas preferências | Objeto |
 
-Tabela 18: Léxico 16 (Fonte: Rafael)
+Tabela 18: Léxico 16 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -232,7 +232,7 @@ Tabela 18: Léxico 16 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Modo offline | Reprodução sem conexão | Capacidade de ouvir músicas sem a necessidade de conexão à internet | Oferece conveniência ao usuário, permitindo o acesso à música em qualquer lugar, mesmo sem internet | Estado |
 
-Tabela 19: Léxico 17 (Fonte: Rafael)
+Tabela 19: Léxico 17 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -244,7 +244,7 @@ Tabela 19: Léxico 17 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Podcast | Programa de áudio | Gravação de áudio sobre um tema específico, geralmente em formato episódico | Permite ao usuário ouvir discussões, entrevistas ou conteúdo educativo sobre diversos assuntos | Objeto |
 
-Tabela 20: Léxico 18 (Fonte: Rafael)
+Tabela 20: Léxico 18 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -256,7 +256,7 @@ Tabela 20: Léxico 18 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Modo escuro | Tema noturno | Esquema de cores que deixa a interface do aplicativo com tons mais escuros | Reduz o cansaço visual do usuário ao usar o aplicativo em ambientes com pouca luz | Estado |
 
-Tabela 21: Léxico 19 (Fonte: Rafael)
+Tabela 21: Léxico 19 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -268,7 +268,7 @@ Tabela 21: Léxico 19 (Fonte: Rafael)
 | -------------- | -------- | ------- | ------------------- | ------------------- |
 | Sincronização | Atualização automática | Processo de atualizar automaticamente a biblioteca de músicas do usuário | Mantém a biblioteca de músicas do usuário atualizada em todos os dispositivos conectados | Verbo |
 
-Tabela 22: Léxico 20 (Fonte: Rafael)
+Tabela 22: Léxico 20 (Fonte: Rafael Xavier)
 
 </center>
 
@@ -291,6 +291,6 @@ Tabela 22: Léxico 20 (Fonte: Rafael)
 
 | Versão  | Data       | Descrição                  | Autor                    | Revisor   |
 |---------|------------|----------------------------|-------------|-----------|
-| 1.0     | 07/04/2024 | Criação do documento | Rafael Xavier | Ana Luiza Rodrigues |
+| 1.0     | 07/04/2024 | Criação do documento | [Rafael Xavier](https://github.com/rafaelxavierr) | [Ana Luíza Rodrigues](https://github.com/analuizargds) |
 
 </center>

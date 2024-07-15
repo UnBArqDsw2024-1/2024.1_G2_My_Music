@@ -1,4 +1,3 @@
-# Diagrama de Atividades
 ## Introdução
 O Diagrama de Atividades, é um diagrama dinâmico que dentro da linguagem de modelagem UML, dá um destaque valioso para representar o encadeamento e a lógica das atividades em um sistema. Ele oferece uma perspectiva visual do fluxo de controle e do movimento de objetos, enfatizando a sequência e as condições que regem esse fluxo. 
 
@@ -13,30 +12,38 @@ Logo abaixo você encontra as figuras que representam atividades do aplicativo M
 ### Diagrama de Cadastro
 A figura 1 a seguir representa a modelagem da atividade de cadastro no aplicativo My Music.
 
-**Figura 1** - Diagrama de cadastro. (Fonte: Vinícius Mendes, 2024)
-
 ![Figura 1](../Assets/DiagramadeAtividades-Cadastro.png)
+
+<div style="text-align: center">
+  <p>Figura 1: Diagrama de cadastro. (Fonte: Vinícius Mendes, 2024)</p>
+</div>
 
 ### Diagrama de Login
 A figura 2 a seguir representa a modelagem da atividade de login no aplicativo My Music.
 
-**Figura 2** - Diagrama de login. (Fonte: Vinícius Mendes, 2024)
-
 ![Figura 2](../Assets/DiagramadeAtividades-Login.png)
+
+<div style="text-align: center">
+  <p>Figura 2: Diagrama de login. (Fonte: Vinícius Mendes, 2024)</p>
+</div>
 
 ### Diagrama de Ouvir Música
 A figura 3 a seguir representa a modelagem da atividade de ouvir música, seja acessando-a diretamente, ou indiretamente através de artista/álbum/playlist ou nas músicas recentes do usuário.
 
-**Figura 3** - Diagrama de ouvir música. (Fonte: Vinícius Mendes, 2024)
-
 ![Figura 3](../Assets/DiagramadeAtividades-Ouvirmusica.png)
+
+<div style="text-align: center">
+  <p>Figura 3: Diagrama de ouvir música. (Fonte: Vinícius Mendes, 2024)</p>
+</div>
 
 ### Diagrama de Criar Playlist
 A figura 4 a seguir representa a modelagem da atividade de criar playlist.
 
-**Figura 4** - Diagrama de criar playlist. (Fonte: Vinícius Mendes, 2024)
-
 ![Figura 4](../Assets/DiagramadeAtividades-Criarplaylist.png)
+
+<div style="text-align: center">
+  <p>Figura 4: Diagrama de criar playlist. (Fonte: Vinícius Mendes, 2024)</p>
+</div>
 
 ## Bibliografia 
 > The Unified Modeling Languag Org. Activity Diagrams, 2011. Disponível em: https://www.uml-diagrams.org/activity-diagrams.html. Acesso em: 12 de Abril.
@@ -46,5 +53,6 @@ A figura 4 a seguir representa a modelagem da atividade de criar playlist.
 | Versão | Data       | Descrição                                   | Autor(es)       | Revisor(es) |
 | ------ | ---------- | ------------------------------------------- | --------------- | ----------- |
 | 1.0    | 12/04/2024 | Criação do documento Diagrama de Atividades | [Vinícius Mendes](https://github.com/yabamiah) | [Luis Miranda](https://github.com/LuisMiranda10)            |
-| 2.0    | 07/07/2024 | Atualização do documento Diagrama de Atividades | [Vinícius Mendes](https://github.com/yabamiah) | [Luis Miranda](https://github.com/LuisMiranda10)            |
+| 1.1    | 07/07/2024 | Atualização do documento Diagrama de Atividades | [Vinícius Mendes](https://github.com/yabamiah) | [Luis Miranda](https://github.com/LuisMiranda10)            |
+| 1.2    | 15/07/2024 | Padronização das legendas | [Ana Luíza Rodrigues](https://github.com/analuizargds) | -            |
 

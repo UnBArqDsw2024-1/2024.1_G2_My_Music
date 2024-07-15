@@ -1,14 +1,16 @@
-# My_Music
+# My Music
 
 **Código da Disciplina**: FGA0208<br>
 **Número do Grupo**: 02<br>
 
-##  💡 Introdução
+## 💡 Introdução
 
 O objetivo deste repositório é fornecer uma plataforma centralizada para o armazenamento e organização de todos os artefatos e resultados relacionados ao projeto de desenvolvimento da aplicação de reprodução de música do Grupo 2 de Arquitetura e Desenho de Software da Universidade de Brasília (UnB-FGA) no semestre 2024.1. Ele serve como um espaço colaborativo onde os membros do grupo podem compartilhar e acompanhar o progresso do trabalho, documentar decisões tomadas, armazenar código-fonte, artefatos de design, relatórios de progresso, entre outros materiais relevantes.
 
 
 ## 👥 Alunos
+
+<center>
 
 | Matrícula   | Nome                                       |                                                                                          |
 |-------------|--------------------------------------------|------------------------------------------------------------------------------------------|
@@ -25,6 +27,10 @@ O objetivo deste repositório é fornecer uma plataforma centralizada para o arm
 | 211062339   | [Milena Baruc Rodrigues Morais](https://github.com/MilenaBaruc) | <img src="https://github.com/MilenaBaruc.png" width="120px">                             |
 | 200026551   | [Rafael Xavier Canabrava](https://github.com/rafaelxavierr) | <img src="https://github.com/rafaelxavierr.png" width="120px">                           |
 | 211063265   | [Vinícius Mendes Martins](https://github.com/yabamiah) | <img src="https://github.com/yabamiah.png" width="120px">                                 |
+
+
+Tabela 1: Integrantes
+</center>
 
 
 ## Sobre 

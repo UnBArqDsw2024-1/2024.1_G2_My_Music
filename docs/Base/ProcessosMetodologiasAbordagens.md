@@ -1,5 +1,3 @@
-# Módulo Processos/Metodologias/Abordagens
-
 ## Introdução
 
 Na construção de produto, é essencial que haja uma organização entre os membros de uma equipe de forma adaptada a realidades dos mesmos e com o tipo de produto que está sendo desenvolvido, portanto, é importantíssimo que a escolha de modelos de desenvolvimento sejam definidos em conjunto.
@@ -41,31 +39,31 @@ Para a criação dos modelos, foi utilizada a ferramento online BPMN.io.
 ### Modelagem do Scrum
 Logo abaixo será apresentado na figura 1 a modelagem do Scrum, no qual foi organizado em uma piscina com duas raias, uma para representar o início do projeto, e a segunda o sprint planning.
 
-**Figura 1** - Modelagem BPMN Scrum
-
 ![](./images/scrum.svg)
 
-Fonte: Vinícius Mendes, 2024.
+<div style="text-align: center">
+<p> Figura 1: Modelagem BPMN Scrum. (Fonte: Vinícius Mendes, 2024). </p>
+</div>
 
 ### Modelagem Kanban
 Logo abaixo será apresentado na figura 2 a modelagem do Kanban, no qual foi organizado em uma piscina com duas raias, sendo a primeira a organização do Kanban e a segunda execução do Kanban
 
-**Figura 2** - Modelagem BPMN Kanban
-
 ![](./images/Kanban.svg)
 
-Fonte: Vinícius Mendes, 2024.
+<div style="text-align: center">
+<p> Figura 2: Modelagem BPMN Kanban. (Fonte: Vinícius Mendes, 2024). </p>
+</div>
 
 ### Modelagem XP
 Logo abaixo será apresentado na figura 3 a modelagem do XP, no qual foi organizado somente em uma piscina, com uma raia que representa o pareamento.
 
-**Figura 3** - Modelagem BPMN XP
-
 ![](./images/xp.svg)
 
-Fonte: Vinícius Mendes, 2024.
+<div style="text-align: center">
+<p> Figura 3: Modelagem BPMN XP. (Fonte: Vinícius Mendes, 2024). </p>
+</div>
 
-## Referências bibliográficas
+## Referências Bibliográficas
 > [1] O que é Scrum? (E como começar). Disponível em: https://www.atlassian.com/br/agile/scrum. Acessado: 07/04/2024.
 > 
 > [2] Kanban Introduction, Practices, Artifacts, Board, Prcocess and Roles. Disponível em: https://www.toolsqa.com/agile/kanban/. Acessado: 07/04/2024.
@@ -81,4 +79,5 @@ Fonte: Vinícius Mendes, 2024.
 ## Histórico de versões
 | Versão | Data       | Descrição           | Autor(es)       | Revisor(es) |
 | ------ | ---------- | ------------------- | --------------- | ----------- |
-| 1.0    | 07/04/2024 | Criação do artefato | Vinícius Mendes | Luis Miranda            |
+| 1.0    | 07/04/2024 | Criação do artefato | [Vinícius Mendes](https://github.com/yabamiah) | [Luis Miranda](https://github.com/LuisMiranda10)            |
+| 1.1    | 15/07/2024 | Padronização das legendas | [Ana Luíza Rodrigues](https://github.com/analuizargds) | -            |

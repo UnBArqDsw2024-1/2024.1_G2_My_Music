@@ -1,5 +1,3 @@
-# 4.2. Módulo Reutilização de Software
-
 Foco_02: Reutilização de Software
 
 Entrega Mínima:   Exemplo de Reutilização, evidenciando parte conceitual e código.

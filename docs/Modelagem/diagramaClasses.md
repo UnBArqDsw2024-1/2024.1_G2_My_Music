@@ -1,5 +1,3 @@
-# Diagrama de Classe
-
 ## Introdução
 
 É um diagrama estático da UML que reúne os elementos mais importantes de um sistema orientado a objetos. Nele são exibidos um conjunto de classes, 
