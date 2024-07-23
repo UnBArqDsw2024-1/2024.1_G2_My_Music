@@ -3,15 +3,24 @@ O padrão GoF criacional tem como objetivo simplificar a criação de objetos, f
 
 No contexto do nosso projeto, focaremos nos padrões Factory Method e Singleton.
 
-### 3.2.1.1 Factory Method
-#### Introdução
+## 3.2.1.1 Factory Method
+### Introdução
 O Factory Method é um padrão criacional que cria um padrão de instanciar uma superclasse, porém, dá a responsabilidade de definir o seu tipo para as subclasses. É um padrão muito utilizado em bibliotecas, como de inteface gráfica onde geralmente existe uma padrão para criar uma superclasse, mas, só no contexto da aplicação (no caso pode ser onde essa interface irá ser executada) que será definido o tipo pela suas subsclasses.
 As classes participantes deste padrão serão explicado logo abaixo, juntamente com a imagem da figura 1, que apresenta sua estrutura através de um diagrama.
 
 - Product(Produto abstrato) - Define uma interface para objetos criados pelo método de fábrica
 - ConcetreProduct (Produto concreto) - Implementa a interface do produto
 - Creator(Criador abstrato) - Possui o método FactoryMethod, que retorna um objeto Product. Pode chamar o método gerador para criar objetos Produto.
-- ConcretCreater(Criador concreto) - Substituí o método de geração para criar objetos da classe ConcreProduct
+- ConcretCreater(Criador concreto) - Substituí o método de geração para criar objetos da classe ConcetreProduct
+
+Usamos o padrão Factory Method, segundo Hugo Bonifácio Ribeiro e Tiago Abilio de Oliveira Gomes Serapião (2004, p. 39) quando:
+
+- Uma classe não pode antecipar a classe de objetos a ser criada;
+- Uma classe quer que suas subclasses especifiquem os objetos a serem
+criados;
+- Classes delegam responsabilidades para uma dentre outras várias
+subclasses auxiliares, e você quer localizar qual subclasse auxiliar é
+delegada.  
 
 <div style="text-align: center">
   <img src="../Assets/EstruturaFactoryMethod.png" alt="Estrutura do Factory Method" title="Título da Imagem" />
@@ -19,11 +28,11 @@ As classes participantes deste padrão serão explicado logo abaixo, juntamente 
 </div>
 
 
-#### Metodologia
+### Metodologia
 
-Antes de descrever como foi realizada a modelagem e a implementação dos padrões criacionais utilizados, é importante ressaltar como a equipe foi organizada para a realização deste artefato. Foi criado um subgrupo composto por quatro pessoas: Limírio, Luiz Eduardo, Milena e Vinícius. Todos participaram ativamente através de discussões em grupo e na realização das atividades.
+Antes de descrever como foi realizada a modelagem e a implementação dos padrões criacionais utilizados, é importante ressaltar como a equipe foi organizada para a realização deste artefato. Foi criado um subgrupo composto por quatro pessoas: Limírio, Luis Miranda, Milena e Vinícius Mendes. Todos participaram ativamente através de discussões em grupo e na realização das atividades.
 
-Para o desenvolvimento da modelagem do Factory Method no contexto do nosso projeto, realizamos uma reunião em grupo para discutir onde e como o padrão poderia ser aplicado. A ata dessa reunião pode ser acessada aqui. Durante essa reunião, utilizamos dois sites como referências teóricas para termos um embasamento adequado.
+Para o desenvolvimento da modelagem do Factory Method no contexto do nosso projeto, realizamos uma reunião em grupo para discutir onde e como o padrão poderia ser aplicado. A vídeo dessa reunião pode ser acessada [aqui](). Durante essa reunião, utilizamos dois sites como referências teóricas para termos um embasamento adequado.
 
 Decidimos que poderíamos utilizar o padrão Factory Method na criação da classe abstrata `Perfil`. Essa superclasse possui duas subclasses, `Usuário` e `Artista`, cujas instâncias mudam conforme o contexto, permitindo funcionalidades diferentes no aplicativo para cada tipo de perfil. A modelagem foi realizada pelos membros Luis Miranda e Vinicius Mendes, conforme visualizado na Figura 2.
 
@@ -36,8 +45,156 @@ O desenvolvimento da implementação foi realizado em paralelo com a modelagem, 
 
 Primeiro, foi criado um pseudocódigo para entender de maneira simplificada a lógica e a estrutura do código, que pode ser visualizado no Código 1. Em seguida, o pseudocódigo foi traduzido para a linguagem Dart, escolhida pela equipe para o desenvolvimento do projeto.
 
-### 3.2.1.2. Singleton
-#### Introdução
+"""
+// Classe base Perfil
+abstract class Perfil {
+    String? _nome;
+    String? _email;
+    String? _senha;
+    Date? _dataDeNascimento;
+    String? _genero;
+
+    Perfil(String nome, String email, String senha, Date dataDeNascimento, String genero) {
+        this._nome = nome;
+        this._email = email;
+        this._senha = senha;
+        this._dataDeNascimento = dataDeNascimento;
+        this._genero = genero;
+    }
+
+    String? get nome => _nome;
+    String? get email => _email;
+    String? get senha => _senha;
+    DateTime? get dataDeNascimento => _dataDeNascimento;
+    String? get genero => _genero;
+
+    set nome(String? nome) {
+        _nome = nome;
+    }   
+
+    set email(String? email) {
+        _email = email;
+    }
+
+    set senha(String? senha) {
+        _senha = senha;
+    }
+
+    set dataDeNascimento(DateTime? dataDeNascimento) {
+        _dataDeNascimento = dataDeNascimento;
+    }
+
+    set genero(String? genero) {
+        _genero = genero;
+    }
+
+}
+
+// Subclasse Usuário
+class Usuario extends Perfil {
+    List<Objects>? _interesse;
+    Equalizador? _equalizador;
+    Configuracoes? _configuracoes;
+
+    Usuario(String nome, String email, String senha, Date dataDeNascimento, String genero, List<Objects> interesse, Equalizador equalizador, Configuracoes configuracoes) 
+        : super(nome, email, senha, dataDeNascimento, genero) {
+        
+        this._interesse = interesse;
+        this._equalizador = equalizador;
+        this._configuracoes = configuracoes;
+    }
+    
+    List<Objects>? get interesse => _interesse;
+    Equalizador? get equalizador => _equalizador;
+    Configuracoes? get configuracoes => _configuracoes;
+    
+    set interesse(List<Objects>? interesse) {
+        _interesse = interesse;
+    } 
+
+    set equalizador(Equalizador? equalizador)
+    {
+        _equalizador = equalizador;
+    }
+
+    set configuracoes(Configuracoes? configuracoes)
+    {
+        _configuracoes = configuracoes;
+    }
+}
+
+// Subclasse Artista
+class Artista extends Perfil {
+    String? _nomeArtista
+    String? _biografia
+    String? _paisDeOrigem
+
+    Artista(String nome, String email, String senha, Date dataDeNascimento, String genero, String nomeArtista, String biografia, String paisDeOrigem)
+        : super(nome, email, senha, dataDeNascimento, genero) {
+        
+        this._nomeArtista = nomeArtista
+        this._biografia = biografia
+        this._paisDeOrigem = paisDeOrigem
+    }
+
+    set nomeArtista(String? nomeArtista) {
+        _nomeArtista = nomeArtista
+    }
+
+    set biografia(String? biografia){
+        _biografia = biografia
+    }
+
+    set paisDeOrigem(String? paisDeOrigem){
+        _paisDeOrigem = paisDeOrigem
+    }
+
+}
+
+// Criador do Perfil
+abstract class CriadorPerfil {
+    Perfil criarPerfil(String nome, String email, String senha, Date dataDeNascimento, String genero)
+    {
+        return Perfil(nome, email, senha, dataDeNascimento, genero);
+    }
+}
+
+// Subsclasse que cria um Usuario
+class CriadorUsuario extends CriadorPerfil {
+    @override
+    Perfil criarPerfil(String nome, String email, String senha, Date dataDeNascimento, String genero, List<Objects> interesse, Equalizador equalizador, Configuracoes configuracoes) {
+        return Usuario(nome, email, senha, dataDeNascimento, genero, interesse, equalizador, configuracoes);
+    }
+}
+
+// Subclasse que cria um Artista
+class CriadorArtista extends CriadorPerfil {
+    @override
+    Perfil criarPerfil(String nome, String email, String senha, Date dataDeNascimento, String genero, String nomeArtista, String biografia, String paisDeOrigem) {
+        return Artista(nome, email, senha, dataDeNascimento, genero, nomeArtista, biografia, paisDeOrigem);
+    } 
+}
+
+class Aplicacao {
+    static CriadorPerfil? gerarCriador()
+    {
+        Perfil? tipo = readButtonPerfil(); 
+        
+        switch(tipo)
+        {
+            case Usuario:
+                return CriadorUsuario();
+            case Artista:
+                return CriadorArtista();
+            default:
+                throw Exception('Um perfil deve ser selecionado');
+        }
+    }
+}
+"""
+
+## 3.2.1.2. Singleton
+### Introdução
 O Singleton é um padrão criacional que garante que uma classe tenha apenas uma instância e fornece um ponto de acesso global a essa instância. Este padrão é amplamente utilizado quando é necessário um único objeto para coordenar ações em todo o sistema, como em gerenciadores de configuração, conexões de banco de dados ou loggers.
 
 O Singleton previne a criação de múltiplas instâncias através de um construtor privado ou protegido e controla o acesso à instância única através de um método estático público. A seguir, serão explicadas as classes participantes deste padrão, juntamente com a imagem da figura 3, que apresenta sua estrutura através de um diagrama.
@@ -52,12 +209,12 @@ O Singleton previne a criação de múltiplas instâncias através de um constru
 
 No diagrama, podemos ver como o Singleton mantém uma referência estática para a sua única instância e como o método estático garante a criação dessa instância apenas uma vez, fornecendo um ponto de acesso global. O Cliente interage com a instância única do Singleton para executar operações, garantindo que todos os clientes utilizem a mesma instância.
 
-#### Metodologia
-A modelagem e implementação deste padrão criacional seguiu o fluxo de desenvolvimento do primeiro com os os integrantes: Limírio, Luiz Eduardo, Milena e Vinícius, participando ativamente através de discussões em grupo e na realização das atividades.
+### Metodologia
+A modelagem e implementação deste padrão criacional seguiu o fluxo de desenvolvimento do primeiro com os os integrantes: Limírio, Luis Miranda, Milena e Vinícius Mendes, participando ativamente através de discussões em grupo e na realização das atividades.
 
-Para o desenvolvimento da modelagem do Singleton no contexto do nosso projeto, realizamos uma reunião em grupo para discutir onde e como o padrão poderia ser aplicado. A ata dessa reunião pode ser acessada aqui. Durante essa reunião, utilizamos dois sites como referências teóricas para termos um embasamento adequado.
+Para elaborar a modelagem do padrão Singleton no âmbito do nosso projeto, organizamos uma reunião em grupo para debater onde e como esse padrão poderia ser aplicado. A ata dessa reunião está disponível aqui. Durante a reunião, consultamos dois sites como referências teóricas para fundamentar nossa base.
 
-Decidimos que poderíamos utilizar o padrão Singleton na criação da classe `Configuracoes``. Esta classe garante que apenas uma instância de configurações seja utilizada em todo o sistema, o que é crucial para garantir a consistência das configurações do aplicativo, como modos aleatório e offline, além das frequências do equalizador.
+Determinamos que o padrão Singleton seria ideal para a criação da classe `Configuracoes`. Essa classe garante que apenas uma instância de configurações seja mantida em todo o sistema, o que é crucial para assegurar a consistência das configurações do aplicativo, como modos aleatório e offline, além das frequências do equalizador.
 
 A modelagem foi realizada pelos membros Limírio Guimarães e Milena Baruc, conforme visualizado na Figura 4.
 
@@ -76,9 +233,12 @@ Primeiro, foi criado um pseudocódigo para entender de maneira simplificada a l�
 
 
 ## Referência Bibliográfica
-> ¹ Factory Method, Refactoring.Guru. Disponível em: https://refactoring.guru/design-patterns/factory-method. Acesso em: 15/07/2024.
+> ¹ Padrões de Projeto: Design Patterns. Disponível em: https://biblioteca.univap.br/dados/000042/00004243.pdf. Acesso em: 23/07/2024.
 
-> ² Creational Design Patterns for Dart and Flutter: Factory Method, Dart Academy. Disponível em: https://dart.academy/creational-design-patterns-for-dart-and-flutter-factory-method/. Acesso em: 20/07/2024
+> ² Factory Method, Refactoring.Guru. Disponível em: https://refactoring.guru/design-patterns/factory-method. Acesso em: 15/07/2024.
+
+> ³ Creational Design Patterns for Dart and Flutter: Factory Method, Dart Academy. Disponível em: https://dart.academy/creational-design-patterns-for-dart-and-flutter-factory-method/. Acesso em: 20/07/2024
+
 
 ## Bibliografia
 > Creational Design Patterns, Refactoring.Guru. Disponível em: https://refactoring.guru/design-patterns/creational-patterns. Acesso em: 15/07/2024.
@@ -89,4 +249,5 @@ Primeiro, foi criado um pseudocódigo para entender de maneira simplificada a l�
 
 | Versão | Data       | Descrição                                               | Autores                        | Revisores |
 | ------ | ---------- | ------------------------------------------------------- | ------------------------------ | --------- |
-| 0.1    | 22/07/2024 | Criação do documento e adicionando sobre Factory Method | Luis Miranda e Vinícius Mendes |           |
+| 0.1    | 22/07/2024 | Criação do documento e adicionando sobre Factory Method |  [Luis Miranda](https://github.com/LuisMiranda10) & [Vinícius Mendes](https://github.com/yabamiah) |           |
+| 0.2    | 22/07/2024 | Criação do documento e adicionando sobre Singleton      | [Limírio Guimarães](https://github.com/LimirioGuimaraes) & [Milena Baruc](https://github.com/MilenaBaruc) |           |
