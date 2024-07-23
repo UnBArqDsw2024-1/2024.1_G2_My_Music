@@ -24,29 +24,28 @@ delegada.
 
 <div style="text-align: center">
   <img src="../Assets/EstruturaFactoryMethod.png" alt="Estrutura do Factory Method" title="Título da Imagem" />
-  <p>Figura 1: Estrutura do padrão Factory Method (Fonte: Refactoring Guru, 2014-2024)¹</p>
+  <p>Figura 1: Estrutura do padrão Factory Method (Fonte: Refactoring Guru, 2014-2024)²</p>
 </div>
 
 
 ### Metodologia
 
-Antes de descrever como foi realizada a modelagem e a implementação dos padrões criacionais utilizados, é importante ressaltar como a equipe foi organizada para a realização deste artefato. Foi criado um subgrupo composto por quatro pessoas: Limírio, Luis Miranda, Milena e Vinícius Mendes. Todos participaram ativamente através de discussões em grupo e na realização das atividades.
+Antes de descrever como foi realizada a modelagem e a implementação dos padrões criacionais utilizados, é importante ressaltar como a equipe foi organizada para a realização deste artefato. Foi criado um subgrupo composto por quatro pessoas: [Limírio Guimarães](https://github.com/LimirioGuimaraes), [Luis Miranda](https://github.com/LuisMiranda10), [Milena Baruc](https://github.com/MilenaBaruc) e [Vinícius Mendes](https://github.com/yabamiah). Todos participaram ativamente através de discussões em grupo e na realização das atividades.
 
-Para o desenvolvimento da modelagem do Factory Method no contexto do nosso projeto, realizamos uma reunião em grupo para discutir onde e como o padrão poderia ser aplicado. A vídeo dessa reunião pode ser acessada [aqui](). Durante essa reunião, utilizamos dois sites como referências teóricas para termos um embasamento adequado.
+Para o desenvolvimento da modelagem do Factory Method no contexto do nosso projeto, realizamos uma reunião em grupo para discutir onde e como o padrão poderia ser aplicado. A vídeo dessa reunião pode ser acessada [aqui](https://youtu.be/okhCMuSxa2w). Durante essa reunião, utilizamos dois sites como referências teóricas para termos um embasamento adequado.
 
-Decidimos que poderíamos utilizar o padrão Factory Method na criação da classe abstrata `Perfil`. Essa superclasse possui duas subclasses, `Usuário` e `Artista`, cujas instâncias mudam conforme o contexto, permitindo funcionalidades diferentes no aplicativo para cada tipo de perfil. A modelagem foi realizada pelos membros Luis Miranda e Vinicius Mendes, conforme visualizado na Figura 2.
+Decidimos que poderíamos utilizar o padrão Factory Method na criação da classe abstrata `Perfil`. Essa superclasse possui duas subclasses, `Usuário` e `Artista`, cujas instâncias mudam conforme o contexto, permitindo funcionalidades diferentes no aplicativo para cada tipo de perfil. A modelagem foi realizada pelos membros [Luis Miranda](https://github.com/LuisMiranda10) e [Vinícius Mendes](https://github.com/yabamiah), conforme visualizado na Figura 2.
 
 <div style="text-align: center">
   <img src="../Assets/ModelagemFactoryMethod.png" alt="Modelagem do padrão Factory Method" title="Título da Imagem" />
   <p>Figura 2: Modelagem do padrão Factory Method (Fonte: Luis Miranda e Vinícius Mendes, 2024)</p>
 </div>
 
-O desenvolvimento da implementação foi realizado em paralelo com a modelagem, sendo conduzido pelos mesmos membros da equipe. Esta implementação foi feita de forma colaborativa através da plataforma Discord, utilizando como referência o site [Dart Academy](https://dart.academy/creational-design-patterns-for-dart-and-flutter-factory-method/)², que possui exemplos de implementações em diversas linguagens de programação.
+O desenvolvimento da implementação foi realizado em paralelo com a modelagem, sendo conduzido pelos mesmos membros da equipe. Esta implementação foi feita de forma colaborativa através da plataforma Discord, utilizando como referência o site [Dart Academy](https://dart.academy/creational-design-patterns-for-dart-and-flutter-factory-method/)³, que possui exemplos de implementações em diversas linguagens de programação.
 
 Primeiro, foi criado um pseudocódigo para entender de maneira simplificada a lógica e a estrutura do código, que pode ser visualizado no Código 1. Em seguida, o pseudocódigo foi traduzido para a linguagem Dart, escolhida pela equipe para o desenvolvimento do projeto.
 
-"""
-// Classe base Perfil
+```dart
 abstract class Perfil {
     String? _nome;
     String? _email;
@@ -90,7 +89,7 @@ abstract class Perfil {
 
 }
 
-// Subclasse Usuário
+
 class Usuario extends Perfil {
     List<Objects>? _interesse;
     Equalizador? _equalizador;
@@ -98,16 +97,16 @@ class Usuario extends Perfil {
 
     Usuario(String nome, String email, String senha, Date dataDeNascimento, String genero, List<Objects> interesse, Equalizador equalizador, Configuracoes configuracoes) 
         : super(nome, email, senha, dataDeNascimento, genero) {
-        
+          
         this._interesse = interesse;
         this._equalizador = equalizador;
         this._configuracoes = configuracoes;
     }
-    
+      
     List<Objects>? get interesse => _interesse;
     Equalizador? get equalizador => _equalizador;
     Configuracoes? get configuracoes => _configuracoes;
-    
+      
     set interesse(List<Objects>? interesse) {
         _interesse = interesse;
     } 
@@ -123,7 +122,6 @@ class Usuario extends Perfil {
     }
 }
 
-// Subclasse Artista
 class Artista extends Perfil {
     String? _nomeArtista
     String? _biografia
@@ -131,7 +129,7 @@ class Artista extends Perfil {
 
     Artista(String nome, String email, String senha, Date dataDeNascimento, String genero, String nomeArtista, String biografia, String paisDeOrigem)
         : super(nome, email, senha, dataDeNascimento, genero) {
-        
+          
         this._nomeArtista = nomeArtista
         this._biografia = biografia
         this._paisDeOrigem = paisDeOrigem
@@ -151,7 +149,6 @@ class Artista extends Perfil {
 
 }
 
-// Criador do Perfil
 abstract class CriadorPerfil {
     Perfil criarPerfil(String nome, String email, String senha, Date dataDeNascimento, String genero)
     {
@@ -159,7 +156,6 @@ abstract class CriadorPerfil {
     }
 }
 
-// Subsclasse que cria um Usuario
 class CriadorUsuario extends CriadorPerfil {
     @override
     Perfil criarPerfil(String nome, String email, String senha, Date dataDeNascimento, String genero, List<Objects> interesse, Equalizador equalizador, Configuracoes configuracoes) {
@@ -167,11 +163,10 @@ class CriadorUsuario extends CriadorPerfil {
     }
 }
 
-// Subclasse que cria um Artista
 class CriadorArtista extends CriadorPerfil {
     @override
     Perfil criarPerfil(String nome, String email, String senha, Date dataDeNascimento, String genero, String nomeArtista, String biografia, String paisDeOrigem) {
-        return Artista(nome, email, senha, dataDeNascimento, genero, nomeArtista, biografia, paisDeOrigem);
+      return Artista(nome, email, senha, dataDeNascimento, genero, nomeArtista, biografia, paisDeOrigem);
     } 
 }
 
@@ -179,7 +174,7 @@ class Aplicacao {
     static CriadorPerfil? gerarCriador()
     {
         Perfil? tipo = readButtonPerfil(); 
-        
+          
         switch(tipo)
         {
             case Usuario:
@@ -191,7 +186,12 @@ class Aplicacao {
         }
     }
 }
-"""
+```
+
+<div style="text-align: center">
+  <p>Código 1: Possível implementação em código do Factory Method em Dart (Fonte: Luis Miranda e Vinícius Mendes, 2024)</p>
+</div>
+
 
 ## 3.2.1.2. Singleton
 ### Introdução
