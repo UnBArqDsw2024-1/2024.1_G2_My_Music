@@ -212,7 +212,7 @@ No diagrama, podemos ver como o Singleton mantém uma referência estática para
 ### Metodologia
 A modelagem e implementação deste padrão criacional seguiu o fluxo de desenvolvimento do primeiro com os os integrantes: Limírio, Luis Miranda, Milena e Vinícius Mendes, participando ativamente através de discussões em grupo e na realização das atividades.
 
-Para elaborar a modelagem do padrão Singleton no âmbito do nosso projeto, organizamos uma reunião em grupo para debater onde e como esse padrão poderia ser aplicado. A ata dessa reunião está disponível aqui. Durante a reunião, consultamos dois sites como referências teóricas para fundamentar nossa base.
+Para elaborar a modelagem do padrão Singleton no âmbito do nosso projeto, organizamos uma reunião em grupo para debater onde e como esse padrão poderia ser aplicado. A ata dessa reunião está disponível [aqui](https://youtu.be/okhCMuSxa2w). Durante a reunião, consultamos dois sites como referências teóricas para fundamentar nossa base.
 
 Determinamos que o padrão Singleton seria ideal para a criação da classe `Configuracoes`. Essa classe garante que apenas uma instância de configurações seja mantida em todo o sistema, o que é crucial para assegurar a consistência das configurações do aplicativo, como modos aleatório e offline, além das frequências do equalizador.
 
