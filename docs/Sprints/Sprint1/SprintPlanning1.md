@@ -7,11 +7,10 @@
 | Início  | 08/07/2024    |
 | Término | 24/07/2024    |
 | Duração | 16 dias       |
-| Pontos Planejados | x   |
-| Pontos de Dívida Passada| x |
-| Pontuação Total| x |
 
 ## Presença na Sprint Planning
+
+A Sprint Planning foi realizada na segunda-feira, dia 08/07/2024 às 10h, após a aula de arquitetura de software.
 
 | Membro                | Presença |
 |-----------------------|----------|
@@ -38,31 +37,31 @@
 
 ## Sprint Backlog
 
-| Issue | Descrição | Pontos | Responsáveis |
-|-------|-----------|--------|--------------|
-| [#53](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/53)   | GoF Criacional                     | X      | X            |
-| [#55](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/55)   | GoF Comportamental Strategy        | X      | X            |
-| [#56](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/56)   | GoF Comportamental Command         | X      | X            |
-| [#15](#)   | X         | X      | X            |
-| [#11](#)   | X         | X      | X            |
-| [#11](#)   | X         | X      | X            |
-| [#11](#)   | X         | X      | X            |
-| [#10](#)   | X         | X      | X            |
-| [#23](#)   | X         | X      | X            |
-| [#15](#)   | X         | X      | X            |
-| [#26](#)   | X         | X      | X            |
-| [#24](#)   | X         | X      | X            |
-| [#15](#)   | X         | X      | X            |
-| [#15](#)   | X         | X      | X            |
-| [#16](#)   | X         | X      | X            |
-| [#16](#)   | X         | X      | X            |
-| [#16](#)   | X         | X      | X            |
-| [#16](#)   | X         | X      | X            |
-| [#16](#)   | X         | X      | X            |
-| [#5](#)    | X         | X      | X            |
+| Issue | Descrição | Responsáveis |
+|-------|-----------|--------------|
+| [#53](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/53)   | GoF Criacional                     | X            |
+| [#55](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/55)   | GoF Comportamental Strategy        | X            |
+| [#56](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/56)   | GoF Comportamental Command         | X            |
+| [#15](#)   | X         | X            |
+| [#11](#)   | X         | X            |
+| [#11](#)   | X         | X            |
+| [#11](#)   | X         | X            |
+| [#10](#)   | X         | X            |
+| [#23](#)   | X         | X            |
+| [#15](#)   | X         | X            |
+| [#26](#)   | X         | X            |
+| [#24](#)   | X         | X            |
+| [#15](#)   | X         | X            |
+| [#15](#)   | X         | X            |
+| [#16](#)   | X         | X            |
+| [#16](#)   | X         | X            |
+| [#16](#)   | X         | X            |
+| [#16](#)   | X         | X            |
+| [#16](#)   | X         | X            |
+| [#5](#)    | X         | X            |
 | [#49](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/49)    | Arrumando Diagrama de Atividades         | X      | X      |
 
-## Overview da Sprint
+## Overview da Sprint Planning
 
 - Nessa sprint os times foram divididos de acordo com a decisão dos demais membros, com uma maior atenção na utilização do Kanban e também das revisões acerca de cada Pull Request
 - A modelagem e implementação de cada GoF deve ser feita o quanto antes para uma melhor entendimento por parte do grupo acerca de todo conteúdo da entrega 
