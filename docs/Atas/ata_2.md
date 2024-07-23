@@ -67,7 +67,7 @@
 |--------|---------------------|-------------------|------------|
 | 1      | GoFs Criacionais    | Limírio Guimarães, Luis Miranda, Milena Baruc, Vinícius Mendes| 23/07/2024 |
 | 2      | GoFs Estruturais    | Henrique Hida, Israel Thalles, Lucas Alves Vilela, Luiz Pettengill | 23/07/2024 |
-| 3      | GoFs Comportamentais| Ana Luiza, Carlos Eduardo, Carlos Godoy, Rafael Xavier Canabrava    | 23/07/2024 |
+| 3      | GoFs Comportamentais| Ana Luiza, Carlos Eduardo, Carlos Godoy, Rafael Xavier Canabrava, João Vítor    | 23/07/2024 |
 
 **Tabela** 05 - Compromissos e seus responsáveis (Fonte: Limírio Guimarães, 2024)
 
@@ -87,3 +87,4 @@ A próxima reunião ficou marcada para o dia 30/07/2024, às 21:00.
 | :-:    | :-----:   | :------   | ----  | ------- |
 | `1.0`    |16/07/2024 |  Criação do documento | [Limírio Guimarães](https://github.com/LimirioGuimaraes) | [Milena Baruc](https://github.com/MilenaBaruc), [link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/48#issuecomment-2237637557)|
 | `1.1`    |18/07/2024 |  Arrumando erros do documento | [Milena Baruc](https://github.com/MilenaBaruc) |  |
+| `1.2`    |18/07/2024 |  Adicionando meu nome no doc (João Vítor) | [João Vítor](https://github.com/Jvsoutomaior) |  |
