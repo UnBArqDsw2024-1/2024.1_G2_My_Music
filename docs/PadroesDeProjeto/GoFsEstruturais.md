@@ -21,6 +21,17 @@ As classes deste padrão serão explicado logo abaixo, juntamente com a imagem d
 
 ### Metodologia
 
+Primeiramente, foi definido um período para leitura da documentação dos padrões de projeto estruturais e pesquisas individuais, para que os membros contribuíssem com sugestões de GOFs a serem utilizados. Por fim, chegou-se a um consenso pela utilização do padrão Facade.
+
+Para a elaboração da modelagem do Facade, foram realizadas duas reuniões via Discord e foi feito uso da plataforma Lucidchart para diagramção colaborativa.
+
+<div style="text-align: center">
+  <img src="../Assets/PadroesDeProjeto-Estrutural-Facade.png" alt="Modelagem do padrão Facade" title="Modelagem do Facade" />
+  <p>Figura 2: Modelagem do padrão Facade (Fonte: Lucas Alves Vilela, Henrique Hida, Luiz Guilherme e Israel Thalles)</p>
+</div>
+
+A figura 2 apresenta a modelagem produzida durante as referidas reuniões.
+
 ## Referência Bibliográfica
 > ¹ Facade, Refactoring.Guru. Disponível em: https://refactoring.guru/design-patterns/facade. Acesso em: 21/07/2024.
 
@@ -37,5 +48,5 @@ As classes deste padrão serão explicado logo abaixo, juntamente com a imagem d
 | 0.1    | 23/07/2024 | Criação do documento e adição do template |  [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida), [Luiz Guilherme](https://github.com/luizpettengill) e [Israel Thalles](https://github.com/IsraelThalles) | -------- |
 | 0.2 | 23/07/2024 | Adição do GOF Estrutural Facade aos Assets & Referências Bibliográficas |  [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida), [Luiz Guilherme](https://github.com/luizpettengill) e [Israel Thalles](https://github.com/IsraelThalles) | -------- |
 | 0.3 | 23/07/2024 | Adição da Introdução e template de GOF Estrutural Facade | [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida), [Luiz Guilherme](https://github.com/luizpettengill) e [Israel Thalles](https://github.com/IsraelThalles)  | -------- |
-| -------- | -------- | -------- |  -------- | -------- |
+| 0.4 | 23/07/2024 | Adição do início da metodologia | [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida), [Luiz Guilherme](https://github.com/luizpettengill) e [Israel Thalles](https://github.com/IsraelThalles) | -------- |
 | -------- | -------- | -------- |  -------- | -------- |
