@@ -64,5 +64,4 @@ A figura 4 a seguir representa a modelagem da atividade de criar playlist.
 | 1.0    | 12/04/2024 | Criação do documento Diagrama de Atividades | [Vinícius Mendes](https://github.com/yabamiah) | [Luis Miranda](https://github.com/LuisMiranda10)            |
 | 1.1    | 07/07/2024 | Atualização do documento Diagrama de Atividades | [Vinícius Mendes](https://github.com/yabamiah) | [Luis Miranda](https://github.com/LuisMiranda10)  e  [Israel Thalles](https://github.com/IsraelThalles)          |
 | 1.2    | 15/07/2024 | Padronização das legendas | [Ana Luíza Rodrigues](https://github.com/analuizargds) | -            |
-| 2.0 | 19/07/2024 | Correção após a entrega | [Vinícius Mendes](https://github.com/yabamiah) |
-| 2.1 | 22/07/2024 | Revisão | [Luiz Guilherme Pettengill](https://github.com/luizpettengill) | ||
+| 2.0 | 19/07/2024 | Correção após a entrega | [Vinícius Mendes](https://github.com/yabamiah) | [Luiz Guilherme Pettengill](https://github.com/luizpettengill), [link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/50#discussion_r1685326923) |
