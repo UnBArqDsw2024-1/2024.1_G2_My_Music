@@ -231,6 +231,46 @@ O desenvolvimento da implementação foi realizado em paralelo com a modelagem, 
 
 Primeiro, foi criado um pseudocódigo para entender de maneira simplificada a lógica e a estrutura do código, que pode ser visualizado no Código 2. Em seguida, o pseudocódigo foi traduzido para a linguagem Dart, escolhida pela equipe para o desenvolvimento do projeto.
 
+```dart
+class Configuracoes {
+  static Configuracoes? _instancia;
+  bool modoAleatorio = false;
+  bool modoOffline = false;
+  Map<String, int> frequenciasEqualizador = {};
+
+  Configuracoes._privateConstructor();
+
+  static Configuracoes get instancia {
+    if (_instancia == null) {
+      _instancia = Configuracoes._privateConstructor();
+    }
+    return _instancia!;
+  }
+
+  void ativarModoAleatorio() {
+    modoAleatorio = true;
+  }
+
+  void desativarModoAleatorio() {
+    modoAleatorio = false;
+  }
+
+  void ativarModoOffline() {
+    modoOffline = true;
+  }
+
+  void desativarModoOffline() {
+    modoOffline = false;
+  }
+
+  void ajustar(String frequencia, int valor) {
+    frequenciasEqualizador[frequencia] = valor;
+  }
+}
+```
+<div style="text-align: center">
+  <p>Código 2: Possível implementação em código do Singleton em Dart (Fonte: Limírio Guimarães e Milena Baruc, 2024)</p>
+</div>
 
 ## Referência Bibliográfica
 > ¹ Padrões de Projeto: Design Patterns. Disponível em: https://biblioteca.univap.br/dados/000042/00004243.pdf. Acesso em: 23/07/2024.
@@ -251,3 +291,4 @@ Primeiro, foi criado um pseudocódigo para entender de maneira simplificada a l�
 | ------ | ---------- | ------------------------------------------------------- | ------------------------------ | --------- |
 | 0.1    | 22/07/2024 | Criação do documento e adicionando sobre Factory Method |  [Luis Miranda](https://github.com/LuisMiranda10) & [Vinícius Mendes](https://github.com/yabamiah) |           |
 | 0.2    | 22/07/2024 | Criação do documento e adicionando sobre Singleton      | [Limírio Guimarães](https://github.com/LimirioGuimaraes) & [Milena Baruc](https://github.com/MilenaBaruc) |           |
+| 0.3    | 22/07/2024 | Adicionada possível implementação Singleton      | [Limírio Guimarães](https://github.com/LimirioGuimaraes) & [Milena Baruc](https://github.com/MilenaBaruc) |           |
