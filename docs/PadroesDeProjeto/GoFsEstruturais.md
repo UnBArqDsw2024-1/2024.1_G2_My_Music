@@ -8,11 +8,11 @@ No contexto do nosso projeto, focaremos no padrão Facade.
 
 ### Introdução
 O padrão Facade é um padrão estrutural que oferece uma interface unificada para um conjunto de interfaces em um subsistema. Facade define uma interface de nível mais alto que torna o subsistema mais fácil de usar. O padrão é particularmente útil para sistemas complexos que têm muitas partes interagindo entre si.
-As classes deste padrão serão explicado logo abaixo, juntamente com a imagem da figura 1, que apresenta sua estrutura através de um diagrama.
+As classes deste padrão serão explicadas logo abaixo, juntamente com a imagem da figura 1, que apresenta sua estrutura através de um diagrama.
 
 -   **Facade**: Fornece um acesso conveniente para uma parte particular da funcionalidade do subsistema. Ela sabe onde direcionar o pedido do cliente e como operar todas as partes móveis.
 -   **Facade Adicional**: Pode ser criada para prevenir a poluição de uma única fachada com funcionalidades não relevantes que podem torná-lo mais uma estrutura complexa. Fachadas adicionais podem ser usadas tanto por clientes como por outras fachadas.
--   **Subsistema Complexo**: Consiste em dúzias de objetos variados que fazem parte dos detalhes de implementação do subsistema, tais como objetos de inicialização na ordem correta e suprí-los com dados no formato correto.
+-   **Subsistema Complexo**: Consiste em dúzias de objetos variados que fazem parte dos detalhes de implementação do subsistema, tais como objetos de inicialização na ordem correta e supri-los com dados no formato correto.
 
 <div style="text-align: center">
   <img src="../Assets/PadroesDeProjeto-Estrutural-TemplateFacade.png" alt="Template estrutura do Facade" title="Estrutura padrão do Facade" />
@@ -23,7 +23,7 @@ As classes deste padrão serão explicado logo abaixo, juntamente com a imagem d
 
 Primeiramente, foi definido um período para leitura da documentação dos padrões de projeto estruturais e pesquisas individuais, para que os membros contribuíssem com sugestões de GOFs a serem utilizados. Por fim, chegou-se a um consenso pela utilização do padrão Facade.
 
-Para a elaboração da modelagem do Facade, foram realizadas duas reuniões via Discord e foi feito uso da plataforma Lucidchart para diagramção colaborativa.
+Para a elaboração da modelagem do Facade, foram realizadas duas reuniões via Discord e foi feito uso da plataforma Lucidchart para diagramação colaborativa.
 
 <div style="text-align: center">
   <img src="../Assets/PadroesDeProjeto-Estrutural-Facade.png" alt="Modelagem do padrão Facade" title="Modelagem do Facade" />
@@ -32,7 +32,7 @@ Para a elaboração da modelagem do Facade, foram realizadas duas reuniões via 
 
 A figura 2 apresenta a modelagem produzida durante as referidas reuniões.
 
-Em relação a construção do código baseado no diagrama esturutral do Facade desenvolvemos este código em Dart para ilustrar o funcionamento do programa utilizando a linguagem Dart:
+Em relação a construção do código baseado no diagrama estrutural do Facade desenvolvemos este código em Dart para ilustrar o funcionamento do programa utilizando a linguagem Dart:
 
 ```dart
 class Musica {
@@ -217,4 +217,5 @@ Código 1:Ilustração de uma possível implementação simplificada em código 
 | 0.2 | 23/07/2024 | Adição do GOF Estrutural Facade aos Assets & Referências Bibliográficas |  [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida), [Luiz Guilherme](https://github.com/luizpettengill) e [Israel Thalles](https://github.com/IsraelThalles) | -------- |
 | 0.3 | 23/07/2024 | Adição da Introdução e template de GOF Estrutural Facade | [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida), [Luiz Guilherme](https://github.com/luizpettengill) e [Israel Thalles](https://github.com/IsraelThalles)  | -------- |
 | 0.4 | 23/07/2024 | Adição do início da metodologia | [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida), [Luiz Guilherme](https://github.com/luizpettengill) e [Israel Thalles](https://github.com/IsraelThalles) | -------- |
-| 0.5 | 23/07/2024 | Complementação da metodologia com implementação de código em dart |  [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida), [Luiz Guilherme](https://github.com/luizpettengill) e [Israel Thalles](https://github.com/IsraelThalles)| -------- |
+| 0.5 | 23/07/2024 | Complementação da metodologia com implementação de código em dart |  [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida), [Luiz Guilherme](https://github.com/luizpettengill) e [Israel Thalles](https://github.com/IsraelThalles)| [João Vítor](https://github.com/Jvsoutomaior) e  [Vinícius Mendes](https://github.com/yabamiah) |
+| 0.6 | 24/07/2024 | correção de portugues |  [João Vítor](https://github.com/Jvsoutomaior) | -------- |
