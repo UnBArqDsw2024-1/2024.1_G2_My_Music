@@ -45,7 +45,9 @@ A Sprint Planning foi realizada na segunda-feira, dia 08/07/2024 às 10h, após 
 | [#57](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/57)   | GoF Estrutural Facade         | [Luiz Pettengill](https://github.com/LuizPettengill), [Lucas Vilela](https://github.com/Lucas-AV), [Israel Thalles](https://github.com/IsraelThalles) e [Henrique Hida](https://github.com/HenriqueHida)            |
 | [#58](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/58)   | Organização do git pages         | [Ana Luíza](https://github.com/analuizargds)            |
 | [#59](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/59)   | Apresentação sprint         |  [Luis Miranda](https://github.com/LuisMiranda10) e  [Vinícius](https://github.com/yabamiah)          |
-| [#49](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/49)    | Arrumando Diagrama de Atividades         | [Vinícius](https://github.com/yabamiah)      |       |
+| [#49](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/49)    | Arrumando Diagrama de Atividades         | [Vinícius](https://github.com/yabamiah)      |
+| [#60](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/60) | Arrumando Diagrama de Componentes | [Luis Miranda](https://github.com/LuisMiranda10) e [Milena Baruc](https://github.com/MilenaBaruc) |
+| [#63](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/63) | Adicionando iniciativas extras | [Luis Miranda](https://github.com/LuisMiranda10) e  [Vinícius](https://github.com/yabamiah) |
 
 ## Overview da Sprint Planning
 

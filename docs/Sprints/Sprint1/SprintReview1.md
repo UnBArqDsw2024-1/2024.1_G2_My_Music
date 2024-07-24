@@ -38,6 +38,8 @@ A Sprint Review foi realizada na terça-feira, dia 23/07/2024 às 20h30, e pode 
 | [#59](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/59)   | Apresentação sprint         |  [Luis Miranda](https://github.com/LuisMiranda10) e  [Vinícius](https://github.com/yabamiah)          | Em progresso
 | [#51](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/51)    | Faltou meu nome na ata2         | [João Maior](https://github.com/Jvsoutomaior)             | Concluído
 | [#49](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/49) | Arrumando Diagrama de Atividades | [Vinícius](https://github.com/yabamiah) | Concluído |
+| [#60](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/60) | Arrumando Diagrama de Componentes | [Luis Miranda](https://github.com/LuisMiranda10) e [Milena Baruc](https://github.com/MilenaBaruc) | Concluído |
+| [#63](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/63) | Adicionando iniciativas extras | [Luis Miranda](https://github.com/LuisMiranda10) e  [Vinícius](https://github.com/yabamiah) | Concluído |
 
 ## Overview da Sprint
 
