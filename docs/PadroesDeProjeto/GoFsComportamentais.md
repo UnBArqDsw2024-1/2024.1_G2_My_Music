@@ -318,5 +318,5 @@ Código 4: Código das classes Concrete Command. (Fonte: Ana Luíza e Rafael Xav
 
 | Versão | Data       | Descrição                                               | Autores                        | Revisores |
 | ------ | ---------- | ------------------------------------------------------- | ------------------------------ | --------- |
-| 1.0    | 24/07/2024 | Criação do documento e adicionando sobre Command |  [Ana Luíza Rodrigues](https://github.com/analuizargds) e [Rafael Xavier](https://github.com/rafaelxavierr) |   [Limirio Guimarães](https://github.com/LimirioGuimaraes)          |
-| 1.1    | 24/07/2024 | Adição dos códigos do command |  [Ana Luíza Rodrigues](https://github.com/analuizargds) e [Rafael Xavier](https://github.com/rafaelxavierr) |   [Limirio Guimarães](https://github.com/LimirioGuimaraes)   |
+| 1.0    | 24/07/2024 | Criação do documento e adicionando sobre Command |  [Ana Luíza Rodrigues](https://github.com/analuizargds) e [Rafael Xavier](https://github.com/rafaelxavierr) |       |
+| 1.1    | 24/07/2024 | Adição dos códigos do command |  [Ana Luíza Rodrigues](https://github.com/analuizargds) e [Rafael Xavier](https://github.com/rafaelxavierr) |   [Limirio Guimarães](https://github.com/LimirioGuimaraes), [link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/67#issuecomment-2249074364)   |
