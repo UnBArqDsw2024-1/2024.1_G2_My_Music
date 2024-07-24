@@ -4,7 +4,7 @@
 O artefato de iniciativas extras tem como objetivo principal demonstrar e dar destaque as atividades extras ou correções que foram realizadas durante a entrega.
 
 ## Metodologia
-Os membros Luis Miranda e Vinícius Mendes realizaram este artefato juntamente com as dúvidas tiradas com a professora Milene, na qual nos instruiu a criar um documento que contesse todas as atividades extras realizadas, e com isso, nós nos juntamos de maneira remoto no Discord para realizar a atividade de maneira conjunta, onde geramos a Tabela 1, que apresenta o que foi realizado e seu respectivo rastreamento com o autor.
+Os membros Luis Miranda e Vinícius Mendes realizaram este artefato juntamente com as dúvidas tiradas com a professora Milene, na qual nos instruiu a criar um documento que contenha todas as atividades extras realizadas, e com isso, nós nos juntamos de maneira remoto no Discord para realizar a atividade de maneira conjunta, onde geramos a Tabela 1, que apresenta o que foi realizado e seu respectivo rastreamento com o autor.
 
 ## Atividades Extras Realizadas
 
@@ -25,4 +25,4 @@ As atividades extras e correções que foram realizadas durante essa entraga est
 ## Histórico de Versão
 | Verão | Data | Descrição | Autor | Revisor |
 |-------|------|-----------|-------|---------|
-|   1.0   | 24/07/2023| Criação da página | [Luis Miranda](https://github.com/LuisMiranda10) & [Vinícius Mendes](https://github.com/yabamiah)|                  |
+|   1.0   | 24/07/2023| Criação da página | [Luis Miranda](https://github.com/LuisMiranda10) & [Vinícius Mendes](https://github.com/yabamiah)|[João Vítor](https://github.com/Jvsoutomaior) |
