@@ -67,7 +67,7 @@
 |--------|---------------------|-------------------|------------|
 | 1      | GoFs Criacionais    | Limírio Guimarães, Luis Miranda, Milena Baruc, Vinícius Mendes| 23/07/2024 |
 | 2      | GoFs Estruturais    | Henrique Hida, Israel Thalles, Lucas Alves Vilela, Luiz Pettengill | 23/07/2024 |
-| 3      | GoFs Comportamentais| Ana Luiza, Carlos Eduardo, Carlos Godoy, Rafael Xavier Canabrava    | 23/07/2024 |
+| 3      | GoFs Comportamentais| Ana Luiza, Carlos Eduardo, Carlos Godoy, Rafael Xavier Canabrava, João Vítor    | 23/07/2024 |
 
 **Tabela** 05 - Compromissos e seus responsáveis (Fonte: Limírio Guimarães, 2024)
 
