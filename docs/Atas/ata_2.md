@@ -87,4 +87,4 @@ A próxima reunião ficou marcada para o dia 30/07/2024, às 21:00.
 | :-:    | :-----:   | :------   | ----  | ------- |
 | `1.0`    |16/07/2024 |  Criação do documento | [Limírio Guimarães](https://github.com/LimirioGuimaraes) | [Milena Baruc](https://github.com/MilenaBaruc), [link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/48#issuecomment-2237637557)|
 | `1.1`    |18/07/2024 |  Arrumando erros do documento | [Milena Baruc](https://github.com/MilenaBaruc) |  |
-s
+| `1.2`    |18/07/2024 |  Adicionando meu nome no doc (João Vítor) | [João Vítor](https://github.com/Jvsoutomaior) |  |
