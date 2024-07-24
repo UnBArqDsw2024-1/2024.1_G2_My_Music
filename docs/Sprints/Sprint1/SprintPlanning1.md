@@ -39,29 +39,14 @@ A Sprint Planning foi realizada na segunda-feira, dia 08/07/2024 às 10h, após 
 
 | Issue | Descrição | Responsáveis |
 |-------|-----------|--------------|
-| [#53](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/53)   | GoF Criacional                     | X            |
-| [#55](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/55)   | GoF Comportamental Strategy        | X            |
-| [#56](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/56)   | GoF Comportamental Command         | X            |
-| [#15](#)   | X         | X            |
-| [#11](#)   | X         | X            |
-| [#11](#)   | X         | X            |
-| [#11](#)   | X         | X            |
-| [#10](#)   | X         | X            |
-| [#23](#)   | X         | X            |
-| [#15](#)   | X         | X            |
-| [#26](#)   | X         | X            |
-| [#24](#)   | X         | X            |
-| [#15](#)   | X         | X            |
-| [#15](#)   | X         | X            |
-| [#16](#)   | X         | X            |
-| [#16](#)   | X         | X            |
-| [#16](#)   | X         | X            |
-| [#16](#)   | X         | X            |
-| [#16](#)   | X         | X            |
-| [#5](#)    | X         | X            |
-| [#49](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/49)    | Arrumando Diagrama de Atividades         | X      | X      |
+| [#53](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/53)   | GoF Criacional                     | [Luis Miranda](https://github.com/LuisMiranda10), [Limírio Guimarães](https://github.com/LimirioGuimaraes), [Milena Baruc](https://github.com/MilenaBaruc) e [Vinícius](https://github.com/yabamiah)            |
+| [#55](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/55)   | GoF Comportamental Strategy        | [Carlos Eduardo](https://github.com/CarlosEduardoMendesdeMesquita), [Carlos Godoy](https://github.com/CDGodoy) e [João Maior](https://github.com/Jvsoutomaior)            |
+| [#56](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/56)   | GoF Comportamental Command         | [Ana Luíza](https://github.com/analuizargds) e [Rafael Xavier](https://github.com/rafaelxavierr)           |
+| [#57](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/57)   | GoF Estrutural Facade         | [Luiz Pettengill](https://github.com/LuizPettengill), [Lucas Vilela](https://github.com/Lucas-AV), [Israel Thalles](https://github.com/IsraelThalles) e [Henrique Hida](https://github.com/HenriqueHida)            |
+| [#58](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/58)   | Organização do git pages         | [Ana Luíza](https://github.com/analuizargds)            |
+| [#59](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/59)   | Apresentação sprint         |  [Luis Miranda](https://github.com/LuisMiranda10) e  [Vinícius](https://github.com/yabamiah)          |
+| [#49](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/49)    | Arrumando Diagrama de Atividades         | [Vinícius](https://github.com/yabamiah)      |       |
 
 ## Overview da Sprint Planning
 
-- Nessa sprint os times foram divididos de acordo com a decisão dos demais membros, com uma maior atenção na utilização do Kanban e também das revisões acerca de cada Pull Request
-- A modelagem e implementação de cada GoF deve ser feita o quanto antes para uma melhor entendimento por parte do grupo acerca de todo conteúdo da entrega 
+Durante esta sprint, os times foram organizados conforme a decisão dos membros, com um foco maior na utilização do Kanban e na revisão detalhada de cada Pull Request. Para garantir um entendimento completo de todo o conteúdo da entrega, é essencial que a modelagem e implementação de cada padrão GoF sejam realizadas o quanto antes.
