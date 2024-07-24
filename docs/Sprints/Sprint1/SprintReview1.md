@@ -10,7 +10,7 @@
 
 ## Presença na Sprint Review 
 
-A Sprint Review foi realizada na terça-feira, dia 23/07/2024 às 20h30, e pode ser acessada através desse link [aqui](https://youtu.be/0TmxRy5W0I8).
+A Sprint Review foi realizada na terça-feira, dia 23/07/2024 às 20h30, e pode ser acessada através desse link [aqui](https://youtu.be/je4zqTNeEpM).
 
 | Membro                | Presença |
 |-----------------------|----------|
