@@ -1,6 +1,6 @@
-# Ata da  2° reunião da disciplina "Arquitetura e Desenho de Software"
+# Ata da  3° reunião da disciplina "Arquitetura e Desenho de Software"
 
-[//]: # (**Ordem do escrivão da ata:** Ana Luíza, Carlos Daniel, Carlos Eduardo, Henrique Hida, Israel Thalles, João Vítor, Limíro Guimarães, Lucas Alves Vilela, Luís Miranda, Luiz Guilherme, Milena Baruc, Rafael Xavier, Vinícius Mendes.)
+[//]: # (**Ordem do escrivão da ata:** Limirio, Luis Miranda, Ana Luíza, Carlos Daniel, Carlos Eduardo, Henrique Hida, Israel Thalles, João Vítor, Lucas Alves Vilela, Luiz Guilherme, Milena Baruc, Rafael Xavier, Vinícius Mendes.)
 
 **Data**:   16/07/2024 **Local**: Teams <br>
 **Projeto**: My_music <br>
