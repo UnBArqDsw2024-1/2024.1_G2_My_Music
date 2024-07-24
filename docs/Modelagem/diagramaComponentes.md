@@ -38,4 +38,5 @@ Figura 1 - Diagrama de Componentes. (Fonte: Luis Miranda e Milena Baruc, 2024)
 
 |   Versão  |    Data   | Descrição | Autor(es) | Revisor(es)|
 | --------- | --------- | --------- | --------- | ---------- |
-|   1.0   | 06/07/2023| Criação da página | [Luis Miranda](https://github.com/LuisMiranda10) & [Milena Baruc](https://github.com/MilenaBaruc) | [Vinícius Mendes](https://github.com/yabamiah)|
+|   1.0   | 06/07/2024| Criação da página | [Luis Miranda](https://github.com/LuisMiranda10) & [Milena Baruc](https://github.com/MilenaBaruc) | [Vinícius Mendes](https://github.com/yabamiah)|
+|   2.0   | 23/07/2024| Correção pós entrega| [Luis Miranda](https://github.com/LuisMiranda10) & [Milena Baruc](https://github.com/MilenaBaruc) | |
