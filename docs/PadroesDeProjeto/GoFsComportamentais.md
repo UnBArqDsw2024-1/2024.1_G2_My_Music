@@ -303,6 +303,10 @@ class ManagePlaylistTrack implements MusicCommand {
 Código 4: Código das classes Concrete Command. (Fonte: Ana Luíza e Rafael Xavier, 2024)
 </center>
 
+## Bibliografia
+
+> Command. Refactoring Guru, 2014-2024. Disponível em: <https://refactoring.guru/pt-br/design-patterns/command/>.
+
 ## Referências Bibliográficas
 
 > ¹ Command. Refactoring Guru, 2014-2024. Disponível em: <https://refactoring.guru/pt-br/design-patterns/command/>. Acesso em: 24 de jul. de 2024. 
