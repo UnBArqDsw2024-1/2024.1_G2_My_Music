@@ -50,10 +50,10 @@ abstract class Perfil {
     String? _nome;
     String? _email;
     String? _senha;
-    Date? _dataDeNascimento;
+    DateTime? _dataDeNascimento;
     String? _genero;
-
-    Perfil(String nome, String email, String senha, Date dataDeNascimento, String genero) {
+    
+    Perfil(String nome, String email, String senha, DateTime? dataDeNascimento, String genero) {
         this._nome = nome;
         this._email = email;
         this._senha = senha;
@@ -70,113 +70,141 @@ abstract class Perfil {
     set nome(String? nome) {
         _nome = nome;
     }   
-
     set email(String? email) {
         _email = email;
     }
-
     set senha(String? senha) {
         _senha = senha;
     }
-
     set dataDeNascimento(DateTime? dataDeNascimento) {
         _dataDeNascimento = dataDeNascimento;
     }
-
     set genero(String? genero) {
         _genero = genero;
     }
-
 }
 
-
 class Usuario extends Perfil {
-    List<Objects>? _interesse;
+    List<Object>? _interesse;
     Equalizador? _equalizador;
     Configuracoes? _configuracoes;
 
-    Usuario(String nome, String email, String senha, Date dataDeNascimento, String genero, List<Objects> interesse, Equalizador equalizador, Configuracoes configuracoes) 
+    Usuario(String nome, String email, String senha, DateTime dataDeNascimento, String genero, List<Object> interesse, Equalizador equalizador, Configuracoes configuracoes) 
         : super(nome, email, senha, dataDeNascimento, genero) {
-          
         this._interesse = interesse;
         this._equalizador = equalizador;
         this._configuracoes = configuracoes;
     }
       
-    List<Objects>? get interesse => _interesse;
+    List<Object>? get interesse => _interesse;
     Equalizador? get equalizador => _equalizador;
     Configuracoes? get configuracoes => _configuracoes;
       
-    set interesse(List<Objects>? interesse) {
+    set interesse(List<Object>? interesse) {
         _interesse = interesse;
     } 
-
-    set equalizador(Equalizador? equalizador)
-    {
+    set equalizador(Equalizador? equalizador) {
         _equalizador = equalizador;
     }
-
-    set configuracoes(Configuracoes? configuracoes)
-    {
+    set configuracoes(Configuracoes? configuracoes) {
         _configuracoes = configuracoes;
     }
 }
 
 class Artista extends Perfil {
-    String? _nomeArtista
-    String? _biografia
-    String? _paisDeOrigem
+    String? _nomeArtista;
+    String? _biografia;
+    String? _paisDeOrigem;
 
-    Artista(String nome, String email, String senha, Date dataDeNascimento, String genero, String nomeArtista, String biografia, String paisDeOrigem)
+    Artista(String nome, String email, String senha, DateTime dataDeNascimento, String genero, String nomeArtista, String biografia, String paisDeOrigem)
         : super(nome, email, senha, dataDeNascimento, genero) {
-          
-        this._nomeArtista = nomeArtista
-        this._biografia = biografia
-        this._paisDeOrigem = paisDeOrigem
+        this._nomeArtista = nomeArtista;
+        this._biografia = biografia;
+        this._paisDeOrigem = paisDeOrigem;
     }
+
+    String? get nomeArtista => _nomeArtista;
+    String? get biografia => _biografia;
+    String? get paisDeOrigem => _paisDeOrigem;
 
     set nomeArtista(String? nomeArtista) {
-        _nomeArtista = nomeArtista
+        _nomeArtista = nomeArtista;
     }
-
-    set biografia(String? biografia){
-        _biografia = biografia
+    set biografia(String? biografia) {
+        _biografia = biografia;
     }
-
-    set paisDeOrigem(String? paisDeOrigem){
-        _paisDeOrigem = paisDeOrigem
+    set paisDeOrigem(String? paisDeOrigem) {
+        _paisDeOrigem = paisDeOrigem;
     }
-
 }
 
 abstract class CriadorPerfil {
-    Perfil criarPerfil(String nome, String email, String senha, Date dataDeNascimento, String genero)
-    {
-        return Perfil(nome, email, senha, dataDeNascimento, genero);
-    }
+    Perfil criarPerfil({
+        required String nome, 
+        required String email, 
+        required String senha, 
+        required DateTime dataDeNascimento, 
+        required String genero, 
+        List<Object>? interesse, 
+        Equalizador? equalizador, 
+        Configuracoes? configuracoes, 
+        String? nomeArtista, 
+        String? biografia, 
+        String? paisDeOrigem
+    });
 }
 
 class CriadorUsuario extends CriadorPerfil {
     @override
-    Perfil criarPerfil(String nome, String email, String senha, Date dataDeNascimento, String genero, List<Objects> interesse, Equalizador equalizador, Configuracoes configuracoes) {
-        return Usuario(nome, email, senha, dataDeNascimento, genero, interesse, equalizador, configuracoes);
+    Perfil criarPerfil({
+        required String nome, 
+        required String email, 
+        required String senha, 
+        required DateTime dataDeNascimento, 
+        required String genero, 
+        List<Object>? interesse, 
+        Equalizador? equalizador, 
+        Configuracoes? configuracoes, 
+        String? nomeArtista, 
+        String? biografia, 
+        String? paisDeOrigem
+    }) {
+        return Usuario(
+            nome, email, senha, dataDeNascimento, genero, 
+            interesse!, equalizador!, configuracoes!
+        );
     }
 }
 
 class CriadorArtista extends CriadorPerfil {
     @override
-    Perfil criarPerfil(String nome, String email, String senha, Date dataDeNascimento, String genero, String nomeArtista, String biografia, String paisDeOrigem) {
-      return Artista(nome, email, senha, dataDeNascimento, genero, nomeArtista, biografia, paisDeOrigem);
-    } 
+    Perfil criarPerfil({
+        required String nome, 
+        required String email, 
+        required String senha, 
+        required DateTime dataDeNascimento, 
+        required String genero, 
+        List<Object>? interesse, 
+        Equalizador? equalizador, 
+        Configuracoes? configuracoes, 
+        String? nomeArtista, 
+        String? biografia, 
+        String? paisDeOrigem
+    }) {
+        return Artista(
+            nome, email, senha, dataDeNascimento, genero, 
+            nomeArtista!, biografia!, paisDeOrigem!
+        );
+    }
 }
 
+
+
 class Aplicacao {
-    static CriadorPerfil? gerarCriador()
-    {
+    static CriadorPerfil? gerarCriador() {
         Perfil? tipo = readButtonPerfil(); 
-          
-        switch(tipo)
-        {
+
+        switch (tipo.runtimeType) {
             case Usuario:
                 return CriadorUsuario();
             case Artista:
@@ -290,6 +318,6 @@ class Configuracoes {
 
 | Versão | Data       | Descrição                                               | Autores                        | Revisores |
 | ------ | ---------- | ------------------------------------------------------- | ------------------------------ | --------- |
-| 0.1    | 22/07/2024 | Criação do documento e adicionando sobre Factory Method |  [Luis Miranda](https://github.com/LuisMiranda10) & [Vinícius Mendes](https://github.com/yabamiah) |           |
+| 0.1    | 22/07/2024 | Criação do documento e adicionando sobre Factory Method |  [Luis Miranda](https://github.com/LuisMiranda10) & [Vinícius Mendes](https://github.com/yabamiah) | [Lucas Alves Vilela](https://github.com/Lucas-AV) |
 | 0.2    | 22/07/2024 | Criação do documento e adicionando sobre Singleton      | [Limírio Guimarães](https://github.com/LimirioGuimaraes) & [Milena Baruc](https://github.com/MilenaBaruc) |           |
 | 0.3    | 22/07/2024 | Adicionada possível implementação Singleton      | [Limírio Guimarães](https://github.com/LimirioGuimaraes) & [Milena Baruc](https://github.com/MilenaBaruc) |           |
