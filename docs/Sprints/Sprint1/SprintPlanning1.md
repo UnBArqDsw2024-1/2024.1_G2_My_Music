@@ -55,4 +55,4 @@ Durante esta sprint, os times foram organizados conforme a decisão dos membros,
 
 | Versão | Data       | Descrição                                               | Autores                        | Revisores |
 | ------ | ---------- | ------------------------------------------------------- | ------------------------------ | --------- |
-| 0.1    | 23/07/2024 | Criação do documento |  [Luis Miranda](https://github.com/LuisMiranda10), [Vinícius Mendes](https://github.com/yabamiah) | [Rafael Xavier](https://github.com/rafaelxavierr) - [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/68#issuecomment-2249232056) |
+| 0.1    | 23/07/2024 | Criação do documento |  [Luis Miranda](https://github.com/LuisMiranda10), [Vinícius Mendes](https://github.com/yabamiah) | [Rafael Xavier](https://github.com/rafaelxavierr) & [João Vítor](https://github.com/Jvsoutomaior) - [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/68#issuecomment-2249232056) ||
