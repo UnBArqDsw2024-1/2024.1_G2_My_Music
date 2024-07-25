@@ -57,8 +57,8 @@ Este documento contém um breve relato das participações e contribuições dos
 | Carlos Godoy | Contribuiu desenvolvimento do artefato [Strategy]() | Excelente |
 | Henrique Hida | Contribuiu na revisão do artefato [Strategy]() | Excelente |
 | João Maior | Contribuiu desenvolvimento do artefato [Strategy]() | Excelente |
-| Israel Thalles | Contribuiu na revisão do artefatp [Strategy]() | Excelente |
-| Luiz Pettengill | | Nula |
+| Israel Thalles | Contribuiu na revisão do artefato [Strategy]() | Excelente |
+| Luiz Pettengill | Contribuiu na revisão do [Command]() | Excelente |
 | Luis Miranda | Contribuiu na revisão do artefato [Command]) | Excelente |
 | Limírio Guimarães | Contribuiu na revisão do artefato [Command]()  | Excelente |
 | Lucas Vilela | Contribuiu na revisão do artefato [Command]()  | Excelente |
