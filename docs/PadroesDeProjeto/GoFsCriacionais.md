@@ -23,7 +23,7 @@ subclasses auxiliares, e você quer localizar qual subclasse auxiliar é
 delegada.  
 
 <div style="text-align: center">
-  <img src="../Assets/EstruturaFactoryMethod.png" alt="Estrutura do Factory Method" title="Título da Imagem" />
+  <img src="../../Assets/EstruturaFactoryMethod.png" alt="Estrutura do Factory Method" title="Título da Imagem" />
   <p>Figura 1: Estrutura do padrão Factory Method (Fonte: Refactoring Guru, 2014-2024)¹</p>
 </div>
 
@@ -37,7 +37,7 @@ Para o desenvolvimento da modelagem do Factory Method no contexto do nosso proje
 Decidimos que poderíamos utilizar o padrão Factory Method na criação da classe abstrata `Perfil`. Essa superclasse possui duas subclasses, `Usuário` e `Artista`, cujas instâncias mudam conforme o contexto, permitindo funcionalidades diferentes no aplicativo para cada tipo de perfil. A modelagem foi realizada pelos membros [Luis Miranda](https://github.com/LuisMiranda10) e [Vinícius Mendes](https://github.com/yabamiah), conforme visualizado na Figura 2.
 
 <div style="text-align: center">
-  <img src="../Assets/ModelagemFactoryMethod.png" alt="Modelagem do padrão Factory Method" title="Título da Imagem" />
+  <img src="../../Assets/ModelagemFactoryMethod.png" alt="Modelagem do padrão Factory Method" title="Título da Imagem" />
   <p>Figura 2: Modelagem do padrão Factory Method (Fonte: Luis Miranda e Vinícius Mendes, 2024)</p>
 </div>
 
@@ -296,3 +296,4 @@ class Configuracoes {
 | 1.1    | 22/07/2024 | Criação do documento e adicionando sobre Factory Method |  [Luis Miranda](https://github.com/LuisMiranda10) & [Vinícius Mendes](https://github.com/yabamiah) | [João Vítor](https://github.com/Jvsoutomaior) & [Ana Luíza](https://github.com/analuizargds)  &  [Lucas Alves Vilela](https://github.com/Lucas-AV) & [Rafael Xavier](https://github.com/rafaelxavierr) & [Israel Thalles](https://github.com/IsraelThalles) & [Luiz Pettengill](https://github.com/LuizPettengill), [Link da Revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/65)       |
 | 1.2    | 22/07/2024 | Criação do documento e adicionando sobre Singleton      | [Limírio Guimarães](https://github.com/LimirioGuimaraes) & [Milena Baruc](https://github.com/MilenaBaruc) | [João Vítor](https://github.com/Jvsoutomaior) & [Ana Luíza](https://github.com/analuizargds)  &  [Lucas Alves Vilela](https://github.com/Lucas-AV) & [Rafael Xavier](https://github.com/rafaelxavierr) & [Israel Thalles](https://github.com/IsraelThalles) & [Luiz Pettengill](https://github.com/LuizPettengill), [Link da Revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/65)             |
 | 1.3    | 22/07/2024 | Adicionada possível implementação Singleton      | [Limírio Guimarães](https://github.com/LimirioGuimaraes) & [Milena Baruc](https://github.com/MilenaBaruc) |  [João Vítor](https://github.com/Jvsoutomaior) & [Ana Luíza](https://github.com/analuizargds)  &  [Lucas Alves Vilela](https://github.com/Lucas-AV) & [Rafael Xavier](https://github.com/rafaelxavierr) & [Israel Thalles](https://github.com/IsraelThalles) & [Luiz Pettengill](https://github.com/LuizPettengill), [Link da Revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/65)             |
+| 1.4    | 25/07/2024 | Correção de imagens quebradas      | [Ana Luíza](https://github.com/analuizargds)  |               |

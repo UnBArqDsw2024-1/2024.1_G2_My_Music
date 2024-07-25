@@ -2,8 +2,8 @@ site_name: My Music
 theme:
   name: material
   language: pt-BR
-  logo: ../Assets/logo.png
-  favicon: ../Assets/logo.png
+  logo: ../../Assets/logo.png
+  favicon: ../../Assets/logo.png
 
   palette:
 
