@@ -1,12 +1,10 @@
-## 3.3.1 GoFs Estrutural
-
 Os padrões GoF estruturais tratam da composição de classes e objetos para formar estruturas maiores e mais complexas. Eles ajudam a garantir que, ao combinar diferentes classes e objetos, o resultado final seja flexível e eficiente, além de ser fácil de manter e entender. Os padrões estruturais focam na maneira como as classes e os objetos são compostos para obter novas funcionalidades e facilitar a gestão do código.
 
 No contexto do nosso projeto, focaremos no padrão Facade.
 
-## 3.3.1.1 Facade
+## 3.2.0 Facade
 
-### Introdução
+## Introdução
 O padrão Facade é um padrão estrutural que oferece uma interface unificada para um conjunto de interfaces em um subsistema. Facade define uma interface de nível mais alto que torna o subsistema mais fácil de usar. O padrão é particularmente útil para sistemas complexos que têm muitas partes interagindo entre si.
 As classes deste padrão serão explicadas logo abaixo, juntamente com a imagem da figura 1, que apresenta sua estrutura através de um diagrama.
 
@@ -19,7 +17,7 @@ As classes deste padrão serão explicadas logo abaixo, juntamente com a imagem 
   <p>Figura 1: Estrutura do padrão Facade (Fonte: Refactoring Guru, 2014-2024)²</p>
 </div>
 
-### Metodologia
+## Metodologia
 
 Primeiramente, foi definido um período para leitura da documentação dos padrões de projeto estruturais e pesquisas individuais, para que os membros contribuíssem com sugestões de GOFs a serem utilizados. Por fim, chegou-se a um consenso pela utilização do padrão Facade.
 
