@@ -364,6 +364,64 @@ class Configuracoes {
   <p>Código 2: Possível implementação em código do Singleton em Dart (Fonte: Limírio Guimarães e Milena Baruc, 2024)</p>
 </div>
 
+Para testar a modelagem da classe e verificar se a implementação do padrão singleton está funcionando como esperado, podemos combinar o código 3 e o código 2 em um único arquivo, por exemplo, `main.dart`, e executá-lo utilizando `dart main.dart` no terminal. Certifique-se de ter o Dart instalado em seu sistema para realizar essa operação.
+
+```dart
+void main() {
+  // Obtém a instância singleton de Configuracoes
+  var config1 = Configuracoes.instancia;
+
+  // Verifica o estado inicial dos modos
+  print('Modo Aleatório: ${config1.modoAleatorio}');
+  print('Modo Offline: ${config1.modoOffline}');
+
+  // Tenta criar outra instância diretamente
+  try {
+    var config2 = Configuracoes._privateConstructor();
+  } catch (e) {
+    print('Erro ao tentar criar uma nova instância: $e');
+  }
+
+  // Verifica se config1 ainda está funcionando como esperado
+  config1.ativarModoAleatorio();
+  print('Modo Aleatório ativado: ${config1.modoAleatorio}');
+  
+  config1.desativarModoAleatorio();
+  print('Modo Aleatório desativado: ${config1.modoAleatorio}');
+  
+  config1.ativarModoOffline();
+  print('Modo Offline ativado: ${config1.modoOffline}');
+  
+  config1.desativarModoOffline();
+  print('Modo Offline desativado: ${config1.modoOffline}');
+  
+  config1.ajustar('bass', 10);
+  print('Frequência bass ajustada para: ${config1.frequenciasEqualizador['bass']}');
+  
+  config1.ajustar('treble', 5);
+  print('Frequência treble ajustada para: ${config1.frequenciasEqualizador['treble']}');
+  
+  config1.ajustar('mid', 7);
+  print('Frequências do equalizador: ${config1.frequenciasEqualizador}');
+  
+  // Obtém outra instância singleton de Configuracoes
+  var config3 = Configuracoes.instancia;
+  print('config1 e config3 são a mesma instância: ${identical(config1, config3)}');
+}
+```
+<div style="text-align: center">
+  <p>Código 3: Código para teste Singleton em Dart (Fonte: Limírio Guimarães, 2024)</p>
+</div>
+
+Para facilitar a leitura e a compreensão do documento, a Figura 5 apresenta uma captura de tela da saída resultante da combinação dos códigos 2 e 3.
+
+<div style="text-align: center">
+  <img src="../../Assets/PrintSingleton.png" alt="Modelagem do Singleton" title="Título da Imagem" />
+  <p>Figura 5: Print teste padrão Singleton (Fonte: Limírio Guimarães, 2024)</p>
+</div>
+
+
+
 ## Referência Bibliográfica
 
 > ¹ Factory Method, Refactoring.Guru. Disponível em: https://refactoring.guru/design-patterns/factory-method. Acesso em: 15/07/2024.
@@ -389,3 +447,4 @@ class Configuracoes {
 | 1.3    | 22/07/2024 | Adicionada possível implementação Singleton      | [Limírio Guimarães](https://github.com/LimirioGuimaraes) & [Milena Baruc](https://github.com/MilenaBaruc) |  [João Vítor](https://github.com/Jvsoutomaior) & [Ana Luíza](https://github.com/analuizargds)  &  [Lucas Alves Vilela](https://github.com/Lucas-AV) & [Rafael Xavier](https://github.com/rafaelxavierr) & [Israel Thalles](https://github.com/IsraelThalles) & [Luiz Pettengill](https://github.com/LuizPettengill), [Link da Revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/65)             |
 | 1.4    | 25/07/2024 | Correção de imagens quebradas      | [Ana Luíza](https://github.com/analuizargds)  | [Limírio Guimarães](https://github.com/LimirioGuimaraes)              |
 | 1.5    | 25/07/2024 | Correção de imagens quebradas      | [Limírio Guimarães](https://github.com/LimirioGuimaraes) |               |
+| 1.6    | 25/07/2024 | Adicionado testes do modelo      | [Limírio Guimarães](https://github.com/LimirioGuimaraes) |               |
