@@ -417,7 +417,7 @@ Para facilitar a leitura e a compreensão do documento, a Figura 5 apresenta uma
 
 <div style="text-align: center">
   <img src="../../Assets/PrintSingleton.png" alt="Modelagem do Singleton" title="Título da Imagem" />
-  <p>Figura 5: Print teste padrão Singleton (Fonte: Limírio Guimarães, 2024)</p>
+  <p>Figura 5: Print do teste da classe Configuracoes (Fonte: Limírio Guimarães, 2024)</p>
 </div>
 
 
