@@ -51,3 +51,7 @@ Também encontramos desafios iniciais e nos sentimos perdidos sobre quais padrõ
 
 ### Time GoFs Comportamentais
 Como esperado, também enfrentamos dificuldades nessa fase. No entanto, com a orientação da professora, entendemos como fazer o diagrama e aplicar os padrões GoF no contexto da nossa aplicação. No final, tudo deu certo e, no geral, acredito que essa sprint foi melhor para o grupo em comparação à anterior. 
+
+| Versão | Data       | Descrição                                               | Autores                        | Revisores |
+| ------ | ---------- | ------------------------------------------------------- | ------------------------------ | --------- |
+| 0.1    | 23/07/2024 | Criação do documento |  [Luis Miranda](https://github.com/LuisMiranda10), [Vinícius Mendes](https://github.com/yabamiah) | [Rafael Xavier](https://github.com/rafaelxavierr) - [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/68#issuecomment-2249232056) |
