@@ -24,7 +24,7 @@ Para a criação do strategy o grupo formou um trio (João Vítor, Carlos Godoy 
   <p>Figura 1: Diagrama de classes do padrão Strategy (Fonte: João Vítor, Carlos Godoy e Carlos Eduardo, 2024)</p>
 </div>
 
-[Link para visualização Lucichart](https://lucid.app/lucidchart/975f7f68-6a93-4a32-a801-3aae98bb4caa/edit?invitationId=inv_3ad88baf-8c77-475a-b16d-ac75edce0cfb)
+[Link para visualização Lucidchart](https://lucid.app/lucidchart/975f7f68-6a93-4a32-a801-3aae98bb4caa/edit?invitationId=inv_3ad88baf-8c77-475a-b16d-ac75edce0cfb)
 
 ### implementação
 
@@ -95,7 +95,7 @@ class EstrategiaFiltroPais implements EstrategiaFiltro {
 
 ## Conclusão 
 
-  O padrão de projeto comportamental Strategy mostra-se útil em situações em que é necessário definir diferentes maneiras de abordar uma mesma solução como por exemplo no nosso caso o filtro de muúsica. Outros contextos em que o padrão Strategy pode ser aplicado são: pagamento, ordenação, entre outros. A implementação do padrão Strategy foi realizada com sucesso, e o grupo conseguiu entender a importância de se utilizar padrões de projeto para facilitar a manutenção e a escalabilidade do código.
+  O padrão de projeto comportamental Strategy mostra-se útil em situações em que é necessário definir diferentes maneiras de abordar uma mesma solução como por exemplo no nosso caso o filtro de música. Outros contextos em que o padrão Strategy pode ser aplicado são: pagamento, ordenação, entre outros. A implementação do padrão Strategy foi realizada com sucesso, e o grupo conseguiu entender a importância de se utilizar padrões de projeto para facilitar a manutenção e a escalabilidade do código.
 
 ## Referências Bibliográficas
 > ¹ Refactoring Guru. Strategy Disponível em: <https://refactoring.guru/design-patterns/strategy>. Acesso em: 24 julho 2024.
@@ -110,3 +110,4 @@ class EstrategiaFiltroPais implements EstrategiaFiltro {
 | ------ | ---------- | ------------------------------------------------------- | ------------------------------ | --------- |
 | 1.0 | 23/06/2024 | Primeira versão do GoF Comportamental Strategy | João Vítor, Carlos Eduardo e Carlos Godoy | [Vinícius Mendes](https://github.com/yabamiah), [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/64)|
 | 1.1 | 24/06/2024 | explicação do Strategy, correção no modelo, correção de portugues | João Vítor | [Israel Thalles](https://github.com/IsraelThalles), [Luiz Pettengill](https://github.com/LuizPettengill), [Henrique Hida](https://github.com/HenriqueHida)  ([Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/64#pullrequestreview-2197938728)) |
+| 1.2    | 25/07/2024 | Correção de ortografia      | [Ana Luíza](https://github.com/analuizargds)  |               |
