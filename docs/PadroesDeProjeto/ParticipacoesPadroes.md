@@ -11,8 +11,8 @@ Este documento contém um breve relato das participações e contribuições dos
 | Carlos Godoy | | Nula |
 | Henrique Hida | | Nula |
 | João Maior | | Nula |
-| Israel Thalles |  | Nula |
-| Luiz Pettengill | | Nula |
+| Israel Thalles | Contribuiu na revisão do artefato [Factory Method]() e [Singleton]() | Boa |
+| Luiz Pettengill | Contribuiu na revisão do artefato  [Factory Method]() e [Singleton]() | Boa |
 | Luis Miranda | Contribuiu desenvolvimento do artefato [Factory Method]() | Excelente |
 | Limírio Guimarães | Contribuiu desenvolvimento do artefato [Singleton]() | Excelente |
 | Lucas Vilela | Contribuiu na revisão do artefato  [Factory Method]() e [Singleton]() | Excelente |
