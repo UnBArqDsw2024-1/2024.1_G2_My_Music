@@ -2,7 +2,8 @@ O padrão GoF criacional tem como objetivo simplificar a criação de objetos, f
 
 No contexto do nosso projeto, focaremos nos padrões Factory Method e Singleton.
 
-# 3.1.0 Factory Method
+## 3.1.0 Factory Method
+
 ## Introdução
 O Factory Method é um padrão criacional que cria um padrão de instanciar uma superclasse, porém, dá a responsabilidade de definir o seu tipo para as subclasses. É um padrão muito utilizado em bibliotecas, como de inteface gráfica onde geralmente existe uma padrão para criar uma superclasse, mas, só no contexto da aplicação (no caso pode ser onde essa interface irá ser executada) que será definido o tipo pela suas subsclasses.
 As classes participantes deste padrão serão explicado logo abaixo, juntamente com a imagem da figura 1, que apresenta sua estrutura através de um diagrama.
@@ -192,7 +193,8 @@ class Aplicacao {
 </div>
 
 
-# 3.1.1. Singleton
+## 3.1.1. Singleton
+
 ## Introdução
 O Singleton é um padrão criacional que garante que uma classe tenha apenas uma instância e fornece um ponto de acesso global a essa instância. Este padrão é amplamente utilizado quando é necessário um único objeto para coordenar ações em todo o sistema, como em gerenciadores de configuração, conexões de banco de dados ou loggers.
 
