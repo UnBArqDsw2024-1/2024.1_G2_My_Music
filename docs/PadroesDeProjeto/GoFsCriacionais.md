@@ -24,7 +24,7 @@ delegada.
 
 <div style="text-align: center">
   <img src="../Assets/EstruturaFactoryMethod.png" alt="Estrutura do Factory Method" title="Título da Imagem" />
-  <p>Figura 1: Estrutura do padrão Factory Method (Fonte: Refactoring Guru, 2014-2024)²</p>
+  <p>Figura 1: Estrutura do padrão Factory Method (Fonte: Refactoring Guru, 2014-2024)¹</p>
 </div>
 
 
@@ -41,9 +41,9 @@ Decidimos que poderíamos utilizar o padrão Factory Method na criação da clas
   <p>Figura 2: Modelagem do padrão Factory Method (Fonte: Luis Miranda e Vinícius Mendes, 2024)</p>
 </div>
 
-O desenvolvimento da implementação foi realizado em paralelo com a modelagem, sendo conduzido pelos mesmos membros da equipe. Esta implementação foi feita de forma colaborativa através da plataforma Discord, utilizando como referência o site [Dart Academy](https://dart.academy/creational-design-patterns-for-dart-and-flutter-factory-method/)³, que possui exemplos de implementações em diversas linguagens de programação.
+O desenvolvimento da implementação foi realizado em paralelo com a modelagem, sendo conduzido pelos mesmos membros da equipe. Esta implementação foi feita de forma colaborativa através da plataforma Discord, utilizando como referência o site [Dart Academy](https://dart.academy/creational-design-patterns-for-dart-and-flutter-factory-method/)², que possui exemplos de implementações em diversas linguagens de programação.
 
-Primeiro, foi criado um pseudocódigo para entender de maneira simplificada a lógica e a estrutura do código, que pode ser visualizado no Código 1. Em seguida, o pseudocódigo foi traduzido para a linguagem Dart, escolhida pela equipe para o desenvolvimento do projeto.
+Primeiro, foi criado um código para entender de maneira simplificada a lógica e a estrutura do código, que pode ser visualizado no Código 1. Em seguida, o código foi traduzido para a linguagem Dart, escolhida pela equipe para o desenvolvimento do projeto.
 
 ```dart
 abstract class Perfil {
@@ -64,7 +64,7 @@ abstract class Perfil {
     String? get nome => _nome;
     String? get email => _email;
     String? get senha => _senha;
-    DateTime? get dataDeNascimento => _dataDeNascimento;
+    Date? get dataDeNascimento => _dataDeNascimento;
     String? get genero => _genero;
 
     set nome(String? nome) {
@@ -79,7 +79,7 @@ abstract class Perfil {
         _senha = senha;
     }
 
-    set dataDeNascimento(DateTime? dataDeNascimento) {
+    set dataDeNascimento(Date? dataDeNascimento) {
         _dataDeNascimento = dataDeNascimento;
     }
 
@@ -123,28 +123,28 @@ class Usuario extends Perfil {
 }
 
 class Artista extends Perfil {
-    String? _nomeArtista
-    String? _biografia
-    String? _paisDeOrigem
+    String? _nomeArtista;
+    String? _biografia;
+    String? _paisDeOrigem;
 
     Artista(String nome, String email, String senha, Date dataDeNascimento, String genero, String nomeArtista, String biografia, String paisDeOrigem)
         : super(nome, email, senha, dataDeNascimento, genero) {
           
-        this._nomeArtista = nomeArtista
-        this._biografia = biografia
-        this._paisDeOrigem = paisDeOrigem
+        this._nomeArtista = nomeArtista;
+        this._biografia = biografia;
+        this._paisDeOrigem = paisDeOrigem;
     }
 
     set nomeArtista(String? nomeArtista) {
-        _nomeArtista = nomeArtista
+        _nomeArtista = nomeArtista;
     }
 
     set biografia(String? biografia){
-        _biografia = biografia
+        _biografia = biografia;
     }
 
     set paisDeOrigem(String? paisDeOrigem){
-        _paisDeOrigem = paisDeOrigem
+        _paisDeOrigem = paisDeOrigem;
     }
 
 }
@@ -157,14 +157,14 @@ abstract class CriadorPerfil {
 }
 
 class CriadorUsuario extends CriadorPerfil {
-    @override
+    @criarPerfil 
     Perfil criarPerfil(String nome, String email, String senha, Date dataDeNascimento, String genero, List<Objects> interesse, Equalizador equalizador, Configuracoes configuracoes) {
         return Usuario(nome, email, senha, dataDeNascimento, genero, interesse, equalizador, configuracoes);
     }
 }
 
 class CriadorArtista extends CriadorPerfil {
-    @override
+    @criarPerfil
     Perfil criarPerfil(String nome, String email, String senha, Date dataDeNascimento, String genero, String nomeArtista, String biografia, String paisDeOrigem) {
       return Artista(nome, email, senha, dataDeNascimento, genero, nomeArtista, biografia, paisDeOrigem);
     } 
@@ -204,7 +204,7 @@ O Singleton previne a criação de múltiplas instâncias através de um constru
 
 <div style="text-align: center">
   <img src="../Assets/EstruturaSingleton.png" alt="Estrutura do Singleton" title="Título da Imagem" />
-  <p>Figura 3: Estrutura do padrão Singleton (Fonte: Refactoring Guru, 2014-2024)¹</p>
+  <p>Figura 3: Estrutura do padrão Singleton (Fonte: Refactoring Guru, 2014-2024)</p>
 </div>
 
 No diagrama, podemos ver como o Singleton mantém uma referência estática para a sua única instância e como o método estático garante a criação dessa instância apenas uma vez, fornecendo um ponto de acesso global. O Cliente interage com a instância única do Singleton para executar operações, garantindo que todos os clientes utilizem a mesma instância.
@@ -229,7 +229,7 @@ Este design assegura que todas as partes do sistema utilizem a mesma instância 
 
 O desenvolvimento da implementação foi realizado em paralelo com a modelagem, sendo conduzido pelos mesmos membros da equipe. Esta implementação foi feita de forma colaborativa através da plataforma Discord, utilizando como referência o site [Dart Academy](https://dart.academy/creational-design-patterns-for-dart-and-flutter-factory-method/)², que possui exemplos de implementações em diversas linguagens de programação.
 
-Primeiro, foi criado um pseudocódigo para entender de maneira simplificada a lógica e a estrutura do código, que pode ser visualizado no Código 2. Em seguida, o pseudocódigo foi traduzido para a linguagem Dart, escolhida pela equipe para o desenvolvimento do projeto.
+Primeiro, foi criado um código para entender de maneira simplificada a lógica e a estrutura do código, que pode ser visualizado no Código 2. Em seguida, o código foi traduzido para a linguagem Dart, escolhida pela equipe para o desenvolvimento do projeto.
 
 ```dart
 class Configuracoes {
@@ -273,11 +273,12 @@ class Configuracoes {
 </div>
 
 ## Referência Bibliográfica
-> ¹ Padrões de Projeto: Design Patterns. Disponível em: https://biblioteca.univap.br/dados/000042/00004243.pdf. Acesso em: 23/07/2024.
 
-> ² Factory Method, Refactoring.Guru. Disponível em: https://refactoring.guru/design-patterns/factory-method. Acesso em: 15/07/2024.
+> ¹ Factory Method, Refactoring.Guru. Disponível em: https://refactoring.guru/design-patterns/factory-method. Acesso em: 15/07/2024.
 
-> ³ Creational Design Patterns for Dart and Flutter: Factory Method, Dart Academy. Disponível em: https://dart.academy/creational-design-patterns-for-dart-and-flutter-factory-method/. Acesso em: 20/07/2024
+> ² Creational Design Patterns for Dart and Flutter: Factory Method, Dart Academy. Disponível em: https://dart.academy/creational-design-patterns-for-dart-and-flutter-factory-method/. Acesso em: 20/07/2024
+
+> ³ Singleton, Refactoring.Guru. Disponível em: https://refactoring.guru/pt-br/design-patterns/singleton. Acesso em: 15/07/2024
 
 
 ## Bibliografia
@@ -285,10 +286,12 @@ class Configuracoes {
 
 > Creational Design Patterns, OODesign. Disponível em: https://www.oodesign.com/creational-patterns/. Acesso em: 16/07/204.
 
+> Padrões de Projeto: Design Patterns. Disponível em: https://biblioteca.univap.br/dados/000042/00004243.pdf. Acesso em: 23/07/2024.
+
 ## Histórico de Versões
 
 | Versão | Data       | Descrição                                               | Autores                        | Revisores |
 | ------ | ---------- | ------------------------------------------------------- | ------------------------------ | --------- |
-| 0.1    | 22/07/2024 | Criação do documento e adicionando sobre Factory Method |  [Luis Miranda](https://github.com/LuisMiranda10) & [Vinícius Mendes](https://github.com/yabamiah) |           |
-| 0.2    | 22/07/2024 | Criação do documento e adicionando sobre Singleton      | [Limírio Guimarães](https://github.com/LimirioGuimaraes) & [Milena Baruc](https://github.com/MilenaBaruc) |           |
-| 0.3    | 22/07/2024 | Adicionada possível implementação Singleton      | [Limírio Guimarães](https://github.com/LimirioGuimaraes) & [Milena Baruc](https://github.com/MilenaBaruc) |           |
+| 1.1    | 22/07/2024 | Criação do documento e adicionando sobre Factory Method |  [Luis Miranda](https://github.com/LuisMiranda10) & [Vinícius Mendes](https://github.com/yabamiah) |           |
+| 1.2    | 22/07/2024 | Criação do documento e adicionando sobre Singleton      | [Limírio Guimarães](https://github.com/LimirioGuimaraes) & [Milena Baruc](https://github.com/MilenaBaruc) | [Lucas Alves Vilela](https://github.com/Lucas-AV), [link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/65#pullrequestreview-2198026768)           |
+| 1.3    | 22/07/2024 | Adicionada possível implementação Singleton      | [Limírio Guimarães](https://github.com/LimirioGuimaraes) & [Milena Baruc](https://github.com/MilenaBaruc) |  [Ana Luíza](https://github.com/analuizargds), [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/65#pullrequestreview-2197999215), [Rafael Xavier](https://github.com/rafaelxavierr), [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/65#issuecomment-2249204871)           |
