@@ -51,4 +51,4 @@ A Sprint Planning foi realizada na segunda-feira, dia 08/07/2024 às 10h, após 
 
 ## Overview da Sprint Planning
 
-Durante esta sprint, os times foram organizados conforme a decisão dos membros, com um foco maior na utilização do Kanban e na revisão detalhada de cada Pull Request. Para garantir um entendimento completo de todo o conteúdo da entrega, é essencial que a modelagem e implementação de cada padrão GoF sejam realizadas o quanto antes.
+Durante esta sprint, os times foram organizados conforme a decisão dos membros, com um foco maior na utilização do Kanban e na revisão detalhada de cada Pull Request. Para garantir um entendimento completo de todo o conteúdo da entrega, é essencial que a modelagem e implementação de cada padrão GoF sejam realizadas o quanto antes. 

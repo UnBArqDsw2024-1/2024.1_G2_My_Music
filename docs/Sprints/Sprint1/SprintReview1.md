@@ -50,4 +50,4 @@ No início, enfrentamos bastante dificuldade na modelagem, mas, com pesquisa e o
 Também encontramos desafios iniciais e nos sentimos perdidos sobre quais padrões seriam mais adequados. Contudo, após a estudante consultar a professora e realizar pesquisas, conseguimos modelar bem os padrões selecionados.
 
 ### Time GoFs Comportamentais
-Como esperado, também enfrentamos dificuldades nessa fase. No entanto, com a orientação da professora, entendemos como fazer o diagrama e aplicar os padrões GoF no contexto da nossa aplicação. No final, tudo deu certo e, no geral, acredito que essa sprint foi melhor para o grupo em comparação à anterior.
+Como esperado, também enfrentamos dificuldades nessa fase. No entanto, com a orientação da professora, entendemos como fazer o diagrama e aplicar os padrões GoF no contexto da nossa aplicação. No final, tudo deu certo e, no geral, acredito que essa sprint foi melhor para o grupo em comparação à anterior. 
