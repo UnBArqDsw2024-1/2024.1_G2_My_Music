@@ -110,5 +110,5 @@ class EstrategiaFiltroPais implements EstrategiaFiltro {
 
 | Versão | Data       | Descrição                                               | Autores                        | Revisores |
 | ------ | ---------- | ------------------------------------------------------- | ------------------------------ | --------- |
-| 1.0 | 23/06/2024 | Primeira versão do GoF Comportamental Strategy | João Vítor, Carlos Eduardo e Carlos Godoy | |
+| 1.0 | 23/06/2024 | Primeira versão do GoF Comportamental Strategy | João Vítor, Carlos Eduardo e Carlos Godoy | [Vinícius Mendes](https://github.com/yabamiah), [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/64)|
 | 1.1 | 24/06/2024 | explicação do Strategy, correção no modelo, correção de portugues | João Vítor | [Israel Thalles](https://github.com/IsraelThalles) ([Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/64#pullrequestreview-2197938728)) |
