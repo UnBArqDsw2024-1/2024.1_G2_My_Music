@@ -25,4 +25,4 @@ As atividades extras e correções que foram realizadas durante essa entraga est
 ## Histórico de Versão
 | Verão | Data | Descrição | Autor | Revisor |
 |-------|------|-----------|-------|---------|
-|   1.0   | 24/07/2023| Criação da página | [Luis Miranda](https://github.com/LuisMiranda10) & [Vinícius Mendes](https://github.com/yabamiah)|[João Vítor](https://github.com/Jvsoutomaior) |
+|   1.0   | 24/07/2023| Criação da página | [Luis Miranda](https://github.com/LuisMiranda10) & [Vinícius Mendes](https://github.com/yabamiah)|[João Vítor](https://github.com/Jvsoutomaior), [Link da Revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/63) |
