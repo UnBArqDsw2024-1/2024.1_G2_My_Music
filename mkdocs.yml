@@ -72,7 +72,8 @@ nav:
   - 3. Padrões de Projeto:
       - 3.1. Módulo Padrões de Projeto GoFs Criacionais: PadroesDeProjeto/GoFsCriacionais.md
       - 3.2. Módulo Padrões de Projeto GoFs Estrutural: PadroesDeProjeto/GoFsEstruturais.md
-      - 3.3. Módulo Padrões de Projeto GoFs Comportamental: PadroesDeProjeto/GoFsComportamentais.md
+      - 3.3.0 Módulo Padrões de Projeto GoFs Comportamental - Strategy: PadroesDeProjeto/GoFsExtras.md
+      - 3.3.1 Módulo Padrões de Projeto GoFs Comportamental - Command: PadroesDeProjeto/GoFsComportamentais.md
       - 3.4. Participações - Padrões de Projeto: PadroesDeProjeto/ParticipacoesPadroes.md
       - 3.5. Iniciativas Extras: PadroesDeProjeto/IniciativasExtras.md
   - 4. Arquitetura de Software e Reutilização: 
