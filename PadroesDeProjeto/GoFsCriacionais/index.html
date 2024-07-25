@@ -1029,8 +1029,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1059,14 +1057,21 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Índice
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#310-factory-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.0 Factory Method
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#introducao" class="md-nav__link">
@@ -1081,6 +1086,60 @@
   <a href="#metodologia" class="md-nav__link">
     <span class="md-ellipsis">
       Metodologia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#311-singleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.1. Singleton
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducao_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodologia_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metodologia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-bibliografica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referência Bibliográfica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bibliografia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-versoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Histórico de Versões
     </span>
   </a>
   
@@ -1561,14 +1620,21 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Índice
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#310-factory-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.0 Factory Method
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#introducao" class="md-nav__link">
@@ -1583,6 +1649,60 @@
   <a href="#metodologia" class="md-nav__link">
     <span class="md-ellipsis">
       Metodologia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#311-singleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.1. Singleton
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducao_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodologia_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metodologia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-bibliografica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referência Bibliográfica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bibliografia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-versoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Histórico de Versões
     </span>
   </a>
   
@@ -1603,9 +1723,11 @@
                   
 
 
+  <h1>3.1. Módulo Padrões de Projeto GoFs Criacionais</h1>
+
 <p>O padrão GoF criacional tem como objetivo simplificar a criação de objetos, fornecendo mecanismos que tornam um sistema independente e flexível em relação a como seus objetos são criados, suas estruturas internas e suas representações. O GoF criacional inclui cinco padrões: Singleton, Factory Method, Abstract Factory, Builder, Prototype e Object Pool.</p>
 <p>No contexto do nosso projeto, focaremos nos padrões Factory Method e Singleton.</p>
-<h1 id="310-factory-method">3.1.0 Factory Method</h1>
+<h2 id="310-factory-method">3.1.0 Factory Method</h2>
 <h2 id="introducao">Introdução</h2>
 <p>O Factory Method é um padrão criacional que cria um padrão de instanciar uma superclasse, porém, dá a responsabilidade de definir o seu tipo para as subclasses. É um padrão muito utilizado em bibliotecas, como de inteface gráfica onde geralmente existe uma padrão para criar uma superclasse, mas, só no contexto da aplicação (no caso pode ser onde essa interface irá ser executada) que será definido o tipo pela suas subsclasses.
 As classes participantes deste padrão serão explicado logo abaixo, juntamente com a imagem da figura 1, que apresenta sua estrutura através de um diagrama.</p>
@@ -1785,7 +1907,7 @@ delegada.  </li>
   <p>Código 1: Possível implementação em código do Factory Method em Dart (Fonte: Luis Miranda e Vinícius Mendes, 2024)</p>
 </div>
 
-<h1 id="311-singleton">3.1.1. Singleton</h1>
+<h2 id="311-singleton">3.1.1. Singleton</h2>
 <h2 id="introducao_1">Introdução</h2>
 <p>O Singleton é um padrão criacional que garante que uma classe tenha apenas uma instância e fornece um ponto de acesso global a essa instância. Este padrão é amplamente utilizado quando é necessário um único objeto para coordenar ações em todo o sistema, como em gerenciadores de configuração, conexões de banco de dados ou loggers.</p>
 <p>O Singleton previne a criação de múltiplas instâncias através de um construtor privado ou protegido e controla o acesso à instância única através de um método estático público. A seguir, serão explicadas as classes participantes deste padrão, juntamente com a imagem da figura 3, que apresenta sua estrutura através de um diagrama.</p>
