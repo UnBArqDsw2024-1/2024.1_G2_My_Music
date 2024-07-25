@@ -295,7 +295,7 @@ O Singleton previne a criação de múltiplas instâncias através de um constru
 - Cliente: Utiliza a instância única fornecida pelo Singleton para realizar operações necessárias.
 
 <div style="text-align: center">
-  <img src="../Assets/EstruturaSingleton.png" alt="Estrutura do Singleton" title="Título da Imagem" />
+  <img src="../../Assets/EstruturaSingleton.png" alt="Estrutura do Singleton" title="Título da Imagem" />
   <p>Figura 3: Estrutura do padrão Singleton (Fonte: Refactoring Guru, 2014-2024)</p>
 </div>
 
@@ -311,7 +311,7 @@ Determinamos que o padrão Singleton seria ideal para a criação da classe `Con
 A modelagem foi realizada pelos membros Limírio Guimarães e Milena Baruc, conforme visualizado na Figura 4.
 
 <div style="text-align: center">
-  <img src="../Assets/ModelagemSingleton.png" alt="Modelagem do Singleton" title="Título da Imagem" />
+  <img src="../../Assets/ModelagemSingleton.png" alt="Modelagem do Singleton" title="Título da Imagem" />
   <p>Figura 4: Modelagem do padrão Singleton (Fonte: Limírio Guimarães e Milena Baruc, 2024)</p>
 </div>
 
@@ -387,4 +387,5 @@ class Configuracoes {
 | 1.1    | 22/07/2024 | Criação do documento e adicionando sobre Factory Method |  [Luis Miranda](https://github.com/LuisMiranda10) & [Vinícius Mendes](https://github.com/yabamiah) | [João Vítor](https://github.com/Jvsoutomaior) & [Ana Luíza](https://github.com/analuizargds)  &  [Lucas Alves Vilela](https://github.com/Lucas-AV) & [Rafael Xavier](https://github.com/rafaelxavierr) & [Israel Thalles](https://github.com/IsraelThalles) & [Luiz Pettengill](https://github.com/LuizPettengill), [Link da Revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/65)       |
 | 1.2    | 22/07/2024 | Criação do documento e adicionando sobre Singleton      | [Limírio Guimarães](https://github.com/LimirioGuimaraes) & [Milena Baruc](https://github.com/MilenaBaruc) | [João Vítor](https://github.com/Jvsoutomaior) & [Ana Luíza](https://github.com/analuizargds)  &  [Lucas Alves Vilela](https://github.com/Lucas-AV) & [Rafael Xavier](https://github.com/rafaelxavierr) & [Israel Thalles](https://github.com/IsraelThalles) & [Luiz Pettengill](https://github.com/LuizPettengill), [Link da Revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/65)             |
 | 1.3    | 22/07/2024 | Adicionada possível implementação Singleton      | [Limírio Guimarães](https://github.com/LimirioGuimaraes) & [Milena Baruc](https://github.com/MilenaBaruc) |  [João Vítor](https://github.com/Jvsoutomaior) & [Ana Luíza](https://github.com/analuizargds)  &  [Lucas Alves Vilela](https://github.com/Lucas-AV) & [Rafael Xavier](https://github.com/rafaelxavierr) & [Israel Thalles](https://github.com/IsraelThalles) & [Luiz Pettengill](https://github.com/LuizPettengill), [Link da Revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/65)             |
-| 1.4    | 25/07/2024 | Correção de imagens quebradas      | [Ana Luíza](https://github.com/analuizargds)  |               |
+| 1.4    | 25/07/2024 | Correção de imagens quebradas      | [Ana Luíza](https://github.com/analuizargds)  | [Limírio Guimarães](https://github.com/LimirioGuimaraes)              |
+| 1.5    | 25/07/2024 | Correção de imagens quebradas      | [Limírio Guimarães](https://github.com/LimirioGuimaraes) |               |
