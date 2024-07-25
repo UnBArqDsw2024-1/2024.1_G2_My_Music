@@ -8,7 +8,7 @@ Para realização deste artefato, foi criado um subgrupo de cinco pessoas: [Ana 
 
 ##  Command
 
-O Command é um padrão comportamental que transforma uma solicitação em um objeto, permitindo que o cliente parametrize outros objetos com diferentes solicitações, enfileire ou registre solicitações e suporte operações que podem ser desfeitas. Esse padrão é útil em cenários onde precisamos que as solicitações sejam tratadas como objetos, permitindo que possamos armazená-las, passá-las como parâmetros e registrá-las para execução posterior.
+O padrão Command encapsula uma solicitação como um objeto, permitindo que você parametrize clientes com diferentes solicitações, enfileire ou registre solicitações e implemente recursos de cancelamento de operações. Ele também promove o desacoplamento entre emissor e receptor de uma solicitação. Em outras palavras, o padrão Command permite que você transforme operações em objetos, tornando-os mais flexíveis e independentes do sistema que as utiliza.¹
 
 No nosso aplicativo, o padrão Command será extremamente útil para implementar funcionalidades como a criação de playlists, adição e remoção de músicas, e operações de desfazer/refazer. Por exemplo, ao adicionar ou remover músicas de uma playlist, podemos encapsular essas ações como objetos de comando, permitindo que o usuário desfaça ou refaça essas ações conforme necessário. Isso melhora a usabilidade e a experiência do usuário.
 
@@ -18,7 +18,7 @@ O padrão Command segue a seguinte estrutura mostrada na Figura 1.
 
 <div style="text-align: center">
   <img src="../Assets/EstruturaCommand.png" alt="Estrutura do Command" title="Command" />
-  <p>Figura 1: Estrutura do padrão Command (Fonte: Refactoring Guru, 2014-2024)¹</p>
+  <p>Figura 1: Estrutura do padrão Command (Fonte: Refactoring Guru, 2014-2024)²</p>
 </div>
 
 1. **Remetente (Invocador)**
@@ -47,9 +47,11 @@ Para a modelagem do padrão Command, os integrantes se reuniram através de uma 
   <p>Figura 2: Modelagem do padrão Command (Fonte: Ana Luíza e Rafael Xavier, 2024)</p>
 </div>
 
+No diagrama, podemos ver que a classe `Usuario` possui vários métodos que se encaixam no padrão desfazer e refazer, por esse motivo escolhemos o padrão Command para a classe `Usuario` no aplicativo. Essa abordagem serve para desacoplar o solicitante do executor, facilitando a implementação de funcionalidades desfazer e fazer. As ações do usuário, como reproduzir, criarPlaylist, e favoritar, são encapsuladas em comandos específicos, permitindo que o MusicController gerencie eficientemente a execução e a reversão dessas ações. Isso torna o sistema mais organizado.
+
 ### Implementação
 
-O desenvolvimento da implementação foi realizado em paralelo com a modelagem, sendo conduzido e dividido da mesma forma entre os membros da equipe. Esta implementação foi feita de forma colaborativa através da plataforma Discord, utilizando como referência o site [Dart Academy](https://dart.academy/creational-design-patterns-for-dart-and-flutter-factory-method/)², que possui exemplos de implementações em diversas linguagens de programação.
+O desenvolvimento da implementação foi realizado em paralelo com a modelagem, sendo conduzido e dividido da mesma forma entre os membros da equipe. Esta implementação foi feita de forma colaborativa através da plataforma Discord, utilizando como referência o site [Dart Academy](https://dart.academy/creational-design-patterns-for-dart-and-flutter-factory-method/)3, que possui exemplos de implementações em diversas linguagens de programação.
 
 Baseado na modelagem foram desenvolvidos os códigos de cada classe que podem ser visualizado nos códigos de 1 a 4. Os códigos foram feitos na linguagem Dart, escolhida pela equipe para o desenvolvimento do projeto. É importante ressaltar que esses são códigos simplificados e que vão ser desenvolvidos ao longo do projeto.
 
@@ -309,9 +311,11 @@ Código 4: Código das classes Concrete Command. (Fonte: Ana Luíza e Rafael Xav
 
 ## Referências Bibliográficas
 
-> ¹ Command. Refactoring Guru, 2014-2024. Disponível em: <https://refactoring.guru/pt-br/design-patterns/command/>. Acesso em: 24 de jul. de 2024. 
+> ¹ ROZZA, Giovani.[sw design pattern] Command (Comando). DIO, 2023. Disponível em> <https://www.dio.me/articles/sw-design-pattern-command-comando>. Acesso em: 24 de jul. de 2024. 
 
-> ² Creational Design Patterns for Dart and Flutter: Factory Method. Dart Academy, 2021. Disponível em: <https://dart.academy/creational-design-patterns-for-dart-and-flutter-factory-method/>. Acesso em: 24 de jul. de 2024. 
+> ² Command. Refactoring Guru, 2014-2024. Disponível em: <https://refactoring.guru/pt-br/design-patterns/command/>. Acesso em: 24 de jul. de 2024. 
+
+> ³ Creational Design Patterns for Dart and Flutter: Factory Method. Dart Academy, 2021. Disponível em: <https://dart.academy/creational-design-patterns-for-dart-and-flutter-factory-method/>. Acesso em: 24 de jul. de 2024. 
 
 
 ## Histórico de Versões
@@ -320,3 +324,4 @@ Código 4: Código das classes Concrete Command. (Fonte: Ana Luíza e Rafael Xav
 | ------ | ---------- | ------------------------------------------------------- | ------------------------------ | --------- |
 | 1.0    | 24/07/2024 | Criação do documento e adicionando sobre Command |  [Ana Luíza Rodrigues](https://github.com/analuizargds) e [Rafael Xavier](https://github.com/rafaelxavierr) | [Lucas Alves Vilela](https://github.com/Lucas-AV), [Review](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/67#pullrequestreview-2198004825) |
 | 1.1    | 24/07/2024 | Adição dos códigos do command |  [Ana Luíza Rodrigues](https://github.com/analuizargds) e [Rafael Xavier](https://github.com/rafaelxavierr) |   [Limirio Guimarães](https://github.com/LimirioGuimaraes), [link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/67#issuecomment-2249074364)   |
+| 1.2    | 24/07/2024 | Adição de fonte na introdução e correção do caminho das imagens  |  [Ana Luíza Rodrigues](https://github.com/analuizargds) e [Rafael Xavier](https://github.com/rafaelxavierr) |     |
