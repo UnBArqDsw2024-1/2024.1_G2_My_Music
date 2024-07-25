@@ -48,48 +48,6 @@ Primeiro, foi criado um código para entender de maneira simplificada a lógica 
 ```dart
 import 'dart:io';
 
-class Date {
-  String? _ano;
-  String? _mes;
-  String? _dia;
-  String? _hora;
-  String? _minuto;
-  String? _segundo;
-  String? _data;
-
-  Date(this._ano, this._mes, this._dia);
-
-  Date.fromDateTime(String ano, String mes, String dia, String hora, String minuto, String segundo) {
-    _ano = ano;
-    _mes = mes;
-    _dia = dia;
-    _hora = hora;
-    _minuto = minuto;
-    _segundo = segundo;
-  }
-
-  Date.fromString(String data) {
-    _data = data;
-  }
-
-  // Método para formatar a data
-  String format() {
-    if (_data != null) {
-      return _data!;
-    } else {
-      return '$_ano/$_mes/$_dia $_hora:$_minuto:$_segundo';
-    }
-  }
-
-  String? get ano => _ano;
-  String? get mes => _mes;
-  String? get dia => _dia;
-  String? get hora => _hora;
-  String? get minuto => _minuto;
-  String? get segundo => _segundo;
-  String? get data => format();
-}
-
 class Objects {
   String nome;
   String tipo;
@@ -119,21 +77,24 @@ class Configuracoes {
   bool _modoOffline;
   String _tema;
 
-  Configuracoes({this._notificacoes = true, this._modoOffline = true, this._tema = "light"});
+  Configuracoes({bool notificacoes = true, bool modoOffline = true, String tema = "light"}) : 
+    _notificacoes = notificacoes,
+    _modoOffline = modoOffline,
+    _tema = tema;
 
   bool get notificacoes => _notificacoes;
   bool get modoOffline => _modoOffline;
   String get tema => _tema;
 
-  set notificacoes(bool? notificacoes) {
+  set notificacoes(bool notificacoes) {
     _notificacoes = notificacoes;
   }
 
-  set modoOffline(bool? modoOffline) {
+  set modoOffline(bool modoOffline) {
     _modoOffline = modoOffline;
   }
 
-  set tema(String? tema) {
+  set tema(String tema) {
     _tema = tema;
   }
 
@@ -147,7 +108,7 @@ abstract class Perfil {
   String? _nome;
   String? _email;
   String? _senha;
-  Date? _dataDeNascimento;
+  DateTime? _dataDeNascimento;
   String? _genero;
 
   Perfil(this._nome, this._email, this._senha, this._dataDeNascimento, this._genero);
@@ -155,7 +116,7 @@ abstract class Perfil {
   String? get nome => _nome;
   String? get email => _email;
   String? get senha => _senha;
-  Date? get dataDeNascimento => _dataDeNascimento;
+  DateTime? get dataDeNascimento => _dataDeNascimento;
   String? get genero => _genero;
 
   set nome(String? nome) {
@@ -170,12 +131,18 @@ abstract class Perfil {
     _senha = senha;
   }
 
-  set dataDeNascimento(Date? dataDeNascimento) {
+  set dataDeNascimento(DateTime? dataDeNascimento) {
     _dataDeNascimento = dataDeNascimento;
   }
 
   set genero(String? genero) {
     _genero = genero;
+  }
+
+  String get dataFormatada {
+    return _dataDeNascimento != null
+        ? '${_dataDeNascimento!.day.toString().padLeft(2, '0')}/${_dataDeNascimento!.month.toString().padLeft(2, '0')}/${_dataDeNascimento!.year}'
+        : 'Data não definida';
   }
 }
 
@@ -183,7 +150,7 @@ class Usuario extends Perfil {
   List<Objects>? _interesse;
   Configuracoes? _configuracoes;
 
-  Usuario(String nome, String email, String senha, Date dataDeNascimento, String genero, this._interesse, this._configuracoes)
+  Usuario(String nome, String email, String senha, DateTime dataDeNascimento, String genero, this._interesse, this._configuracoes)
       : super(nome, email, senha, dataDeNascimento, genero);
 
   List<Objects>? get interesse => _interesse;
@@ -203,7 +170,7 @@ class Artista extends Perfil {
   String? _biografia;
   String? _paisDeOrigem;
 
-  Artista(String nome, String email, String senha, Date dataDeNascimento, String genero, this._nomeArtista, this._biografia, this._paisDeOrigem)
+  Artista(String nome, String email, String senha, DateTime dataDeNascimento, String genero, this._nomeArtista, this._biografia, this._paisDeOrigem)
       : super(nome, email, senha, dataDeNascimento, genero);
 
   String? get nomeArtista => _nomeArtista;
@@ -224,29 +191,29 @@ class Artista extends Perfil {
 }
 
 abstract class CriadorPerfil {
-  Perfil criarPerfil(String nome, String email, String senha, Date dataDeNascimento, String genero);
+  Perfil criarPerfil(String nome, String email, String senha, DateTime dataDeNascimento, String genero);
 }
 
 class CriadorUsuario implements CriadorPerfil {
   @override
-  Usuario criarPerfil(String nome, String email, String senha, Date dataDeNascimento, String genero) {
+  Usuario criarPerfil(String nome, String email, String senha, DateTime dataDeNascimento, String genero) {
     // Crie uma implementação padrão que não faz muito sentido, mas necessária para a interface
     return Usuario(nome, email, senha, dataDeNascimento, genero, [], Configuracoes());
   }
 
-  Usuario criarPerfilCompleto(String nome, String email, String senha, Date dataDeNascimento, String genero, List<Objects> interesse, Configuracoes configuracoes) {
+  Usuario criarPerfilCompleto(String nome, String email, String senha, DateTime dataDeNascimento, String genero, List<Objects> interesse, Configuracoes configuracoes) {
     return Usuario(nome, email, senha, dataDeNascimento, genero, interesse, configuracoes);
   }
 }
 
 class CriadorArtista implements CriadorPerfil {
   @override
-  Artista criarPerfil(String nome, String email, String senha, Date dataDeNascimento, String genero) {
+  Artista criarPerfil(String nome, String email, String senha, DateTime dataDeNascimento, String genero) {
     // Crie uma implementação padrão que não faz muito sentido, mas necessária para a interface
     return Artista(nome, email, senha, dataDeNascimento, genero, '', '', '');
   }
 
-  Artista criarPerfilCompleto(String nome, String email, String senha, Date dataDeNascimento, String genero, String nomeArtista, String biografia, String paisDeOrigem) {
+  Artista criarPerfilCompleto(String nome, String email, String senha, DateTime dataDeNascimento, String genero, String nomeArtista, String biografia, String paisDeOrigem) {
     return Artista(nome, email, senha, dataDeNascimento, genero, nomeArtista, biografia, paisDeOrigem);
   }
 }
@@ -269,7 +236,7 @@ void main() {
 
   if (escolha == '1') {
     // Criar um perfil de usuário
-    Date dataDeNascimento = Date('1990', '01', '01');
+    DateTime dataDeNascimento = DateTime(1990, 1, 1);
     List<Objects> interesses = [
       Objects(nome: 'Rock', tipo: 'Gênero Musical', tags: ['Energia', 'Guitarra', 'Bateria'])
     ];
@@ -286,11 +253,11 @@ void main() {
       configuracoes
     );
 
-    print('Usuário criado: ${usuario.nome}, ${usuario.email}, ${usuario.dataDeNascimento?.format()}, ${usuario.genero}');
+    print('Usuário criado: ${usuario.nome}, ${usuario.email}, ${usuario.dataFormatada}, ${usuario.genero}');
     print('Configurações do usuário: ${usuario.configuracoes}');
   } else if (escolha == '2') {
     // Criar um perfil de artista
-    Date dataDeNascimento = Date('1985', '02', '15');
+    DateTime dataDeNascimento = DateTime(1985, 2, 15);
 
     CriadorArtista criadorArtista = Aplicacao.gerarCriador(Artista) as CriadorArtista;
     Artista artista = criadorArtista.criarPerfilCompleto(
@@ -304,7 +271,7 @@ void main() {
       'Brasil'
     );
 
-    print('Artista criado: ${artista.nome}, ${artista.email}, ${artista.dataDeNascimento?.format()}, ${artista.genero}, ${artista.nomeArtista}, ${artista.biografia}, ${artista.paisDeOrigem}');
+    print('Artista criado: ${artista.nome}, ${artista.email}, ${artista.dataFormatada}, ${artista.genero}, ${artista.nomeArtista}, ${artista.biografia}, ${artista.paisDeOrigem}');
   } else {
     print('Opção inválida!');
   }
