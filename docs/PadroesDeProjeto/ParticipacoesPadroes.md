@@ -10,7 +10,7 @@ Este documento contém um breve relato das participações e contribuições dos
 | Carlos Eduardo | | Nula |
 | Carlos Godoy | | Nula |
 | Henrique Hida | | Nula |
-| João Maior | | Nula |
+| João Maior | Contribuiu na revisão do artefato [Factory Method]() e [Singleton]() | Boa |
 | Israel Thalles | Contribuiu na revisão do artefato [Factory Method]() e [Singleton]() | Boa |
 | Luiz Pettengill | Contribuiu na revisão do artefato  [Factory Method]() e [Singleton]() | Boa |
 | Luis Miranda | Contribuiu desenvolvimento do artefato [Factory Method]() | Excelente |
@@ -32,7 +32,7 @@ Este documento contém um breve relato das participações e contribuições dos
 | Carlos Eduardo |  | Nula |
 | Carlos Godoy |  | Nula |
 | Henrique Hida | Contribuiu desenvolvimento do artefato [Facade]() | Excelente |
-| João Maior |  | Nula |
+| João Maior |  Contribuiu desenvolvimento do artefato [Facade]() | Excelente |
 | Israel Thalles | Contribuiu desenvolvimento do artefato [Facade]() | Excelente |
 | Luiz Pettengill |Contribuiu desenvolvimento do artefato [Facade]() | Excelente |
 | Luis Miranda | Contribuiu na revisão do artefato [Facade]() | Excelente |
