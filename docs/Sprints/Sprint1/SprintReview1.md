@@ -18,7 +18,7 @@ A Sprint Review foi realizada na terça-feira, dia 23/07/2024 às 20h30, e pode 
 | Carlos Godoy          | ✔        |
 | Carlos Eduardo        | ✔        |
 | Henrique Sandoval     | ✔        |
-| João Maior            | ✔        |
+| João Vítor            | ✔        |
 | Limirio Correia       | ✔        |
 | Lucas Vilela          | ✔        |
 | Luis Miranda          | ✔        |
@@ -31,12 +31,12 @@ A Sprint Review foi realizada na terça-feira, dia 23/07/2024 às 20h30, e pode 
 | Issue | Descrição | Responsáveis | Status |
 |-------|-----------|--------------|--------|
 | [#53](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/53)   | GoF Criacional                     | [Luis Miranda](https://github.com/LuisMiranda10), [Limírio Guimarães](https://github.com/LimirioGuimaraes), [Milena Baruc](https://github.com/MilenaBaruc) e [Vinícius](https://github.com/yabamiah)            | Em progresso
-| [#55](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/55)   | GoF Comportamental Strategy        | [Carlos Eduardo](https://github.com/CarlosEduardoMendesdeMesquita), [Carlos Godoy](https://github.com/CDGodoy) e [João Maior](https://github.com/Jvsoutomaior)            | Em progresso
+| [#55](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/55)   | GoF Comportamental Strategy        | [Carlos Eduardo](https://github.com/CarlosEduardoMendesdeMesquita), [Carlos Godoy](https://github.com/CDGodoy) e [João Vítor](https://github.com/Jvsoutomaior)            | Em progresso
 | [#56](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/56)   | GoF Comportamental Command         | [Ana Luíza](https://github.com/analuizargds) e [Rafael Xavier](https://github.com/rafaelxavierr)           | Em progresso
 | [#57](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/57)   | GoF Estrutural Facade         | [Luiz Pettengill](https://github.com/LuizPettengill), [Lucas Vilela](https://github.com/Lucas-AV), [Israel Thalles](https://github.com/IsraelThalles) e [Henrique Hida](https://github.com/HenriqueHida)            | Em progresso
 | [#58](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/58)   | Organização do git pages         | [Ana Luíza](https://github.com/analuizargds)            | Concluído
 | [#59](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/59)   | Apresentação sprint         |  [Luis Miranda](https://github.com/LuisMiranda10) e  [Vinícius](https://github.com/yabamiah)          | Em progresso
-| [#51](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/51)    | Faltou meu nome na ata2         | [João Maior](https://github.com/Jvsoutomaior)             | Concluído
+| [#51](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/51)    | Faltou meu nome na ata2         | [João Vítor](https://github.com/Jvsoutomaior)             | Concluído
 | [#49](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/49) | Arrumando Diagrama de Atividades | [Vinícius](https://github.com/yabamiah) | Concluído |
 | [#60](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/60) | Arrumando Diagrama de Componentes | [Luis Miranda](https://github.com/LuisMiranda10) e [Milena Baruc](https://github.com/MilenaBaruc) | Concluído |
 | [#63](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/63) | Adicionando iniciativas extras | [Luis Miranda](https://github.com/LuisMiranda10) e  [Vinícius](https://github.com/yabamiah) | Concluído |
