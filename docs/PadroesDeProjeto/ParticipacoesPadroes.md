@@ -73,4 +73,4 @@ Este documento contém um breve relato das participações e contribuições dos
 
 | Versão | Data       | Descrição                           | Autor(es)                                         | Revisor(es)        |
 | ------ | ---------- | ----------------------------------- | ------------------------------------------------- | ------------------ |
-| 1.0    | 24/07/2024 | Criação do documento                | [Vinícius Mendes](https://github.com/yabamiah) | |
+| 1.0    | 24/07/2024 | Criação do documento                | [Vinícius Mendes](https://github.com/yabamiah) |[Luis Miranda](https://github.com/LuisMiranda10) |
