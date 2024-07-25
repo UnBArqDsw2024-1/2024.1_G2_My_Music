@@ -1,4 +1,4 @@
-# Ata da  3° reunião da disciplina "Arquitetura e Desenho de Software"
+# Ata da  2° reunião da disciplina "Arquitetura e Desenho de Software"
 
 [//]: # (**Ordem do escrivão da ata:** Limirio, Luis Miranda, Ana Luíza, Carlos Daniel, Carlos Eduardo, Henrique Hida, Israel Thalles, João Vítor, Lucas Alves Vilela, Luiz Guilherme, Milena Baruc, Rafael Xavier, Vinícius Mendes.)
 
