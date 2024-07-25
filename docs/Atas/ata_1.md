@@ -1,6 +1,6 @@
 # Ata da  1° reunião da disciplina "Arquitetura e Desenho de Software"
 
-[//]: # (**Ordem do escrivão da ata:** Ana Luíza, Carlos Daniel, Carlos Eduardo, Henrique Hida, Israel Thalles, João Vítor, Limíro Guimarães, Lucas Alves Vilela, Luís Miranda, Luiz Guilherme, Milena Baruc, Rafael Xavier, Vinícius Mendes.)
+[//]: # (**Ordem do escrivão da ata:** Limirio, Luis Miranda, Ana Luíza, Carlos Daniel, Carlos Eduardo, Henrique Hida, Israel Thalles, João Vítor, Lucas Alves Vilela, Luiz Guilherme, Milena Baruc, Rafael Xavier, Vinícius Mendes.)
 
 **Data**:   05/04/2024 **Local**: Discord <br>
 **Projeto**: My_music <br>
