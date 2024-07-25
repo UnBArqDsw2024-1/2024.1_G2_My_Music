@@ -70,3 +70,7 @@ Este documento contém um breve relato das participações e contribuições dos
 <div style="text-align: center">
   <p>Tabela 3: Participações de cada membro no Padrão GoF Comportamental. (Fonte: Autores, 2024)</p>
 </div>
+
+| Versão | Data       | Descrição                           | Autor(es)                                         | Revisor(es)        |
+| ------ | ---------- | ----------------------------------- | ------------------------------------------------- | ------------------ |
+| 1.0    | 24/07/2024 | Criação do documento                | [Vinícius Mendes](https://github.com/yabamiah) | |
