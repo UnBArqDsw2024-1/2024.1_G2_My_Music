@@ -1,0 +1,2121 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../Modelagem/ParticipacoesModelagem/">
+      
+      
+        <link rel="next" href="../GoFsEstruturais/">
+      
+      
+      <link rel="icon" href="../../../Assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>3.1. Módulo Padrões de Projeto GoFs Criacionais - My Music</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#321-gofs-criacionais" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="My Music" class="md-header__button md-logo" aria-label="My Music" data-md-component="logo">
+      
+  <img src="../../../Assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Music
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3.1. Módulo Padrões de Projeto GoFs Criacionais
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Music" class="md-nav__button md-logo" aria-label="My Music" data-md-component="logo">
+      
+  <img src="../../../Assets/logo.png" alt="logo">
+
+    </a>
+    My Music
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sobre o projeto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1. Base
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            1. Base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1.1. Módulo Projeto Não Orientado a Abordagens Específicas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            1.1. Módulo Projeto Não Orientado a Abordagens Específicas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/Design%20Sprint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.1. Design Sprint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1.1.2. Técnicas de Elicitação
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            1.1.2. Técnicas de Elicitação
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/brainstorming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.2.1. Brainstorming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/entrevista/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.2.2. Entrevista
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/questionario/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.2.3. Questionário
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1.1.3. Artefatos Independentes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            1.1.3. Artefatos Independentes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/gloss%C3%A1rio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.3.1. Glossário
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/5w2h/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.3.2. 5W2H
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/lexico/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.3.3. Léxico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/richpicture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.3.4. Rich Picture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/mapa_mental/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.3.5. Mapa Mental
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/prototipo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.4. Protótipo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/ProcessosMetodologiasAbordagens/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Módulo Processos/Metodologias/Abordagens
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/ParticipacoesBase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Participações Base
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. Modelagem
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2. Modelagem
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.1. Módulo Projeto Orientado a Abordagens Tradicionais
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            2.1. Módulo Projeto Orientado a Abordagens Tradicionais
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.1.1. Notação UML - Diagramas Estáticos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            2.1.1. Notação UML - Diagramas Estáticos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modelagem/diagramaClasses/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1.1.1. Diagrama de Classes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modelagem/diagramaPacotes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1.1.2. Diagrama de Pacotes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modelagem/diagramaComponentes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1.1.3. Diagrama de Componentes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.1.2. Notação UML - Diagramas Dinâmicos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            2.1.2. Notação UML - Diagramas Dinâmicos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modelagem/diagramaSequencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1.2.1. Diagrama de Sequência
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modelagem/diagramaAtividades/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1.2.2. Diagrama de Atividade
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modelagem/diagramaEstados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1.2.3. Diagrama de Estados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modelagem/ParticipacoesModelagem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2. Participações - Modelagem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. Padrões de Projeto
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3. Padrões de Projeto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    3.1. Módulo Padrões de Projeto GoFs Criacionais
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    3.1. Módulo Padrões de Projeto GoFs Criacionais
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#321-gofs-criacionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1 GoFs Criacionais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3211-factory-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1.1 Factory Method
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2.1.1 Factory Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodologia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metodologia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3212-singleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1.2. Singleton
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2.1.2. Singleton">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introducao_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodologia_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metodologia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-bibliografica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referência Bibliográfica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bibliografia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-versoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Histórico de Versões
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GoFsEstruturais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2. Módulo Padrões de Projeto GoFs Estrutural
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GoFsExtras/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3.0 Módulo Padrões de Projeto GoFs Comportamental - Strategy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GoFsComportamentais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3.1 Módulo Padrões de Projeto GoFs Comportamental - Command
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ParticipacoesPadroes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4. Participações - Padrões de Projeto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IniciativasExtras/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5. Iniciativas Extras
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. Arquitetura de Software e Reutilização
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            4. Arquitetura de Software e Reutilização
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ArquiteturaReutilizacao/estiloEPadroesArquiteturais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 Módulo Estilos e Padrões Arquiteturais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ArquiteturaReutilizacao/reutilizacaoDeSoftware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 Módulo Reutilização de Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ArquiteturaReutilizacao/participacoesArqReutilizacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 Participações - Arquitetura & Reutilização de Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reuniões
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Reuniões
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Atas/ata_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ata 01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Atas/ata_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ata 02
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Atas/ata_3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ata 03
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprints
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Sprints
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint Entrega 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint Entrega 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sprints/Sprint1/SprintPlanning1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint Planning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sprints/Sprint1/SprintReview1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#321-gofs-criacionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1 GoFs Criacionais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3211-factory-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1.1 Factory Method
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2.1.1 Factory Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodologia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metodologia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3212-singleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1.2. Singleton
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2.1.2. Singleton">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introducao_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodologia_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metodologia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-bibliografica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referência Bibliográfica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bibliografia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-versoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Histórico de Versões
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>3.1. Módulo Padrões de Projeto GoFs Criacionais</h1>
+
+<h2 id="321-gofs-criacionais">3.2.1 GoFs Criacionais</h2>
+<p>O padrão GoF criacional tem como objetivo simplificar a criação de objetos, fornecendo mecanismos que tornam um sistema independente e flexível em relação a como seus objetos são criados, suas estruturas internas e suas representações. O GoF criacional inclui cinco padrões: Singleton, Factory Method, Abstract Factory, Builder, Prototype e Object Pool.</p>
+<p>No contexto do nosso projeto, focaremos nos padrões Factory Method e Singleton.</p>
+<h2 id="3211-factory-method">3.2.1.1 Factory Method</h2>
+<h3 id="introducao">Introdução</h3>
+<p>O Factory Method é um padrão criacional que cria um padrão de instanciar uma superclasse, porém, dá a responsabilidade de definir o seu tipo para as subclasses. É um padrão muito utilizado em bibliotecas, como de inteface gráfica onde geralmente existe uma padrão para criar uma superclasse, mas, só no contexto da aplicação (no caso pode ser onde essa interface irá ser executada) que será definido o tipo pela suas subsclasses.
+As classes participantes deste padrão serão explicado logo abaixo, juntamente com a imagem da figura 1, que apresenta sua estrutura através de um diagrama.</p>
+<ul>
+<li>Product(Produto abstrato) - Define uma interface para objetos criados pelo método de fábrica</li>
+<li>ConcetreProduct (Produto concreto) - Implementa a interface do produto</li>
+<li>Creator(Criador abstrato) - Possui o método FactoryMethod, que retorna um objeto Product. Pode chamar o método gerador para criar objetos Produto.</li>
+<li>ConcretCreater(Criador concreto) - Substituí o método de geração para criar objetos da classe ConcetreProduct</li>
+</ul>
+<p>Usamos o padrão Factory Method, segundo Hugo Bonifácio Ribeiro e Tiago Abilio de Oliveira Gomes Serapião (2004, p. 39) quando:</p>
+<ul>
+<li>Uma classe não pode antecipar a classe de objetos a ser criada;</li>
+<li>Uma classe quer que suas subclasses especifiquem os objetos a serem
+criados;</li>
+<li>Classes delegam responsabilidades para uma dentre outras várias
+subclasses auxiliares, e você quer localizar qual subclasse auxiliar é
+delegada.  </li>
+</ul>
+<div style="text-align: center">
+  <img src="../Assets/EstruturaFactoryMethod.png" alt="Estrutura do Factory Method" title="Título da Imagem" />
+  <p>Figura 1: Estrutura do padrão Factory Method (Fonte: Refactoring Guru, 2014-2024)¹</p>
+</div>
+
+<h3 id="metodologia">Metodologia</h3>
+<p>Antes de descrever como foi realizada a modelagem e a implementação dos padrões criacionais utilizados, é importante ressaltar como a equipe foi organizada para a realização deste artefato. Foi criado um subgrupo composto por quatro pessoas: <a href="https://github.com/LimirioGuimaraes">Limírio Guimarães</a>, <a href="https://github.com/LuisMiranda10">Luis Miranda</a>, <a href="https://github.com/MilenaBaruc">Milena Baruc</a> e <a href="https://github.com/yabamiah">Vinícius Mendes</a>. Todos participaram ativamente através de discussões em grupo e na realização das atividades.</p>
+<p>Para o desenvolvimento da modelagem do Factory Method no contexto do nosso projeto, realizamos uma reunião em grupo para discutir onde e como o padrão poderia ser aplicado. A vídeo dessa reunião pode ser acessada <a href="https://youtu.be/okhCMuSxa2w">aqui</a>. Durante essa reunião, utilizamos dois sites como referências teóricas para termos um embasamento adequado.</p>
+<p>Decidimos que poderíamos utilizar o padrão Factory Method na criação da classe abstrata <code>Perfil</code>. Essa superclasse possui duas subclasses, <code>Usuário</code> e <code>Artista</code>, cujas instâncias mudam conforme o contexto, permitindo funcionalidades diferentes no aplicativo para cada tipo de perfil. A modelagem foi realizada pelos membros <a href="https://github.com/LuisMiranda10">Luis Miranda</a> e <a href="https://github.com/yabamiah">Vinícius Mendes</a>, conforme visualizado na Figura 2.</p>
+<div style="text-align: center">
+  <img src="../Assets/ModelagemFactoryMethod.png" alt="Modelagem do padrão Factory Method" title="Título da Imagem" />
+  <p>Figura 2: Modelagem do padrão Factory Method (Fonte: Luis Miranda e Vinícius Mendes, 2024)</p>
+</div>
+
+<p>O desenvolvimento da implementação foi realizado em paralelo com a modelagem, sendo conduzido pelos mesmos membros da equipe. Esta implementação foi feita de forma colaborativa através da plataforma Discord, utilizando como referência o site <a href="https://dart.academy/creational-design-patterns-for-dart-and-flutter-factory-method/">Dart Academy</a>², que possui exemplos de implementações em diversas linguagens de programação.</p>
+<p>Primeiro, foi criado um código para entender de maneira simplificada a lógica e a estrutura do código, que pode ser visualizado no Código 1. Em seguida, o código foi traduzido para a linguagem Dart, escolhida pela equipe para o desenvolvimento do projeto.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Perfil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">_nome</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">_email</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">_senha</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Date</span><span class="o">?</span><span class="w"> </span><span class="n">_dataDeNascimento</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">_genero</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">Perfil</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">senha</span><span class="p">,</span><span class="w"> </span><span class="n">Date</span><span class="w"> </span><span class="n">dataDeNascimento</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">genero</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">_nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nome</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">_email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">email</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">_senha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">senha</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">_dataDeNascimento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataDeNascimento</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">_genero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">genero</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="kd">get</span><span class="w"> </span><span class="n">nome</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_nome</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="kd">get</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_email</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="kd">get</span><span class="w"> </span><span class="n">senha</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_senha</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Date</span><span class="o">?</span><span class="w"> </span><span class="kd">get</span><span class="w"> </span><span class="n">dataDeNascimento</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_dataDeNascimento</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="kd">get</span><span class="w"> </span><span class="n">genero</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_genero</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">set</span><span class="w"> </span><span class="n">nome</span><span class="p">(</span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">nome</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nome</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w">   </span>
+
+<span class="w">    </span><span class="kd">set</span><span class="w"> </span><span class="n">email</span><span class="p">(</span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">email</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">set</span><span class="w"> </span><span class="n">senha</span><span class="p">(</span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">senha</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_senha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">senha</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">set</span><span class="w"> </span><span class="n">dataDeNascimento</span><span class="p">(</span><span class="n">Date</span><span class="o">?</span><span class="w"> </span><span class="n">dataDeNascimento</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_dataDeNascimento</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataDeNascimento</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">set</span><span class="w"> </span><span class="n">genero</span><span class="p">(</span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">genero</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_genero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">genero</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">Usuario</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Perfil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Objects</span><span class="o">&gt;?</span><span class="w"> </span><span class="n">_interesse</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Equalizador</span><span class="o">?</span><span class="w"> </span><span class="n">_equalizador</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Configuracoes</span><span class="o">?</span><span class="w"> </span><span class="n">_configuracoes</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">Usuario</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">senha</span><span class="p">,</span><span class="w"> </span><span class="n">Date</span><span class="w"> </span><span class="n">dataDeNascimento</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">genero</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Objects</span><span class="o">&gt;</span><span class="w"> </span><span class="n">interesse</span><span class="p">,</span><span class="w"> </span><span class="n">Equalizador</span><span class="w"> </span><span class="n">equalizador</span><span class="p">,</span><span class="w"> </span><span class="n">Configuracoes</span><span class="w"> </span><span class="n">configuracoes</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="k">super</span><span class="p">(</span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">senha</span><span class="p">,</span><span class="w"> </span><span class="n">dataDeNascimento</span><span class="p">,</span><span class="w"> </span><span class="n">genero</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">_interesse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">interesse</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">_equalizador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">equalizador</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">_configuracoes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">configuracoes</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Objects</span><span class="o">&gt;?</span><span class="w"> </span><span class="kd">get</span><span class="w"> </span><span class="n">interesse</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_interesse</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Equalizador</span><span class="o">?</span><span class="w"> </span><span class="kd">get</span><span class="w"> </span><span class="n">equalizador</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_equalizador</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Configuracoes</span><span class="o">?</span><span class="w"> </span><span class="kd">get</span><span class="w"> </span><span class="n">configuracoes</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_configuracoes</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">set</span><span class="w"> </span><span class="n">interesse</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Objects</span><span class="o">&gt;?</span><span class="w"> </span><span class="n">interesse</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_interesse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">interesse</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+
+<span class="w">    </span><span class="kd">set</span><span class="w"> </span><span class="n">equalizador</span><span class="p">(</span><span class="n">Equalizador</span><span class="o">?</span><span class="w"> </span><span class="n">equalizador</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_equalizador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">equalizador</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">set</span><span class="w"> </span><span class="n">configuracoes</span><span class="p">(</span><span class="n">Configuracoes</span><span class="o">?</span><span class="w"> </span><span class="n">configuracoes</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_configuracoes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">configuracoes</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">Artista</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Perfil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">_nomeArtista</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">_biografia</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">_paisDeOrigem</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">Artista</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">senha</span><span class="p">,</span><span class="w"> </span><span class="n">Date</span><span class="w"> </span><span class="n">dataDeNascimento</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">genero</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">nomeArtista</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">biografia</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">paisDeOrigem</span><span class="p">)</span>
+<span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="k">super</span><span class="p">(</span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">senha</span><span class="p">,</span><span class="w"> </span><span class="n">dataDeNascimento</span><span class="p">,</span><span class="w"> </span><span class="n">genero</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">_nomeArtista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nomeArtista</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">_biografia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">biografia</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">_paisDeOrigem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">paisDeOrigem</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">set</span><span class="w"> </span><span class="n">nomeArtista</span><span class="p">(</span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">nomeArtista</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_nomeArtista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nomeArtista</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">set</span><span class="w"> </span><span class="n">biografia</span><span class="p">(</span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">biografia</span><span class="p">){</span>
+<span class="w">        </span><span class="n">_biografia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">biografia</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">set</span><span class="w"> </span><span class="n">paisDeOrigem</span><span class="p">(</span><span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">paisDeOrigem</span><span class="p">){</span>
+<span class="w">        </span><span class="n">_paisDeOrigem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">paisDeOrigem</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">CriadorPerfil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Perfil</span><span class="w"> </span><span class="n">criarPerfil</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">senha</span><span class="p">,</span><span class="w"> </span><span class="n">Date</span><span class="w"> </span><span class="n">dataDeNascimento</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">genero</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Perfil</span><span class="p">(</span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">senha</span><span class="p">,</span><span class="w"> </span><span class="n">dataDeNascimento</span><span class="p">,</span><span class="w"> </span><span class="n">genero</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">CriadorUsuario</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">CriadorPerfil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@criarPerfil</span><span class="w"> </span>
+<span class="w">    </span><span class="n">Perfil</span><span class="w"> </span><span class="n">criarPerfil</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">senha</span><span class="p">,</span><span class="w"> </span><span class="n">Date</span><span class="w"> </span><span class="n">dataDeNascimento</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">genero</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Objects</span><span class="o">&gt;</span><span class="w"> </span><span class="n">interesse</span><span class="p">,</span><span class="w"> </span><span class="n">Equalizador</span><span class="w"> </span><span class="n">equalizador</span><span class="p">,</span><span class="w"> </span><span class="n">Configuracoes</span><span class="w"> </span><span class="n">configuracoes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Usuario</span><span class="p">(</span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">senha</span><span class="p">,</span><span class="w"> </span><span class="n">dataDeNascimento</span><span class="p">,</span><span class="w"> </span><span class="n">genero</span><span class="p">,</span><span class="w"> </span><span class="n">interesse</span><span class="p">,</span><span class="w"> </span><span class="n">equalizador</span><span class="p">,</span><span class="w"> </span><span class="n">configuracoes</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">CriadorArtista</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">CriadorPerfil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@criarPerfil</span>
+<span class="w">    </span><span class="n">Perfil</span><span class="w"> </span><span class="n">criarPerfil</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">senha</span><span class="p">,</span><span class="w"> </span><span class="n">Date</span><span class="w"> </span><span class="n">dataDeNascimento</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">genero</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">nomeArtista</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">biografia</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">paisDeOrigem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">Artista</span><span class="p">(</span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">senha</span><span class="p">,</span><span class="w"> </span><span class="n">dataDeNascimento</span><span class="p">,</span><span class="w"> </span><span class="n">genero</span><span class="p">,</span><span class="w"> </span><span class="n">nomeArtista</span><span class="p">,</span><span class="w"> </span><span class="n">biografia</span><span class="p">,</span><span class="w"> </span><span class="n">paisDeOrigem</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<span class="p">}</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">Aplicacao</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="n">CriadorPerfil</span><span class="o">?</span><span class="w"> </span><span class="n">gerarCriador</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Perfil</span><span class="o">?</span><span class="w"> </span><span class="n">tipo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">readButtonPerfil</span><span class="p">();</span><span class="w"> </span>
+
+<span class="w">        </span><span class="k">switch</span><span class="p">(</span><span class="n">tipo</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="nl">Usuario:</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">CriadorUsuario</span><span class="p">();</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="nl">Artista:</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="n">CriadorArtista</span><span class="p">();</span>
+<span class="w">            </span><span class="k">default</span><span class="o">:</span>
+<span class="w">                </span><span class="k">throw</span><span class="w"> </span><span class="n">Exception</span><span class="p">(</span><span class="s1">&#39;Um perfil deve ser selecionado&#39;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div style="text-align: center">
+  <p>Código 1: Possível implementação em código do Factory Method em Dart (Fonte: Luis Miranda e Vinícius Mendes, 2024)</p>
+</div>
+
+<h2 id="3212-singleton">3.2.1.2. Singleton</h2>
+<h3 id="introducao_1">Introdução</h3>
+<p>O Singleton é um padrão criacional que garante que uma classe tenha apenas uma instância e fornece um ponto de acesso global a essa instância. Este padrão é amplamente utilizado quando é necessário um único objeto para coordenar ações em todo o sistema, como em gerenciadores de configuração, conexões de banco de dados ou loggers.</p>
+<p>O Singleton previne a criação de múltiplas instâncias através de um construtor privado ou protegido e controla o acesso à instância única através de um método estático público. A seguir, serão explicadas as classes participantes deste padrão, juntamente com a imagem da figura 3, que apresenta sua estrutura através de um diagrama.</p>
+<ul>
+<li>Singleton: Define o método estático que controla o acesso à instância única. Implementa um construtor privado para evitar a criação de múltiplas instâncias da classe.</li>
+<li>Cliente: Utiliza a instância única fornecida pelo Singleton para realizar operações necessárias.</li>
+</ul>
+<div style="text-align: center">
+  <img src="../Assets/EstruturaSingleton.png" alt="Estrutura do Singleton" title="Título da Imagem" />
+  <p>Figura 3: Estrutura do padrão Singleton (Fonte: Refactoring Guru, 2014-2024)</p>
+</div>
+
+<p>No diagrama, podemos ver como o Singleton mantém uma referência estática para a sua única instância e como o método estático garante a criação dessa instância apenas uma vez, fornecendo um ponto de acesso global. O Cliente interage com a instância única do Singleton para executar operações, garantindo que todos os clientes utilizem a mesma instância.</p>
+<h3 id="metodologia_1">Metodologia</h3>
+<p>A modelagem e implementação deste padrão criacional seguiu o fluxo de desenvolvimento do primeiro com os os integrantes: Limírio, Luis Miranda, Milena e Vinícius Mendes, participando ativamente através de discussões em grupo e na realização das atividades.</p>
+<p>Para elaborar a modelagem do padrão Singleton no âmbito do nosso projeto, organizamos uma reunião em grupo para debater onde e como esse padrão poderia ser aplicado. A ata dessa reunião está disponível <a href="https://youtu.be/okhCMuSxa2w">aqui</a>. Durante a reunião, consultamos dois sites como referências teóricas para fundamentar nossa base.</p>
+<p>Determinamos que o padrão Singleton seria ideal para a criação da classe <code>Configuracoes</code>. Essa classe garante que apenas uma instância de configurações seja mantida em todo o sistema, o que é crucial para assegurar a consistência das configurações do aplicativo, como modos aleatório e offline, além das frequências do equalizador.</p>
+<p>A modelagem foi realizada pelos membros Limírio Guimarães e Milena Baruc, conforme visualizado na Figura 4.</p>
+<div style="text-align: center">
+  <img src="../Assets/ModelagemSingleton.png" alt="Modelagem do Singleton" title="Título da Imagem" />
+  <p>Figura 4: Modelagem do padrão Singleton (Fonte: Limírio Guimarães e Milena Baruc, 2024)</p>
+</div>
+
+<p>No diagrama, podemos ver que a classe <code>Configuracoes</code> possui uma referência estática para a sua única instância (<code>instancia: Configuracoes</code>) e métodos para acessar e modificar as configurações (<code>getInstancia()</code>, <code>ativarModoAleatorio()</code>, <code>desativarModoAleatorio()</code>, <code>ativarModoOffline()</code>, <code>desativarModoOffline()</code>, <code>ajustar(frequencia: String, valor: Int)</code>). Além disso, há uma associação com a classe abstrata <code>Perfil</code>, que pode ser usada para representar diferentes perfis de usuários no sistema.</p>
+<p>Este design assegura que todas as partes do sistema utilizem a mesma instância de <code>Configuracoes</code>, promovendo a consistência e integridade das configurações em toda a aplicação.</p>
+<p>O desenvolvimento da implementação foi realizado em paralelo com a modelagem, sendo conduzido pelos mesmos membros da equipe. Esta implementação foi feita de forma colaborativa através da plataforma Discord, utilizando como referência o site <a href="https://dart.academy/creational-design-patterns-for-dart-and-flutter-factory-method/">Dart Academy</a>², que possui exemplos de implementações em diversas linguagens de programação.</p>
+<p>Primeiro, foi criado um código para entender de maneira simplificada a lógica e a estrutura do código, que pode ser visualizado no Código 2. Em seguida, o código foi traduzido para a linguagem Dart, escolhida pela equipe para o desenvolvimento do projeto.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">Configuracoes</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">static</span><span class="w"> </span><span class="n">Configuracoes</span><span class="o">?</span><span class="w"> </span><span class="n">_instancia</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">modoAleatorio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">modoOffline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="n">Map</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">frequenciasEqualizador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+
+<span class="w">  </span><span class="n">Configuracoes</span><span class="p">.</span><span class="n">_privateConstructor</span><span class="p">();</span>
+
+<span class="w">  </span><span class="kd">static</span><span class="w"> </span><span class="n">Configuracoes</span><span class="w"> </span><span class="kd">get</span><span class="w"> </span><span class="n">instancia</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_instancia</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">_instancia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Configuracoes</span><span class="p">.</span><span class="n">_privateConstructor</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">_instancia</span><span class="o">!</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">ativarModoAleatorio</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">modoAleatorio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">desativarModoAleatorio</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">modoAleatorio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">ativarModoOffline</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">modoOffline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">desativarModoOffline</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">modoOffline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">ajustar</span><span class="p">(</span><span class="kt">String</span><span class="w"> </span><span class="n">frequencia</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">valor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">frequenciasEqualizador</span><span class="p">[</span><span class="n">frequencia</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valor</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div style="text-align: center">
+  <p>Código 2: Possível implementação em código do Singleton em Dart (Fonte: Limírio Guimarães e Milena Baruc, 2024)</p>
+</div>
+
+<h2 id="referencia-bibliografica">Referência Bibliográfica</h2>
+<blockquote>
+<p>¹ Factory Method, Refactoring.Guru. Disponível em: https://refactoring.guru/design-patterns/factory-method. Acesso em: 15/07/2024.</p>
+<p>² Creational Design Patterns for Dart and Flutter: Factory Method, Dart Academy. Disponível em: https://dart.academy/creational-design-patterns-for-dart-and-flutter-factory-method/. Acesso em: 20/07/2024</p>
+<p>³ Singleton, Refactoring.Guru. Disponível em: https://refactoring.guru/pt-br/design-patterns/singleton. Acesso em: 15/07/2024</p>
+</blockquote>
+<h2 id="bibliografia">Bibliografia</h2>
+<blockquote>
+<p>Creational Design Patterns, Refactoring.Guru. Disponível em: https://refactoring.guru/design-patterns/creational-patterns. Acesso em: 15/07/2024.</p>
+<p>Creational Design Patterns, OODesign. Disponível em: https://www.oodesign.com/creational-patterns/. Acesso em: 16/07/204.</p>
+<p>Padrões de Projeto: Design Patterns. Disponível em: https://biblioteca.univap.br/dados/000042/00004243.pdf. Acesso em: 23/07/2024.</p>
+</blockquote>
+<h2 id="historico-de-versoes">Histórico de Versões</h2>
+<table>
+<thead>
+<tr>
+<th>Versão</th>
+<th>Data</th>
+<th>Descrição</th>
+<th>Autores</th>
+<th>Revisores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.1</td>
+<td>22/07/2024</td>
+<td>Criação do documento e adicionando sobre Factory Method</td>
+<td><a href="https://github.com/LuisMiranda10">Luis Miranda</a> &amp; <a href="https://github.com/yabamiah">Vinícius Mendes</a></td>
+<td><a href="https://github.com/Jvsoutomaior">João Vítor</a> &amp; <a href="https://github.com/analuizargds">Ana Luíza</a>  &amp;  <a href="https://github.com/Lucas-AV">Lucas Alves Vilela</a> &amp; <a href="https://github.com/rafaelxavierr">Rafael Xavier</a> &amp; <a href="https://github.com/IsraelThalles">Israel Thalles</a> &amp; <a href="https://github.com/LuizPettengill">Luiz Pettengill</a>, <a href="https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/65">Link da Revisão</a></td>
+</tr>
+<tr>
+<td>1.2</td>
+<td>22/07/2024</td>
+<td>Criação do documento e adicionando sobre Singleton</td>
+<td><a href="https://github.com/LimirioGuimaraes">Limírio Guimarães</a> &amp; <a href="https://github.com/MilenaBaruc">Milena Baruc</a></td>
+<td><a href="https://github.com/Jvsoutomaior">João Vítor</a> &amp; <a href="https://github.com/analuizargds">Ana Luíza</a>  &amp;  <a href="https://github.com/Lucas-AV">Lucas Alves Vilela</a> &amp; <a href="https://github.com/rafaelxavierr">Rafael Xavier</a> &amp; <a href="https://github.com/IsraelThalles">Israel Thalles</a> &amp; <a href="https://github.com/LuizPettengill">Luiz Pettengill</a>, <a href="https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/65">Link da Revisão</a></td>
+</tr>
+<tr>
+<td>1.3</td>
+<td>22/07/2024</td>
+<td>Adicionada possível implementação Singleton</td>
+<td><a href="https://github.com/LimirioGuimaraes">Limírio Guimarães</a> &amp; <a href="https://github.com/MilenaBaruc">Milena Baruc</a></td>
+<td><a href="https://github.com/Jvsoutomaior">João Vítor</a> &amp; <a href="https://github.com/analuizargds">Ana Luíza</a>  &amp;  <a href="https://github.com/Lucas-AV">Lucas Alves Vilela</a> &amp; <a href="https://github.com/rafaelxavierr">Rafael Xavier</a> &amp; <a href="https://github.com/IsraelThalles">Israel Thalles</a> &amp; <a href="https://github.com/LuizPettengill">Luiz Pettengill</a>, <a href="https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/65">Link da Revisão</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  </body>
+</html>
