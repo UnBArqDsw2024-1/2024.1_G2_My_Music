@@ -18,7 +18,7 @@ A Sprint Planning foi realizada na segunda-feira, dia 08/07/2024 às 10h, após 
 | Carlos Godoy          | ✔        |
 | Carlos Eduardo        | ✔        |
 | Henrique Sandoval     | ✔        |
-| João Maior            | ✔        |
+| João Vítor            | ✔        |
 | Limirio Correia       | ✔        |
 | Lucas Vilela          | ✔        |
 | Luis Miranda          | ✔        |
@@ -40,7 +40,7 @@ A Sprint Planning foi realizada na segunda-feira, dia 08/07/2024 às 10h, após 
 | Issue | Descrição | Responsáveis |
 |-------|-----------|--------------|
 | [#53](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/53)   | GoF Criacional                     | [Luis Miranda](https://github.com/LuisMiranda10), [Limírio Guimarães](https://github.com/LimirioGuimaraes), [Milena Baruc](https://github.com/MilenaBaruc) e [Vinícius](https://github.com/yabamiah)            |
-| [#55](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/55)   | GoF Comportamental Strategy        | [Carlos Eduardo](https://github.com/CarlosEduardoMendesdeMesquita), [Carlos Godoy](https://github.com/CDGodoy) e [João Maior](https://github.com/Jvsoutomaior)            |
+| [#55](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/55)   | GoF Comportamental Strategy        | [Carlos Eduardo](https://github.com/CarlosEduardoMendesdeMesquita), [Carlos Godoy](https://github.com/CDGodoy) e [João Vítor](https://github.com/Jvsoutomaior)            |
 | [#56](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/56)   | GoF Comportamental Command         | [Ana Luíza](https://github.com/analuizargds) e [Rafael Xavier](https://github.com/rafaelxavierr)           |
 | [#57](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/57)   | GoF Estrutural Facade         | [Luiz Pettengill](https://github.com/LuizPettengill), [Lucas Vilela](https://github.com/Lucas-AV), [Israel Thalles](https://github.com/IsraelThalles) e [Henrique Hida](https://github.com/HenriqueHida)            |
 | [#58](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues/58)   | Organização do git pages         | [Ana Luíza](https://github.com/analuizargds)            |
