@@ -1,10 +1,9 @@
-## 3.2.1 GoFs Criacionais
 O padrão GoF criacional tem como objetivo simplificar a criação de objetos, fornecendo mecanismos que tornam um sistema independente e flexível em relação a como seus objetos são criados, suas estruturas internas e suas representações. O GoF criacional inclui cinco padrões: Singleton, Factory Method, Abstract Factory, Builder, Prototype e Object Pool.
 
 No contexto do nosso projeto, focaremos nos padrões Factory Method e Singleton.
 
-## 3.2.1.1 Factory Method
-### Introdução
+# 3.1.0 Factory Method
+## Introdução
 O Factory Method é um padrão criacional que cria um padrão de instanciar uma superclasse, porém, dá a responsabilidade de definir o seu tipo para as subclasses. É um padrão muito utilizado em bibliotecas, como de inteface gráfica onde geralmente existe uma padrão para criar uma superclasse, mas, só no contexto da aplicação (no caso pode ser onde essa interface irá ser executada) que será definido o tipo pela suas subsclasses.
 As classes participantes deste padrão serão explicado logo abaixo, juntamente com a imagem da figura 1, que apresenta sua estrutura através de um diagrama.
 
@@ -28,7 +27,7 @@ delegada.
 </div>
 
 
-### Metodologia
+## Metodologia
 
 Antes de descrever como foi realizada a modelagem e a implementação dos padrões criacionais utilizados, é importante ressaltar como a equipe foi organizada para a realização deste artefato. Foi criado um subgrupo composto por quatro pessoas: [Limírio Guimarães](https://github.com/LimirioGuimaraes), [Luis Miranda](https://github.com/LuisMiranda10), [Milena Baruc](https://github.com/MilenaBaruc) e [Vinícius Mendes](https://github.com/yabamiah). Todos participaram ativamente através de discussões em grupo e na realização das atividades.
 
@@ -193,8 +192,8 @@ class Aplicacao {
 </div>
 
 
-## 3.2.1.2. Singleton
-### Introdução
+# 3.1.1. Singleton
+## Introdução
 O Singleton é um padrão criacional que garante que uma classe tenha apenas uma instância e fornece um ponto de acesso global a essa instância. Este padrão é amplamente utilizado quando é necessário um único objeto para coordenar ações em todo o sistema, como em gerenciadores de configuração, conexões de banco de dados ou loggers.
 
 O Singleton previne a criação de múltiplas instâncias através de um construtor privado ou protegido e controla o acesso à instância única através de um método estático público. A seguir, serão explicadas as classes participantes deste padrão, juntamente com a imagem da figura 3, que apresenta sua estrutura através de um diagrama.
@@ -209,7 +208,7 @@ O Singleton previne a criação de múltiplas instâncias através de um constru
 
 No diagrama, podemos ver como o Singleton mantém uma referência estática para a sua única instância e como o método estático garante a criação dessa instância apenas uma vez, fornecendo um ponto de acesso global. O Cliente interage com a instância única do Singleton para executar operações, garantindo que todos os clientes utilizem a mesma instância.
 
-### Metodologia
+## Metodologia
 A modelagem e implementação deste padrão criacional seguiu o fluxo de desenvolvimento do primeiro com os os integrantes: Limírio, Luis Miranda, Milena e Vinícius Mendes, participando ativamente através de discussões em grupo e na realização das atividades.
 
 Para elaborar a modelagem do padrão Singleton no âmbito do nosso projeto, organizamos uma reunião em grupo para debater onde e como esse padrão poderia ser aplicado. A ata dessa reunião está disponível [aqui](https://youtu.be/okhCMuSxa2w). Durante a reunião, consultamos dois sites como referências teóricas para fundamentar nossa base.
