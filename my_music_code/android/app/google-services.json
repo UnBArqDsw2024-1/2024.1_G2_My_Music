@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "882298767238",
+    "project_id": "mymusic-unbarqdsw",
+    "storage_bucket": "mymusic-unbarqdsw.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882298767238:android:11ab3d1e36566c61c6ce07",
+        "android_client_info": {
+          "package_name": "com.my_music.unbarqdsw"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoXPQ-KGTWxReD8TUIccsiUoKMyvcqwCc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
