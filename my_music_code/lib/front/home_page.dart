@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_music_code/front/feed_page.dart';
-import 'package:my_music_code/front/library.dart';
-import 'package:my_music_code/front/search_page.dart';
+import 'package:my_music_code/front/Feed/feed_page.dart';
+import 'package:my_music_code/front/Library/library.dart';
+import 'package:my_music_code/front/Search/search_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
