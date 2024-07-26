@@ -4,25 +4,28 @@ import 'package:my_music_code/front/Feed/feed_page.dart';
 import 'package:my_music_code/front/Library/library.dart';
 import 'package:my_music_code/front/Search/search_page.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class NavigatorPage extends StatefulWidget {
+  const NavigatorPage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<NavigatorPage> createState() => _NavigatorPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int pageIndex = 0;
+class _NavigatorPageState extends State<NavigatorPage> {
   PageController controller = PageController();
+  int pageIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
         bottomNavigationBar: BottomNavigationBar(
-          onTap: (index){
+          onTap: (index) {
             setState(() => pageIndex = index);
-            controller.animateToPage(index, duration:  const Duration(milliseconds: 250), curve: Curves.easeIn);
+            controller.animateToPage(index,
+                duration: const Duration(milliseconds: 250),
+                curve: Curves.easeIn);
           },
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
@@ -42,13 +45,12 @@ class _MyHomePageState extends State<MyHomePage> {
             BottomNavigationBarItem(
               icon: Icon(
                 CupertinoIcons.music_note_list,
-                color: pageIndex == 2 ? Colors.green : Colors.grey,  
+                color: pageIndex == 2 ? Colors.green : Colors.grey,
               ),
               label: 'Library',
             ),
           ],
         ),
-
         body: PageView(
           physics: const NeverScrollableScrollPhysics(),
           controller: controller,
