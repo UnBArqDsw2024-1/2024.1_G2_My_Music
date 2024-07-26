@@ -1,4 +1,4 @@
-package com.example.my_music_code
+package com.my_music.unbarqdsw
 
 import io.flutter.embedding.android.FlutterActivity
 
