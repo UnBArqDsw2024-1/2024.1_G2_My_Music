@@ -69,9 +69,9 @@ class AuthService{
       authType == 'login'
       ? userLogin(emailController, passwordController) 
       : userSign(emailController, passwordController, confirmPasswordController!, usernameController!);
-    } catch(e){
-      errorDialogMessage(context, errorMap.containsKey(e)? errorMap[e]! : e.toString());
-      log(errorMap[e]!);
+    } on FirebaseAuthException catch(e){
+      errorDialogMessage(context, errorMap.containsKey(e.code)? errorMap[e.code]! : e.toString());
+      log(errorMap[e.code]!);
     } finally{
       Navigator.pop(context);
     }
