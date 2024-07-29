@@ -1982,6 +1982,59 @@ delegada.  </li>
   <p>Código 2: Possível implementação em código do Singleton em Dart (Fonte: Limírio Guimarães e Milena Baruc, 2024)</p>
 </div>
 
+<p>Para testar a modelagem da classe e verificar se a implementação do padrão singleton está funcionando como esperado, podemos combinar o código 3 e o código 2 em um único arquivo, por exemplo, <code>main.dart</code>, e executá-lo utilizando <code>dart main.dart</code> no terminal. Certifique-se de ter o Dart instalado em seu sistema para realizar essa operação.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Obtém a instância singleton de Configuracoes</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">config1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Configuracoes</span><span class="p">.</span><span class="n">instancia</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Verifica o estado inicial dos modos</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Modo Aleatório: </span><span class="si">${</span><span class="n">config1</span><span class="p">.</span><span class="n">modoAleatorio</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Modo Offline: </span><span class="si">${</span><span class="n">config1</span><span class="p">.</span><span class="n">modoOffline</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Tenta criar outra instância diretamente</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="n">config2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Configuracoes</span><span class="p">.</span><span class="n">_privateConstructor</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Erro ao tentar criar uma nova instância: </span><span class="si">$</span><span class="n">e</span><span class="s1">&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Verifica se config1 ainda está funcionando como esperado</span>
+<span class="w">  </span><span class="n">config1</span><span class="p">.</span><span class="n">ativarModoAleatorio</span><span class="p">();</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Modo Aleatório ativado: </span><span class="si">${</span><span class="n">config1</span><span class="p">.</span><span class="n">modoAleatorio</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">config1</span><span class="p">.</span><span class="n">desativarModoAleatorio</span><span class="p">();</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Modo Aleatório desativado: </span><span class="si">${</span><span class="n">config1</span><span class="p">.</span><span class="n">modoAleatorio</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">config1</span><span class="p">.</span><span class="n">ativarModoOffline</span><span class="p">();</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Modo Offline ativado: </span><span class="si">${</span><span class="n">config1</span><span class="p">.</span><span class="n">modoOffline</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">config1</span><span class="p">.</span><span class="n">desativarModoOffline</span><span class="p">();</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Modo Offline desativado: </span><span class="si">${</span><span class="n">config1</span><span class="p">.</span><span class="n">modoOffline</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">config1</span><span class="p">.</span><span class="n">ajustar</span><span class="p">(</span><span class="s1">&#39;bass&#39;</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">);</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Frequência bass ajustada para: </span><span class="si">${</span><span class="n">config1</span><span class="p">.</span><span class="n">frequenciasEqualizador</span><span class="p">[</span><span class="s1">&#39;bass&#39;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">config1</span><span class="p">.</span><span class="n">ajustar</span><span class="p">(</span><span class="s1">&#39;treble&#39;</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">);</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Frequência treble ajustada para: </span><span class="si">${</span><span class="n">config1</span><span class="p">.</span><span class="n">frequenciasEqualizador</span><span class="p">[</span><span class="s1">&#39;treble&#39;</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">config1</span><span class="p">.</span><span class="n">ajustar</span><span class="p">(</span><span class="s1">&#39;mid&#39;</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">);</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;Frequências do equalizador: </span><span class="si">${</span><span class="n">config1</span><span class="p">.</span><span class="n">frequenciasEqualizador</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Obtém outra instância singleton de Configuracoes</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="n">config3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Configuracoes</span><span class="p">.</span><span class="n">instancia</span><span class="p">;</span>
+<span class="w">  </span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;config1 e config3 são a mesma instância: </span><span class="si">${</span><span class="n">identical</span><span class="p">(</span><span class="n">config1</span><span class="p">,</span><span class="w"> </span><span class="n">config3</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<div style="text-align: center">
+  <p>Código 3: Código para teste Singleton em Dart (Fonte: Limírio Guimarães, 2024)</p>
+</div>
+
+<p>Para facilitar a leitura e a compreensão do documento, a Figura 5 apresenta uma captura de tela da saída resultante da combinação dos códigos 2 e 3.</p>
+<div style="text-align: center">
+  <img src="../../Assets/PrintSingleton.png" alt="Modelagem do Singleton" title="Título da Imagem" />
+  <p>Figura 5: Print do teste da classe Configuracoes (Fonte: Limírio Guimarães, 2024)</p>
+</div>
+
 <h2 id="referencia-bibliografica">Referência Bibliográfica</h2>
 <blockquote>
 <p>¹ Factory Method, Refactoring.Guru. Disponível em: https://refactoring.guru/design-patterns/factory-method. Acesso em: 15/07/2024.</p>
@@ -2038,6 +2091,13 @@ delegada.  </li>
 <td>1.5</td>
 <td>25/07/2024</td>
 <td>Correção de imagens quebradas</td>
+<td><a href="https://github.com/LimirioGuimaraes">Limírio Guimarães</a></td>
+<td></td>
+</tr>
+<tr>
+<td>1.6</td>
+<td>25/07/2024</td>
+<td>Adicionado testes do modelo</td>
 <td><a href="https://github.com/LimirioGuimaraes">Limírio Guimarães</a></td>
 <td></td>
 </tr>
