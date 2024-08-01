@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/front/Feed/feed_page.dart';
-import 'package:my_music_code/front/Library/library.dart';
+import 'package:my_music_code/front/Profile/profile_page.dart';
+
 import 'package:my_music_code/front/Search/search_page.dart';
 
 class NavigatorPage extends StatefulWidget {
@@ -57,7 +58,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
           children: const [
             FeedPage(),
             SearchPage(),
-            LibraryPage(),
+            ProfilePage(),
           ],
         ),
       ),
