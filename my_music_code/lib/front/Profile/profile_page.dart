@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_music_code/front/style.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -12,9 +13,10 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        backgroundColor: backgroundColor,
+        title: Text('Profile',style: TextStyle(color: Colors.white)),
       ),
-      backgroundColor: Colors.black,
+      backgroundColor: backgroundColor,
       body: const Center(
         child: Icon(Icons.person,color: Colors.white),
       ),
