@@ -9,6 +9,11 @@ Após uma reunião com toda a equipe de desenvolvimento do projeto, ficou acorda
 
 ## Visão de Implentação
 
+<div style="text-align: center">
+  <img src="docs/Assets/VisãodeImplementação.png" alt="Modelagem do Diagrama de Componentes" title="Título da Imagem" />
+  <p>Figura 4: Modelagem do padrão Singleton (Fonte: Limírio Guimarães e Luis Miranda, 2024)</p>
+</div>
+
 ### Componentes Principais
 
 #### Frontend:
@@ -22,7 +27,7 @@ Após uma reunião com toda a equipe de desenvolvimento do projeto, ficou acorda
 - Banco de Dados: Storage normal e o Firestore Database
 - Autenticação: Firebase Authentification
 
-A seguir podemos observar na figura 1, o diagrama de componentes referende ao código fonte do projeto, que pode ser acessado [aqui](linkAquiQuandoMerjar). 
+A seguir podemos observar na figura 1, o diagrama de componentes referente ao código fonte do projeto, que pode ser acessado [aqui](). 
 
 ## Bibliografia
 
