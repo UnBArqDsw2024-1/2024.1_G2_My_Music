@@ -29,7 +29,15 @@ Na imagem 1 abaixo, podemos visualizar o diagrama de implementação realizado.
 Figura 1 - Diagrama de Implantação
 ![Figura 1](../Assets/DiagramaImplantação.jpg)
 Autores: [Milena Baruc](https://github.com/MilenaBaruc) e [Vinícius Mendes](https://github.com/yabamiah)
+</center>
 
+<center>
+
+A figura abaixo ilustra uma versão atualizada do diagrama contendo um dispositivo como cliente final e um detalhamento sobre os arquivos principais que compõem a aplicação e estão no repositório do github
+  
+Figura 2 - Segunda versão do diagrama de implementação
+![Figura2](../Assets/DiagramaImplantação2.png)
+Autores: [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida) e [Carlos Godoy](https://github.com/CDGodoy)
 </center>
 
 ## Referências Bibliográficas
@@ -50,3 +58,4 @@ Autores: [Milena Baruc](https://github.com/MilenaBaruc) e [Vinícius Mendes](htt
 | Versão | Data       | Descrição       | Autores                                                                                         | Revisores |
 | ------ | ---------- | --------------- | ----------------------------------------------------------------------------------------------- | --------- |
 | 1.0    | 05/08/2024 | Primeira versão | [Milena Baruc](https://github.com/MilenaBaruc) e [Vinícius Mendes](https://github.com/yabamiah) |           |
+| 1.1    | 05/08/2024 | Adição da segunda versão do diagrama de implantação | [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida), [Carlos Godoy](https://github.com/CDGodoy) |           |
