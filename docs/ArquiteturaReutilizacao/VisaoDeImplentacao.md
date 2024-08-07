@@ -22,12 +22,12 @@ Para o desenvolvimento do diagrama, foi utilizado a plataforma Lucidchart e conv
 
 ## Diagrama 
 
-Na imagem 1 abaixo, podemos visualizar o diagrama de implementação realizado.
+Na imagem 1 abaixo, podemos visualizar a primeira versão feita do diagrama de implementação. Neste diagrama foi representado os componentes físicos responsáveis pela implementação da aplicação móvel My Music.
 
 <center>
 
-Figura 1 - Diagrama de Implantação
-![Figura 1](../Assets/DiagramaImplantação.jpg)
+Figura 1 - Primeira versão do diagrama de Implantação
+![Figura 1](../Assets/DiagramaImplantação.png)
 Autores: [Milena Baruc](https://github.com/MilenaBaruc) e [Vinícius Mendes](https://github.com/yabamiah)
 </center>
 
