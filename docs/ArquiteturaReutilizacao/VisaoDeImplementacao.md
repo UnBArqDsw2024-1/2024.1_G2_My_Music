@@ -18,15 +18,26 @@ Após uma reunião com toda a equipe de desenvolvimento do projeto, ficou acorda
 
 #### O que são os componentes no DAS (Diagrama de Arquitetura de Software)?
 
-Os componentes do diagrama foram criados de maneira baseada no [diagrama de classes](https://lucid.app/lucidchart/31c29fc7-aa1c-4aa6-9230-582034a77ddf/edit?viewport_loc=-1696%2C-1484%2C6656%2C3352%2CHWEp-vi-RSFO&invitationId=inv_8d8d08ce-dac2-47f2-92ec-4f110c1a106d). Sendo divididos em seus respectivos subsistemas, em que é visível que cada um faz uma requisição ou provê uma interface. A seguir, é descrito de maneira mais detalhada cada subsistema e seu relacionamento.
+Os componentes do diagrama foram criados de maneira baseada no [diagrama de componentes](https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/Modelagem/diagramaComponentes/)[diagrama de classes](https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/Modelagem/diagramaClasses/). Sendo divididos em seus respectivos subsistemas, em que é visível que cada um faz uma requisição ou provê uma interface. A seguir, é descrito de maneira mais detalhada cada subsistema e seu relacionamento.
 
-- Interface do Usuário:
+- Interface do Usuário: temos nove componentes filhos que consitutem o subsistema "Interface Usuário". Esses componentes foram projetados de acordo com a interação que os usuários vão ter dentro do aplicativo MyMusic.
 
-- Banco de Música/Artistas:
+- Banco de Música/Artistas: esse subsistema tem como componente filho `BIblioteca`, que é utilizada para armazenar as músicas com seus respectivos artistas que estão disponíveis no aplicativo MyMusic.
 
-- API de Música:
+- API de Música: o componente `PesquisaMúsica` é o componente filho do subsistema "API de Música". Essa parte é responsável por desempenhar um papel crucial nas funcionalidades de busca e recuperação de músicas.
 
-- Registro de Contas: 
+- Registro de Contas: esse subsistema tem como único componente filho `Usuários`, no qual é responsável por gerenciar todas as operações relacionadas ao registro e manutenção das informações dos usuários do sistema.
+
+
+#### O que são Relacionamentos e dependências no DAS (Diagrama de Arquitetura de Software)?
+
+Pode-se perceber que os componentes do sistema possuem relacionamentos e dependências entre eles. Com isso, segue abaixo, os principais tipos de relacionamento e dependências encontrados na nossa visão de implementação:
+
+- Interface de Usuário - Banco de Música/Artistas:
+
+- Interface de Usuário - Registro de Contas:
+
+- Banco de Música/Artistas - API de Música: 
 
 #### Frontend:
 - Framework: Flutter
@@ -53,3 +64,4 @@ A seguir podemos observar na figura 2, o diagrama de componentes referente ao c�
 | Versão | Data      | Descrição | Autores | Revisor |
 | :-:    | :-----:   | :------   | ----  | ------- |
 | 1.0    |02/08/2024 | Criação do Documento | [Limírio Guimarães](https://github.com/LimirioGuimaraes) e [Luis Miranda](https://github.com/LuisMiranda10)| [Fulano](hh), [Link da revisão](https://github.com/linkdapagina)  |
+| 2.0    |07/08/2024 | Explicação da Construção da Visão de Implementação | [Limírio Guimarães](https://github.com/LimirioGuimaraes) e [Luis Miranda](https://github.com/LuisMiranda10)| [Fulano](hh), [Link da revisão](https://github.com/linkdapagina)  |
