@@ -2,7 +2,7 @@
 
 [//]: # (**Ordem do escrivão da ata:** Limírio, Luís Miranda, Ana Luíza, Carlos Daniel, Carlos Eduardo, Henrique Hida, Israel Thalles, João Vítor, Lucas Alves Vilela, Luiz Guilherme, Milena Baruc, Rafael Xavier, Vinícius Mendes.)
 
-**Data**: 07/08/2024  
+**Data**: 06/08/2024  
 **Local**: Teams  
 **Projeto**: My_music  
 **Escrivão**: Henrique Hida
