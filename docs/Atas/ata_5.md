@@ -64,7 +64,7 @@
 
 | **N°** | **Compromisso**       | **Responsável**   | **Data**    |
 |-------|----------------------|------------------|------------|
-| 1      | Revisão do protótipo| Lucas Vilela, Limírio Correia            | 08/08/2024 |
+| 1      | Revisão do protótipo| Lucas Vilela, Limírio Guimarães            | 08/08/2024 |
 | 2      | Cadastro & Login          | Carlos Godoy, João Vítor, Carlos Eduardo           | 12/08/2024 |
 | 3      | Músicas & Playlist          | Lucas Vilela, Henrique Hida, Vinícius Mendes            | 12/08/2024 |
 | 4      | Perfil      | Luís Miranda, Limírio Correia, Milena Baruc          | 12/08/2024 |
