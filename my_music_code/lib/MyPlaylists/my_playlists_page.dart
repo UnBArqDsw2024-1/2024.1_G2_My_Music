@@ -14,7 +14,7 @@ class _MyPlaylistsState extends State<MyPlaylists> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: backgroundColor,
-        title: Text('Profile',style: TextStyle(color: Colors.white)),
+        title: Text('Playlists',style: TextStyle(color: Colors.white)),
       ),
       backgroundColor: backgroundColor,
       body: const Center(
