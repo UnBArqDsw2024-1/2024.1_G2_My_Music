@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_music_code/front/style.dart';
+import 'package:my_music_code/Globals/style.dart';
 
 class FeedPage extends StatefulWidget {
   const FeedPage({super.key});

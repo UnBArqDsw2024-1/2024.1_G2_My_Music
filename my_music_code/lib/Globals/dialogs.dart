@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_music_code/front/style.dart';
+import 'package:my_music_code/Globals/style.dart';
 
 Map<String,String> errorMap = {
   'channel-error':'preencha todos os campos!',

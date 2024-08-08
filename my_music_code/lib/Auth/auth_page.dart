@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:my_music_code/front/Auth/login_page.dart';
-import 'package:my_music_code/front/Auth/signup_page.dart';
-import 'package:my_music_code/front/Navigator/navigator_page.dart';
+import 'package:my_music_code/Auth/login_page.dart';
+import 'package:my_music_code/Auth/signup_page.dart';
+import 'package:my_music_code/Globals/navigator_page.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});
@@ -26,9 +26,7 @@ class _AuthPageState extends State<AuthPage> {
             if (snapshot.hasData) {
               return NavigatorPage();
             } else {
-              return isLogin
-                  ? LoginPage(onTapTogglePage: togglePage)
-                  : SignUpPage(onTapTogglePage: togglePage);
+              return isLogin? LoginPage(onTapTogglePage: togglePage) : SignUpPage(onTapTogglePage: togglePage);
             }
           },
         ),

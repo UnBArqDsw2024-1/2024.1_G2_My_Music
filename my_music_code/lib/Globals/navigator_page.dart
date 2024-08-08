@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_music_code/front/Feed/feed_page.dart';
-import 'package:my_music_code/front/Profile/profile_page.dart';
+import 'package:my_music_code/Feed/feed_page.dart';
+import 'package:my_music_code/MyPlaylists/my_playlists_page.dart';
 
-import 'package:my_music_code/front/Search/search_page.dart';
-import 'package:my_music_code/front/style.dart';
+import 'package:my_music_code/Search/search_page.dart';
+import 'package:my_music_code/Globals/style.dart';
 
 class NavigatorPage extends StatefulWidget {
   const NavigatorPage({super.key});
@@ -29,7 +29,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
         backgroundColor: Colors.white,
         bottomNavigationBar: Container(
           height: 50,
-          color: const Color(0xff000000),
+          color: backgroundColor,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -41,17 +41,16 @@ class _NavigatorPageState extends State<NavigatorPage> {
                 ),
               ),
 
-              SizedBox(width: 15),
-
-              IconButton(
-                onPressed: () => setIndex(1),
-                icon: Icon(
-                  CupertinoIcons.home,
-                  color: pageIndex == 1 ? primaryColor : Colors.white,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: IconButton(
+                  onPressed: () => setIndex(1),
+                  icon: Icon(
+                    CupertinoIcons.home,
+                    color: pageIndex == 1 ? primaryColor : Colors.white,
+                  ),
                 ),
               ),
-
-              SizedBox(width: 15),
 
               IconButton(
                 onPressed: () => setIndex(2),
@@ -70,7 +69,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
           children: const [
             SearchPage(),
             FeedPage(),
-            ProfilePage(),
+            MyPlaylists(),
           ],
         ),
       ),
