@@ -82,4 +82,4 @@ A próxima reunião ficou marcada para o dia 13/08/2024, às 20:00.
 
 | Versão | Data      | Descrição | Autor | Revisor |
 | :-:    | :-----:   | :------   | ----  | ------- |
-| `1.0`    | 07/08/2024 | Criação do documento | [Henrique Hida](https://github.com/HenriqueHida) |  |
+| `1.0`    | 07/08/2024 | Criação do documento | [Henrique Hida](https://github.com/HenriqueHida) |[Limírio Guimarães](https://github.com/LimirioGuimaraes)  |
