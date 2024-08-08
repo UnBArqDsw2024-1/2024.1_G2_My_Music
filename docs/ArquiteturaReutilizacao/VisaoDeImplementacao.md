@@ -9,11 +9,6 @@ Após uma reunião com toda a equipe de desenvolvimento do projeto, ficou acorda
 
 ## Visão de Implementação
 
-<div style="text-align: center">
-  <img src="../Assets/VisãodeImplementação.png" alt="Modelagem do Diagrama de Componentes" title="Título da Imagem" />
-  <p>Figura 1: Modelagem da Visão de Implementação (Fonte: Limírio Guimarães e Luis Miranda, 2024)</p>
-</div>
-
 ### Componentes Principais
 
 #### O que são os componentes no DAS (Diagrama de Arquitetura de Software)?
@@ -28,16 +23,20 @@ Os componentes do diagrama foram criados de maneira baseada no [diagrama de comp
 
 - Registro de Contas: esse subsistema tem como único componente filho `Usuários`, no qual é responsável por gerenciar todas as operações relacionadas ao registro e manutenção das informações dos usuários do sistema.
 
-
 #### O que são Relacionamentos e dependências no DAS (Diagrama de Arquitetura de Software)?
 
-Pode-se perceber que os componentes do sistema possuem relacionamentos e dependências entre eles. Com isso, segue abaixo, os principais tipos de relacionamento e dependências encontrados na nossa visão de implementação:
+No contexto do **Diagrama de Arquitetura de Software (DAS)** do projeto **MyMusic**, os relacionamentos e dependências entre os componentes do sistema são essenciais para entender como as diferentes partes do sistema interagem entre si. Aqui está uma explicação detalhada dos principais tipos de relacionamento e dependências encontrados na visão de implementação do MyMusic:
 
-- Interface de Usuário - Banco de Música/Artistas:
+### Interface de Usuário - Banco de Música/Artistas:
+A **Interface de Usuário** é responsável por apresentar os dados dos artistas e músicas para os usuários. Ela depende do **Banco de Música/Artistas** para obter essas informações. O relacionamento aqui é de **consulta** (ou leitura), onde a interface de usuário envia requisições ao banco de dados para buscar informações relevantes, como listas de músicas, detalhes de artistas, álbuns e playlists. O **Banco de Música/Artistas** serve como a fonte primária de dados para essas operações.
 
-- Interface de Usuário - Registro de Contas:
+### Interface de Usuário - Registro de Contas:
+A **Interface de Usuário** também interage diretamente com o módulo de **Registro de Contas**. Esse relacionamento é de **autenticação** e **autorização**. Sempre que um usuário tenta acessar sua conta, fazer login, ou criar uma nova conta, a interface de usuário se comunica com o módulo de registro de contas para validar as credenciais e gerenciar sessões de usuário. Esse módulo verifica as credenciais no banco de dados de usuários e retorna as informações necessárias para a interface de usuário, permitindo ou negando o acesso.
 
-- Banco de Música/Artistas - API de Música: 
+### Banco de Música/Artistas - API de Música:
+O **Banco de Música/Artistas** interage com a **API de Música** para manter os dados sincronizados e atualizados. Esse relacionamento é de **integração** e **sincronização**. A API de Música pode enviar novas informações ou atualizações para o banco de dados, como quando novos álbuns ou músicas são lançados, ou quando os metadados das músicas precisam ser atualizados. O banco de dados armazena essas informações, que são então disponibilizadas para a interface de usuário e outras partes do sistema.
+
+Esses relacionamentos e dependências mostram como diferentes componentes do MyMusic trabalham juntos para proporcionar uma experiência coesa e funcional para o usuário, garantindo que as informações estejam sempre atualizadas e acessíveis através da interface de usuário, enquanto mantêm a segurança e integridade dos dados.
 
 #### Frontend:
 - Framework: Flutter
@@ -50,7 +49,14 @@ Pode-se perceber que os componentes do sistema possuem relacionamentos e depend�
 - Banco de Dados: Storage normal e o Firestore Database
 - Autenticação: Firebase Authentification
 
-A seguir podemos observar na figura 2, o diagrama de componentes referente ao código fonte do projeto, que pode ser acessado [aqui](). 
+A seguir podemos observar na figura 1, o diagrama de componentes referente ao código fonte do projeto, que pode ser acessado [aqui](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/tree/main/my_music_code). 
+
+### Diagrama de Componentes
+
+<div style="text-align: center">
+  <img src="../Assets/VisãodeImplementação.png" alt="Modelagem do Diagrama de Componentes" title="Título da Imagem" />
+  <p>Figura 1: Modelagem da Visão de Implementação (Fonte: Limírio Guimarães e Luis Miranda, 2024)</p>
+</div>
 
 ## Bibliografia
 
@@ -65,3 +71,4 @@ A seguir podemos observar na figura 2, o diagrama de componentes referente ao c�
 | :-:    | :-----:   | :------   | ----  | ------- |
 | 1.0    |02/08/2024 | Criação do Documento | [Limírio Guimarães](https://github.com/LimirioGuimaraes) e [Luis Miranda](https://github.com/LuisMiranda10)| [Fulano](hh), [Link da revisão](https://github.com/linkdapagina)  |
 | 2.0    |07/08/2024 | Explicação da Construção da Visão de Implementação | [Limírio Guimarães](https://github.com/LimirioGuimaraes) e [Luis Miranda](https://github.com/LuisMiranda10)| [Fulano](hh), [Link da revisão](https://github.com/linkdapagina)  |
+| 2.1    |08/08/2024 | Explicação Relacionamento DAS | [Limírio Guimarães](https://github.com/LimirioGuimaraes) e [Luis Miranda](https://github.com/LuisMiranda10)| [Fulano](hh), [Link da revisão](https://github.com/linkdapagina)  |
