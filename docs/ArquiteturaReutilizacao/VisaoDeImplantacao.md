@@ -40,7 +40,7 @@ Figura 2 - Segunda versão do diagrama de implementação
 Autores: [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida) e [Carlos Godoy](https://github.com/CDGodoy)
 </center>
 
-## Descrição de cada um dos:
+## Descrição de cada um dos elementos do diagrama:
 - **Servidor Web da API**: Local onde a API de de músicas que fornece conteúdo ao aplicativo se encontra.
 
 - **Servidor do Firebase**: Local onde o backend relacionado a autenticação, base de dados e controle de usuários se encontra.
