@@ -41,8 +41,8 @@ Esses relacionamentos e dependências mostram como diferentes componentes do MyM
 #### Frontend:
 - Framework: Flutter
 - Linguagem: Dart
-- State Management: Provider, Riverpod ou Bloc
-- UI Component Library: Flutter Widgets
+- Design Pattern: State Management, Provider, Riverpod ou Bloc
+- UI Component Library: Flutter Material
 
 #### Backend:
 - Framework: Flutter
@@ -72,3 +72,4 @@ A seguir podemos observar na figura 1, o diagrama de componentes referente ao c�
 | 1.0    |02/08/2024 | Criação do Documento | [Limírio Guimarães](https://github.com/LimirioGuimaraes) e [Luis Miranda](https://github.com/LuisMiranda10)| [Fulano](hh), [Link da revisão](https://github.com/linkdapagina)  |
 | 2.0    |07/08/2024 | Explicação da Construção da Visão de Implementação | [Limírio Guimarães](https://github.com/LimirioGuimaraes) e [Luis Miranda](https://github.com/LuisMiranda10)| [Fulano](hh), [Link da revisão](https://github.com/linkdapagina)  |
 | 2.1    |08/08/2024 | Explicação Relacionamento DAS | [Limírio Guimarães](https://github.com/LimirioGuimaraes) e [Luis Miranda](https://github.com/LuisMiranda10)| [Fulano](hh), [Link da revisão](https://github.com/linkdapagina)  |
+| 2.1    |09/08/2024 | Correção do Documento | [Limírio Guimarães](https://github.com/LimirioGuimaraes) e [Luis Miranda](https://github.com/LuisMiranda10)| [Fulano](hh), [Link da revisão](https://github.com/linkdapagina)  |
