@@ -58,9 +58,9 @@ Baseado na modelagem foram desenvolvidos os códigos de cada classe que podem se
 ```dart
 
 class Usuario {
-  final List<Track> favoriteTracks = [];
-  final List<Object> queue = [];
-  final List<Playlist> playlists = [];
+  List<Playlist> playlists = [];
+  List<Track> favoriteTracks = [];
+  List<Object> queue = [];
 
   void reproduzir(Track track) {
     track.play();
@@ -69,18 +69,18 @@ class Usuario {
   Playlist criarPlaylist(String nome) {
     final playlist = Playlist(nome);
     playlists.add(playlist);
-    print("Playlist created: $nome");
+    print("Playlist criada: $nome");
     return playlist;
   }
 
   void favoritar(Track track) {
     favoriteTracks.add(track);
-    print("Track favorited: ${track.name}");
+    print("Faixa favoritada: ${track.name}");
   }
 
   void desfavoritar(Track track) {
     favoriteTracks.remove(track);
-    print("Track unfavorited: ${track.name}");
+    print("Faixa desfavoritada: ${track.name}");
   }
 
   void adicionarAPlaylist(Playlist playlist, Track track) {
@@ -93,7 +93,7 @@ class Usuario {
 
   void deletarPlaylist(Playlist playlist) {
     playlists.remove(playlist);
-    print("Playlist deleted: ${playlist.name}");
+    print("Playlist deletada: ${playlist.name}");
   }
 
   void pausarReproducao(Track track) {
@@ -101,29 +101,33 @@ class Usuario {
   }
 
   Track proximaFaixa(List<Track> tracks, int currentIndex) {
-    return tracks[(currentIndex + 1) % tracks.length];
+    Track nextTrack = tracks[(currentIndex + 1) % tracks.length];
+    print("Próxima faixa: ${nextTrack.name}");
+    return nextTrack;
   }
 
   Track faixaAnterior(List<Track> tracks, int currentIndex) {
-    return tracks[(currentIndex - 1 + tracks.length) % tracks.length];
+    Track previousTrack = tracks[(currentIndex - 1 + tracks.length) % tracks.length];
+    print("Faixa anterior: ${previousTrack.name}");
+    return previousTrack;
   }
 
-  void adicionarAFila(Object object) {
-    queue.add(object);
-    print("Added to queue: $object");
+  void adicionarAFila(Track track) {
+    queue.add(track);
+    print("Adicionado à fila: $track");
   }
 
-  void removerDaFila(Object object) {
-    queue.remove(object);
-    print("Removed from queue: $object");
+  void removerDaFila(Track track) {
+    queue.remove(track);
+    print("Removido da fila: $track");
   }
 
   void seguir(Object object) {
-    print("Following: $object");
+    print("Seguindo: $object");
   }
 
   void deixarDeSeguir(Object object) {
-    print("Unfollowing: $object");
+    print("Deixando de seguir: $object");
   }
 }
 
@@ -133,7 +137,7 @@ Código 1: Código do Receiver. (Fonte: Ana Luíza e Rafael Xavier, 2024)
 </center>
 
 ``` dart
-interface MusicCommand {
+abstract class MusicCommand {
   void execute();
   void undo();
 }
@@ -187,7 +191,7 @@ class FollowAction implements MusicCommand {
 
   @override
   void undo() {
-    print("Unfollowed: $object");
+    usuario.deixarDeSeguir(object);
   }
 }
 
@@ -210,18 +214,18 @@ class LikeAction implements MusicCommand {
 
 class ManageQueueTrack implements MusicCommand {
   final Usuario usuario;
-  final Object object;
+  final Track track;
 
-  ManageQueueTrack(this.usuario, this.object);
+  ManageQueueTrack(this.usuario, this.track);
 
   @override
   void execute() {
-    usuario.adicionarAFila(object);
+    usuario.adicionarAFila(track);
   }
 
   @override
   void undo() {
-    usuario.removerDaFila(object);
+    usuario.removerDaFila(track);
   }
 }
 
@@ -234,16 +238,19 @@ class ChangeTrack implements MusicCommand {
 
   @override
   void execute() {
-    currentIndex = (currentIndex + 1) % tracks.length;
-    usuario.reproduzir(tracks[currentIndex]);
+    Track nextTrack = usuario.proximaFaixa(tracks, currentIndex);
+    currentIndex = tracks.indexOf(nextTrack);
+    usuario.reproduzir(nextTrack);
   }
 
   @override
   void undo() {
-    currentIndex = (currentIndex - 1 + tracks.length) % tracks.length;
-    usuario.reproduzir(tracks[currentIndex]);
+    Track previousTrack = usuario.faixaAnterior(tracks, currentIndex);
+    currentIndex = tracks.indexOf(previousTrack);
+    usuario.reproduzir(previousTrack);
   }
 }
+
 
 class PlayTrack implements MusicCommand {
   final Usuario usuario;
@@ -305,6 +312,122 @@ class ManagePlaylistTrack implements MusicCommand {
 Código 4: Código das classes Concrete Command. (Fonte: Ana Luíza e Rafael Xavier, 2024)
 </center>
 
+### Explicação do Código
+
+- **Usuario (Receiver):** A classe Usuario possui métodos que representam as ações que podem ser realizadas pelo usuário.
+
+- **MusicCommand (Command):** A interface MusicCommand define os métodos execute e undo.
+
+- **Concrete Commands:** As classes concretas FavoritarCommand e AdicionarAPlaylistCommand implementam a interface MusicCommand, encapsulando as ações de favoritar e adicionar à playlist, respectivamente.
+
+- **MusicController(Invoker):** O MusicController gerencia a execução e desfaz ações utilizando listas para armazenar o histórico de comandos.
+
+### Resultado da Implementação
+
+A seguir é apresentado o código main junto com duas classes para auxiliar a exemplificação do uso do command com os códigos descritos anteriormente e na figura 3 é apresentado o resultado da implementação.
+
+``` dart
+
+class Track {
+  final String name;
+
+  Track(this.name);
+
+  void play() {
+    print("Reproduzindo faixa: $name");
+  }
+
+  void pause() {
+    print("Faixa pausada: $name");
+  }
+}
+
+class Playlist {
+  String name;
+  List<Track> tracks = [];
+
+  Playlist(this.name);
+
+  void addTrack(Track track) {
+    tracks.add(track);
+    print("Faixa adicionada a playlist $name: ${track.name}");
+  }
+
+  void removeTrack(Track track) {
+    tracks.remove(track);
+    print("Faixa removida da playlist $name: ${track.name}");
+  }
+}
+
+void main() {
+  //Receiver
+  Usuario usuario = Usuario();
+
+  //Invoker
+  MusicController myMusicApp = MusicController();
+
+  Track track1 = Track("Infiel - Marília Mendonça");
+  Track track2 = Track("Anestesiado - Murilo Huff");
+
+  List<Track> tracks = [track1, track2];
+
+  // Command to create playlist
+  MusicCommand gerenciarPlaylist = ManagePlaylist(usuario, "Melhores Sertanejos");
+
+  myMusicApp.addCommand(gerenciarPlaylist);
+  myMusicApp.executeCommand();
+
+  Playlist playlist =
+      usuario.playlists.firstWhere((pl) => pl.name == "Melhores Sertanejos");
+
+  //Command
+  MusicCommand favoritarCommand = LikeAction(usuario, track1);
+  MusicCommand adicionarAPlaylistCommand = ManagePlaylistTrack(usuario, playlist, track1);
+  MusicCommand seguirArtistaCommand = FollowAction(usuario, "Marília Mendonça");
+  MusicCommand gerenciarFilaCommand = ManageQueueTrack(usuario, track1);
+  MusicCommand reproduzirCommand = PlayTrack(usuario, track2);
+  MusicCommand gerenciarFaixaCommand = ChangeTrack(usuario, tracks, 1);
+  
+
+  // Adicionando e executando comandos
+
+  myMusicApp.addCommand(adicionarAPlaylistCommand);
+  myMusicApp.executeCommand();
+
+  myMusicApp.addCommand(favoritarCommand);
+  myMusicApp.executeCommand();
+
+  myMusicApp.addCommand(seguirArtistaCommand);
+  myMusicApp.executeCommand();
+
+  myMusicApp.addCommand(gerenciarFilaCommand);
+  myMusicApp.executeCommand();
+  
+  myMusicApp.addCommand(reproduzirCommand);
+  myMusicApp.executeCommand();
+
+  myMusicApp.addCommand(gerenciarFaixaCommand);
+  myMusicApp.executeCommand();
+  
+  print('');
+  print('Desfazendo ações');
+  print('');
+
+  // Desfazendo ações
+  myMusicApp.undoCommand(); // Desfaz gerenciar faixa
+  myMusicApp.undoCommand(); // Desfaz reproduzir
+  myMusicApp.undoCommand(); // Desfaz adicionar a fila
+  myMusicApp.undoCommand(); // Desfaz seguir
+  myMusicApp.undoCommand(); // Desfaz favoritar faixa
+  myMusicApp.undoCommand(); // Desfaz adicionar a playlist
+  myMusicApp.undoCommand(); // Desfaz criar playlist
+}
+```
+<div style="text-align: center">
+  <img src="../../Assets/codeCommand.png" alt="Modelagem do Command" title="Modelagem do Command"/>
+  <p>Figura 2: Resultado da implementação do command (Fonte: Ana Luíza e Rafael Xavier, 2024)</p>
+</div>
+
 ## Bibliografia
 
 > Command. Refactoring Guru, 2014-2024. Disponível em: <https://refactoring.guru/pt-br/design-patterns/command/>.
@@ -326,3 +449,4 @@ Código 4: Código das classes Concrete Command. (Fonte: Ana Luíza e Rafael Xav
 | 1.1    | 24/07/2024 | Adição dos códigos do command |  [Ana Luíza Rodrigues](https://github.com/analuizargds) e [Rafael Xavier](https://github.com/rafaelxavierr) |   [Limirio Guimarães](https://github.com/LimirioGuimaraes), [link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/67#issuecomment-2249074364)   |
 | 1.2    | 24/07/2024 | Adição de fonte na introdução e correção do caminho das imagens  |  [Ana Luíza Rodrigues](https://github.com/analuizargds) e [Rafael Xavier](https://github.com/rafaelxavierr) |  [Luiz Pettengill](https://github.com/LuizPettengill), [Link da Revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/67#pullrequestreview-2198146072)   |
 | 1.3    | 25/07/2024 | Correção de imagens quebradas   | [Ana Luíza](https://github.com/analuizargds)  |               |
+| 1.4    | 06/08/2024 | Adição do resultado da implementação do código   | [Ana Luíza](https://github.com/analuizargds) e [Rafael Xavier](https://github.com/rafaelxavierr)  |               |
