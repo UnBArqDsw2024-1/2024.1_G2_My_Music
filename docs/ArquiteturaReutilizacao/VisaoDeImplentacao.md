@@ -57,5 +57,5 @@ Autores: [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](http
 
 | Versão | Data       | Descrição       | Autores                                                                                         | Revisores |
 | ------ | ---------- | --------------- | ----------------------------------------------------------------------------------------------- | --------- |
-| 1.0    | 05/08/2024 | Primeira versão | [Milena Baruc](https://github.com/MilenaBaruc) e [Vinícius Mendes](https://github.com/yabamiah) |           |
-| 1.1    | 05/08/2024 | Adição da segunda versão do diagrama de implantação | [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida), [Carlos Godoy](https://github.com/CDGodoy) |           |
+| 1.0    | 05/08/2024 | Primeira versão | [Milena Baruc](https://github.com/MilenaBaruc) e [Vinícius Mendes](https://github.com/yabamiah) | [Luis Miranda](https://github.com/LuisMiranda10)     |
+| 1.1    | 05/08/2024 | Adição da segunda versão do diagrama de implantação | [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida), [Carlos Godoy](https://github.com/CDGodoy) | [Luis Miranda](https://github.com/LuisMiranda10)   |
