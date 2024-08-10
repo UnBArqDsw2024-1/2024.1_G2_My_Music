@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Globals/cubic_button_with_image.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
-import 'package:my_music_code/Globals/style.dart';
 
 class HorizontalScrollComponent extends StatefulWidget {
   const HorizontalScrollComponent({super.key, required this.title, this.leftPadding});
@@ -35,18 +35,7 @@ class _HorizontalScrollComponentState extends State<HorizontalScrollComponent> {
                 for (int i = 0; i < 10; i++)
                   Padding(
                     padding: EdgeInsets.only(right: responsiveFigmaWidth(10)),
-                    child: RawMaterialButton(
-                      constraints: BoxConstraints(),
-                      onPressed: () {},
-                      child: ResponsiveContainer(
-                        height: 100,
-                        width: 100,
-                        isCubic: true,
-                        borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(image: NetworkImage(DefaultPlaceholder.image)),
-                        color: Colors.white,
-                      ),
-                    ),
+                    child: CubicButtonWithImage(),
                   ),
               ],
             ),
