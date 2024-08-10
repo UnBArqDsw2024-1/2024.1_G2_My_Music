@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_music_code/Globals/size_config.dart';
+import 'package:my_music_code/Feed/Components/responsive_container.dart';
 import 'package:my_music_code/Globals/style.dart';
 
-class DefaultPlaceholder {
-  static const String title = "Default";
-  static const String image = "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png";
-  static const Color backgroundColor =Color(0xff373737);
-}
 
 class MusicPlaylistFeedComponent extends StatelessWidget {
   const MusicPlaylistFeedComponent({
@@ -21,29 +16,25 @@ class MusicPlaylistFeedComponent extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: responsiveFigmaHeight(60),
-      width: responsiveFigmaWidth(160),
-      decoration: BoxDecoration(
-        color: secondaryColor,
-        borderRadius: BorderRadius.circular(5),
-      ),
+    return ResponsiveContainer(
+      height: 60,
+      width: 160,
+      color: secondaryColor,
+      borderRadius: BorderRadius.circular(5),
       child: Row(
         children: [
-          Container(
-            height: responsiveFigmaHeight(60),
-            width: responsiveFigmaHeight(60),
-            decoration: BoxDecoration(
-              color: backgroundColor,
-              borderRadius: BorderRadius.circular(5),
-              image: DecorationImage(
-                image: NetworkImage(thumbnailUrl),
-                fit: BoxFit.cover,
-              ),
+          ResponsiveContainer(
+            height: 60,
+            width: 60,
+            isCubic: true,
+            color: backgroundColor,
+            borderRadius: BorderRadius.circular(5),
+            image: DecorationImage(
+              image: NetworkImage(thumbnailUrl),
+              fit: BoxFit.cover,
             ),
           ),
-          
-          SizedBox(width: responsiveFigmaWidth(5)),
+          ResponsiveContainer(width: 5),
           Text(title, style: TextStyle(color: Colors.white)),
         ],
       ),

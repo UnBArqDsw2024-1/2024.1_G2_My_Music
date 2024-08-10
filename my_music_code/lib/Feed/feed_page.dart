@@ -1,26 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/music_playlist_feed_component.dart';
+import 'package:my_music_code/Feed/Components/responsive_container.dart';
+import 'package:my_music_code/Feed/Components/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/style.dart';
-
-class ResponsiveContainer extends StatelessWidget {
-  const ResponsiveContainer({super.key, this.height, this.width, this.color, this.child, this.borderRadius, this.isCubic = false});
-  final double? height;
-  final double? width;
-  final bool isCubic;
-  final Color? color;
-  final Widget? child;
-  final BorderRadiusGeometry? borderRadius;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: responsiveFigmaHeight(height ?? 0),
-      width: isCubic? responsiveFigmaHeight(width ?? 0): responsiveFigmaWidth(width ?? 0),
-      decoration: BoxDecoration(color: color ?? backgroundColor, borderRadius: borderRadius ?? BorderRadius.zero),
-      child: child ?? SizedBox(),
-    );
-  }
-}
 
 class FeedPage extends StatefulWidget {
   const FeedPage({super.key});
@@ -104,14 +87,9 @@ class _FeedPageState extends State<FeedPage> {
                           ResponsiveContainer(width: 5),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Novo lançamento",
-                                  style: TextStyle(color: Color(0xff979797), fontSize: responsiveFigmaFontSize(12))),
-                              Text("Artista",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: responsiveFigmaFontSize(16))),
+                            children: const [
+                              ResponsiveText(text: "Novo lançamento",fontColor: Color(0xff979797),fontSize: 12),
+                              ResponsiveText(text: "Artista",fontWeight: FontWeight.w500,fontColor: Colors.white,fontSize: 16),
                             ],
                           )
                         ],
@@ -125,7 +103,7 @@ class _FeedPageState extends State<FeedPage> {
                         child: Stack(
                           children: [
                             Row(
-                              children: [
+                              children: const [
                                 ResponsiveContainer(
                                   height: 130,
                                   width: 130,
@@ -138,11 +116,15 @@ class _FeedPageState extends State<FeedPage> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     ResponsiveContainer(height: 12),
-                                    Text("Minha música nova",
-                                        style: TextStyle(color: Colors.white, fontSize: responsiveFigmaFontSize(16))),
-                                    Text(
-                                      "Single by DJ Onga",
-                                      style: TextStyle(color: Color(0xff979797), fontSize: responsiveFigmaFontSize(12)),
+                                    ResponsiveText(
+                                      text: "Minha música nova", 
+                                      fontColor: Colors.white, 
+                                      fontSize: 16
+                                    ),
+                                    ResponsiveText(
+                                      text: "Single by DJ Onga",
+                                      fontColor: Color(0xff979797), 
+                                      fontSize: 12,
                                     )
                                   ],
                                 )
@@ -178,7 +160,7 @@ class _FeedPageState extends State<FeedPage> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(left: responsiveFigmaWidth(23)),
-                      child: Text("Top World Albuns",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700, fontSize: responsiveFigmaFontSize(16))),
+                      child: ResponsiveText(text:"Top World Albuns",fontColor: Colors.white,fontWeight: FontWeight.w700, fontSize: 16),
                     ),
                     ResponsiveContainer(height: 8),
                     ResponsiveContainer(
@@ -219,7 +201,7 @@ class _FeedPageState extends State<FeedPage> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(left: responsiveFigmaWidth(23)),
-                      child: Text("Tocadas recentemente",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700, fontSize: responsiveFigmaFontSize(16))),
+                      child: ResponsiveText(text: "Tocadas recentemente",fontColor: Colors.white,fontWeight: FontWeight.w700, fontSize: 16),
                     ),
                     ResponsiveContainer(height: 8),
                     ResponsiveContainer(
