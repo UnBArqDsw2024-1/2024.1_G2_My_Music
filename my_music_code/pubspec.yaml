@@ -41,6 +41,7 @@ dependencies:
   cloud_firestore: ^5.1.0
   http: ^1.2.2
   audioplayers: ^6.0.0
+  audio_video_progress_bar: ^2.0.3
 
 dev_dependencies:
   flutter_test:
