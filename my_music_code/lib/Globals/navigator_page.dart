@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/feed_page.dart';
 import 'package:my_music_code/MyPlaylists/my_playlists_page.dart';
@@ -36,7 +35,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
               IconButton(
                 onPressed: () => setIndex(0),
                 icon: Icon(
-                  CupertinoIcons.search,
+                  Icons.search,
                   color: pageIndex == 0 ? primaryColor : Colors.white,
                 ),
               ),
@@ -46,7 +45,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
                 child: IconButton(
                   onPressed: () => setIndex(1),
                   icon: Icon(
-                    CupertinoIcons.home,
+                    Icons.home,
                     color: pageIndex == 1 ? primaryColor : Colors.white,
                   ),
                 ),
@@ -55,7 +54,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
               IconButton(
                 onPressed: () => setIndex(2),
                 icon: Icon(
-                  CupertinoIcons.music_note_list,
+                  Icons.library_music,
                   color: pageIndex == 2 ? primaryColor : Colors.white,
                 ),
               ),
@@ -67,8 +66,8 @@ class _NavigatorPageState extends State<NavigatorPage> {
           physics: const NeverScrollableScrollPhysics(),
           controller: controller,
           children: const [
-            FeedPage(),
             SearchPage(),
+            FeedPage(),
             MyPlaylists(),
           ],
         ),
