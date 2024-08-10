@@ -191,54 +191,51 @@ class _FeedPageState extends State<FeedMusicPage> {
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
-        backgroundColor: backgroundColor,
-        title: Text('Musics', style: TextStyle(color: Colors.white)),
+        leading: IconButton(
+              icon: Icon(CupertinoIcons.chevron_down, color: Colors.white),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          centerTitle: true,
+          backgroundColor: backgroundColor,
+        title: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  'Now playing',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 12,
+                  ),
+                ),
+                Text(
+                  widget.artista,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+        actions: [
+          IconButton(
+              icon: Icon(CupertinoIcons.ellipsis_vertical, color: Colors.white),
+              onPressed: () {
+                _musicOptionsModalBottomSheet(
+                    context,
+                    widget.artista,
+                    widget.music,
+                    widget.coverAlbum,
+                    isFavorite,
+                  );
+              },
+            ),
+        ]
       ),
       body: Column(
         children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              IconButton(
-                icon: Icon(CupertinoIcons.chevron_down, color: Colors.white),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'Now playing',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 12,
-                    ),
-                  ),
-                  Text(
-                    widget.artista,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-              IconButton(
-                icon: Icon(CupertinoIcons.ellipsis_vertical, color: Colors.white),
-                onPressed: () {
-                  _musicOptionsModalBottomSheet(
-                      context,
-                      widget.artista,
-                      widget.music,
-                      widget.coverAlbum,
-                      isFavorite,
-                    );
-                },
-              ),
-            ],
-          ),
           SizedBox(height: 20), // Espaçamento entre a Row e a imagem
           ClipRRect(
             borderRadius: BorderRadius.circular(12.0),
