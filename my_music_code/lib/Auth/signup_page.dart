@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 import 'package:my_music_code/Globals/custom_text_field.dart';
+import 'package:my_music_code/Globals/navigator_page.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
@@ -117,7 +118,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
 
                   RawMaterialButton(
-                    onPressed: (){}, 
+                    onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => NavigatorPage())),
                     child: ResponsiveContainer(
                       height: 47,
                       width: 233,
