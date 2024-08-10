@@ -60,7 +60,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
             ),
             SizedBox(height: 16),
             CustomTextField(
-              hintText: "Milenuda Barucada",
+              hintText: "Nome de usuário",
               hintTextColor: Colors.white.withOpacity(0.25),
               selectedBorderColor: secondaryColor,
               fillColor: secondaryColor,
@@ -71,7 +71,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
             ),
             SizedBox(height: 16),
             CustomTextField(
-              hintText: "milenabaruc@gmail.com",
+              hintText: "Email",
               hintTextColor: Colors.white.withOpacity(0.25),
               selectedBorderColor: secondaryColor,
               fillColor: secondaryColor,
@@ -82,7 +82,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
             ),
             SizedBox(height: 16),
             CustomTextField(
-              hintText: "Milena",
+              hintText: "Primeiro nome",
               hintTextColor: Colors.white.withOpacity(0.25),
               selectedBorderColor: secondaryColor,
               fillColor: secondaryColor,
@@ -93,7 +93,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
             ),
             SizedBox(height: 16),
             CustomTextField(
-              hintText: "Baruc",
+              hintText: "Sobrenome",
               hintTextColor: Colors.white.withOpacity(0.25),
               selectedBorderColor: secondaryColor,
               fillColor: secondaryColor,
