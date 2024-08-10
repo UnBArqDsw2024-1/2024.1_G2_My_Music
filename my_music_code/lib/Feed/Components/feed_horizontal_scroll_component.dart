@@ -3,7 +3,6 @@ import 'package:my_music_code/Globals/cubic_button_with_image.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
-import 'package:my_music_code/Globals/style.dart';
 
 class FeedHorizontalScrollComponent extends StatefulWidget {
   const FeedHorizontalScrollComponent({super.key, required this.title});
