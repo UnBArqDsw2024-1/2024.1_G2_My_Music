@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+class DefaultPlaceholder {
+  static const String title = "Default";
+  static const String image = "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png";
+  static const Color backgroundColor =Color(0xff373737);
+}
+
+
 // Colors
 Color primaryColor = const Color(0xFF7503FD);
 Color secondaryColor = const Color(0xff373737);

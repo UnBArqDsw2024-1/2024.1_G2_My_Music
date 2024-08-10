@@ -15,8 +15,8 @@ void errorDialogMessage(BuildContext context, String error, {String title = "Err
     builder: (context){
       return AlertDialog(
         backgroundColor: backgroundColor,
-        title: Text(title, textAlign: TextAlign.center),
-        content: Text(error, textAlign: TextAlign.center),
+        title: Text(title, textAlign: TextAlign.center, style: TextStyle(color: Colors.white)),
+        content: Text(error, textAlign: TextAlign.center, style: TextStyle(color: Colors.white)),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context), 
