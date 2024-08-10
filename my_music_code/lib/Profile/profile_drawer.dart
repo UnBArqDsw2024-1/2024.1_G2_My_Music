@@ -5,6 +5,7 @@ import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/Profile/configuration_page.dart';
 import 'package:my_music_code/Profile/edit_profile_page.dart';
 import 'package:my_music_code/Profile/friends_page.dart';
+import 'package:my_music_code/legal/about_page.dart';
 
 class ProfileDrawer extends StatefulWidget {
   const ProfileDrawer({super.key});
@@ -26,37 +27,45 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
               backgroundImage: NetworkImage(DefaultPlaceholder.image),
             ),
             title: ResponsiveText(text: "Milena Baruc", fontSize: 16),
-            subtitle: ResponsiveText(text: "Configurar perfil", fontSize: 12,fontColor: Color(0xffA4A4A4)),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfilePage())),
+            subtitle: ResponsiveText(
+                text: "Configurar perfil",
+                fontSize: 12,
+                fontColor: Color(0xffA4A4A4)),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => EditProfilePage())),
           ),
-          
           ListTile(
-            leading: Icon(Icons.add_rounded,color: Colors.white),
+            leading: Icon(Icons.add_rounded, color: Colors.white),
             title: ResponsiveText(text: "Trocar conta"),
-            onTap: () => errorDialogMessage(context, "Essa funcionalidade ainda não está disponível.", title: "Trocar conta"),
+            onTap: () => errorDialogMessage(
+                context, "Essa funcionalidade ainda não está disponível.",
+                title: "Trocar conta"),
           ),
-
           ListTile(
-            leading: Icon(Icons.settings,color: Colors.white),
+            leading: Icon(Icons.settings, color: Colors.white),
             title: ResponsiveText(text: "Configurações"),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ConfigurationPage())),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ConfigurationPage())),
           ),
-
           ListTile(
-            leading: Icon(Icons.people,color: Colors.white),
+            leading: Icon(Icons.people, color: Colors.white),
             title: ResponsiveText(text: "Amizades"),
-            //onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => FriendsPage())),
             onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => FriendsPage()),
-            );
-          },
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FriendsPage()),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.description, color: Colors.white),
-            title: ResponsiveText(text: "Termos de Uso"),
-            onTap: () => errorDialogMessage(context, "Essa funcionalidade ainda não está disponível.", title: "Termos de Uso"),
+            title: ResponsiveText(text: "Sobre"),
+            onTap: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AboutPage()),
+            );
+            },
           ),
         ],
       ),
