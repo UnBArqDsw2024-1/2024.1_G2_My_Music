@@ -28,3 +28,4 @@ O modelo do nosso protótipo de alta fidelidade pode ser visto completo através
 |   Versão  |    Data   | Descrição | Autor(es) | Revisor(es)|
 | --------- | --------- | --------- | --------- | ---------- |
 |   1.0   | 15/06/2023| Criação da página | [Luis Miranda](https://github.com/LuisMiranda10) e [Vinícius Mendes](https://github.com/yabamiah)| [Limírio Guimarães](https://github.com/LimirioGuimaraes) |
+|   1.1   | 15/06/2023| Adição da segunda versão do figma | [Lucas Alves Vilela](https://github.com/Lucas-AV) e [Limírio Guimarães](https://github.com/LimirioGuimaraes)| [Luis Miranda](https://github.com/LuisMiranda10), [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/92) |
