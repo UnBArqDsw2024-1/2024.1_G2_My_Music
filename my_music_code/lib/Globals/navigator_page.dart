@@ -39,7 +39,6 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   color: pageIndex == 0 ? primaryColor : Colors.white,
                 ),
               ),
-
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: IconButton(
@@ -50,7 +49,6 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   ),
                 ),
               ),
-
               IconButton(
                 onPressed: () => setIndex(2),
                 icon: Icon(
@@ -61,14 +59,17 @@ class _NavigatorPageState extends State<NavigatorPage> {
             ],
           ),
         ),
-        
-        body: PageView(
-          physics: const NeverScrollableScrollPhysics(),
-          controller: controller,
-          children: const [
-            SearchPage(),
-            FeedPage(),
-            MyPlaylists(),
+        body: Stack(
+          children: [
+            PageView(
+              physics: const NeverScrollableScrollPhysics(),
+              controller: controller,
+              children: const [
+                SearchPage(),
+                FeedPage(),
+                MyPlaylists(),
+              ],
+            ),
           ],
         ),
       ),

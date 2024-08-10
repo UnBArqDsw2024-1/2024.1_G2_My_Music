@@ -36,14 +36,14 @@ class _SignUpPageState extends State<SignUpPage> {
               padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(27)),
               child: Column(
                 children: [
-                  ResponsiveContainer(height: 16),
+                  ResponsiveContainer(height: 14),
                   ResponsiveText(
                     text: "Criar conta",
                     fontColor: Color(0xff000000),
                     fontWeight: FontWeight.w700,
                     fontSize: 48,
                   ),
-                  ResponsiveContainer(height: 16),
+                  ResponsiveContainer(height: 14),
                   CustomTextField(
                     labelText: "Primeiro nome",
                     hintText: "Nome",
@@ -54,7 +54,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     selectedBorderColor: primaryColor,
                     inputTextColor: Color(0xff000000),
                   ),
-                  ResponsiveContainer(height: 16),
+                  ResponsiveContainer(height: 14),
                   CustomTextField(
                     labelText: "Sobrenome",
                     hintText: "Sobrenome",
@@ -65,7 +65,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     selectedBorderColor: primaryColor,
                     inputTextColor: Color(0xff000000),
                   ),
-                  ResponsiveContainer(height: 16),
+                  ResponsiveContainer(height: 14),
                   CustomTextField(
                     labelText: "Nome de usuário",
                     hintText: "Usuario.Exemplo",
@@ -76,7 +76,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     selectedBorderColor: primaryColor,
                     inputTextColor: Color(0xff000000),
                   ),
-                  ResponsiveContainer(height: 16),
+                  ResponsiveContainer(height: 14),
                   CustomTextField(
                     labelText: "Email",
                     hintText: "Usuario@gmail.com",
@@ -87,7 +87,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     selectedBorderColor: primaryColor,
                     inputTextColor: Color(0xff000000),
                   ),
-                  ResponsiveContainer(height: 16),
+                  ResponsiveContainer(height: 14),
                   CustomTextField(
                     labelText: "Senha",
                     hintText: "•"*10,
@@ -100,7 +100,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     selectedBorderColor: primaryColor,
                     inputTextColor: Color(0xff000000),
                   ),
-                  ResponsiveContainer(height: 16),
+                  ResponsiveContainer(height: 14),
                   CustomTextField(
                     labelText: "Repetir senha",
                     hintText: "•"*10,
@@ -113,10 +113,10 @@ class _SignUpPageState extends State<SignUpPage> {
                     selectedBorderColor: primaryColor,
                     inputTextColor: Color(0xff000000),
                   ),
-                  ResponsiveContainer(height: 16),
-
-
-
+                  ResponsiveContainer(height: 8),
+      
+      
+      
                   RawMaterialButton(
                     onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => NavigatorPage())),
                     child: ResponsiveContainer(
@@ -129,7 +129,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                   Expanded(child: ResponsiveContainer()),
                   TextButton(onPressed: widget.onTapTogglePage, child: ResponsiveText(text: "Você tem uma conta? Entre",fontColor: primaryColor,fontWeight: FontWeight.w700,fontSize: 16,)),
-                  ResponsiveContainer(height: 16),
+                  ResponsiveContainer(height: 5),
                 ],
               ),
             ),

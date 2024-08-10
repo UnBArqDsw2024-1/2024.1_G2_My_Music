@@ -145,7 +145,7 @@ class _LoginPageState extends State<LoginPage> {
                                       text: "Login com o google",
                                       fontColor: Colors.white,
                                       fontSize: 16,
-                                      fontWeight: FontWeight.w500,
+                                      fontWeight: FontWeight.w400,
                                     ),
                                   )
                                 ),
