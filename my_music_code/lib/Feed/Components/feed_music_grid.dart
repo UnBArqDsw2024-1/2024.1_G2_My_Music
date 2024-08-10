@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/music_playlist_feed_component.dart';
-import 'package:my_music_code/Feed/Components/responsive_container.dart';
+import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 
 class FeedMusicGrid extends StatefulWidget {

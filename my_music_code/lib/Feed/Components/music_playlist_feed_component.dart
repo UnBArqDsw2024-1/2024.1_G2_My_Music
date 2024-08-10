@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_music_code/Feed/Components/responsive_container.dart';
-import 'package:my_music_code/Feed/Components/responsive_text.dart';
+import 'package:my_music_code/Globals/responsive_container.dart';
+import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/style.dart';
 
