@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/feed_page.dart';
-import 'package:my_music_code/Feed/feed_music_page.dart';
 import 'package:my_music_code/MyPlaylists/my_playlists_page.dart';
 
 import 'package:my_music_code/Search/search_page.dart';
@@ -60,14 +59,6 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   color: pageIndex == 2 ? primaryColor : Colors.white,
                 ),
               ),
-
-              IconButton(
-                onPressed: () => setIndex(3),
-                icon: Icon(
-                  CupertinoIcons.music_mic,
-                  color: pageIndex == 3 ? primaryColor : Colors.white,
-                )
-              ),
             ],
           ),
         ),
@@ -79,7 +70,6 @@ class _NavigatorPageState extends State<NavigatorPage> {
             FeedPage(),
             SearchPage(),
             MyPlaylists(),
-            FeedMusicPage(),
           ],
         ),
       ),
