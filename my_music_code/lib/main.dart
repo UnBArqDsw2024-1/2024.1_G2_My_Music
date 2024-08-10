@@ -1,7 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:my_music_code/Globals/navigator_page.dart';
+import 'package:my_music_code/Auth/auth_page.dart';
 import 'package:my_music_code/Globals/size_config.dart';
+import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/firebase_options.dart';
 
 void main() async {
@@ -23,10 +24,10 @@ class MyApp extends StatelessWidget {
       title: 'MyMusic',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
         useMaterial3: true,
       ),
-      home: NavigatorPage(),
+      home: AuthPage(),
     );
   }
 }

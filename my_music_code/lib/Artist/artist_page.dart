@@ -14,7 +14,6 @@ class ArtistPage extends StatefulWidget {
 }
 
 class _ArtistPageState extends State<ArtistPage> {
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -24,7 +23,7 @@ class _ArtistPageState extends State<ArtistPage> {
           child: Column(
             children: [
               ResponsiveContainer(
-                height: 227.5+8,
+                height: 227.5 + 8,
                 width: double.infinity,
                 child: Stack(
                   children: [
@@ -32,44 +31,61 @@ class _ArtistPageState extends State<ArtistPage> {
                       width: double.infinity,
                       height: 200,
                       color: Colors.white,
-                      image: DecorationImage(image: NetworkImage("https://i.redd.it/jghv9x07prgc1.jpeg"), fit: BoxFit.cover),
+                      image: DecorationImage(
+                          image: NetworkImage("https://i.redd.it/jghv9x07prgc1.jpeg"), fit: BoxFit.cover),
                       child: Stack(
                         children: [
                           Positioned(
-                            top: 0, left: 0,
-                            child: IconButton(onPressed: () => Navigator.pop(context), icon: Icon(Icons.arrow_back, color: Colors.white)),
+                            top: 0,
+                            left: 0,
+                            child: IconButton(
+                                onPressed: () => Navigator.pop(context),
+                                icon: Icon(Icons.arrow_back, color: Colors.white)),
                           ),
                           Positioned(
-                            bottom: 9, left: 0, right: 0,
+                            bottom: 9,
+                            left: 0,
+                            right: 0,
                             child: Column(
                               children: const [
-                                ResponsiveText(text: "The Great Architect",fontSize: 16,fontWeight: FontWeight.bold,),
-                                ResponsiveText(text: "Creator Of Universe", fontSize: 8,fontColor: Colors.white70,),
+                                ResponsiveText(
+                                  text: "The Great Architect",
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                ResponsiveText(
+                                  text: "Creator Of Universe",
+                                  fontSize: 8,
+                                  fontColor: Colors.white70,
+                                ),
                               ],
                             ),
                           )
                         ],
                       ),
                     ),
-
                     Positioned(
                       bottom: 8,
                       right: 10,
                       child: IconButton(
                         padding: EdgeInsets.zero,
                         constraints: BoxConstraints(),
-                        onPressed: (){},
+                        onPressed: () {
+                          showModalBottomSheet(
+                              context: context,
+                              builder: (context) {
+                                return Container();
+                              });
+                        },
                         icon: ResponsiveContainer(
-                          height: 55,
-                          width: 55,
-                          isCubic: true,
-                          color: secondaryColor,
-                          borderRadius: BorderRadius.circular(100),
-                          child: Icon(Icons.play_arrow_rounded, color: Colors.white,size: 64)
-                        ),
+                            height: 55,
+                            width: 55,
+                            isCubic: true,
+                            color: secondaryColor,
+                            borderRadius: BorderRadius.circular(100),
+                            child: Icon(Icons.play_arrow_rounded, color: Colors.white, size: 48)),
                       ),
                     ),
-
                     Positioned(
                       left: responsiveFigmaWidth(12),
                       bottom: 0,
@@ -84,18 +100,15 @@ class _ArtistPageState extends State<ArtistPage> {
                   ],
                 ),
               ),
-
               ResponsiveContainer(
                 height: 4,
               ),
-
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(12)),
                 child: Column(
                   children: List.generate(5, (int index) => MusicListTile(index: index)),
                 ),
               ),
-
               HorizontalScrollComponent(title: "Álbuns de The Great Architect", leftPadding: 14),
             ],
           ),
