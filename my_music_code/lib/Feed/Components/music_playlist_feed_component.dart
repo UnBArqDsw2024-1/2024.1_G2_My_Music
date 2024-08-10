@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/responsive_container.dart';
+import 'package:my_music_code/Feed/Components/responsive_text.dart';
+import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/style.dart';
 
 
@@ -34,8 +36,7 @@ class MusicPlaylistFeedComponent extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          ResponsiveContainer(width: 5),
-          Text(title, style: TextStyle(color: Colors.white)),
+          ResponsiveText(text: title, fontColor: Colors.white,padding: EdgeInsets.only(left: responsiveFigmaWidth(5))),
         ],
       ),
     );

@@ -153,55 +153,14 @@ class _FeedPageState extends State<FeedPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: responsiveFigmaWidth(23)),
-                      child: ResponsiveText(text:"Top World Albuns",fontColor: Colors.white,fontWeight: FontWeight.w700, fontSize: 16),
-                    ),
+                    ResponsiveText(text:"Top World Albuns",fontColor: Colors.white,fontWeight: FontWeight.w700, fontSize: 16, padding: EdgeInsets.only(left: responsiveFigmaWidth(23))),
                     ResponsiveContainer(height: 8),
-                    ResponsiveContainer(
-                      height: 100,
-                      width: double.infinity,
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          children: [
-                            ResponsiveContainer(width: 23),
-                            for(int i = 0; i < 10; i++)
-                              Padding(
-                                padding: EdgeInsets.only(right: responsiveFigmaWidth(10)),
-                                child: ResponsiveContainer(
-                                  height: 100,
-                                  width: 100,
-                                  isCubic: true,
-                                  borderRadius: BorderRadius.circular(15),
-                                  color: Colors.white,
-                                ),
-                              ),
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: responsiveFigmaWidth(23)),
-                    child: ResponsiveText(text: "Tocadas recentemente",fontColor: Colors.white,fontWeight: FontWeight.w700, fontSize: 16),
-                  ),
-                  ResponsiveContainer(height: 8),
-                  ResponsiveContainer(
-                    height: 100,
-                    width: double.infinity,
-                    child: SingleChildScrollView(
+                    SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
                           ResponsiveContainer(width: 23),
-                          for(int i = 0; i < 5; i++)
+                          for(int i = 0; i < 10; i++)
                             Padding(
                               padding: EdgeInsets.only(right: responsiveFigmaWidth(10)),
                               child: ResponsiveContainer(
@@ -214,6 +173,33 @@ class _FeedPageState extends State<FeedPage> {
                             ),
                         ],
                       ),
+                    )
+                  ],
+                ),
+              ),
+
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ResponsiveText(text: "Tocadas recentemente",fontColor: Colors.white,fontWeight: FontWeight.w700, fontSize: 16, padding: EdgeInsets.only(left: responsiveFigmaWidth(23))),
+                  ResponsiveContainer(height: 8),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        ResponsiveContainer(width: 23),
+                        for(int i = 0; i < 5; i++)
+                          Padding(
+                            padding: EdgeInsets.only(right: responsiveFigmaWidth(10)),
+                            child: ResponsiveContainer(
+                              height: 100,
+                              width: 100,
+                              isCubic: true,
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.white,
+                            ),
+                          ),
+                      ],
                     ),
                   )
                 ],
