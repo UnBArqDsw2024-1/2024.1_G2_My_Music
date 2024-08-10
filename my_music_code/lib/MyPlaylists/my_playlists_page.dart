@@ -9,17 +9,133 @@ class MyPlaylists extends StatefulWidget {
 }
 
 class _MyPlaylistsState extends State<MyPlaylists> {
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: backgroundColor,
-        title: Text('Playlists',style: TextStyle(color: Colors.white)),
-      ),
-      backgroundColor: backgroundColor,
-      body: const Center(
-        child: Icon(Icons.person,color: Colors.white),
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: backgroundColor,
+          title: Text('My Playlists',style: TextStyle(color: Colors.white)),
+          bottom: PreferredSize(
+            preferredSize: Size.fromHeight(AppBar().preferredSize.height),
+            child: Container(
+              height: 50,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 17,
+                vertical: 5,
+              ),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    10,
+                  ),
+                  color: Colors.grey[200],
+                ),
+                child: TabBar(
+                  labelColor: Colors.white,
+                  unselectedLabelColor: Colors.black,
+                  indicator: BoxDecoration(
+                    borderRadius: BorderRadius.circular(
+                      10,
+                    ),
+                    color: primaryColor,
+                  ),
+                  tabs: const [
+                    Tab(
+                      text: 'Recent',
+                    ),
+                    Tab(
+                      text: 'Songs',
+                    ),
+                    Tab(
+                      text: 'Albums',
+                    ),
+                    Tab(
+                      text: 'Playlists',
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+        body: const TabBarView(
+          children: [
+            Center(
+              child: Text(
+                'Recent',
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+              ),
+            ),
+            Center(
+              child: Text(
+                'Songs',
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+              ),
+            ),
+            Center(
+              child: Text(
+                'Albums',
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+              ),
+            ),
+            Center(
+              child: Text(
+                'Playlist',
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
+
+  // Widget build(BuildContext context) {
+  //   return DefaultTabController(
+  //     initialIndex: 1,
+  //     length: 4,
+  //     child: Scaffold(
+  //     appBar: AppBar(
+  //       backgroundColor: backgroundColor,
+  //       title: Text('My Playlists',style: TextStyle(color: Colors.white)),
+  //       bottom: TabBar(
+  //         labelColor: Colors.white,
+  //         // indicator: BoxDecoration(
+  //         //   color: primaryColor,
+  //         // ),
+  //         tabs: <Widget>[
+  //           Tab(
+  //             text: 'Recent',
+  //           ),
+  //           Tab(
+  //             text: 'Songs',
+  //           ),
+  //           Tab(
+  //             text: 'Albums',
+  //           ),
+  //           Tab(
+  //             text: 'Playlists',
+  //           ),
+  //         ],
+  //       ),
+  //     ),
+      
+  //     backgroundColor: backgroundColor,
+  //     body: const Center(
+  //       child: Icon(Icons.person,color: Colors.white),
+  //     ),
+  //   ),
+  // );
+  // }
