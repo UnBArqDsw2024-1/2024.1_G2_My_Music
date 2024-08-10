@@ -25,6 +25,7 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                 isCubic: true,
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(100),
+                image: DecorationImage(image: NetworkImage(DefaultPlaceholder.image)),
               ),
               ResponsiveContainer(width: 5),
               Column(
@@ -52,13 +53,14 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                       isCubic: true,
                       color: Colors.white,
                       borderRadius: BorderRadius.horizontal(left: Radius.circular(15)),
+                      image: DecorationImage(image: NetworkImage(DefaultPlaceholder.image)),
                     ),
                     ResponsiveContainer(width: 12),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ResponsiveContainer(height: 12),
-                        ResponsiveText(text: "Minha música nova", fontColor: Colors.white, fontSize: 16),
+                        ResponsiveText(text: "Música nova", fontColor: Colors.white, fontSize: 16),
                         ResponsiveText(
                           text: "Single by DJ Onga",
                           fontColor: Color(0xff979797),

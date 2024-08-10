@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
+import 'package:my_music_code/Globals/style.dart';
 
 class FeedHorizontalScrollComponent extends StatefulWidget {
   const FeedHorizontalScrollComponent({super.key, required this.title});
@@ -38,6 +39,7 @@ class _FeedHorizontalScrollComponentState extends State<FeedHorizontalScrollComp
                       width: 100,
                       isCubic: true,
                       borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(image: NetworkImage(DefaultPlaceholder.image)),
                       color: Colors.white,
                     ),
                   ),
