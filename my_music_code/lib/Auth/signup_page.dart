@@ -58,7 +58,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   CustomTextField(
                     labelText: "Sobrenome",
                     hintText: "Sobrenome",
-                    prefixIcon: MdiIcons.account,
+                    prefixIcon: MdiIcons.accountOutline,
                     hintTextColor: Color(0xff868080),
                     fillColor: Color(0xffFFFFFF),
                     leadingIconColor: Color(0xff000000),
@@ -67,9 +67,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                   ResponsiveContainer(height: 16),
                   CustomTextField(
-                    labelText: "Sobrenome",
-                    hintText: "Sobrenome",
-                    prefixIcon: MdiIcons.account,
+                    labelText: "Nome de usuário",
+                    hintText: "Usuario.Exemplo",
+                    prefixIcon: Icons.alternate_email_rounded,
                     hintTextColor: Color(0xff868080),
                     fillColor: Color(0xffFFFFFF),
                     leadingIconColor: Color(0xff000000),
@@ -80,7 +80,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   CustomTextField(
                     labelText: "Email",
                     hintText: "Usuario@gmail.com",
-                    prefixIcon: MdiIcons.account,
+                    prefixIcon: Icons.email,
                     hintTextColor: Color(0xff868080),
                     fillColor: Color(0xffFFFFFF),
                     leadingIconColor: Color(0xff000000),
@@ -93,7 +93,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     hintText: "•"*10,
                     obscuringText: true,
                     obscuringCharacter: "•",
-                    prefixIcon: MdiIcons.account,
+                    prefixIcon: MdiIcons.lock,
                     hintTextColor: Color(0xff868080),
                     fillColor: Color(0xffFFFFFF),
                     leadingIconColor: Color(0xff000000),
@@ -106,7 +106,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     hintText: "•"*10,
                     obscuringText: true,
                     obscuringCharacter: "•",
-                    prefixIcon: MdiIcons.account,
+                    prefixIcon: MdiIcons.lockOutline,
                     hintTextColor: Color(0xff868080),
                     fillColor: Color(0xffFFFFFF),
                     leadingIconColor: Color(0xff000000),
@@ -118,7 +118,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
 
                   RawMaterialButton(
-                    onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => NavigatorPage())),
+                    onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => NavigatorPage())),
                     child: ResponsiveContainer(
                       height: 47,
                       width: 233,
