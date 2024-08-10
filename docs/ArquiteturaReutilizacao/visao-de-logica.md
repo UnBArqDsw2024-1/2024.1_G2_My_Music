@@ -31,6 +31,45 @@ Para cada classe significativa no pacote, inclua seu nome, breve descrição e, 
   <p>Figura 2: Diagrama de Pacotes do Frontend com Backend. (Fonte: João Vítor, 2024)</p>
 </div>
 
+O diagrama de pacotes, apresentado na figura 2, demonstra os principais pacotes contidos na aplicação e a relação que possuem entre si, em nosso projeto, o diagrama de pacotes evidencia os mesmos tanto na parte do Frontend quanto do Backend.
+
+#### Pacote da camada Frontend
+
+Aqui estão os subpacotes pertencentes ao Frontend e a relação entre eles, bem como a interação com o pacote do Backend, que serão explicados mais à frente.
+
+##### Subpacote Src
+
+É onde se encontra o código para as telas que serão vistas pelo usuário, nele estão contidos os Components, os Scripts e os Styles, que juntos dão a forma como as páginas serão visualizadas(Style), onde se encontram as funções que ela possuirá(Components) e onde irá procurar o código para executar a ação solicitada(Scripts), e para que isso ocorra sem erros, o subpacote Src importa as Libraries e a Api e acessa os Assets, as Libraries são onde os termos utilizados para criar o código se encontram e serão puxados de lá para que o mesmo entenda o que fazer, a Api é de onde puxa todas as funcionalidades implementadas no Backend e os Assets são onde todas as fontes de imagem se encontram.
+
+##### Subpacote Public
+
+É onde o que será visto pelo usuário será programado, possuindo os subpacotes Pages, que é a implementação das páginas que o aplicativo irá possuir, e Styles, que é onde estas páginas serão estilizadas, ele importa o subpacote Src e Api para que possa funcionar corretamente.
+
+#### Pacote da camada Backend
+
+Aqui estão os subpacotes pertencentes ao backend e a relação entre eles, e o mesmo é importado pelo pacote Frontend por meio do subpacote chamado Api.
+
+##### Subpacote Routes
+
+Ele é onde as rotas para que a aplicação rode se encontram, sem ele, elas estariam implementadas, mas perdidas, e assim a aplicação não funcionaria, ele importa os subpacotes utils e Services.
+
+##### Subpacote utils
+
+É nele que se encontra as funções que serão reutilizadas no projeto, ele também importa o subpacote Services.
+
+##### Subpacote Services
+
+Services é o subpacote onde o bruto das funcionalidades estão implementados, utils as tornam reutilizáveis, enquanto o Services implementa como elas funcionam, ele importa o subpacote Model.
+
+##### Subpacote Model
+
+Model são os modelos base utilizados para a programação geral da aplicação, sem ele, não existiria a referência para a criação dos códigos em Services.
+
+##### Subpacote Config
+
+Presente tanto nos pacotes de Frontend quanto Backend, embora sejam diferentes entre si, funcionam da mesma forma, garantindo que ambos os pacotes estejam implementados de acordo com o definido.
+
+
 ### Diagrama de classes
 
 ![Diagrama de atividades de cadastro](../Assets/diagramaClasses.png)
@@ -67,11 +106,15 @@ Um álbum, basicamente, é composto por uma ou mais músicas e está associado a
 
 ### Diagrama de atividades
 
+O diagrama de atividades serve para que se possa entender como as atividades que serão realizadas pelo usuário irão interagir com a aplicação, mostrando os caminhos possíveis para a ação.
+
 ![Diagrama de atividades de cadastro](../Assets/DiagramadeAtividades-Cadastro.png)
 
 <div style="text-align: center">
   <p>Figura 4: Diagrama de cadastro. (Fonte: Vinícius Mendes, 2024)</p>
 </div>
+
+O diagrama de cadastro demonstra como o mesmo é efetuado, o usuário que deseja se cadastrar precisa fornecer nome, email, senha e repetir a senha, e a aplicação irá registrar o usuário se todas as etapas tiverem sido executadas sem erros, ou retornar o que está errado.
 
 ![Diagrama de atividades de login](../Assets/DiagramadeAtividades-Login.png)
 
@@ -79,17 +122,23 @@ Um álbum, basicamente, é composto por uma ou mais músicas e está associado a
   <p>Figura 5: Diagrama de login. (Fonte: Vinícius Mendes, 2024)</p>
 </div>
 
+Para efetuar o login, a aplicação pede o nome de usuário ou o email e a senha, e confere na base de dados se eles correspondem a algum existente, efetuando o mesmo se tudo estiver correto ou retornando erro caso contrário.
+
 ![Diagrama de atividades de ouvir música](../Assets/DiagramadeAtividades-Ouvirmusica.png)
 
 <div style="text-align: center">
   <p>Figura 6: Diagrama de ouvir música. (Fonte: Vinícius Mendes, 2024)</p>
 </div>
 
+Para encontrar e reproduzir uma música, a aplicação irá possibilitar, além de pesquisar por nome, filtrar por artista, álbum, playlist e estilo musical, caso encontre, irá reproduzir a música, caso contrário, retorna que não encontrou a música pesquisada.
+
 ![Diagrama de atividades de criar playlist](../Assets/DiagramadeAtividades-Criarplaylist.png)
 
 <div style="text-align: center">
   <p>Figura 7: Diagrama de criar playlist. (Fonte: Vinícius Mendes, 2024)</p>
 </div>
+
+Ao selecionar para criar uma playlist, o aplicativo irá criar a mesma, pedirá para que as configurações sejam implementadas e depois seguirá para a adição de músicas, onde o usuário poderá adicionar em sequência ou aos poucos, em sequência acontecerá o loop de seleção e adição, e ao concluir ou decidir por adicionar aos poucos, a playlist irá ser salva.
 
 ## Bibliografia
 > Conceito: Visão Lógica. Disponível em: <https://www.cin.ufpe.br/~gta/rup-vc/core.base_rup/guidances/concepts/logical_view_C135365E.html>. Acesso em: 4 ago. 2024.
@@ -108,3 +157,4 @@ Um álbum, basicamente, é composto por uma ou mais músicas e está associado a
 | 1.2    | 05/08/2024 | Alteração no template | [Israel Thalles](https://github.com/IsraelThalles) |   |
 | 1.3    | 06/08/2024 | Adição da visão geral | [Israel Thalles](https://github.com/IsraelThalles) |   |
 | 1.4    | 09/08/2024 | Adição da explicação do diagrama de classes | [Israel Thalles](https://github.com/IsraelThalles) |   |
+| 1.5    | 10/08/2024 | Adição da explicação dos diagramas de pacotes e de atividades | [Carlos Eduardo Mendes de Mesquita](https://github.com/CarlosEduardoMendesdeMesquita) |    |
