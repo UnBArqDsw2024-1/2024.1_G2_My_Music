@@ -17,7 +17,7 @@ class FeedPage extends StatefulWidget {
 class _FeedPageState extends State<FeedPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(  
       backgroundColor: backgroundColor,
       appBar: AppBar(
         backgroundColor: backgroundColor,

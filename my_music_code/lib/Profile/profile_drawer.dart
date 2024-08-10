@@ -45,9 +45,14 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
           ListTile(
             leading: Icon(Icons.people,color: Colors.white),
             title: ResponsiveText(text: "Amizades"),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => FriendsPage())),
+            //onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => FriendsPage())),
+            onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => FriendsPage()),
+            );
+          },
           ),
-
           ListTile(
             leading: Icon(Icons.description, color: Colors.white),
             title: ResponsiveText(text: "Termos de Uso"),
