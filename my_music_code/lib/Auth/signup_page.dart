@@ -19,16 +19,20 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: Column(
-        children: [
-          ResponsiveContainer(
-            height: 180,
-            width: double.infinity,
-            child: Icon(MdiIcons.music, color: Colors.white, size: 100),
-          ),
-          Expanded(
-            child: Container(
+      backgroundColor: backgroundColor,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            ResponsiveContainer(
+              height: 180,
+              width: double.infinity,
+              child: Icon(MdiIcons.music, color: Colors.white, size: 100),
+            ),
+            Container(
+              constraints: BoxConstraints(
+                minHeight: SizeConfig.screenHeight - responsiveFigmaHeight(180),
+                minWidth: double.infinity,
+              ),
               decoration: BoxDecoration(
                 color: Color(0xffEFEFEF),
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(100)),
@@ -113,10 +117,10 @@ class _SignUpPageState extends State<SignUpPage> {
                     selectedBorderColor: primaryColor,
                     inputTextColor: Color(0xff000000),
                   ),
-                  ResponsiveContainer(height: 8),
-      
-      
-      
+                  ResponsiveContainer(height: 16),
+                  
+                  
+                  
                   RawMaterialButton(
                     onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => NavigatorPage())),
                     child: ResponsiveContainer(
@@ -127,14 +131,14 @@ class _SignUpPageState extends State<SignUpPage> {
                       child: Center(child: ResponsiveText(text: "Criar conta",fontSize: 16,fontWeight: FontWeight.w500,)),
                     )
                   ),
-                  Expanded(child: ResponsiveContainer()),
+                  ResponsiveContainer(height: 8),
                   TextButton(onPressed: widget.onTapTogglePage, child: ResponsiveText(text: "Você tem uma conta? Entre",fontColor: primaryColor,fontWeight: FontWeight.w700,fontSize: 16,)),
-                  ResponsiveContainer(height: 5),
+                  ResponsiveContainer(height: 16),
                 ],
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       )
     );
   }
