@@ -20,9 +20,6 @@ Por fim, a camada do banco de dados representa a camada de modelo e é responsá
 
 ## Pacotes de design arquitetonicamente significativos
 
-(Para cada pacote significativo, inclua uma subseção com seu nome, sua breve descrição e um diagrama com todas as classes e pacotes significativos contidos no pacote.
-Para cada classe significativa no pacote, inclua seu nome, breve descrição e, opcionalmente, uma descrição de algumas de suas principais responsabilidades, operações e atributos.)
-
 ### Diagrama de pacotes
 
 ![Diagrama de Pacotes](../Modelagem/images/Diagrama_de_Pacotes_2.png)
