@@ -3,10 +3,10 @@ import 'package:flutter_material_design_icons/flutter_material_design_icons.dart
 import 'package:my_music_code/Auth/Service/auth_service.dart';
 import 'package:my_music_code/Globals/custom_text_field.dart';
 import 'package:my_music_code/Globals/dialogs.dart';
-import 'package:my_music_code/Globals/navigator_page.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
+import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Globals/style.dart';
 
 class LoginPage extends StatefulWidget {
@@ -42,52 +42,45 @@ class _LoginPageState extends State<LoginPage> {
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(100)),
                 ),
                 padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(27)),
-                child: Column(
+                child: SpacedColumn(
+                  spacing: 8,
                   children: [
-                    ResponsiveContainer(height: 16),
-                    ResponsiveText(
-                      text: "Login",
-                      fontColor: Color(0xff000000),
-                      fontWeight: FontWeight.w700,
-                      fontSize: 48,
-                    ),
-                    ResponsiveContainer(height: 16),
+                    SpacedColumn(
+                      spacing: 16,
+                      padding: EdgeInsets.only(top: responsiveFigmaHeight(16)),
+                      children: [
+                        ResponsiveText(
+                          text: "Login",
+                          fontColor: Color(0xff000000),
+                          fontWeight: FontWeight.w700,
+                          fontSize: 48,
+                        ),
 
-                    CustomTextField(
-                      labelText: "Email",
-                      hintText: "Usuario@gmail.com",
-                      prefixIcon: Icons.alternate_email_rounded,
-                      hintTextColor: Color(0xff868080),
-                      fillColor: Color(0xffFFFFFF),
-                      leadingIconColor: Color(0xff000000),
-                      selectedBorderColor: primaryColor,
-                      inputTextColor: Color(0xff000000),
-                      onChanged: (value){
-                        setState(() {
-                          user.email = value;
-                        });
-                      },
-                    ),
-                    ResponsiveContainer(height: 16),
+                        CustomTextField(
+                          labelText: "Email",
+                          hintText: "Usuario@gmail.com",
+                          prefixIcon: Icons.alternate_email_rounded,
+                          onChanged: (value){
+                            setState(() {
+                              user.email = value;
+                            });
+                          },
+                        ),
 
-                    CustomTextField(
-                      labelText: "Senha",
-                      hintText: "•" * 10,
-                      obscuringText: true,
-                      obscuringCharacter: "•",
-                      prefixIcon: MdiIcons.lock,
-                      hintTextColor: Color(0xff868080),
-                      fillColor: Color(0xffFFFFFF),
-                      leadingIconColor: Color(0xff000000),
-                      selectedBorderColor: primaryColor,
-                      inputTextColor: Color(0xff000000),
-                      onChanged: (value){
-                        setState(() {
-                          user.password = value;
-                        });
-                      },
+                        CustomTextField(
+                          labelText: "Senha",
+                          hintText: "•" * 10,
+                          obscuringText: true,
+                          obscuringCharacter: "•",
+                          prefixIcon: MdiIcons.lock,
+                          onChanged: (value){
+                            setState(() {
+                              user.password = value;
+                            });
+                          },
+                        ),
+                      ],
                     ),
-                    ResponsiveContainer(height: 8),
 
                     Align(
                       alignment: Alignment.centerRight,
@@ -103,28 +96,31 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    ResponsiveContainer(height: 16),
+
                     RawMaterialButton(
-                        onPressed: () => AuthService().signInWithEmailAndPassword(context: context, user: user),
-                        child: ResponsiveContainer(
-                          height: 47,
-                          width: 233,
-                          color: Color(0xff252422),
-                          borderRadius: BorderRadius.circular(10),
-                          child: Center(
-                              child: ResponsiveText(
+                      onPressed: () => AuthService().signInWithEmailAndPassword(context: context, user: user),
+                      child: ResponsiveContainer(
+                        height: 47,
+                        width: 233,
+                        color: Color(0xff252422),
+                        borderRadius: BorderRadius.circular(10),
+                        child: Center(
+                          child: ResponsiveText(
                             text: "Entrar",
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
-                          )),
-                        )),
-                    ResponsiveContainer(height: 16),
+                          )
+                        ),
+                      )
+                    ),
+
                     Row(
                       children: [
                         Expanded(
-                            child: Divider(
-                          color: Color(0xff000000),
-                        )),
+                          child: Divider(
+                            color: Color(0xff000000),
+                          )
+                        ),
                         ResponsiveText(
                           text: "Ou continue com",
                           fontColor: primaryColor,
@@ -133,65 +129,29 @@ class _LoginPageState extends State<LoginPage> {
                           padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(8)),
                         ),
                         Expanded(
-                            child: Divider(
-                          color: Color(0xff000000),
-                        )),
+                          child: Divider(
+                            color: Color(0xff000000),
+                          )
+                        ),
                       ],
                     ),
-                    ResponsiveContainer(height: 16),
-                    RawMaterialButton(
-                        onPressed: () => Navigator.pushReplacement(
-                            context, MaterialPageRoute(builder: (context) => NavigatorPage())),
-                        child: ResponsiveContainer(
-                          height: 47,
-                          width: 233,
-                          color: Color(0xff252422),
-                          borderRadius: BorderRadius.circular(10),
-                          child: Center(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    // ignore: deprecated_member_use
-                                    child: Icon(MdiIcons.google, color: Colors.white),
-                                  ),
-                                ),
-                                Expanded(
-                                  flex: 3,
-                                  child: Center(
-                                    child: ResponsiveText(
-                                      text: "Login com o google",
-                                      fontColor: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  )
-                                ),
-                                Expanded(
-                                  child: Container(),
-                                ),
-                              ],
-                            )
-                          ),
-                        )
-                      ),
-                    ResponsiveContainer(height: 8),
+                    
                     TextButton(
-                        onPressed: widget.onTapTogglePage,
-                        child: ResponsiveText(
-                          text: "Não possui uma conta? Registre-se",
-                          fontColor: primaryColor,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                        )),
-                    ResponsiveContainer(height: 16),
+                      onPressed: widget.onTapTogglePage,
+                      child: ResponsiveText(
+                        text: "Não possui uma conta? Registre-se",
+                        fontColor: primaryColor,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16,
+                      )
+                    ),
+                  
                   ],
                 ),
               )
             ],
           ),
-        ));
+        )
+      );
   }
 }

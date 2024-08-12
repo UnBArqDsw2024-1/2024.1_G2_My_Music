@@ -18,6 +18,9 @@ class UserModel {
   String lastName;
   String photoURL;
   String password;
+  String username;
+
+  User? user;
 
   UserModel({
     this.uid = '',
@@ -26,6 +29,8 @@ class UserModel {
     this.firstName = '',
     this.lastName = '',
     this.photoURL = '',
+    this.username = '',
+    this.user,
   });
 }
 
@@ -37,8 +42,10 @@ class AuthService {
       'email': user.email,
       'firstName': user.firstName,
       'lastName': user.lastName,
-      'photoURL': user.photoURL,
     });
+
+    // update photoURL
+    await FirebaseAuth.instance.currentUser!.updateProfile(displayName: user.username, photoURL: user.photoURL);
   }
 
   // Sign Up & Sign In
@@ -48,7 +55,8 @@ class AuthService {
   }) async {
     try {
       loadingDialog(context);
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(email: user.email, password: user.password)
+      await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: user.email, password: user.password)
           .then((_) async {
         if (context.mounted) Navigator.pop(context);
         addUserDetailsToDB(user);
