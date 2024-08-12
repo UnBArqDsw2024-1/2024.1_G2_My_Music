@@ -13,13 +13,16 @@ class NavigatorPage extends StatefulWidget {
 }
 
 class _NavigatorPageState extends State<NavigatorPage> {
-  PageController controller = PageController();
+  PageController controller = PageController(initialPage: 1);
   int pageIndex = 0;
 
   setIndex(int index) {
     setState(() => pageIndex = index);
     controller.jumpToPage(index);
   }
+
+@override
+
 
   @override
   Widget build(BuildContext context) {
