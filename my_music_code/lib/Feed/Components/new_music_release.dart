@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Feed/feed_music_page.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/style.dart';
@@ -78,10 +79,19 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                         backgroundColor: Colors.white,
                       ),
                       iconSize: 36,
-                      onPressed: () {},
+                      onPressed: () {
+                        showModalBottomSheet(
+                          useRootNavigator: false,
+                          isScrollControlled: true,
+                          useSafeArea: true,
+                          context: context,
+                          builder: (context) {
+                            return FeedMusicPage();
+                          }
+                        );
+                      },
                       icon: Icon(Icons.play_arrow_rounded, color: secondaryColor, size: 36),
-                    )
-                  )
+                    ))
               ],
             ),
           )

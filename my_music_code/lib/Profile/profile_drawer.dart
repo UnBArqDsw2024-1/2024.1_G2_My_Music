@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Auth/auth_page.dart';
 import 'package:my_music_code/Globals/dialogs.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/style.dart';
@@ -36,9 +37,7 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
           ListTile(
             leading: Icon(Icons.add_rounded, color: Colors.white),
             title: ResponsiveText(text: "Trocar conta"),
-            onTap: () => errorDialogMessage(
-                context, "Essa funcionalidade ainda não está disponível.",
-                title: "Trocar conta"),
+            onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => AuthPage())),
           ),
           ListTile(
             leading: Icon(Icons.settings, color: Colors.white),
