@@ -46,15 +46,17 @@ class _MyPlaylistPageState extends State<MyPlaylistPage> {
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
               // Rich text com o nome da playlist e a quantidade de músicas
-              background: Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(image: NetworkImage(DefaultPlaceholder.image),fit: BoxFit.cover),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black12,
-                    )
-                  ]
-                ),
+              background: Stack(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(image: NetworkImage(DefaultPlaceholder.image),fit: BoxFit.cover),
+                    ),
+                  ),
+                  Container(
+                    color: backgroundColor.withOpacity(0.25),
+                  ),  
+                ],
               ),
               title: Text.rich(
                 textAlign: TextAlign.center,
