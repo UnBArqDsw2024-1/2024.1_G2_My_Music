@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
+import 'package:my_music_code/Auth/Service/auth_service.dart';
 import 'package:my_music_code/Globals/custom_text_field.dart';
 import 'package:my_music_code/Globals/dialogs.dart';
 import 'package:my_music_code/Globals/navigator_page.dart';
@@ -17,6 +18,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  UserModel user = UserModel();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,6 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                       fontSize: 48,
                     ),
                     ResponsiveContainer(height: 16),
+
                     CustomTextField(
                       labelText: "Email",
                       hintText: "Usuario@gmail.com",
@@ -58,8 +62,14 @@ class _LoginPageState extends State<LoginPage> {
                       leadingIconColor: Color(0xff000000),
                       selectedBorderColor: primaryColor,
                       inputTextColor: Color(0xff000000),
+                      onChanged: (value){
+                        setState(() {
+                          user.email = value;
+                        });
+                      },
                     ),
                     ResponsiveContainer(height: 16),
+
                     CustomTextField(
                       labelText: "Senha",
                       hintText: "•" * 10,
@@ -71,8 +81,14 @@ class _LoginPageState extends State<LoginPage> {
                       leadingIconColor: Color(0xff000000),
                       selectedBorderColor: primaryColor,
                       inputTextColor: Color(0xff000000),
+                      onChanged: (value){
+                        setState(() {
+                          user.password = value;
+                        });
+                      },
                     ),
                     ResponsiveContainer(height: 8),
+
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
@@ -89,8 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     ResponsiveContainer(height: 16),
                     RawMaterialButton(
-                        onPressed: () => Navigator.pushReplacement(
-                            context, MaterialPageRoute(builder: (context) => NavigatorPage())),
+                        onPressed: () => AuthService().signInWithEmailAndPassword(context: context, user: user),
                         child: ResponsiveContainer(
                           height: 47,
                           width: 233,
