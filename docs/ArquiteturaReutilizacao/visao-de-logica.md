@@ -1,5 +1,7 @@
 # Visão Lógica
 
+## Introdução
+
 Dentre as representações arquiteturais que compõem o DAS, a visão de lógica é responsável por evidenciar a estrutura básica e a organização do design do sistema. Segundo a Universidade Federal de Pernambuco, essa representação "ilustra as principais realizações de caso de uso, subsistemas, pacotes e classes que abrangem o comportamento significativo em termos de arquitetura." (UFPE, 2024)¹. Para esse fim, serão abordados os diagramas de classes, de pacotes e de atividades.
 
 ## Metodologia
@@ -162,3 +164,4 @@ Ao selecionar para criar uma playlist, o aplicativo irá criar a mesma, pedirá 
 | 1.4    | 09/08/2024 | Adição da explicação do diagrama de classes | [Israel Thalles](https://github.com/IsraelThalles) |   |
 | 1.5    | 10/08/2024 | Adição da explicação dos diagramas de pacotes e de atividades | [Carlos Eduardo Mendes de Mesquita](https://github.com/CarlosEduardoMendesdeMesquita) | [Vinícius Mendes](https://github.com/yabamiah) ([Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/100#issuecomment-2282900428)) |
 | 1.6    | 12/08/2024 | Adição da metodologia | [Israel Thalles](https://github.com/IsraelThalles) | [Vinícius Mendes](https://github.com/yabamiah) ([Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/100#issuecomment-2282900428)) |
+| 1.7    | 12/08/2024 | Adição de uma seção para a introdução | [Israel Thalles](https://github.com/IsraelThalles) | [Vinícius Mendes](https://github.com/yabamiah) ([Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/100#pullrequestreview-2233963072)) |
