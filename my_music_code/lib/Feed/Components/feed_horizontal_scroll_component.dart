@@ -4,9 +4,23 @@ import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 
+class AlbumBase {
+  final String name;
+  final String id;
+  final String artist;
+  final String imageUrl;
+
+  AlbumBase({required this.name, required this.id, required this.artist, required this.imageUrl});
+}
+
+
+
+
 class FeedHorizontalScrollComponent extends StatefulWidget {
-  const FeedHorizontalScrollComponent({super.key, required this.title});
+  const FeedHorizontalScrollComponent({super.key, required this.title, required this.albuns});
   final String title;
+  final List<AlbumBase> albuns;
+
   @override
   State<FeedHorizontalScrollComponent> createState() => _FeedHorizontalScrollComponentState();
 }
@@ -31,10 +45,13 @@ class _FeedHorizontalScrollComponentState extends State<FeedHorizontalScrollComp
             child: Row(
               children: [
                 ResponsiveContainer(width: 23),
-                for (int i = 0; i < 10; i++)
+
+                for (AlbumBase album in widget.albuns)
                   Padding(
-                    padding: EdgeInsets.only(right: responsiveFigmaWidth(10)),
-                    child: CubicButtonWithImage()
+                    padding: EdgeInsets.only(right: responsiveFigmaWidth(10)), 
+                    child: CubicButtonWithImage(
+                      image: NetworkImage(album.imageUrl),
+                    )
                   ),
               ],
             ),

@@ -42,6 +42,7 @@ dependencies:
   http: ^1.2.2
   audioplayers: ^6.0.0
   audio_video_progress_bar: ^2.0.3
+  spotify: ^0.13.7
 
 dev_dependencies:
   flutter_test:

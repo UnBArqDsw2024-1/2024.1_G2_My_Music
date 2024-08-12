@@ -3,17 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 
+
 class FeedMusicPage extends StatefulWidget {
   const FeedMusicPage({
-      Key? Key,
-      this.artista = 'Eminem',
-      this.music = 'Venom',
-      this.coverAlbum = 'https://lastfm.freetls.fastly.net/i/u/770x0/74768435b4f70689863aa76f888d62a3.jpg',
-    });
+    Key? Key,
+    this.artista = 'Eminem',
+    this.music = 'Venom',
+    this.coverAlbum = 'https://lastfm.freetls.fastly.net/i/u/770x0/74768435b4f70689863aa76f888d62a3.jpg',
+  });
 
-    final String artista;
-    final String music;
-    final String coverAlbum;
+  final String artista;
+  final String music;
+  final String coverAlbum;
 
   @override
   State<FeedMusicPage> createState() => _FeedPageState();
@@ -23,167 +24,147 @@ class _FeedPageState extends State<FeedMusicPage> {
   bool isPlaying = false;
   bool isFavorite = false;
 
-  void _musicOptionsModalBottomSheet(BuildContext context, String artista, String music, String coverAlbum, bool isFavorite) {
-  showModalBottomSheet(
-    context: context, 
-    backgroundColor: secondaryColor,
-    builder: (context) {
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
-                  child: Image.network(
-                    coverAlbum,
-                  width: 50,
-                  height: 50,
-                  fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-
-              SizedBox(width: 5.0),
-
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    music,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
+  void _musicOptionsModalBottomSheet(
+      BuildContext context, String artista, String music, String coverAlbum, bool isFavorite) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: secondaryColor,
+      builder: (context) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.network(
+                      coverAlbum,
+                      width: 50,
+                      height: 50,
+                      fit: BoxFit.cover,
                     ),
                   ),
-                  Text(
-                    artista,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
+                ),
+                SizedBox(width: 5.0),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      music,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                      ),
                     ),
+                    Text(
+                      artista,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Divider(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                IconButton(
+                  icon: Icon(CupertinoIcons.bookmark, color: Colors.white),
+                  onPressed: () {},
+                ),
+                SizedBox(width: 10.0),
+                Text(
+                  'Salvar música em playlist...',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
                   ),
-                ],
-              ),
-            ],
-          ),
-
-          Divider(),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              IconButton(
-                icon: Icon(CupertinoIcons.bookmark, color: Colors.white),
-                onPressed: () {},
-              ),
-
-              SizedBox(width: 10.0),
-              
-              Text(
-                'Salvar música em playlist...',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                IconButton(
+                  icon: Icon(isFavorite ? CupertinoIcons.heart_fill : CupertinoIcons.heart,
+                      size: 30, color: isFavorite ? primaryColor : Colors.white),
+                  onPressed: () {
+                    setState(() {
+                      isFavorite = !isFavorite;
+                    });
+                  },
                 ),
-              )
-            ],
-          ),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              IconButton(
-                icon: Icon(
-                  isFavorite ? CupertinoIcons.heart_fill : CupertinoIcons.heart, 
-                  size: 30, 
-                  color: isFavorite ? primaryColor : Colors.white
+                SizedBox(width: 10.0),
+                Text(
+                  'Favoritar música',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                IconButton(
+                  icon: Icon(CupertinoIcons.arrowshape_turn_up_right, color: Colors.white),
+                  onPressed: () {},
                 ),
-                onPressed: () {
-                  setState(() {
-                    isFavorite = !isFavorite;
-                  });
-                },
-              ),
-
-              SizedBox(width: 10.0),
-
-              Text(
-                'Favoritar música',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
+                SizedBox(width: 10.0),
+                Text(
+                  'Compartilhar música',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                IconButton(
+                  icon: Icon(CupertinoIcons.double_music_note, color: Colors.white),
+                  onPressed: () {},
                 ),
-              )
-            ],
-          ),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              IconButton(
-                icon: Icon(CupertinoIcons.arrowshape_turn_up_right, color: Colors.white),
-                onPressed: () {},
-              ),
-
-              SizedBox(width: 10.0),
-
-              Text(
-                'Compartilhar música',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
+                SizedBox(width: 10.0),
+                Text(
+                  'Ver letra da música',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                IconButton(
+                  icon: Icon(CupertinoIcons.waveform, color: Colors.white),
+                  onPressed: () {},
                 ),
-              )
-            ],
-          ),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              IconButton(
-                icon: Icon(CupertinoIcons.double_music_note, color: Colors.white),
-                onPressed: () {},
-              ),
-
-              SizedBox(width: 10.0),
-
-              Text(
-                'Ver letra da música',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                ),
-              )
-            ],
-          ),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              IconButton(
-                icon: Icon(CupertinoIcons.waveform, color: Colors.white),
-                onPressed: () {},
-              ),
-
-              SizedBox(width: 10.0),
-
-              Text(
-                'Ver ID no MyMusic',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                ),
-              )
-            ],
-          ),
-        ],
-      );
-    },
-  );
+                SizedBox(width: 10.0),
+                Text(
+                  'Ver ID no MyMusic',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
+                )
+              ],
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -191,49 +172,48 @@ class _FeedPageState extends State<FeedMusicPage> {
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
-        leading: IconButton(
-              icon: Icon(CupertinoIcons.chevron_down, color: Colors.white),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
+          leading: IconButton(
+            icon: Icon(CupertinoIcons.chevron_down, color: Colors.white),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
           centerTitle: true,
           backgroundColor: backgroundColor,
-        title: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'Now playing',
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 12,
-                  ),
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Now playing',
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 12,
                 ),
-                Text(
-                  widget.artista,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                  ),
+              ),
+              Text(
+                widget.artista,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
                 ),
-              ],
-            ),
-        actions: [
-          IconButton(
+              ),
+            ],
+          ),
+          actions: [
+            IconButton(
               icon: Icon(CupertinoIcons.ellipsis_vertical, color: Colors.white),
               onPressed: () {
                 _musicOptionsModalBottomSheet(
-                    context,
-                    widget.artista,
-                    widget.music,
-                    widget.coverAlbum,
-                    isFavorite,
-                  );
+                  context,
+                  widget.artista,
+                  widget.music,
+                  widget.coverAlbum,
+                  isFavorite,
+                );
               },
             ),
-        ]
-      ),
+          ]),
       body: Column(
         children: <Widget>[
           SizedBox(height: 20), // Espaçamento entre a Row e a imagem
@@ -274,11 +254,8 @@ class _FeedPageState extends State<FeedMusicPage> {
               ),
               Spacer(),
               IconButton(
-                icon: Icon(
-                  isFavorite ? CupertinoIcons.heart_fill : CupertinoIcons.heart, 
-                  size: 30, 
-                  color: isFavorite ? primaryColor : Colors.white
-                ),
+                icon: Icon(isFavorite ? CupertinoIcons.heart_fill : CupertinoIcons.heart,
+                    size: 30, color: isFavorite ? primaryColor : Colors.white),
                 onPressed: () {
                   setState(() {
                     isFavorite = !isFavorite;
@@ -287,7 +264,7 @@ class _FeedPageState extends State<FeedMusicPage> {
               ),
             ],
           ),
-    
+
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: ProgressBar(
@@ -313,7 +290,6 @@ class _FeedPageState extends State<FeedMusicPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-
                 IconButton(
                   icon: Icon(CupertinoIcons.backward_end_fill, color: Colors.white, size: 30),
                   onPressed: () {},
@@ -332,16 +308,15 @@ class _FeedPageState extends State<FeedMusicPage> {
                         shape: BoxShape.circle,
                       ),
                     ),
-
                     IconButton(
                       onPressed: () {
                         setState(() {
-                          isPlaying = !isPlaying;                          
+                          isPlaying = !isPlaying;
                         });
                       },
-                      icon: Icon(isPlaying? Icons.play_arrow_rounded : Icons.pause_rounded, color: Colors.white, size: 50),
+                      icon: Icon(isPlaying ? Icons.play_arrow_rounded : Icons.pause_rounded,
+                          color: Colors.white, size: 50),
                     ),
-
                   ],
                 ),
 
