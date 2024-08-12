@@ -31,26 +31,52 @@ O objetivo deste repositório é fornecer uma plataforma centralizada para o arm
 Contextualize, usando referências, links, e outros materiais como fontes.
 
 ## Screenshots Primeira Entrega <<FOCO: DSW(Base)>>
-Adicione 2 ou mais screenshots em termos de artefatos da Primeira Entrega.
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FRgy9ZXiV9unFaOLX2vY4pF%2FProt%25C3%25B3tipo-MyMusic%3Fnode-id%3D0-1%26t%3DOd9EekrWcF3rvdEx-1" allowfullscreen></iframe>
+
+![Rich Picture](docs/Base/images/RichPicture.png)
+
+<div style="text-align: center">
+  <p>Figura 1: Rich Picture. (Fonte: Milena Baruc, 2024)</p>
+</div>
 
 ## Screenshots Segunda Entrega <<FOCO: DSW(Modelagem)>>
-Adicione 2 ou mais screenshots em termos de artefatos da Segunda Entrega.
+![Diagrama de Classes](docs/Assets/diagramaClasses.png)
+
+<div style="text-align: center">
+  <p>Figura 2: Diagrama de Classes. (Fonte: Ana Luiza e Rafael Xavier, 2024)</p>
+</div>
+
+![Diagrama de Pacotes](docs/Modelagem/images/Diagrama_de_Pacotes_2.png)
+
+<div style="text-align: center">
+  <p>Figura 3: Diagrama de Pacotes do Frontend com Backend. (Fonte: João Vítor, 2024)</p>
+</div>
 
 ## Screenshots Terceira Entrega <<FOCO: DSW(Padrões de Projeto)>>
-Adicione 2 ou mais screenshots em termos de artefatos da Terceira Entrega.
+<div style="text-align: center">
+  <img src="docs/Assets/ModelagemFactoryMethod.png" alt="Modelagem do padrão Factory Method" title="Título da Imagem" />
+  <p>Figura 4: Modelagem do padrão Factory Method (Fonte: Luis Miranda e Vinícius Mendes, 2024)</p>
+</div>
+
+<div style="text-align: center">
+  <img src="docs/Assets/ModelagemSingleton.png" alt="Modelagem do Singleton" title="Título da Imagem" />
+  <p>Figura 5: Modelagem do padrão Singleton (Fonte: Limírio Guimarães e Milena Baruc, 2024)</p>
+</div>
+
 
 ## Screenshots Quarta Entrega (FINAL) <<FOCOS: Arquitetura & Reutilização de Software & PROJETO FINAL>>
 Adicione 2 ou mais screenshots em termos de artefatos da Quarta Entrega.
 
 ## Descritivo dos Principais Aspectos Técnicos 
-**Principal(is) Metodologia(s) Adotada(s)**: xxxxxx<br>
-**Principais Linguagens Utilizadas e/ou Pretendidas**: xxxxxx<br>
-**Principais Tecnologias Utilizadas e/ou Pretendidas**: xxxxxx<br>
-**Principal(is) Estilo(s) Arquitetural(is) Adotado(s)**: xxxxxx<br>
+**Principal(is) Metodologia(s) Adotada(s)**: Scrum, Kanban, XP<br>
+**Principais Linguagens Utilizadas e/ou Pretendidas**: Dart/Flutter<br>
+**Principais Tecnologias Utilizadas e/ou Pretendidas**: Firebase, Git, Github, VScode, Genymotion, Android Studio <br>
+**Principal(is) Estilo(s) Arquitetural(is) Adotado(s)**: <br>
 
 ## Há algo a ser executado?
 
-( ) SIM
+(x) SIM
 
 ( ) NÃO
 
