@@ -7,6 +7,7 @@ import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key, this.onTapTogglePage});
@@ -17,6 +18,14 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+  String email = '';
+  String password = '';
+
+  Future signIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,14 +40,17 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Container(
                 constraints: BoxConstraints(
-                  minHeight: SizeConfig.screenHeight - responsiveFigmaHeight(180),
+                  minHeight:
+                      SizeConfig.screenHeight - responsiveFigmaHeight(180),
                   minWidth: double.infinity,
                 ),
                 decoration: BoxDecoration(
                   color: Color(0xffEFEFEF),
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(100)),
+                  borderRadius:
+                      BorderRadius.only(topLeft: Radius.circular(100)),
                 ),
-                padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(27)),
+                padding:
+                    EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(27)),
                 child: Column(
                   children: [
                     ResponsiveContainer(height: 16),
@@ -52,6 +64,11 @@ class _LoginPageState extends State<LoginPage> {
                     CustomTextField(
                       labelText: "Email",
                       hintText: "Usuario@gmail.com",
+                      onChanged: (value) {
+                        setState(() {
+                          email = value;
+                        });
+                      },
                       prefixIcon: Icons.alternate_email_rounded,
                       hintTextColor: Color(0xff868080),
                       fillColor: Color(0xffFFFFFF),
@@ -63,6 +80,11 @@ class _LoginPageState extends State<LoginPage> {
                     CustomTextField(
                       labelText: "Senha",
                       hintText: "•" * 10,
+                      onChanged: (value) {
+                        setState(() {
+                          password = value;
+                        });
+                      },
                       obscuringText: true,
                       obscuringCharacter: "•",
                       prefixIcon: MdiIcons.lock,
@@ -90,7 +112,9 @@ class _LoginPageState extends State<LoginPage> {
                     ResponsiveContainer(height: 16),
                     RawMaterialButton(
                         onPressed: () => Navigator.pushReplacement(
-                            context, MaterialPageRoute(builder: (context) => NavigatorPage())),
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => NavigatorPage())),
                         child: ResponsiveContainer(
                           height: 47,
                           width: 233,
@@ -115,7 +139,8 @@ class _LoginPageState extends State<LoginPage> {
                           fontColor: primaryColor,
                           fontWeight: FontWeight.w700,
                           fontSize: 16,
-                          padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(8)),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: responsiveFigmaWidth(8)),
                         ),
                         Expanded(
                             child: Divider(
@@ -126,24 +151,27 @@ class _LoginPageState extends State<LoginPage> {
                     ResponsiveContainer(height: 16),
                     RawMaterialButton(
                         onPressed: () => Navigator.pushReplacement(
-                            context, MaterialPageRoute(builder: (context) => NavigatorPage())),
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => NavigatorPage())),
                         child: ResponsiveContainer(
                           height: 47,
                           width: 233,
                           color: Color(0xff252422),
                           borderRadius: BorderRadius.circular(10),
                           child: Center(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    // ignore: deprecated_member_use
-                                    child: Icon(MdiIcons.google, color: Colors.white),
-                                  ),
+                              child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  // ignore: deprecated_member_use
+                                  child: Icon(MdiIcons.google,
+                                      color: Colors.white),
                                 ),
-                                Expanded(
+                              ),
+                              Expanded(
                                   flex: 3,
                                   child: Center(
                                     child: ResponsiveText(
@@ -152,16 +180,13 @@ class _LoginPageState extends State<LoginPage> {
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400,
                                     ),
-                                  )
-                                ),
-                                Expanded(
-                                  child: Container(),
-                                ),
-                              ],
-                            )
-                          ),
-                        )
-                      ),
+                                  )),
+                              Expanded(
+                                child: Container(),
+                              ),
+                            ],
+                          )),
+                        )),
                     ResponsiveContainer(height: 8),
                     TextButton(
                         onPressed: widget.onTapTogglePage,
