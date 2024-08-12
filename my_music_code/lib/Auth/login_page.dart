@@ -139,6 +139,7 @@ class _LoginPageState extends State<LoginPage> {
                                 Expanded(
                                   child: Container(
                                     alignment: Alignment.center,
+                                    // ignore: deprecated_member_use
                                     child: Icon(MdiIcons.google, color: Colors.white),
                                   ),
                                 ),

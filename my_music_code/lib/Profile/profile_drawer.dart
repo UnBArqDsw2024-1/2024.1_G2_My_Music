@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Auth/auth_page.dart';
-import 'package:my_music_code/Globals/dialogs.dart';
+//import 'package:my_music_code/Globals/dialogs.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/Profile/configuration_page.dart';
