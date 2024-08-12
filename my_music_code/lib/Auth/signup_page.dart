@@ -6,6 +6,7 @@ import 'package:my_music_code/Globals/custom_text_field.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
+import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Globals/style.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -42,16 +43,15 @@ class _SignUpPageState extends State<SignUpPage> {
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(100)),
                 ),
                 padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(27)),
-                child: Column(
+                child: SpacedColumn(
+                  spacing: 14,
                   children: [
-                    ResponsiveContainer(height: 14),
                     ResponsiveText(
                       text: "Criar conta",
                       fontColor: Color(0xff000000),
                       fontWeight: FontWeight.w700,
                       fontSize: 48,
                     ),
-                    ResponsiveContainer(height: 14),
                     CustomTextField(
                       labelText: "Primeiro nome",
                       hintText: "Nome",
@@ -67,7 +67,6 @@ class _SignUpPageState extends State<SignUpPage> {
                         });
                       },
                     ),
-                    ResponsiveContainer(height: 14),
                     CustomTextField(
                       labelText: "Sobrenome",
                       hintText: "Sobrenome",
@@ -83,7 +82,6 @@ class _SignUpPageState extends State<SignUpPage> {
                         });
                       },
                     ),
-                    ResponsiveContainer(height: 14),
                     CustomTextField(
                       labelText: "Nome de usuário",
                       hintText: "Usuario.Exemplo",
@@ -99,7 +97,6 @@ class _SignUpPageState extends State<SignUpPage> {
                         });
                       },
                     ),
-                    ResponsiveContainer(height: 14),
                     CustomTextField(
                       labelText: "Email",
                       hintText: "Usuario@gmail.com",
@@ -115,7 +112,6 @@ class _SignUpPageState extends State<SignUpPage> {
                         });
                       },
                     ),
-                    ResponsiveContainer(height: 14),
                     CustomTextField(
                       labelText: "Senha",
                       hintText: "•" * 10,
@@ -133,7 +129,6 @@ class _SignUpPageState extends State<SignUpPage> {
                         });
                       },
                     ),
-                    ResponsiveContainer(height: 14),
                     CustomTextField(
                       labelText: "Repetir senha",
                       hintText: "•" * 10,
@@ -151,36 +146,42 @@ class _SignUpPageState extends State<SignUpPage> {
                         });
                       },
                     ),
-                    ResponsiveContainer(height: 16),
-                    RawMaterialButton(
-                        onPressed: () => AuthService().signUpWithEmailAndPassword(context: context, user: userModel),
-                        child: ResponsiveContainer(
-                          height: 47,
-                          width: 233,
-                          color: Color(0xff252422),
-                          borderRadius: BorderRadius.circular(10),
-                          child: Center(
+                    SpacedColumn(
+                      spacing: 8,
+                      children: [
+                        RawMaterialButton(
+                          onPressed: () => AuthService().signUpWithEmailAndPassword(context: context, user: userModel),
+                          child: ResponsiveContainer(
+                            height: 47,
+                            width: 233,
+                            color: Color(0xff252422),
+                            borderRadius: BorderRadius.circular(10),
+                            child: Center(
                               child: ResponsiveText(
-                            text: "Criar conta",
+                                text: "Criar conta",
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              )
+                            ),
+                          )
+                        ),
+                        TextButton(
+                          onPressed: widget.onTapTogglePage,
+                          child: ResponsiveText(
+                            text: "Você tem uma conta? Entre",
+                            fontColor: primaryColor,
+                            fontWeight: FontWeight.w700,
                             fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          )),
-                        )),
-                    ResponsiveContainer(height: 8),
-                    TextButton(
-                        onPressed: widget.onTapTogglePage,
-                        child: ResponsiveText(
-                          text: "Você tem uma conta? Entre",
-                          fontColor: primaryColor,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                        )),
-                    ResponsiveContainer(height: 16),
+                          )
+                        ),
+                      ],
+                    )
                   ],
                 ),
               )
             ],
           ),
-        ));
+        )
+      );
   }
 }

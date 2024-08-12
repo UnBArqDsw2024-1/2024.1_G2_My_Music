@@ -42,6 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(100)),
                 ),
                 padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(27)),
+                
                 child: SpacedColumn(
                   spacing: 8,
                   children: [
@@ -97,55 +98,60 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
 
-                    RawMaterialButton(
-                      onPressed: () => AuthService().signInWithEmailAndPassword(context: context, user: user),
-                      child: ResponsiveContainer(
-                        height: 47,
-                        width: 233,
-                        color: Color(0xff252422),
-                        borderRadius: BorderRadius.circular(10),
-                        child: Center(
-                          child: ResponsiveText(
-                            text: "Entrar",
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          )
-                        ),
-                      )
-                    ),
-
-                    Row(
+                    SpacedColumn(
+                      padding: EdgeInsets.only(top: responsiveFigmaHeight(8)),
                       children: [
-                        Expanded(
-                          child: Divider(
-                            color: Color(0xff000000),
+                        RawMaterialButton(
+                          onPressed: () => AuthService().signInWithEmailAndPassword(context: context, user: user),
+                          child: ResponsiveContainer(
+                            height: 47,
+                            width: 233,
+                            color: Color(0xff252422),
+                            borderRadius: BorderRadius.circular(10),
+                            child: Center(
+                              child: ResponsiveText(
+                                text: "Entrar",
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              )
+                            ),
                           )
                         ),
-                        ResponsiveText(
-                          text: "Ou continue com",
-                          fontColor: primaryColor,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                          padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(8)),
+
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Divider(
+                                color: Color(0xff000000),
+                              )
+                            ),
+                            ResponsiveText(
+                              text: "Ou continue com",
+                              fontColor: primaryColor,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16,
+                              padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(8)),
+                            ),
+                            Expanded(
+                              child: Divider(
+                                color: Color(0xff000000),
+                              )
+                            ),
+                          ],
                         ),
-                        Expanded(
-                          child: Divider(
-                            color: Color(0xff000000),
+                        
+                        TextButton(
+                          onPressed: widget.onTapTogglePage,
+                          child: ResponsiveText(
+                            text: "Não possui uma conta? Registre-se",
+                            fontColor: primaryColor,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16,
                           )
                         ),
-                      ],
-                    ),
-                    
-                    TextButton(
-                      onPressed: widget.onTapTogglePage,
-                      child: ResponsiveText(
-                        text: "Não possui uma conta? Registre-se",
-                        fontColor: primaryColor,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
-                      )
-                    ),
                   
+                      ],
+                    )
                   ],
                 ),
               )
