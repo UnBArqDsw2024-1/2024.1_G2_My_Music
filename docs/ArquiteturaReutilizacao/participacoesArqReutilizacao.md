@@ -1,23 +1,53 @@
-Breve relato sobre as participações/contribuições de cada membro à entrega.
+# 4.3. Participações - Arquitetura & Reutilização de Software
+
+Este documento contém um breve relato das participações e contribuições dos membros da equipe na entrega de Padrões de Projeto. Além deste documento, pode-se encontrar as contribuições de cada membro pelas [issues do projeto](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/issues) e pelos [pull requests](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pulls?q=is%3Aopen+is%3Apr) no Github.
 
 ### Arquitetura de Software
 
-|Nome do Membro | Contribuição (Arquitetura de Software) | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
+|Nome do Membro | Contribuição (Padrão GoF Criacional) | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -------------- | --------------------------- | --------------------------------- |
-| Fulano | 1. Colaboração na Especificação da Visão Lógica do DAS. 2. Realização de Debate sobre Arquitetura Limpa, usando como base a fonte: O guia do artesão para estrutura e design de software do autor Robert C. Martin. | Boa |
+| Ana Luíza | Contribuiu no desenvolvimento da documentação da [Visão de Processo]() | Excelente |
+| Carlos Eduardo | Contribuiu no desenvolvimento da documentação da [Visão de Lógica]() | Nula |
+| Carlos Godoy | Contribuiu no desenvolvimento da documentação da []()| Nula |
+| Henrique Hida | Contribuiu no desenvolvimento da documentação da []()| Nula |
+| João Maior |  Contribuiu no desenvolvimento da documentação da [Visão de Dados]()| Boa |
+| Israel Thalles | Contribuiu no desenvolvimento da documentação da [Visão de Lógica]() | Boa |
+| Luiz Pettengill | Contribuiu no desenvolvimento da documentação da []() | Boa |
+| Luis Miranda | Contribuiu no desenvolvimento da documentação da [Visão de Implementação]() e revisão da [Visão de Dados]() e [Visão de Implantação]()  | Excelente |
+| Limírio Guimarães | Contribuiu no desenvolvimento da documentação da [Visão de Implementação]() e revisão da [Visão de Dados]()| Excelente |
+| Lucas Vilela | Contribuiu no desenvolvimento da documentação da [Visão de Implantação]() e revisão da [Visão de Implantação]()| Excelente |
+| Milena Baruc | Contribuiu no desenvolvimento da documentação da [Visão de Implantação]() | Boas |
+| Rafael Xavier | Contribuiu no desenvolvimento da documentação da [Visão de Processo]() |  Excelente | 
+| Vinícius Mendes | Contribuiu no desenvolvimento da documentação da [Visão de Implantação]() e revisão da [Visão de Lógica]() e [Visão de Processos]()| Excelente 
 
 <div style="text-align: center">
-  <p>Tabela 1: Participações de cada membro em Arquitetura de Software. (Fonte: Autores, 2024)</p>
+  <p>Tabela 1: Participações de cada membro no Padrão GoF Criacional. (Fonte: Autores, 2024)</p>
 </div>
 
 
 ### Reutilização de Software
 
-|Nome do Membro | Contribuição (Reutilização de Software) | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
+|Nome do Membro | Contribuição (Padrão GoF Comportamental) | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -------------- | --------------------------- | --------------------------------- |
-| Fulano | 1. Trabalho Coletivo para Modelagem e Implementação do Exemplo de Reutilização na Aplicação. 2. Estudos sobre o Framework React (https://pt-br.reactjs.org/), com realização de reuniao via Discord. 3. Estudos sobre Atomic Design, consultando a fonte: https://danilowoz.com/blog/atomic-design-with-react    | Excelente |
+| Ana Luíza |  | Excelente |
+| Carlos Eduardo | | Nula |
+| Carlos Godoy | | Nula |
+| Henrique Hida | | Nula |
+| João Maior |  | Boa |
+| Israel Thalles |  | Boa |
+| Luiz Pettengill |  | Boa |
+| Luis Miranda |  | Excelente |
+| Limírio Guimarães |  | Excelente |
+| Lucas Vilela |  | Excelente |
+| Milena Baruc |  | Boas |
+| Rafael Xavier | |  Excelente | 
+| Vinícius Mendes |  | Excelente 
+
 
 <div style="text-align: center">
-  <p>Tabela 2: Participações de cada membro em Reutilização de Software. (Fonte: Autores, 2024)</p>
+  <p>Tabela 3: Participações de cada membro no Padrão GoF Comportamental. (Fonte: Autores, 2024)</p>
 </div>
 
+| Versão | Data       | Descrição                           | Autor(es)                                         | Revisor(es)        |
+| ------ | ---------- | ----------------------------------- | ------------------------------------------------- | ------------------ |
+| 1.0    | 24/07/2024 | Criação do documento                | [Vinícius Mendes](https://github.com/yabamiah) |[Luis Miranda](https://github.com/LuisMiranda10) |
