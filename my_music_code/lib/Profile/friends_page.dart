@@ -15,7 +15,7 @@ class _FriendsPageState extends State<FriendsPage> {
   Widget build(BuildContext context) {
     int friends = 30; // Número de amigos para teste, futuramente pegar da database 
     
-    List<Widget> friends_widgets = List.generate(
+    List<Widget> friendsWidgets = List.generate(
       friends,
       (index) => ListTile(
         leading: CircleAvatar(
@@ -69,7 +69,7 @@ class _FriendsPageState extends State<FriendsPage> {
                 SizedBox(height: 0), 
                 Expanded(
                   child: ListView(
-                    children: friends_widgets,
+                    children: friendsWidgets,
                   ),
                 ),
               ],

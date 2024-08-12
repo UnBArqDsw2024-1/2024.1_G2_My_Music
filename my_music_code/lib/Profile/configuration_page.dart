@@ -48,13 +48,29 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                 ),
                 Positioned(
                   bottom: 0,
-                  right: -15,
-                  child: IconButton(
-                    icon: Icon(Icons.filter_list, color: Colors.white),
-                    onPressed: () async {
-                      // await ImagePiker().pickImage(source: ImageSource.gallery);
-                    },
-                  ),
+                  right: 0,
+                  child: RawMaterialButton(
+                    onPressed: (){},
+                    constraints: BoxConstraints(),
+                    shape: CircleBorder(),
+                    child: Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        color: secondaryColor,
+                        borderRadius: BorderRadius.circular(100),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.white12,
+                            spreadRadius: 1,
+                            blurRadius: 3,
+                            offset: Offset(0, 1), // changes position of shadow
+                          ),
+                        ]
+                      ),
+                      alignment: Alignment.center,
+                      child: Icon(Icons.filter_list, color: Colors.white),
+                    ),
+                  )
                 ),
               ],
             ),

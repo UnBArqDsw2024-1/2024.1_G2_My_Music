@@ -14,10 +14,10 @@ class _AddFriendsPageState extends State<AddFriendsPage> {
 
   @override
   Widget build(BuildContext context) {
-    int search_result = 21; 
+    int searchResult = 21; 
     
     List<Widget> results = List.generate(
-      search_result,
+      searchResult,
       (index) => ToggleIconTile(
         title: 'Perfil encontrado $index',
       ),

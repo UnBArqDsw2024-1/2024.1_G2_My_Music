@@ -9,7 +9,6 @@ class AboutPage extends StatefulWidget {
 }
 
 class _AboutPageState extends State<AboutPage> {
-  final TextEditingController _searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
