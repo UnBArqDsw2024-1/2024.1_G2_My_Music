@@ -111,10 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     ResponsiveContainer(height: 16),
                     RawMaterialButton(
-                        onPressed: () => Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => NavigatorPage())),
+                        onPressed: signIn,
                         child: ResponsiveContainer(
                           height: 47,
                           width: 233,
