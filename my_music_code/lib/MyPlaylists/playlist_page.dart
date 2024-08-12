@@ -27,19 +27,21 @@ class _MyPlaylistPageState extends State<MyPlaylistPage> {
         slivers: [
           SliverAppBar(
             leading: IconButton(
+              padding: EdgeInsets.zero,
               onPressed: (){
                 Navigator.pop(context);
               },
-              icon: Icon(Icons.arrow_back_ios_rounded,color: Colors.white),
-            ),
-            actions: [
-              IconButton(
-                onPressed: (){},
-                icon: Icon(Icons.more_vert,color: Colors.white),
+              icon: ResponsiveContainer(
+                height: 40,
+                width: 40,
+                isCubic: true,
+                color: backgroundColor,
+                borderRadius: BorderRadius.circular(100),
+                child: Icon(Icons.arrow_back_ios_rounded,color: Colors.white),
               ),
-            ],
+            ),
             pinned: isPinned,
-            expandedHeight: responsiveFigmaHeight(200),
+            expandedHeight: responsiveFigmaHeight(260),
             backgroundColor: backgroundColor,
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
@@ -47,6 +49,7 @@ class _MyPlaylistPageState extends State<MyPlaylistPage> {
               background: Container(
                 decoration: BoxDecoration(
                   image: DecorationImage(image: NetworkImage(DefaultPlaceholder.image),fit: BoxFit.cover),
+                
                 ),
               ),
               title: Text.rich(
