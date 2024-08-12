@@ -2,6 +2,12 @@
 
 Dentre as representações arquiteturais que compõem o DAS, a visão de lógica é responsável por evidenciar a estrutura básica e a organização do design do sistema. Segundo a Universidade Federal de Pernambuco, essa representação "ilustra as principais realizações de caso de uso, subsistemas, pacotes e classes que abrangem o comportamento significativo em termos de arquitetura." (UFPE, 2024)¹. Para esse fim, serão abordados os diagramas de classes, de pacotes e de atividades.
 
+## Metodologia
+
+Primeiramente, foi decidido que os integrantes [Carlos Eduardo](https://github.com/CarlosEduardoMendesdeMesquita), [Israel Thalles](https://github.com/IsraelThalles) e [Luiz Guilherme](https://github.com/luizpettengill) formariam um subgrupo responável pelo desenvolvimento dessa visão. Por meio de mensagens assíncronas, o grupo de participantes foi organizado de modo que o documento fosse dividido, permitindo que cada membro contribuísse com uma parte específica. À excessão do Luiz Guilherme, que não pôde participar a tempo do desenvolvimento, todos participaram ativamente na realização das atividades.
+
+Para o desenvolvimento dessa visão arquitetural, foram utilizados o [diagrama de pacotes](https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/Modelagem/diagramaPacotes/), para uma visão mais geral da estrutura do projeto, o [diagrama de classes](https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/Modelagem/diagramaClasses/), para uma visão mais específica, e o [diagrama de atividades](https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/Modelagem/diagramaAtividades/), para demonstrar a lógica da interação do usuário com a aplicação.
+
 ## Visão geral
 
 O projeto está estruturado de acordo com uma adaptação do padrão arquitetural MVC com uma camada de persistência. Para que se visualize a organização da arquitetura, o diagrama de pacotes a seguir apresenta, de forma geral, a estrutura básica do projeto:
@@ -154,4 +160,5 @@ Ao selecionar para criar uma playlist, o aplicativo irá criar a mesma, pedirá 
 | 1.2    | 05/08/2024 | Alteração no template | [Israel Thalles](https://github.com/IsraelThalles) |   |
 | 1.3    | 06/08/2024 | Adição da visão geral | [Israel Thalles](https://github.com/IsraelThalles) |   |
 | 1.4    | 09/08/2024 | Adição da explicação do diagrama de classes | [Israel Thalles](https://github.com/IsraelThalles) |   |
-| 1.5    | 10/08/2024 | Adição da explicação dos diagramas de pacotes e de atividades | [Carlos Eduardo Mendes de Mesquita](https://github.com/CarlosEduardoMendesdeMesquita) |    |
+| 1.5    | 10/08/2024 | Adição da explicação dos diagramas de pacotes e de atividades | [Carlos Eduardo Mendes de Mesquita](https://github.com/CarlosEduardoMendesdeMesquita) | [Vinícius Mendes](https://github.com/yabamiah) ([Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/100#issuecomment-2282900428)) |
+| 1.6    | 12/08/2024 | Adição da metodologia | [Israel Thalles](https://github.com/IsraelThalles) | [Vinícius Mendes](https://github.com/yabamiah) ([Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/100#issuecomment-2282900428)) |
