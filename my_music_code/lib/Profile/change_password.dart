@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/custom_text_field.dart';
+import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Globals/style.dart';
 
 void changePassword(BuildContext context) {
@@ -25,10 +26,9 @@ void changePassword(BuildContext context) {
             ),
           ],
         ),
-        content: Column(
+        content: SpacedColumn(
           mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(height: 16),
             CustomTextField(
               hintText: "Sua senha atual",
               hintTextColor: Colors.white.withOpacity(0.25),
@@ -40,7 +40,6 @@ void changePassword(BuildContext context) {
               cursorColor: Colors.white,
               obscuringText: true,
             ),
-            SizedBox(height: 16),
             CustomTextField(
               hintText: "Nova senha",
               hintTextColor: Colors.white.withOpacity(0.25),
@@ -52,7 +51,6 @@ void changePassword(BuildContext context) {
               cursorColor: Colors.white,
               obscuringText: true,
             ),
-            SizedBox(height: 16),
             CustomTextField(
               hintText: "Confirmar senha atual",
               hintTextColor: Colors.white.withOpacity(0.25),
@@ -64,7 +62,6 @@ void changePassword(BuildContext context) {
               cursorColor: Colors.white,
               obscuringText: true,
             ),
-            SizedBox(height: 16),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xff373737),

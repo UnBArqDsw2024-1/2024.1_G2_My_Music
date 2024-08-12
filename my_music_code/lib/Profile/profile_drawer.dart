@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Auth/Service/auth_service.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
@@ -7,8 +8,8 @@ import 'package:my_music_code/Profile/friends_page.dart';
 import 'package:my_music_code/legal/about_page.dart';
 
 class ProfileDrawer extends StatefulWidget {
-  const ProfileDrawer({super.key});
-
+  const ProfileDrawer({super.key, required this.user});
+  final User user;
   @override
   State<ProfileDrawer> createState() => _ProfileDrawerState();
 }
@@ -25,7 +26,7 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
               radius: 25,
               backgroundImage: NetworkImage(DefaultPlaceholder.image),
             ),
-            title: ResponsiveText(text: "Milena Baruc", fontSize: 16),
+            title: ResponsiveText(text: widget.user.displayName, fontSize: 16),
             subtitle: ResponsiveText(
                 text: "Configurar perfil",
                 fontSize: 12,

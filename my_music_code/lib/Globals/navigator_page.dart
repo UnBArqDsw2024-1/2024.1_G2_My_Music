@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/feed_page.dart';
 import 'package:my_music_code/MyPlaylists/my_playlists_page.dart';
@@ -6,8 +7,10 @@ import 'package:my_music_code/Search/search_page.dart';
 import 'package:my_music_code/Globals/style.dart';
 
 class NavigatorPage extends StatefulWidget {
-  const NavigatorPage({super.key});
+  const NavigatorPage({super.key, required this.user});
+  final User user;
 
+  
   @override
   State<NavigatorPage> createState() => _NavigatorPageState();
 }
@@ -20,9 +23,6 @@ class _NavigatorPageState extends State<NavigatorPage> {
     setState(() => pageIndex = index);
     controller.jumpToPage(index);
   }
-
-@override
-
 
   @override
   Widget build(BuildContext context) {
@@ -67,9 +67,9 @@ class _NavigatorPageState extends State<NavigatorPage> {
             PageView(
               physics: const NeverScrollableScrollPhysics(),
               controller: controller,
-              children: const [
+              children: [
                 SearchPage(),
-                FeedPage(),
+                FeedPage(user: widget.user),
                 MyPlaylists(),
               ],
             ),

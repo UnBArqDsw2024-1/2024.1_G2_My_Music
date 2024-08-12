@@ -10,15 +10,15 @@ import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Globals/style.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key, this.onTapTogglePage});
+  const LoginPage({super.key, this.onTapTogglePage, required this.userModel});
   final Function()? onTapTogglePage;
+  final SignLoginModel userModel;
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-  UserModel user = UserModel();
 
   @override
   Widget build(BuildContext context) {
@@ -61,11 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                           labelText: "Email",
                           hintText: "Usuario@gmail.com",
                           prefixIcon: Icons.alternate_email_rounded,
-                          onChanged: (value){
-                            setState(() {
-                              user.email = value;
-                            });
-                          },
+                          onChanged: (value) => setState(() => widget.userModel.email = value),
                         ),
 
                         CustomTextField(
@@ -74,11 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                           obscuringText: true,
                           obscuringCharacter: "•",
                           prefixIcon: MdiIcons.lock,
-                          onChanged: (value){
-                            setState(() {
-                              user.password = value;
-                            });
-                          },
+                          onChanged: (value) => setState(() => widget.userModel.password = value),
                         ),
                       ],
                     ),
@@ -102,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                       padding: EdgeInsets.only(top: responsiveFigmaHeight(8)),
                       children: [
                         RawMaterialButton(
-                          onPressed: () => AuthService().signInWithEmailAndPassword(context: context, user: user),
+                          onPressed: () => AuthService().controlSignLogin(context: context, userModel: widget.userModel),
                           child: ResponsiveContainer(
                             height: 47,
                             width: 233,
@@ -118,28 +110,30 @@ class _LoginPageState extends State<LoginPage> {
                           )
                         ),
 
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Divider(
-                                color: Color(0xff000000),
-                              )
-                            ),
-                            ResponsiveText(
-                              text: "Ou continue com",
-                              fontColor: primaryColor,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16,
-                              padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(8)),
-                            ),
-                            Expanded(
-                              child: Divider(
-                                color: Color(0xff000000),
-                              )
-                            ),
-                          ],
-                        ),
+
+                        // Row(
+                        //   children: [
+                        //     Expanded(
+                        //       child: Divider(
+                        //         color: Color(0xff000000),
+                        //       )
+                        //     ),
+                        //     ResponsiveText(
+                        //       text: "Ou continue com",
+                        //       fontColor: primaryColor,
+                        //       fontWeight: FontWeight.w700,
+                        //       fontSize: 16,
+                        //       padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(8)),
+                        //     ),
+                        //     Expanded(
+                        //       child: Divider(
+                        //         color: Color(0xff000000),
+                        //       )
+                        //     ),
+                        //   ],
+                        // ),
                         
+
                         TextButton(
                           onPressed: widget.onTapTogglePage,
                           child: ResponsiveText(

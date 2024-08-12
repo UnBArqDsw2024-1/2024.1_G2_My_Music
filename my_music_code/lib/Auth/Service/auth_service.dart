@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:my_music_code/Globals/dialogs.dart';
 
 Map<String, String> errorMap = {
@@ -9,72 +8,37 @@ Map<String, String> errorMap = {
   'invalid-credential': 'credenciais inválidas!',
   'email-already-in-use': 'Este email já está em uso!',
   'weak-passowrd': 'senha fraca!',
+  'different-password':'senhas diferentes!',
 };
 
-class UserModel {
-  String uid;
-  String email;
-  String firstName;
-  String lastName;
-  String photoURL;
-  String password;
-  String username;
-
-  User? user;
-
-  UserModel({
-    this.uid = '',
-    this.email = '',
-    this.password = '',
-    this.firstName = '',
-    this.lastName = '',
-    this.photoURL = '',
-    this.username = '',
-    this.user,
-  });
+class SignLoginModel {
+  String username = "";
+  String email = "";
+  String password = "";
+  String confirmPassword = "";
+  bool creatingAccount = false;
 }
 
 class AuthService {
-  // Add User Details to Firestore
-  Future<void> addUserDetailsToDB(UserModel user) async {
-    FirebaseFirestore.instance.collection('users').doc(user.uid).set({
-      'uid': user.uid,
-      'email': user.email,
-      'firstName': user.firstName,
-      'lastName': user.lastName,
-    });
-
-    // update photoURL
-    await FirebaseAuth.instance.currentUser!.updateProfile(displayName: user.username, photoURL: user.photoURL);
-  }
-
-  // Sign Up & Sign In
-  signUpWithEmailAndPassword({
-    required UserModel user,
+  Future<void> controlSignLogin({
+    required SignLoginModel userModel,
     required BuildContext context,
   }) async {
     try {
       loadingDialog(context);
-      await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: user.email, password: user.password)
-          .then((_) async {
-        if (context.mounted) Navigator.pop(context);
-        addUserDetailsToDB(user);
-      });
-    } on FirebaseAuthException catch (e) {
-      if (context.mounted) Navigator.pop(context);
-      if (context.mounted) errorDialogMessage(context, errorMap[e.code] ?? e.code);
-      return null;
-    }
-  }
+      if (userModel.creatingAccount) {
+        // Verifica se as não senhas são iguais
+        if(userModel.password != userModel.confirmPassword){
+          if (context.mounted) Navigator.pop(context);
+          if (context.mounted) errorDialogMessage(context, errorMap['different-password']!);
+          return;
+        }
 
-  Future<void> signInWithEmailAndPassword({
-    required UserModel user,
-    required BuildContext context,
-  }) async {
-    try {
-      loadingDialog(context);
-      await FirebaseAuth.instance.signInWithEmailAndPassword(email: user.email, password: user.password);
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(email: userModel.email, password: userModel.password);
+        
+      } else {
+        await FirebaseAuth.instance.signInWithEmailAndPassword(email: userModel.email, password: userModel.password);
+      }
       if (context.mounted) Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
       if (context.mounted) Navigator.pop(context);
@@ -82,7 +46,6 @@ class AuthService {
     }
   }
 
-  // Change Information
   Future<void> resetPassword({
     required String email,
     required BuildContext context,
@@ -104,32 +67,6 @@ class AuthService {
     try {
       loadingDialog(context);
       await FirebaseAuth.instance.currentUser!.updatePassword(password);
-      if (context.mounted) Navigator.pop(context);
-    } on FirebaseAuthException catch (e) {
-      if (context.mounted) Navigator.pop(context);
-      if (context.mounted) errorDialogMessage(context, errorMap[e.code] ?? e.code);
-    }
-  }
-
-  Future<void> changeProfile({
-    required String firstName,
-    required String lastName,
-    required String username,
-    required String photoURL,
-    required String githubURL,
-    required String githubUsername,
-    required BuildContext context,
-  }) async {
-    try {
-      loadingDialog(context);
-      await FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser!.uid).update({
-        'firstName': firstName,
-        'lastName': lastName,
-        'username': username,
-        'photoURL': photoURL,
-        'githubURL': githubURL,
-        'githubUsername': githubUsername,
-      });
       if (context.mounted) Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
       if (context.mounted) Navigator.pop(context);

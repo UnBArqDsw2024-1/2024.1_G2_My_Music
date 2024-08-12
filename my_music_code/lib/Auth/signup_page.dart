@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 import 'package:my_music_code/Auth/Service/auth_service.dart';
@@ -10,16 +9,14 @@ import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Globals/style.dart';
 
 class SignUpPage extends StatefulWidget {
-  const SignUpPage({super.key, this.onTapTogglePage});
+  const SignUpPage({super.key, this.onTapTogglePage, required this.userModel});
   final Function()? onTapTogglePage;
-
+  final SignLoginModel userModel;
   @override
   State<SignUpPage> createState() => _SignUpPageState();
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  UserModel userModel = UserModel();
-  String confirmPassword = "";
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +41,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(27)),
                 child: SpacedColumn(
+                  padding: EdgeInsets.only(top: responsiveFigmaHeight(16)),
                   spacing: 14,
                   children: [
                     ResponsiveText(
@@ -53,8 +51,8 @@ class _SignUpPageState extends State<SignUpPage> {
                       fontSize: 48,
                     ),
                     CustomTextField(
-                      labelText: "Primeiro nome",
-                      hintText: "Nome",
+                      labelText: "Nome de usuário",
+                      hintText: "Username",
                       prefixIcon: MdiIcons.account,
                       hintTextColor: Color(0xff868080),
                       fillColor: Color(0xffFFFFFF),
@@ -63,37 +61,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       inputTextColor: Color(0xff000000),
                       onChanged: (value) {
                         setState(() {
-                          userModel.firstName = value;
-                        });
-                      },
-                    ),
-                    CustomTextField(
-                      labelText: "Sobrenome",
-                      hintText: "Sobrenome",
-                      prefixIcon: MdiIcons.accountOutline,
-                      hintTextColor: Color(0xff868080),
-                      fillColor: Color(0xffFFFFFF),
-                      leadingIconColor: Color(0xff000000),
-                      selectedBorderColor: primaryColor,
-                      inputTextColor: Color(0xff000000),
-                      onChanged: (value) {
-                        setState(() {
-                          userModel.lastName = value;
-                        });
-                      },
-                    ),
-                    CustomTextField(
-                      labelText: "Nome de usuário",
-                      hintText: "Usuario.Exemplo",
-                      prefixIcon: Icons.alternate_email_rounded,
-                      hintTextColor: Color(0xff868080),
-                      fillColor: Color(0xffFFFFFF),
-                      leadingIconColor: Color(0xff000000),
-                      selectedBorderColor: primaryColor,
-                      inputTextColor: Color(0xff000000),
-                      onChanged: (value) {
-                        setState(() {
-                          userModel.username = value;
+                          widget.userModel.username = value;
                         });
                       },
                     ),
@@ -108,7 +76,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       inputTextColor: Color(0xff000000),
                       onChanged: (value) {
                         setState(() {
-                          userModel.email = value;
+                          widget.userModel.email = value;
                         });
                       },
                     ),
@@ -125,7 +93,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       inputTextColor: Color(0xff000000),
                       onChanged: (value) {
                         setState(() {
-                          userModel.password = value;
+                          widget.userModel.password = value;
                         });
                       },
                     ),
@@ -140,9 +108,9 @@ class _SignUpPageState extends State<SignUpPage> {
                       leadingIconColor: Color(0xff000000),
                       selectedBorderColor: primaryColor,
                       inputTextColor: Color(0xff000000),
-                      onChanged: (value){
+                      onChanged: (value) {
                         setState(() {
-                          confirmPassword = value;
+                          widget.userModel.confirmPassword = value;
                         });
                       },
                     ),
@@ -150,30 +118,29 @@ class _SignUpPageState extends State<SignUpPage> {
                       spacing: 8,
                       children: [
                         RawMaterialButton(
-                          onPressed: () => AuthService().signUpWithEmailAndPassword(context: context, user: userModel),
-                          child: ResponsiveContainer(
-                            height: 47,
-                            width: 233,
-                            color: Color(0xff252422),
-                            borderRadius: BorderRadius.circular(10),
-                            child: Center(
-                              child: ResponsiveText(
+                            onPressed: () {
+                              AuthService().controlSignLogin(context: context, userModel: widget.userModel);
+                            },
+                            child: ResponsiveContainer(
+                              height: 47,
+                              width: 233,
+                              color: Color(0xff252422),
+                              borderRadius: BorderRadius.circular(10),
+                              child: Center(
+                                  child: ResponsiveText(
                                 text: "Criar conta",
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
-                              )
-                            ),
-                          )
-                        ),
+                              )),
+                            )),
                         TextButton(
-                          onPressed: widget.onTapTogglePage,
-                          child: ResponsiveText(
-                            text: "Você tem uma conta? Entre",
-                            fontColor: primaryColor,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 16,
-                          )
-                        ),
+                            onPressed: widget.onTapTogglePage,
+                            child: ResponsiveText(
+                              text: "Você tem uma conta? Entre",
+                              fontColor: primaryColor,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16,
+                            )),
                       ],
                     )
                   ],
@@ -181,7 +148,6 @@ class _SignUpPageState extends State<SignUpPage> {
               )
             ],
           ),
-        )
-      );
+        ));
   }
 }
