@@ -59,4 +59,4 @@ Foi feita também a divisão sobre os grupos de quem iria ficar responsável por
 
 | Versão | Data       | Descrição                                               | Autores                        | Revisores |
 | ------ | ---------- | ------------------------------------------------------- | ------------------------------ | --------- |
-| 0.1    | 23/07/2024 | Criação do documento |  [Luis Miranda](https://github.com/LuisMiranda10) | [fulano](Nome) - [Link da revisão]() ||
+| 0.1    | 23/07/2024 | Criação do documento |  [Luis Miranda](https://github.com/LuisMiranda10) | [fulano](Nome) - [Link da revisão]() || 
