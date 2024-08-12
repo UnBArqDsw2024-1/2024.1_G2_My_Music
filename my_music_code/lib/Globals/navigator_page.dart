@@ -14,7 +14,7 @@ class NavigatorPage extends StatefulWidget {
 
 class _NavigatorPageState extends State<NavigatorPage> {
   PageController controller = PageController(initialPage: 1);
-  int pageIndex = 0;
+  int pageIndex = 1;
 
   setIndex(int index) {
     setState(() => pageIndex = index);
