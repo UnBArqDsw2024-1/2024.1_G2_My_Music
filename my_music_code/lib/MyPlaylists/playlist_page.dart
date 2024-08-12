@@ -49,7 +49,11 @@ class _MyPlaylistPageState extends State<MyPlaylistPage> {
               background: Container(
                 decoration: BoxDecoration(
                   image: DecorationImage(image: NetworkImage(DefaultPlaceholder.image),fit: BoxFit.cover),
-                
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black12,
+                    )
+                  ]
                 ),
               ),
               title: Text.rich(
