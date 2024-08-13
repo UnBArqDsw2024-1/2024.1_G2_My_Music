@@ -29,13 +29,15 @@ class _AuthPageState extends State<AuthPage> {
         body: StreamBuilder<User?>(
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              if(userModel.creatingAccount){
-                snapshot.data!.updateDisplayName(userModel.username);
-              }
+            if (snapshot.hasData && !userModel.creatingAccount) {
               return NavigatorPage(user: snapshot.data!);
             } else {
-              return isLogin ? LoginPage(userModel: userModel, onTapTogglePage: togglePage) : SignUpPage(userModel: userModel, onTapTogglePage: togglePage);
+              if (snapshot.hasData && userModel.creatingAccount) {
+                togglePage();
+              }
+              return isLogin
+                  ? LoginPage(userModel: userModel, onTapTogglePage: togglePage)
+                  : SignUpPage(userModel: userModel, onTapTogglePage: togglePage);
             }
           },
         ),
