@@ -38,5 +38,5 @@ Autores: [João Vítor](https://github.com/Jvsoutomaior)
 
 | Versão | Data       | Descrição                                               | Autores                        | Revisores |
 | ------ | ---------- | ------------------------------------------------------- | ------------------------------ | --------- |
-| 1.0 | 05/08/2024 | Primeira versão | [João Vítor](https://github.com/Jvsoutomaior) | [Luis Miranda](https://github.com/LuisMiranda10) |
-| 1.1 | 12/08/2024 | Adicionando referências bibliográficas e correção de ortografia | [João Vítor](https://github.com/Jvsoutomaior)| [Limírio Guimarães](https://github.com/LimirioGuimaraes) (Link da revisão)[]|
+| 1.0 | 05/08/2024 | Primeira versão | [João Vítor](https://github.com/Jvsoutomaior) | [Luis Miranda](https://github.com/LuisMiranda10) (Link da revisão)[https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/84] |
+| 1.1 | 12/08/2024 | Adicionando referências bibliográficas e correção de ortografia | [João Vítor](https://github.com/Jvsoutomaior)| [Limírio Guimarães](https://github.com/LimirioGuimaraes) (Link da revisão)[https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/84]|
