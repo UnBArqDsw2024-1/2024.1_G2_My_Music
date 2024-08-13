@@ -6,6 +6,7 @@ import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/Profile/configuration_page.dart';
 import 'package:my_music_code/Profile/friends_page.dart';
 import 'package:my_music_code/legal/about_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ProfileDrawer extends StatefulWidget {
   const ProfileDrawer({super.key});
@@ -37,7 +38,9 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
           ListTile(
             leading: Icon(Icons.add_rounded, color: Colors.white),
             title: ResponsiveText(text: "Trocar conta"),
-            onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => AuthPage())),
+            onTap: () async {
+	            FirebaseAuth.instance.signOut();
+            },
           ),
           ListTile(
             leading: Icon(Icons.settings, color: Colors.white),
