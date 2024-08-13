@@ -16,16 +16,40 @@ class FeedPage extends StatefulWidget {
 }
 
 class _FeedPageState extends State<FeedPage> {
-
-  List<AlbumBase> topReleases = []; 
+  List<AlbumBase> topReleases = [];
+  List<Music> recentMusics = [];
 
   getRel(SpotifyApi spotify) async {
     print('\nNew Releases');
     var newReleases = await spotify.browse.newReleases().first();
+    var search = await spotify.search.get('musicas fair trade').first(30);
+
     for (var album in newReleases.items!) {
       setState(() {
-        topReleases.add(AlbumBase(name: album.name!, id: album.id!, artist: album.artists!.first.name!, imageUrl: album.images!.first.url!));
+        topReleases.add(AlbumBase(
+            name: album.name!,
+            id: album.id!,
+            artist: album.artists!.first.name!,
+            imageUrl: album.images!.first.url!));
       });
+    }
+
+    for (var pages in search) {
+      if (pages.items != null) {
+        // print(pages.items);
+        for (var music in pages.items!) {
+          if (music is Track) {
+            print(music.name);
+            setState(() {
+              recentMusics.add(Music(
+                  name: music.name!,
+                  id: music.id!,
+                  artist: music.artists!.first.name!,
+                  imageUrl: music.album!.images!.first.url!));
+            });
+          }
+        }
+      }
     }
   }
 
@@ -33,7 +57,8 @@ class _FeedPageState extends State<FeedPage> {
   void initState() {
     super.initState();
 
-    final credentials = SpotifyApiCredentials(ApiSettings.clientId, ApiSettings.clientSecret);
+    final credentials =
+        SpotifyApiCredentials(ApiSettings.clientId, ApiSettings.clientSecret);
     final spotify = SpotifyApi(credentials);
     getRel(spotify);
   }
@@ -47,10 +72,16 @@ class _FeedPageState extends State<FeedPage> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              FeedMusicGrid(),
+              FeedMusicGrid(listaDeMusicas: recentMusics),
               NewMusicRelease(),
-              FeedHorizontalScrollComponent(title: "Top World Albuns",albuns: topReleases,),
-              FeedHorizontalScrollComponent(title: "Tocadas recentemente",albuns: topReleases,),
+              FeedHorizontalScrollComponent(
+                title: "Top World Albuns",
+                albuns: topReleases,
+              ),
+              FeedHorizontalScrollComponent(
+                title: "Tocadas recentemente",
+                albuns: topReleases,
+              ),
             ],
           ),
         ));

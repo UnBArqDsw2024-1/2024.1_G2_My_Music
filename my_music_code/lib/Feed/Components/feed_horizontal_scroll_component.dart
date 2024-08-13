@@ -13,9 +13,6 @@ class AlbumBase {
   AlbumBase({required this.name, required this.id, required this.artist, required this.imageUrl});
 }
 
-
-
-
 class FeedHorizontalScrollComponent extends StatefulWidget {
   const FeedHorizontalScrollComponent({super.key, required this.title, required this.albuns});
   final String title;
