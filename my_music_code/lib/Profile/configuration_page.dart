@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:my_music_code/Globals/custom_text_field.dart';
@@ -21,10 +22,10 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
   String username = "";
   String password = "";
   final ImagePicker imagePicker = ImagePicker();
-
+  String? imageUrl;
   Future<void> pickImage() async {
     try {
-      Xfile? res = await imagePicker.pickImage(source: ImageSource.gallery);
+      XFile? res = await imagePicker.pickImage(source: ImageSource.gallery);
 
       if (res != null) {
         await uploadImageToFirebase(File(res.path));
@@ -41,7 +42,18 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
 
   Future<void> uploadImageToFirebase(File image) async {
     try {
-      
+      Reference reference =
+          FirebaseStorage.instance.ref().child("Images/${widget.user.uid}.png");
+      await reference.putFile(image).whenComplete(() {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: Colors.green,
+            content: Text("O upload da imagem foi realizado com sucesso!"),
+          ),
+        );
+      });
+      imageUrl = await reference.getDownloadURL();
+      widget.user.updatePhotoURL(imageUrl);
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
@@ -50,6 +62,15 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
         ),
       );
     }
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    setState(() {
+      imageUrl = widget.user.photoURL;
+    });
+    super.initState();
   }
 
   @override
@@ -88,14 +109,23 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                 children: [
                   CircleAvatar(
                     radius: 85,
-                    backgroundImage: NetworkImage(DefaultPlaceholder
-                        .image), // substitua pelo URL da imagem
+                    child: imageUrl == null
+                        ? const Icon(Icons.person,
+                            size: 125, color: Colors.grey)
+                        : ClipOval(
+                            child: Image.network(
+                              imageUrl!,
+                              fit: BoxFit.cover,
+                            ),
+                          ), // substitua pelo URL da imagem
                   ),
                   Positioned(
                       bottom: 0,
                       right: 0,
                       child: RawMaterialButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          pickImage();
+                        },
                         constraints: BoxConstraints(),
                         shape: CircleBorder(),
                         child: Container(
