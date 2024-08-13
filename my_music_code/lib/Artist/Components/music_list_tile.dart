@@ -66,6 +66,7 @@ class _MusicListTileState extends State<MusicListTile> {
             ),
             PopupMenuButton(
               color: secondaryColor,
+              icon: Icon(Icons.more_vert, color: Colors.white),
               itemBuilder: (BuildContext context) => [
               PopupMenuItem(
                   child: Row(
