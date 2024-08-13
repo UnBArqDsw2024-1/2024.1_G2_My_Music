@@ -34,9 +34,25 @@ class _MyPlaylistsState extends State<MyPlaylists> {
 
   @override
   Widget build(BuildContext context) {
+    int friends = 30; // Número de amigos para teste, futuramente pegar da database 
+    
+    List<Widget> friendsWidgets = List.generate(
+      friends,
+      (index) => ListTile(
+        leading: CircleAvatar(
+          backgroundImage: NetworkImage(DefaultPlaceholder.image),
+        ),
+        title: Text(
+          'Amigo $index',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+    
     return DefaultTabController(
       length: 4,
       child: Scaffold(
+        backgroundColor: backgroundColor,
         appBar: AppBar(
           backgroundColor: backgroundColor,
           title: Text('My Playlists', style: TextStyle(color: Colors.white)),
@@ -88,12 +104,16 @@ class _MyPlaylistsState extends State<MyPlaylists> {
             const TabBarView(
               children: [
                 Center(
-                  child: Text(
-                    'Recent',
-                    style: TextStyle(
-                      fontSize: 30,
-                    ),
-                  ),
+                  ///TO AQUI 
+                  ///
+                  ///
+                  ///
+                  ///
+                  ///
+                  ///
+                  ///
+                  
+                
                 ),
                 Center(
                   child: Text(
@@ -134,7 +154,7 @@ class _MyPlaylistsState extends State<MyPlaylists> {
           onPressed: () {
             _showBlurDialog(context); 
           },
-          backgroundColor: backgroundColor,
+          backgroundColor: secondaryColor,
           child: Icon(Icons.add, size: 30),
         ),
       ),
