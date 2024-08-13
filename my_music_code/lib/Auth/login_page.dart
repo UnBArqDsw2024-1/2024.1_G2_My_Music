@@ -23,7 +23,15 @@ class _LoginPageState extends State<LoginPage> {
   String password = '';
 
   Future signIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+    try{
+      loadingDialog(context);
+      await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+      if (context.mounted) Navigator.pop(context);
+    } on FirebaseAuthException catch (e){
+      if (context.mounted) Navigator.pop(context);
+      if (context.mounted) errorDialogMessage(context, errorMap[e.code] ?? e.code);
+    }
+    
   }
 
   @override

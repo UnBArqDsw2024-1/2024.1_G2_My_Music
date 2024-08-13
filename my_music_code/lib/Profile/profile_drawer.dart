@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Auth/auth_page.dart';
 //import 'package:my_music_code/Globals/dialogs.dart';
@@ -37,7 +39,9 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
           ListTile(
             leading: Icon(Icons.add_rounded, color: Colors.white),
             title: ResponsiveText(text: "Trocar conta"),
-            onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => AuthPage())),
+            onTap: () async {
+              FirebaseAuth.instance.signOut();
+            },
           ),
           ListTile(
             leading: Icon(Icons.settings, color: Colors.white),
@@ -60,9 +64,9 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
             title: ResponsiveText(text: "Sobre"),
             onTap: () {
               Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => AboutPage()),
-            );
+                context,
+                MaterialPageRoute(builder: (context) => AboutPage()),
+              );
             },
           ),
         ],
