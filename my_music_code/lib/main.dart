@@ -21,7 +21,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    AuthService().signUserOut();
     
     return MaterialApp(
       title: 'MyMusic',

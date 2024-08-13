@@ -80,8 +80,8 @@ class _NavigatorPageState extends State<NavigatorPage> {
                 // TODO : MILENA IMPLEMENTAR MINI PLAYER
                 Positioned(
                   bottom: 0, left: 0, right: 0,
-                  child: MiniPlayer(),
-                )
+                  child: MiniPlayer(   ),
+            )
               ],
             ),
           ],
