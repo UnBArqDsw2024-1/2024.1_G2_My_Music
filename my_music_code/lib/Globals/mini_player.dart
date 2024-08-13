@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/feed_music_page.dart';
 import 'package:my_music_code/Globals/style.dart';
+// ignore: duplicate_import
 import 'style.dart';
 
 class MiniPlayer extends StatefulWidget {
