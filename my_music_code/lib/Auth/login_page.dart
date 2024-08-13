@@ -7,6 +7,7 @@ import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key, this.onTapTogglePage});
@@ -17,6 +18,20 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String email = '';
+  String password = '';
+
+ Future signIn() async {
+    try{
+      loadingDialog(context);
+      await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+      if (context.mounted) Navigator.pop(context);
+    } on FirebaseAuthException catch (e){
+      if (context.mounted) Navigator.pop(context);
+      if (context.mounted) errorDialogMessage(context, errorMap[e.code] ?? e.code);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,6 +67,11 @@ class _LoginPageState extends State<LoginPage> {
                     CustomTextField(
                       labelText: "Email",
                       hintText: "Usuario@gmail.com",
+                      onChanged: (value) {
+                        setState(() {
+                          email = value;
+                        });
+                      },
                       prefixIcon: Icons.alternate_email_rounded,
                       hintTextColor: Color(0xff868080),
                       fillColor: Color(0xffFFFFFF),
@@ -63,6 +83,11 @@ class _LoginPageState extends State<LoginPage> {
                     CustomTextField(
                       labelText: "Senha",
                       hintText: "•" * 10,
+                      onChanged: (value) {
+                        setState(() {
+                          password = value;
+                        });
+                      },
                       obscuringText: true,
                       obscuringCharacter: "•",
                       prefixIcon: MdiIcons.lock,
@@ -89,8 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     ResponsiveContainer(height: 16),
                     RawMaterialButton(
-                        onPressed: () => Navigator.pushReplacement(
-                            context, MaterialPageRoute(builder: (context) => NavigatorPage())),
+                        onPressed: signIn,
                         child: ResponsiveContainer(
                           height: 47,
                           width: 233,
