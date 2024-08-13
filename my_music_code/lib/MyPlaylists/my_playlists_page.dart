@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/MyPlaylists/new_playlist_page.dart';
+import 'package:my_music_code/MyPlaylists/playlist_page.dart';
 
 class MyPlaylists extends StatefulWidget {
   const MyPlaylists({super.key});
@@ -34,21 +35,69 @@ class _MyPlaylistsState extends State<MyPlaylists> {
 
   @override
   Widget build(BuildContext context) {
-    int friends = 30; // Número de amigos para teste, futuramente pegar da database 
-    
-    List<Widget> friendsWidgets = List.generate(
-      friends,
-      (index) => ListTile(
-        leading: CircleAvatar(
-          backgroundImage: NetworkImage(DefaultPlaceholder.image),
-        ),
-        title: Text(
-          'Amigo $index',
-          style: TextStyle(color: Colors.white),
+    int playlistNumber = 30; // Número de amigos para teste, futuramente pegar da database 
+    List<Widget> playlistWidget = List.generate(
+      playlistNumber,
+      (index) => Padding(
+        padding: const EdgeInsets.symmetric(vertical: 0),
+        child: InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MyPlaylistPage()),
+            );
+          },
+          splashColor: primaryColor.withOpacity(0.3),
+          highlightColor: primaryColor.withOpacity(0.1), 
+          borderRadius: BorderRadius.circular(10), 
+          child: Container(
+            height: 120,
+            child: Row(
+              children: [
+                Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    image: DecorationImage(
+                      image: NetworkImage(DefaultPlaceholder.image),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 5),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 8),
+                      Text(
+                        'MyMusicPlaylist $index',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        'Milenuda $index',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 13,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
-    
+
+      
     return DefaultTabController(
       length: 4,
       child: Scaffold(
@@ -101,43 +150,19 @@ class _MyPlaylistsState extends State<MyPlaylists> {
         ),
         body: Stack(
           children: [
-            const TabBarView(
+             TabBarView(
               children: [
-                Center(
-                  ///TO AQUI 
-                  ///
-                  ///
-                  ///
-                  ///
-                  ///
-                  ///
-                  ///
-                  
-                
+                ListView(
+                  children: playlistWidget,
                 ),
-                Center(
-                  child: Text(
-                    'Songs',
-                    style: TextStyle(
-                      fontSize: 30,
-                    ),
-                  ),
+                ListView(
+                  children: playlistWidget,
                 ),
-                Center(
-                  child: Text(
-                    'Albums',
-                    style: TextStyle(
-                      fontSize: 30,
-                    ),
-                  ),
+                ListView(
+                  children: playlistWidget,
                 ),
-                Center(
-                  child: Text(
-                    'Playlist',
-                    style: TextStyle(
-                      fontSize: 30,
-                    ),
-                  ),
+                ListView(
+                  children: playlistWidget,
                 ),
               ],
             ),
