@@ -1,10 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:my_music_code/Globals/custom_text_field.dart';
 import 'package:my_music_code/Globals/dialogs.dart';
 import 'package:my_music_code/Globals/style.dart';
-import 'package:my_music_code/Profile/change_password.dart';
 
 class ConfigurationPage extends StatefulWidget {
   const ConfigurationPage({super.key, required this.user});
