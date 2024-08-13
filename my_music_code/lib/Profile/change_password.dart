@@ -57,9 +57,7 @@ void changePassword(BuildContext context, User user) {
               cursorColor: Colors.white,
               obscuringText: true,
               onChanged: (value) {
-                setState(() {
-                  newPassword = value;
-                });
+                newPassword = value;
               },
             ),
             CustomTextField(
@@ -73,9 +71,7 @@ void changePassword(BuildContext context, User user) {
               cursorColor: Colors.white,
               obscuringText: true,
               onChanged: (value) {
-                setState(() {
-                  confirmNewPasssord = value;
-                });
+                confirmNewPasssord = value;
               },
             ),
             ElevatedButton(
