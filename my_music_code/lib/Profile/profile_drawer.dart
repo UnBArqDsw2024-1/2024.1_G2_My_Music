@@ -32,7 +32,7 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
                 fontSize: 12,
                 fontColor: Color(0xffA4A4A4)),
             onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => ConfigurationPage())),
+                MaterialPageRoute(builder: (context) => ConfigurationPage(user: widget.user))),
           ),
           ListTile(
             leading: Icon(Icons.add_rounded, color: Colors.white),
@@ -43,7 +43,7 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
             leading: Icon(Icons.settings, color: Colors.white),
             title: ResponsiveText(text: "Configurar Perfil"),
             onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => ConfigurationPage())),
+                MaterialPageRoute(builder: (context) => ConfigurationPage(user: widget.user))),
           ),
           ListTile(
             leading: Icon(Icons.people, color: Colors.white),

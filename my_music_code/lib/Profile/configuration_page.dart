@@ -1,16 +1,23 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/custom_text_field.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/Profile/change_password.dart';
 
 class ConfigurationPage extends StatefulWidget {
-  const ConfigurationPage({super.key});
+  const ConfigurationPage({super.key, required this.user});
+
+  final User user;
 
   @override
   State<ConfigurationPage> createState() => _ConfigurationPageState();
 }
 
 class _ConfigurationPageState extends State<ConfigurationPage> {
+  String email = "";
+  String username = "";
+  String password = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,31 +54,30 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                       DefaultPlaceholder.image), // substitua pelo URL da imagem
                 ),
                 Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: RawMaterialButton(
-                    onPressed: (){},
-                    constraints: BoxConstraints(),
-                    shape: CircleBorder(),
-                    child: Container(
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        color: secondaryColor,
-                        borderRadius: BorderRadius.circular(100),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.white12,
-                            spreadRadius: 1,
-                            blurRadius: 3,
-                            offset: Offset(0, 1), // changes position of shadow
-                          ),
-                        ]
+                    bottom: 0,
+                    right: 0,
+                    child: RawMaterialButton(
+                      onPressed: () {},
+                      constraints: BoxConstraints(),
+                      shape: CircleBorder(),
+                      child: Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            color: secondaryColor,
+                            borderRadius: BorderRadius.circular(100),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.white12,
+                                spreadRadius: 1,
+                                blurRadius: 3,
+                                offset:
+                                    Offset(0, 1), // changes position of shadow
+                              ),
+                            ]),
+                        alignment: Alignment.center,
+                        child: Icon(Icons.filter_list, color: Colors.white),
                       ),
-                      alignment: Alignment.center,
-                      child: Icon(Icons.filter_list, color: Colors.white),
-                    ),
-                  )
-                ),
+                    )),
               ],
             ),
             SizedBox(height: 16),
@@ -84,6 +90,12 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
               leadingIconColor: Colors.white,
               inputTextColor: Colors.white,
               cursorColor: Colors.white,
+              initialValue: widget.user.displayName,
+              onChanged: (value) {
+                setState(() {
+                  username = value;
+                });
+              },
             ),
             SizedBox(height: 16),
             CustomTextField(
@@ -95,6 +107,12 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
               leadingIconColor: Colors.white,
               inputTextColor: Colors.white,
               cursorColor: Colors.white,
+              initialValue: widget.user.email,
+              onChanged: (value) {
+                setState(() {
+                  email = value;
+                });
+              },
             ),
             SizedBox(height: 16),
             CustomTextField(
@@ -130,7 +148,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
               child: Text('Mudar senha',
                   style: TextStyle(color: Colors.white, fontSize: 13)),
               onPressed: () {
-                changePassword(context); // Ação para mudar a senha
+                changePassword(context, widget.user); // Ação para mudar a senha
               },
             ),
             SizedBox(height: 16),
@@ -144,8 +162,13 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
               ),
               child: Text('Salvar perfil',
                   style: TextStyle(color: Colors.white, fontSize: 13)),
-              onPressed: () {
-                // Ação para salvar perfil
+              onPressed: () { // Ação para salvar perfil
+                if (widget.user.displayName != username) {
+                  widget.user.updateDisplayName(username);
+                }
+                if (widget.user.email != email){
+                  widget.user.verifyBeforeUpdateEmail(email);
+                }      
               },
             ),
           ],

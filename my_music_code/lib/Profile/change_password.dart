@@ -1,9 +1,14 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/custom_text_field.dart';
 import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Globals/style.dart';
 
-void changePassword(BuildContext context) {
+void changePassword(BuildContext context, User user) {
+  // String password = "";
+  String newPassword = "";
+  String confirmNewPasssord = "";
+
   showDialog(
     context: context,
     builder: (context) {
@@ -50,6 +55,11 @@ void changePassword(BuildContext context) {
               inputTextColor: Colors.white,
               cursorColor: Colors.white,
               obscuringText: true,
+              onChanged: (value) {
+                setState(() {
+                  newPassword = value;
+                });
+              },
             ),
             CustomTextField(
               hintText: "Confirmar senha atual",
