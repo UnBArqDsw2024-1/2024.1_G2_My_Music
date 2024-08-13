@@ -5,7 +5,7 @@ import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 
 class FeedMusicPage extends StatefulWidget {
   const FeedMusicPage({
-      Key? Key,
+      super.key,
       this.artista = 'Eminem',
       this.music = 'Venom',
       this.coverAlbum = 'https://lastfm.freetls.fastly.net/i/u/770x0/74768435b4f70689863aa76f888d62a3.jpg',
@@ -263,7 +263,7 @@ class _FeedPageState extends State<FeedMusicPage> {
                       ),
                     ),
                     Text(
-                      'By ' + widget.artista,
+                      'By ${widget.artista}',
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 15,
