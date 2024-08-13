@@ -3,6 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:my_music_code/Globals/responsive_container.dart';
+import 'package:my_music_code/Globals/responsive_text.dart';
+import 'package:my_music_code/Search/search_page_terms.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -57,26 +60,48 @@ class _SearchPageState extends State<SearchPage> {
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column (
-          crossAxisAlignment: CrossAxisAlignment.start,
-
-          
+          crossAxisAlignment: CrossAxisAlignment.start, 
           children: [
           // Container cinza com bordas inferiores arredondadas e texto "Search"
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'Search song, playlist, artist...',
-                prefixIcon: Icon(Icons.search, color: Colors.white),
-                hintStyle: TextStyle(color: Colors.white70),
-                filled: true,
-                fillColor: Colors.white12,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-                  borderSide: BorderSide.none,
-                ),
-              ),
-              style: TextStyle(color: Colors.white),
-            ),
-            SizedBox(height: 20),
+            RawMaterialButton(
+              onPressed: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => SearchPageTerms())),
+                  child: ResponsiveContainer(
+                    height: 55,
+                    width: double.infinity,
+                    color: Colors.white12,
+                    borderRadius: BorderRadius.circular(10),
+                    child: Center(
+                      child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    // ignore: deprecated_member_use
+                                    child: Icon(Icons.search, color: Colors.white),
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 3,
+                                  child: Center(
+                                    child: 
+                                      ResponsiveText(
+                                        text: "Search song, playlist, artist...",
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500,
+                                        fontColor: Colors.white,
+                                      )
+                                  )
+                                ),
+                                Expanded(
+                                  child: Container(),
+                                ),
+                              ],
+                            )
+                      
+                      ),
+              )),
             
             // Filtros
 
@@ -132,8 +157,8 @@ class _SearchPageState extends State<SearchPage> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  _buildRecentlyPlayedItem('The triangle', '../../assets/eminem.png'),
-                  _buildRecentlyPlayedItem('StarBoy', '../../assets/eminem.png'),
+                  _buildRecentlyPlayedItem('The triangle', 'assets/eminem.png'),
+                  _buildRecentlyPlayedItem('StarBoy', 'assets/eminem.png'),
                   // Adicione mais itens aqui
                 ],
               ),
@@ -148,8 +173,8 @@ class _SearchPageState extends State<SearchPage> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  _buildArtistItemWithBackground('Eminem', 'Artista','../../assets/eminem.png'),
-                  _buildArtistItemWithBackground('The Weekend', 'Artista','../../assets/eminem.png'),
+                  _buildArtistItemWithBackground('Eminem', 'Artista','assets/eminem.png'),
+                  _buildArtistItemWithBackground('The Weekend', 'Artista','assets/eminem.png'),
                   // Adicione mais itens aqui
                 ],
               ),
