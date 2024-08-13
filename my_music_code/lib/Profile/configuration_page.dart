@@ -68,7 +68,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
   void initState() {
     // TODO: implement initState
     setState(() {
-      imageUrl = widget.user.photoURL;
+      imageUrl = widget.user.photoURL ?? DefaultPlaceholder.image;
     });
     super.initState();
   }
