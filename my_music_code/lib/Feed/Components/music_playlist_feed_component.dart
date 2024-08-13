@@ -33,7 +33,7 @@ class MusicPlaylistFeedComponent extends StatelessWidget {
               color: backgroundColor,
               borderRadius: BorderRadius.circular(5),
               image: DecorationImage(
-                image: NetworkImage(music.imageUrl),
+                image: NetworkImage(music.imageUrl!),
                 fit: BoxFit.cover,
               ),
             ),

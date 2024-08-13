@@ -4,16 +4,12 @@ import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 
 class Music {
-  final String name;
-  final String id;
-  final String artist;
-  final String imageUrl;
+  final String? name;
+  final String? id;
+  final String? artist;
+  final String? imageUrl;
 
-  Music(
-      {required this.name,
-      required this.id,
-      required this.artist,
-      required this.imageUrl});
+  Music({this.name, this.id, this.artist, this.imageUrl});
 }
 
 class FeedMusicGrid extends StatefulWidget {

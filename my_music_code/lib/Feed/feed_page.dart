@@ -18,6 +18,7 @@ class FeedPage extends StatefulWidget {
 class _FeedPageState extends State<FeedPage> {
   List<AlbumBase> topReleases = [];
   List<Music> recentMusics = [];
+  Music musicRelease = Music();
 
   getRel(SpotifyApi spotify) async {
     print('\nNew Releases');
@@ -34,12 +35,26 @@ class _FeedPageState extends State<FeedPage> {
       });
     }
 
+    for (var album in newReleases.items!) {
+      if (album != Null) {
+        setState(() {
+          musicRelease = Music(
+            name: album.name!,
+            id: album.id!,
+            artist: album.artists!.first.name!,
+            imageUrl: album.images!.first.url!,
+          );
+        });
+      }
+    }
+
+    // print(search);
+
     for (var pages in search) {
       if (pages.items != null) {
         // print(pages.items);
         for (var music in pages.items!) {
           if (music is Track) {
-            print(music.name);
             setState(() {
               recentMusics.add(Music(
                   name: music.name!,
@@ -73,7 +88,9 @@ class _FeedPageState extends State<FeedPage> {
           child: Column(
             children: [
               FeedMusicGrid(listaDeMusicas: recentMusics),
-              NewMusicRelease(),
+              NewMusicRelease(
+                musicRelease: musicRelease,
+              ),
               FeedHorizontalScrollComponent(
                 title: "Top World Albuns",
                 albuns: topReleases,
