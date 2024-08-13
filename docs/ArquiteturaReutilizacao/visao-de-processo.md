@@ -71,4 +71,4 @@ Já existiam quatro diagramas representando algumas atividades do sistema, que f
 
 | Versão | Data      | Descrição | Autores | Revisor |
 | :-:    | :-----:   | :------   | ----  | ------- |
-| 1.0    |06/08/2024 | Criação do Documento | [Ana Luíza](https://github.com/analuizargds) e [Rafael Xavier](https://github.com/rafaelxavierr) | [Fulano](hh), [Link da revisão](https://github.com/linkdapagina)  |
+| 1.0    |06/08/2024 | Criação do Documento | [Ana Luíza](https://github.com/analuizargds) e [Rafael Xavier](https://github.com/rafaelxavierr) | [Vinícius Mendes](https://github.com/yabamiah) , [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/85)  |
