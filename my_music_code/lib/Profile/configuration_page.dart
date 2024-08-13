@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -19,6 +20,37 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
   String email = "";
   String username = "";
   String password = "";
+  final ImagePicker imagePicker = ImagePicker();
+
+  Future<void> pickImage() async {
+    try {
+      Xfile? res = await imagePicker.pickImage(source: ImageSource.gallery);
+
+      if (res != null) {
+        await uploadImageToFirebase(File(res.path));
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          backgroundColor: Colors.red,
+          content: Text("Falha ao realizar o upload da imagem: $e"),
+        ),
+      );
+    }
+  }
+
+  Future<void> uploadImageToFirebase(File image) async {
+    try {
+      
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          backgroundColor: Colors.red,
+          content: Text("Falha ao realizar o upload da imagem: $e"),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +80,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
         padding: const EdgeInsets.all(19.0),
         child: GestureDetector(
           onTap: () async {
-            // TODO : MUDA FOTO DE PERFIL AQUI
+            pickImage(); // TODO : MUDA FOTO DE PERFIL AQUI
           },
           child: Column(
             children: [
@@ -56,10 +88,9 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                 children: [
                   CircleAvatar(
                     radius: 85,
-                    backgroundImage: NetworkImage(
-                        DefaultPlaceholder.image), // substitua pelo URL da imagem
+                    backgroundImage: NetworkImage(DefaultPlaceholder
+                        .image), // substitua pelo URL da imagem
                   ),
-          
                   Positioned(
                       bottom: 0,
                       right: 0,
@@ -77,15 +108,14 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                                   color: Colors.white12,
                                   spreadRadius: 1,
                                   blurRadius: 3,
-                                  offset:
-                                      Offset(0, 1), // changes position of shadow
+                                  offset: Offset(
+                                      0, 1), // changes position of shadow
                                 ),
                               ]),
                           alignment: Alignment.center,
                           child: Icon(Icons.filter_list, color: Colors.white),
                         ),
                       )),
-          
                 ],
               ),
               SizedBox(height: 16),
@@ -151,7 +181,8 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
-                  padding: EdgeInsets.symmetric(vertical: 21.0, horizontal: 100),
+                  padding:
+                      EdgeInsets.symmetric(vertical: 21.0, horizontal: 100),
                 ),
                 child: Text('Mudar senha',
                     style: TextStyle(color: Colors.white, fontSize: 13)),
@@ -168,13 +199,14 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                 ),
                 child: Text('Salvar perfil',
                     style: TextStyle(color: Colors.white, fontSize: 13)),
-                onPressed: () { // Ação para salvar perfil
+                onPressed: () {
+                  // Ação para salvar perfil
                   if (widget.user.displayName != username) {
                     widget.user.updateDisplayName(username);
                   }
-                  if (widget.user.email != email){
+                  if (widget.user.email != email) {
                     widget.user.verifyBeforeUpdateEmail(email);
-                  }      
+                  }
                 },
               ),
             ],
