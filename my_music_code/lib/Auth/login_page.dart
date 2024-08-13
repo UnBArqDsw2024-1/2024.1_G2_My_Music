@@ -78,9 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
-                        onPressed: () {
-                          forgotPassword(context);
-                        },
+                        onPressed: () => forgotPassword(context),
                         child: ResponsiveText(
                           text: "Esqueceu a senha?",
                           fontColor: primaryColor,
