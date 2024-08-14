@@ -1,9 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/feed_page.dart';
+import 'package:my_music_code/MyPlaylists/user_page_of_playlists.dart';
 import 'package:my_music_code/Globals/mini_player.dart';
-import 'package:my_music_code/MyPlaylists/my_playlists_page.dart';
-
 import 'package:my_music_code/Search/search_page.dart';
 import 'package:my_music_code/Globals/style.dart';
 
@@ -77,11 +76,10 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   ],
                 ),
 
-                // TODO : MILENA IMPLEMENTAR MINI PLAYER
                 Positioned(
                   bottom: 0, left: 0, right: 0,
-                  child: MiniPlayer(   ),
-            )
+                  child: MiniPlayer(),
+                )
               ],
             ),
           ],

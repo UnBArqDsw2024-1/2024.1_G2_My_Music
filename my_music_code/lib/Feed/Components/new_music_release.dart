@@ -86,7 +86,7 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                           useSafeArea: true,
                           context: context,
                           builder: (context) {
-                            return FeedMusicPage();
+                            return MusicPage();
                           }
                         );
                       },

@@ -3,8 +3,10 @@ import 'dart:ui';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/MyPlaylists/playlist_page.dart';
 
-class NewPlaylistPage extends StatelessWidget {
-  @override
+class CreatePlaylistDialog extends StatelessWidget {
+  const CreatePlaylistDialog({super.key});
+
+ @override
   Widget build(BuildContext context) {
     return Dialog(
       backgroundColor: Colors.transparent,
