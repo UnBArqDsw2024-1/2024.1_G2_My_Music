@@ -1,8 +1,10 @@
 # Documento de Reutilização
+
 ## Introdução
 Este artefato tem como objetivo fornecer uma visão detalhada sobre as reutilizações implementadas no software MyMusic. Nele, são abordadas reutilizações aplicáveis em diferentes níveis, incluindo o nível de projeto, onde são adotadas boas práticas e padrões de projeto amplamente estabelecidos, testados e comuns a diversos cenários. Além disso, o documento foca na reutilização em níveis de código, componentes e bibliotecas, oferecendo uma perspectiva abrangente tanto para o Front-end quanto para o Back-end.
 
-## Metodologia 
+## Metodologia
+
 Para a elaboração deste documento, foram analisados os artefatos relacionados aos [Padrões de Projeto GoF](https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/PadroesDeProjeto/GoFsCriacionais/) implementados no projeto, assim como as documentações oficiais do Flutter e do Dart. Além disso, foi realizado um estudo aprofundado do [código implementado](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/tree/main/my_music_code). Com base nos conceitos aprendidos nas aulas da disciplina de Arquitetura e Desenho de Software, foi proposta uma descrição detalhada das características de reutilização aplicadas ao Front-end e Back-end, incluindo o uso de bibliotecas e frameworks.
 
 ## Reutilizações no Front-end
@@ -50,16 +52,20 @@ No desenvolvimento com Flutter, a reutilização de widgets é uma prática esse
      - **`NewMusicRelease`** apresenta novos lançamentos de música, oferecendo uma seção dedicada às novidades.
      - **`FeedHorizontalScrollComponent`** permite a exibição de listas horizontais, como álbuns populares e músicas recentemente tocadas. A reutilização desse widget com diferentes títulos exemplifica como componentes personalizados podem ser configurados para diferentes contextos e reaproveitados em várias partes da interface.
 
-
 Essas práticas de reutilização não só promovem a modularidade do código, mas também facilitam a manutenção e a escalabilidade do aplicativo. Para ilustrar a reutilização no front-end, apresentamos trechos do arquivo [`feed_page.dart`](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/blob/main/my_music_code/lib/Feed/feed_page.dart), que é responsável pela criação da página de feed do aplicativo. Vale ressaltar que todas as outras páginas do aplicativo seguem um padrão similar de criação e reutilização de componentes, garantindo consistência e eficiência em toda a aplicação.
 
-## Reutilizações no Back-end 
+## Reutilizações no Back-end
+
+Para compor o Back-end do projeto está sendo utilizado Dart e Flutter, como foi explicado anteriormente. Assim sendo, também utilizamos uma API, para que pudessemos integrar o acesso dos dados musicais do Spotify no nosso App. Para que pudessemos implementar a API no projeto, foi utilizado uma [biblioteca Dart para interface com a API do Spotify](https://pub.dev/packages/spotify).
 
 
 ## Hots-pots e Frozen-spots
 
-
 ## Conclusão
+
+## Referência Bibliografica
+
+> Spotify. Spotify. Disponível em: <https://www.spotify.com>. Acesso em: 14 ago. 2024.
 
 ## Bibliografia
 
@@ -70,4 +76,4 @@ Essas práticas de reutilização não só promovem a modularidade do código, m
 
 | Versão | Data      | Descrição | Autores | Revisor |
 | :-:    | :-----:   | :------   | ----  | ------- |
-| 1.0    |12/08/2024 | Criação do Documento | [Limírio Guimarães](https://github.com/LimirioGuimaraes)| [Revisor](), [Link da revisão]()  |
+| 1.0    |12/08/2024 | Criação do Documento | [Limírio Guimarães](https://github.com/LimirioGuimaraes) e [Milena Baruc](https://github.com/MilenaBaruc)| [Revisor](), [Link da revisão]() |
