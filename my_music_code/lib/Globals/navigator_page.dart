@@ -76,10 +76,10 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   ],
                 ),
 
-                Positioned(
-                  bottom: 0, left: 0, right: 0,
-                  child: MiniPlayer(),
-                )
+                // Positioned(
+                //   bottom: 0, left: 0, right: 0,
+                //   child: MiniPlayer(),
+                // )
               ],
             ),
           ],
