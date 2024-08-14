@@ -392,16 +392,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
-
-  json_annotation:
-    dependency: transitive
-    description:
-      name: json_annotation
-      sha256: "1ce844379ca14835a50d2f019a3099f419082cfdd231cd86a142af94dd5c6bb1"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.9.0"
-
   image_picker:
     dependency: "direct main"
     description:
@@ -466,7 +456,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.1+1"
-
+  json_annotation:
+    dependency: transitive
+    description:
+      name: json_annotation
+      sha256: "1ce844379ca14835a50d2f019a3099f419082cfdd231cd86a142af94dd5c6bb1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.9.0"
   leak_tracker:
     dependency: transitive
     description:
@@ -523,14 +520,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.12.0"
-  oauth2:
-    dependency: transitive
-    description:
-      name: oauth2
-      sha256: c4013ef62be37744efdc0861878fd9e9285f34db1f9e331cc34100d7674feb42
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.2"
   mime:
     dependency: transitive
     description:
@@ -539,6 +528,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  oauth2:
+    dependency: transitive
+    description:
+      name: oauth2
+      sha256: c4013ef62be37744efdc0861878fd9e9285f34db1f9e331cc34100d7674feb42
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.2"
   octo_image:
     dependency: transitive
     description:

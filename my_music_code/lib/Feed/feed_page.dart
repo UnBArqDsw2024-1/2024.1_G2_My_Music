@@ -7,11 +7,12 @@ import 'package:my_music_code/Feed/Components/new_music_release.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/Profile/profile_drawer.dart';
 import 'package:my_music_code/SpotifyApi/api_settings.dart';
-import 'package:spotify/spotify.dart';
+import 'package:spotify/spotify.dart' hide User;
 
 class FeedPage extends StatefulWidget {
   const FeedPage({super.key, required this.user});
   final User user;
+  
   @override
   State<FeedPage> createState() => _FeedPageState();
 }
@@ -97,8 +98,8 @@ class _FeedPageState extends State<FeedPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: backgroundColor,
-        appBar: feedProfileAppBar(),
-        drawer: ProfileDrawer(),
+        appBar: feedProfileAppBar(user: widget.user),
+        drawer: ProfileDrawer(user: widget.user,),
         body: SingleChildScrollView(
           child: Column(
             children: [
