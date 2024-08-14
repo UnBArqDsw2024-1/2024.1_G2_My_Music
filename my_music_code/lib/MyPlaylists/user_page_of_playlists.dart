@@ -1,12 +1,13 @@
-import 'dart:ui'; 
+import 'dart:ui';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/MyPlaylists/new_playlist_page.dart';
 import 'package:my_music_code/MyPlaylists/playlist_page.dart';
 
 class UserPageOfPlaylists extends StatefulWidget {
-  const UserPageOfPlaylists({super.key});
-
+  const UserPageOfPlaylists({super.key, required this.user});
+  final User user;
   @override
   State<UserPageOfPlaylists> createState() => _UserPageOfPlaylistsState();
 }
@@ -22,7 +23,7 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return CreatePlaylistDialog(); 
+        return CreatePlaylistDialog();
       },
     ).then((_) {
       setState(() {
@@ -33,7 +34,8 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
 
   @override
   Widget build(BuildContext context) {
-    int playlistNumber = 30; // Número de amigos para teste, futuramente pegar da database 
+    int playlistNumber = 30; // Número de amigos para teste, futuramente pegar da database
+
     List<Widget> playlistWidget = List.generate(
       playlistNumber,
       (index) => Padding(
@@ -46,63 +48,59 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
             );
           },
           splashColor: primaryColor.withOpacity(0.3),
-          highlightColor: primaryColor.withOpacity(0.1), 
-          borderRadius: BorderRadius.circular(10), 
+          highlightColor: primaryColor.withOpacity(0.1),
+          borderRadius: BorderRadius.circular(10),
           child: Container(
             height: 120,
-            child: Row(
-              children: [
-                Container(
-                  width: 100,
-                  height: 120,
+            padding: EdgeInsets.all(7.5),
+            child: Row(children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 15, left: 7.5),
+                child: Container(
+                  height: 105,
+                  width: 105,
                   decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    image: DecorationImage(
-                      image: NetworkImage(DefaultPlaceholder.image),
-                      fit: BoxFit.cover,
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.black,
+                      image: DecorationImage(
+                        image: NetworkImage(DefaultPlaceholder.image),
+                        fit: BoxFit.cover,
+                      )),
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Playlist $index',
+                    style: TextStyle(
+                      color: primaryFontColor,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 24,
                     ),
+                    overflow: TextOverflow.ellipsis,
                   ),
-                ),
-                SizedBox(width: 5),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(height: 8),
-                      Text(
-                        'MyMusicPlaylist $index',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                        ),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        'Milenuda $index',
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 13,
-                        ),
-                      ),
-                    ],
+                  Text(
+                    'Milenuda $index',
+                    style: TextStyle(color: secondaryFontColor, fontWeight: FontWeight.w400, fontSize: 16),
+                    overflow: TextOverflow.ellipsis,
                   ),
-                ),
-              ],
-            ),
+                ],
+              ),
+            ]),
           ),
         ),
       ),
     );
 
-      
     return DefaultTabController(
       length: 4,
       child: Scaffold(
         backgroundColor: backgroundColor,
         appBar: AppBar(
           backgroundColor: backgroundColor,
-          title: Text('My Playlists', style: TextStyle(color: Colors.white)),
+          centerTitle: true,
+          title: Text("${widget.user.displayName}'s Playlists", style: TextStyle(color: Colors.white)),
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(AppBar().preferredSize.height),
             child: Container(
@@ -118,40 +116,31 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
                   ),
                 ),
                 child: TabBar(
-                  labelColor: Colors.white,
-                  indicator: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      10,
+                    labelColor: Colors.white,
+                    indicator: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        10,
+                      ),
+                      color: primaryColor,
                     ),
-                    color: primaryColor,
-                    
-                  ),
-                  tabs: List.generate(4, (index) => Tab(
-                    text: [
-                      'Recent',
-                      'Songs',
-                      'Albums',
-                      'Playlists',
-                    ][index]),
-                  )
-                ),
+                    tabs: List.generate(
+                      4,
+                      (index) => Tab(
+                          text: [
+                        'Recent',
+                        'Songs',
+                        'Albums',
+                        'Playlists',
+                      ][index]),
+                    )),
               ),
             ),
           ),
         ),
         body: Stack(
           children: [
-             TabBarView(
-              children: List.generate(4, 
-                (index) => ListView(
-                  children: [
-                    playlistWidget,
-                    playlistWidget,
-                    playlistWidget,
-                    playlistWidget
-                  ][index]
-                )
-              ),
+            TabBarView(
+              children: List.generate(4, (index) => ListView(children: playlistWidget)),
             ),
             if (_isBlurred)
               BackdropFilter(
@@ -164,7 +153,7 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            _showBlurDialog(context); 
+            _showBlurDialog(context);
           },
           backgroundColor: secondaryColor,
           child: Icon(Icons.add, size: 30),
