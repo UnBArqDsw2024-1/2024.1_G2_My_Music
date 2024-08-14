@@ -233,9 +233,10 @@ class _MusicPageState extends State<MusicPage> {
                       widget.music.name!,
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
+                      overflow: TextOverflow.ellipsis,
                     ),
                     Text(
                       'By ${widget.music.artist!}',
@@ -247,7 +248,6 @@ class _MusicPageState extends State<MusicPage> {
                   ],
                 ),
               ),
-              Spacer(),
               IconButton(
                 icon: Icon(isFavorite ? CupertinoIcons.heart_fill : CupertinoIcons.heart,
                     size: 30, color: isFavorite ? primaryColor : Colors.white),
@@ -292,28 +292,24 @@ class _MusicPageState extends State<MusicPage> {
 
                 SizedBox(width: 20), // Espaçamento entre os botões de controle
 
-                Stack(
-                  alignment: Alignment.center,
-                  children: <Widget>[
-                    Container(
 
-                      width: 100,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        color: primaryColor,
-                        shape: BoxShape.circle,
-                      ),
+                RawMaterialButton(
+                  constraints: BoxConstraints(),
+                  shape: CircleBorder(),
+                  onPressed: () {
+                    setState(() {
+                      isPlaying = !isPlaying;
+                    });
+                  },
+                  child: Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: primaryColor,
+                      shape: BoxShape.circle,
                     ),
-                    IconButton(
-                      onPressed: () {
-                        setState(() {
-                          isPlaying = !isPlaying;
-                        });
-                      },
-                      icon: Icon(isPlaying ? Icons.play_arrow_rounded : Icons.pause_rounded,
-                          color: Colors.white, size: 60),
-                    ),
-                  ],
+                    child: Icon(isPlaying ? Icons.play_arrow_rounded : Icons.pause_rounded, color: Colors.white, size: 48),
+                  ),
                 ),
 
                 SizedBox(width: 20), // Espaçamento entre os botões de controle
