@@ -32,6 +32,7 @@ class _FeedPageState extends State<FeedPage> {
           if (album is AlbumSimple) {
             setState(() {
               topReleases.add(AlbumBase(
+                  listMusic: [],
                   name: album.name!,
                   id: album.id!,
                   artist: album.artists!.first.name!,
