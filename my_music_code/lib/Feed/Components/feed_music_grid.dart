@@ -8,8 +8,10 @@ class Music {
   final String? id;
   final String? artist;
   final String? imageUrl;
+  final String? link;
+  final int? duration;
 
-  Music({this.name, this.id, this.artist, this.imageUrl});
+  Music({this.name, this.id, this.artist, this.imageUrl, this.link, this.duration});
 }
 
 class FeedMusicGrid extends StatefulWidget {

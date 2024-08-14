@@ -22,37 +22,48 @@ class _FeedPageState extends State<FeedPage> {
 
   getRel(SpotifyApi spotify) async {
     print('\nNew Releases');
-    var newReleases = await spotify.browse.newReleases().first();
+    var albumNewReleases =  await spotify.search.get('new releases').first(15);
+    var newReleases = await spotify.search.get('lançamentos').first(15);
     var search = await spotify.search.get('musicas fair trade').first(30);
 
-    for (var album in newReleases.items!) {
-      setState(() {
-        topReleases.add(AlbumBase(
-            name: album.name!,
-            id: album.id!,
-            artist: album.artists!.first.name!,
-            imageUrl: album.images!.first.url!));
-      });
-    }
-
-    for (var album in newReleases.items!) {
-      if (album != Null) {
-        setState(() {
-          musicRelease = Music(
-            name: album.name!,
-            id: album.id!,
-            artist: album.artists!.first.name!,
-            imageUrl: album.images!.first.url!,
-          );
-        });
+    for (var pages in albumNewReleases) {
+      if (pages.items != null) {
+        for (var album in pages.items!) {
+          if (album is AlbumSimple) {
+            setState(() {
+              topReleases.add(AlbumBase(
+                  name: album.name!,
+                  id: album.id!,
+                  artist: album.artists!.first.name!,
+                  imageUrl: album.images!.first.url!));
+            });
+          }
+        }
       }
     }
 
-    // print(search);
+    for (var pages in newReleases) {
+      if (pages.items != null) {  
+        for (var music in pages.items!) {
+          if (music is Track) {
+            setState(() {
+              musicRelease = Music(
+                name: music.name!,
+                id: music.id!,
+                artist: music.artists!.first.name!,
+                imageUrl: music.album!.images!.first.url!,
+                link: music.externalUrls!.spotify!,
+                duration: music.durationMs!,
+              );
+            });
+          }
+          break;
+        }
+      }
+    }
 
     for (var pages in search) {
       if (pages.items != null) {
-        // print(pages.items);
         for (var music in pages.items!) {
           if (music is Track) {
             setState(() {
@@ -60,7 +71,10 @@ class _FeedPageState extends State<FeedPage> {
                   name: music.name!,
                   id: music.id!,
                   artist: music.artists!.first.name!,
-                  imageUrl: music.album!.images!.first.url!));
+                  imageUrl: music.album!.images!.first.url!,
+                  link: music.externalUrls!.spotify!,
+                  duration: music.durationMs!,
+              ));
             });
           }
         }

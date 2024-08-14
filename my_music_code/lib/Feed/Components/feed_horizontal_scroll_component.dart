@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Globals/cubic_button_with_image.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
@@ -9,8 +10,9 @@ class AlbumBase {
   final String id;
   final String artist;
   final String imageUrl;
+  final List<Music> listMusic;
 
-  AlbumBase({required this.name, required this.id, required this.artist, required this.imageUrl});
+  AlbumBase({required this.name, required this.id, required this.artist, required this.imageUrl, required this.listMusic});
 }
 
 class FeedHorizontalScrollComponent extends StatefulWidget {
@@ -47,6 +49,7 @@ class _FeedHorizontalScrollComponentState extends State<FeedHorizontalScrollComp
                   Padding(
                     padding: EdgeInsets.only(right: responsiveFigmaWidth(10)), 
                     child: CubicButtonWithImage(
+                      onPressed: () {},//() => Navigator.push(context, MaterialPageRoute(builder: (context) => ArtistPage())),
                       image: NetworkImage(album.imageUrl),
                     )
                   ),

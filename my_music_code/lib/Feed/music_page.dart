@@ -216,8 +216,8 @@ class _FeedPageState extends State<FeedMusicPage> {
             borderRadius: BorderRadius.circular(12.0),
             child: Image.network(
               widget.music.imageUrl!,
-              width: 280,
-              height: 280,
+              width: 340,
+              height: 340,
               fit: BoxFit.cover,
             ),
           ),
@@ -265,7 +265,7 @@ class _FeedPageState extends State<FeedMusicPage> {
             child: ProgressBar(
               progress: Duration(milliseconds: 1000),
               buffered: Duration(milliseconds: 2000),
-              total: Duration(milliseconds: 5000),
+              total: Duration(milliseconds:  widget.music.duration!),
               progressBarColor: primaryColor,
               baseBarColor: Colors.white.withOpacity(0.20),
               bufferedBarColor: Colors.white.withOpacity(0.20),
@@ -296,8 +296,8 @@ class _FeedPageState extends State<FeedMusicPage> {
                   alignment: Alignment.center,
                   children: <Widget>[
                     Container(
-                      width: 80,
-                      height: 80,
+                      width: 100,
+                      height: 100,
                       decoration: BoxDecoration(
                         color: primaryColor,
                         shape: BoxShape.circle,
@@ -310,7 +310,7 @@ class _FeedPageState extends State<FeedMusicPage> {
                         });
                       },
                       icon: Icon(isPlaying ? Icons.play_arrow_rounded : Icons.pause_rounded,
-                          color: Colors.white, size: 50),
+                          color: Colors.white, size: 60),
                     ),
                   ],
                 ),
