@@ -99,13 +99,13 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                       iconSize: 36,
                       onPressed: () {
                         showModalBottomSheet(
-                            useRootNavigator: false,
-                            isScrollControlled: true,
-                            useSafeArea: true,
-                            context: context,
-                            builder: (context) {
-                              return FeedMusicPage();
-                            });
+                        useRootNavigator: false,
+                        isScrollControlled: true,
+                        useSafeArea: true,
+                        context: context,
+                        builder: (context) {
+                          return FeedMusicPage();
+                        });
                       },
                       icon: Icon(Icons.play_arrow_rounded,
                           color: secondaryColor, size: 36),

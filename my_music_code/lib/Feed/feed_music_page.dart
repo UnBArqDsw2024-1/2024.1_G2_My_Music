@@ -1,20 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 
-
 class FeedMusicPage extends StatefulWidget {
-  const FeedMusicPage({
-    Key? Key,
-    this.artista = 'Eminem',
-    this.music = 'Venom',
-    this.coverAlbum = 'https://lastfm.freetls.fastly.net/i/u/770x0/74768435b4f70689863aa76f888d62a3.jpg',
+  const FeedMusicPage({super.key, 
+    required this.music,
   });
 
-  final String artista;
-  final String music;
-  final String coverAlbum;
+  final Music music;
 
   @override
   State<FeedMusicPage> createState() => _FeedPageState();
