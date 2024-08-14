@@ -1,19 +1,17 @@
-//import 'dart:js_interop';
-
 import 'dart:ui'; 
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/MyPlaylists/new_playlist_page.dart';
 import 'package:my_music_code/MyPlaylists/playlist_page.dart';
 
-class MyPlaylists extends StatefulWidget {
-  const MyPlaylists({super.key});
+class UserPageOfPlaylists extends StatefulWidget {
+  const UserPageOfPlaylists({super.key});
 
   @override
-  State<MyPlaylists> createState() => _MyPlaylistsState();
+  State<UserPageOfPlaylists> createState() => _UserPageOfPlaylistsState();
 }
 
-class _MyPlaylistsState extends State<MyPlaylists> {
+class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
   bool _isBlurred = false;
 
   void _showBlurDialog(BuildContext context) {
@@ -24,7 +22,7 @@ class _MyPlaylistsState extends State<MyPlaylists> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return NewPlaylistPage(); 
+        return CreatePlaylistDialog(); 
       },
     ).then((_) {
       setState(() {
@@ -56,7 +54,7 @@ class _MyPlaylistsState extends State<MyPlaylists> {
               children: [
                 Container(
                   width: 100,
-                  height: 100,
+                  height: 120,
                   decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
                     image: DecorationImage(
@@ -118,31 +116,24 @@ class _MyPlaylistsState extends State<MyPlaylists> {
                   borderRadius: BorderRadius.circular(
                     10,
                   ),
-                  color: Colors.grey[200],
                 ),
                 child: TabBar(
                   labelColor: Colors.white,
-                  unselectedLabelColor: Colors.black,
                   indicator: BoxDecoration(
                     borderRadius: BorderRadius.circular(
                       10,
                     ),
                     color: primaryColor,
+                    
                   ),
-                  tabs: const [
-                    Tab(
-                      text: 'Recent',
-                    ),
-                    Tab(
-                      text: 'Songs',
-                    ),
-                    Tab(
-                      text: 'Albums',
-                    ),
-                    Tab(
-                      text: 'Playlists',
-                    ),
-                  ],
+                  tabs: List.generate(4, (index) => Tab(
+                    text: [
+                      'Recent',
+                      'Songs',
+                      'Albums',
+                      'Playlists',
+                    ][index]),
+                  )
                 ),
               ),
             ),
@@ -151,20 +142,16 @@ class _MyPlaylistsState extends State<MyPlaylists> {
         body: Stack(
           children: [
              TabBarView(
-              children: [
-                ListView(
-                  children: playlistWidget,
-                ),
-                ListView(
-                  children: playlistWidget,
-                ),
-                ListView(
-                  children: playlistWidget,
-                ),
-                ListView(
-                  children: playlistWidget,
-                ),
-              ],
+              children: List.generate(4, 
+                (index) => ListView(
+                  children: [
+                    playlistWidget,
+                    playlistWidget,
+                    playlistWidget,
+                    playlistWidget
+                  ][index]
+                )
+              ),
             ),
             if (_isBlurred)
               BackdropFilter(
@@ -186,41 +173,3 @@ class _MyPlaylistsState extends State<MyPlaylists> {
     );
   }
 }
-
-  // Widget build(BuildContext context) {
-  //   return DefaultTabController(
-  //     initialIndex: 1,
-  //     length: 4,
-  //     child: Scaffold(
-  //     appBar: AppBar(
-  //       backgroundColor: backgroundColor,
-  //       title: Text('My Playlists',style: TextStyle(color: Colors.white)),
-  //       bottom: TabBar(
-  //         labelColor: Colors.white,
-  //         // indicator: BoxDecoration(
-  //         //   color: primaryColor,
-  //         // ),
-  //         tabs: <Widget>[
-  //           Tab(
-  //             text: 'Recent',
-  //           ),
-  //           Tab(
-  //             text: 'Songs',
-  //           ),
-  //           Tab(
-  //             text: 'Albums',
-  //           ),
-  //           Tab(
-  //             text: 'Playlists',
-  //           ),
-  //         ],
-  //       ),
-  //     ),
-      
-  //     backgroundColor: backgroundColor,
-  //     body: const Center(
-  //       child: Icon(Icons.person,color: Colors.white),
-  //     ),
-  //   ),
-  // );
-  // }

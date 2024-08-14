@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 
-class FeedMusicPage extends StatefulWidget {
-  const FeedMusicPage({
-      Key? Key,
+class MusicPage extends StatefulWidget {
+  const MusicPage({
+      super.key,
       this.artista = 'Eminem',
       this.music = 'Venom',
       this.coverAlbum = 'https://lastfm.freetls.fastly.net/i/u/770x0/74768435b4f70689863aa76f888d62a3.jpg',
@@ -16,10 +16,10 @@ class FeedMusicPage extends StatefulWidget {
     final String coverAlbum;
 
   @override
-  State<FeedMusicPage> createState() => _FeedPageState();
+  State<MusicPage> createState() => _FeedPageState();
 }
 
-class _FeedPageState extends State<FeedMusicPage> {
+class _FeedPageState extends State<MusicPage> {
   bool isPlaying = false;
   bool isFavorite = false;
 
