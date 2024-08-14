@@ -90,14 +90,16 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                   ],
                 ),
                 Positioned(
-                    right: 10,
-                    bottom: 10,
-                    child: IconButton.filled(
-                      style: IconButton.styleFrom(
-                        backgroundColor: Colors.white,
+                    right: 5,
+                    bottom: 5,
+                    child: IconButton(
+                      constraints: BoxConstraints(
+                        maxHeight: 55,
+                        maxWidth: 55
                       ),
                       iconSize: 36,
                       onPressed: () {
+                      
                         showModalBottomSheet(
                           useRootNavigator: false,
                           isScrollControlled: true,
@@ -107,7 +109,13 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                             return MusicPage(music: widget.musicRelease);
                           });
                         },
-                        icon: Icon(Icons.play_arrow_rounded, color: secondaryColor, size: 36),
+                        icon: Container(
+                          
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle
+                          ),
+                          child: Icon(Icons.play_arrow_rounded, color: secondaryColor)),
                       )
                 )
               ],
