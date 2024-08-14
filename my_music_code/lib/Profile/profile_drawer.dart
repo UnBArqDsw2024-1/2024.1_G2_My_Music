@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Auth/auth_page.dart';
 //import 'package:my_music_code/Globals/dialogs.dart';
@@ -6,7 +8,6 @@ import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/Profile/configuration_page.dart';
 import 'package:my_music_code/Profile/friends_page.dart';
 import 'package:my_music_code/legal/about_page.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class ProfileDrawer extends StatefulWidget {
   const ProfileDrawer({super.key});
@@ -39,7 +40,7 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
             leading: Icon(Icons.add_rounded, color: Colors.white),
             title: ResponsiveText(text: "Trocar conta"),
             onTap: () async {
-	            FirebaseAuth.instance.signOut();
+              FirebaseAuth.instance.signOut();
             },
           ),
           ListTile(
@@ -63,9 +64,9 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
             title: ResponsiveText(text: "Sobre"),
             onTap: () {
               Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => AboutPage()),
-            );
+                context,
+                MaterialPageRoute(builder: (context) => AboutPage()),
+              );
             },
           ),
         ],

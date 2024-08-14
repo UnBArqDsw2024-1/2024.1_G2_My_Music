@@ -18,10 +18,11 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
   String email = '';
   String password = '';
 
- Future signIn() async {
+  Future signIn() async {
     try{
       loadingDialog(context);
       await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
@@ -30,6 +31,7 @@ class _LoginPageState extends State<LoginPage> {
       if (context.mounted) Navigator.pop(context);
       if (context.mounted) errorDialogMessage(context, errorMap[e.code] ?? e.code);
     }
+    
   }
 
   @override
@@ -46,14 +48,17 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Container(
                 constraints: BoxConstraints(
-                  minHeight: SizeConfig.screenHeight - responsiveFigmaHeight(180),
+                  minHeight:
+                      SizeConfig.screenHeight - responsiveFigmaHeight(180),
                   minWidth: double.infinity,
                 ),
                 decoration: BoxDecoration(
                   color: Color(0xffEFEFEF),
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(100)),
+                  borderRadius:
+                      BorderRadius.only(topLeft: Radius.circular(100)),
                 ),
-                padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(27)),
+                padding:
+                    EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(27)),
                 child: Column(
                   children: [
                     ResponsiveContainer(height: 16),
@@ -139,7 +144,8 @@ class _LoginPageState extends State<LoginPage> {
                           fontColor: primaryColor,
                           fontWeight: FontWeight.w700,
                           fontSize: 16,
-                          padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(8)),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: responsiveFigmaWidth(8)),
                         ),
                         Expanded(
                             child: Divider(
@@ -150,24 +156,27 @@ class _LoginPageState extends State<LoginPage> {
                     ResponsiveContainer(height: 16),
                     RawMaterialButton(
                         onPressed: () => Navigator.pushReplacement(
-                            context, MaterialPageRoute(builder: (context) => NavigatorPage())),
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => NavigatorPage())),
                         child: ResponsiveContainer(
                           height: 47,
                           width: 233,
                           color: Color(0xff252422),
                           borderRadius: BorderRadius.circular(10),
                           child: Center(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    // ignore: deprecated_member_use
-                                    child: Icon(MdiIcons.google, color: Colors.white),
-                                  ),
+                              child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  // ignore: deprecated_member_use
+                                  child: Icon(MdiIcons.google,
+                                      color: Colors.white),
                                 ),
-                                Expanded(
+                              ),
+                              Expanded(
                                   flex: 3,
                                   child: Center(
                                     child: ResponsiveText(
@@ -176,16 +185,13 @@ class _LoginPageState extends State<LoginPage> {
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400,
                                     ),
-                                  )
-                                ),
-                                Expanded(
-                                  child: Container(),
-                                ),
-                              ],
-                            )
-                          ),
-                        )
-                      ),
+                                  )),
+                              Expanded(
+                                child: Container(),
+                              ),
+                            ],
+                          )),
+                        )),
                     ResponsiveContainer(height: 8),
                     TextButton(
                         onPressed: widget.onTapTogglePage,
