@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
@@ -14,8 +15,12 @@ PreferredSizeWidget feedProfileAppBar({required User user}) {
           width: 30,
           borderRadius: BorderRadius.circular(100),
           isCubic: true,
+          color: backgroundColor,
           image: DecorationImage(
-            image: NetworkImage(DefaultPlaceholder.image),
+            image: CachedNetworkImageProvider(
+              user.photoURL ?? DefaultPlaceholder.image,
+            ),
+            fit: BoxFit.cover,
           ),
         ),
         onPressed: () => Scaffold.of(context).openDrawer(),

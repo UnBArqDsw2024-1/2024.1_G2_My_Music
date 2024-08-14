@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Auth/Service/auth_service.dart';
@@ -23,8 +24,9 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
         children: [
           ListTile(
             leading: CircleAvatar(
+              backgroundColor: backgroundColor,
               radius: 25,
-              backgroundImage: NetworkImage(DefaultPlaceholder.image),
+              backgroundImage: CachedNetworkImageProvider(widget.user.photoURL ?? DefaultPlaceholder.image),
             ),
             title: ResponsiveText(text: widget.user.displayName, fontSize: 16),
             subtitle: ResponsiveText(
