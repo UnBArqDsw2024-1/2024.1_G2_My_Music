@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
@@ -10,8 +11,8 @@ class MusicPlaylistFeedComponent extends StatelessWidget {
   const MusicPlaylistFeedComponent(
       {super.key,
       this.backgroundColor = DefaultPlaceholder.backgroundColor,
-      required this.music});
-
+      required this.music, required this.audioPlayer});
+  final AudioPlayer audioPlayer;
   final Music music;
   final Color backgroundColor;
 
@@ -26,7 +27,7 @@ class MusicPlaylistFeedComponent extends StatelessWidget {
           useSafeArea: true,
           context: context,
           builder: (context) {
-            return MusicPage(music: music);
+            return MusicPage(music: music, audioPlayer: audioPlayer,);
           });
       },
       child: ResponsiveContainer(

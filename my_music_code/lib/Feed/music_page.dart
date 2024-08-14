@@ -1,13 +1,18 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
+import 'package:youtube_explode_dart/youtube_explode_dart.dart';
 
 class MusicPage extends StatefulWidget {
-  const MusicPage({super.key, 
+  const MusicPage({
+    super.key,
     required this.music,
+    required this.audioPlayer,
   });
+  final AudioPlayer audioPlayer;
 
   final Music music;
   @override
@@ -17,6 +22,33 @@ class MusicPage extends StatefulWidget {
 class _MusicPageState extends State<MusicPage> {
   bool isPlaying = false;
   bool isFavorite = false;
+  Duration? audioDuration = Duration(milliseconds: 0);
+
+  setupMusic() async {
+    final yt = YoutubeExplode();
+    final result = (await yt.search(widget.music.name!)).first;
+    final videoId = result.id.value;
+    setState(() {
+      audioDuration = Duration(milliseconds: result.duration!.inMilliseconds);
+    });
+    final manifest = await yt.videos.streamsClient.getManifest(videoId);
+    final audioUrl = manifest.audioOnly.first;
+    widget.audioPlayer.play(UrlSource(audioUrl.url.toString()));
+  }
+
+  setupDuration() async {
+    audioDuration = await widget.audioPlayer.getDuration();
+  }
+
+  @override
+  void initState() {
+    if (widget.audioPlayer.state == PlayerState.playing) {
+      setupDuration();
+    } else {
+      setupMusic();
+    }
+    super.initState();
+  }
 
   void _musicOptionsModalBottomSheet(
       BuildContext context, String artista, String music, String coverAlbum, bool isFavorite) {
@@ -208,7 +240,6 @@ class _MusicPageState extends State<MusicPage> {
               },
             ),
           ]),
-
       body: Column(
         children: <Widget>[
           SizedBox(height: 20), // Espaçamento entre a Row e a imagem
@@ -261,24 +292,29 @@ class _MusicPageState extends State<MusicPage> {
           ),
 
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: ProgressBar(
-              progress: Duration(milliseconds: 1000),
-              buffered: Duration(milliseconds: 2000),
-              total: Duration(milliseconds:  widget.music.duration!),
-              progressBarColor: primaryColor,
-              baseBarColor: Colors.white.withOpacity(0.20),
-              bufferedBarColor: Colors.white.withOpacity(0.20),
-              thumbColor: primaryFontColor,
-              thumbRadius: 5.0,
-              thumbGlowRadius: 0,
-              barHeight: 3.0,
-              timeLabelTextStyle: TextStyle(
-                color: Colors.grey,
-                fontSize: 15,
-              ),
-            ),
-          ),
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              child: StreamBuilder(
+                stream: widget.audioPlayer.onPositionChanged,
+                builder: (context, data) {
+                  return ProgressBar(
+                    progress: data.data ?? Duration(milliseconds: 0),
+                    buffered: audioDuration,
+                    onSeek: (duration) => widget.audioPlayer.seek(duration),
+                    total: audioDuration!,
+                    progressBarColor: primaryColor,
+                    baseBarColor: Colors.white.withOpacity(0.20),
+                    bufferedBarColor: Colors.white.withOpacity(0.20),
+                    thumbColor: primaryFontColor,
+                    thumbRadius: 5.0,
+                    thumbGlowRadius: 0,
+                    barHeight: 3.0,
+                    timeLabelTextStyle: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 15,
+                    ),
+                  );
+                },
+              )),
           SizedBox(height: 20), // Espaçamento entre a barra de progresso e os botões de controle
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 30.0),
@@ -292,7 +328,6 @@ class _MusicPageState extends State<MusicPage> {
 
                 SizedBox(width: 20), // Espaçamento entre os botões de controle
 
-
                 RawMaterialButton(
                   constraints: BoxConstraints(),
                   shape: CircleBorder(),
@@ -300,6 +335,9 @@ class _MusicPageState extends State<MusicPage> {
                     setState(() {
                       isPlaying = !isPlaying;
                     });
+                    widget.audioPlayer.state == PlayerState.paused
+                        ? widget.audioPlayer.resume()
+                        : widget.audioPlayer.pause();
                   },
                   child: Container(
                     width: 100,
@@ -308,7 +346,12 @@ class _MusicPageState extends State<MusicPage> {
                       color: primaryColor,
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(isPlaying ? Icons.play_arrow_rounded : Icons.pause_rounded, color: Colors.white, size: 48),
+                    child: Icon(
+                        widget.audioPlayer.state == PlayerState.playing
+                            ? Icons.play_arrow_rounded
+                            : Icons.pause_rounded,
+                        color: Colors.white,
+                        size: 48),
                   ),
                 ),
 

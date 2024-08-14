@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/feed_horizontal_scroll_component.dart';
@@ -10,9 +11,10 @@ import 'package:my_music_code/SpotifyApi/api_settings.dart';
 import 'package:spotify/spotify.dart' hide User;
 
 class FeedPage extends StatefulWidget {
-  const FeedPage({super.key, required this.user, required this.spotifyApi});
+  const FeedPage({super.key, required this.user, required this.spotifyApi, required this.audioPlayer});
   final User user;
   final SpotifyApi spotifyApi;
+  final AudioPlayer audioPlayer;
 
   @override
   State<FeedPage> createState() => _FeedPageState();
@@ -108,9 +110,10 @@ class _FeedPageState extends State<FeedPage> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              FeedMusicGrid(listaDeMusicas: recentMusics),
+              FeedMusicGrid(listaDeMusicas: recentMusics, audioPlayer: widget.audioPlayer),
               NewMusicRelease(
                 musicRelease: musicRelease,
+                audioPlayer: widget.audioPlayer,
               ),
               FeedHorizontalScrollComponent(
                 title: "Top World Albuns",

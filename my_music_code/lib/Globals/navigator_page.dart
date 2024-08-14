@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/feed_page.dart';
@@ -18,6 +19,7 @@ class NavigatorPage extends StatefulWidget {
 class _NavigatorPageState extends State<NavigatorPage> {
   PageController controller = PageController(initialPage: 1);
   int pageIndex = 1;
+  final AudioPlayer audioPlayer = AudioPlayer();
 
   setIndex(int index) {
     setState(() => pageIndex = index);
@@ -71,7 +73,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   controller: controller,
                   children: [
                     SearchPage(),
-                    FeedPage(user: widget.user, spotifyApi: widget.spotifyApi,),
+                    FeedPage(user: widget.user, spotifyApi: widget.spotifyApi,audioPlayer: audioPlayer,),
                     UserPageOfPlaylists(),
                   ],
                 ),
