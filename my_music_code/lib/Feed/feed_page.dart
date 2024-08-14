@@ -121,10 +121,12 @@ class _FeedPageState extends State<FeedPage> {
                 audioPlayer: widget.audioPlayer,
               ),
               FeedHorizontalScrollComponent(
+                audioPlayer: widget.audioPlayer,
                 title: "Top World Albuns",
                 albuns: topReleases,
               ),
               FeedHorizontalScrollComponent(
+                audioPlayer: widget.audioPlayer,
                 title: "Tocadas recentemente",
                 albuns: topReleases,
               ),
