@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Album/album_page.dart';
@@ -11,9 +12,11 @@ import 'package:my_music_code/SpotifyApi/api_settings.dart';
 import 'package:spotify/spotify.dart' hide User;
 
 class FeedPage extends StatefulWidget {
-  const FeedPage({super.key, required this.user});
+  const FeedPage({super.key, required this.user, required this.spotifyApi, required this.audioPlayer});
   final User user;
-  
+  final SpotifyApi spotifyApi;
+  final AudioPlayer audioPlayer;
+
   @override
   State<FeedPage> createState() => _FeedPageState();
 }
@@ -24,8 +27,8 @@ class _FeedPageState extends State<FeedPage> {
   Music musicRelease = Music();
 
   getRel(SpotifyApi spotify) async {
-    print('\nNew Releases');
-    var albumNewReleases =  await spotify.search.get('new releases').first(15);
+    // print('\nNew Releases');
+    var albumNewReleases = await spotify.search.get('new releases').first(15);
     var newReleases = await spotify.search.get('lançamentos').first(15);
     var search = await spotify.search.get('musicas fair trade').first(30);
 
@@ -51,7 +54,7 @@ class _FeedPageState extends State<FeedPage> {
     }
 
     for (var pages in newReleases) {
-      if (pages.items != null) {  
+      if (pages.items != null) {
         for (var music in pages.items!) {
           if (music is Track) {
             setState(() {
@@ -62,6 +65,7 @@ class _FeedPageState extends State<FeedPage> {
                 imageUrl: music.album!.images!.first.url!,
                 link: music.externalUrls!.spotify!,
                 duration: music.durationMs!,
+                spotifyApi: spotify,
               );
             });
           }
@@ -76,12 +80,13 @@ class _FeedPageState extends State<FeedPage> {
           if (music is Track) {
             setState(() {
               recentMusics.add(Music(
-                  name: music.name!,
-                  id: music.id!,
-                  artist: music.artists!.first.name!,
-                  imageUrl: music.album!.images!.first.url!,
-                  link: music.externalUrls!.spotify!,
-                  duration: music.durationMs!,
+                name: music.name!,
+                id: music.id!,
+                artist: music.artists!.first.name!,
+                imageUrl: music.album!.images!.first.url!,
+                link: music.externalUrls!.spotify!,
+                duration: music.durationMs!,
+                spotifyApi: spotify,
               ));
             });
           }
@@ -104,13 +109,16 @@ class _FeedPageState extends State<FeedPage> {
     return Scaffold(
         backgroundColor: backgroundColor,
         appBar: feedProfileAppBar(user: widget.user),
-        drawer: ProfileDrawer(user: widget.user,),
+        drawer: ProfileDrawer(
+          user: widget.user,
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
-              FeedMusicGrid(listaDeMusicas: recentMusics),
+              FeedMusicGrid(listaDeMusicas: recentMusics, audioPlayer: widget.audioPlayer),
               NewMusicRelease(
                 musicRelease: musicRelease,
+                audioPlayer: widget.audioPlayer,
               ),
               FeedHorizontalScrollComponent(
                 title: "Top World Albuns",

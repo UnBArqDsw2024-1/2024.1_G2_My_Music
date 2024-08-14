@@ -1,15 +1,17 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/feed_page.dart';
 import 'package:my_music_code/MyPlaylists/user_page_of_playlists.dart';
 import 'package:my_music_code/Search/search_page.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:spotify/spotify.dart' hide User;
 
 class NavigatorPage extends StatefulWidget {
-  const NavigatorPage({super.key, required this.user});
+  const NavigatorPage({super.key, required this.user, required this.spotifyApi});
   final User user;
+  final SpotifyApi spotifyApi;
 
-  
   @override
   State<NavigatorPage> createState() => _NavigatorPageState();
 }
@@ -17,6 +19,7 @@ class NavigatorPage extends StatefulWidget {
 class _NavigatorPageState extends State<NavigatorPage> {
   PageController controller = PageController(initialPage: 1);
   int pageIndex = 1;
+  final AudioPlayer audioPlayer = AudioPlayer();
 
   setIndex(int index) {
     setState(() => pageIndex = index);
@@ -70,7 +73,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   controller: controller,
                   children: [
                     SearchPage(),
-                    FeedPage(user: widget.user),
+                    FeedPage(user: widget.user, spotifyApi: widget.spotifyApi,audioPlayer: audioPlayer,),
                     UserPageOfPlaylists(),
                   ],
                 ),

@@ -2,16 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/style.dart';
 
 class ToggleIconTile extends StatefulWidget {
-  final String title;
-
   const ToggleIconTile({super.key, required this.title});
-
+  final String title;
   @override
-  _ToggleIconTileState createState() => _ToggleIconTileState();
+  State<ToggleIconTile> createState() => _ToggleIconTileState();
 }
 
 class _ToggleIconTileState extends State<ToggleIconTile> {
-  bool _isAdded = false; 
+  bool _isAdded = false;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +28,7 @@ class _ToggleIconTileState extends State<ToggleIconTile> {
         ),
         onPressed: () {
           setState(() {
-            _isAdded = !_isAdded; 
+            _isAdded = !_isAdded;
           });
         },
       ),

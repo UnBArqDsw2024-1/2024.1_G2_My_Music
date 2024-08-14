@@ -69,6 +69,7 @@ class _MusicListTileState extends State<MusicListTile> {
               icon: Icon(Icons.more_vert, color: Colors.white),
               itemBuilder: (BuildContext context) => [
               PopupMenuItem(
+                  value: 'Adicionar à playlist',
                   child: Row(
                     children: [
                       Icon(
@@ -78,9 +79,9 @@ class _MusicListTileState extends State<MusicListTile> {
                       Text('Adicionar à playlist', style: TextStyle(color: primaryFontColor),),
                     ],
                   ),
-                  value: 'Adicionar à playlist',
                 ),
                 PopupMenuItem(
+                  value: 'Favoritar música',
                   child: Row(
                     children: [
                       Icon(
@@ -90,9 +91,9 @@ class _MusicListTileState extends State<MusicListTile> {
                       Text('Favoritar música', style: TextStyle(color: primaryFontColor),),
                     ],
                   ),
-                  value: 'Favoritar música',
                 ),
                 PopupMenuItem(
+                  value: 'Compartilhar música',
                   child: Row(
                     children: [
                       Icon(
@@ -102,7 +103,6 @@ class _MusicListTileState extends State<MusicListTile> {
                       Text('Compartilhar música', style: TextStyle(color: primaryFontColor),),
                     ],
                   ),
-                  value: 'Compartilhar música',
                 ),
               ],
             )

@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Feed/music_page.dart';
@@ -6,9 +7,9 @@ import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/style.dart';
 
 class NewMusicRelease extends StatefulWidget {
-  const NewMusicRelease({super.key, required this.musicRelease});
+  const NewMusicRelease({super.key, required this.musicRelease, required this.audioPlayer});
   final Music musicRelease;
-
+  final AudioPlayer audioPlayer;
   @override
   State<NewMusicRelease> createState() => _NewMusicReleaseState();
 }
@@ -28,18 +29,13 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                 isCubic: true,
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(100),
-                image: DecorationImage(
-                    image: NetworkImage(widget.musicRelease.imageUrl ??
-                        DefaultPlaceholder.image)),
+                image: DecorationImage(image: NetworkImage(widget.musicRelease.imageUrl ?? DefaultPlaceholder.image)),
               ),
               ResponsiveContainer(width: 5),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ResponsiveText(
-                      text: "Novo lançamento",
-                      fontColor: Color(0xff979797),
-                      fontSize: 12),
+                  ResponsiveText(text: "Novo lançamento", fontColor: Color(0xff979797), fontSize: 12),
                   ResponsiveText(
                       text: widget.musicRelease.artist!,
                       fontWeight: FontWeight.w500,
@@ -64,24 +60,18 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                       width: 130,
                       isCubic: true,
                       color: Colors.white,
-                      borderRadius:
-                          BorderRadius.horizontal(left: Radius.circular(15)),
+                      borderRadius: BorderRadius.horizontal(left: Radius.circular(15)),
                       image: DecorationImage(
-                          image: NetworkImage(widget.musicRelease.imageUrl ??
-                              DefaultPlaceholder.image)),
+                          image: NetworkImage(widget.musicRelease.imageUrl ?? DefaultPlaceholder.image)),
                     ),
                     ResponsiveContainer(width: 12),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ResponsiveContainer(height: 12),
+                        ResponsiveText(text: "Música nova", fontColor: Colors.white, fontSize: 16),
                         ResponsiveText(
-                            text: "Música nova",
-                            fontColor: Colors.white,
-                            fontSize: 16),
-                        ResponsiveText(
-                          text:
-                              "Single by ${widget.musicRelease.artist ?? DefaultPlaceholder.title}",
+                          text: "Single by ${widget.musicRelease.artist ?? DefaultPlaceholder.title}",
                           fontColor: Color(0xff979797),
                           fontSize: 12,
                         )
@@ -90,26 +80,25 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                   ],
                 ),
                 Positioned(
-                    right: 10,
-                    bottom: 10,
-                    child: IconButton.filled(
-                      style: IconButton.styleFrom(
-                        backgroundColor: Colors.white,
-                      ),
+                    right: 5,
+                    bottom: 5,
+                    child: IconButton(
+                      constraints: BoxConstraints(maxHeight: 55, maxWidth: 55),
                       iconSize: 36,
                       onPressed: () {
                         showModalBottomSheet(
-                          useRootNavigator: false,
-                          isScrollControlled: true,
-                          useSafeArea: true,
-                          context: context,
-                          builder: (context) {
-                            return MusicPage(music: widget.musicRelease);
-                          });
-                        },
-                        icon: Icon(Icons.play_arrow_rounded, color: secondaryColor, size: 36),
-                      )
-                )
+                            useRootNavigator: false,
+                            isScrollControlled: true,
+                            useSafeArea: true,
+                            context: context,
+                            builder: (context) {
+                              return MusicPage(music: widget.musicRelease, audioPlayer: widget.audioPlayer,);
+                            });
+                      },
+                      icon: Container(
+                          decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                          child: Icon(Icons.play_arrow_rounded, color: secondaryColor)),
+                    ))
               ],
             ),
           )
