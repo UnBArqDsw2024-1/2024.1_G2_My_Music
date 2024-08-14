@@ -71,7 +71,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   controller: controller,
                   children: [
                     SearchPage(),
-                    FeedPage(user: widget.user),
+                    FeedPage(user: widget.user, spotifyApi: widget.spotifyApi,),
                     UserPageOfPlaylists(),
                   ],
                 ),
