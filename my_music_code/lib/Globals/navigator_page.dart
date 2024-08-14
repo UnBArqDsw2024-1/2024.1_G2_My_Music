@@ -4,12 +4,13 @@ import 'package:my_music_code/Feed/feed_page.dart';
 import 'package:my_music_code/MyPlaylists/user_page_of_playlists.dart';
 import 'package:my_music_code/Search/search_page.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:spotify/spotify.dart' hide User;
 
 class NavigatorPage extends StatefulWidget {
-  const NavigatorPage({super.key, required this.user});
+  const NavigatorPage({super.key, required this.user, required this.spotifyApi});
   final User user;
+  final SpotifyApi spotifyApi;
 
-  
   @override
   State<NavigatorPage> createState() => _NavigatorPageState();
 }
