@@ -242,24 +242,24 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   Widget _buildArtistItemWithBackground(String name, String item, String imagePath) {
-  return Container(
-    decoration: BoxDecoration(
-      color: primaryColor, // Cor de fundo
-      borderRadius: BorderRadius.circular(8), // Borda arredondada
-    ),
-    padding: EdgeInsets.symmetric(horizontal: 20),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        CircleAvatar(
-          radius: 40,
-          backgroundImage: NetworkImage(DefaultPlaceholder.image),
-        ),
-        SizedBox(height: 8),
-        Text(name, style: TextStyle(color: Colors.white)),
-        Text(item, style: TextStyle(color: Colors.white)),
-      ],
-    ),
-  );
-}
+    return Container(
+      decoration: BoxDecoration(
+        color: primaryColor, // Cor de fundo
+        borderRadius: BorderRadius.circular(8), // Borda arredondada
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 15),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CircleAvatar(
+            radius: 40,
+            backgroundImage: NetworkImage(DefaultPlaceholder.image),
+          ),
+          SizedBox(height: 8),
+          Text(name, style: TextStyle(color: Colors.white)),
+          Text(item, style: TextStyle(color: Colors.white)),
+        ],
+      ),
+    );
+  }
 }
