@@ -120,13 +120,6 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                         )
                       ),
                     ),
-                    // imageUrl == null
-                    //     ? const Icon(Icons.person,
-                    //         size: 125, color: Colors.grey)
-                    //     : Image.network(
-                    //       imageUrl!,
-                    //       fit: BoxFit.cover,
-                    //     ), // substitua pelo URL da imagem
                   ),
                 ),
                 Positioned(
