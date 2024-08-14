@@ -186,7 +186,7 @@ class _FeedPageState extends State<FeedMusicPage> {
                 ),
               ),
               Text(
-                widget.artista,
+                widget.music.artist!,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 12,
@@ -201,9 +201,9 @@ class _FeedPageState extends State<FeedMusicPage> {
               onPressed: () {
                 _musicOptionsModalBottomSheet(
                   context,
-                  widget.artista,
-                  widget.music,
-                  widget.coverAlbum,
+                  widget.music.artist!,
+                  widget.music.name!,
+                  widget.music.imageUrl!,
                   isFavorite,
                 );
               },
@@ -215,7 +215,7 @@ class _FeedPageState extends State<FeedMusicPage> {
           ClipRRect(
             borderRadius: BorderRadius.circular(12.0),
             child: Image.network(
-              widget.coverAlbum,
+              widget.music.imageUrl!,
               width: 280,
               height: 280,
               fit: BoxFit.cover,
@@ -230,7 +230,7 @@ class _FeedPageState extends State<FeedMusicPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      widget.music,
+                      widget.music.name!,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
@@ -238,7 +238,7 @@ class _FeedPageState extends State<FeedMusicPage> {
                       ),
                     ),
                     Text(
-                      'By ' + widget.artista,
+                      'By ' + widget.music.artist!,
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 15,

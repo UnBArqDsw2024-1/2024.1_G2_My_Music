@@ -4,6 +4,7 @@ import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:my_music_code/Feed/feed_music_page.dart';
 
 class MusicPlaylistFeedComponent extends StatelessWidget {
   const MusicPlaylistFeedComponent(
@@ -18,7 +19,16 @@ class MusicPlaylistFeedComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return RawMaterialButton(
       constraints: BoxConstraints(),
-      onPressed: () {},
+      onPressed: () {
+        showModalBottomSheet(
+          useRootNavigator: false,
+          isScrollControlled: true,
+          useSafeArea: true,
+          context: context,
+          builder: (context) {
+            return FeedMusicPage(music: music);
+          });
+      },
       child: ResponsiveContainer(
         height: 60,
         width: 160,

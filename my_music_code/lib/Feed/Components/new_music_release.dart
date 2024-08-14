@@ -104,7 +104,7 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                         useSafeArea: true,
                         context: context,
                         builder: (context) {
-                          return FeedMusicPage();
+                          return FeedMusicPage(music: widget.musicRelease);
                         });
                       },
                       icon: Icon(Icons.play_arrow_rounded,
