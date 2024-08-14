@@ -57,7 +57,7 @@ Essas práticas de reutilização não só promovem a modularidade do código, m
 
 ## Reutilizações no Back-end
 
-Para compor o Back-end do projeto está sendo utilizado Dart e Flutter, como foi explicado anteriormente. Assim sendo, também utilizamos uma API, para que pudessemos integrar o acesso dos dados musicais do Spotify no nosso App. Para que pudessemos implementar a API no projeto, foi utilizado uma [biblioteca Dart para interface com a API do Spotify](https://pub.dev/packages/spotify).
+Para compor o Back-end do projeto está sendo utilizado Dart e Flutter, como foi explicado anteriormente. Assim sendo, também utilizamos uma API, para que pudessemos integrar o acesso dos dados musicais do Spotify¹ no nosso App. Para que pudessemos implementar a API no projeto, foi utilizado uma [biblioteca Dart para interface com a API do Spotify](https://pub.dev/packages/spotify).
 
 Durante a implementação da API, foram utilizadas algumas funções, fazendo o processo de reutilização durante o código.
 
@@ -123,16 +123,18 @@ A combinação dessas práticas de reutilização e otimização resulta em um s
 
 ## Referência Bibliografica
 
-> Spotify. Spotify. Disponível em: <https://www.spotify.com>. Acesso em: 14 ago. 2024.
+> ¹ Spotify. Spotify. Disponível em: <https://www.spotify.com>. Acesso em: 14 ago. 2024.
 
 ## Bibliografia
 
-1. SERRANO, Milene. Arquitetura e Desenho de Software - Aula REUTILIZAÇÃO & FRAMEWORK 1º/2022. Material apresentado para a disciplina de Arquitetura e Desenho de Software no curso de Engenharia de Software da UnB, FGA.
-2. Dart overview. Dart.dev. Acessado em 12 de agosto de 2024. Disponível em: <https://dart.dev/overview>
-3. ANDREY, Fábio; DE CASTRO, Andrey. Padrões e Frameworks de Arquitetura de Software. 2024. Disponível em: <https://www.inf.ufpr.br/andrey/ci163/PadroesFrameworksAl.pdf.> Acesso em: 14 ago. 2024.
+> SERRANO, Milene. Arquitetura e Desenho de Software - Aula REUTILIZAÇÃO & FRAMEWORK 1º/2022. Material apresentado para a disciplina de Arquitetura e Desenho de Software no curso de Engenharia de Software da UnB, FGA.
+> Dart overview. Dart.dev. Acessado em 12 de agosto de 2024. Disponível em: <https://dart.dev/overview>
+> ANDREY, Fábio; DE CASTRO, Andrey. Padrões e Frameworks de Arquitetura de Software. 2024. Disponível em: <https://www.inf.ufpr.br/andrey/ci163/PadroesFrameworksAl.pdf.> Acesso em: 14 ago. 2024.
 
 ## Histórico de versão
 
 | Versão | Data      | Descrição | Autores | Revisor |
 | :-:    | :-----:   | :------   | ----  | ------- |
-| 1.0    |12/08/2024 | Criação do Documento | [Limírio Guimarães](https://github.com/LimirioGuimaraes) e [Milena Baruc](https://github.com/MilenaBaruc)| [Revisor](), [Link da revisão]() |
+| 1.0    |12/08/2024 | Criação do Documento | [Limírio Guimarães](https://github.com/LimirioGuimaraes) e [Milena Baruc](https://github.com/MilenaBaruc)| [Ana Luiza](https://github.com/analuizargds), [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/114#pullrequestreview-2238788424) |
+| 2.0    |14/08/2024 | Correções do Documento | [Milena Baruc](https://github.com/MilenaBaruc)| |
+
