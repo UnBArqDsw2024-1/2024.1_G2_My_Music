@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/feed_horizontal_scroll_component.dart';
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
@@ -9,8 +10,8 @@ import 'package:my_music_code/SpotifyApi/api_settings.dart';
 import 'package:spotify/spotify.dart';
 
 class FeedPage extends StatefulWidget {
-  const FeedPage({super.key});
-
+  const FeedPage({super.key, required this.user});
+  final User user;
   @override
   State<FeedPage> createState() => _FeedPageState();
 }
@@ -87,8 +88,7 @@ class _FeedPageState extends State<FeedPage> {
   void initState() {
     super.initState();
 
-    final credentials =
-        SpotifyApiCredentials(ApiSettings.clientId, ApiSettings.clientSecret);
+    final credentials = SpotifyApiCredentials(ApiSettings.clientId, ApiSettings.clientSecret);
     final spotify = SpotifyApi(credentials);
     getRel(spotify);
   }

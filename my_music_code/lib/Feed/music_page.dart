@@ -10,7 +10,6 @@ class MusicPage extends StatefulWidget {
   });
 
   final Music music;
-
   @override
   State<MusicPage> createState() => _MusicPageState();
 }
@@ -209,6 +208,7 @@ class _MusicPageState extends State<MusicPage> {
               },
             ),
           ]),
+
       body: Column(
         children: <Widget>[
           SizedBox(height: 20), // Espaçamento entre a Row e a imagem
@@ -238,7 +238,7 @@ class _MusicPageState extends State<MusicPage> {
                       ),
                     ),
                     Text(
-                      'By ' + widget.music.artist!,
+                      'By ${widget.music.artist!}',
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 15,
@@ -296,6 +296,7 @@ class _MusicPageState extends State<MusicPage> {
                   alignment: Alignment.center,
                   children: <Widget>[
                     Container(
+
                       width: 100,
                       height: 100,
                       decoration: BoxDecoration(

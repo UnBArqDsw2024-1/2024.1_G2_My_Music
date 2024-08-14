@@ -99,17 +99,17 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                       iconSize: 36,
                       onPressed: () {
                         showModalBottomSheet(
-                        useRootNavigator: false,
-                        isScrollControlled: true,
-                        useSafeArea: true,
-                        context: context,
-                        builder: (context) {
-                          return MusicPage(music: widget.musicRelease);
-                        });
-                      },
-                      icon: Icon(Icons.play_arrow_rounded,
-                          color: secondaryColor, size: 36),
-                    ))
+                          useRootNavigator: false,
+                          isScrollControlled: true,
+                          useSafeArea: true,
+                          context: context,
+                          builder: (context) {
+                            return MusicPage(music: widget.musicRelease);
+                          });
+                        },
+                        icon: Icon(Icons.play_arrow_rounded, color: secondaryColor, size: 36),
+                      )
+                )
               ],
             ),
           )
