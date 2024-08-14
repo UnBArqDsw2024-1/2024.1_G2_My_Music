@@ -72,7 +72,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   children: [
                     SearchPage(),
                     FeedPage(user: widget.user),
-                    MyPlaylists(),
+                    UserPageOfPlaylists(),
                   ],
                 ),
 

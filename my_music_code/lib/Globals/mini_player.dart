@@ -18,7 +18,7 @@ class _MiniPlayerState extends State<MiniPlayer> {
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
         onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => FeedMusicPage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => MusicPage()));
         },
         child: Container(
           decoration: BoxDecoration(
