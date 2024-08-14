@@ -1,6 +1,7 @@
 # Documento de Reutilização
 
 ## Introdução
+
 Este artefato tem como objetivo fornecer uma visão detalhada sobre as reutilizações implementadas no software MyMusic. Nele, são abordadas reutilizações aplicáveis em diferentes níveis, incluindo o nível de projeto, onde são adotadas boas práticas e padrões de projeto amplamente estabelecidos, testados e comuns a diversos cenários. Além disso, o documento foca na reutilização em níveis de código, componentes e bibliotecas, oferecendo uma perspectiva abrangente tanto para o Front-end quanto para o Back-end.
 
 ## Metodologia
@@ -58,10 +59,67 @@ Essas práticas de reutilização não só promovem a modularidade do código, m
 
 Para compor o Back-end do projeto está sendo utilizado Dart e Flutter, como foi explicado anteriormente. Assim sendo, também utilizamos uma API, para que pudessemos integrar o acesso dos dados musicais do Spotify no nosso App. Para que pudessemos implementar a API no projeto, foi utilizado uma [biblioteca Dart para interface com a API do Spotify](https://pub.dev/packages/spotify).
 
+Durante a implementação da API, foram utilizadas algumas funções, fazendo o processo de reutilização durante o código.
+
+1. **`setState`:** é uma função fundamental no Flutter usada para atualizar a interface do usuário (UI) em resposta a mudanças no estado interno de um widget. Quando você chama setState(), o Flutter sabe que algo mudou, e então ele repinta o widget com o novo estado. Exemplo:
+
+```bash
+   for (var album in newReleases.items!) {
+      if (album != Null) {
+        setState(() {
+          musicRelease = Music(
+            name: album.name!,
+            id: album.id!,
+            artist: album.artists!.first.name!,
+            imageUrl: album.images!.first.url!,
+          );
+        });
+      }
+    }
+```
+
+2. **`final`:** é usada para declarar uma variável cujo valor não pode ser alterado depois de ser inicializado. Ou seja, uma vez que uma variável final recebe um valor, esse valor não pode ser modificado durante a execução do programa. Exemplo:
+
+```bash
+class Music {
+  final String? name;
+  final String? id;
+  final String? artist;
+  final String? imageUrl;
+
+  Music({this.name, this.id, this.artist, this.imageUrl});
+}
+```
 
 ## Hots-pots e Frozen-spots
 
+### Hot-spots
+
+No contexto do desenvolvimento de software e especialmente em sistemas de alto desempenho, hot-spots referem-se às áreas do código ou do sistema que experimentam uma carga significativa de processamento ou acesso. Identificar esses pontos críticos é fundamental para otimizar o desempenho e a eficiência do sistema. No projeto MyMusic, alguns exemplos de hot-spots podem incluir:
+
+1. *Pontos de Acesso a Dados:* As funções que fazem chamadas frequentes para a API do Spotify são exemplos de hot-spots. Essas funções devem ser otimizadas para garantir que o acesso à API não se torne um gargalo. O uso de técnicas como cache e otimização das chamadas API pode melhorar a performance.
+
+2. *Componentes de UI Dinâmicos:* Widgets que realizam cálculos pesados ou atualizações frequentes, como as listas de músicas e os feeds de lançamentos, podem se tornar hot-spots. Esses componentes precisam ser projetados para minimizar a quantidade de trabalho realizado durante a construção e atualização da interface.
+
+3. *Funções de Processamento:* Funções que processam grandes volumes de dados, como a manipulação e análise de listas de músicas, são áreas críticas que devem ser otimizadas para evitar lentidão no sistema.
+
+### Frozen-spots
+
+Frozen-spots referem-se às áreas do código ou do sistema que são estáveis e raramente alteradas. Essas áreas, embora menos críticas para a performance imediata, são importantes para a manutenção e confiabilidade do sistema. No projeto MyMusic, exemplos de frozen-spots incluem:
+
+1. *Definições de Dados Estáticas:* Classes e estruturas de dados que são invariáveis ao longo do tempo, como a definição da classe Music, são exemplos de frozen-spots. Essas estruturas são essenciais para a representação de dados e devem ser projetadas para serem robustas e imutáveis.
+
+2. *Configurações de Frameworks:* Configurações e definições de bibliotecas de terceiros, como o uso do Flutter e do Dart, são áreas estáveis que não mudam frequentemente. Garantir a estabilidade dessas configurações é crucial para a integridade e continuidade do projeto.
+
+3. *Componentes de Interface Consistentes:* Widgets e componentes que fornecem uma aparência e comportamento consistentes em todo o aplicativo, como o ProfileDrawer, são frozen-spots. Essas partes do código raramente mudam, e sua estabilidade ajuda a manter a consistência da interface do usuário.
+
 ## Conclusão
+
+O projeto MyMusic exemplifica a importância da reutilização eficaz tanto no Front-end quanto no Back-end para criar uma aplicação escalável e eficiente. A utilização de Dart e Flutter para o desenvolvimento Front-end permite a criação de widgets reutilizáveis, promovendo a consistência e facilitando a manutenção. No Back-end, a integração com a API do Spotify e o uso de práticas como setState e final asseguram que o sistema se mantenha eficiente e bem estruturado.
+
+A identificação de hot-spots e frozen-spots é crucial para a otimização e estabilidade do sistema. Hot-spots, como pontos de acesso a dados e componentes de UI dinâmicos, precisam ser cuidadosamente monitorados e otimizados. Por outro lado, frozen-spots, como definições de dados estáticos e configurações de frameworks, devem ser mantidos estáveis para garantir a continuidade e integridade do projeto.
+
+A combinação dessas práticas de reutilização e otimização resulta em um sistema robusto e eficiente, capaz de atender às necessidades dos usuários e adaptar-se a novas demandas com facilidade.
 
 ## Referência Bibliografica
 
@@ -69,8 +127,9 @@ Para compor o Back-end do projeto está sendo utilizado Dart e Flutter, como foi
 
 ## Bibliografia
 
-1. SERRANO, Milene. Arquitetura e Desenho de Software - Aula REUTILIZAÇÃO & FRAMEWORK 1º/2022. Material apresentado para a disciplina de Arquitetura e Desenho de Software no curso de Engenharia de Software da UnB, FGA. 
+1. SERRANO, Milene. Arquitetura e Desenho de Software - Aula REUTILIZAÇÃO & FRAMEWORK 1º/2022. Material apresentado para a disciplina de Arquitetura e Desenho de Software no curso de Engenharia de Software da UnB, FGA.
 2. Dart overview. Dart.dev. Acessado em 12 de agosto de 2024. Disponível em: <https://dart.dev/overview>
+3. ANDREY, Fábio; DE CASTRO, Andrey. Padrões e Frameworks de Arquitetura de Software. 2024. Disponível em: <https://www.inf.ufpr.br/andrey/ci163/PadroesFrameworksAl.pdf.> Acesso em: 14 ago. 2024.
 
 ## Histórico de versão
 
