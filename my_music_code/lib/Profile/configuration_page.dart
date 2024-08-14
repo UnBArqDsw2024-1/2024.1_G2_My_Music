@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -111,11 +112,13 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                   },
                   child: CircleAvatar(
                     radius: 85,
+                    backgroundColor: backgroundColor,
                     child: Container(
                       decoration: BoxDecoration(
+                        color: backgroundColor,
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                          image: NetworkImage(imageUrl ?? DefaultPlaceholder.image),
+                          image: CachedNetworkImageProvider(imageUrl ?? DefaultPlaceholder.image),
                           fit: BoxFit.cover
                         )
                       ),
