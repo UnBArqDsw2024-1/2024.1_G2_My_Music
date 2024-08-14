@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 
+
 class MusicPage extends StatefulWidget {
   const MusicPage({
+
       super.key,
       this.artista = 'Eminem',
       this.music = 'Venom',
@@ -16,10 +18,10 @@ class MusicPage extends StatefulWidget {
     final String coverAlbum;
 
   @override
-  State<MusicPage> createState() => _FeedPageState();
+  State<MusicPage> createState() => _MusicPageState();
 }
 
-class _FeedPageState extends State<MusicPage> {
+class _MusicPageState extends State<MusicPage> {
   bool isPlaying = false;
   bool isFavorite = false;
 
@@ -263,7 +265,7 @@ class _FeedPageState extends State<MusicPage> {
                       ),
                     ),
                     Text(
-                      'By ' + widget.artista,
+                      'By ${widget.artista}',
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 15,

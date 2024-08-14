@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Auth/Service/auth_service.dart';
 import 'package:my_music_code/Globals/custom_text_field.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
@@ -15,24 +16,25 @@ Map<String, String> errorMap = {
 void errorDialogMessage(BuildContext context, String error, {String title = "Erro de autenticação"}) {
   // Mostra a mensagem de erro
   showDialog(
-    context: context,
-    builder: (context) {
-      return AlertDialog(
-        backgroundColor: backgroundColor,
-        title: Text(title, textAlign: TextAlign.center, style: TextStyle(color: Colors.white)),
-        content: Text(error, textAlign: TextAlign.center, style: TextStyle(color: Colors.white)),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: Text("Ok")),
-        ],
-      );
-    }
-  );
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: backgroundColor,
+          title: Text(title, textAlign: TextAlign.center, style: TextStyle(color: Colors.white)),
+          content: Text(error, textAlign: TextAlign.center, style: TextStyle(color: Colors.white)),
+          actions: [
+            TextButton(onPressed: () => Navigator.pop(context), child: Text("Ok")),
+          ],
+        );
+      });
 }
 
 void forgotPassword(BuildContext context) {
-    showDialog(
+  String email = '';
+  
+  showDialog(
     context: context,
-    builder: (context){
+    builder: (context) {
       return AlertDialog(
         backgroundColor: const Color(0xff0F0F0F),
         title: Text("Recuperar Senha", textAlign: TextAlign.center, style: TextStyle(color: Colors.white)),
@@ -41,13 +43,12 @@ void forgotPassword(BuildContext context) {
           children: [
             ResponsiveText(text: "Insira o email associado a sua conta", fontColor: Color(0xffA4A4A4), fontSize: 12),
             ResponsiveContainer(height: 12),
-            CustomTextField(onChanged: (e){}, hintText: 'Email', prefixIcon: Icons.email),
+            CustomTextField(onChanged: (e) => email = e, hintText: 'Email', prefixIcon: Icons.email),
             ResponsiveContainer(height: 12),
-            
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: GestureDetector(
-                // onTap: () => AuthService().resetPassword(context: context, email: user.email),
+                onTap: () => AuthService().resetPassword(context: context, email: email),
                 child: Container(
                   height: responsiveFigmaHeight(50),
                   width: double.infinity,
