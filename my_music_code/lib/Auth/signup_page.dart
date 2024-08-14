@@ -6,6 +6,7 @@ import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key, this.onTapTogglePage});
@@ -16,6 +17,31 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+
+  // text controllers
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _nameController = TextEditingController();
+  final _usernameController = TextEditingController();
+  final _repeatPasswordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    _nameController.dispose();
+    _usernameController.dispose();
+    _repeatPasswordController.dispose();
+    super.dispose();
+  }
+
+  Future signUp() async {
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: _emailController.text.trim(), 
+      password: _passwordController.text.trim()
+      );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +77,11 @@ class _SignUpPageState extends State<SignUpPage> {
                   CustomTextField(
                     labelText: "Primeiro nome",
                     hintText: "Nome",
+                    onChanged: (value) {
+                      setState(() {
+                        _nameController.text = value;
+                      });
+                    },
                     prefixIcon: MdiIcons.account,
                     hintTextColor: Color(0xff868080),
                     fillColor: Color(0xffFFFFFF),
@@ -58,21 +89,26 @@ class _SignUpPageState extends State<SignUpPage> {
                     selectedBorderColor: primaryColor,
                     inputTextColor: Color(0xff000000),
                   ),
-                  ResponsiveContainer(height: 14),
-                  CustomTextField(
-                    labelText: "Sobrenome",
-                    hintText: "Sobrenome",
-                    prefixIcon: MdiIcons.accountOutline,
-                    hintTextColor: Color(0xff868080),
-                    fillColor: Color(0xffFFFFFF),
-                    leadingIconColor: Color(0xff000000),
-                    selectedBorderColor: primaryColor,
-                    inputTextColor: Color(0xff000000),
-                  ),
+                  // ResponsiveContainer(height: 14),
+                  // CustomTextField(
+                  //   labelText: "Sobrenome",
+                  //   hintText: "Sobrenome",
+                  //   prefixIcon: MdiIcons.accountOutline,
+                  //   hintTextColor: Color(0xff868080),
+                  //   fillColor: Color(0xffFFFFFF),
+                  //   leadingIconColor: Color(0xff000000),
+                  //   selectedBorderColor: primaryColor,
+                  //   inputTextColor: Color(0xff000000),
+                  // ),
                   ResponsiveContainer(height: 14),
                   CustomTextField(
                     labelText: "Nome de usuário",
                     hintText: "Usuario.Exemplo",
+                    onChanged: (value) {
+                      setState(() {
+                        _usernameController.text = value;
+                      });
+                    },
                     prefixIcon: Icons.alternate_email_rounded,
                     hintTextColor: Color(0xff868080),
                     fillColor: Color(0xffFFFFFF),
@@ -84,6 +120,11 @@ class _SignUpPageState extends State<SignUpPage> {
                   CustomTextField(
                     labelText: "Email",
                     hintText: "Usuario@gmail.com",
+                    onChanged: (value) {
+                      setState(() {
+                        _emailController.text = value;
+                      });
+                    },
                     prefixIcon: Icons.email,
                     hintTextColor: Color(0xff868080),
                     fillColor: Color(0xffFFFFFF),
@@ -97,6 +138,11 @@ class _SignUpPageState extends State<SignUpPage> {
                     hintText: "•"*10,
                     obscuringText: true,
                     obscuringCharacter: "•",
+                    onChanged: (value) {
+                      setState(() {
+                        _passwordController.text = value;
+                      });
+                    },
                     prefixIcon: MdiIcons.lock,
                     hintTextColor: Color(0xff868080),
                     fillColor: Color(0xffFFFFFF),
@@ -110,6 +156,11 @@ class _SignUpPageState extends State<SignUpPage> {
                     hintText: "•"*10,
                     obscuringText: true,
                     obscuringCharacter: "•",
+                    onChanged: (value) {
+                      setState(() {
+                        _repeatPasswordController.text = value;
+                      });
+                    },
                     prefixIcon: MdiIcons.lockOutline,
                     hintTextColor: Color(0xff868080),
                     fillColor: Color(0xffFFFFFF),
@@ -122,7 +173,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   
                   
                   RawMaterialButton(
-                    onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => NavigatorPage())),
+                    onPressed: signUp,//() => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => NavigatorPage())),
                     child: ResponsiveContainer(
                       height: 47,
                       width: 233,
