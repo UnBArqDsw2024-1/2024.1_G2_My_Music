@@ -22,9 +22,9 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
   String email = "";
   String username = "";
   String password = "";
-  final ImagePicker imagePicker = ImagePicker();
-  String? imageUrl;
+  
   Future<void> pickImage() async {
+    final ImagePicker imagePicker = ImagePicker();
     try {
       XFile? res = await imagePicker.pickImage(source: ImageSource.gallery);
 
@@ -42,6 +42,8 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
   }
 
   Future<void> uploadImageToFirebase(File image) async {
+    String? imageUrl;
+    
     try {
       Reference reference =
           FirebaseStorage.instance.ref().child("Images/${widget.user.uid}.png");
@@ -63,15 +65,6 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
         ),
       );
     }
-  }
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    setState(() {
-      imageUrl = widget.user.photoURL ?? DefaultPlaceholder.image;
-    });
-    super.initState();
   }
 
   @override
@@ -107,7 +100,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
               children: [
                 GestureDetector(
                   onTap: () async {
-                    pickImage(); // TODO : MUDA FOTO DE PERFIL AQUI
+                    pickImage();
                   },
                   child: CircleAvatar(
                     radius: 85,
@@ -117,7 +110,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                         color: backgroundColor,
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                          image: CachedNetworkImageProvider(imageUrl ?? DefaultPlaceholder.image),
+                          image: CachedNetworkImageProvider(widget.user.photoURL ?? DefaultPlaceholder.image),
                           fit: BoxFit.cover
                         )
                       ),
@@ -184,26 +177,6 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                   email = value;
                 });
               },
-            ),
-            CustomTextField(
-              hintText: "Primeiro nome",
-              hintTextColor: Colors.white.withOpacity(0.25),
-              selectedBorderColor: secondaryColor,
-              fillColor: secondaryColor,
-              prefixIcon: Icons.person,
-              leadingIconColor: Colors.white,
-              inputTextColor: Colors.white,
-              cursorColor: Colors.white,
-            ),
-            CustomTextField(
-              hintText: "Sobrenome",
-              hintTextColor: Colors.white.withOpacity(0.25),
-              selectedBorderColor: secondaryColor,
-              fillColor: secondaryColor,
-              prefixIcon: Icons.person,
-              leadingIconColor: Colors.white,
-              inputTextColor: Colors.white,
-              cursorColor: Colors.white,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
