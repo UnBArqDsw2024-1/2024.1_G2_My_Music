@@ -14,22 +14,6 @@ class _FriendsPageState extends State<FriendsPage> {
 
   @override
   Widget build(BuildContext context) {
-    int friends =
-        30; // Número de amigos para teste, futuramente pegar da database
-
-    List<Widget> friendsWidgets = List.generate(
-      friends,
-      (index) => ListTile(
-        leading: CircleAvatar(
-          backgroundImage: NetworkImage(DefaultPlaceholder.image),
-        ),
-        title: Text(
-          'Amigo $index',
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
-    );
-
     return Scaffold(
         backgroundColor: backgroundColor,
         appBar: AppBar(
@@ -59,7 +43,7 @@ class _FriendsPageState extends State<FriendsPage> {
 }
 
 class CustomSearchDelegate extends SearchDelegate {
-  final List<Widget> friendsWidget = [];
+  List<String> friendsList = List.generate(30, (int index) => "Amigo $index");
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
@@ -72,13 +56,20 @@ class CustomSearchDelegate extends SearchDelegate {
     ];
   }
 
-  // @override
-  // List<Widget> buildLeading(BuildContext context) {}
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+     onPressed: () {
+      close(context, null);
+     },
+     icon: const Icon(Icons.arrow_back),
+     );
+  }
 
   @override
-  List<Widget> buildResults(BuildContext context) {
+  Widget buildResults(BuildContext context) {
     List<String> matchQuery = [];
-    for (var friends in friendsWidget) {
+    for (var friends in friendsList) {
       if (friends.toLowerCase().contains(query.toLowerCase())) {
         matchQuery.add(friends);
       }
@@ -95,9 +86,9 @@ class CustomSearchDelegate extends SearchDelegate {
   }
 
   @override
-  List<Widget> buildSuggestions(BuildContext context) {
+  Widget buildSuggestions(BuildContext context) {
     List<String> matchQuery = [];
-    for (var friends in friendsWidget) {
+    for (var friends in friendsList) {
       if (friends.toLowerCase().contains(query.toLowerCase())) {
         matchQuery.add(friends);
       }
@@ -110,7 +101,7 @@ class CustomSearchDelegate extends SearchDelegate {
           title: Text(result),
         );
       },
-    );    
+    );
   }
 }
 
