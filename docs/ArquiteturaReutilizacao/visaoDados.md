@@ -12,11 +12,11 @@ No caso da utilização de um Banco de Dados Relacional a visão de dados pode s
 
 ## Metodologia
 
-Para o desenvolvimento do documento de visão de dados, primeiramente foi feito um estudo inicial de como deve ser esse documento, para o estudo foi utilizado video aulas e slides da professora Milene Serrano. Foi utilizado como base o  [diagrama de classe](https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/Modelagem/diagramaClasses/) e foi utilizado o site Lucichart.
+Para o desenvolvimento do documento de visão de dados, primeiramente foi feito um estudo inicial de como deve ser esse documento, para o estudo foi utilizado video aulas e slides da professora Milene Serrano. Foi utilizado como base o  [diagrama de classe](https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/Modelagem/diagramaClasses/) e foi utilizado o site Lucidchart.
 
 ## Diagrama 
 
-Na figura 1 abaixo, contem a visão de dados.
+Na figura 1 abaixo, contém a visão de dados.
 
 <center>
 
