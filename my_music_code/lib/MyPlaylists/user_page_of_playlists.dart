@@ -6,8 +6,8 @@ import 'package:my_music_code/MyPlaylists/new_playlist_page.dart';
 import 'package:my_music_code/MyPlaylists/playlist_page.dart';
 
 class UserPageOfPlaylists extends StatefulWidget {
-  const UserPageOfPlaylists({super.key, required this.user});
-  final User user;
+  const UserPageOfPlaylists({super.key});
+
   @override
   State<UserPageOfPlaylists> createState() => _UserPageOfPlaylistsState();
 }
@@ -100,7 +100,7 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
         appBar: AppBar(
           backgroundColor: backgroundColor,
           centerTitle: true,
-          title: Text("${widget.user.displayName}'s Playlists", style: TextStyle(color: Colors.white)),
+          title: Text("${DefaultPlaceholder.title}'s Playlists", style: TextStyle(color: Colors.white)),
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(AppBar().preferredSize.height),
             child: Container(
