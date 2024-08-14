@@ -8,7 +8,7 @@ Map<String, String> errorMap = {
   'invalid-credential': 'credenciais inválidas!',
   'email-already-in-use': 'Este email já está em uso!',
   'weak-passowrd': 'senha fraca!',
-  'different-password':'senhas diferentes!',
+  'different-password': 'senhas diferentes!',
 };
 
 class SignLoginModel {
@@ -28,14 +28,15 @@ class AuthService {
       loadingDialog(context);
       if (userModel.creatingAccount) {
         // Verifica se as não senhas são iguais
-        if(userModel.password != userModel.confirmPassword){
+        if (userModel.password != userModel.confirmPassword) {
           if (context.mounted) Navigator.pop(context);
           if (context.mounted) errorDialogMessage(context, errorMap['different-password']!);
           return;
         }
 
-        await FirebaseAuth.instance.createUserWithEmailAndPassword(email: userModel.email, password: userModel.password);
-        
+        await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(email: userModel.email, password: userModel.password);
+        await FirebaseAuth.instance.signOut();
       } else {
         await FirebaseAuth.instance.signInWithEmailAndPassword(email: userModel.email, password: userModel.password);
       }

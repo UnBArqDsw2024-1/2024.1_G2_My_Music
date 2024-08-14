@@ -32,12 +32,7 @@ class _AuthPageState extends State<AuthPage> {
             if (snapshot.hasData && !userModel.creatingAccount) {
               return NavigatorPage(user: snapshot.data!);
             } else {
-              if (snapshot.hasData && userModel.creatingAccount) {
-                togglePage();
-              }
-              return isLogin
-                  ? LoginPage(userModel: userModel, onTapTogglePage: togglePage)
-                  : SignUpPage(userModel: userModel, onTapTogglePage: togglePage);
+              return isLogin? LoginPage(userModel: userModel, onTapTogglePage: togglePage) : SignUpPage(userModel: userModel, onTapTogglePage: togglePage);
             }
           },
         ),

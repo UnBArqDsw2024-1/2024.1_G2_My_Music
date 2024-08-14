@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 import 'package:my_music_code/Auth/Service/auth_service.dart';
 import 'package:my_music_code/Globals/custom_text_field.dart';
+import 'package:my_music_code/Globals/dialogs.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
@@ -17,7 +18,6 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -118,8 +118,11 @@ class _SignUpPageState extends State<SignUpPage> {
                       spacing: 8,
                       children: [
                         RawMaterialButton(
-                            onPressed: () {
+                            onPressed: () async {
                               AuthService().controlSignLogin(context: context, userModel: widget.userModel);
+                              widget.onTapTogglePage!();
+                              Navigator.pop(context);
+                              errorDialogMessage(context, "Conta criada com sucesso",title: "Atenção!");
                             },
                             child: ResponsiveContainer(
                               height: 47,

@@ -64,13 +64,50 @@ class _MusicListTileState extends State<MusicListTile> {
                 ],
               ),
             ),
-            IconButton(
-              onPressed: (){}, 
+            PopupMenuButton(
+              color: secondaryColor,
               icon: Icon(Icons.more_vert, color: Colors.white),
+              itemBuilder: (BuildContext context) => [
+              PopupMenuItem(
+                  child: Row(
+                    children: [
+                      Icon(
+                        color: Colors.white,
+                        Icons.playlist_add),
+                      SizedBox(width: 8),
+                      Text('Adicionar à playlist', style: TextStyle(color: primaryFontColor),),
+                    ],
+                  ),
+                  value: 'Adicionar à playlist',
+                ),
+                PopupMenuItem(
+                  child: Row(
+                    children: [
+                      Icon(
+                        color: Colors.white,
+                        Icons.favorite),
+                      SizedBox(width: 8),
+                      Text('Favoritar música', style: TextStyle(color: primaryFontColor),),
+                    ],
+                  ),
+                  value: 'Favoritar música',
+                ),
+                PopupMenuItem(
+                  child: Row(
+                    children: [
+                      Icon(
+                        color: Colors.white,
+                        Icons.share),
+                      SizedBox(width: 8),
+                      Text('Compartilhar música', style: TextStyle(color: primaryFontColor),),
+                    ],
+                  ),
+                  value: 'Compartilhar música',
+                ),
+              ],
             )
           ],
         ),
       ),
-    );
-  }
-}
+   );
+  }}
