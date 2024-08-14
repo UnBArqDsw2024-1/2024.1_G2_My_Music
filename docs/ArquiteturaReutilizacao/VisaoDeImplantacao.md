@@ -56,9 +56,10 @@ Autores: [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](http
   - **MyMusic.apk**: Output de uma versão executável do projeto para o cliente final.
    
 ## Referências Bibliográficas
+
 > ¹ Visual Paradigm Online. Ferramenta gratuita de diagrama de implantação on-line. Disponível em: <https://online.visual-paradigm.com/diagrams/tutorials/deployment-diagram-tutorial/>. Acesso em: 05 agosto 2024.
 
-## Bibliográfia
+## Bibliografia
 
 > Deployment Diagram. Disponível em: <https://sparxsystems.com/enterprise_architect_user_guide/16.1/modeling_languages/deploymentdiagram.html>. Acesso em: 05 agosto 2024.
 
