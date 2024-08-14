@@ -90,7 +90,7 @@ class _SearchPageState extends State<SearchPage> {
                         child: Center(
                           child: 
                             ResponsiveText(
-                              text: "Pesqisar música, playlist, artista...",
+                              text: "Pesquisar música, playlist, artista...",
                               //fontSize: 18,
                               fontWeight: FontWeight.w500,
                               fontColor: const Color.fromRGBO(255, 255, 255, 0.6),
