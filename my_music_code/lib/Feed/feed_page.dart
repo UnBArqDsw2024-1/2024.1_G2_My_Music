@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Album/album_page.dart';
 import 'package:my_music_code/Feed/Components/feed_horizontal_scroll_component.dart';
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Feed/Components/feed_profile_app_bar.dart';
@@ -18,7 +19,7 @@ class FeedPage extends StatefulWidget {
 }
 
 class _FeedPageState extends State<FeedPage> {
-  List<AlbumBase> topReleases = [];
+  List<AlbumModel> topReleases = [];
   List<Music> recentMusics = [];
   Music musicRelease = Music();
 
@@ -32,13 +33,17 @@ class _FeedPageState extends State<FeedPage> {
       if (pages.items != null) {
         for (var album in pages.items!) {
           if (album is AlbumSimple) {
-            setState(() {
-              topReleases.add(AlbumBase(
-                  listMusic: [],
+            var pages_tracks = await spotify.albums.tracks(album.id!).first().asStream().first;
+            // for (var music in pages_tracks.items!) {
+            //   print(music.name);
+            // }
+            setState(()  {
+              topReleases.add(AlbumModel(
+                  songs: pages_tracks.items,
                   name: album.name!,
                   id: album.id!,
                   artist: album.artists!.first.name!,
-                  imageUrl: album.images!.first.url!));
+                  image: album.images!.first.url!));
             });
           }
         }
