@@ -24,7 +24,7 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
           ListTile(
             leading: CircleAvatar(
               radius: 25,
-              backgroundImage: NetworkImage(DefaultPlaceholder.image),
+              backgroundImage: NetworkImage(widget.user.photoURL ?? DefaultPlaceholder.image),
             ),
             title: ResponsiveText(text: widget.user.displayName, fontSize: 16),
             subtitle: ResponsiveText(

@@ -15,7 +15,10 @@ PreferredSizeWidget feedProfileAppBar({required User user}) {
           borderRadius: BorderRadius.circular(100),
           isCubic: true,
           image: DecorationImage(
-            image: NetworkImage(DefaultPlaceholder.image),
+            image: NetworkImage(
+              user.photoURL ?? DefaultPlaceholder.image,
+            ),
+            fit: BoxFit.cover,
           ),
         ),
         onPressed: () => Scaffold.of(context).openDrawer(),

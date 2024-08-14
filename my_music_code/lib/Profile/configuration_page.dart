@@ -111,15 +111,22 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                   },
                   child: CircleAvatar(
                     radius: 85,
-                    child: imageUrl == null
-                        ? const Icon(Icons.person,
-                            size: 125, color: Colors.grey)
-                        : ClipOval(
-                            child: Image.network(
-                              imageUrl!,
-                              fit: BoxFit.cover,
-                            ),
-                          ), // substitua pelo URL da imagem
+                    child: Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          image: NetworkImage(imageUrl ?? DefaultPlaceholder.image),
+                          fit: BoxFit.cover
+                        )
+                      ),
+                    ),
+                    // imageUrl == null
+                    //     ? const Icon(Icons.person,
+                    //         size: 125, color: Colors.grey)
+                    //     : Image.network(
+                    //       imageUrl!,
+                    //       fit: BoxFit.cover,
+                    //     ), // substitua pelo URL da imagem
                   ),
                 ),
                 Positioned(
