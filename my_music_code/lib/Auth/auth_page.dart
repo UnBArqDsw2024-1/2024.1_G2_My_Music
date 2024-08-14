@@ -4,6 +4,8 @@ import 'package:my_music_code/Auth/Service/auth_service.dart';
 import 'package:my_music_code/Auth/login_page.dart';
 import 'package:my_music_code/Auth/signup_page.dart';
 import 'package:my_music_code/Globals/navigator_page.dart';
+import 'package:my_music_code/SpotifyApi/api_settings.dart';
+import 'package:spotify/spotify.dart' hide User;
 
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});
@@ -30,7 +32,9 @@ class _AuthPageState extends State<AuthPage> {
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
             if (snapshot.hasData && !userModel.creatingAccount) {
-              return NavigatorPage(user: snapshot.data!);
+              SpotifyApiCredentials credentials = SpotifyApiCredentials(ApiSettings.clientId, ApiSettings.clientSecret);
+              SpotifyApi spotify = SpotifyApi(credentials);
+              return NavigatorPage(user: snapshot.data!, spotify: spotify);
             } else {
               return isLogin? LoginPage(userModel: userModel, onTapTogglePage: togglePage) : SignUpPage(userModel: userModel, onTapTogglePage: togglePage);
             }

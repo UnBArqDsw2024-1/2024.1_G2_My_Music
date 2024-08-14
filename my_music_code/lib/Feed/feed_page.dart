@@ -6,13 +6,13 @@ import 'package:my_music_code/Feed/Components/feed_profile_app_bar.dart';
 import 'package:my_music_code/Feed/Components/new_music_release.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/Profile/profile_drawer.dart';
-import 'package:my_music_code/SpotifyApi/api_settings.dart';
 import 'package:spotify/spotify.dart' hide User;
 
 class FeedPage extends StatefulWidget {
-  const FeedPage({super.key, required this.user});
+  const FeedPage({super.key, required this.user, required this.spotify});
+  final SpotifyApi spotify;
   final User user;
-  
+
   @override
   State<FeedPage> createState() => _FeedPageState();
 }
@@ -88,10 +88,7 @@ class _FeedPageState extends State<FeedPage> {
   @override
   void initState() {
     super.initState();
-
-    final credentials = SpotifyApiCredentials(ApiSettings.clientId, ApiSettings.clientSecret);
-    final spotify = SpotifyApi(credentials);
-    getRel(spotify);
+    getRel(widget.spotify);
   }
 
   @override

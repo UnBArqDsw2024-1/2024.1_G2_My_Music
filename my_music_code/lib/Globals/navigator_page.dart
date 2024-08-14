@@ -4,12 +4,13 @@ import 'package:my_music_code/Feed/feed_page.dart';
 import 'package:my_music_code/MyPlaylists/user_page_of_playlists.dart';
 import 'package:my_music_code/Search/search_page.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:spotify/spotify.dart' hide User;
 
 class NavigatorPage extends StatefulWidget {
-  const NavigatorPage({super.key, required this.user});
+  const NavigatorPage({super.key, required this.user, required this.spotify});
   final User user;
+ final SpotifyApi spotify;
 
-  
   @override
   State<NavigatorPage> createState() => _NavigatorPageState();
 }
@@ -17,6 +18,7 @@ class NavigatorPage extends StatefulWidget {
 class _NavigatorPageState extends State<NavigatorPage> {
   PageController controller = PageController(initialPage: 1);
   int pageIndex = 1;
+
 
   setIndex(int index) {
     setState(() => pageIndex = index);
@@ -69,8 +71,8 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   physics: const NeverScrollableScrollPhysics(),
                   controller: controller,
                   children: [
-                    SearchPage(),
-                    FeedPage(user: widget.user),
+                    SearchPage(spotifyApi: widget.spotify,),
+                    FeedPage(user: widget.user, spotify: widget.spotify),
                     UserPageOfPlaylists(),
                   ],
                 ),
