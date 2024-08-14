@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_music_code/Feed/feed_music_page.dart';
+import 'package:my_music_code/Feed/music_page.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/style.dart';
