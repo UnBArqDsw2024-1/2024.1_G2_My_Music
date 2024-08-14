@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Globals/custom_text_field.dart';
 import 'package:my_music_code/Globals/style.dart';
-import 'package:my_music_code/Profile/add_friend_page.dart';
+import 'package:my_music_code/Profile/Components/query_result_widget.dart';
+// import 'package:my_music_code/Profile/add_friend_page.dart';
 
 class FriendsPage extends StatefulWidget {
   const FriendsPage({super.key});
@@ -10,103 +12,67 @@ class FriendsPage extends StatefulWidget {
 }
 
 class _FriendsPageState extends State<FriendsPage> {
-  final TextEditingController _searchController = TextEditingController();
+  String query = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
+      appBar: AppBar(
         backgroundColor: backgroundColor,
-        appBar: AppBar(
-          backgroundColor: backgroundColor,
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-          title: Text(
-            'Seus Amigos',
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-          centerTitle: true,
-        ),
-        body: ElevatedButton(
-          child: Text(""),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
           onPressed: () {
-            showSearch(
-              context: context,
-              delegate: CustomSearchDelegate(),
-            );
+            Navigator.pop(context);
           },
-        ));
-  }
-}
-
-class CustomSearchDelegate extends SearchDelegate {
-  List<String> friendsList = List.generate(30, (int index) => "Amigo $index");
-  @override
-  List<Widget> buildActions(BuildContext context) {
-    return [
-      IconButton(
-        icon: const Icon(Icons.clear),
-        onPressed: () {
-          query = '';
-        },
+        ),
+        title: Text(
+          'Seus Amigos',
+          style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+        centerTitle: true,
       ),
-    ];
-  }
-
-  @override
-  Widget buildLeading(BuildContext context) {
-    return IconButton(
-     onPressed: () {
-      close(context, null);
-     },
-     icon: const Icon(Icons.arrow_back),
-     );
-  }
-
-  @override
-  Widget buildResults(BuildContext context) {
-    List<String> matchQuery = [];
-    for (var friends in friendsList) {
-      if (friends.toLowerCase().contains(query.toLowerCase())) {
-        matchQuery.add(friends);
-      }
-    }
-    return ListView.builder(
-      itemCount: matchQuery.length,
-      itemBuilder: (context, index) {
-        var result = matchQuery[index];
-        return ListTile(
-          title: Text(result),
-        );
-      },
-    );
-  }
-
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    List<String> matchQuery = [];
-    for (var friends in friendsList) {
-      if (friends.toLowerCase().contains(query.toLowerCase())) {
-        matchQuery.add(friends);
-      }
-    }
-    return ListView.builder(
-      itemCount: matchQuery.length,
-      itemBuilder: (context, index) {
-        var result = matchQuery[index];
-        return ListTile(
-          title: Text(result),
-        );
-      },
-    );
+      body: SizedBox(
+          width: double.infinity,
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: CustomTextField(
+                  fillColor: secondaryColor,
+                  leadingIconColor: Colors.white,
+                  cursorColor: Colors.white,
+                  prefixIcon: Icons.search,
+                  hintText: "Pesquisar amigo",
+                  hintTextColor: Colors.white24,
+                  selectedBorderColor: Colors.transparent,
+                  inputTextColor: Colors.white,
+                  onChanged: (value) => setState(() => query = value),
+                ),
+              ),
+              QueryResultWidget(
+                query: query,
+                friendsList: List.generate(30, (index) => "Amigo $index"),
+              ),
+              GestureDetector(
+                onTap: () {
+                },
+                child: Container(
+                  height: 60,
+                  decoration: BoxDecoration(
+                      color: Color(0xff252525), borderRadius: BorderRadius.vertical(top: Radius.circular(5))),
+                  alignment: Alignment.center,
+                  child: Text(
+                    "Adicione um amigo",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: primaryFontColor, fontWeight: FontWeight.w600, fontSize: 16)
+                  ),
+                ),
+              ),
+            ],
+          )
+        )
+      );
   }
 }
 
-// Expanded(
-//   child: ListView(
-//     children: friendsWidgets,
-//   ),
-// ),
