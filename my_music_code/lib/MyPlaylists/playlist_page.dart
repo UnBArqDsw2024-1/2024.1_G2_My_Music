@@ -53,9 +53,14 @@ class _MyPlaylistPageState extends State<MyPlaylistPage> {
                       image: DecorationImage(image: NetworkImage(DefaultPlaceholder.image),fit: BoxFit.cover),
                     ),
                   ),
-                  Container(
-                    color: backgroundColor.withOpacity(0.25),
-                  ),  
+                  Positioned(
+                    bottom: -1,
+                    child: Container(
+                      height: 80,
+                      width: MediaQuery.of(context).size.width,
+                      color: backgroundColor,
+                    ),
+                  )
                 ],
               ),
               title: Text.rich(
