@@ -26,7 +26,7 @@ class MusicPlaylistFeedComponent extends StatelessWidget {
           useSafeArea: true,
           context: context,
           builder: (context) {
-            return FeedMusicPage(music: music);
+            return MusicPage(music: music);
           });
       },
       child: ResponsiveContainer(

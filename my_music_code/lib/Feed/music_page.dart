@@ -4,18 +4,18 @@ import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 
-class FeedMusicPage extends StatefulWidget {
-  const FeedMusicPage({super.key, 
+class MusicPage extends StatefulWidget {
+  const MusicPage({super.key, 
     required this.music,
   });
 
   final Music music;
 
   @override
-  State<FeedMusicPage> createState() => _FeedPageState();
+  State<MusicPage> createState() => _MusicPageState();
 }
 
-class _FeedPageState extends State<FeedMusicPage> {
+class _MusicPageState extends State<MusicPage> {
   bool isPlaying = false;
   bool isFavorite = false;
 
