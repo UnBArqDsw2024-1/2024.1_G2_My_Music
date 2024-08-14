@@ -174,6 +174,7 @@ class _SearchPageState extends State<SearchPage> {
                 scrollDirection: Axis.horizontal,
                 children: [
                   _buildArtistItemWithBackground('Eminem', 'Artista','assets/eminem.png'),
+                  SizedBox(width: 20),
                   _buildArtistItemWithBackground('The Weekend', 'Artista','assets/eminem.png'),
                   // Adicione mais itens aqui
                 ],
@@ -210,7 +211,16 @@ class _SearchPageState extends State<SearchPage> {
       padding: const EdgeInsets.only(right: 16.0),
       child: Column(
         children: [
-          Image.asset(imagePath, height: 100, width: 100),
+          Container(
+            height: 100,
+            width: 100,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5), // Borda arredondada
+              image: DecorationImage(
+                image: NetworkImage(DefaultPlaceholder.image), // Imagem de fundo
+              )
+            ),
+          ),
           SizedBox(height: 8),
           Text(title, style: TextStyle(color: Colors.white)),
         ],
@@ -219,35 +229,24 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   Widget _buildArtistItemWithBackground(String name, String item, String imagePath) {
-  return Stack(
-    alignment: Alignment.center,
-    children: [
-      // Retângulo de fundo
-      Padding(
-        padding: const EdgeInsets.only(right: 8.0), // Adiciona padding ao retângulo
-        child: Container(
-          width: 120,
-          height: 200,
-          decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 117, 3, 253), // Cor do fundo retangular
-            borderRadius: BorderRadius.circular(15), // Borda arredondada opcional
-          ),
+  return Container(
+    decoration: BoxDecoration(
+      color: primaryColor, // Cor de fundo
+      borderRadius: BorderRadius.circular(8), // Borda arredondada
+    ),
+    padding: EdgeInsets.symmetric(horizontal: 20),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        CircleAvatar(
+          radius: 40,
+          backgroundImage: NetworkImage(DefaultPlaceholder.image),
         ),
-      ),
-      // Conteúdo circular
-      Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircleAvatar(
-            radius: 40,
-            backgroundImage: NetworkImage(DefaultPlaceholder.image),
-          ),
-          SizedBox(height: 8),
-          Text(name, style: TextStyle(color: Colors.white)),
-          Text(item, style: TextStyle(color: Colors.white)),
-        ],
-      ),
-    ],
+        SizedBox(height: 8),
+        Text(name, style: TextStyle(color: Colors.white)),
+        Text(item, style: TextStyle(color: Colors.white)),
+      ],
+    ),
   );
 }
 }
