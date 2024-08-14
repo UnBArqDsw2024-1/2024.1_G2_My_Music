@@ -23,7 +23,7 @@ class _FeedPageState extends State<FeedPage> {
   Music musicRelease = Music();
 
   getRel(SpotifyApi spotify) async {
-    print('\nNew Releases');
+    // print('\nNew Releases');
     var albumNewReleases =  await spotify.search.get('new releases').first(15);
     var newReleases = await spotify.search.get('lançamentos').first(15);
     var search = await spotify.search.get('musicas fair trade').first(30);

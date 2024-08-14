@@ -152,7 +152,7 @@ class _SearchPageState extends State<SearchPage> {
             // Recently Played
             Text('Recently Played', style: TextStyle(fontSize: 18, color: Colors.white)),
             SizedBox(height: 10),
-            Container(
+            SizedBox(
               height: 150,
               child: ListView(
                 scrollDirection: Axis.horizontal,
@@ -168,7 +168,7 @@ class _SearchPageState extends State<SearchPage> {
             // Artistas
             Text('Artists', style: TextStyle(fontSize: 18, color: Colors.white)),
             SizedBox(height: 10),
-            Container(
+            SizedBox(
               height: 150,
               child: ListView(
                 scrollDirection: Axis.horizontal,
@@ -240,7 +240,7 @@ class _SearchPageState extends State<SearchPage> {
         children: [
           CircleAvatar(
             radius: 40,
-            backgroundImage: AssetImage(imagePath),
+            backgroundImage: NetworkImage(DefaultPlaceholder.image),
           ),
           SizedBox(height: 8),
           Text(name, style: TextStyle(color: Colors.white)),
