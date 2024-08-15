@@ -1,22 +1,53 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-
+import 'package:my_music_code/universal.dart' as universal;
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Album/album_page.dart';
 import 'package:my_music_code/Feed/Components/feed_profile_app_bar.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Search/search_page_terms.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spotify/spotify.dart' hide Offset;
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
-  
+
   @override
   State<SearchPage> createState() => _SearchPageState();
 }
 
 class _SearchPageState extends State<SearchPage> {
   String _selectedFilter = 'Música'; // Filtro padrão
+
+  List<AlbumModel> topReleases = [];
+  getRelAlbum(SpotifyApi spotify) async {
+    var albumNewReleases = await spotify.search.get('new releases').first(15);
+    for (var pages in albumNewReleases) {
+      if (pages.items != null) {
+        for (var album in pages.items!) {
+          if (album is AlbumSimple) {
+            var pagesTracks =
+                await spotify.albums.tracks(album.id!).first().asStream().first;
+            setState(() {
+              topReleases.add(AlbumModel(
+                  songs: pagesTracks.items,
+                  name: album.name!,
+                  id: album.id!,
+                  artist: album.artists!.first.name!,
+                  image: album.images!.first.url!));
+            });
+          }
+        }
+      }
+    }
+  }
+
+  @override
+  void initState() {
+    getRelAlbum(universal.spotifyApi);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +61,8 @@ class _SearchPageState extends State<SearchPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             RawMaterialButton(
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPageTerms())),
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SearchPageTerms())),
                 child: ResponsiveContainer(
                   height: 55,
                   width: double.infinity,
@@ -44,7 +76,8 @@ class _SearchPageState extends State<SearchPage> {
                         child: Container(
                           alignment: Alignment.center,
                           // ignore: deprecated_member_use
-                          child: Icon(Icons.search, color: const Color.fromRGBO(255, 255, 255, 0.6)),
+                          child: Icon(Icons.search,
+                              color: const Color.fromRGBO(255, 255, 255, 0.6)),
                         ),
                       ),
                       Expanded(
@@ -74,7 +107,8 @@ class _SearchPageState extends State<SearchPage> {
                         _selectedFilter = result;
                       });
                     },
-                    itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                    itemBuilder: (BuildContext context) =>
+                        <PopupMenuEntry<String>>[
                           PopupMenuItem<String>(
                             value: 'Música',
                             child: _buildFilterItem('Música'),
@@ -95,15 +129,21 @@ class _SearchPageState extends State<SearchPage> {
                     child: Card(
                         color: Color(0xFF373737),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0), // Define o raio das bordas
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Define o raio das bordas
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 5),
                           child: Row(
                             children: [
                               SvgPicture.asset('assets/Filter.svg'),
-                              SizedBox(width: 8), // Espaçamento entre o ícone e o texto
-                              Text('Filtros', style: TextStyle(color: Colors.white)), // Texto
+                              SizedBox(
+                                  width:
+                                      8), // Espaçamento entre o ícone e o texto
+                              Text('Filtros',
+                                  style:
+                                      TextStyle(color: Colors.white)), // Texto
                             ],
                           ),
                         ))),
@@ -116,39 +156,172 @@ class _SearchPageState extends State<SearchPage> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
-
+            SizedBox(height: 40),
             // Recently Played
-            Text('Tocadas recentemente', style: TextStyle(fontSize: 18, color: Colors.white)),
-            SizedBox(height: 10),
-            SizedBox(
-              height: 150,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
+            if (_selectedFilter == "Música")
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildRecentlyPlayedItem('The triangle', 'assets/eminem.png'),
-                  _buildRecentlyPlayedItem('StarBoy', 'assets/eminem.png'),
-                  // Adicione mais itens aqui
+                  Text('Músicas Recentes',
+                      style: TextStyle(fontSize: 18, color: Colors.white)),
+                  SizedBox(height: 20),
+                  Container(
+                    height: 170,
+                    constraints: BoxConstraints(),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children:
+                            List.from(topReleases.map((element) => Padding(
+                                  padding: const EdgeInsets.only(right: 8.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        width: 136,
+                                        height: 157,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(5),
+                                          image: DecorationImage(
+                                              image: NetworkImage(
+                                                element.image,
+                                              ),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ))),
+                      ),
+                    ),
+                  ),
                 ],
               ),
-            ),
+
             SizedBox(height: 20),
 
-            // Artistas
-            Text('Artistas', style: TextStyle(fontSize: 18, color: Colors.white)),
-            SizedBox(height: 10),
-            SizedBox(
-              height: 150,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
+            if (_selectedFilter == "PlayList") // Recently Played
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildArtistItemWithBackground('Eminem', 'Artista', 'assets/eminem.png'),
-                  SizedBox(width: 20),
-                  _buildArtistItemWithBackground('The Weekend', 'Artista', 'assets/eminem.png'),
-                  // Adicione mais itens aqui
+                  Text('PlayLists Recentes',
+                      style: TextStyle(fontSize: 18, color: Colors.white)),
+                  SizedBox(height: 20),
+                  Container(
+                    height: 170,
+                    constraints: BoxConstraints(),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children:
+                            List.from(topReleases.map((element) => Padding(
+                                  padding: const EdgeInsets.only(right: 8.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        width: 136,
+                                        height: 157,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(5),
+                                          image: DecorationImage(
+                                              image: NetworkImage(
+                                                element.image,
+                                              ),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ))),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
                 ],
               ),
-            ),
+
+            if (_selectedFilter == "Artista")
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Artista Recentes',
+                      style: TextStyle(fontSize: 18, color: Colors.white)),
+                  SizedBox(height: 20),
+                  Container(
+                    height: 170,
+                    constraints: BoxConstraints(),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children:
+                            List.from(topReleases.map((element) => Padding(
+                                  padding: const EdgeInsets.only(right: 8.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        width: 136,
+                                        height: 157,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(5),
+                                          image: DecorationImage(
+                                              image: NetworkImage(
+                                                element.image,
+                                              ),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ))),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                ],
+              ),
+
+            if (_selectedFilter == "Álbum") // Recently Played
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Album Recentes',
+                      style: TextStyle(fontSize: 18, color: Colors.white)),
+                  SizedBox(height: 20),
+                  Container(
+                    height: 170,
+                    constraints: BoxConstraints(),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children:
+                            List.from(topReleases.map((element) => Padding(
+                                  padding: const EdgeInsets.only(right: 8.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        width: 136,
+                                        height: 157,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(5),
+                                          image: DecorationImage(
+                                              image: NetworkImage(
+                                                element.image,
+                                              ),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ))),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                ],
+              ),
           ],
         )),
       ),
@@ -170,49 +343,6 @@ class _SearchPageState extends State<SearchPage> {
       child: Text(
         text,
         style: TextStyle(color: Colors.white), // Cor do texto
-      ),
-    );
-  }
-
-  Widget _buildRecentlyPlayedItem(String title, String imagePath) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 16.0),
-      child: Column(
-        children: [
-          Container(
-            height: 100,
-            width: 100,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5), // Borda arredondada
-                image: DecorationImage(
-                  image: NetworkImage(DefaultPlaceholder.image), // Imagem de fundo
-                )),
-          ),
-          SizedBox(height: 8),
-          Text(title, style: TextStyle(color: Colors.white)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildArtistItemWithBackground(String name, String item, String imagePath) {
-    return Container(
-      decoration: BoxDecoration(
-        color: primaryColor, // Cor de fundo
-        borderRadius: BorderRadius.circular(8), // Borda arredondada
-      ),
-      padding: EdgeInsets.symmetric(horizontal: 15),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircleAvatar(
-            radius: 40,
-            backgroundImage: NetworkImage(DefaultPlaceholder.image),
-          ),
-          SizedBox(height: 8),
-          Text(name, style: TextStyle(color: Colors.white)),
-          Text(item, style: TextStyle(color: Colors.white)),
-        ],
       ),
     );
   }
