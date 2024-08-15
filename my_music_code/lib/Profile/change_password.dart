@@ -1,8 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/custom_text_field.dart';
+import 'package:my_music_code/Globals/dialogs.dart';
+import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Globals/style.dart';
 
-void changePassword(BuildContext context) {
+void changePassword(BuildContext context, User user) {
+  // String password = "";
+  String newPassword = "";
+  String confirmNewPasssord = "";
+
   showDialog(
     context: context,
     builder: (context) {
@@ -25,10 +32,9 @@ void changePassword(BuildContext context) {
             ),
           ],
         ),
-        content: Column(
+        content: SpacedColumn(
           mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(height: 16),
             CustomTextField(
               hintText: "Sua senha atual",
               hintTextColor: Colors.white.withOpacity(0.25),
@@ -40,7 +46,6 @@ void changePassword(BuildContext context) {
               cursorColor: Colors.white,
               obscuringText: true,
             ),
-            SizedBox(height: 16),
             CustomTextField(
               hintText: "Nova senha",
               hintTextColor: Colors.white.withOpacity(0.25),
@@ -51,8 +56,10 @@ void changePassword(BuildContext context) {
               inputTextColor: Colors.white,
               cursorColor: Colors.white,
               obscuringText: true,
+              onChanged: (value) {
+                newPassword = value;
+              },
             ),
-            SizedBox(height: 16),
             CustomTextField(
               hintText: "Confirmar senha atual",
               hintTextColor: Colors.white.withOpacity(0.25),
@@ -63,8 +70,10 @@ void changePassword(BuildContext context) {
               inputTextColor: Colors.white,
               cursorColor: Colors.white,
               obscuringText: true,
+              onChanged: (value) {
+                confirmNewPasssord = value;
+              },
             ),
-            SizedBox(height: 16),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xff373737),
@@ -74,7 +83,14 @@ void changePassword(BuildContext context) {
               child: Text('Confirmar',
                   style: TextStyle(color: Colors.white, fontSize: 13)),
               onPressed: () {
-                Navigator.pop(context);
+                try {
+                  if (newPassword == confirmNewPasssord) {
+                    user.updatePassword(confirmNewPasssord);
+                    Navigator.pop(context);
+                  }
+                } on FirebaseAuthException catch (error) {
+                  errorDialogMessage(context, error.code);
+                }
               },
             ),
           ],

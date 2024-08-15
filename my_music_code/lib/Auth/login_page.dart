@@ -1,38 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
+import 'package:my_music_code/Auth/Service/auth_service.dart';
 import 'package:my_music_code/Globals/custom_text_field.dart';
 import 'package:my_music_code/Globals/dialogs.dart';
-import 'package:my_music_code/Globals/navigator_page.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
+import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key, this.onTapTogglePage});
+  const LoginPage({super.key, this.onTapTogglePage, required this.userModel});
   final Function()? onTapTogglePage;
+  final SignLoginModel userModel;
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-
-  String email = '';
-  String password = '';
-
-  Future signIn() async {
-    try{
-      loadingDialog(context);
-      await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
-      if (context.mounted) Navigator.pop(context);
-    } on FirebaseAuthException catch (e){
-      if (context.mounted) Navigator.pop(context);
-      if (context.mounted) errorDialogMessage(context, errorMap[e.code] ?? e.code);
-    }
-    
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,58 +44,44 @@ class _LoginPageState extends State<LoginPage> {
                   borderRadius:
                       BorderRadius.only(topLeft: Radius.circular(100)),
                 ),
-                padding:
-                    EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(27)),
-                child: Column(
+                padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(27)),
+                
+                child: SpacedColumn(
+                  spacing: 8,
                   children: [
-                    ResponsiveContainer(height: 16),
-                    ResponsiveText(
-                      text: "Login",
-                      fontColor: Color(0xff000000),
-                      fontWeight: FontWeight.w700,
-                      fontSize: 48,
+                    SpacedColumn(
+                      spacing: 16,
+                      padding: EdgeInsets.only(top: responsiveFigmaHeight(16)),
+                      children: [
+                        ResponsiveText(
+                          text: "Login",
+                          fontColor: Color(0xff000000),
+                          fontWeight: FontWeight.w700,
+                          fontSize: 48,
+                        ),
+
+                        CustomTextField(
+                          labelText: "Email",
+                          hintText: "Usuario@gmail.com",
+                          prefixIcon: Icons.alternate_email_rounded,
+                          onChanged: (value) => setState(() => widget.userModel.email = value),
+                        ),
+
+                        CustomTextField(
+                          labelText: "Senha",
+                          hintText: "•" * 10,
+                          obscuringText: true,
+                          obscuringCharacter: "•",
+                          prefixIcon: MdiIcons.lock,
+                          onChanged: (value) => setState(() => widget.userModel.password = value),
+                        ),
+                      ],
                     ),
-                    ResponsiveContainer(height: 16),
-                    CustomTextField(
-                      labelText: "Email",
-                      hintText: "Usuario@gmail.com",
-                      onChanged: (value) {
-                        setState(() {
-                          email = value;
-                        });
-                      },
-                      prefixIcon: Icons.alternate_email_rounded,
-                      hintTextColor: Color(0xff868080),
-                      fillColor: Color(0xffFFFFFF),
-                      leadingIconColor: Color(0xff000000),
-                      selectedBorderColor: primaryColor,
-                      inputTextColor: Color(0xff000000),
-                    ),
-                    ResponsiveContainer(height: 16),
-                    CustomTextField(
-                      labelText: "Senha",
-                      hintText: "•" * 10,
-                      onChanged: (value) {
-                        setState(() {
-                          password = value;
-                        });
-                      },
-                      obscuringText: true,
-                      obscuringCharacter: "•",
-                      prefixIcon: MdiIcons.lock,
-                      hintTextColor: Color(0xff868080),
-                      fillColor: Color(0xffFFFFFF),
-                      leadingIconColor: Color(0xff000000),
-                      selectedBorderColor: primaryColor,
-                      inputTextColor: Color(0xff000000),
-                    ),
-                    ResponsiveContainer(height: 8),
+
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
-                        onPressed: () {
-                          forgotPassword(context);
-                        },
+                        onPressed: () => forgotPassword(context),
                         child: ResponsiveText(
                           text: "Esqueceu a senha?",
                           fontColor: primaryColor,
@@ -117,96 +90,43 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    ResponsiveContainer(height: 16),
-                    RawMaterialButton(
-                        onPressed: signIn,
-                        child: ResponsiveContainer(
-                          height: 47,
-                          width: 233,
-                          color: Color(0xff252422),
-                          borderRadius: BorderRadius.circular(10),
-                          child: Center(
-                              child: ResponsiveText(
-                            text: "Entrar",
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          )),
-                        )),
-                    ResponsiveContainer(height: 16),
-                    Row(
+                    SpacedColumn(
+                      padding: EdgeInsets.only(top: responsiveFigmaHeight(8)),
                       children: [
-                        Expanded(
-                            child: Divider(
-                          color: Color(0xff000000),
-                        )),
-                        ResponsiveText(
-                          text: "Ou continue com",
-                          fontColor: primaryColor,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                          padding: EdgeInsets.symmetric(
-                              horizontal: responsiveFigmaWidth(8)),
+                        RawMaterialButton(
+                          onPressed: () => AuthService().controlSignLogin(context: context, userModel: widget.userModel),
+                          child: ResponsiveContainer(
+                            height: 47,
+                            width: 233,
+                            color: Color(0xff252422),
+                            borderRadius: BorderRadius.circular(10),
+                            child: Center(
+                              child: ResponsiveText(
+                                text: "Entrar",
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              )
+                            ),
+                          )
                         ),
-                        Expanded(
-                            child: Divider(
-                          color: Color(0xff000000),
-                        )),
+
+                        TextButton(
+                          onPressed: widget.onTapTogglePage,
+                          child: ResponsiveText(
+                            text: "Não possui uma conta? Registre-se",
+                            fontColor: primaryColor,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16,
+                          )
+                        ),
                       ],
-                    ),
-                    ResponsiveContainer(height: 16),
-                    RawMaterialButton(
-                        onPressed: () => Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => NavigatorPage())),
-                        child: ResponsiveContainer(
-                          height: 47,
-                          width: 233,
-                          color: Color(0xff252422),
-                          borderRadius: BorderRadius.circular(10),
-                          child: Center(
-                              child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  // ignore: deprecated_member_use
-                                  child: Icon(MdiIcons.google,
-                                      color: Colors.white),
-                                ),
-                              ),
-                              Expanded(
-                                  flex: 3,
-                                  child: Center(
-                                    child: ResponsiveText(
-                                      text: "Login com o google",
-                                      fontColor: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  )),
-                              Expanded(
-                                child: Container(),
-                              ),
-                            ],
-                          )),
-                        )),
-                    ResponsiveContainer(height: 8),
-                    TextButton(
-                        onPressed: widget.onTapTogglePage,
-                        child: ResponsiveText(
-                          text: "Não possui uma conta? Registre-se",
-                          fontColor: primaryColor,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                        )),
-                    ResponsiveContainer(height: 16),
+                    )
                   ],
                 ),
               )
             ],
           ),
-        ));
+        )
+      );
   }
 }
