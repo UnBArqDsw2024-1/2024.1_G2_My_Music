@@ -27,12 +27,8 @@ PreferredSizeWidget feedProfileAppBar() {
         );
       }),
       title: ResponsiveText(
-        text: "Hi, ${universal.user.displayName ?? 'User'}, let's play some music.",
+        text: "Hi, ${universal.user.displayName ?? universal.userModel.username}, let's play some music.",
         fontSize: 16,
       )
-        // ) : SpinKitThreeBounce(
-        //   color: Colors.white,
-        //   size: 20,
-        // )
-      ); 
+    ); 
 }

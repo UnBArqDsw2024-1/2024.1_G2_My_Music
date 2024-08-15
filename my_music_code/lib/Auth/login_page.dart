@@ -8,11 +8,11 @@ import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:my_music_code/universal.dart' as universal;
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key, this.onTapTogglePage, required this.userModel});
+  const LoginPage({super.key, this.onTapTogglePage});
   final Function()? onTapTogglePage;
-  final SignLoginModel userModel;
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -63,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                           labelText: "Email",
                           hintText: "Usuario@gmail.com",
                           prefixIcon: Icons.alternate_email_rounded,
-                          onChanged: (value) => setState(() => widget.userModel.email = value),
+                          onChanged: (value) => setState(() => universal.userModel.email = value),
                         ),
 
                         CustomTextField(
@@ -72,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                           obscuringText: true,
                           obscuringCharacter: "•",
                           prefixIcon: MdiIcons.lock,
-                          onChanged: (value) => setState(() => widget.userModel.password = value),
+                          onChanged: (value) => setState(() => universal.userModel.password = value),
                         ),
                       ],
                     ),
@@ -93,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                       padding: EdgeInsets.only(top: responsiveFigmaHeight(8)),
                       children: [
                         RawMaterialButton(
-                          onPressed: () => AuthService().controlSignLogin(context: context, userModel: widget.userModel),
+                          onPressed: () => AuthService().controlSignLogin(context: context),
                           child: ResponsiveContainer(
                             height: 47,
                             width: 233,

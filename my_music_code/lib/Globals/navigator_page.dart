@@ -31,6 +31,10 @@ class _NavigatorPageState extends State<NavigatorPage> {
       universal.user = widget.user;
       universal.spotifyApi = widget.spotifyApi;
     });
+    print(universal.userModel.username);
+    if (universal.userModel.username.isNotEmpty) {
+      widget.user.updateProfile(displayName: universal.userModel.username);
+    }
   }
 
   setIndex(int index) {
@@ -43,23 +47,11 @@ class _NavigatorPageState extends State<NavigatorPage> {
   Music musicRelease = Music();
 
   getDataFromApi() async {
-    await getAlbumReleasesFromSpotifyApi().then(
-      (result) => setState(
-        () => albumReleases = result
-      )
-    );
+    await getAlbumReleasesFromSpotifyApi().then((result) => setState(() => albumReleases = result));
 
-    await getRecentMusicsFromSpotifyApi().then(
-      (result) => setState(
-        () => recentMusics = result
-      )
-    );
+    await getRecentMusicsFromSpotifyApi().then((result) => setState(() => recentMusics = result));
 
-    await getMusicReleaseFromSpotifyApi().then(
-      (result) => setState(
-        () => musicRelease = result
-      )
-    );
+    await getMusicReleaseFromSpotifyApi().then((result) => setState(() => musicRelease = result));
   }
 
   @override

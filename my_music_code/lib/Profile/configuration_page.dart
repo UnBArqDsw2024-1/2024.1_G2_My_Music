@@ -11,7 +11,6 @@ import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/universal.dart' as universal;
 
-
 class ConfigurationPage extends StatefulWidget {
   const ConfigurationPage({super.key});
 
@@ -23,7 +22,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
   String email = "";
   String username = "";
   String password = "";
-  
+
   Future<void> pickImage() async {
     final ImagePicker imagePicker = ImagePicker();
     try {
@@ -44,10 +43,9 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
 
   Future<void> uploadImageToFirebase(File image) async {
     String? imageUrl;
-    
+
     try {
-      Reference reference =
-          FirebaseStorage.instance.ref().child("Images/${universal.user.uid}.png");
+      Reference reference = FirebaseStorage.instance.ref().child("Images/${universal.user.uid}.png");
       await reference.putFile(image).whenComplete(() {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -88,8 +86,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
             },
           ),
         ],
-        title: Text('Configurar Perfil',
-            style: TextStyle(color: Colors.white, fontSize: 20)),
+        title: Text('Configurar Perfil', style: TextStyle(color: Colors.white, fontSize: 20)),
         centerTitle: true,
       ),
       body: Padding(
@@ -108,13 +105,11 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                     backgroundColor: backgroundColor,
                     child: Container(
                       decoration: BoxDecoration(
-                        color: backgroundColor,
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: CachedNetworkImageProvider(universal.user.photoURL ?? DefaultPlaceholder.image),
-                          fit: BoxFit.cover
-                        )
-                      ),
+                          color: backgroundColor,
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              image: CachedNetworkImageProvider(universal.user.photoURL ?? DefaultPlaceholder.image),
+                              fit: BoxFit.cover)),
                     ),
                   ),
                 ),
@@ -137,8 +132,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                                 color: Colors.white12,
                                 spreadRadius: 1,
                                 blurRadius: 3,
-                                offset: Offset(
-                                    0, 1), // changes position of shadow
+                                offset: Offset(0, 1), // changes position of shadow
                               ),
                             ]),
                         alignment: Alignment.center,
@@ -156,7 +150,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
               leadingIconColor: Colors.white,
               inputTextColor: Colors.white,
               cursorColor: Colors.white,
-              initialValue: universal.user.displayName,
+              initialValue: universal.user.displayName ?? universal.userModel.username,
               onChanged: (value) {
                 setState(() {
                   username = value;
@@ -185,11 +179,9 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                padding:
-                    EdgeInsets.symmetric(vertical: 21.0, horizontal: 100),
+                padding: EdgeInsets.symmetric(vertical: 21.0, horizontal: 100),
               ),
-              child: Text('Mudar senha',
-                  style: TextStyle(color: Colors.white, fontSize: 13)),
+              child: Text('Mudar senha', style: TextStyle(color: Colors.white, fontSize: 13)),
               onPressed: () => forgotPassword(context),
             ),
             ElevatedButton(
@@ -200,16 +192,16 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                 ),
                 padding: EdgeInsets.symmetric(vertical: 17.0, horizontal: 69),
               ),
-              child: Text('Salvar perfil',
-                  style: TextStyle(color: Colors.white, fontSize: 13)),
+              child: Text('Salvar perfil', style: TextStyle(color: Colors.white, fontSize: 13)),
               onPressed: () {
                 // Ação para salvar perfil
-                if (universal.user.displayName != username) {
+                if ((universal.user.displayName ?? universal.userModel.username) != username && username.isNotEmpty) {
+                  print("${universal.user.displayName} & $username");	
                   universal.user.updateDisplayName(username);
                 }
-                if (universal.user.email != email) {
-                  universal.user.verifyBeforeUpdateEmail(email);
-                }
+                // if (universal.user.email != email) {
+                //   universal.user.verifyBeforeUpdateEmail(email);
+                Navigator.pop(context);
               },
             ),
           ],
