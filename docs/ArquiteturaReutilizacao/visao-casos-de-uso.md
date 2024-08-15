@@ -97,5 +97,5 @@ Lucidchart.(2024). Diagrama de caso de uso UML: o que é, como fazer e exemplos.
 
 |    Versão    |    Data    | Descrição | Autor(es) | Revisor(es) |
 | ------------ | ---------- | --------- | --------- | ----------- |
-| 1.0          | 07/08/2024 | Criação da página | [Carlos Eduardo Mendes de Mesquita](https://github.com/CarlosEduardoMendesdeMesquita) e [Carlos Godoy](https://github.com/CDGodoy) | - |
-| 1.1          | 14/08/2024 | Conclusão do mkdocs da entrega(escrito via google docs) | [Carlos Eduardo Mendes de Mesquita](https://github.com/CarlosEduardoMendesdeMesquita) e [Carlos Godoy](https://github.com/CDGodoy) | - |
+| 1.0          | 07/08/2024 | Criação da página | [Carlos Eduardo Mendes de Mesquita](https://github.com/CarlosEduardoMendesdeMesquita) e [Carlos Godoy](https://github.com/CDGodoy) | [Limírio Guimarães](https://github.com/LimirioGuimaraes) [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/118#issuecomment-2290178474) |
+| 1.1          | 14/08/2024 | Conclusão do mkdocs da entrega(escrito via google docs) | [Carlos Eduardo Mendes de Mesquita](https://github.com/CarlosEduardoMendesdeMesquita) e [Carlos Godoy](https://github.com/CDGodoy) | [Limírio Guimarães](https://github.com/LimirioGuimaraes)  [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/118#issuecomment-2290178474)  |
