@@ -10,3 +10,4 @@ Music currentMusic = Music();
 late User user;
 late SpotifyApi spotifyApi;
 List<Music> currentListMusic = List.empty(growable: true);
+List<Music> currentListMusicShuffle = List.empty(growable: true);

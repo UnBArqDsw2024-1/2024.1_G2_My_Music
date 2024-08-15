@@ -12,8 +12,10 @@ class MusicPage extends StatefulWidget {
   const MusicPage({
     super.key,
     required this.music,
+    this.isRandom = false,
   });
   final Music music;
+  final bool isRandom;
   @override
   State<MusicPage> createState() => _MusicPageState();
 }
@@ -327,7 +329,8 @@ class _MusicPageState extends State<MusicPage> {
                           isScrollControlled: true,
                           useSafeArea: true,
                           context: context,
-                          builder: (context) => MusicPage(music: universal.currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length])
+                          builder: (context) => MusicPage(music: widget.isRandom? universal.currentListMusicShuffle[(indexListMusic - 1) % universal.currentListMusicShuffle.length] : universal.currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
+                          isRandom: widget.isRandom)
                         );
                     }
                   },
@@ -370,7 +373,8 @@ class _MusicPageState extends State<MusicPage> {
                           isScrollControlled: true,
                           useSafeArea: true,
                           context: context,
-                          builder: (context) => MusicPage(music: universal.currentListMusic[(indexListMusic + 1) % universal.currentListMusic.length])
+                          builder: (context) => MusicPage(music: widget.isRandom? universal.currentListMusicShuffle[(indexListMusic + 1) % universal.currentListMusicShuffle.length] : universal.currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
+                          isRandom: widget.isRandom)
                         );
                     }
                   },

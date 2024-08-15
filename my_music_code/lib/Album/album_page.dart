@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Feed/music_page.dart';
@@ -26,15 +28,20 @@ class AlbumModel {
 class MyAlbumPage extends StatefulWidget {
   const MyAlbumPage({super.key, required this.album});
   final AlbumModel album;
+  // final AlbumModel albumShuffle;
+
   @override
   State<MyAlbumPage> createState() => _MyAlbumPageState();
 }
 
 class _MyAlbumPageState extends State<MyAlbumPage> {
   bool isPinned = true;
+  bool isRandom = false;
+  late List<TrackSimple> albumShuffle;
 
   populaAlbum() {
     setState(() {
+
       universal.currentListMusic = List.empty(growable: true);
       for (var music in widget.album.songs!) {
         universal.currentListMusic.add(Music(
@@ -46,6 +53,11 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
           duration: music.durationMs,
         ));
       };
+      universal.currentListMusicShuffle = universal.currentListMusic;
+      universal.currentListMusicShuffle.shuffle(Random());
+
+      albumShuffle = widget.album.songs!.toList();
+      albumShuffle.shuffle(Random());
     });
   }
 
@@ -134,13 +146,44 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                       Row(
                         children: [
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                isRandom = !isRandom;
+                              });
+                            },
                             highlightColor: Colors.transparent,
-                            icon: Icon(Icons.shuffle, color: Colors.white54),
+                            icon: Icon(isRandom? Icons.shuffle_on_outlined : Icons.shuffle, color: Colors.white54),
                           ),
                           ResponsiveContainer(width: 12),
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Music currentMusic = Music(
+                                  name: widget.album.songs!.first.name,
+                                  id: widget.album.songs!.first.id,
+                                  artist: widget.album.songs!.first.artists!.first.name,
+                                  imageUrl: widget.album.image,
+                                  link: widget.album.songs!.first.externalUrls!.spotify,
+                                  duration: widget.album.songs!.first.durationMs,
+                              );
+
+                              if (isRandom) {
+                                currentMusic = Music(
+                                  name: albumShuffle.first.name,
+                                  id: albumShuffle.first.id,
+                                  artist: albumShuffle.first.artists!.first.name,
+                                  imageUrl: widget.album.image,
+                                  link: albumShuffle.first.externalUrls!.spotify,
+                                  duration: albumShuffle.first.durationMs,
+                                );
+                              }
+                              
+                              showModalBottomSheet(
+                                useRootNavigator: false,
+                                isScrollControlled: true,
+                                useSafeArea: true,
+                                context: context,
+                                builder: (context) => MusicPage(music: currentMusic, isRandom: isRandom));
+                            },
                             padding: EdgeInsets.zero,
                             icon: ResponsiveContainer(
                                 height: 45,
@@ -175,7 +218,7 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                           isScrollControlled: true,
                           useSafeArea: true,
                           context: context,
-                          builder: (context) => MusicPage(music: indexMusic));
+                          builder: (context) => MusicPage(music: indexMusic, isRandom: isRandom));
                     },
                     title: ResponsiveText(
                       text: widget.album.songs!.elementAt(index).name,
