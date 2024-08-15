@@ -23,6 +23,9 @@ class _MusicPlaylistFeedComponentState extends State<MusicPlaylistFeedComponent>
     return RawMaterialButton(
       constraints: BoxConstraints(),
       onPressed: () {
+        setState(() {
+          universal.currentListMusic = List.empty();
+        });
         showModalBottomSheet(
             useRootNavigator: false,
             isScrollControlled: true,

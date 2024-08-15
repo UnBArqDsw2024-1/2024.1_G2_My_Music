@@ -1,5 +1,4 @@
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Album/album_page.dart';
 import 'package:my_music_code/Feed/Components/feed_horizontal_scroll_component.dart';
@@ -8,13 +7,11 @@ import 'package:my_music_code/Feed/Components/feed_profile_app_bar.dart';
 import 'package:my_music_code/Feed/Components/new_music_release.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/Profile/profile_drawer.dart';
-import 'package:my_music_code/SpotifyApi/api_settings.dart';
 import 'package:spotify/spotify.dart' hide User;
+import 'package:my_music_code/universal.dart' as universal;
 
 class FeedPage extends StatefulWidget {
-  const FeedPage({super.key, required this.user, required this.spotifyApi,});
-  final User user;
-  final SpotifyApi spotifyApi;
+  const FeedPage({super.key});
 
   @override
   State<FeedPage> createState() => _FeedPageState();
@@ -63,7 +60,6 @@ class _FeedPageState extends State<FeedPage> {
                 imageUrl: music.album!.images!.first.url!,
                 link: music.externalUrls!.spotify!,
                 duration: music.durationMs!,
-                spotifyApi: spotify,
               );
             });
           }
@@ -84,7 +80,6 @@ class _FeedPageState extends State<FeedPage> {
                 imageUrl: music.album!.images!.first.url!,
                 link: music.externalUrls!.spotify!,
                 duration: music.durationMs!,
-                spotifyApi: spotify,
               ));
             });
           }
@@ -96,19 +91,15 @@ class _FeedPageState extends State<FeedPage> {
   @override
   void initState() {
     super.initState();
-
-    final credentials = SpotifyApiCredentials(ApiSettings.clientId, ApiSettings.clientSecret);
-    final spotify = SpotifyApi(credentials);
-    getRel(spotify);
+    getRel(universal.spotifyApi);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: backgroundColor,
-        appBar: feedProfileAppBar(user: widget.user),
+        appBar: feedProfileAppBar(),
         drawer: ProfileDrawer(
-          user: widget.user,
         ),
         body: SingleChildScrollView(
           child: Column(

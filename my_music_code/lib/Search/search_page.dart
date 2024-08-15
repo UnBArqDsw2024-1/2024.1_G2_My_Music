@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:my_music_code/Feed/Components/feed_profile_app_bar.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
@@ -10,7 +10,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
-
+  
   @override
   State<SearchPage> createState() => _SearchPageState();
 }
@@ -20,62 +20,24 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Color(0xFF373737), // Cor da barra de status
-      statusBarIconBrightness: Brightness.light, // Cor dos ícones da barra de status
-    ));
-
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFF373737),
-        title: Text(
-          'Buscar',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 36.0
-          )
-        ),
-        centerTitle: true,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(30),
-            bottomRight: Radius.circular(30)
-          )
-        ),
-        bottom: PreferredSize(
-          preferredSize: Size.fromHeight(30),
-          child: Container(
-            margin: EdgeInsets.only(bottom: 10.0),
-            child: Text(
-              'O que você quer ouvir?',
-              style: TextStyle(
-                color: const Color.fromRGBO(255, 255, 255, 0.6),
-                fontSize: 16.0,
-              ),
-            ),
-          )
-        ),
-      ),
+      appBar: feedProfileAppBar(),
       backgroundColor: backgroundColor,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
-          child: Column (
-          crossAxisAlignment: CrossAxisAlignment.start, 
+            child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             RawMaterialButton(
-              onPressed: () => Navigator.push(
-                context, MaterialPageRoute(builder: (context) => SearchPageTerms())
-              ),
-              padding: EdgeInsets.only(bottom: 10),
-              child: ResponsiveContainer(
-                height: 55,
-                width: double.infinity,
-                color: Color(0xFF373737),
-                borderRadius: BorderRadius.circular(10),
-                child: Center(
-                  child: Row(
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPageTerms())),
+                child: ResponsiveContainer(
+                  height: 55,
+                  width: double.infinity,
+                  color: Color(0xFF373737),
+                  borderRadius: BorderRadius.circular(10),
+                  child: Center(
+                      child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Expanded(
@@ -86,80 +48,74 @@ class _SearchPageState extends State<SearchPage> {
                         ),
                       ),
                       Expanded(
-                        flex: 3,
-                        child: Center(
-                          child: 
-                            ResponsiveText(
-                              text: "Pesqisar música, playlist, artista...",
-                              //fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              fontColor: const Color.fromRGBO(255, 255, 255, 0.6),
-                            )
-                        )
-                      ),
+                          flex: 3,
+                          child: Center(
+                              child: ResponsiveText(
+                            text: "Pesquisar música, playlist, artista...",
+                            //fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            fontColor: const Color.fromRGBO(255, 255, 255, 0.6),
+                          ))),
                       Expanded(
                         child: Container(),
                       ),
                     ],
-                  )
-                ),
-              )
-            ),
-            
-            // Filtros
+                  )),
+                )),
 
+            SizedBox(height: 5),
+            // Filtros
             Row(
               children: [
                 PopupMenuButton<String>(
-                  color: Color(0xFF373737),
-                  
-                  onSelected: (String result) {
-                    setState(() {
-                      _selectedFilter = result;
-                    });
-                  },
-                  itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                    PopupMenuItem<String>(
-                      value: 'Música',
-                      child: _buildFilterItem('Música'),
-                    ),
-                    PopupMenuItem<String>(
-                      value: 'PlayList',
-                      child: _buildFilterItem('PlayList'),
-                    ),
-                    PopupMenuItem<String>(
-                      value: 'Artista',
-                      child: _buildFilterItem('Artista'),
-                    ),
-                    PopupMenuItem<String>(
-                      value: 'Álbum',
-                      child: _buildFilterItem('Álbum'),
-                    ),
-                  ],
-                  child: Card(
                     color: Color(0xFF373737),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0), // Define o raio das bordas
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                      child: Row(
-                        children: [
-                          SvgPicture.asset('assets/Filter.svg'),
-                          SizedBox(width: 8), // Espaçamento entre o ícone e o texto
-                          Text('Filtros', style: TextStyle(color: Colors.white)), // Texto
+                    onSelected: (String result) {
+                      setState(() {
+                        _selectedFilter = result;
+                      });
+                    },
+                    itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                          PopupMenuItem<String>(
+                            value: 'Música',
+                            child: _buildFilterItem('Música'),
+                          ),
+                          PopupMenuItem<String>(
+                            value: 'PlayList',
+                            child: _buildFilterItem('PlayList'),
+                          ),
+                          PopupMenuItem<String>(
+                            value: 'Artista',
+                            child: _buildFilterItem('Artista'),
+                          ),
+                          PopupMenuItem<String>(
+                            value: 'Álbum',
+                            child: _buildFilterItem('Álbum'),
+                          ),
                         ],
-                      ),
-                    )
-                  )
-                ),
+                    child: Card(
+                        color: Color(0xFF373737),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0), // Define o raio das bordas
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                          child: Row(
+                            children: [
+                              SvgPicture.asset('assets/Filter.svg'),
+                              SizedBox(width: 8), // Espaçamento entre o ícone e o texto
+                              Text('Filtros', style: TextStyle(color: Colors.white)), // Texto
+                            ],
+                          ),
+                        ))),
                 SizedBox(width: 15),
                 Text(
                   'Filtro selecionado: $_selectedFilter',
-                  style: TextStyle(color: Colors.white, ),
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
               ],
-            ),    
+            ),
             SizedBox(height: 20),
 
             // Recently Played
@@ -186,21 +142,20 @@ class _SearchPageState extends State<SearchPage> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  _buildArtistItemWithBackground('Eminem', 'Artista','assets/eminem.png'),
+                  _buildArtistItemWithBackground('Eminem', 'Artista', 'assets/eminem.png'),
                   SizedBox(width: 20),
-                  _buildArtistItemWithBackground('The Weekend', 'Artista','assets/eminem.png'),
+                  _buildArtistItemWithBackground('The Weekend', 'Artista', 'assets/eminem.png'),
                   // Adicione mais itens aqui
                 ],
               ),
             ),
           ],
-          )
-        ),
+        )),
       ),
     );
   }
 
-   Widget _buildFilterItem(String text) {
+  Widget _buildFilterItem(String text) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
       width: double.infinity,
@@ -228,11 +183,10 @@ class _SearchPageState extends State<SearchPage> {
             height: 100,
             width: 100,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5), // Borda arredondada
-              image: DecorationImage(
-                image: NetworkImage(DefaultPlaceholder.image), // Imagem de fundo
-              )
-            ),
+                borderRadius: BorderRadius.circular(5), // Borda arredondada
+                image: DecorationImage(
+                  image: NetworkImage(DefaultPlaceholder.image), // Imagem de fundo
+                )),
           ),
           SizedBox(height: 8),
           Text(title, style: TextStyle(color: Colors.white)),

@@ -201,6 +201,14 @@ class _MusicPageState extends State<MusicPage> {
 
   @override
   Widget build(BuildContext context) {
+    List<String> listNames = universal.currentListMusic.map((e) {
+      return e.name!;
+    }).toList();
+
+    int indexListMusic = listNames.indexOf(widget.music.name!);
+    print(universal.currentListMusic);
+    print(indexListMusic);
+
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
@@ -331,7 +339,18 @@ class _MusicPageState extends State<MusicPage> {
               children: <Widget>[
                 IconButton(
                   icon: Icon(CupertinoIcons.backward_end_fill, color: Colors.white, size: 30),
-                  onPressed: () {},
+                  onPressed: () {
+                    if (universal.currentListMusic.isNotEmpty) {
+                      Navigator.pop(context);
+                      showModalBottomSheet(
+                          useRootNavigator: false,
+                          isScrollControlled: true,
+                          useSafeArea: true,
+                          context: context,
+                          builder: (context) => MusicPage(music: universal.currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length])
+                        );
+                    }
+                  },
                 ),
 
                 SizedBox(width: 20), // Espaçamento entre os botões de controle
@@ -367,7 +386,18 @@ class _MusicPageState extends State<MusicPage> {
 
                 IconButton(
                   icon: Icon(CupertinoIcons.forward_end_fill, color: Colors.white, size: 30),
-                  onPressed: () {},
+                  onPressed: () {
+                    if (universal.currentListMusic.isNotEmpty) {
+                      Navigator.pop(context);
+                        showModalBottomSheet(
+                          useRootNavigator: false,
+                          isScrollControlled: true,
+                          useSafeArea: true,
+                          context: context,
+                          builder: (context) => MusicPage(music: universal.currentListMusic[(indexListMusic + 1) % universal.currentListMusic.length])
+                        );
+                    }
+                  },
                 ),
               ],
             ),

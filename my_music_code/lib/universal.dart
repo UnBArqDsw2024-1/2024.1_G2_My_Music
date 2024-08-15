@@ -3,8 +3,10 @@ library universal;
 import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
+import 'package:spotify/spotify.dart' hide User;
 
 AudioPlayer audioPlayer = AudioPlayer();
 Music currentMusic = Music();
-User? user;
-
+late User user;
+late SpotifyApi spotifyApi;
+late List<Music> currentListMusic = List.empty(growable: true);

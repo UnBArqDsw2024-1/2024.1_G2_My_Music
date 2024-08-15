@@ -2,7 +2,6 @@
 
 import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -10,11 +9,11 @@ import 'package:my_music_code/Globals/custom_text_field.dart';
 import 'package:my_music_code/Globals/dialogs.dart';
 import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:my_music_code/universal.dart' as universal;
+
 
 class ConfigurationPage extends StatefulWidget {
-  const ConfigurationPage({super.key, required this.user});
-
-  final User user;
+  const ConfigurationPage({super.key});
 
   @override
   State<ConfigurationPage> createState() => _ConfigurationPageState();
@@ -48,7 +47,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
     
     try {
       Reference reference =
-          FirebaseStorage.instance.ref().child("Images/${widget.user.uid}.png");
+          FirebaseStorage.instance.ref().child("Images/${universal.user.uid}.png");
       await reference.putFile(image).whenComplete(() {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -58,7 +57,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
         );
       });
       imageUrl = await reference.getDownloadURL();
-      widget.user.updatePhotoURL(imageUrl);
+      universal.user.updatePhotoURL(imageUrl);
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
@@ -112,7 +111,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                         color: backgroundColor,
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                          image: CachedNetworkImageProvider(widget.user.photoURL ?? DefaultPlaceholder.image),
+                          image: CachedNetworkImageProvider(universal.user.photoURL ?? DefaultPlaceholder.image),
                           fit: BoxFit.cover
                         )
                       ),
@@ -157,7 +156,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
               leadingIconColor: Colors.white,
               inputTextColor: Colors.white,
               cursorColor: Colors.white,
-              initialValue: widget.user.displayName,
+              initialValue: universal.user.displayName,
               onChanged: (value) {
                 setState(() {
                   username = value;
@@ -173,7 +172,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
               leadingIconColor: Colors.white,
               inputTextColor: Colors.white,
               cursorColor: Colors.white,
-              initialValue: widget.user.email,
+              initialValue: universal.user.email,
               onChanged: (value) {
                 setState(() {
                   email = value;
@@ -205,11 +204,11 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                   style: TextStyle(color: Colors.white, fontSize: 13)),
               onPressed: () {
                 // Ação para salvar perfil
-                if (widget.user.displayName != username) {
-                  widget.user.updateDisplayName(username);
+                if (universal.user.displayName != username) {
+                  universal.user.updateDisplayName(username);
                 }
-                if (widget.user.email != email) {
-                  widget.user.verifyBeforeUpdateEmail(email);
+                if (universal.user.email != email) {
+                  universal.user.verifyBeforeUpdateEmail(email);
                 }
               },
             ),

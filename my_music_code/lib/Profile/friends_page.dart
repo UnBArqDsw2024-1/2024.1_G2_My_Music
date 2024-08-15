@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Globals/custom_text_field.dart';
 import 'package:my_music_code/Globals/style.dart';
-import 'package:my_music_code/Profile/add_friend_page.dart';
+import 'package:my_music_code/Profile/Components/query_result_widget.dart';
+// import 'package:my_music_code/Profile/add_friend_page.dart';
+
 class FriendsPage extends StatefulWidget {
   const FriendsPage({super.key});
 
@@ -9,25 +12,10 @@ class FriendsPage extends StatefulWidget {
 }
 
 class _FriendsPageState extends State<FriendsPage> {
-  final TextEditingController _searchController = TextEditingController();
+  String query = '';
 
   @override
   Widget build(BuildContext context) {
-    int friends = 30; // Número de amigos para teste, futuramente pegar da database 
-    
-    List<Widget> friendsWidgets = List.generate(
-      friends,
-      (index) => ListTile(
-        leading: CircleAvatar(
-          backgroundImage: NetworkImage(DefaultPlaceholder.image),
-        ),
-        title: Text(
-          'Amigo $index',
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
-    );
-
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
@@ -44,65 +32,47 @@ class _FriendsPageState extends State<FriendsPage> {
         ),
         centerTitle: true,
       ),
-      body: Stack(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Column(
-              children: [
-                TextField(
-                  controller: _searchController,
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                    hintText: 'Buscar amigo...',
-                    hintStyle: TextStyle(color: Colors.grey),
-                    prefixIcon: Icon(Icons.search, color: Colors.grey),
-                    filled: true,
-                    fillColor: Color(0xff373737),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide.none,
-                    ),
-                    contentPadding: EdgeInsets.symmetric(vertical: 18),
-                  ),
-                ),
-                SizedBox(height: 0), 
-                Expanded(
-                  child: ListView(
-                    children: friendsWidgets,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
-              child: ElevatedButton(
-                onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AddFriendsPage()),
-                );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xff373737), 
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  padding: EdgeInsets.symmetric(vertical: 16.0),
-                ),
-                child: Text(
-                  'Adicionar novo amigo',
-                  style: TextStyle(color: Colors.white, fontSize: 16),
+      body: SizedBox(
+          width: double.infinity,
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: CustomTextField(
+                  fillColor: secondaryColor,
+                  leadingIconColor: Colors.white,
+                  cursorColor: Colors.white,
+                  prefixIcon: Icons.search,
+                  hintText: "Pesquisar amigo",
+                  hintTextColor: Colors.white24,
+                  selectedBorderColor: Colors.transparent,
+                  inputTextColor: Colors.white,
+                  onChanged: (value) => setState(() => query = value),
                 ),
               ),
-            ),
-          ),
-        ],
-      ),
-    );
+              QueryResultWidget(
+                query: query,
+                friendsList: List.generate(30, (index) => "Amigo $index"),
+              ),
+              GestureDetector(
+                onTap: () {
+                },
+                child: Container(
+                  height: 60,
+                  decoration: BoxDecoration(
+                      color: Color(0xff252525), borderRadius: BorderRadius.vertical(top: Radius.circular(5))),
+                  alignment: Alignment.center,
+                  child: Text(
+                    "Adicione um amigo",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: primaryFontColor, fontWeight: FontWeight.w600, fontSize: 16)
+                  ),
+                ),
+              ),
+            ],
+          )
+        )
+      );
   }
 }
+

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/music_playlist_feed_component.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/size_config.dart';
-import 'package:spotify/spotify.dart';
 
 class Music {
   final String? name;
@@ -11,9 +10,8 @@ class Music {
   final String? imageUrl;
   final String? link;
   final int? duration;
-  final SpotifyApi? spotifyApi;
 
-  Music({this.spotifyApi, this.name, this.id, this.artist, this.imageUrl, this.link, this.duration});
+  Music({this.name, this.id, this.artist, this.imageUrl, this.link, this.duration});
 }
 
 class FeedMusicGrid extends StatefulWidget {
