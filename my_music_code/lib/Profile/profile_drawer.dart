@@ -62,9 +62,9 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
             title: ResponsiveText(text: "Sobre"),
             onTap: () {
               Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => AboutPage()),
-            );
+                context,
+                MaterialPageRoute(builder: (context) => AboutPage()),
+              );
             },
           ),
         ],
