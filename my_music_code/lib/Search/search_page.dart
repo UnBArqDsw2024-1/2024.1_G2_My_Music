@@ -123,13 +123,20 @@ class _SearchPageState extends State<SearchPage> {
             SizedBox(height: 10),
             SizedBox(
               height: 150,
-              child: ListView(
+              child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                children: [
-                  _buildRecentlyPlayedItem('The triangle', 'assets/eminem.png'),
-                  _buildRecentlyPlayedItem('StarBoy', 'assets/eminem.png'),
-                  // Adicione mais itens aqui
-                ],
+                itemCount: .length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    width: MediaQuery.of(context).size.height * 0.27,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(songs[index].coverUrl) 
+                        )
+                      fit: BoxFit.cover;                        
+                    ),
+                  ),
+                },
               ),
             ),
             SizedBox(height: 20),
