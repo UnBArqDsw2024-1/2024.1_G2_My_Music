@@ -95,7 +95,7 @@ class _FeedPageState extends State<FeedPage> {
   @override
   void initState() {
     super.initState();
-    getRel(widget.spotify);
+    getRel(widget.spotifyApi);
   }
 
   @override
