@@ -253,12 +253,12 @@ class _SearchPageState extends State<SearchPage> {
               // Recomendações
               SpacedColumn(
                   padding: EdgeInsets.zero,
-                  spacing: 20,
+                  spacing: 10,
                   children: _selectedFilter == "Todos"
                       ? List.from(mapaDeResposta.entries.map((e) => listBuilder(e.value, title: e.key)))
                       : [listBuilder(mapaDeResposta[_selectedFilter]!, title: _selectedFilter)]),
 
-              if(universal.currentMusic.name != null) Container(height: 90),
+              if(universal.currentMusic.name != null) Container(height: 180),
             ],
           )
         ),
