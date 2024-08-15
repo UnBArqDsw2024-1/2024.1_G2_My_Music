@@ -1,15 +1,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/feed_page.dart';
+import 'package:my_music_code/Globals/mini_player.dart';
 import 'package:my_music_code/MyPlaylists/user_page_of_playlists.dart';
 import 'package:my_music_code/Search/search_page.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:my_music_code/universal.dart' as universal;
 import 'package:spotify/spotify.dart' hide User;
 
 class NavigatorPage extends StatefulWidget {
-  const NavigatorPage({super.key, required this.user, required this.spotify});
+  const NavigatorPage({super.key, required this.user, required this.spotifyApi});
   final User user;
- final SpotifyApi spotify;
+  final SpotifyApi spotifyApi;
 
   @override
   State<NavigatorPage> createState() => _NavigatorPageState();
@@ -27,6 +29,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
 
   @override
   Widget build(BuildContext context) {
+    print(universal.currentMusic.name);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -71,16 +74,16 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   physics: const NeverScrollableScrollPhysics(),
                   controller: controller,
                   children: [
-                    SearchPage(spotifyApi: widget.spotify,),
-                    FeedPage(user: widget.user, spotify: widget.spotify),
+                    SearchPage(spotifyApi: widget.spotifyApi),
+                    FeedPage(user: widget.user, spotifyApi: widget.spotifyApi),
                     UserPageOfPlaylists(),
                   ],
                 ),
-
-                // Positioned(
-                //   bottom: 0, left: 0, right: 0,
-                //   child: MiniPlayer(),
-                // )
+                if (universal.currentMusic.id != null)
+                  Positioned(
+                    bottom: 1, left: 0, right: 0,
+                    child: MiniPlayer(),
+                  )
               ],
             ),
           ],

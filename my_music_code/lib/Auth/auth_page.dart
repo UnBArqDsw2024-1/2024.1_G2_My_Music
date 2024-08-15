@@ -33,8 +33,8 @@ class _AuthPageState extends State<AuthPage> {
           builder: (context, snapshot) {
             if (snapshot.hasData && !userModel.creatingAccount) {
               SpotifyApiCredentials credentials = SpotifyApiCredentials(ApiSettings.clientId, ApiSettings.clientSecret);
-              SpotifyApi spotify = SpotifyApi(credentials);
-              return NavigatorPage(user: snapshot.data!, spotify: spotify);
+              SpotifyApi spotifyApi = SpotifyApi(credentials);
+              return NavigatorPage(user: snapshot.data!,spotifyApi: spotifyApi,);
             } else {
               return isLogin? LoginPage(userModel: userModel, onTapTogglePage: togglePage) : SignUpPage(userModel: userModel, onTapTogglePage: togglePage);
             }
