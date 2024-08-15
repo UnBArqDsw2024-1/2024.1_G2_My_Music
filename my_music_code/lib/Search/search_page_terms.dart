@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
+import 'package:my_music_code/Feed/music_page.dart';
 import 'package:my_music_code/Globals/style.dart';
-import 'package:spotify/spotify.dart';
+import 'package:spotify/spotify.dart' hide Image;
 
 class SearchPageTerms extends StatefulWidget {
   const SearchPageTerms({super.key, required this.spotifyApi});
@@ -15,7 +16,66 @@ class SearchPageTerms extends StatefulWidget {
 
 class _SearchPageTermsState extends State<SearchPageTerms> {
   TextEditingController textEditingController = TextEditingController();
+  List<Widget> buildTile = [];
   String query = "";
+
+  getQuery(SpotifyApi spotify, String query) async {
+    var results = await spotify.search.get(query).first(30);
+    List<Music> listResults = [];
+    for (var pages in results) {
+      if (pages.items != null) {
+        for (var res in pages.items!) {
+          if (res is Track) {
+            listResults.add(
+              Music(
+                name: res.name!,
+                id: res.id!,
+                artist: res.artists!.first.name!,
+                imageUrl: res.album!.images!.first.url!,
+                link: res.externalUrls!.spotify!,
+                duration: res.durationMs!,
+              ),
+            );
+          }
+        }
+      }
+    }
+
+    setState(() {
+      buildTile = List.from(
+        listResults.map(
+          (music) => ListTile(
+            onTap: (){
+              showModalBottomSheet(
+                useRootNavigator: false,
+                isScrollControlled: true,
+                useSafeArea: true,
+                context: context,
+                builder: (context) {
+                  return MusicPage(music: music);
+                }
+              );
+            },
+            title: Text(music.name!,style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500)),
+            subtitle: Text(music.artist!, style: TextStyle(color: Colors.white)),
+            leading: Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: secondaryColor,
+                image: DecorationImage(
+                  image: NetworkImage(music.imageUrl!),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            )
+          )
+        )
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,33 +94,13 @@ class _SearchPageTermsState extends State<SearchPageTerms> {
                 });
               },
               onSubmitted: (value) {
-                getQuery(SpotifyApi spotify) async {
-                  var results = await spotify.search.get(value).first(30);
-                  List<Music> listResults = [];
-
-               for (var pages in results) {
-                  if (pages.items != null) {
-                    for (var res in pages.items!) {
-                      if (res is Track){
-                          listResults.add(Music(
-                            name: res.name!,
-                            artist: res.artists!.first.name!,
-                            imageUrl: res.album!.images!.first.url!,
-                          ),
-                        );
-                      }
-                    }
-                  }    
-                }
-              }
-                getQuery(widget.spotifyApi);
+                getQuery(widget.spotifyApi, query);
               },
               autofocus: true,
               decoration: InputDecoration(
-                hintText: 'Artista, álbum ou música...',
+                hintText: 'Música...',
                 prefixIcon: IconButton(
-                  icon: Icon(Icons.arrow_back,
-                      color: Colors.black), // Ícone no final do campo
+                  icon: Icon(Icons.arrow_back, color: Colors.black), // Ícone no final do campo
                   onPressed: () {
                     Navigator.pop(context);
                   },
@@ -76,60 +116,17 @@ class _SearchPageTermsState extends State<SearchPageTerms> {
               style: TextStyle(color: Colors.black),
             ),
             SizedBox(height: 20),
-            Text('Buscas recentes',
-                style: TextStyle(fontSize: 18, color: Colors.white)),
-            SizedBox(height: 10),
+            if(buildTile.isEmpty) Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: Text('Buscas recentes', style: TextStyle(fontSize: 18, color: Colors.white)),
+            ),
             Expanded(
               child: ListView(
-                children: [
-                  _buildRecentlyPlayedItem(
-                      'The triangle', 'Music', 'Eminem', 'assets/eminem.png'),
-                  _buildRecentlyPlayedItem(
-                      'StarBoy', 'Music', 'Eminem', 'assets/eminem.png'),
-                  // Adicione mais itens aqui
-                ],
+                children: buildTile,
               ),
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildRecentlyPlayedItem(
-      String title, String type, String artist, String imagePath) {
-    return Padding(
-      padding: const EdgeInsets.all(8),
-      child: Row(
-        children: [
-          SizedBox(width: 8),
-          Expanded(
-            // Usa o Expanded para que a coluna ocupe o espaço disponível
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(title, style: TextStyle(color: Colors.white)),
-                SizedBox(
-                    height:
-                        4), // Espaçamento entre o título e o texto adicional
-                Row(
-                  children: [
-                    Text(type,
-                        style: TextStyle(color: Colors.white, fontSize: 10)),
-                    Text(' - ',
-                        style: TextStyle(color: Colors.white, fontSize: 10)),
-                    Text(artist,
-                        style: TextStyle(color: Colors.white, fontSize: 10)),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.close),
-              color: Colors.white), // Ícone no canto direito
-        ],
       ),
     );
   }
