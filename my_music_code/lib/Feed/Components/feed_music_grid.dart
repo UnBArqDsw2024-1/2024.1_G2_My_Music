@@ -34,6 +34,7 @@ class _FeedMusicGridState extends State<FeedMusicGrid> {
           mainAxisSize: MainAxisSize.max, 
           mainAxisAlignment: MainAxisAlignment.center, 
           children: [
+            if(widget.listaDeMusicas.isNotEmpty)
             for (int index = 0; index < widget.listaDeMusicas.length / 2 && index < 4; index++)
               
               // A cada interação do loop for ele vai criar uma Row contendo dois elementos de música cada um com index próprio a principio contando de 0 e 1
@@ -53,6 +54,24 @@ class _FeedMusicGridState extends State<FeedMusicGrid> {
                   ],
                 ),
               ),
+            
+            if(widget.listaDeMusicas.isEmpty)
+              for(int index = 0; index < 4; index++)
+                Padding(
+                  padding: EdgeInsets.only(bottom: responsiveFigmaHeight(10)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      MusicPlaylistFeedComponent(
+                        music: Music(),
+                      ),
+                      ResponsiveContainer(width: 10),
+                      MusicPlaylistFeedComponent(
+                        music: Music(),
+                      ),
+                    ],
+                  ),
+                ),
           ]
         ),
       ),

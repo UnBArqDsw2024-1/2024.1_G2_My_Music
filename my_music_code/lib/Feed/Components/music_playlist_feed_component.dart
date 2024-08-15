@@ -47,12 +47,12 @@ class _MusicPlaylistFeedComponentState extends State<MusicPlaylistFeedComponent>
               color: widget.backgroundColor,
               borderRadius: BorderRadius.circular(5),
               image: DecorationImage(
-                image: NetworkImage(widget.music.imageUrl!),
+                image: NetworkImage(widget.music.imageUrl ?? DefaultPlaceholder.image),
                 fit: BoxFit.cover,
               ),
             ),
             ResponsiveText(
-                text: widget.music.name,
+                text: widget.music.name ?? DefaultPlaceholder.title,
                 fontColor: Colors.white,
                 padding: EdgeInsets.only(left: responsiveFigmaWidth(5))),
           ],
