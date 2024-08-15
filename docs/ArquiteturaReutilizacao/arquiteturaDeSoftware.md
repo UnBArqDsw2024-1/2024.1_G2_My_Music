@@ -4,7 +4,7 @@
 
 | Versão | Data       | Descrição                                                  | Autor(es)              | Revisor(es)   |
 | ------ | ---------- | ---------------------------------------------------------- | ---------------------- | ------------- |
-| `1.0`  | 12/08/2024 | Criação do documento e adição de todas as visões.                 | Henrique Hida           |        |
+| `1.0`  | 12/08/2024 | Criação do documento e adição de todas as visões.                 | Henrique Hida           | [Luis Miranda](https://github.com/LuisMiranda10), [Link da revisão)[https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/116]       |
 
 
 # 2. Introdução
