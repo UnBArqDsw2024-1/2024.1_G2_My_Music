@@ -27,15 +27,15 @@ class _SearchPageState extends State<SearchPage> {
       if (pages.items != null) {
         for (var album in pages.items!) {
           if (album is AlbumSimple) {
-            var pagesTracks = await spotify.albums.tracks(album.id!).first().asStream().first;
+            var pagesTracks =
+                await spotify.albums.tracks(album.id!).first().asStream().first;
             setState(() {
               topReleases.add(AlbumModel(
                   songs: pagesTracks.items,
                   name: album.name!,
                   id: album.id!,
                   artist: album.artists!.first.name!,
-                  image: album.images!.first.url!
-              ));
+                  image: album.images!.first.url!));
             });
           }
         }
@@ -61,7 +61,8 @@ class _SearchPageState extends State<SearchPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             RawMaterialButton(
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPageTerms())),
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SearchPageTerms())),
                 child: ResponsiveContainer(
                   height: 55,
                   width: double.infinity,
@@ -75,7 +76,8 @@ class _SearchPageState extends State<SearchPage> {
                         child: Container(
                           alignment: Alignment.center,
                           // ignore: deprecated_member_use
-                          child: Icon(Icons.search, color: const Color.fromRGBO(255, 255, 255, 0.6)),
+                          child: Icon(Icons.search,
+                              color: const Color.fromRGBO(255, 255, 255, 0.6)),
                         ),
                       ),
                       Expanded(
@@ -105,7 +107,8 @@ class _SearchPageState extends State<SearchPage> {
                         _selectedFilter = result;
                       });
                     },
-                    itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                    itemBuilder: (BuildContext context) =>
+                        <PopupMenuEntry<String>>[
                           PopupMenuItem<String>(
                             value: 'Música',
                             child: _buildFilterItem('Música'),
@@ -126,15 +129,21 @@ class _SearchPageState extends State<SearchPage> {
                     child: Card(
                         color: Color(0xFF373737),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0), // Define o raio das bordas
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Define o raio das bordas
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 5),
                           child: Row(
                             children: [
                               SvgPicture.asset('assets/Filter.svg'),
-                              SizedBox(width: 8), // Espaçamento entre o ícone e o texto
-                              Text('Filtros', style: TextStyle(color: Colors.white)), // Texto
+                              SizedBox(
+                                  width:
+                                      8), // Espaçamento entre o ícone e o texto
+                              Text('Filtros',
+                                  style:
+                                      TextStyle(color: Colors.white)), // Texto
                             ],
                           ),
                         ))),
@@ -148,170 +157,171 @@ class _SearchPageState extends State<SearchPage> {
               ],
             ),
             SizedBox(height: 40),
-
             // Recently Played
-            if(_selectedFilter == "Música")
-            
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Músicas Recentes', style: TextStyle(fontSize: 18, color: Colors.white)),
-                SizedBox(height: 20),
-                Container(
-                  height: 170,
-                  constraints: BoxConstraints(),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: List.from(
-                        topReleases.map(
-                          (element) => Padding(
-                            padding: const EdgeInsets.only(right: 8.0),
-                            child: Column(
-                              children: [
-                                Container(
-                                  width: 136,
-                                  height: 157,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5),
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                        element.image,
-                                      ), 
-                                      fit: BoxFit.cover
-                                    ),
+            if (_selectedFilter == "Música")
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Músicas Recentes',
+                      style: TextStyle(fontSize: 18, color: Colors.white)),
+                  SizedBox(height: 20),
+                  Container(
+                    height: 170,
+                    constraints: BoxConstraints(),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children:
+                            List.from(topReleases.map((element) => Padding(
+                                  padding: const EdgeInsets.only(right: 8.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        width: 136,
+                                        height: 157,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(5),
+                                          image: DecorationImage(
+                                              image: NetworkImage(
+                                                element.image,
+                                              ),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                              ],
-                            ),
-                          )
-                    
-                        )
+                                ))),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            
-            SizedBox(height: 20),
-            
-            // Recently Played
-            Text('Playlist Recentes', style: TextStyle(fontSize: 18, color: Colors.white)),
-            SizedBox(height: 20),
-            Container(
-              height: 170,
-              constraints: BoxConstraints(),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.from(
-                    topReleases.map(
-                      (element) => Padding(
-                        padding: const EdgeInsets.only(right: 8.0),
-                        child: Column(
-                          children: [
-                            Container(
-                              width: 136,
-                              height: 157,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                image: DecorationImage(
-                                  image: NetworkImage(
-                                    element.image,
-                                  ), 
-                                  fit: BoxFit.cover
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
-                
-                    )
-                  ),
-                ),
+                ],
               ),
-            ),
+
             SizedBox(height: 20),
-            
-            // Recently Played
-            Text('Artista Recentes', style: TextStyle(fontSize: 18, color: Colors.white)),
-            SizedBox(height: 20),
-            Container(
-              height: 170,
-              constraints: BoxConstraints(),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.from(
-                    topReleases.map(
-                      (element) => Padding(
-                        padding: const EdgeInsets.only(right: 8.0),
-                        child: Column(
-                          children: [
-                            Container(
-                              width: 136,
-                              height: 157,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                image: DecorationImage(
-                                  image: NetworkImage(
-                                    element.image,
-                                  ), 
-                                  fit: BoxFit.cover
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
-                
-                    )
+
+            if (_selectedFilter == "PlayList") // Recently Played
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('PlayLists Recentes',
+                      style: TextStyle(fontSize: 18, color: Colors.white)),
+                  SizedBox(height: 20),
+                  Container(
+                    height: 170,
+                    constraints: BoxConstraints(),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children:
+                            List.from(topReleases.map((element) => Padding(
+                                  padding: const EdgeInsets.only(right: 8.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        width: 136,
+                                        height: 157,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(5),
+                                          image: DecorationImage(
+                                              image: NetworkImage(
+                                                element.image,
+                                              ),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ))),
+                      ),
+                    ),
                   ),
-                ),
+                  SizedBox(height: 20),
+                ],
               ),
-            ),
-            SizedBox(height: 20),
-            
-            // Recently Played
-            Text('Album Recentes', style: TextStyle(fontSize: 18, color: Colors.white)),
-            SizedBox(height: 20),
-            Container(
-              height: 170,
-              constraints: BoxConstraints(),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.from(
-                    topReleases.map(
-                      (element) => Padding(
-                        padding: const EdgeInsets.only(right: 8.0),
-                        child: Column(
-                          children: [
-                            Container(
-                              width: 136,
-                              height: 157,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                image: DecorationImage(
-                                  image: NetworkImage(
-                                    element.image,
-                                  ), 
-                                  fit: BoxFit.cover
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
-                
-                    )
+
+            if (_selectedFilter == "Artista")
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Artista Recentes',
+                      style: TextStyle(fontSize: 18, color: Colors.white)),
+                  SizedBox(height: 20),
+                  Container(
+                    height: 170,
+                    constraints: BoxConstraints(),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children:
+                            List.from(topReleases.map((element) => Padding(
+                                  padding: const EdgeInsets.only(right: 8.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        width: 136,
+                                        height: 157,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(5),
+                                          image: DecorationImage(
+                                              image: NetworkImage(
+                                                element.image,
+                                              ),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ))),
+                      ),
+                    ),
                   ),
-                ),
+                  SizedBox(height: 20),
+                ],
               ),
-            ),
-            SizedBox(height: 20),
+
+            if (_selectedFilter == "Álbum") // Recently Played
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Album Recentes',
+                      style: TextStyle(fontSize: 18, color: Colors.white)),
+                  SizedBox(height: 20),
+                  Container(
+                    height: 170,
+                    constraints: BoxConstraints(),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children:
+                            List.from(topReleases.map((element) => Padding(
+                                  padding: const EdgeInsets.only(right: 8.0),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        width: 136,
+                                        height: 157,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(5),
+                                          image: DecorationImage(
+                                              image: NetworkImage(
+                                                element.image,
+                                              ),
+                                              fit: BoxFit.cover),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ))),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                ],
+              ),
           ],
         )),
       ),
