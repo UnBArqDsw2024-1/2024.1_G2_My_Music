@@ -12,8 +12,10 @@ class MusicPage extends StatefulWidget {
   const MusicPage({
     super.key,
     required this.music,
+    this.listMusics,
   });
   final Music music;
+  final List<Music>? listMusics;
   @override
   State<MusicPage> createState() => _MusicPageState();
 }
@@ -201,6 +203,7 @@ class _MusicPageState extends State<MusicPage> {
 
   @override
   Widget build(BuildContext context) {
+    int indexListMusic = 0;
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
@@ -331,7 +334,17 @@ class _MusicPageState extends State<MusicPage> {
               children: <Widget>[
                 IconButton(
                   icon: Icon(CupertinoIcons.backward_end_fill, color: Colors.white, size: 30),
-                  onPressed: () {},
+                  onPressed: () {
+                    if (widget.listMusics!.length != 0) {
+                        showModalBottomSheet(
+                          useRootNavigator: false,
+                          isScrollControlled: true,
+                          useSafeArea: true,
+                          context: context,
+                          builder: (context) => MusicPage(music: widget.listMusics![indexListMusic - 1])
+                        );
+                    }
+                  },
                 ),
 
                 SizedBox(width: 20), // Espaçamento entre os botões de controle
@@ -367,7 +380,17 @@ class _MusicPageState extends State<MusicPage> {
 
                 IconButton(
                   icon: Icon(CupertinoIcons.forward_end_fill, color: Colors.white, size: 30),
-                  onPressed: () {},
+                  onPressed: () {
+                    if (widget.listMusics!.length != 0) {
+                        showModalBottomSheet(
+                          useRootNavigator: false,
+                          isScrollControlled: true,
+                          useSafeArea: true,
+                          context: context,
+                          builder: (context) => MusicPage(music: widget.listMusics![indexListMusic + 1])
+                        );
+                    }
+                  },
                 ),
               ],
             ),
