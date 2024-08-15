@@ -1,4 +1,3 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/music_playlist_feed_component.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
@@ -18,9 +17,8 @@ class Music {
 }
 
 class FeedMusicGrid extends StatefulWidget {
-  const FeedMusicGrid({super.key, required this.listaDeMusicas, required this.audioPlayer});
+  const FeedMusicGrid({super.key, required this.listaDeMusicas});
   final List<Music> listaDeMusicas;
-  final AudioPlayer audioPlayer;
   @override
   State<FeedMusicGrid> createState() => _FeedMusicGridState();
 }
@@ -40,12 +38,10 @@ class _FeedMusicGridState extends State<FeedMusicGrid> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 MusicPlaylistFeedComponent(
-                  audioPlayer: widget.audioPlayer,
                   music: widget.listaDeMusicas[index * 2],
                 ),
                 ResponsiveContainer(width: 10),
                 MusicPlaylistFeedComponent(
-                  audioPlayer: widget.audioPlayer,
                   music: widget.listaDeMusicas[index * 2 + 1],
                 ),
               ],

@@ -1,4 +1,4 @@
-import 'package:audioplayers/audioplayers.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Album/album_page.dart';
@@ -12,10 +12,9 @@ import 'package:my_music_code/SpotifyApi/api_settings.dart';
 import 'package:spotify/spotify.dart' hide User;
 
 class FeedPage extends StatefulWidget {
-  const FeedPage({super.key, required this.user, required this.spotifyApi, required this.audioPlayer});
+  const FeedPage({super.key, required this.user, required this.spotifyApi,});
   final User user;
   final SpotifyApi spotifyApi;
-  final AudioPlayer audioPlayer;
 
   @override
   State<FeedPage> createState() => _FeedPageState();
@@ -27,7 +26,6 @@ class _FeedPageState extends State<FeedPage> {
   Music musicRelease = Music();
 
   getRel(SpotifyApi spotify) async {
-    // print('\nNew Releases');
     var albumNewReleases = await spotify.search.get('new releases').first(15);
     var newReleases = await spotify.search.get('lançamentos').first(15);
     var search = await spotify.search.get('musicas fair trade').first(30);
@@ -36,13 +34,13 @@ class _FeedPageState extends State<FeedPage> {
       if (pages.items != null) {
         for (var album in pages.items!) {
           if (album is AlbumSimple) {
-            var pages_tracks = await spotify.albums.tracks(album.id!).first().asStream().first;
+            var pagesTracks = await spotify.albums.tracks(album.id!).first().asStream().first;
             // for (var music in pages_tracks.items!) {
             //   print(music.name);
             // }
             setState(()  {
               topReleases.add(AlbumModel(
-                  songs: pages_tracks.items,
+                  songs: pagesTracks.items,
                   name: album.name!,
                   id: album.id!,
                   artist: album.artists!.first.name!,
@@ -115,18 +113,15 @@ class _FeedPageState extends State<FeedPage> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              FeedMusicGrid(listaDeMusicas: recentMusics, audioPlayer: widget.audioPlayer),
+              FeedMusicGrid(listaDeMusicas: recentMusics),
               NewMusicRelease(
                 musicRelease: musicRelease,
-                audioPlayer: widget.audioPlayer,
               ),
               FeedHorizontalScrollComponent(
-                audioPlayer: widget.audioPlayer,
                 title: "Top World Albuns",
                 albuns: topReleases,
               ),
               FeedHorizontalScrollComponent(
-                audioPlayer: widget.audioPlayer,
                 title: "Tocadas recentemente",
                 albuns: topReleases,
               ),

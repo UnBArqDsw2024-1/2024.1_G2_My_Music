@@ -1,15 +1,15 @@
-import 'package:audioplayers/audioplayers.dart';
+
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Feed/music_page.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/style.dart';
-
+import 'package:my_music_code/universal.dart' as universal;
 class NewMusicRelease extends StatefulWidget {
-  const NewMusicRelease({super.key, required this.musicRelease, required this.audioPlayer});
+  const NewMusicRelease({super.key, required this.musicRelease});
   final Music musicRelease;
-  final AudioPlayer audioPlayer;
+
   @override
   State<NewMusicRelease> createState() => _NewMusicReleaseState();
 }
@@ -86,14 +86,16 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                       constraints: BoxConstraints(maxHeight: 55, maxWidth: 55),
                       iconSize: 36,
                       onPressed: () {
+                        setState(() {
+                          universal.currentMusic = widget.musicRelease;
+                        });
                         showModalBottomSheet(
                             useRootNavigator: false,
                             isScrollControlled: true,
                             useSafeArea: true,
                             context: context,
-                            builder: (context) {
-                              return MusicPage(music: widget.musicRelease, audioPlayer: widget.audioPlayer,);
-                            });
+                            builder: (context) => MusicPage()
+                          );
                       },
                       icon: Container(
                           decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),

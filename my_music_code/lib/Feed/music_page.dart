@@ -1,20 +1,16 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart';
+import 'package:my_music_code/universal.dart' as universal;
 
 class MusicPage extends StatefulWidget {
   const MusicPage({
     super.key,
-    required this.music,
-    required this.audioPlayer,
   });
-  final AudioPlayer audioPlayer;
 
-  final Music music;
   @override
   State<MusicPage> createState() => _MusicPageState();
 }
@@ -26,27 +22,29 @@ class _MusicPageState extends State<MusicPage> {
 
   setupMusic() async {
     final yt = YoutubeExplode();
-    final result = (await yt.search(widget.music.name!)).first;
+    final result = (await yt.search(universal.currentMusic.name!)).first;
     final videoId = result.id.value;
+    
     setState(() {
       audioDuration = Duration(milliseconds: result.duration!.inMilliseconds);
     });
+
     final manifest = await yt.videos.streamsClient.getManifest(videoId);
     final audioUrl = manifest.audioOnly.first;
-    widget.audioPlayer.play(UrlSource(audioUrl.url.toString()));
-  }
 
-  setupDuration() async {
-    audioDuration = await widget.audioPlayer.getDuration();
+    if (universal.audioPlayer.source.toString() != audioUrl.url.toString()) {
+      universal.audioPlayer.play(UrlSource(audioUrl.url.toString()));
+    } else {
+      if (universal.audioPlayer.state == PlayerState.playing) {
+        audioDuration = await universal.audioPlayer.getDuration();
+      }
+    }
   }
 
   @override
   void initState() {
-    if (widget.audioPlayer.state == PlayerState.playing) {
-      setupDuration();
-    } else {
-      setupMusic();
-    }
+    // Verifica qual audio está tocando
+    setupMusic();
     super.initState();
   }
 
@@ -217,7 +215,7 @@ class _MusicPageState extends State<MusicPage> {
                 ),
               ),
               Text(
-                widget.music.artist!,
+                universal.currentMusic.artist!,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 12,
@@ -232,9 +230,9 @@ class _MusicPageState extends State<MusicPage> {
               onPressed: () {
                 _musicOptionsModalBottomSheet(
                   context,
-                  widget.music.artist!,
-                  widget.music.name!,
-                  widget.music.imageUrl!,
+                  universal.currentMusic.artist!,
+                  universal.currentMusic.name!,
+                  universal.currentMusic.imageUrl!,
                   isFavorite,
                 );
               },
@@ -246,7 +244,7 @@ class _MusicPageState extends State<MusicPage> {
           ClipRRect(
             borderRadius: BorderRadius.circular(12.0),
             child: Image.network(
-              widget.music.imageUrl!,
+              universal.currentMusic.imageUrl!,
               width: 340,
               height: 340,
               fit: BoxFit.cover,
@@ -255,28 +253,30 @@ class _MusicPageState extends State<MusicPage> {
           SizedBox(height: 20), // Espaçamento entre a imagem e a próxima Row
           Row(
             children: <Widget>[
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      widget.music.name!,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        universal.currentMusic.name!,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    Text(
-                      'By ${widget.music.artist!}',
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 15,
+                      Text(
+                        'By ${universal.currentMusic.artist!}',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 15,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               IconButton(
@@ -294,12 +294,12 @@ class _MusicPageState extends State<MusicPage> {
           Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: StreamBuilder(
-                stream: widget.audioPlayer.onPositionChanged,
+                stream: universal.audioPlayer.onPositionChanged,
                 builder: (context, data) {
                   return ProgressBar(
                     progress: data.data ?? Duration(milliseconds: 0),
                     buffered: audioDuration,
-                    onSeek: (duration) => widget.audioPlayer.seek(duration),
+                    onSeek: (duration) => universal.audioPlayer.seek(duration),
                     total: audioDuration!,
                     progressBarColor: primaryColor,
                     baseBarColor: Colors.white.withOpacity(0.20),
@@ -335,9 +335,9 @@ class _MusicPageState extends State<MusicPage> {
                     setState(() {
                       isPlaying = !isPlaying;
                     });
-                    widget.audioPlayer.state == PlayerState.paused
-                        ? widget.audioPlayer.resume()
-                        : widget.audioPlayer.pause();
+                    universal.audioPlayer.state == PlayerState.paused
+                        ? universal.audioPlayer.resume()
+                        : universal.audioPlayer.pause();
                   },
                   child: Container(
                     width: 100,
@@ -347,9 +347,9 @@ class _MusicPageState extends State<MusicPage> {
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
-                        widget.audioPlayer.state == PlayerState.playing
-                            ? Icons.play_arrow_rounded
-                            : Icons.pause_rounded,
+                        universal.audioPlayer.state == PlayerState.playing
+                            ? Icons.pause_rounded
+                            : Icons.play_arrow_rounded,
                         color: Colors.white,
                         size: 48),
                   ),

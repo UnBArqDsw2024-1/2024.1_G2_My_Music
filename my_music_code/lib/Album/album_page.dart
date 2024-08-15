@@ -1,4 +1,3 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Feed/music_page.dart';
@@ -7,6 +6,7 @@ import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:spotify/spotify.dart';
+import 'package:my_music_code/universal.dart' as universal;
 
 class AlbumModel {
   final String? id;
@@ -24,9 +24,8 @@ class AlbumModel {
 }
 
 class MyAlbumPage extends StatefulWidget {
-  const MyAlbumPage({super.key, required this.album, required this.audioPlayer});
+  const MyAlbumPage({super.key, required this.album});
   final AlbumModel album;
-  final AudioPlayer audioPlayer;
   @override
   State<MyAlbumPage> createState() => _MyAlbumPageState();
 }
@@ -80,7 +79,7 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                   title: Text.rich(
                     textAlign: TextAlign.center,
                     TextSpan(
-                        text: widget.album.name + "\n",
+                        text: "${widget.album.name} \n",
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.white,
@@ -140,23 +139,23 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                 (BuildContext context, int index) {
                   return ListTile(
                     onTap: () {
+                      setState(() {
+                        universal.currentMusic = Music(
+                          name: widget.album.songs!.elementAt(index).name,
+                          id: widget.album.songs!.elementAt(index).id,
+                          artist: widget.album.songs!.elementAt(index).artists!.first.name,
+                          imageUrl: widget.album.image,
+                          link: widget.album.songs!.elementAt(index).externalUrls!.spotify,
+                          duration: widget.album.songs!.elementAt(index).durationMs,
+                        );
+                      });
                       showModalBottomSheet(
                           useRootNavigator: false,
                           isScrollControlled: true,
                           useSafeArea: true,
                           context: context,
-                          builder: (context) {
-                            return MusicPage(
-                              audioPlayer: widget.audioPlayer,
-                              music: Music(
-                                name: widget.album.songs!.elementAt(index).name,
-                                id: widget.album.songs!.elementAt(index).id,
-                                artist: widget.album.songs!.elementAt(index).artists!.first.name,
-                                imageUrl: widget.album.image,
-                                link: widget.album.songs!.elementAt(index).externalUrls!.spotify,
-                                duration: widget.album.songs!.elementAt(index).durationMs,
-                              ));
-                          });
+                          builder: (context) => MusicPage()
+                        );
                     },
                     title: ResponsiveText(
                       text: widget.album.songs!.elementAt(index).name,

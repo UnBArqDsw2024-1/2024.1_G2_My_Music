@@ -1,4 +1,4 @@
-import 'package:audioplayers/audioplayers.dart';
+
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Album/album_page.dart';
 import 'package:my_music_code/Globals/cubic_button_with_image.dart';
@@ -17,10 +17,10 @@ import 'package:my_music_code/Globals/size_config.dart';
 // }
 
 class FeedHorizontalScrollComponent extends StatefulWidget {
-  const FeedHorizontalScrollComponent({super.key, required this.title, required this.albuns, required this.audioPlayer});
+  const FeedHorizontalScrollComponent({super.key, required this.title, required this.albuns});
   final String title;
   final List<AlbumModel> albuns;
-  final AudioPlayer audioPlayer;
+
   @override
   State<FeedHorizontalScrollComponent> createState() => _FeedHorizontalScrollComponentState();
 }
@@ -50,7 +50,7 @@ class _FeedHorizontalScrollComponentState extends State<FeedHorizontalScrollComp
                       padding: EdgeInsets.only(right: responsiveFigmaWidth(10)),
                       child: CubicButtonWithImage(
                         onPressed: () =>
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => MyAlbumPage(album: album, audioPlayer: widget.audioPlayer))),
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => MyAlbumPage(album: album))),
                         image: NetworkImage(album.image),
                       )),
               ],

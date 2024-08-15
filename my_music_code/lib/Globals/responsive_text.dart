@@ -19,7 +19,8 @@ class ResponsiveText extends StatelessWidget {
           color: fontColor ?? Colors.white, 
           fontSize: responsiveFigmaFontSize(fontSize ?? 12), 
           fontWeight: fontWeight ?? FontWeight.normal
-        )
+        ),
+        overflow: TextOverflow.ellipsis,
       )
     );
   }
