@@ -49,6 +49,7 @@ dependencies:
   cached_network_image: ^3.4.0
   flutter_svg: ^1.0.0
   youtube_explode_dart: ^2.2.1
+  shared_preferences: ^2.0.9
 
 dev_dependencies:
   flutter_test:

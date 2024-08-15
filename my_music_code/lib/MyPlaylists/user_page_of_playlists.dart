@@ -1,8 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/MyPlaylists/new_playlist_page.dart';
 import 'package:my_music_code/MyPlaylists/playlist_page.dart';
+import 'package:my_music_code/Album/album_page.dart';
 
 class UserPageOfPlaylists extends StatefulWidget {
   const UserPageOfPlaylists({super.key});
@@ -15,13 +17,15 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
   bool _isBlurred = false;
   TextEditingController _searchController = TextEditingController();
   List<PlaylistModel> playlists = [];
+  List<AlbumModel> albums = [];
   List<Widget> playlistWidgets = [];
-  
+  List<Widget> albumWidgets = [];
 
   @override
   void initState() {
     super.initState();
     _initializePlaylists();
+    _initializeAlbums();
     _searchController.addListener(_filterList);
   }
 
@@ -42,6 +46,37 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
     );
     _generatePlaylistWidgets();
   }
+
+  void _initializeAlbums() async {
+    final prefs = await SharedPreferences.getInstance();
+    List<String>? favoriteAlbumIds = prefs.getStringList('favoriteAlbums') ?? [];
+
+    albums = await Future.wait(favoriteAlbumIds.map((id) async {
+      try {
+        // Obtém o álbum usando o ID
+        final album = await spotifyApi.albums.get(id);
+
+        return AlbumModel(
+          id: album.id.toString(),
+          name: album.name,
+          artist: album.artists.map((artist) => artist.name).join(', '),
+          image: album.images.isNotEmpty ? album.images.first.url : DefaultPlaceholder.image,
+        );
+      } catch (e) {
+        print('Erro ao obter o álbum com ID $id: $e');
+        // retorna modelo em branco
+        return AlbumModel(
+          id: id,
+          name: 'Unknown Album',
+          artist: 'Unknown Artist',
+          image: DefaultPlaceholder.image,
+        );
+      }
+    }));
+
+    _generateAlbumWidgets();
+  }
+
 
   void _generatePlaylistWidgets() {
     playlistWidgets = playlists.map((playlist) {
@@ -106,6 +141,75 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
         ),
       );
     }).toList();
+  }
+
+  void _generateAlbumWidgets() {
+    albumWidgets = albums.map((album) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 0),
+        child: InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MyAlbumPage(album: album)),
+            );
+          },
+          splashColor: primaryColor.withOpacity(0.3),
+          highlightColor: primaryColor.withOpacity(0.1),
+          borderRadius: BorderRadius.circular(10),
+          child: Container(
+            height: 120,
+            padding: EdgeInsets.all(7.5),
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 15, left: 7.5),
+                  child: Container(
+                    height: 105,
+                    width: 105,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.black,
+                      image: DecorationImage(
+                        image: NetworkImage(album.image),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      album.name,
+                      style: TextStyle(
+                        color: primaryFontColor,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    Text(
+                      album.artist,
+                      style: TextStyle(
+                        color: secondaryFontColor,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }).toList();
+
+    setState(() {
+      // Re-renderizar a tela para mostrar os álbuns após a lista ser atualizada
+    });
   }
 
   void _filterList() {
@@ -234,7 +338,7 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
                   ),
                   tabs: List.generate(
                     4,
-                    (index) => Tab(
+                        (index) => Tab(
                       text: [
                         'Recent',
                         'Songs',
@@ -273,12 +377,20 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
                 ),
                 Expanded(
                   child: TabBarView(
-                    children: List.generate(
-                      4,
-                      (index) => ListView(
+                    children: [
+                      ListView(
                         children: playlistWidgets,
                       ),
-                    ),
+                      ListView(
+                        children: playlistWidgets,
+                      ),
+                      ListView(
+                        children: albumWidgets,
+                      ),
+                      ListView(
+                        children: playlistWidgets,
+                      ),
+                    ],
                   ),
                 ),
               ],
