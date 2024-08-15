@@ -27,7 +27,7 @@ A Figura 1 apresenta um exemplo de reutilização da classe `FeedPage`, que este
 
 Nesta implementação, a classe `FeedPage` é um exemplo de como o Flutter permite a criação de widgets personalizados que encapsulam uma lógica específica e podem ser reutilizados em diferentes contextos dentro do aplicativo. Ao estender `StatefulWidget`, a `FeedPage` permite que seu estado seja gerenciado e atualizado de forma independente, promovendo a reutilização do widget com diferentes estados e comportamentos conforme necessário. Este padrão não só contribui para a modularidade do código, mas também facilita a manutenção e a escalabilidade da aplicação.
 
-No desenvolvimento de aplicativos com Flutter, a reutilização de widgets e componentes é essencial para manter a consistência e eficiência no código. A Figura 2 ilustra um exemplo de reutilização na classe `_FeedPageState`, que estende `State<FeedPage>`:
+No desenvolvimento de aplicativos com Flutter, como já citado, a reutilização de widgets e componentes é essencial para manter a consistência e eficiência no código. A Figura 2 ilustra um exemplo de reutilização na classe `_FeedPageState`, que estende `State<FeedPage>`:
 
 <div style="text-align: center">
   <img src="../Assets/reutilizacao2.png" alt="Trecho de código _FeedPageState" title="Título da Imagem" />
@@ -36,7 +36,7 @@ No desenvolvimento de aplicativos com Flutter, a reutilização de widgets e com
 
 ### Explicação das Reutilizações no Trecho Apresentado
 
-No desenvolvimento com Flutter, a reutilização de widgets é uma prática essencial para garantir a consistência, eficiência e manutenção do código. O Flutter segue um padrão bem definido para a construção de interfaces de usuário, permitindo a criação de widgets reutilizáveis que encapsulam funcionalidades específicas e podem ser utilizados em diferentes partes do aplicativo. A seguir, detalhamos a reutilização no código apresentado:
+A seguir, detalhamos a reutilização no código apresentado:
 
 1. **`Scaffold`:**
    - O widget `Scaffold` é um dos blocos de construção fundamentais no Flutter, fornecendo uma estrutura de layout padrão para a aplicação. Ele inclui áreas predefinidas para elementos como `appBar`, `drawer`, e `body`. O uso do `Scaffold` permite que você defina a estrutura básica de uma página uma única vez e a reutilize em diferentes seções do aplicativo com personalizações específicas, facilitando a consistência e a organização do layout.
@@ -136,5 +136,5 @@ A combinação dessas práticas de reutilização e otimização resulta em um s
 | Versão | Data      | Descrição | Autores | Revisor |
 | :-:    | :-----:   | :------   | ----  | ------- |
 | 1.0    |12/08/2024 | Criação do Documento | [Limírio Guimarães](https://github.com/LimirioGuimaraes) e [Milena Baruc](https://github.com/MilenaBaruc)| [Ana Luiza](https://github.com/analuizargds), [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/114#pullrequestreview-2238788424) |
-| 2.0    |14/08/2024 | Correções do Documento | [Milena Baruc](https://github.com/MilenaBaruc)| |
+| 2.0    |14/08/2024 | Correções do Documento | [Milena Baruc](https://github.com/MilenaBaruc)| [Limírio Guimarães](https://github.com/LimirioGuimaraes) |
 
