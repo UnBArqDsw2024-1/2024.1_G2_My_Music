@@ -46,7 +46,7 @@ O Documento da Arquitetura de Software se aplica ao projeto do "My Music", traba
 
 
 
-# 6. [Visão Lógica](../ArquiteturaReutilizacao/visao-de-logica.md)
+# 6. [Visão Lógica](../../ArquiteturaReutilizacao/visao-de-logica.md)
 
 ## 6.1 Introdução
 
@@ -62,7 +62,7 @@ Para o desenvolvimento dessa visão arquitetural, foram utilizados o [diagrama d
 
 O projeto está estruturado de acordo com uma adaptação do padrão arquitetural MVC com uma camada de persistência. Para que se visualize a organização da arquitetura, o diagrama de pacotes a seguir apresenta, de forma geral, a estrutura básica do projeto:
 
-![Diagrama de Pacotes Geral](../Modelagem/images/Diagrama_de_Pacotes_1.png)
+![Diagrama de Pacotes Geral](../../Modelagem/images/Diagrama_de_Pacotes_1.png)
 
 <div style="text-align: center">
   <p>Figura 1: Diagrama de Pacotes Geral. (Fonte: João Vítor, 2024)</p>
@@ -78,7 +78,7 @@ Por fim, a camada do banco de dados representa a camada de modelo e é responsá
 
 ### 6.4.1 Diagrama de pacotes
 
-![Diagrama de Pacotes](../Modelagem/images/Diagrama_de_Pacotes_2.png)
+![Diagrama de Pacotes](../../Modelagem/images/Diagrama_de_Pacotes_2.png)
 
 <div style="text-align: center">
   <p>Figura 2: Diagrama de Pacotes do Frontend com Backend. (Fonte: João Vítor, 2024)</p>
@@ -125,7 +125,7 @@ Presente tanto nos pacotes de Frontend quanto Backend, embora sejam diferentes e
 
 ### 6.4.2 Diagrama de classes
 
-![Diagrama de atividades de cadastro](../Assets/diagramaClasses.png)
+![Diagrama de atividades de cadastro](../../Assets/diagramaClasses.png)
 
 <div style="text-align: center">
   <p>Figura 3: Diagrama de classes do aplicativo My Music  (Fonte: Ana Luíza Rodrigues e Rafael Xavier, 2024)</p>
@@ -161,7 +161,7 @@ Um álbum, basicamente, é composto por uma ou mais músicas e está associado a
 
 O diagrama de atividades serve para que se possa entender como as atividades que serão realizadas pelo usuário irão interagir com a aplicação, mostrando os caminhos possíveis para a ação.
 
-![Diagrama de atividades de cadastro](../Assets/DiagramadeAtividades-Cadastro.png)
+![Diagrama de atividades de cadastro](../../Assets/DiagramadeAtividades-Cadastro.png)
 
 <div style="text-align: center">
   <p>Figura 4: Diagrama de cadastro. (Fonte: Vinícius Mendes, 2024)</p>
@@ -169,7 +169,7 @@ O diagrama de atividades serve para que se possa entender como as atividades que
 
 O diagrama de cadastro demonstra como o mesmo é efetuado, o usuário que deseja se cadastrar precisa fornecer nome, email, senha e repetir a senha, e a aplicação irá registrar o usuário se todas as etapas tiverem sido executadas sem erros, ou retornar o que está errado.
 
-![Diagrama de atividades de login](../Assets/DiagramadeAtividades-Login.png)
+![Diagrama de atividades de login](../../Assets/DiagramadeAtividades-Login.png)
 
 <div style="text-align: center">
   <p>Figura 5: Diagrama de login. (Fonte: Vinícius Mendes, 2024)</p>
@@ -177,7 +177,7 @@ O diagrama de cadastro demonstra como o mesmo é efetuado, o usuário que deseja
 
 Para efetuar o login, a aplicação pede o nome de usuário ou o email e a senha, e confere na base de dados se eles correspondem a algum existente, efetuando o mesmo se tudo estiver correto ou retornando erro caso contrário.
 
-![Diagrama de atividades de ouvir música](../Assets/DiagramadeAtividades-Ouvirmusica.png)
+![Diagrama de atividades de ouvir música](../../Assets/DiagramadeAtividades-Ouvirmusica.png)
 
 <div style="text-align: center">
   <p>Figura 6: Diagrama de ouvir música. (Fonte: Vinícius Mendes, 2024)</p>
@@ -185,7 +185,7 @@ Para efetuar o login, a aplicação pede o nome de usuário ou o email e a senha
 
 Para encontrar e reproduzir uma música, a aplicação irá possibilitar, além de pesquisar por nome, filtrar por artista, álbum, playlist e estilo musical, caso encontre, irá reproduzir a música, caso contrário, retorna que não encontrou a música pesquisada.
 
-![Diagrama de atividades de criar playlist](../Assets/DiagramadeAtividades-Criarplaylist.png)
+![Diagrama de atividades de criar playlist](../../Assets/DiagramadeAtividades-Criarplaylist.png)
 
 <div style="text-align: center">
   <p>Figura 7: Diagrama de criar playlist. (Fonte: Vinícius Mendes, 2024)</p>
@@ -194,7 +194,7 @@ Para encontrar e reproduzir uma música, a aplicação irá possibilitar, além 
 Ao selecionar para criar uma playlist, o aplicativo irá criar a mesma, pedirá para que as configurações sejam implementadas e depois seguirá para a adição de músicas, onde o usuário poderá adicionar em sequência ou aos poucos, em sequência acontecerá o loop de seleção e adição, e ao concluir ou decidir por adicionar aos poucos, a playlist irá ser salva.
 
 
-# 7. [Visão de Processo](../ArquiteturaReutilizacao/visao-de-processo.md)
+# 7. [Visão de Processo](../../ArquiteturaReutilizacao/visao-de-processo.md)
 
 ## 7.1 Introdução
 
@@ -253,7 +253,7 @@ Já existiam quatro diagramas representando algumas atividades do sistema, que f
 </div>
 
 
-# 8. [Visão de Implantação](../ArquiteturaReutilizacao/VisaoDeImplantacao.md)
+# 8. [Visão de Implantação](../../ArquiteturaReutilizacao/VisaoDeImplantacao.md)
 
 O diagrama de implantação, dentro da linguagem de modelagem unificada (UML), é uma representação gráfica que descreve a estrutura física de um sistema de software, ilustrando como seus componentes são distribuídos e interconectados em um ambiente de hardware¹. Essencialmente, ele mapeia a arquitetura física do software, mostrando a localização e a interação de seus elementos em um ambiente real.
 
@@ -282,7 +282,7 @@ Na imagem 1 abaixo, podemos visualizar a primeira versão feita do diagrama de i
 <center>
 
 Figura 1 - Primeira versão do diagrama de Implantação
-![Figura 1](../Assets/DiagramaImplantação.png)
+![Figura 1](../../Assets/DiagramaImplantação.png)
 Autores: [Milena Baruc](https://github.com/MilenaBaruc) e [Vinícius Mendes](https://github.com/yabamiah)
 </center>
 
@@ -291,7 +291,7 @@ Autores: [Milena Baruc](https://github.com/MilenaBaruc) e [Vinícius Mendes](htt
 A figura abaixo ilustra uma versão atualizada do diagrama contendo um dispositivo como cliente final e um detalhamento sobre os arquivos principais que compõem a aplicação e estão no repositório do github
 
 Figura 2 - Segunda versão do diagrama de implementação
-![Figura2](../Assets/DiagramaImplantação2.png)
+![Figura2](../../Assets/DiagramaImplantação2.png)
 Autores: [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida) e [Carlos Godoy](https://github.com/CDGodoy)
 </center>
 
@@ -311,7 +311,7 @@ Autores: [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](http
   - **MyMusic.apk**: Output de uma versão executável do projeto para o cliente final.
 
 
-# 9. [Visão de Implementação](../ArquiteturaReutilizacao/VisaoDeImplementacao.md)
+# 9. [Visão de Implementação](../../ArquiteturaReutilizacao/VisaoDeImplementacao.md)
 
 O Diagrama de Arquitetura de Software (DAS) é uma representação visual que demonstra como os componentes do sistema de software estão organizados e como interagem entre si. Esse diagrama de componentes inclui a perspectiva do DAS, cujo objetivo central é facilitar a visualização dos elementos que compõem o projeto.
 
@@ -319,13 +319,13 @@ A partir dos estudos baseados nos documentos fornecidos pela professora, percebe
 
 Em resumo, a perspectiva do DAS no My Music se baseia no diagrama de componentes, que visa principalmente facilitar a visualização dos elementos do projeto. Seu propósito é descrever as conexões e interdependências entre esses componentes, além de demonstrar a estrutura dos subsistemas em termos de camadas e hierarquias, aprimorando assim a compreensão da arquitetura global do sistema.
 
-### 9.1 [Diagrama de Componentes](../Modelagem/diagramaComponentes.md)
+### 9.1 [Diagrama de Componentes](../../Modelagem/diagramaComponentes.md)
 
-![Figura 1](../Assets/DiagramadeComponentes.png)
+![Figura 1](../../Assets/DiagramadeComponentes.png)
 Diagrama de Componentes. (Fonte: Luis Miranda e Milena Baruc, 2024)
 
 
-# 10. [Visão de Dados](../ArquiteturaReutilizacao/visaoDados.md)
+# 10. [Visão de Dados](../../ArquiteturaReutilizacao/visaoDados.md)
 
 A visão de dados lida com o armazenamento, a organização e a manipulação das informações dentro do sistema. Ela descreve como os dados são estruturados, acessados e processados, garantindo a integridade, segurança e desempenho adequados. Essa visão é crucial para projetar uma arquitetura que suporte a gestão eficiente dos dados, permitindo consultas rápidas, escalabilidade e conformidade com as regulamentações vigentes.
 
@@ -340,7 +340,7 @@ Na figura 1 abaixo, é apresentada a visão de dados do sistema, que ilustra com
 <center>
 
 Figura 1 - Visão de Dados  
-![Figura 1](../Assets/visaoDados.png)  
+![Figura 1](../../Assets/visaoDados.png)  
 Autores: [João Vítor](https://github.com/Jvsoutomaior)
 
 </center>
