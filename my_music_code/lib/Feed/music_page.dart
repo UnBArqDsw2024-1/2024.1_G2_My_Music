@@ -188,8 +188,6 @@ class _MusicPageState extends State<MusicPage> {
     }).toList();
 
     int indexListMusic = listNames.indexOf(widget.music.name!);
-    print(universal.currentListMusic);
-    print(indexListMusic);
 
     return Scaffold(
       backgroundColor: backgroundColor,
