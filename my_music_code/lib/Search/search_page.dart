@@ -75,7 +75,7 @@ class _SearchPageState extends State<SearchPage> {
     }
   }
 
-  
+
 
   @override
   void initState() {
@@ -151,29 +151,32 @@ class _SearchPageState extends State<SearchPage> {
                         color: Color(0xFF373737),
                         borderRadius: BorderRadius.circular(10),
                         child: Center(
-                            child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              child: Container(
-                                alignment: Alignment.center,
-                                child: Icon(Icons.search, color: const Color.fromRGBO(255, 255, 255, 0.6)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  child: Icon(Icons.search, color: const Color.fromRGBO(255, 255, 255, 0.6)),
+                                ),
                               ),
-                            ),
-                            Expanded(
+                              Expanded(
                                 flex: 3,
                                 child: Center(
-                                    child: ResponsiveText(
-                                  text: "Pesquisar música, playlist, artista...",
-                                  //fontSize: 18,
-                                  fontWeight: FontWeight.w500,
-                                  fontColor: const Color.fromRGBO(255, 255, 255, 0.6),
-                                ))),
-                            Expanded(
-                              child: Container(),
-                            ),
-                          ],
-                        )),
+                                  child: ResponsiveText(
+                                    text: "Pesquisar música, playlist, artista...",
+                                    //fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+                                    fontColor: const Color.fromRGBO(255, 255, 255, 0.6),
+                                  )
+                                )
+                              ),
+                              Expanded(
+                                child: Container(),
+                              ),
+                            ],
+                          )
+                        ),
                       )
                     ),
                               
