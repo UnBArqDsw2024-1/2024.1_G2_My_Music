@@ -25,8 +25,9 @@ class _MusicPageState extends State<MusicPage> {
   setCurrentMusic() {
     setState(() {
       if(
-        universal.currentMusic.artist != widget.music.artist &&
-        universal.currentMusic.name != widget.music.name  
+        universal.currentMusic.imageUrl != widget.music.imageUrl || // Album Swap
+        (universal.currentMusic.name != widget.music.name &&
+        universal.currentMusic.artist == widget.music.artist)
       ) {
         universal.currentMusic = widget.music;
         isPlaying = !isPlaying;
@@ -148,23 +149,6 @@ class _MusicPageState extends State<MusicPage> {
                 SizedBox(width: 10.0),
                 Text(
                   'Compartilhar música',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                  ),
-                )
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(CupertinoIcons.double_music_note, color: Colors.white),
-                  onPressed: () {},
-                ),
-                SizedBox(width: 10.0),
-                Text(
-                  'Ver letra da música',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
