@@ -57,12 +57,14 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
       try {
         // Obtém o álbum usando o ID
         final album = await universal.spotifyApi.albums.get(id);
+        var pagesTracks = await await universal.spotifyApi.albums.tracks(album.id!).first().asStream().first;
 
         return AlbumModel(
           id: album.id.toString(),
           name: album.name!,
           artist: album.artists!.map((artist) => artist.name).join(', '),
-          image: album.images!.isNotEmpty ? album.images!.first.url! : DefaultPlaceholder.image,
+          image: album.images!.first.url!,
+          songs: pagesTracks.items
         );
       } catch (e) {
         // retorna modelo em branco
@@ -148,11 +150,8 @@ void _generateAlbumWidgets() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 0),
       child: InkWell(
-        onTap: () {
-          
-          // navegação aqui
-          
-        },
+        onTap: () =>
+          Navigator.push(context, MaterialPageRoute(builder: (context) => MyAlbumPage(album: album))),        
         splashColor: primaryColor.withOpacity(0.3),
         highlightColor: primaryColor.withOpacity(0.1),
         borderRadius: BorderRadius.circular(10),
