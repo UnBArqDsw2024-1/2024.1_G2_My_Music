@@ -1,6 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/music_page.dart';
+import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/universal.dart' as universal;
 import 'package:my_music_code/Globals/style.dart';
 
@@ -45,23 +46,26 @@ class _MiniPlayerState extends State<MiniPlayer> {
                         width: 64,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            universal.currentMusic.name!,
-                            style: TextStyle(color: primaryFontColor, fontSize: 16),
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          Text(
-                            universal.currentMusic.artist!,
-                            style: TextStyle(color: secondaryFontColor, fontSize: 12),
-                          )
-                        ],
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            ResponsiveText(
+                              text: universal.currentMusic.name!,
+                              fontColor: primaryFontColor, fontSize: 16,
+                              maxLines: 2,
+                              textAlign: TextAlign.justify,
+                            ),
+                            Text(
+                              universal.currentMusic.artist!,
+                              style: TextStyle(color: secondaryFontColor, fontSize: 12),
+                            )
+                          ],
+                        ),
                       ),
                     )
                   ],

@@ -53,11 +53,14 @@ class _MusicPlaylistFeedComponentState extends State<MusicPlaylistFeedComponent>
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(right: 4),
+                padding: const EdgeInsets.only(right: 8),
                 child: ResponsiveText(
-                    text: widget.music.name ?? DefaultPlaceholder.title,
-                    fontColor: Colors.white,
-                    padding: EdgeInsets.only(left: responsiveFigmaWidth(5))),
+                  text: widget.music.name ?? DefaultPlaceholder.title,
+                  fontColor: Colors.white,
+                  padding: EdgeInsets.only(left: responsiveFigmaWidth(5)),
+                  maxLines: 2,
+                  textAlign: TextAlign.justify,
+                ),
               ),
             ),
           ],
