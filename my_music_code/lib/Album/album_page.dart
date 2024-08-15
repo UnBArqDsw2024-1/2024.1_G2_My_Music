@@ -139,23 +139,20 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                 (BuildContext context, int index) {
                   return ListTile(
                     onTap: () {
-                      setState(() {
-                        universal.currentMusic = Music(
-                          name: widget.album.songs!.elementAt(index).name,
-                          id: widget.album.songs!.elementAt(index).id,
-                          artist: widget.album.songs!.elementAt(index).artists!.first.name,
-                          imageUrl: widget.album.image,
-                          link: widget.album.songs!.elementAt(index).externalUrls!.spotify,
-                          duration: widget.album.songs!.elementAt(index).durationMs,
-                        );
-                      });
+                      Music indexMusic = Music(
+                        name: widget.album.songs!.elementAt(index).name,
+                        id: widget.album.songs!.elementAt(index).id,
+                        artist: widget.album.songs!.elementAt(index).artists!.first.name,
+                        imageUrl: widget.album.image,
+                        link: widget.album.songs!.elementAt(index).externalUrls!.spotify,
+                        duration: widget.album.songs!.elementAt(index).durationMs,
+                      );
                       showModalBottomSheet(
                           useRootNavigator: false,
                           isScrollControlled: true,
                           useSafeArea: true,
                           context: context,
-                          builder: (context) => MusicPage()
-                        );
+                          builder: (context) => MusicPage(music: indexMusic));
                     },
                     title: ResponsiveText(
                       text: widget.album.songs!.elementAt(index).name,

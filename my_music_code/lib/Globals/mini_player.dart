@@ -17,9 +17,7 @@ class _MiniPlayerState extends State<MiniPlayer> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
-        onTap: (){
-          // Navigator.push(context, MaterialPageRoute(builder: (context) => MusicPage()));
-        },
+        onTap: (){},
         child: Container(
           decoration: BoxDecoration(
             color: secondaryColor,

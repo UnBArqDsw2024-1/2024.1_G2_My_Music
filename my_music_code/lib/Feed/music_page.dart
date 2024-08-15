@@ -1,16 +1,18 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart';
+
 import 'package:my_music_code/universal.dart' as universal;
 
 class MusicPage extends StatefulWidget {
   const MusicPage({
-    super.key,
+    super.key, required this.music,
   });
-
+  final Music music;
   @override
   State<MusicPage> createState() => _MusicPageState();
 }
@@ -24,7 +26,7 @@ class _MusicPageState extends State<MusicPage> {
     final yt = YoutubeExplode();
     final result = (await yt.search(universal.currentMusic.name!)).first;
     final videoId = result.id.value;
-    
+
     setState(() {
       audioDuration = Duration(milliseconds: result.duration!.inMilliseconds);
     });
@@ -43,6 +45,9 @@ class _MusicPageState extends State<MusicPage> {
 
   @override
   void initState() {
+    setState(() {
+      universal.currentMusic = widget.music;
+    });
     // Verifica qual audio está tocando
     setupMusic();
     super.initState();

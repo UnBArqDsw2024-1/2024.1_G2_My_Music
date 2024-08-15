@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
@@ -10,9 +9,7 @@ import 'package:my_music_code/universal.dart' as universal;
 
 class MusicPlaylistFeedComponent extends StatefulWidget {
   const MusicPlaylistFeedComponent(
-      {super.key,
-      this.backgroundColor = DefaultPlaceholder.backgroundColor,
-      required this.music});
+      {super.key, this.backgroundColor = DefaultPlaceholder.backgroundColor, required this.music});
   final Music music;
   final Color backgroundColor;
 
@@ -26,16 +23,12 @@ class _MusicPlaylistFeedComponentState extends State<MusicPlaylistFeedComponent>
     return RawMaterialButton(
       constraints: BoxConstraints(),
       onPressed: () {
-        setState(() {
-          universal.currentMusic = widget.music;
-        });
         showModalBottomSheet(
-          useRootNavigator: false,
-          isScrollControlled: true,
-          useSafeArea: true,
-          context: context,
-          builder: (context) => MusicPage()
-        );
+            useRootNavigator: false,
+            isScrollControlled: true,
+            useSafeArea: true,
+            context: context,
+            builder: (context) => MusicPage(music: widget.music,));
       },
       child: ResponsiveContainer(
         height: 60,

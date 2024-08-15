@@ -6,6 +6,7 @@ import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/universal.dart' as universal;
+
 class NewMusicRelease extends StatefulWidget {
   const NewMusicRelease({super.key, required this.musicRelease});
   final Music musicRelease;
@@ -37,7 +38,7 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                 children: [
                   ResponsiveText(text: "Novo lançamento", fontColor: Color(0xff979797), fontSize: 12),
                   ResponsiveText(
-                      text: widget.musicRelease.artist!,
+                      text: widget.musicRelease.artist ?? DefaultPlaceholder.title,
                       fontWeight: FontWeight.w500,
                       fontColor: Colors.white,
                       fontSize: 16),
@@ -86,15 +87,12 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                       constraints: BoxConstraints(maxHeight: 55, maxWidth: 55),
                       iconSize: 36,
                       onPressed: () {
-                        setState(() {
-                          universal.currentMusic = widget.musicRelease;
-                        });
                         showModalBottomSheet(
                             useRootNavigator: false,
                             isScrollControlled: true,
                             useSafeArea: true,
                             context: context,
-                            builder: (context) => MusicPage()
+                            builder: (context) => MusicPage(music: widget.musicRelease,)
                           );
                       },
                       icon: Container(

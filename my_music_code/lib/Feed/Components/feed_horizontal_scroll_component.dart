@@ -30,33 +30,36 @@ class _FeedHorizontalScrollComponentState extends State<FeedHorizontalScrollComp
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: responsiveFigmaHeight(10)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ResponsiveText(
-              text: widget.title,
-              fontColor: Colors.white,
-              fontWeight: FontWeight.w700,
-              fontSize: 16,
-              padding: EdgeInsets.only(left: responsiveFigmaWidth(23))),
-          ResponsiveContainer(height: 8),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                ResponsiveContainer(width: 23),
-                for (AlbumModel album in widget.albuns)
-                  Padding(
-                      padding: EdgeInsets.only(right: responsiveFigmaWidth(10)),
-                      child: CubicButtonWithImage(
-                        onPressed: () =>
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => MyAlbumPage(album: album))),
-                        image: NetworkImage(album.image),
-                      )),
-              ],
-            ),
-          )
-        ],
+      child: Container(
+        constraints: BoxConstraints(minHeight: responsiveFigmaHeight(128),minWidth: double.infinity),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ResponsiveText(
+                text: widget.title,
+                fontColor: Colors.white,
+                fontWeight: FontWeight.w700,
+                fontSize: 16,
+                padding: EdgeInsets.only(left: responsiveFigmaWidth(23))),
+            ResponsiveContainer(height: 8),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  ResponsiveContainer(width: 23),
+                  for (AlbumModel album in widget.albuns)
+                    Padding(
+                        padding: EdgeInsets.only(right: responsiveFigmaWidth(10)),
+                        child: CubicButtonWithImage(
+                          onPressed: () =>
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => MyAlbumPage(album: album))),
+                          image: NetworkImage(album.image),
+                        )),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
