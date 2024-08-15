@@ -12,10 +12,8 @@ class MusicPage extends StatefulWidget {
   const MusicPage({
     super.key,
     required this.music,
-    this.listMusics,
   });
   final Music music;
-  final List<Music>? listMusics;
   @override
   State<MusicPage> createState() => _MusicPageState();
 }
@@ -199,7 +197,12 @@ class _MusicPageState extends State<MusicPage> {
 
   @override
   Widget build(BuildContext context) {
-    int indexListMusic = 0;
+    List<String> listNames = universal.currentListMusic.map((e) {
+      return e.name!;
+    }).toList();
+
+    int indexListMusic = listNames.indexOf(widget.music.name!);
+
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
@@ -331,13 +334,15 @@ class _MusicPageState extends State<MusicPage> {
                 IconButton(
                   icon: Icon(CupertinoIcons.backward_end_fill, color: Colors.white, size: 30),
                   onPressed: () {
-                    if (widget.listMusics!.isNotEmpty) {
+                    if (universal.currentListMusic.isNotEmpty) {
+                      Navigator.pop(context);
                       showModalBottomSheet(
                           useRootNavigator: false,
                           isScrollControlled: true,
                           useSafeArea: true,
                           context: context,
-                          builder: (context) => MusicPage(music: widget.listMusics![indexListMusic - 1]));
+                          builder: (context) => MusicPage(music: universal.currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length])
+                        );
                     }
                   },
                 ),
@@ -372,13 +377,17 @@ class _MusicPageState extends State<MusicPage> {
                 IconButton(
                   icon: Icon(CupertinoIcons.forward_end_fill, color: Colors.white, size: 30),
                   onPressed: () {
-                    if (widget.listMusics!.isNotEmpty) {
-                      showModalBottomSheet(
+
+                    
+                    if (universal.currentListMusic.isNotEmpty) {
+                      Navigator.pop(context);
+                        showModalBottomSheet(
                           useRootNavigator: false,
                           isScrollControlled: true,
                           useSafeArea: true,
                           context: context,
-                          builder: (context) => MusicPage(music: widget.listMusics![indexListMusic + 1]));
+                          builder: (context) => MusicPage(music: universal.currentListMusic[(indexListMusic + 1) % universal.currentListMusic.length])
+                        );
                     }
                   },
                 ),

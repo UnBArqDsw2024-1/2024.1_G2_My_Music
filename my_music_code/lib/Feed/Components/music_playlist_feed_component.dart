@@ -5,6 +5,7 @@ import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/Feed/music_page.dart';
+import 'package:my_music_code/universal.dart' as universal;
 
 class MusicPlaylistFeedComponent extends StatefulWidget {
   const MusicPlaylistFeedComponent(
@@ -22,6 +23,9 @@ class _MusicPlaylistFeedComponentState extends State<MusicPlaylistFeedComponent>
     return RawMaterialButton(
       constraints: BoxConstraints(),
       onPressed: () {
+        setState(() {
+          universal.currentListMusic = List.empty();
+        });
         showModalBottomSheet(
             useRootNavigator: false,
             isScrollControlled: true,
