@@ -116,6 +116,7 @@ class _FeedPageState extends State<FeedPage> {
                 title: "Tocadas recentemente",
                 albuns: topReleases,
               ),
+              if(universal.currentMusic.name != null) Container(height: 90),
             ],
           ),
         ));
