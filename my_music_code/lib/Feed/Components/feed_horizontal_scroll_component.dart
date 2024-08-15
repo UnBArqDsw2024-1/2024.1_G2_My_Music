@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Album/album_page.dart';
 import 'package:my_music_code/Globals/cubic_button_with_image.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
+import 'package:my_music_code/Globals/style.dart';
 
 // class AlbumBase {
 //   final String name;
@@ -31,7 +31,7 @@ class _FeedHorizontalScrollComponentState extends State<FeedHorizontalScrollComp
     return Padding(
       padding: EdgeInsets.symmetric(vertical: responsiveFigmaHeight(10)),
       child: Container(
-        constraints: BoxConstraints(minHeight: responsiveFigmaHeight(128),minWidth: double.infinity),
+        constraints: BoxConstraints(minHeight: responsiveFigmaHeight(128), minWidth: double.infinity),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -47,14 +47,22 @@ class _FeedHorizontalScrollComponentState extends State<FeedHorizontalScrollComp
               child: Row(
                 children: [
                   ResponsiveContainer(width: 23),
-                  for (AlbumModel album in widget.albuns)
-                    Padding(
-                        padding: EdgeInsets.only(right: responsiveFigmaWidth(10)),
-                        child: CubicButtonWithImage(
-                          onPressed: () =>
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => MyAlbumPage(album: album))),
-                          image: NetworkImage(album.image),
-                        )),
+                  if (widget.albuns.isNotEmpty)
+                    for (AlbumModel album in widget.albuns)
+                      Padding(
+                          padding: EdgeInsets.only(right: responsiveFigmaWidth(10)),
+                          child: CubicButtonWithImage(
+                            onPressed: () => Navigator.push(
+                                context, MaterialPageRoute(builder: (context) => MyAlbumPage(album: album))),
+                            image: NetworkImage(album.image),
+                          )),
+                  if (widget.albuns.isEmpty)
+                    for (int i = 0; i < 10; i++)
+                      Padding(
+                          padding: EdgeInsets.only(right: responsiveFigmaWidth(10)),
+                          child: CubicButtonWithImage(
+                            image: NetworkImage(DefaultPlaceholder.image),
+                          )),
                 ],
               ),
             )

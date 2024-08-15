@@ -57,7 +57,7 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
       try {
         // Obtém o álbum usando o ID
         final album = await universal.spotifyApi.albums.get(id);
-        var pagesTracks = await await universal.spotifyApi.albums.tracks(album.id!).first().asStream().first;
+        var pagesTracks = await universal.spotifyApi.albums.tracks(album.id!).first().asStream().first;
 
         return AlbumModel(
           id: album.id.toString(),

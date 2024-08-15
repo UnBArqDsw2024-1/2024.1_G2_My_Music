@@ -6,6 +6,7 @@ import 'package:my_music_code/Auth/signup_page.dart';
 import 'package:my_music_code/Globals/navigator_page.dart';
 import 'package:my_music_code/SpotifyApi/api_settings.dart';
 import 'package:spotify/spotify.dart' hide User;
+import 'package:my_music_code/universal.dart' as universal;
 
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});
@@ -15,13 +16,19 @@ class AuthPage extends StatefulWidget {
 }
 
 class _AuthPageState extends State<AuthPage> {
-  SignLoginModel userModel = SignLoginModel();
-
   bool isLogin = true;
+
+  @override
+  void initState() {
+    setState(() {
+      universal.userModel = SignLoginModel();
+    });
+    super.initState();
+  }
 
   void togglePage() {
     setState(() => isLogin = !isLogin);
-    setState(() => userModel.creatingAccount = !userModel.creatingAccount);
+    setState(() => universal.userModel.creatingAccount = !universal.userModel.creatingAccount);
   }
 
   @override
@@ -31,12 +38,16 @@ class _AuthPageState extends State<AuthPage> {
         body: StreamBuilder<User?>(
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
-            if (snapshot.hasData && !userModel.creatingAccount) {
+            if (snapshot.hasData && !universal.userModel.creatingAccount) {
               SpotifyApiCredentials credentials = SpotifyApiCredentials(ApiSettings.clientId, ApiSettings.clientSecret);
               SpotifyApi spotifyApi = SpotifyApi(credentials);
-              return NavigatorPage(user: snapshot.data!,spotifyApi: spotifyApi,);
+              return NavigatorPage(
+                user: snapshot.data!,
+                spotifyApi: spotifyApi,
+              );
             } else {
-              return isLogin? LoginPage(userModel: userModel, onTapTogglePage: togglePage) : SignUpPage(userModel: userModel, onTapTogglePage: togglePage);
+              return isLogin? LoginPage(onTapTogglePage: togglePage)
+                  : SignUpPage(onTapTogglePage: togglePage);
             }
           },
         ),

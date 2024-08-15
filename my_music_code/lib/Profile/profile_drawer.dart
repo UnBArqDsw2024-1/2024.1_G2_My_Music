@@ -27,7 +27,7 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
               radius: 25,
               backgroundImage: CachedNetworkImageProvider(universal.user.photoURL ?? DefaultPlaceholder.image),
             ),
-            title: ResponsiveText(text: universal.user.displayName, fontSize: 16),
+            title: ResponsiveText(text: universal.user.displayName ?? universal.userModel.username, fontSize: 16),
             subtitle: ResponsiveText(
                 text: "Configurar perfil",
                 fontSize: 12,

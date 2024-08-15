@@ -2,11 +2,14 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Album/album_page.dart';
+import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Feed/feed_page.dart';
 import 'package:my_music_code/Globals/mini_player.dart';
 import 'package:my_music_code/MyPlaylists/user_page_of_playlists.dart';
 import 'package:my_music_code/Search/search_page.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:my_music_code/SpotifyApi/get_data.dart';
 import 'package:my_music_code/universal.dart' as universal;
 import 'package:spotify/spotify.dart' hide User;
 
@@ -23,11 +26,15 @@ class _NavigatorPageState extends State<NavigatorPage> {
   PageController controller = PageController(initialPage: 1);
   int pageIndex = 1;
 
-  setUser(){
+  setUser() {
     setState(() {
       universal.user = widget.user;
       universal.spotifyApi = widget.spotifyApi;
     });
+    print(universal.userModel.username);
+    if (universal.userModel.username.isNotEmpty) {
+      widget.user.updateProfile(displayName: universal.userModel.username);
+    }
   }
 
   setIndex(int index) {
@@ -35,8 +42,22 @@ class _NavigatorPageState extends State<NavigatorPage> {
     controller.jumpToPage(index);
   }
 
-  @override void initState() {
+  List<AlbumModel> albumReleases = [];
+  List<Music> recentMusics = [];
+  Music musicRelease = Music();
+
+  getDataFromApi() async {
+    await getAlbumReleasesFromSpotifyApi().then((result) => setState(() => albumReleases = result));
+
+    await getRecentMusicsFromSpotifyApi().then((result) => setState(() => recentMusics = result));
+
+    await getMusicReleaseFromSpotifyApi().then((result) => setState(() => musicRelease = result));
+  }
+
+  @override
+  void initState() {
     setUser();
+    getDataFromApi();
     super.initState();
   }
 
@@ -86,20 +107,30 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   physics: const NeverScrollableScrollPhysics(),
                   controller: controller,
                   children: [
-                    SearchPage(),
-                    FeedPage(),
+                    SearchPage(
+                      albumReleases: albumReleases,
+                      recentMusics: recentMusics,
+                    ),
+                    FeedPage(
+                      albumReleases: albumReleases,
+                      recentMusics: recentMusics,
+                      musicRelease: musicRelease,
+                    ),
                     UserPageOfPlaylists(),
                   ],
                 ),
                 StreamBuilder(
-                  stream: universal.audioPlayer.onPlayerStateChanged, 
-                  builder: (context, snapshot){
-                    return snapshot.data == null ? Container() : Positioned(
-                      bottom: 1, left: 0, right: 0,
-                      child: MiniPlayer(),
-                    );
-                  }
-                )
+                    stream: universal.audioPlayer.onPlayerStateChanged,
+                    builder: (context, snapshot) {
+                      return snapshot.data == null
+                          ? Container()
+                          : Positioned(
+                              bottom: 1,
+                              left: 0,
+                              right: 0,
+                              child: MiniPlayer(),
+                            );
+                    })
               ],
             ),
           ],

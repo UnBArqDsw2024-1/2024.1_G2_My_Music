@@ -8,41 +8,17 @@ import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Globals/style.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:my_music_code/universal.dart' as universal;
 
 class SignUpPage extends StatefulWidget {
-  const SignUpPage({super.key, this.onTapTogglePage, required this.userModel});
+  const SignUpPage({super.key, this.onTapTogglePage});
   final Function()? onTapTogglePage;
-  final SignLoginModel userModel;
+
   @override
   State<SignUpPage> createState() => _SignUpPageState();
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-
-  // text controllers
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
-  final _nameController = TextEditingController();
-  final _usernameController = TextEditingController();
-  final _repeatPasswordController = TextEditingController();
-
-  @override
-  void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
-    _nameController.dispose();
-    _usernameController.dispose();
-    _repeatPasswordController.dispose();
-    super.dispose();
-  }
-
-  Future signUp() async {
-    await FirebaseAuth.instance.createUserWithEmailAndPassword(
-      email: _emailController.text.trim(), 
-      password: _passwordController.text.trim()
-      );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +63,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       inputTextColor: Color(0xff000000),
                       onChanged: (value) {
                         setState(() {
-                          widget.userModel.username = value;
+                          universal.userModel.username = value;
                         });
                       },
                     ),
@@ -102,7 +78,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       inputTextColor: Color(0xff000000),
                       onChanged: (value) {
                         setState(() {
-                          widget.userModel.email = value;
+                          universal.userModel.email = value;
                         });
                       },
                     ),
@@ -119,7 +95,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       inputTextColor: Color(0xff000000),
                       onChanged: (value) {
                         setState(() {
-                          widget.userModel.password = value;
+                          universal.userModel.password = value;
                         });
                       },
                     ),
@@ -136,7 +112,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       inputTextColor: Color(0xff000000),
                       onChanged: (value) {
                         setState(() {
-                          widget.userModel.confirmPassword = value;
+                          universal.userModel.confirmPassword = value;
                         });
                       },
                     ),
@@ -145,7 +121,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       children: [
                         RawMaterialButton(
                             onPressed: () async {
-                              AuthService().controlSignLogin(context: context, userModel: widget.userModel);
+                              AuthService().controlSignLogin(context: context);
                               widget.onTapTogglePage!();
                               Navigator.pop(context);
                               errorDialogMessage(context, "Conta criada com sucesso",title: "Atenção!");

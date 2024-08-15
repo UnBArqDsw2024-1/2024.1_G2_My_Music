@@ -12,8 +12,10 @@ class MusicPage extends StatefulWidget {
   const MusicPage({
     super.key,
     required this.music,
+    this.isRandom = false,
   });
   final Music music;
+  final bool isRandom;
   @override
   State<MusicPage> createState() => _MusicPageState();
 }
@@ -25,8 +27,9 @@ class _MusicPageState extends State<MusicPage> {
   setCurrentMusic() {
     setState(() {
       if(
-        universal.currentMusic.artist != widget.music.artist &&
-        universal.currentMusic.name != widget.music.name  
+        universal.currentMusic.imageUrl != widget.music.imageUrl || // Album Swap
+        (universal.currentMusic.name != widget.music.name &&
+        universal.currentMusic.artist == widget.music.artist)
       ) {
         universal.currentMusic = widget.music;
         isPlaying = !isPlaying;
@@ -37,7 +40,7 @@ class _MusicPageState extends State<MusicPage> {
 
   setupMusic() async {
     final yt = YoutubeExplode();
-    final result = (await yt.search(universal.currentMusic.name!)).first;
+    final result = (await yt.search("${universal.currentMusic.name!} ${widget.music.artist!}")).first;
     final videoId = result.id.value;
 
     final manifest = await yt.videos.streamsClient.getManifest(videoId);
@@ -148,23 +151,6 @@ class _MusicPageState extends State<MusicPage> {
                 SizedBox(width: 10.0),
                 Text(
                   'Compartilhar música',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                  ),
-                )
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(CupertinoIcons.double_music_note, color: Colors.white),
-                  onPressed: () {},
-                ),
-                SizedBox(width: 10.0),
-                Text(
-                  'Ver letra da música',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
@@ -341,7 +327,8 @@ class _MusicPageState extends State<MusicPage> {
                           isScrollControlled: true,
                           useSafeArea: true,
                           context: context,
-                          builder: (context) => MusicPage(music: universal.currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length])
+                          builder: (context) => MusicPage(music: widget.isRandom? universal.currentListMusicShuffle[(indexListMusic - 1) % universal.currentListMusicShuffle.length] : universal.currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
+                          isRandom: widget.isRandom)
                         );
                     }
                   },
@@ -377,8 +364,6 @@ class _MusicPageState extends State<MusicPage> {
                 IconButton(
                   icon: Icon(CupertinoIcons.forward_end_fill, color: Colors.white, size: 30),
                   onPressed: () {
-
-                    
                     if (universal.currentListMusic.isNotEmpty) {
                       Navigator.pop(context);
                         showModalBottomSheet(
@@ -386,7 +371,8 @@ class _MusicPageState extends State<MusicPage> {
                           isScrollControlled: true,
                           useSafeArea: true,
                           context: context,
-                          builder: (context) => MusicPage(music: universal.currentListMusic[(indexListMusic + 1) % universal.currentListMusic.length])
+                          builder: (context) => MusicPage(music: widget.isRandom? universal.currentListMusicShuffle[(indexListMusic + 1) % universal.currentListMusicShuffle.length] : universal.currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
+                          isRandom: widget.isRandom)
                         );
                     }
                   },

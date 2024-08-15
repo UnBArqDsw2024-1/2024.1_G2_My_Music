@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Feed/music_page.dart';
@@ -28,6 +30,7 @@ class AlbumModel {
 class MyAlbumPage extends StatefulWidget {
   const MyAlbumPage({super.key, required this.album});
   final AlbumModel album;
+  // final AlbumModel albumShuffle;
 
   @override
   State<MyAlbumPage> createState() => _MyAlbumPageState();
@@ -35,6 +38,8 @@ class MyAlbumPage extends StatefulWidget {
 
 class _MyAlbumPageState extends State<MyAlbumPage> {
   bool isPinned = true;
+  bool isRandom = false;
+  late List<TrackSimple> albumShuffle;
   bool isFavorite = false;
 
 
@@ -46,6 +51,7 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
 
   populaAlbum() {
     setState(() {
+
       universal.currentListMusic = List.empty(growable: true);
       for (var music in widget.album.songs!) {
         universal.currentListMusic.add(Music(
@@ -57,6 +63,11 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
           duration: music.durationMs,
         ));
       }
+      universal.currentListMusicShuffle = universal.currentListMusic;
+      universal.currentListMusicShuffle.shuffle(Random());
+
+      albumShuffle = widget.album.songs!.toList();
+      albumShuffle.shuffle(Random());
     });
   }
 
@@ -160,82 +171,140 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                         ),
                       ],
                     ),
-                    Row(
-                      children: [
-                        IconButton(
-                          onPressed: () {},
-                          highlightColor: Colors.transparent,
-                          icon: Icon(
-                            Icons.shuffle,
-                            color: Colors.white54,
+                      Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {
+                              setState(() {
+                                isRandom = !isRandom;
+                              });
+                            },
+                            highlightColor: Colors.transparent,
+                            icon: Icon(isRandom? Icons.shuffle_on_outlined : Icons.shuffle, color: Colors.white54),
                           ),
-                        ),
-                        ResponsiveContainer(width: 12),
-                        IconButton(
-                          onPressed: () {},
-                          padding: EdgeInsets.zero,
-                          icon: ResponsiveContainer(
-                            height: 45,
-                            width: 45,
-                            isCubic: true,
-                            color: secondaryColor,
-                            borderRadius: BorderRadius.circular(100),
-                            child: Icon(
-                              Icons.play_arrow_rounded,
-                              color: Colors.white,
-                              size: 38,
-                            ),
+                          ResponsiveContainer(width: 12),
+                          IconButton(
+                            onPressed: () {
+                              Music currentMusic = Music(
+                                  name: widget.album.songs!.first.name,
+                                  id: widget.album.songs!.first.id,
+                                  artist: widget.album.songs!.first.artists!.first.name,
+                                  imageUrl: widget.album.image,
+                                  link: widget.album.songs!.first.externalUrls!.spotify,
+                                  duration: widget.album.songs!.first.durationMs,
+                              );
+
+                              if (isRandom) {
+                                currentMusic = Music(
+                                  name: albumShuffle.first.name,
+                                  id: albumShuffle.first.id,
+                                  artist: albumShuffle.first.artists!.first.name,
+                                  imageUrl: widget.album.image,
+                                  link: albumShuffle.first.externalUrls!.spotify,
+                                  duration: albumShuffle.first.durationMs,
+                                );
+                              }
+                              
+                              showModalBottomSheet(
+                                useRootNavigator: false,
+                                isScrollControlled: true,
+                                useSafeArea: true,
+                                context: context,
+                                builder: (context) => MusicPage(music: currentMusic, isRandom: isRandom));
+                            },
+                            padding: EdgeInsets.zero,
+                            icon: ResponsiveContainer(
+                                height: 45,
+                                width: 45,
+                                isCubic: true,
+                                color: secondaryColor,
+                                borderRadius: BorderRadius.circular(100),
+                                child: Icon(Icons.play_arrow_rounded, color: Colors.white, size: 38)),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-                return ListTile(
-                  onTap: () {
-                    Music indexMusic = Music(
-                      name: widget.album.songs!.elementAt(index).name,
-                      id: widget.album.songs!.elementAt(index).id,
-                      artist: widget.album.songs!.elementAt(index).artists!.first.name,
-                      imageUrl: widget.album.image,
-                      link: widget.album.songs!.elementAt(index).externalUrls!.spotify,
-                      duration: widget.album.songs!.elementAt(index).durationMs,
-                    );
-                    showModalBottomSheet(
-                      useRootNavigator: false,
-                      isScrollControlled: true,
-                      useSafeArea: true,
-                      context: context,
-                      builder: (context) => MusicPage(music: indexMusic),
-                    );
-                  },
-                  title: ResponsiveText(
-                    text: widget.album.songs!.elementAt(index).name,
-                    fontSize: 18,
-                    fontColor: Colors.white,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  subtitle: ResponsiveText(
-                    text: widget.album.songs!.elementAt(index).artists!.first.name,
-                    fontSize: 12,
-                    fontColor: Colors.white54,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  trailing: IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.more_vert, color: Colors.white54),
-                  ),
-                );
-              },
-              childCount: widget.album.songs!.length,
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+                  return ListTile(
+                    onTap: () {
+                      Music indexMusic = Music(
+                        name: widget.album.songs!.elementAt(index).name,
+                        id: widget.album.songs!.elementAt(index).id,
+                        artist: widget.album.songs!.elementAt(index).artists!.first.name,
+                        imageUrl: widget.album.image,
+                        link: widget.album.songs!.elementAt(index).externalUrls!.spotify,
+                        duration: widget.album.songs!.elementAt(index).durationMs,
+                      );
+                      showModalBottomSheet(
+                          useRootNavigator: false,
+                          isScrollControlled: true,
+                          useSafeArea: true,
+                          context: context,
+                          builder: (context) => MusicPage(music: indexMusic, isRandom: isRandom));
+                    },
+                    title: ResponsiveText(
+                      text: widget.album.songs!.elementAt(index).name,
+                      fontSize: 18,
+                      fontColor: Colors.white,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    subtitle: ResponsiveText(
+                      text: widget.album.songs!.elementAt(index).artists!.first.name,
+                      fontSize: 12,
+                      fontColor: Colors.white54,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    trailing: PopupMenuButton(
+                      color: secondaryColor,
+                      icon: Icon(Icons.more_vert, color: Colors.white54),
+                      itemBuilder: (BuildContext context) => [
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: Icon(Icons.bookmark_border_rounded,color: Colors.white),
+                            title: Text('Adicionar à playlist',style: TextStyle(color: Colors.white)),
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ),
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: Icon(Icons.favorite_outline_rounded, color: Colors.white),
+                            title: Text('Favoritar música',style: TextStyle(color: Colors.white)),
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ),
+                        
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: Icon(Icons.share_outlined,color: Colors.white),
+                            title: Text('Compartilhar música',style: TextStyle(color: Colors.white)),
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ),
+                      ],
+                    ) 
+                    // IconButton(
+                    //   onPressed: () {
+
+                    //   },
+                    //   icon: Icon(Icons.more_vert, color: Colors.white54),
+                    // ),
+                  );
+                },
+                childCount: widget.album.songs!.length, // Número de músicas dentro da playlist
+              ),
             ),
-          ),
         ],
       ),
     );

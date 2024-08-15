@@ -12,11 +12,11 @@ import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Search/search_page_terms.dart';
-import 'package:spotify/spotify.dart' hide Offset;
 
 class SearchPage extends StatefulWidget {
-  const SearchPage({super.key});
-
+  const SearchPage({super.key, required this.albumReleases, required this.recentMusics});
+  final List<AlbumModel> albumReleases;
+  final List<Music> recentMusics;
   @override
   State<SearchPage> createState() => _SearchPageState();
 }
@@ -31,53 +31,16 @@ class _SearchPageState extends State<SearchPage> {
     "Álbum": [],
   };
 
-  getRelAlbum(SpotifyApi spotify) async {
-    var albumNewReleases = await spotify.search.get('new releases').first(15);
-    for (var pages in albumNewReleases) {
-      if (pages.items != null) {
-        for (var album in pages.items!) {
-          if (album is AlbumSimple) {
-            var pagesTracks = await spotify.albums.tracks(album.id!).first().asStream().first;
-            setState(() {
-              mapaDeResposta['Álbum']!.add(AlbumModel(
-                  songs: pagesTracks.items,
-                  name: album.name!,
-                  id: album.id!,
-                  artist: album.artists!.first.name!,
-                  image: album.images!.first.url!));
-            });
-          }
-        }
-      }
-    }
-  }
-
-  getRelMusic(SpotifyApi spotify, String query) async {
-    var results = await spotify.search.get(query).first(30);
-    for (var pages in results) {
-      if (pages.items != null) {
-        for (var res in pages.items!) {
-          if (res is Track) {
-            mapaDeResposta['Música']!.add(
-              Music(
-                name: res.name!,
-                id: res.id!,
-                artist: res.artists!.first.name!,
-                imageUrl: res.album!.images!.first.url!,
-                link: res.externalUrls!.spotify!,
-                duration: res.durationMs!,
-              ),
-            );
-          }
-        }
-      }
-    }
+  setData() {
+    setState(() {
+      mapaDeResposta["Música"] = widget.recentMusics;
+      mapaDeResposta["Álbum"] = widget.albumReleases;
+    });
   }
 
   @override
   void initState() {
-    getRelAlbum(universal.spotifyApi);
-    getRelMusic(universal.spotifyApi, "Music");
+    setData();
     super.initState();
   }
 
@@ -98,53 +61,47 @@ class _SearchPageState extends State<SearchPage> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: List.from(reciever.map((element) => Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 5),
-                child: RawMaterialButton(
-                  constraints: BoxConstraints(),
-                  onPressed: (){
-                    if(element is Music){
-                      showModalBottomSheet(
-                        useRootNavigator: false,
-                        isScrollControlled: true,
-                        useSafeArea: true,
-                        context: context,
-                        builder: (context) {
-                          return MusicPage(music: element);
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    child: RawMaterialButton(
+                      constraints: BoxConstraints(),
+                      onPressed: () {
+                        if (element is Music) {
+                          showModalBottomSheet(
+                              useRootNavigator: false,
+                              isScrollControlled: true,
+                              useSafeArea: true,
+                              context: context,
+                              builder: (context) {
+                                return MusicPage(music: element);
+                              });
+                        } else if (element is AlbumModel) {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => MyAlbumPage(album: element)));
                         }
-                      );
-                    }
-                    else if(element is AlbumModel){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => MyAlbumPage(album: element)));
-                    }
-                  },
-                  child: SizedBox(
-                    width: 130,
-                    child: SpacedColumn(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      spacing: 5,
-                      children: [
-                        Container(
-                          width: 130,
-                          height: 157,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            image: DecorationImage(
-                              image: NetworkImage(
-                                element is Music?
-                                element.imageUrl : element.image
-                              ), 
-                              fit: BoxFit.cover
+                      },
+                      child: SizedBox(
+                        width: 130,
+                        child: SpacedColumn(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          spacing: 5,
+                          children: [
+                            Container(
+                              width: 130,
+                              height: 157,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                image: DecorationImage(
+                                    image: NetworkImage(element is Music ? element.imageUrl : element.image),
+                                    fit: BoxFit.cover),
+                              ),
                             ),
-                          ),
+                            Text(element.name, style: TextStyle(color: Colors.white)),
+                          ],
                         ),
-                        Text(element.name,style: TextStyle(color: Colors.white)),
-                      ],
+                      ),
                     ),
-                  ),
-                ),
-              ))),
+                  ))),
             ),
           ),
         ),
@@ -160,108 +117,107 @@ class _SearchPageState extends State<SearchPage> {
         drawer: ProfileDrawer(),
         backgroundColor: backgroundColor,
         body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Botão de pesquisa
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: Column(
-                  children: [
-                    RawMaterialButton(
-                        onPressed: () =>
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPageTerms())),
-                        child: ResponsiveContainer(
-                          height: 55,
-                          width: double.infinity,
-                          color: Color(0xFF373737),
-                          borderRadius: BorderRadius.circular(10),
-                          child: Center(
-                              child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  child: Icon(Icons.search, color: const Color.fromRGBO(255, 255, 255, 0.6)),
-                                ),
+            child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Botão de pesquisa
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Column(
+                children: [
+                  RawMaterialButton(
+                      onPressed: () =>
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPageTerms())),
+                      child: ResponsiveContainer(
+                        height: 55,
+                        width: double.infinity,
+                        color: Color(0xFF373737),
+                        borderRadius: BorderRadius.circular(10),
+                        child: Center(
+                            child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: Container(
+                                alignment: Alignment.center,
+                                child: Icon(Icons.search, color: const Color.fromRGBO(255, 255, 255, 0.6)),
                               ),
-                              Expanded(
-                                  flex: 3,
-                                  child: Center(
-                                      child: ResponsiveText(
-                                    text: "Pesquisar música, playlist, artista...",
-                                    //fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                    fontColor: const Color.fromRGBO(255, 255, 255, 0.6),
-                                  ))),
-                              Expanded(
-                                child: Container(),
-                              ),
-                            ],
-                          )),
-                        )),
-
-                    // Filtros
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 5),
-                      child: Row(
-                        children: [
-                          PopupMenuButton<String>(
-                              color: Color(0xFF373737),
-                              onSelected: (String result) => setState(() => _selectedFilter = result),
-                              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                                for (String value in ["Todos"] + mapaDeResposta.keys.toList())
-                                  PopupMenuItem<String>(
-                                    value: value,
-                                    child: FilterItem(
-                                      text: value,
-                                      selectedFilter: _selectedFilter,
-                                    ),
-                                  ),
-                              ],
-                              child: Card(
-                                  color: Color(0xFF373737),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0), // Define o raio das bordas
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      children: [
-                                        Icon(Icons.search, color: Colors.white),
-                                        SizedBox(width: 8), // Espaçamento entre o ícone e o texto
-                                        Text('Filtros', style: TextStyle(color: Colors.white)), // Texto
-                                      ],
-                                    ),
-                                  ))),
-                          SizedBox(width: 15),
-                          Text(
-                            'Filtro selecionado: $_selectedFilter',
-                            style: TextStyle(
-                              color: Colors.white,
                             ),
+                            Expanded(
+                                flex: 3,
+                                child: Center(
+                                    child: ResponsiveText(
+                                  text: "Pesquisar música, playlist, artista...",
+                                  //fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                  fontColor: const Color.fromRGBO(255, 255, 255, 0.6),
+                                ))),
+                            Expanded(
+                              child: Container(),
+                            ),
+                          ],
+                        )),
+                      )),
+
+                  // Filtros
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    child: Row(
+                      children: [
+                        PopupMenuButton<String>(
+                            color: Color(0xFF373737),
+                            onSelected: (String result) => setState(() => _selectedFilter = result),
+                            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                                  for (String value in ["Todos"] + mapaDeResposta.keys.toList())
+                                    PopupMenuItem<String>(
+                                      value: value,
+                                      child: FilterItem(
+                                        text: value,
+                                        selectedFilter: _selectedFilter,
+                                      ),
+                                    ),
+                                ],
+                            child: Card(
+                                color: Color(0xFF373737),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0), // Define o raio das bordas
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(Icons.search, color: Colors.white),
+                                      SizedBox(width: 8), // Espaçamento entre o ícone e o texto
+                                      Text('Filtros', style: TextStyle(color: Colors.white)), // Texto
+                                    ],
+                                  ),
+                                ))),
+                        SizedBox(width: 15),
+                        Text(
+                          'Filtro selecionado: $_selectedFilter',
+                          style: TextStyle(
+                            color: Colors.white,
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
+            ),
 
-              // Recomendações
-              SpacedColumn(
-                  padding: EdgeInsets.zero,
-                  spacing: 10,
-                  children: _selectedFilter == "Todos"
-                      ? List.from(mapaDeResposta.entries.map((e) => listBuilder(e.value, title: e.key)))
-                      : [listBuilder(mapaDeResposta[_selectedFilter]!, title: _selectedFilter)]),
+            // Recomendações
+            SpacedColumn(
+                padding: EdgeInsets.zero,
+                spacing: 10,
+                children: _selectedFilter == "Todos"
+                    ? List.from(mapaDeResposta.entries.map((e) => listBuilder(e.value, title: e.key)))
+                    : [listBuilder(mapaDeResposta[_selectedFilter]!, title: _selectedFilter)]),
 
-              if(universal.currentMusic.name != null) Container(height: 180),
-            ],
-          )
-        ),
+            if (universal.currentMusic.name != null) Container(height: 180),
+          ],
+        )),
       ),
     );
   }
