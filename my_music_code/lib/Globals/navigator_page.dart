@@ -107,7 +107,10 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   physics: const NeverScrollableScrollPhysics(),
                   controller: controller,
                   children: [
-                    SearchPage(),
+                    SearchPage(
+                      albumReleases: albumReleases,
+                      recentMusics: recentMusics,
+                    ),
                     FeedPage(
                       albumReleases: albumReleases,
                       recentMusics: recentMusics,
