@@ -40,7 +40,7 @@ class _MusicPageState extends State<MusicPage> {
 
   setupMusic() async {
     final yt = YoutubeExplode();
-    final result = (await yt.search(universal.currentMusic.name!)).first;
+    final result = (await yt.search("${universal.currentMusic.name!} ${widget.music.artist!}")).first;
     final videoId = result.id.value;
 
     final manifest = await yt.videos.streamsClient.getManifest(videoId);
