@@ -7,25 +7,32 @@ import 'package:my_music_code/universal.dart' as universal;
 
 PreferredSizeWidget feedProfileAppBar() {
   return AppBar(
-    backgroundColor: backgroundColor,
-    leading: Builder(builder: (context) {
-      return IconButton(
-        icon: ResponsiveContainer(
-          height: 30,
-          width: 30,
-          borderRadius: BorderRadius.circular(100),
-          isCubic: true,
-          color: backgroundColor,
-          image: DecorationImage(
-            image: CachedNetworkImageProvider(
-              universal.user.photoURL ?? DefaultPlaceholder.image,
+      backgroundColor: backgroundColor,
+      leading: Builder(builder: (context) {
+        return IconButton(
+          icon: ResponsiveContainer(
+            height: 30,
+            width: 30,
+            borderRadius: BorderRadius.circular(100),
+            isCubic: true,
+            color: backgroundColor,
+            image: DecorationImage(
+              image: CachedNetworkImageProvider(
+                universal.user.photoURL ?? DefaultPlaceholder.image,
+              ),
+              fit: BoxFit.cover,
             ),
-            fit: BoxFit.cover,
           ),
-        ),
-        onPressed: () => Scaffold.of(context).openDrawer(),
-      );
-    }),
-    title: ResponsiveText(text: "Hi, ${universal.user.displayName}, let's play some music.", fontSize: 16),
-  );
+          onPressed: () => Scaffold.of(context).openDrawer(),
+        );
+      }),
+      title: ResponsiveText(
+        text: "Hi, ${universal.user.displayName ?? 'User'}, let's play some music.",
+        fontSize: 16,
+      )
+        // ) : SpinKitThreeBounce(
+        //   color: Colors.white,
+        //   size: 20,
+        // )
+      ); 
 }
