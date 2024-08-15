@@ -10,7 +10,8 @@ import 'package:my_music_code/universal.dart' as universal;
 
 class MusicPage extends StatefulWidget {
   const MusicPage({
-    super.key, required this.music,
+    super.key,
+    required this.music,
   });
   final Music music;
   @override
@@ -23,6 +24,11 @@ class _MusicPageState extends State<MusicPage> {
   Duration? audioDuration = Duration(milliseconds: 0);
 
   setupMusic() async {
+    setState(() {
+      universal.currentMusic = widget.music;
+      isPlaying = !isPlaying;
+    });
+
     final yt = YoutubeExplode();
     final result = (await yt.search(universal.currentMusic.name!)).first;
     final videoId = result.id.value;
@@ -45,9 +51,6 @@ class _MusicPageState extends State<MusicPage> {
 
   @override
   void initState() {
-    setState(() {
-      universal.currentMusic = widget.music;
-    });
     // Verifica qual audio está tocando
     setupMusic();
     super.initState();
@@ -352,7 +355,7 @@ class _MusicPageState extends State<MusicPage> {
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
-                        universal.audioPlayer.state == PlayerState.playing
+                        isPlaying
                             ? Icons.pause_rounded
                             : Icons.play_arrow_rounded,
                         color: Colors.white,
