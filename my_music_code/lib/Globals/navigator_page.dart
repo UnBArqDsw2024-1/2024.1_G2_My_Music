@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/feed_page.dart';
@@ -21,15 +23,25 @@ class _NavigatorPageState extends State<NavigatorPage> {
   PageController controller = PageController(initialPage: 1);
   int pageIndex = 1;
 
+  setUser(){
+    setState(() {
+      universal.user = widget.user;
+      universal.spotifyApi = widget.spotifyApi;
+    });
+  }
 
   setIndex(int index) {
     setState(() => pageIndex = index);
     controller.jumpToPage(index);
   }
 
+  @override void initState() {
+    setUser();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    print(universal.currentMusic.name);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -74,8 +86,8 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   physics: const NeverScrollableScrollPhysics(),
                   controller: controller,
                   children: [
-                    SearchPage(spotifyApi: widget.spotifyApi),
-                    FeedPage(user: widget.user, spotifyApi: widget.spotifyApi),
+                    SearchPage(),
+                    FeedPage(),
                     UserPageOfPlaylists(),
                   ],
                 ),

@@ -5,10 +5,10 @@ import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Feed/music_page.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:spotify/spotify.dart' hide Image;
+import 'package:my_music_code/universal.dart' as universal;
 
 class SearchPageTerms extends StatefulWidget {
-  const SearchPageTerms({super.key, required this.spotifyApi});
-  final SpotifyApi spotifyApi;
+  const SearchPageTerms({super.key});
 
   @override
   State<SearchPageTerms> createState() => _SearchPageTermsState();
@@ -75,7 +75,7 @@ class _SearchPageTermsState extends State<SearchPageTerms> {
 
   @override
   void initState() {
-    getQuery(widget.spotifyApi, "music");
+    getQuery(universal.spotifyApi, "music");
 
     super.initState();
   }
@@ -98,7 +98,7 @@ class _SearchPageTermsState extends State<SearchPageTerms> {
                 });
               },
               onSubmitted: (value) {
-                getQuery(widget.spotifyApi, query);
+                getQuery(universal.spotifyApi, query);
               },
               autofocus: true,
               decoration: InputDecoration(

@@ -335,7 +335,7 @@ class _MusicPageState extends State<MusicPage> {
                 IconButton(
                   icon: Icon(CupertinoIcons.backward_end_fill, color: Colors.white, size: 30),
                   onPressed: () {
-                    if (widget.listMusics!.length != 0) {
+                    if (widget.listMusics!.isNotEmpty) {
                         showModalBottomSheet(
                           useRootNavigator: false,
                           isScrollControlled: true,
@@ -381,7 +381,8 @@ class _MusicPageState extends State<MusicPage> {
                 IconButton(
                   icon: Icon(CupertinoIcons.forward_end_fill, color: Colors.white, size: 30),
                   onPressed: () {
-                    if (widget.listMusics!.length != 0) {
+                    if (widget.listMusics!.isNotEmpty
+                    ) {
                         showModalBottomSheet(
                           useRootNavigator: false,
                           isScrollControlled: true,

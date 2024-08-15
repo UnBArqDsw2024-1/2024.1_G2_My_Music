@@ -5,7 +5,6 @@ import 'package:my_music_code/Feed/music_page.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/style.dart';
-import 'package:my_music_code/universal.dart' as universal;
 
 class NewMusicRelease extends StatefulWidget {
   const NewMusicRelease({super.key, required this.musicRelease});

@@ -14,3 +14,10 @@ my_music_code/macos/Flutter/GeneratedPluginRegistrant.swift
 my_music_code/windows/flutter/generated_plugin_registrant.cc
 my_music_code/windows/flutter/generated_plugin_registrant.h
 my_music_code/windows/flutter/generated_plugins.cmake
+my_music_code/linux/flutter/generated_plugin_registrant.cc
+my_music_code/linux/flutter/generated_plugin_registrant.h
+my_music_code/linux/flutter/generated_plugins.cmake
+my_music_code/macos/Flutter/GeneratedPluginRegistrant.swift
+my_music_code/windows/flutter/generated_plugin_registrant.cc
+my_music_code/windows/flutter/generated_plugin_registrant.h
+my_music_code/windows/flutter/generated_plugins.cmake

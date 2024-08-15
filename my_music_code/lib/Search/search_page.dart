@@ -1,18 +1,15 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:my_music_code/Feed/Components/feed_profile_app_bar.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Search/search_page_terms.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:spotify/spotify.dart';
 
 class SearchPage extends StatefulWidget {
-  const SearchPage({super.key, required this.spotifyApi});
-  final SpotifyApi spotifyApi;
+  const SearchPage({super.key});
   
   @override
   State<SearchPage> createState() => _SearchPageState();
@@ -23,33 +20,8 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Color(0xFF373737), // Cor da barra de status
-      statusBarIconBrightness: Brightness.light, // Cor dos ícones da barra de status
-    ));
-
     return Scaffold(
-      
-      // appBar: AppBar(
-      //   backgroundColor: Color(0xFF373737),
-      //   title: Text('Buscar', style: TextStyle(color: Colors.white, fontSize: 36.0)),
-      //   centerTitle: true,
-      //   shape: RoundedRectangleBorder(
-      //       borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30))),
-      //   bottom: PreferredSize(
-      //       preferredSize: Size.fromHeight(30),
-      //       child: Container(
-      //         margin: EdgeInsets.only(bottom: 10.0),
-      //         child: Text(
-      //           'O que você quer ouvir?',
-      //           style: TextStyle(
-      //             color: const Color.fromRGBO(255, 255, 255, 0.6),
-      //             fontSize: 16.0,
-      //           ),
-      //         ),
-      //       )),
-      // ),
-      // appBar: feedProfileAppBar(user: user),
+      appBar: feedProfileAppBar(),
       backgroundColor: backgroundColor,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -58,7 +30,7 @@ class _SearchPageState extends State<SearchPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             RawMaterialButton(
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPageTerms(spotifyApi: widget.spotifyApi,))),
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPageTerms())),
                 child: ResponsiveContainer(
                   height: 55,
                   width: double.infinity,
