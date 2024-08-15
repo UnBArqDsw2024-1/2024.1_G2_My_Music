@@ -52,7 +52,7 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
           link: music.externalUrls!.spotify,
           duration: music.durationMs,
         ));
-      };
+      }
       universal.currentListMusicShuffle = universal.currentListMusic;
       universal.currentListMusicShuffle.shuffle(Random());
 
