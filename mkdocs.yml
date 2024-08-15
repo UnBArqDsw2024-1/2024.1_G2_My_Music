@@ -78,8 +78,17 @@ nav:
       - 3.5. Iniciativas Extras: PadroesDeProjeto/IniciativasExtras.md
   - 4. Arquitetura de Software e Reutilização: 
     - 4.1 Módulo Estilos e Padrões Arquiteturais: ArquiteturaReutilizacao/estiloEPadroesArquiteturais.md
-    - 4.2 Módulo Reutilização de Software: ArquiteturaReutilizacao/reutilizacaoDeSoftware.md
-    - 4.3 Participações - Arquitetura & Reutilização de Software: ArquiteturaReutilizacao/participacoesArqReutilizacao.md
+    - 4.2 Módulo Reutilização de Software: ArquiteturaReutilizacao/reutilizacaoDeSoftware.md 
+    - 4.3 Módulo Arquitetura de Software:
+      - 4.3.1 Arquitetura de software: ArquiteturaReutilizacao/arquiteturaDeSoftware.md
+      - 4.3.2 Visões:
+        - 4.3.2.1 Visão de Implantação: ArquiteturaReutilizacao/VisaoDeImplantacao.md
+        - 4.3.2.2 Visão de Implementação: ArquiteturaReutilizacao/VisaoDeImplementacao.md
+        - 4.3.2.3 Visão dos Casos de Uso: ArquiteturaReutilizacao/visao-casos-de-uso.md
+        - 4.3.2.4 Visão de logica: ArquiteturaReutilizacao/visao-de-logica.md
+        - 4.3.2.5 Visão de Processo: ArquiteturaReutilizacao/visao-de-processo.md
+        - 4.3.2.6 Visão de Dados: ArquiteturaReutilizacao/visaoDados.md
+    - 4.4 Participações - Arquitetura & Reutilização de Software: ArquiteturaReutilizacao/participacoesArqReutilizacao.md
   - Reuniões:
     - Ata 01: Atas/ata_1.md
     - Ata 02: Atas/ata_2.md
