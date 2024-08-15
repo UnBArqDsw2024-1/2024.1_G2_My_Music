@@ -260,10 +260,46 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                       fontColor: Colors.white54,
                       fontWeight: FontWeight.w400,
                     ),
-                    trailing: IconButton(
-                      onPressed: () {},
+                    trailing: PopupMenuButton(
+                      color: secondaryColor,
                       icon: Icon(Icons.more_vert, color: Colors.white54),
-                    ),
+                      itemBuilder: (BuildContext context) => [
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: Icon(Icons.bookmark_border_rounded,color: Colors.white),
+                            title: Text('Adicionar à playlist',style: TextStyle(color: Colors.white)),
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ),
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: Icon(Icons.favorite_outline_rounded, color: Colors.white),
+                            title: Text('Favoritar música',style: TextStyle(color: Colors.white)),
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ),
+                        
+                        PopupMenuItem(
+                          child: ListTile(
+                            leading: Icon(Icons.share_outlined,color: Colors.white),
+                            title: Text('Compartilhar música',style: TextStyle(color: Colors.white)),
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ),
+                      ],
+                    ) 
+                    // IconButton(
+                    //   onPressed: () {
+
+                    //   },
+                    //   icon: Icon(Icons.more_vert, color: Colors.white54),
+                    // ),
                   );
                 },
                 childCount: widget.album.songs!.length, // Número de músicas dentro da playlist
