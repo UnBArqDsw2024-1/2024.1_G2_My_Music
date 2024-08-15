@@ -5,6 +5,8 @@ import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/MyPlaylists/new_playlist_page.dart';
 import 'package:my_music_code/MyPlaylists/playlist_page.dart';
 import 'package:my_music_code/Album/album_page.dart';
+import 'package:my_music_code/universal.dart' as universal;
+
 
 class UserPageOfPlaylists extends StatefulWidget {
   const UserPageOfPlaylists({super.key});
@@ -54,16 +56,16 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
     albums = await Future.wait(favoriteAlbumIds.map((id) async {
       try {
         // Obtém o álbum usando o ID
-        final album = await spotifyApi.albums.get(id);
+        final album = await universal.spotifyApi.albums.get(id);
 
         return AlbumModel(
           id: album.id.toString(),
-          name: album.name,
-          artist: album.artists.map((artist) => artist.name).join(', '),
-          image: album.images.isNotEmpty ? album.images.first.url : DefaultPlaceholder.image,
+          name: album.name!,
+          artist: album.artists!.map((artist) => artist.name).join(', '),
+          image: album.images!.isNotEmpty ? album.images!.first.url! : DefaultPlaceholder.image,
         );
       } catch (e) {
-        print('Erro ao obter o álbum com ID $id: $e');
+        // print('Erro ao obter o álbum com ID $id: $e');
         // retorna modelo em branco
         return AlbumModel(
           id: id,

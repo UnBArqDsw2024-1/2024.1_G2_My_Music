@@ -56,7 +56,7 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
           link: music.externalUrls!.spotify,
           duration: music.durationMs,
         ));
-      };
+      }
     });
   }
 
