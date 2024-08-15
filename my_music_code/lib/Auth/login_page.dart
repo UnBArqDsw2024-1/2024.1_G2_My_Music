@@ -8,6 +8,7 @@ import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key, this.onTapTogglePage, required this.userModel});
@@ -34,12 +35,14 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Container(
                 constraints: BoxConstraints(
-                  minHeight: SizeConfig.screenHeight - responsiveFigmaHeight(180),
+                  minHeight:
+                      SizeConfig.screenHeight - responsiveFigmaHeight(180),
                   minWidth: double.infinity,
                 ),
                 decoration: BoxDecoration(
                   color: Color(0xffEFEFEF),
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(100)),
+                  borderRadius:
+                      BorderRadius.only(topLeft: Radius.circular(100)),
                 ),
                 padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(27)),
                 
@@ -87,7 +90,6 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-
                     SpacedColumn(
                       padding: EdgeInsets.only(top: responsiveFigmaHeight(8)),
                       children: [
@@ -108,30 +110,6 @@ class _LoginPageState extends State<LoginPage> {
                           )
                         ),
 
-
-                        // Row(
-                        //   children: [
-                        //     Expanded(
-                        //       child: Divider(
-                        //         color: Color(0xff000000),
-                        //       )
-                        //     ),
-                        //     ResponsiveText(
-                        //       text: "Ou continue com",
-                        //       fontColor: primaryColor,
-                        //       fontWeight: FontWeight.w700,
-                        //       fontSize: 16,
-                        //       padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(8)),
-                        //     ),
-                        //     Expanded(
-                        //       child: Divider(
-                        //         color: Color(0xff000000),
-                        //       )
-                        //     ),
-                        //   ],
-                        // ),
-                        
-
                         TextButton(
                           onPressed: widget.onTapTogglePage,
                           child: ResponsiveText(
@@ -141,7 +119,6 @@ class _LoginPageState extends State<LoginPage> {
                             fontSize: 16,
                           )
                         ),
-                  
                       ],
                     )
                   ],

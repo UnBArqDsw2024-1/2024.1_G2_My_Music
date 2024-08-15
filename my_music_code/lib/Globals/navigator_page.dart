@@ -91,11 +91,15 @@ class _NavigatorPageState extends State<NavigatorPage> {
                     UserPageOfPlaylists(),
                   ],
                 ),
-                if (universal.currentMusic.id != null)
-                  Positioned(
-                    bottom: 1, left: 0, right: 0,
-                    child: MiniPlayer(),
-                  )
+                StreamBuilder(
+                  stream: universal.audioPlayer.onPlayerStateChanged, 
+                  builder: (context, snapshot){
+                    return snapshot.data == null ? Container() : Positioned(
+                      bottom: 1, left: 0, right: 0,
+                      child: MiniPlayer(),
+                    );
+                  }
+                )
               ],
             ),
           ],
