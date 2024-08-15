@@ -25,12 +25,14 @@ class _MusicPageState extends State<MusicPage> {
   bool isFavorite = false;
   Duration? audioDuration = Duration(milliseconds: 0);
 
-  setupMusic() async {
+  setCurrentMusic() {
     setState(() {
       universal.currentMusic = widget.music;
       isPlaying = !isPlaying;
     });
+  }
 
+  setupMusic() async {
     final yt = YoutubeExplode();
     final result = (await yt.search(universal.currentMusic.name!)).first;
     final videoId = result.id.value;
@@ -54,6 +56,7 @@ class _MusicPageState extends State<MusicPage> {
   @override
   void initState() {
     // Verifica qual audio está tocando
+    setCurrentMusic();
     setupMusic();
     super.initState();
   }
@@ -336,13 +339,12 @@ class _MusicPageState extends State<MusicPage> {
                   icon: Icon(CupertinoIcons.backward_end_fill, color: Colors.white, size: 30),
                   onPressed: () {
                     if (widget.listMusics!.isNotEmpty) {
-                        showModalBottomSheet(
+                      showModalBottomSheet(
                           useRootNavigator: false,
                           isScrollControlled: true,
                           useSafeArea: true,
                           context: context,
-                          builder: (context) => MusicPage(music: widget.listMusics![indexListMusic - 1])
-                        );
+                          builder: (context) => MusicPage(music: widget.listMusics![indexListMusic - 1]));
                     }
                   },
                 ),
@@ -367,12 +369,8 @@ class _MusicPageState extends State<MusicPage> {
                       color: primaryColor,
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(
-                        isPlaying
-                            ? Icons.pause_rounded
-                            : Icons.play_arrow_rounded,
-                        color: Colors.white,
-                        size: 48),
+                    child:
+                        Icon(isPlaying ? Icons.pause_rounded : Icons.play_arrow_rounded, color: Colors.white, size: 48),
                   ),
                 ),
 
@@ -381,15 +379,13 @@ class _MusicPageState extends State<MusicPage> {
                 IconButton(
                   icon: Icon(CupertinoIcons.forward_end_fill, color: Colors.white, size: 30),
                   onPressed: () {
-                    if (widget.listMusics!.isNotEmpty
-                    ) {
-                        showModalBottomSheet(
+                    if (widget.listMusics!.isNotEmpty) {
+                      showModalBottomSheet(
                           useRootNavigator: false,
                           isScrollControlled: true,
                           useSafeArea: true,
                           context: context,
-                          builder: (context) => MusicPage(music: widget.listMusics![indexListMusic + 1])
-                        );
+                          builder: (context) => MusicPage(music: widget.listMusics![indexListMusic + 1]));
                     }
                   },
                 ),
