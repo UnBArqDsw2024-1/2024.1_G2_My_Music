@@ -14,7 +14,7 @@ Em um diagrama de casos de uso, os atores são representados como bonecos palito
 
 ### Levantamento dos casos de uso
 
-No levantamento de casos de uso, além das reuniões mencionadas anteriormente, utilizamos os documentos de levantamento de requisitos como base para a realização das simulações práticas do uso do aplicativo. Esses documentos forneceram informações cruciais para identificar os principais cenários de interação do usuário com o sistema. A partir dessas simulações, discutimos e refinamos os casos de uso, assegurando que todos os requisitos fossem contemplados de forma abrangente. 
+No levantamento de casos de uso, além das reuniões mencionadas anteriormente, utilizamos os documentos de levantamento de requisitos como base para a realização das simulações práticas do uso do aplicativo. Esses documentos ([Requisitos levantados por Brainstorm](https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/Base/brainstorming/#resultados), [Requisitos elicitados por entrevista](https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/Base/entrevista/#requisitos-elicitados) e [Definição do perfil de usuário](https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/Base/questionario/#definicao-do-perfil-de-usuario)) forneceram informações cruciais para identificar os principais cenários de interação do usuário com o sistema. A partir dessas simulações, discutimos e refinamos os casos de uso, assegurando que todos os requisitos fossem contemplados de forma abrangente. 
 
 #### Tabela de Casos de Uso
 
