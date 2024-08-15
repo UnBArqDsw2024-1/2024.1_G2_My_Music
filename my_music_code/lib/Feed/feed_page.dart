@@ -40,7 +40,7 @@ class _FeedPageState extends State<FeedPage> {
                   songs: pagesTracks.items,
                   name: album.name!,
                   id: album.id!,
-                  artist: album.artists!.first.name!,
+                  artist: album.artists!.map((artist) => artist.name).join(', '),
                   image: album.images!.first.url!));
             });
           }
@@ -56,7 +56,7 @@ class _FeedPageState extends State<FeedPage> {
               musicRelease = Music(
                 name: music.name!,
                 id: music.id!,
-                artist: music.artists!.first.name!,
+                artist: music.artists!.map((artist) => artist.name).join(', '),
                 imageUrl: music.album!.images!.first.url!,
                 link: music.externalUrls!.spotify!,
                 duration: music.durationMs!,
@@ -76,7 +76,7 @@ class _FeedPageState extends State<FeedPage> {
               recentMusics.add(Music(
                 name: music.name!,
                 id: music.id!,
-                artist: music.artists!.first.name!,
+                artist: music.artists!.map((artist) => artist.name).join(', '),
                 imageUrl: music.album!.images!.first.url!,
                 link: music.externalUrls!.spotify!,
                 duration: music.durationMs!,
