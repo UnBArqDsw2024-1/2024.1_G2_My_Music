@@ -85,6 +85,7 @@ Em resumo, o desenvolvimento de um sistema robusto, confiável, seguro e com bom
 5. **The Unified Modeling Language Org.** Activity Diagrams, 2011. Disponível em: <https://www.uml-diagrams.org/activity-diagrams.html>. Acesso em: 12 de agosto 2024.
 6. **MyMusic.** 1.1.4 Protótipo, 2024. Disponível em: <https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/Base/prototipo/>. Acesso em: 11 de agosto 2024.
 7. **AULA - ARQUITETURA & DAS – PARTE II.** Serrano, Milene. Disponível em: [Aprender3](https://aprender3.unb.br/). Acesso em: 11 agosto 2024.
+8. **Documento de arquitetura de Software.** Disponível em: <https://unbarqdsw2023-1.github.io/2023.1_G3_ProjetoMercadoLivre/#/ArquiteturaReutilizacao/DocumentoArquiteturaSoftware)>. Acesso em: 14 ago. 2024.
 
 ## 13.2 Referências bibliográficas
 
