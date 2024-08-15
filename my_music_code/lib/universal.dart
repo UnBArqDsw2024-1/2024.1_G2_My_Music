@@ -9,3 +9,4 @@ AudioPlayer audioPlayer = AudioPlayer();
 Music currentMusic = Music();
 late User user;
 late SpotifyApi spotifyApi;
+late List<Music> currentListMusic = List.empty(growable: true);

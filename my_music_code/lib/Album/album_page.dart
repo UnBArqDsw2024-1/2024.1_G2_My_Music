@@ -5,6 +5,7 @@ import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:my_music_code/universal.dart' as universal;
 import 'package:spotify/spotify.dart';
 
 class AlbumModel {
@@ -31,6 +32,29 @@ class MyAlbumPage extends StatefulWidget {
 
 class _MyAlbumPageState extends State<MyAlbumPage> {
   bool isPinned = true;
+
+  populaAlbum() {
+    setState(() {
+      universal.currentListMusic = List.empty(growable: true);
+      for (var music in widget.album.songs!) {
+        universal.currentListMusic.add(Music(
+          name: music.name,
+          id: music.id,
+          artist: music.artists!.first.name,
+          imageUrl: widget.album.image,
+          link: music.externalUrls!.spotify,
+          duration: music.durationMs,
+        ));
+      };
+    });
+  }
+
+  @override
+  void initState() {
+    populaAlbum();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
