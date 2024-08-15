@@ -42,38 +42,42 @@ class _SearchPageTermsState extends State<SearchPageTerms> {
     }
 
     setState(() {
-      buildTile = List.from(
-        listResults.map(
-          (music) => ListTile(
-            onTap: (){
-              showModalBottomSheet(
+      buildTile = List.from(listResults.map((music) => ListTile(
+          onTap: () {
+            setState(() {
+              
+            });
+            showModalBottomSheet(
                 useRootNavigator: false,
                 isScrollControlled: true,
                 useSafeArea: true,
                 context: context,
                 builder: (context) {
                   return MusicPage(music: music);
-                }
-              );
-            },
-            title: Text(music.name!,style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500)),
-            subtitle: Text(music.artist!, style: TextStyle(color: Colors.white)),
-            leading: Container(
-              height: 50,
-              width: 50,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: secondaryColor,
-                image: DecorationImage(
-                  image: NetworkImage(music.imageUrl!),
-                  fit: BoxFit.cover,
-                ),
+                });
+          },
+          title: Text(music.name!, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500)),
+          subtitle: Text(music.artist!, style: TextStyle(color: Colors.white)),
+          leading: Container(
+            height: 50,
+            width: 50,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              color: secondaryColor,
+              image: DecorationImage(
+                image: NetworkImage(music.imageUrl!),
+                fit: BoxFit.cover,
               ),
-            )
-          )
-        )
-      );
+            ),
+          ))));
     });
+  }
+
+  @override
+  void initState() {
+    getQuery(widget.spotifyApi, "music");
+
+    super.initState();
   }
 
   @override
@@ -116,10 +120,6 @@ class _SearchPageTermsState extends State<SearchPageTerms> {
               style: TextStyle(color: Colors.black),
             ),
             SizedBox(height: 20),
-            if(buildTile.isEmpty) Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: Text('Buscas recentes', style: TextStyle(fontSize: 18, color: Colors.white)),
-            ),
             Expanded(
               child: ListView(
                 children: buildTile,
