@@ -6,12 +6,15 @@ Os casos de uso descrevem como os diferentes usuários interagem com o nosso sis
 
 ## Metodologia
 
-Após reunião com todos os membros, a visão de casos de uso foi apontada como extra, porém os membros Carlos Eduardo Mendes de Mesquita e Carlos Godoy optaram por documentar a mesma. Em reuniões via Google Meet, fizeram o diagrama dos casos de uso de acordo com a explicação exemplos dados pelo site Lucidchart.
- 
+Após uma reunião com todos os membros da equipe, decidiu-se pela documentação da visão de casos de uso, com Carlos Eduardo Mendes de Mesquita e Carlos Godoy liderando essa iniciativa. A metodologia adotada envolveu a realização de simulações práticas do uso do aplicativo, cujos cenários foram discutidos em reuniões via Google Meet. Esses casos de uso foram documentados em diagramas detalhados utilizando a ferramenta ¹Lucidchart, com base em exemplos práticos fornecidos pelo site, assegurando a inclusão de todos os cenários relevantes para o sistema.
 
-### Casos de uso
+## Casos de uso
 
 Em um diagrama de casos de uso, os atores são representados como bonecos palitos e os casos de uso que podem ser executados são representados em formato oval na direção horizontal, como mostrado na figura 1, que é o diagrama de casos de uso elaborado para essa entrega. 
+
+### Levantamento dos casos de uso
+
+No levantamento de casos de uso, além das reuniões mencionadas anteriormente, utilizamos os documentos de levantamento de requisitos como base para a realização das simulações práticas do uso do aplicativo. Esses documentos forneceram informações cruciais para identificar os principais cenários de interação do usuário com o sistema. A partir dessas simulações, discutimos e refinamos os casos de uso, assegurando que todos os requisitos fossem contemplados de forma abrangente. 
 
 #### Tabela de Casos de Uso
 
@@ -21,6 +24,7 @@ Em um diagrama de casos de uso, os atores são representados como bonecos palito
 | --- | --- | --- |
 | 1 | Ouvinte | Usuário ouvite de músicas no My Music |
 | 2 | Servidor | Servidor do My Music |
+
 Fonte: Carlos Nacimento e Carlos Mesquita
 
 A aplicação foi definida como possuindo apenas dois atores que interagem como a mesma, o usuário, registrado como ouvinte, e o aplicativo, registrado como servidor. 
@@ -28,7 +32,6 @@ A aplicação foi definida como possuindo apenas dois atores que interagem como 
 
 ##### Casos de uso
 
----- Tabela com os casos de uso
 | Código | Descrição |
 | --- | --- |
 | US01 | Cadastra no aplicativo |
@@ -41,8 +44,12 @@ A aplicação foi definida como possuindo apenas dois atores que interagem como 
 | US08 | Salvar música em Playlist |
 | US09 | Compartilhar música |
 
+Fonte: Carlos Nacimento e Carlos Mesquita
+
 A tabela acima representa os casos de uso implementados no diagrama, decididos como os mais importantes de serem documentados por abrangerem completamente o uso do aplicativo pelo usuário, que no momento se resume ao ouvinte, o diagrama pode ser encontrado na figura 1 abaixo. 
 Como explicado na referência utilizada para a criação dos casos de uso, em boa parte das documentações em que é utilizado, os casos de uso também são descritos e forma textual, o que será feito nesta parte do documento.
+
+"US" é apenas uma unidade definida por nós para enumerar os casos de uso.
 
 ### US01 - Cadastra no aplicativo
 
@@ -85,13 +92,12 @@ Acionado quando o usuário quer compartilhar uma música do aplicativo com outro
 ![Diagrama de Casos de uso](../Assets/Diagrama-Casos-uso.png)
 Figura 1: Diagrama de casos de uso(Fonte: Carlos Nascimento e Carlos Mesquita,2024)
 
-## Bibliografia
-
-Diagrama de casos de uso, Lucidchart, acessado em 8 e 14 de agosto de 2024, disponível em https://www.lucidchart.com/pages/pt/diagrama-de-caso-de-uso-uml
-
 ## Referências Bibliográficas
+> ¹Lucidchart. Ferramenta de criação de diagramas online. Disponível em: <https://lucid.app/>
 
-Lucidchart.(2024). Diagrama de caso de uso UML: o que é, como fazer e exemplos. Recuperado de https://www.lucidchart.com/pages/pt/diagrama-de-caso-de-uso-uml
+## Bibliografia
+> ²Dev Media. Disponível em: <https://www.devmedia.com.br/o-que-e-uml-e-diagramas-de-caso-de-uso-introducao-pratica-a-uml/23408>. Acesso em: 07 de agosto de 2024. <br>
+> ³Tribunal Regional do Trabalho da 9° Região. Disponível em: <https://www.trt9.jus.br/pds/pdstrt9/guidances/concepts/use_case_model_CD178AF9.html#:~:text=Um%20modelo%20de%20caso%20de,sistema%20para%20satisfazer%20estas%20metas.>. Acesso em 14 de agosto de 2024
 
 ## Histórico de Versões
 
@@ -99,3 +105,4 @@ Lucidchart.(2024). Diagrama de caso de uso UML: o que é, como fazer e exemplos.
 | ------------ | ---------- | --------- | --------- | ----------- |
 | 1.0          | 07/08/2024 | Criação da página | [Carlos Eduardo Mendes de Mesquita](https://github.com/CarlosEduardoMendesdeMesquita) e [Carlos Godoy](https://github.com/CDGodoy) | [Limírio Guimarães](https://github.com/LimirioGuimaraes) [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/118#pullrequestreview-2239411706) |
 | 1.1          | 14/08/2024 | Conclusão do mkdocs da entrega(escrito via google docs) | [Carlos Eduardo Mendes de Mesquita](https://github.com/CarlosEduardoMendesdeMesquita) e [Carlos Godoy](https://github.com/CDGodoy) | [Limírio Guimarães](https://github.com/LimirioGuimaraes)  [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/118#pullrequestreview-2239411706)  |
+| 1.2          | 14/08/2024 | Melhorias pós revisão | [Carlos Eduardo Mendes de Mesquita](https://github.com/CarlosEduardoMendesdeMesquita) e [Carlos Godoy](https://github.com/CDGodoy) |   |
