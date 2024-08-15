@@ -23,12 +23,17 @@ class MusicPage extends StatefulWidget {
 class _MusicPageState extends State<MusicPage> {
   bool isPlaying = false;
   bool isFavorite = false;
-  Duration? audioDuration = Duration(milliseconds: 0);
 
   setCurrentMusic() {
     setState(() {
-      universal.currentMusic = widget.music;
-      isPlaying = !isPlaying;
+      if(
+        universal.currentMusic.artist != widget.music.artist &&
+        universal.currentMusic.name != widget.music.name  
+      ) {
+        universal.currentMusic = widget.music;
+        isPlaying = !isPlaying;
+        setupMusic();
+      }
     });
   }
 
@@ -37,27 +42,15 @@ class _MusicPageState extends State<MusicPage> {
     final result = (await yt.search(universal.currentMusic.name!)).first;
     final videoId = result.id.value;
 
-    setState(() {
-      audioDuration = Duration(milliseconds: result.duration!.inMilliseconds);
-    });
-
     final manifest = await yt.videos.streamsClient.getManifest(videoId);
     final audioUrl = manifest.audioOnly.first;
-
-    if (universal.audioPlayer.source.toString() != audioUrl.url.toString()) {
-      universal.audioPlayer.play(UrlSource(audioUrl.url.toString()));
-    } else {
-      if (universal.audioPlayer.state == PlayerState.playing) {
-        audioDuration = await universal.audioPlayer.getDuration();
-      }
-    }
+    universal.audioPlayer.play(UrlSource(audioUrl.url.toString()));
   }
 
   @override
   void initState() {
     // Verifica qual audio está tocando
     setCurrentMusic();
-    setupMusic();
     super.initState();
   }
 
@@ -312,9 +305,9 @@ class _MusicPageState extends State<MusicPage> {
                 builder: (context, data) {
                   return ProgressBar(
                     progress: data.data ?? Duration(milliseconds: 0),
-                    buffered: audioDuration,
+                    buffered: Duration(milliseconds: universal.currentMusic.duration!),
                     onSeek: (duration) => universal.audioPlayer.seek(duration),
-                    total: audioDuration!,
+                    total:  Duration(milliseconds: universal.currentMusic.duration!),
                     progressBarColor: primaryColor,
                     baseBarColor: Colors.white.withOpacity(0.20),
                     bufferedBarColor: Colors.white.withOpacity(0.20),
