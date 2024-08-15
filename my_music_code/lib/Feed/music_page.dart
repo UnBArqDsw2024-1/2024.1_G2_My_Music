@@ -1,15 +1,21 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
+import 'package:youtube_explode_dart/youtube_explode_dart.dart';
+
+import 'package:my_music_code/universal.dart' as universal;
 
 class MusicPage extends StatefulWidget {
-  const MusicPage({super.key, 
+  const MusicPage({
+    super.key,
     required this.music,
+    this.listMusics,
   });
-
   final Music music;
+  final List<Music>? listMusics;
   @override
   State<MusicPage> createState() => _MusicPageState();
 }
@@ -17,6 +23,36 @@ class MusicPage extends StatefulWidget {
 class _MusicPageState extends State<MusicPage> {
   bool isPlaying = false;
   bool isFavorite = false;
+
+  setCurrentMusic() {
+    setState(() {
+      if(
+        universal.currentMusic.artist != widget.music.artist &&
+        universal.currentMusic.name != widget.music.name  
+      ) {
+        universal.currentMusic = widget.music;
+        isPlaying = !isPlaying;
+        setupMusic();
+      }
+    });
+  }
+
+  setupMusic() async {
+    final yt = YoutubeExplode();
+    final result = (await yt.search(universal.currentMusic.name!)).first;
+    final videoId = result.id.value;
+
+    final manifest = await yt.videos.streamsClient.getManifest(videoId);
+    final audioUrl = manifest.audioOnly.first;
+    universal.audioPlayer.play(UrlSource(audioUrl.url.toString()));
+  }
+
+  @override
+  void initState() {
+    // Verifica qual audio está tocando
+    setCurrentMusic();
+    super.initState();
+  }
 
   void _musicOptionsModalBottomSheet(
       BuildContext context, String artista, String music, String coverAlbum, bool isFavorite) {
@@ -163,6 +199,7 @@ class _MusicPageState extends State<MusicPage> {
 
   @override
   Widget build(BuildContext context) {
+    int indexListMusic = 0;
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
@@ -185,7 +222,7 @@ class _MusicPageState extends State<MusicPage> {
                 ),
               ),
               Text(
-                widget.music.artist!,
+                universal.currentMusic.artist!,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 12,
@@ -200,22 +237,21 @@ class _MusicPageState extends State<MusicPage> {
               onPressed: () {
                 _musicOptionsModalBottomSheet(
                   context,
-                  widget.music.artist!,
-                  widget.music.name!,
-                  widget.music.imageUrl!,
+                  universal.currentMusic.artist!,
+                  universal.currentMusic.name!,
+                  universal.currentMusic.imageUrl!,
                   isFavorite,
                 );
               },
             ),
           ]),
-
       body: Column(
         children: <Widget>[
           SizedBox(height: 20), // Espaçamento entre a Row e a imagem
           ClipRRect(
             borderRadius: BorderRadius.circular(12.0),
             child: Image.network(
-              widget.music.imageUrl!,
+              universal.currentMusic.imageUrl!,
               width: 340,
               height: 340,
               fit: BoxFit.cover,
@@ -224,28 +260,30 @@ class _MusicPageState extends State<MusicPage> {
           SizedBox(height: 20), // Espaçamento entre a imagem e a próxima Row
           Row(
             children: <Widget>[
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      widget.music.name!,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        universal.currentMusic.name!,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    Text(
-                      'By ${widget.music.artist!}',
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 15,
+                      Text(
+                        'By ${universal.currentMusic.artist!}',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 15,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               IconButton(
@@ -261,24 +299,29 @@ class _MusicPageState extends State<MusicPage> {
           ),
 
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: ProgressBar(
-              progress: Duration(milliseconds: 1000),
-              buffered: Duration(milliseconds: 2000),
-              total: Duration(milliseconds:  widget.music.duration!),
-              progressBarColor: primaryColor,
-              baseBarColor: Colors.white.withOpacity(0.20),
-              bufferedBarColor: Colors.white.withOpacity(0.20),
-              thumbColor: primaryFontColor,
-              thumbRadius: 5.0,
-              thumbGlowRadius: 0,
-              barHeight: 3.0,
-              timeLabelTextStyle: TextStyle(
-                color: Colors.grey,
-                fontSize: 15,
-              ),
-            ),
-          ),
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              child: StreamBuilder(
+                stream: universal.audioPlayer.onPositionChanged,
+                builder: (context, data) {
+                  return ProgressBar(
+                    progress: data.data ?? Duration(milliseconds: 0),
+                    buffered: Duration(milliseconds: universal.currentMusic.duration!),
+                    onSeek: (duration) => universal.audioPlayer.seek(duration),
+                    total:  Duration(milliseconds: universal.currentMusic.duration!),
+                    progressBarColor: primaryColor,
+                    baseBarColor: Colors.white.withOpacity(0.20),
+                    bufferedBarColor: Colors.white.withOpacity(0.20),
+                    thumbColor: primaryFontColor,
+                    thumbRadius: 5.0,
+                    thumbGlowRadius: 0,
+                    barHeight: 3.0,
+                    timeLabelTextStyle: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 15,
+                    ),
+                  );
+                },
+              )),
           SizedBox(height: 20), // Espaçamento entre a barra de progresso e os botões de controle
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 30.0),
@@ -287,11 +330,19 @@ class _MusicPageState extends State<MusicPage> {
               children: <Widget>[
                 IconButton(
                   icon: Icon(CupertinoIcons.backward_end_fill, color: Colors.white, size: 30),
-                  onPressed: () {},
+                  onPressed: () {
+                    if (widget.listMusics!.isNotEmpty) {
+                      showModalBottomSheet(
+                          useRootNavigator: false,
+                          isScrollControlled: true,
+                          useSafeArea: true,
+                          context: context,
+                          builder: (context) => MusicPage(music: widget.listMusics![indexListMusic - 1]));
+                    }
+                  },
                 ),
 
                 SizedBox(width: 20), // Espaçamento entre os botões de controle
-
 
                 RawMaterialButton(
                   constraints: BoxConstraints(),
@@ -300,6 +351,9 @@ class _MusicPageState extends State<MusicPage> {
                     setState(() {
                       isPlaying = !isPlaying;
                     });
+                    universal.audioPlayer.state == PlayerState.paused
+                        ? universal.audioPlayer.resume()
+                        : universal.audioPlayer.pause();
                   },
                   child: Container(
                     width: 100,
@@ -308,7 +362,8 @@ class _MusicPageState extends State<MusicPage> {
                       color: primaryColor,
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(isPlaying ? Icons.play_arrow_rounded : Icons.pause_rounded, color: Colors.white, size: 48),
+                    child:
+                        Icon(isPlaying ? Icons.pause_rounded : Icons.play_arrow_rounded, color: Colors.white, size: 48),
                   ),
                 ),
 
@@ -316,7 +371,16 @@ class _MusicPageState extends State<MusicPage> {
 
                 IconButton(
                   icon: Icon(CupertinoIcons.forward_end_fill, color: Colors.white, size: 30),
-                  onPressed: () {},
+                  onPressed: () {
+                    if (widget.listMusics!.isNotEmpty) {
+                      showModalBottomSheet(
+                          useRootNavigator: false,
+                          isScrollControlled: true,
+                          useSafeArea: true,
+                          context: context,
+                          builder: (context) => MusicPage(music: widget.listMusics![indexListMusic + 1]));
+                    }
+                  },
                 ),
               ],
             ),

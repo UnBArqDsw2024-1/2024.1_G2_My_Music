@@ -26,13 +26,16 @@ class _FeedMusicGridState extends State<FeedMusicGrid> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: responsiveFigmaHeight(12)),
-      child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
+      child: Container(
+        constraints: BoxConstraints(
+          minHeight: responsiveFigmaHeight(280),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.max, 
+          mainAxisAlignment: MainAxisAlignment.center, 
           children: [
-            for (int index = 0;
-                index < widget.listaDeMusicas.sublist(0, 8).length / 2;
-                index++)
+            for (int index = 0; index < widget.listaDeMusicas.length / 2 && index < 4; index++)
+              
               // A cada interação do loop for ele vai criar uma Row contendo dois elementos de música cada um com index próprio a principio contando de 0 e 1
               // 0 e 1, 2 e 3, 4 e 5, 6 e 7
               Padding(
@@ -50,7 +53,9 @@ class _FeedMusicGridState extends State<FeedMusicGrid> {
                   ],
                 ),
               ),
-          ]),
+          ]
+        ),
+      ),
     );
   }
 }

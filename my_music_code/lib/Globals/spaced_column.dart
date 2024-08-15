@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 
 class SpacedColumn extends StatefulWidget {
-  const SpacedColumn({super.key, required this.children, this.spacing, this.padding, this.mainAxisSize});
+  const SpacedColumn(
+      {super.key, required this.children, this.spacing, this.padding, this.mainAxisSize, this.crossAxisAlignment, this.mainAxisAlignment});
   final List<Widget> children;
   final double? spacing;
   final EdgeInsets? padding;
   final MainAxisSize? mainAxisSize;
+  final CrossAxisAlignment? crossAxisAlignment;
+  final MainAxisAlignment? mainAxisAlignment;
+
   @override
   State<SpacedColumn> createState() => _SpacedColumnState();
 }
@@ -17,7 +21,9 @@ class _SpacedColumnState extends State<SpacedColumn> {
     return Padding(
         padding: widget.padding ?? EdgeInsets.zero,
         child: Column(
+            crossAxisAlignment: widget.crossAxisAlignment ?? CrossAxisAlignment.center,
             mainAxisSize: widget.mainAxisSize ?? MainAxisSize.min,
+            mainAxisAlignment: widget.mainAxisAlignment ?? MainAxisAlignment.start,
             children: List.generate(widget.children.length, (index) {
               return Column(
                 children: [

@@ -13,7 +13,7 @@ class UserPageOfPlaylists extends StatefulWidget {
 
 class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
   bool _isBlurred = false;
-  TextEditingController _searchController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
   List<PlaylistModel> playlists = [];
   List<Widget> playlistWidgets = [];
   
@@ -25,11 +25,11 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
     _searchController.addListener(_filterList);
   }
 
-  @override
-  void dispose() {
-    _searchController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _searchController.dispose();
+  //   super.dispose();
+  // }
 
   int playlistNumber = 30; // Número de playlists para teste
   void _initializePlaylists() {
