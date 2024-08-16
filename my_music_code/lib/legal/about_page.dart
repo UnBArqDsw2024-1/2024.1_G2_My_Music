@@ -40,36 +40,38 @@ class AboutPage extends StatefulWidget {
 class _AboutPageState extends State<AboutPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: backgroundColor,
-      appBar: AppBar(
+    return SafeArea(
+      child: Scaffold(
         backgroundColor: backgroundColor,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+        appBar: AppBar(
+          backgroundColor: backgroundColor,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          title: Text(
+            'Sobre MyMusic',
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          centerTitle: true,
         ),
-        title: Text(
-          'Sobre MyMusic',
-          style: TextStyle(color: Colors.white, fontSize: 20),
-        ),
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
-          child: SpacedColumn(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: 20,
-            children: List.from(
-              aboutMapText.entries.map(
-                (entry) => TextSection(
-                  title: entry.value['title']!,
-                  description: entry.value['description']!,
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: SingleChildScrollView(
+            child: SpacedColumn(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 20,
+              children: List.from(
+                aboutMapText.entries.map(
+                  (entry) => TextSection(
+                    title: entry.value['title']!,
+                    description: entry.value['description']!,
+                  )
                 )
               )
-            )
+            ),
           ),
         ),
       ),

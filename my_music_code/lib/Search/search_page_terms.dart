@@ -59,50 +59,52 @@ class _SearchPageTermsState extends State<SearchPageTerms> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: backgroundColor,
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 20),
-            TextField(
-              controller: textEditingController,
-              onChanged: (value) {
-                setState(() {
-                  query = value;
-                });
-              },
-              onSubmitted: (value) {
-                buildResultQuery(universal.spotifyApi, query);
-              },
-              autofocus: true,
-              decoration: InputDecoration(
-                hintText: 'Música...',
-                prefixIcon: IconButton(
-                  icon: Icon(Icons.arrow_back, color: Colors.black), // Ícone no final do campo
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: backgroundColor,
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 20),
+              TextField(
+                controller: textEditingController,
+                onChanged: (value) {
+                  setState(() {
+                    query = value;
+                  });
+                },
+                onSubmitted: (value) {
+                  buildResultQuery(universal.spotifyApi, query);
+                },
+                autofocus: true,
+                decoration: InputDecoration(
+                  hintText: 'Música...',
+                  prefixIcon: IconButton(
+                    icon: Icon(Icons.arrow_back, color: Colors.black), // Ícone no final do campo
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  hintStyle: TextStyle(color: Colors.grey),
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                    borderSide: BorderSide.none,
+                  ),
                 ),
-                hintStyle: TextStyle(color: Colors.grey),
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-                  borderSide: BorderSide.none,
+                style: TextStyle(color: Colors.black),
+              ),
+              SizedBox(height: 20),
+              Expanded(
+                child: ListView(
+                  children: buildTile,
                 ),
               ),
-              style: TextStyle(color: Colors.black),
-            ),
-            SizedBox(height: 20),
-            Expanded(
-              child: ListView(
-                children: buildTile,
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -54,106 +54,108 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: backgroundColor,
-      appBar: AppBar(
+    return SafeArea(
+      child: Scaffold(
         backgroundColor: backgroundColor,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
-          onPressed: () => Navigator.pop(context),
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.check, color: Colors.white),
-            onPressed: () => updateFirebaseProfile(context, username: username, email: email)
+        appBar: AppBar(
+          backgroundColor: backgroundColor,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
+            onPressed: () => Navigator.pop(context),
           ),
-        ],
-        title: Text('Configurar Perfil', style: TextStyle(color: Colors.white, fontSize: 20)),
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(19.0),
-        child: SpacedColumn(
-          spacing: 16,
-          children: [
-            Stack(
-              children: [
-                GestureDetector(
-                  onTap: () async => pickImage(context),
-                  child: CircleAvatar(
-                    radius: 85,
-                    backgroundColor: backgroundColor,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: backgroundColor,
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: CachedNetworkImageProvider(universal.user.photoURL ?? DefaultPlaceholder.image),
-                              fit: BoxFit.cover)),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: RawMaterialButton(
-                    onPressed: () async => pickImage(context),
-                    constraints: BoxConstraints(),
-                    shape: CircleBorder(),
-                    child: Container(
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        color: secondaryColor,
-                        borderRadius: BorderRadius.circular(100),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.white12,
-                            spreadRadius: 1,
-                            blurRadius: 3,
-                            offset: Offset(0, 1), // changes position of shadow
-                          ),
-                        ]
-                      ),
-                      alignment: Alignment.center,
-                      child: Icon(Icons.filter_list, color: Colors.white),
-                    ),
-                  )
-                ),
-              ],
-            ),
-            customTextFieldBuilder(
-              field: email,
-              hintText: "Email",
-              prefixIcon: Icons.email,
-            ),
-            customTextFieldBuilder(
-              field: username, 
-              hintText: "Username", 
-              prefixIcon: Icons.alternate_email_rounded
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xff373737),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                padding: EdgeInsets.symmetric(vertical: 21.0, horizontal: 100),
-              ),
-              child: Text('Mudar senha', style: TextStyle(color: Colors.white, fontSize: 13)),
-              onPressed: () => forgotPassword(context),
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xff373737),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                padding: EdgeInsets.symmetric(vertical: 17.0, horizontal: 69),
-              ),
-              child: Text('Salvar perfil', style: TextStyle(color: Colors.white, fontSize: 13)),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.check, color: Colors.white),
               onPressed: () => updateFirebaseProfile(context, username: username, email: email)
             ),
           ],
+          title: Text('Configurar Perfil', style: TextStyle(color: Colors.white, fontSize: 20)),
+          centerTitle: true,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(19.0),
+          child: SpacedColumn(
+            spacing: 16,
+            children: [
+              Stack(
+                children: [
+                  GestureDetector(
+                    onTap: () async => pickImage(context),
+                    child: CircleAvatar(
+                      radius: 85,
+                      backgroundColor: backgroundColor,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: backgroundColor,
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                                image: CachedNetworkImageProvider(universal.user.photoURL ?? DefaultPlaceholder.image),
+                                fit: BoxFit.cover)),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: RawMaterialButton(
+                      onPressed: () async => pickImage(context),
+                      constraints: BoxConstraints(),
+                      shape: CircleBorder(),
+                      child: Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          color: secondaryColor,
+                          borderRadius: BorderRadius.circular(100),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.white12,
+                              spreadRadius: 1,
+                              blurRadius: 3,
+                              offset: Offset(0, 1), // changes position of shadow
+                            ),
+                          ]
+                        ),
+                        alignment: Alignment.center,
+                        child: Icon(Icons.filter_list, color: Colors.white),
+                      ),
+                    )
+                  ),
+                ],
+              ),
+              customTextFieldBuilder(
+                field: email,
+                hintText: "Email",
+                prefixIcon: Icons.email,
+              ),
+              customTextFieldBuilder(
+                field: username, 
+                hintText: "Username", 
+                prefixIcon: Icons.alternate_email_rounded
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xff373737),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  padding: EdgeInsets.symmetric(vertical: 21.0, horizontal: 100),
+                ),
+                child: Text('Mudar senha', style: TextStyle(color: Colors.white, fontSize: 13)),
+                onPressed: () => forgotPassword(context),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xff373737),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  padding: EdgeInsets.symmetric(vertical: 17.0, horizontal: 69),
+                ),
+                child: Text('Salvar perfil', style: TextStyle(color: Colors.white, fontSize: 13)),
+                onPressed: () => updateFirebaseProfile(context, username: username, email: email)
+              ),
+            ],
+          ),
         ),
       ),
     );
