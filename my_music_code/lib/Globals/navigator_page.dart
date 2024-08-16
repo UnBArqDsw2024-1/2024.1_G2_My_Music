@@ -73,9 +73,9 @@ class _NavigatorPageState extends State<NavigatorPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: backgroundColor,
         bottomNavigationBar: Container(
-          height: 50,
+          height: 60,
           color: backgroundColor,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -85,15 +85,17 @@ class _NavigatorPageState extends State<NavigatorPage> {
                 icon: Icon(
                   Icons.search,
                   color: pageIndex == 0 ? primaryColor : Colors.white,
+                  size: 36,
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: IconButton(
                   onPressed: () => setIndex(1),
                   icon: Icon(
                     Icons.home,
                     color: pageIndex == 1 ? primaryColor : Colors.white,
+                    size: 36,
                   ),
                 ),
               ),
@@ -102,6 +104,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
                 icon: Icon(
                   Icons.library_music,
                   color: pageIndex == 2 ? primaryColor : Colors.white,
+                  size: 36,
                 ),
               ),
             ],
@@ -128,17 +131,17 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   ],
                 ),
                 StreamBuilder(
-                    stream: universal.audioPlayer.onPlayerStateChanged,
-                    builder: (context, snapshot) {
-                      return snapshot.data == null
-                          ? Container()
-                          : Positioned(
-                              bottom: 1,
-                              left: 0,
-                              right: 0,
-                              child: MiniPlayer(),
-                            );
-                    })
+                  stream: universal.audioPlayer.onPlayerStateChanged,
+                  builder: (context, snapshot) {
+                    return snapshot.data == null? Container() : 
+                      Positioned(
+                        bottom: 1,
+                        left: 0,
+                        right: 0,
+                        child: MiniPlayer(),
+                      );
+                  }
+                )
               ],
             ),
           ],
