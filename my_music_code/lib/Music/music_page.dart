@@ -163,11 +163,24 @@ class _MusicPageState extends State<MusicPage> {
 
   @override
   Widget build(BuildContext context) {
-    List<String> listNames = universal.currentListMusic.map((e) {
-      return e.name!;
-    }).toList();
+    int indexListMusic = 0;
+    if (universal.currentListMusic.isNotEmpty) {
+      List<String> listNames = universal.currentListMusic.map((e) {
+        return e.name!;
+      }).toList();
+    
+      indexListMusic = listNames.indexOf(widget.music.name!);
+    } else {
+      List<String> listNames = universal.releaseListMusics.map((e) {
+        return e.name!;
+      }).toList();
 
-    int indexListMusic = listNames.indexOf(widget.music.name!);
+      if (listNames.contains(widget.music.name!)){
+        universal.releaseListMusics.add(widget.music);
+      }
+
+      indexListMusic = listNames.indexOf(widget.music.name!);
+    }
 
     return SafeArea(
       child: Scaffold(
@@ -301,6 +314,7 @@ class _MusicPageState extends State<MusicPage> {
                   IconButton(
                     icon: Icon(CupertinoIcons.backward_end_fill, color: Colors.white, size: 30),
                     onPressed: () {
+                      print(indexListMusic);
                       if (universal.currentListMusic.isNotEmpty) {
                         Navigator.pop(context);
                         showModalBottomSheet(
@@ -308,13 +322,19 @@ class _MusicPageState extends State<MusicPage> {
                             isScrollControlled: true,
                             useSafeArea: true,
                             context: context,
-                            builder: (context) => MusicPage(
-                                music: widget.isRandom
-                                    ? universal.currentListMusicShuffle[
-                                        (indexListMusic - 1) % universal.currentListMusicShuffle.length]
-                                    : universal
-                                        .currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
-                                isRandom: widget.isRandom));
+                            builder: (context) => MusicPage(music: widget.isRandom? universal.currentListMusicShuffle[(indexListMusic - 1) % universal.currentListMusicShuffle.length] : universal.currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
+                            isRandom: widget.isRandom)
+                          );
+                      } else {
+                        Navigator.pop(context);
+                          showModalBottomSheet(
+                            useRootNavigator: false,
+                            isScrollControlled: true,
+                            useSafeArea: true,
+                            context: context,
+                            builder: (context) => MusicPage(music: universal.releaseListMusics[(indexListMusic - 1) % universal.releaseListMusics.length],
+                            isRandom: widget.isRandom)
+                          );
                       }
                     },
                   ),
@@ -349,6 +369,8 @@ class _MusicPageState extends State<MusicPage> {
                   IconButton(
                     icon: Icon(CupertinoIcons.forward_end_fill, color: Colors.white, size: 30),
                     onPressed: () {
+                      print(universal.releaseListMusics.length);
+                      print(indexListMusic);
                       if (universal.currentListMusic.isNotEmpty) {
                         Navigator.pop(context);
                         showModalBottomSheet(
@@ -356,13 +378,19 @@ class _MusicPageState extends State<MusicPage> {
                             isScrollControlled: true,
                             useSafeArea: true,
                             context: context,
-                            builder: (context) => MusicPage(
-                                music: widget.isRandom
-                                    ? universal.currentListMusicShuffle[
-                                        (indexListMusic + 1) % universal.currentListMusicShuffle.length]
-                                    : universal
-                                        .currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
-                                isRandom: widget.isRandom));
+                            builder: (context) => MusicPage(music: widget.isRandom? universal.currentListMusicShuffle[(indexListMusic + 1) % universal.currentListMusicShuffle.length] : universal.currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
+                            isRandom: widget.isRandom)
+                          );
+                      } else {
+                        Navigator.pop(context);
+                          showModalBottomSheet(
+                            useRootNavigator: false,
+                            isScrollControlled: true,
+                            useSafeArea: true,
+                            context: context,
+                            builder: (context) => MusicPage(music: universal.releaseListMusics[(indexListMusic + 1) % universal.releaseListMusics.length],
+                            isRandom: widget.isRandom
+                           )
                       }
                     },
                   ),
