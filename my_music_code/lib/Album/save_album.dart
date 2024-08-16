@@ -1,5 +1,5 @@
+import 'package:my_music_code/Models/album_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:my_music_code/Album/album_page.dart';
 
 Future<void> toggleFavoriteAlbum(AlbumModel album) async {
   final prefs = await SharedPreferences.getInstance();

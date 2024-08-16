@@ -5,6 +5,7 @@ import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:my_music_code/Models/album_model.dart';
 
 class FeedHorizontalScrollComponent extends StatefulWidget {
   const FeedHorizontalScrollComponent({super.key, required this.title, required this.albuns});

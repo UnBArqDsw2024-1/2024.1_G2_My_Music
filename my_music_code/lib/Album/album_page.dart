@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Models/album_model.dart';
 import 'package:my_music_code/Models/music_model.dart';
 import 'package:my_music_code/Music/music_page.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
@@ -11,21 +12,7 @@ import 'package:my_music_code/universal.dart' as universal;
 import 'package:my_music_code/Album/save_album.dart';
 import 'package:spotify/spotify.dart';
 
-class AlbumModel {
-  final String? id;
-  final String name;
-  final String artist;
-  final String image;
-  final Iterable<TrackSimple>? songs;
 
-  AlbumModel({
-    this.id,
-    this.name = "Playlist Name",
-    this.artist = "Artista",
-    this.image = DefaultPlaceholder.image,
-    this.songs,
-  });
-}
 
 class MyAlbumPage extends StatefulWidget {
   const MyAlbumPage({super.key, required this.album});
