@@ -84,5 +84,47 @@ Depois roda o projeto
 Flutter run
 ```
 
+## Windows
+
+### Primeiro: baixar o Android Studio 
+
+[Guia de instalação](https://developer.android.com/studio/install?hl=pt-br) 
+
+[Android Studio download](https://developer.android.com/studio?hl=pt-br) 
+
+“ 
+
+Para instalar o Android Studio no Windows, siga estas etapas: 
+
+    Execute o arquivo .exe baixado no site do android studio.  
+
+### Segundo: baixar o Flutter 
+
+[Guia de instalação]([https://docs.flutter.dev/get-started/install/linux/android](https://docs.flutter.dev/get-started/install/windows/mobile)
+
+### Terceiro: baixar o vs code 
+
+[Guia de instalação](https://code.visualstudio.com/docs/setup/linux) 
+
+[Download](https://code.visualstudio.com/download) 
+
+### Baixar a extensão do Flutter no vs code
+
+![](./assets/vs_code_extension.png)
 
 
+### Clonar o repositorio
+
+![](./assets/clone_rep.png)
+
+Seleciona um emulador de celular
+
+![](./assets/image1.png)
+
+![](./assets/image2.png)
+
+
+Depois roda o projeto
+```
+Flutter run
+```
