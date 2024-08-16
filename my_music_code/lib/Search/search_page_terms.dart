@@ -31,9 +31,7 @@ class _SearchPageTermsState extends State<SearchPageTerms> {
               isScrollControlled: true,
               useSafeArea: true,
               context: context,
-              builder: (context) {
-                return MusicPage(music: music);
-              });
+              builder: (context) => MusicPage(music: music));
           },
           title: Text(music.name!, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500)),
           subtitle: Text(music.artist!, style: TextStyle(color: Colors.white)),
