@@ -1,0 +1,2168 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../Assets/LogoMyMusic.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+    
+    
+      
+        <title>Reutilização de Software - My Music</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reutilizacao-de-software" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="My Music" class="md-header__button md-logo" aria-label="My Music" data-md-component="logo">
+      
+  <img src="../../../../Assets/LogoMyMusic.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Music
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reutilização de Software
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Music" class="md-nav__button md-logo" aria-label="My Music" data-md-component="logo">
+      
+  <img src="../../../../Assets/LogoMyMusic.png" alt="logo">
+
+    </a>
+    My Music
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sobre o projeto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1. Base
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            1. Base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1.1. Módulo Projeto Não Orientado a Abordagens Específicas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            1.1. Módulo Projeto Não Orientado a Abordagens Específicas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/Design%20Sprint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.1. Design Sprint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1.1.2. Técnicas de Elicitação
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            1.1.2. Técnicas de Elicitação
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/brainstorming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.2.1. Brainstorming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/entrevista/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.2.2. Entrevista
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/questionario/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.2.3. Questionário
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1.1.3. Artefatos Independentes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            1.1.3. Artefatos Independentes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/gloss%C3%A1rio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.3.1. Glossário
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/5w2h/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.3.2. 5W2H
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/lexico/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.3.3. Léxico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/richpicture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.3.4. Rich Picture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/mapa_mental/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.3.5. Mapa Mental
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/prototipo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1.4. Protótipo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/ProcessosMetodologiasAbordagens/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Módulo Processos/Metodologias/Abordagens
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Base/ParticipacoesBase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Participações Base
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. Modelagem
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2. Modelagem
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.1. Módulo Projeto Orientado a Abordagens Tradicionais
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            2.1. Módulo Projeto Orientado a Abordagens Tradicionais
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.1.1. Notação UML - Diagramas Estáticos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            2.1.1. Notação UML - Diagramas Estáticos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modelagem/diagramaClasses/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1.1.1. Diagrama de Classes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modelagem/diagramaPacotes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1.1.2. Diagrama de Pacotes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modelagem/diagramaComponentes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1.1.3. Diagrama de Componentes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2.1.2. Notação UML - Diagramas Dinâmicos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            2.1.2. Notação UML - Diagramas Dinâmicos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modelagem/diagramaSequencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1.2.1. Diagrama de Sequência
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modelagem/diagramaAtividades/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1.2.2. Diagrama de Atividade
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modelagem/diagramaEstados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1.2.3. Diagrama de Estados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modelagem/ParticipacoesModelagem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2. Participações - Modelagem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. Padrões de Projeto
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3. Padrões de Projeto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PadroesDeProjeto/GoFsCriacionais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1. Módulo Padrões de Projeto GoFs Criacionais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PadroesDeProjeto/GoFsEstruturais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2. Módulo Padrões de Projeto GoFs Estrutural
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3.3. Módulo Padrões de Projeto GoFs Comportamental
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            3.3. Módulo Padrões de Projeto GoFs Comportamental
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PadroesDeProjeto/GoFsExtras/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3.1. Strategy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PadroesDeProjeto/GoFsComportamentais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3.2. Command
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PadroesDeProjeto/ParticipacoesPadroes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4. Participações - Padrões de Projeto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PadroesDeProjeto/IniciativasExtras/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5. Iniciativas Extras
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. Arquitetura de Software e Reutilização
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            4. Arquitetura de Software e Reutilização
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estiloEPadroesArquiteturais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 Módulo Estilos e Padrões Arquiteturais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reutilizacaoDeSoftware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 Módulo Reutilização de Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4.3 Módulo Arquitetura de Software
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            4.3 Módulo Arquitetura de Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arquiteturaDeSoftware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3.1 Arquitetura de software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4.3.2 Visões
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            4.3.2 Visões
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VisaoDeImplantacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3.2.1 Visão de Implantação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VisaoDeImplementacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3.2.2 Visão de Implementação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visao-casos-de-uso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3.2.3 Visão dos Casos de Uso
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visao-de-logica.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3.2.4 Visão de logica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visao-de-processo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3.2.5 Visão de Processo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visaoDados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3.2.6 Visão de Dados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../participacoesArqReutilizacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 Participações - Arquitetura & Reutilização de Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reuniões
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Reuniões
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Atas/ata_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ata 01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Atas/ata_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ata 02
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Atas/ata_3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ata 03
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Atas/ata_4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ata 04
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Atas/ata_5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ata 05
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprints
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Sprints
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sprint Entrega 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            Sprint Entrega 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sprints/Sprint1/SprintPlanning1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint Planning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sprints/Sprint1/SprintReview1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint Review
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodologia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metodologia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reutilizacoes-no-front-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reutilizações no Front-end
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reutilizações no Front-end">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacao-das-reutilizacoes-no-trecho-apresentado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicação das Reutilizações no Trecho Apresentado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reutilizacoes-no-back-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reutilizações no Back-end
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hots-pots-e-frozen-spots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hots-pots e Frozen-spots
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hots-pots e Frozen-spots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hot-spots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hot-spots
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frozen-spots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frozen-spots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-bibliografica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referência Bibliografica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliografia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bibliografia
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-versao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Histórico de versão
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="reutilizacao-de-software">Reutilização de Software</h1>
+<h2 id="introducao">Introdução</h2>
+<p>Este artefato tem como objetivo fornecer uma visão detalhada sobre as reutilizações implementadas no software MyMusic. Nele, são abordadas reutilizações aplicáveis em diferentes níveis, incluindo o nível de projeto, onde são adotadas boas práticas e padrões de projeto amplamente estabelecidos, testados e comuns a diversos cenários. Além disso, o documento foca na reutilização em níveis de código, componentes e bibliotecas, oferecendo uma perspectiva abrangente tanto para o Front-end quanto para o Back-end.</p>
+<h2 id="metodologia">Metodologia</h2>
+<p>Para a elaboração deste documento, foram analisados os artefatos relacionados aos <a href="https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/PadroesDeProjeto/GoFsCriacionais/">Padrões de Projeto GoF</a> implementados no projeto, assim como as documentações oficiais do Flutter e do Dart. Além disso, foi realizado um estudo aprofundado do <a href="https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/tree/main/my_music_code">código implementado</a>. Com base nos conceitos aprendidos nas aulas da disciplina de Arquitetura e Desenho de Software, foi proposta uma descrição detalhada das características de reutilização aplicadas ao Front-end e Back-end, incluindo o uso de bibliotecas e frameworks.</p>
+<h2 id="reutilizacoes-no-front-end">Reutilizações no Front-end</h2>
+<p>Para compor o front-end do projeto, utilizamos Dart e Flutter. O Dart é uma linguagem otimizada para o desenvolvimento de aplicativos rápidos em qualquer plataforma, sendo especialmente projetada para o desenvolvimento de clientes. Ele prioriza tanto a experiência de desenvolvimento, com recursos como o recarregamento rápido de estado (hot reload), quanto a produção de alta qualidade em diversas plataformas, como web, mobile e desktop. Além disso, Dart é a base do Flutter, fornecendo a linguagem e os runtimes que impulsionam os aplicativos Flutter, além de suportar tarefas essenciais de desenvolvimento, como formatação, análise e testes de código.</p>
+<p>O Flutter é um framework de UI desenvolvido pelo Google, que oferece uma ampla gama de widgets prontos e personalizáveis para a construção de interfaces de usuário. Diferente de um "framework caixa preta", Flutter é um sistema de código aberto e transparente, permitindo aos desenvolvedores examinar, modificar e contribuir para sua implementação. Ele oferece uma estrutura clara para a criação de interfaces, possibilitando a reutilização eficiente de widgets e componentes.</p>
+<p>No desenvolvimento de aplicativos com Flutter, a reutilização de widgets é uma prática fundamental que contribui significativamente para a eficiência e a consistência do projeto. Flutter permite a criação de widgets reutilizáveis que encapsulam funcionalidades específicas e podem ser utilizados em diferentes partes do aplicativo. Essa reutilização se manifesta de várias maneiras:</p>
+<p>O Flutter fornece uma ampla gama de widgets básicos, como <code>Container</code>, <code>Row</code>, <code>Column</code>, <code>Stack</code>, e <code>ListView</code>, que são blocos de construção fundamentais para a criação de layouts. Esses widgets encapsulam a lógica e a apresentação necessárias para criar interfaces, permitindo que sejam reutilizados em diferentes partes do aplicativo. Além disso, widgets de interação como <code>ElevatedButton</code> e <code>TextButton</code> oferecem comportamentos comuns que podem ser aplicados em diversas seções do app, assegurando uma experiência de usuário consistente.</p>
+<p>A Figura 1 apresenta um exemplo de reutilização da classe <code>FeedPage</code>, que estende <code>StatefulWidget</code>:</p>
+<div style="text-align: center">
+  <img src="../Assets/reutilizacao1.png" alt="Trecho de código FeedPage" title="Título da Imagem" />
+  <p>Figura 1: Trecho de código FeedPage (Fonte: Limírio Guimarães, 2024)</p>
+</div>
+
+<p>Nesta implementação, a classe <code>FeedPage</code> é um exemplo de como o Flutter permite a criação de widgets personalizados que encapsulam uma lógica específica e podem ser reutilizados em diferentes contextos dentro do aplicativo. Ao estender <code>StatefulWidget</code>, a <code>FeedPage</code> permite que seu estado seja gerenciado e atualizado de forma independente, promovendo a reutilização do widget com diferentes estados e comportamentos conforme necessário. Este padrão não só contribui para a modularidade do código, mas também facilita a manutenção e a escalabilidade da aplicação.</p>
+<p>No desenvolvimento de aplicativos com Flutter, como já citado, a reutilização de widgets e componentes é essencial para manter a consistência e eficiência no código. A Figura 2 ilustra um exemplo de reutilização na classe <code>_FeedPageState</code>, que estende <code>State&lt;FeedPage&gt;</code>:</p>
+<div style="text-align: center">
+  <img src="../Assets/reutilizacao2.png" alt="Trecho de código _FeedPageState" title="Título da Imagem" />
+  <p>Figura 2: Trecho de código _FeedPageState (Fonte: Limírio Guimarães, 2024)</p>
+</div>
+
+<h3 id="explicacao-das-reutilizacoes-no-trecho-apresentado">Explicação das Reutilizações no Trecho Apresentado</h3>
+<p>A seguir, detalhamos a reutilização no código apresentado:</p>
+<ol>
+<li><strong><code>Scaffold</code>:</strong></li>
+<li>
+<p>O widget <code>Scaffold</code> é um dos blocos de construção fundamentais no Flutter, fornecendo uma estrutura de layout padrão para a aplicação. Ele inclui áreas predefinidas para elementos como <code>appBar</code>, <code>drawer</code>, e <code>body</code>. O uso do <code>Scaffold</code> permite que você defina a estrutura básica de uma página uma única vez e a reutilize em diferentes seções do aplicativo com personalizações específicas, facilitando a consistência e a organização do layout.</p>
+</li>
+<li>
+<p><strong><code>feedProfileAppBar()</code>:</strong></p>
+</li>
+<li>
+<p>A função <code>feedProfileAppBar()</code> retorna um widget <code>AppBar</code> personalizado. Ao encapsular a criação do <code>AppBar</code> em uma função, garantimos que o mesmo estilo e comportamento possam ser aplicados em várias páginas do aplicativo. Essa prática não apenas promove a reutilização, mas também assegura uma interface de usuário uniforme, simplificando a manutenção e futuras alterações no design do <code>AppBar</code>.</p>
+</li>
+<li>
+<p><strong><code>ProfileDrawer</code>:</strong></p>
+</li>
+<li>
+<p>O widget <code>ProfileDrawer</code> é utilizado como o menu lateral (<code>drawer</code>) no <code>Scaffold</code>. A reutilização desse drawer personalizado permite que a navegação entre diferentes partes do aplicativo seja consistente. Como o <code>ProfileDrawer</code> é um componente reutilizável, ele pode ser facilmente mantido e atualizado, garantindo que mudanças na navegação sejam aplicadas de forma uniforme em todas as páginas onde o drawer é utilizado.</p>
+</li>
+<li>
+<p><strong>Widgets Personalizados no <code>body</code>:</strong></p>
+</li>
+<li><strong><code>FeedMusicGrid()</code></strong>, <strong><code>NewMusicRelease()</code></strong>, e <strong><code>FeedHorizontalScrollComponent</code></strong> são exemplos de widgets personalizados que são reutilizados no corpo da página. Cada um desses widgets encapsula uma funcionalidade específica:<ul>
+<li><strong><code>FeedMusicGrid</code></strong> é responsável por exibir uma grade de músicas, proporcionando uma visualização organizada do conteúdo musical.</li>
+<li><strong><code>NewMusicRelease</code></strong> apresenta novos lançamentos de música, oferecendo uma seção dedicada às novidades.</li>
+<li><strong><code>FeedHorizontalScrollComponent</code></strong> permite a exibição de listas horizontais, como álbuns populares e músicas recentemente tocadas. A reutilização desse widget com diferentes títulos exemplifica como componentes personalizados podem ser configurados para diferentes contextos e reaproveitados em várias partes da interface.</li>
+</ul>
+</li>
+</ol>
+<p>Essas práticas de reutilização não só promovem a modularidade do código, mas também facilitam a manutenção e a escalabilidade do aplicativo. Para ilustrar a reutilização no front-end, apresentamos trechos do arquivo <a href="https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/blob/main/my_music_code/lib/Feed/feed_page.dart"><code>feed_page.dart</code></a>, que é responsável pela criação da página de feed do aplicativo. Vale ressaltar que todas as outras páginas do aplicativo seguem um padrão similar de criação e reutilização de componentes, garantindo consistência e eficiência em toda a aplicação.</p>
+<h2 id="reutilizacoes-no-back-end">Reutilizações no Back-end</h2>
+<p>Para compor o Back-end do projeto está sendo utilizado Dart e Flutter, como foi explicado anteriormente. Assim sendo, também utilizamos uma API, para que pudessemos integrar o acesso dos dados musicais do Spotify¹ no nosso App. Para que pudessemos implementar a API no projeto, foi utilizado uma <a href="https://pub.dev/packages/spotify">biblioteca Dart para interface com a API do Spotify</a>.</p>
+<p>Durante a implementação da API, foram utilizadas algumas funções, fazendo o processo de reutilização durante o código.</p>
+<ol>
+<li><strong><code>setState</code>:</strong> é uma função fundamental no Flutter usada para atualizar a interface do usuário (UI) em resposta a mudanças no estado interno de um widget. Quando você chama setState(), o Flutter sabe que algo mudou, e então ele repinta o widget com o novo estado. Exemplo:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>var<span class="w"> </span>album<span class="w"> </span><span class="k">in</span><span class="w"> </span>newReleases.items!<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>album<span class="w"> </span>!<span class="o">=</span><span class="w"> </span>Null<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>setState<span class="o">(()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">          </span><span class="nv">musicRelease</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Music<span class="o">(</span>
+<span class="w">            </span>name:<span class="w"> </span>album.name!,
+<span class="w">            </span>id:<span class="w"> </span>album.id!,
+<span class="w">            </span>artist:<span class="w"> </span>album.artists!.first.name!,
+<span class="w">            </span>imageUrl:<span class="w"> </span>album.images!.first.url!,
+<span class="w">          </span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span><span class="o">})</span><span class="p">;</span>
+<span class="w">      </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+</code></pre></div>
+<ol>
+<li><strong><code>final</code>:</strong> é usada para declarar uma variável cujo valor não pode ser alterado depois de ser inicializado. Ou seja, uma vez que uma variável final recebe um valor, esse valor não pode ser modificado durante a execução do programa. Exemplo:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>class<span class="w"> </span>Music<span class="w"> </span><span class="o">{</span>
+<span class="w">  </span>final<span class="w"> </span>String?<span class="w"> </span>name<span class="p">;</span>
+<span class="w">  </span>final<span class="w"> </span>String?<span class="w"> </span>id<span class="p">;</span>
+<span class="w">  </span>final<span class="w"> </span>String?<span class="w"> </span>artist<span class="p">;</span>
+<span class="w">  </span>final<span class="w"> </span>String?<span class="w"> </span>imageUrl<span class="p">;</span>
+
+<span class="w">  </span>Music<span class="o">({</span>this.name,<span class="w"> </span>this.id,<span class="w"> </span>this.artist,<span class="w"> </span>this.imageUrl<span class="o">})</span><span class="p">;</span>
+<span class="o">}</span>
+</code></pre></div>
+<h2 id="hots-pots-e-frozen-spots">Hots-pots e Frozen-spots</h2>
+<h3 id="hot-spots">Hot-spots</h3>
+<p>No contexto do desenvolvimento de software e especialmente em sistemas de alto desempenho, hot-spots referem-se às áreas do código ou do sistema que experimentam uma carga significativa de processamento ou acesso. Identificar esses pontos críticos é fundamental para otimizar o desempenho e a eficiência do sistema. No projeto MyMusic, alguns exemplos de hot-spots podem incluir:</p>
+<ol>
+<li>
+<p><em>Pontos de Acesso a Dados:</em> As funções que fazem chamadas frequentes para a API do Spotify são exemplos de hot-spots. Essas funções devem ser otimizadas para garantir que o acesso à API não se torne um gargalo. O uso de técnicas como cache e otimização das chamadas API pode melhorar a performance.</p>
+</li>
+<li>
+<p><em>Componentes de UI Dinâmicos:</em> Widgets que realizam cálculos pesados ou atualizações frequentes, como as listas de músicas e os feeds de lançamentos, podem se tornar hot-spots. Esses componentes precisam ser projetados para minimizar a quantidade de trabalho realizado durante a construção e atualização da interface.</p>
+</li>
+<li>
+<p><em>Funções de Processamento:</em> Funções que processam grandes volumes de dados, como a manipulação e análise de listas de músicas, são áreas críticas que devem ser otimizadas para evitar lentidão no sistema.</p>
+</li>
+</ol>
+<h3 id="frozen-spots">Frozen-spots</h3>
+<p>Frozen-spots referem-se às áreas do código ou do sistema que são estáveis e raramente alteradas. Essas áreas, embora menos críticas para a performance imediata, são importantes para a manutenção e confiabilidade do sistema. No projeto MyMusic, exemplos de frozen-spots incluem:</p>
+<ol>
+<li>
+<p><em>Definições de Dados Estáticas:</em> Classes e estruturas de dados que são invariáveis ao longo do tempo, como a definição da classe Music, são exemplos de frozen-spots. Essas estruturas são essenciais para a representação de dados e devem ser projetadas para serem robustas e imutáveis.</p>
+</li>
+<li>
+<p><em>Configurações de Frameworks:</em> Configurações e definições de bibliotecas de terceiros, como o uso do Flutter e do Dart, são áreas estáveis que não mudam frequentemente. Garantir a estabilidade dessas configurações é crucial para a integridade e continuidade do projeto.</p>
+</li>
+<li>
+<p><em>Componentes de Interface Consistentes:</em> Widgets e componentes que fornecem uma aparência e comportamento consistentes em todo o aplicativo, como o ProfileDrawer, são frozen-spots. Essas partes do código raramente mudam, e sua estabilidade ajuda a manter a consistência da interface do usuário.</p>
+</li>
+</ol>
+<h2 id="conclusao">Conclusão</h2>
+<p>O projeto MyMusic exemplifica a importância da reutilização eficaz tanto no Front-end quanto no Back-end para criar uma aplicação escalável e eficiente. A utilização de Dart e Flutter para o desenvolvimento Front-end permite a criação de widgets reutilizáveis, promovendo a consistência e facilitando a manutenção. No Back-end, a integração com a API do Spotify e o uso de práticas como setState e final asseguram que o sistema se mantenha eficiente e bem estruturado.</p>
+<p>A identificação de hot-spots e frozen-spots é crucial para a otimização e estabilidade do sistema. Hot-spots, como pontos de acesso a dados e componentes de UI dinâmicos, precisam ser cuidadosamente monitorados e otimizados. Por outro lado, frozen-spots, como definições de dados estáticos e configurações de frameworks, devem ser mantidos estáveis para garantir a continuidade e integridade do projeto.</p>
+<p>A combinação dessas práticas de reutilização e otimização resulta em um sistema robusto e eficiente, capaz de atender às necessidades dos usuários e adaptar-se a novas demandas com facilidade.</p>
+<h2 id="referencia-bibliografica">Referência Bibliografica</h2>
+<blockquote>
+<p>¹ Spotify. Spotify. Disponível em: <a href="https://www.spotify.com">https://www.spotify.com</a>. Acesso em: 14 ago. 2024.</p>
+</blockquote>
+<h2 id="bibliografia">Bibliografia</h2>
+<blockquote>
+<p>SERRANO, Milene. Arquitetura e Desenho de Software - Aula REUTILIZAÇÃO &amp; FRAMEWORK 1º/2022. Material apresentado para a disciplina de Arquitetura e Desenho de Software no curso de Engenharia de Software da UnB, FGA.
+Dart overview. Dart.dev. Acessado em 12 de agosto de 2024. Disponível em: <a href="https://dart.dev/overview">https://dart.dev/overview</a>
+ANDREY, Fábio; DE CASTRO, Andrey. Padrões e Frameworks de Arquitetura de Software. 2024. Disponível em: <a href="https://www.inf.ufpr.br/andrey/ci163/PadroesFrameworksAl.pdf.">https://www.inf.ufpr.br/andrey/ci163/PadroesFrameworksAl.pdf.</a> Acesso em: 14 ago. 2024.</p>
+</blockquote>
+<h2 id="historico-de-versao">Histórico de versão</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Versão</th>
+<th style="text-align: center;">Data</th>
+<th style="text-align: left;">Descrição</th>
+<th>Autores</th>
+<th>Revisor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">12/08/2024</td>
+<td style="text-align: left;">Criação do Documento</td>
+<td><a href="https://github.com/LimirioGuimaraes">Limírio Guimarães</a> e <a href="https://github.com/MilenaBaruc">Milena Baruc</a></td>
+<td><a href="https://github.com/analuizargds">Ana Luiza</a>, <a href="https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/114#pullrequestreview-2238788424">Link da revisão</a></td>
+</tr>
+<tr>
+<td style="text-align: center;">2.0</td>
+<td style="text-align: center;">14/08/2024</td>
+<td style="text-align: left;">Correções do Documento</td>
+<td><a href="https://github.com/MilenaBaruc">Milena Baruc</a></td>
+<td><a href="https://github.com/LimirioGuimaraes">Limírio Guimarães</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  </body>
+</html>
