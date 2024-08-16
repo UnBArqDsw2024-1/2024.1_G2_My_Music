@@ -55,6 +55,7 @@ Os membros que ficaram responsáveis pela documentação da Visão de Implementa
 
 ### Visão de Processos
 
+Os membros que ficaram responsáveis pela documentação da Visão de Processo foram a Ana Luíza e o Rafael. Os dois se reuníram via discord algumas vezes para entenderem como se aplicaria tal visão no projeto e assim produzirem o documento com os diagramas que julgaram serem os melhores. Além disso, a professora e os membros Luis Miranda e Israel também deram suas visões sobre a tarefa, enriquecendo e melhorando o artefato produzido.
 
 ### Visão de Dados
 
