@@ -204,7 +204,7 @@ class _MusicPageState extends State<MusicPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
-                'Now playing',
+                'Tocando agora',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 12,

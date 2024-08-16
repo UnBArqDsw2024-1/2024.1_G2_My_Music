@@ -38,7 +38,7 @@ class _FeedPageState extends State<FeedPage> {
                 musicRelease: widget.musicRelease,
               ),
               FeedHorizontalScrollComponent(
-                title: "Top World Albuns",
+                title: "Álbuns recentes",
                 albuns: widget.albumReleases,
               ),
               FeedHorizontalScrollComponent(

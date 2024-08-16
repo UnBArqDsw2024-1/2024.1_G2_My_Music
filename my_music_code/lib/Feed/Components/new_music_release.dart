@@ -71,7 +71,7 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                         ResponsiveContainer(height: 12),
                         ResponsiveText(text: "Música nova", fontColor: Colors.white, fontSize: 16),
                         ResponsiveText(
-                          text: "Single by ${widget.musicRelease.artist ?? DefaultPlaceholder.title}",
+                          text: "By ${widget.musicRelease.artist ?? DefaultPlaceholder.title}",
                           fontColor: Color(0xff979797),
                           fontSize: 12,
                         )
