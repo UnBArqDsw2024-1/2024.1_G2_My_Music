@@ -208,7 +208,9 @@ void _filterList() {
           backgroundColor: primaryColor,
           onPressed: () => _showBlurDialog(context),
           child: Icon(Icons.add),
+          
         ),
+        floatingActionButtonLocation: universal.currentMusic.name != null? FloatingActionButtonLocation.endTop : FloatingActionButtonLocation.endFloat,
       ),
     );
   }
