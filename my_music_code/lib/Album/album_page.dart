@@ -37,7 +37,7 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
 
   populaAlbum() {
     setState(() {
-      universal.navigatorIndex = 2;
+      universal.navigatorIndex++;
       universal.currentListMusic = List.empty(growable: true);
       for (var music in widget.album.songs!) {
         universal.currentListMusic.add(Music(
@@ -66,7 +66,6 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
 
   @override
   Widget build(BuildContext context) {
-    print(universal.navigatorIndex);
     return SafeArea(
       child: Scaffold(
         backgroundColor: backgroundColor,
@@ -78,9 +77,14 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                   leading: IconButton(
                     padding: EdgeInsets.zero,
                     onPressed: () {
-                      Navigator.pop(context);
+                      while (universal.navigatorIndex != 1) {
+                        Navigator.pop(context);
+                        setState(() {
+                          universal.navigatorIndex--;
+                        });
+                      }
                       setState(() {
-                        universal.navigatorIndex--;
+                        universal.navigatorIndex = 1;
                       });
                     },
                     icon: ResponsiveContainer(

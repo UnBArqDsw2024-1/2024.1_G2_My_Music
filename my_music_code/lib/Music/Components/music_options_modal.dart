@@ -61,11 +61,7 @@ void musicOptionsModalBottomSheet(BuildContext context, {required Music music, r
                 ListTile(
                   onTap: () {
                     if (universal.currentAlbum.id != null) {
-                      while (universal.navigatorIndex != 1) {
-                        Navigator.pop(context);
-                        universal.navigatorIndex--;
-                        print(universal.navigatorIndex);
-                      }
+                      Navigator.pop(context);
                       Navigator.push(
                           context,
                           MaterialPageRoute(
