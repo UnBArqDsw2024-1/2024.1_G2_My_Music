@@ -4,10 +4,10 @@ Este documento contém um breve relato das participações e contribuições dos
 
 ### Arquitetura de Software
 
-|Nome do Membro | Contribuição (Padrão GoF Criacional) | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
+|Nome do Membro | Contribuição - Foco 2| Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -------------- | --------------------------- | --------------------------------- |
-| Ana Luíza | Contribuiu no desenvolvimento da documentação da [Visão de Processo]() | Boa |
-| Carlos Eduardo | Contribuiu no desenvolvimento da documentação da [Visão de Lógica]() e [Visão de Casos de Uso](), e na revisão da [Visão de Dados]() e [Visão de Processo]()| Boa |
+| Ana Luíza | Contribuiu no desenvolvimento da documentação da [Visão de Processo]() |Boa |
+| Carlos Eduardo | Contribuiu no desenvolvimento da documentação da [Visão de Lógica]() e [Visão de Casos de Uso](), e na revisão da [Visão de Dados]() e [Visão de Processo]()| Excelente |
 | Carlos Godoy | Contribuiu no desenvolvimento da documentação da [Visão de Casos de Uso]()| Regular |
 | Henrique Hida | Contribuiu no desenvolvimento da documentação da [Visão Arquitetural Geral]()| Boa |
 | João Maior |  Contribuiu no desenvolvimento da documentação da [Visão de Dados]()| Boa |
@@ -27,25 +27,25 @@ Este documento contém um breve relato das participações e contribuições dos
 
 ### Reutilização de Software
 
-|Nome do Membro | Contribuição (Padrão GoF Comportamental) | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
+|Nome do Membro | Contribuição - Foco 2 | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -------------- | --------------------------- | --------------------------------- |
-| Ana Luíza |  | Excelente |
+| Ana Luíza |  | Boa |
 | Carlos Eduardo | | Nula |
-| Carlos Godoy | | Nula |
+| Carlos Godoy | | Ruim |
 | Henrique Hida | | Nula |
-| João Maior |  | Boa |
+| João Maior |  | Ruim |
 | Israel Thalles |  | Boa |
-| Luiz Pettengill |  | Boa |
+| Luiz Pettengill |  | Nula |
 | Luis Miranda |  | Excelente |
 | Limírio Guimarães |  | Excelente |
 | Lucas Vilela |  | Excelente |
-| Milena Baruc |  | Boas |
-| Rafael Xavier | |  Excelente | 
+| Milena Baruc |  | Boa |
+| Rafael Xavier | |  Boa | 
 | Vinícius Mendes |  | Excelente 
 
 
 <div style="text-align: center">
-  <p>Tabela 3: Participações de cada membro no Padrão GoF Comportamental. (Fonte: Autores, 2024)</p>
+  <p>Tabela 2: Participações de cada membro no Padrão GoF Comportamental. (Fonte: Autores, 2024)</p>
 </div>
 
 | Versão | Data       | Descrição                           | Autor(es)                                         | Revisor(es)        |
