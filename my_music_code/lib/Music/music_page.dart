@@ -390,7 +390,8 @@ class _MusicPageState extends State<MusicPage> {
                             context: context,
                             builder: (context) => MusicPage(music: universal.releaseListMusics[(indexListMusic + 1) % universal.releaseListMusics.length],
                             isRandom: widget.isRandom
-                           )
+                          )
+                        );
                       }
                     },
                   ),
