@@ -20,16 +20,27 @@ class _MiniPlayerState extends State<MiniPlayer> {
       child: RawMaterialButton(
         onPressed: () {
           showModalBottomSheet(
-              useRootNavigator: false,
-              isScrollControlled: true,
-              useSafeArea: true,
-              context: context,
-              builder: (context) => MusicPage(
-                    music: universal.currentMusic,
-                  ));
+            useRootNavigator: false,
+            isScrollControlled: true,
+            useSafeArea: true,
+            context: context,
+            builder: (context) => MusicPage(
+              music: universal.currentMusic,
+            )
+          );
         },
         child: Container(
-          decoration: BoxDecoration(color: secondaryColor, borderRadius: BorderRadius.circular(5)),
+          decoration: BoxDecoration(
+            color: secondaryColor, 
+            borderRadius: BorderRadius.circular(5),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black12,
+                blurRadius: 2,
+                spreadRadius: 1
+              )
+            ]  
+          ),
           height: 80,
           child: Row(
             children: [
