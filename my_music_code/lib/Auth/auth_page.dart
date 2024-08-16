@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:my_music_code/Auth/Service/auth_service.dart';
 import 'package:my_music_code/Auth/login_page.dart';
 import 'package:my_music_code/Auth/signup_page.dart';
 import 'package:my_music_code/Globals/navigator_page.dart';
+import 'package:my_music_code/Models/sign_login_model.dart';
 import 'package:my_music_code/SpotifyApi/api_settings.dart';
 import 'package:spotify/spotify.dart' hide User;
 import 'package:my_music_code/universal.dart' as universal;
