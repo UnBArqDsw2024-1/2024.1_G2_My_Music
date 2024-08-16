@@ -8,12 +8,6 @@ import 'package:my_music_code/Profile/configuration_page.dart';
 import 'package:my_music_code/legal/about_page.dart';
 import 'package:my_music_code/universal.dart' as universal;
 
-class ProfileDrawer extends StatefulWidget {
-  const ProfileDrawer({super.key});
-  @override
-  State<ProfileDrawer> createState() => _ProfileDrawerState();
-}
-
 Map<String, dynamic> tileMap = {
   "Configurar perfil": {
     "page": ConfigurationPage(),
@@ -28,6 +22,13 @@ Map<String, dynamic> tileMap = {
     "icon": Icon(Icons.description, color: Colors.white),
   },
 };
+
+class ProfileDrawer extends StatefulWidget {
+  const ProfileDrawer({super.key});
+  @override
+  State<ProfileDrawer> createState() => _ProfileDrawerState();
+}
+
 
 class _ProfileDrawerState extends State<ProfileDrawer> {
   ListTile listTileBuilder({required String title}) {
