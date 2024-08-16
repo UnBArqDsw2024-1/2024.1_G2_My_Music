@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:my_music_code/Models/music_model.dart';
 import 'package:my_music_code/Music/music_page.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:my_music_code/Search/back/get_query_result.dart';
 import 'package:spotify/spotify.dart' hide Image;
 import 'package:my_music_code/universal.dart' as universal;
 
@@ -19,27 +20,8 @@ class _SearchPageTermsState extends State<SearchPageTerms> {
   List<Widget> buildTile = [];
   String query = "";
 
-  getQuery(SpotifyApi spotify, String query) async {
-    var results = await spotify.search.get(query).first(30);
-    List<Music> listResults = [];
-    for (var pages in results) {
-      if (pages.items != null) {
-        for (var res in pages.items!) {
-          if (res is Track) {
-            listResults.add(
-              Music(
-                name: res.name!,
-                id: res.id!,
-                artist: res.artists!.first.name!,
-                imageUrl: res.album!.images!.first.url!,
-                link: res.externalUrls!.spotify!,
-                duration: res.durationMs!,
-              ),
-            );
-          }
-        }
-      }
-    }
+  buildResultQuery(SpotifyApi spotify, String query) async {
+    List<Music> listResults = await getQuery(query);
 
     setState(() {
       buildTile = List.from(listResults.map((music) => ListTile(
@@ -72,7 +54,7 @@ class _SearchPageTermsState extends State<SearchPageTerms> {
 
   @override
   void initState() {
-    getQuery(universal.spotifyApi, "music");
+    buildResultQuery(universal.spotifyApi, "music");
 
     super.initState();
   }
@@ -95,7 +77,7 @@ class _SearchPageTermsState extends State<SearchPageTerms> {
                 });
               },
               onSubmitted: (value) {
-                getQuery(universal.spotifyApi, query);
+                buildResultQuery(universal.spotifyApi, query);
               },
               autofocus: true,
               decoration: InputDecoration(
