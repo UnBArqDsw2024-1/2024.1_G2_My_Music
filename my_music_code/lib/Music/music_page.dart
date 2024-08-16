@@ -177,11 +177,12 @@ class _MusicPageState extends State<MusicPage> {
         return e.name!;
       }).toList();
 
-      if (listNames.contains(widget.music.name!)){
+      if (!listNames.contains(widget.music.name!)){
         universal.releaseListMusics.add(widget.music);
       }
 
       indexListMusic = listNames.indexOf(widget.music.name!);
+      print(indexListMusic);
     }
 
     return SafeArea(
@@ -371,8 +372,7 @@ class _MusicPageState extends State<MusicPage> {
                   IconButton(
                     icon: Icon(CupertinoIcons.forward_end_fill, color: Colors.white, size: 30),
                     onPressed: () {
-                      print(universal.releaseListMusics.length);
-                      print(indexListMusic);
+                      print("Tamanho: ${universal.releaseListMusics.length}\n");
                       if (universal.currentListMusic.isNotEmpty) {
                         Navigator.pop(context);
                         showModalBottomSheet(
@@ -391,9 +391,8 @@ class _MusicPageState extends State<MusicPage> {
                             useSafeArea: true,
                             context: context,
                             builder: (context) => MusicPage(music: universal.releaseListMusics[(indexListMusic + 1) % universal.releaseListMusics.length],
-                            isRandom: widget.isRandom
-                          )
-                        );
+                            isRandom: widget.isRandom),
+                          );
                       }
                     },
                   ),
