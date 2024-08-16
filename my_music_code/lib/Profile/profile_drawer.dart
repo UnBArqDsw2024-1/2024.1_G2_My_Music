@@ -14,7 +14,35 @@ class ProfileDrawer extends StatefulWidget {
   State<ProfileDrawer> createState() => _ProfileDrawerState();
 }
 
+Map<String, dynamic> tileMap = {
+  "Configurar perfil": {
+    "page": ConfigurationPage(),
+    "icon": Icon(Icons.settings, color: Colors.white),
+  },
+  "Trocar conta": {
+    "page": AuthService().signUserOut(),
+    "icon": Icon(Icons.add_rounded, color: Colors.white),
+  },
+  "Sobre": {
+    "page": AboutPage(),
+    "icon": Icon(Icons.description, color: Colors.white),
+  },
+};
+
 class _ProfileDrawerState extends State<ProfileDrawer> {
+  ListTile listTileBuilder({required String title}) {
+    return ListTile(
+      leading: tileMap[title]["icon"],
+      title: ResponsiveText(text: title),
+      onTap: title == "Trocar conta"? 
+        tileMap[title]["page"] : 
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => tileMap[title]["page"]),
+        ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -28,46 +56,12 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
               backgroundImage: CachedNetworkImageProvider(universal.user.photoURL ?? DefaultPlaceholder.image),
             ),
             title: ResponsiveText(text: universal.user.displayName ?? universal.userModel.username, fontSize: 16),
-            subtitle: ResponsiveText(
-                text: "Configurar perfil",
-                fontSize: 12,
-                fontColor: Color(0xffA4A4A4)),
-            onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => ConfigurationPage())),
+            subtitle: ResponsiveText(text: "Configurar perfil", fontSize: 12, fontColor: Color(0xffA4A4A4)),
+            onTap: () => tileMap["Configurar Perfil"]["page"],
           ),
-          ListTile(
-            leading: Icon(Icons.add_rounded, color: Colors.white),
-            title: ResponsiveText(text: "Trocar conta"),
-            onTap: () => AuthService().signUserOut(),
-          ),
-          ListTile(
-            leading: Icon(Icons.settings, color: Colors.white),
-            title: ResponsiveText(text: "Configurar Perfil"),
-            onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => ConfigurationPage())),
-          ),
-          // ListTile(
-          //   leading: Icon(Icons.people, color: Colors.white),
-          //   title: ResponsiveText(text: "Amizades"),
-          //   onTap: () {
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(builder: (context) => FriendsPage()),
-          //     );
-          //   },
-          // ),
-          ListTile(
-            leading: Icon(Icons.description, color: Colors.white),
-            title: ResponsiveText(text: "Sobre"),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => AboutPage()),
-              );
-            },
-          ),
-        ],
-      ),
+        ] +
+        List.from(tileMap.keys.map((e) => listTileBuilder(title: e)).toList()),
+      )
     );
   }
 }
