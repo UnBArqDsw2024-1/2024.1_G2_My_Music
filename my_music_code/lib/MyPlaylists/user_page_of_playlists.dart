@@ -238,10 +238,26 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
                 Expanded(
                   child: TabBarView(
                     children: [
-                      Container(),
+                      Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Icon(Icons.public_rounded, size: 100, color: Colors.white),
+                            Text("A ser implementado...", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, fontSize: 24)),
+                          ],
+                        ),
+                      ),
                       ListView(children: musicWidgets),
                       ListView(children: albumWidgets),
-                      ListView(children: playlistWidgets),
+                      Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Icon(Icons.public_rounded, size: 100, color: Colors.white),
+                            Text("A ser implementado...", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, fontSize: 24)),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -256,11 +272,11 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
               ),
           ],
         ),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: primaryColor,
-          onPressed: () => _showBlurDialog(context),
-          child: Icon(Icons.add),
-        ),
+        // floatingActionButton: FloatingActionButton(
+        //   backgroundColor: primaryColor,
+        //   onPressed: () => _showBlurDialog(context),
+        //   child: Icon(Icons.add),
+        // ),
       ),
     );
   }
