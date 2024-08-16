@@ -1,14 +1,15 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Album/album_page.dart';
 import 'package:my_music_code/Models/album_model.dart';
 import 'package:my_music_code/Models/playlist_model.dart';
+import 'package:my_music_code/MyPlaylists/playlist_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/MyPlaylists/new_playlist_page.dart';
 import 'package:my_music_code/universal.dart' as universal;
 import 'package:my_music_code/MyPlaylists/playlist_widgets.dart';
 import 'package:my_music_code/Album/album_widgets.dart';
-
 
 class UserPageOfPlaylists extends StatefulWidget {
   const UserPageOfPlaylists({super.key});
@@ -84,7 +85,6 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
     setState(() {});
   }
 
-
   void _generateAlbumWidgets() {
     albumWidgets = albums.map((album) {
       return Padding(
@@ -143,7 +143,6 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
         ),
       );
     }).toList();
-
 
     setState(() {
       // Re-renderizar a tela para mostrar os álbuns após a lista ser atualizada
@@ -242,101 +241,105 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
 
   @override
   Widget build(BuildContext context) {
-    print(universal.navigatorIndex);
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-        backgroundColor: backgroundColor,
-        appBar: AppBar(
           backgroundColor: backgroundColor,
-          centerTitle: true,
-          title: Text("${DefaultPlaceholder.title}'s Playlists", style: TextStyle(color: Colors.white)),
-          bottom: PreferredSize(
-            preferredSize: Size.fromHeight(AppBar().preferredSize.height),
-            child: Container(
-              height: 50,
-              padding: const EdgeInsets.symmetric(
-                horizontal: 17,
-                vertical: 5,
-              ),
+          appBar: AppBar(
+            backgroundColor: backgroundColor,
+            centerTitle: true,
+            title: Text("${DefaultPlaceholder.title}'s Playlists", style: TextStyle(color: Colors.white)),
+            bottom: PreferredSize(
+              preferredSize: Size.fromHeight(AppBar().preferredSize.height),
               child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
+                height: 50,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 17,
+                  vertical: 5,
                 ),
-                child: TabBar(
-                  labelColor: Colors.white,
-                  indicator: BoxDecoration(
+                child: Container(
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: primaryColor,
                   ),
-                  tabs: List.generate(
-                    4,
-                    (index) => Tab(
-                      text: [
-                        'Recent',
-                        'Songs',
-                        'Albums',
-                        'Playlists',
-                      ][index],
+                  child: TabBar(
+                    labelColor: Colors.white,
+                    indicator: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: primaryColor,
+                    ),
+                    tabs: List.generate(
+                      4,
+                      (index) => Tab(
+                        text: [
+                          'Recent',
+                          'Songs',
+                          'Albums',
+                          'Playlists',
+                        ][index],
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
           ),
-        ),
-        body: Stack(
-          children: [
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: TextField(
-                    controller: _searchController,
-                    style: TextStyle(color: Colors.white),
-                    decoration: InputDecoration(
-                      hintText: 'Buscar...',
-                      hintStyle: TextStyle(color: Colors.grey),
-                      prefixIcon: Icon(Icons.search, color: Colors.grey),
-                      filled: true,
-                      fillColor: Color(0xff373737),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: BorderSide.none,
+          body: Stack(
+            children: [
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: TextField(
+                      controller: _searchController,
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        hintText: 'Buscar...',
+                        hintStyle: TextStyle(color: Colors.grey),
+                        prefixIcon: Icon(Icons.search, color: Colors.grey),
+                        filled: true,
+                        fillColor: Color(0xff373737),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: BorderSide.none,
+                        ),
+                        contentPadding: EdgeInsets.symmetric(vertical: 10.0),
                       ),
-                      contentPadding: EdgeInsets.symmetric(vertical: 10.0),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: TabBarView(
-                    children: [
-                      Container(), 
-                      Container(), 
-                      ListView(children: albumWidgets), 
-                      ListView(children: playlistWidgets), 
-                    ],
+                  Expanded(
+                    child: TabBarView(
+                      children: [
+                        Container(),
+                        Container(),
+                        ListView(children: albumWidgets),
+                        ListView(children: playlistWidgets),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              if (_isBlurred)
+                BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                  child: Container(
+                    color: Colors.black.withOpacity(0),
                   ),
                 ),
-              ],
-            ),
-            if (_isBlurred)
-              BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-                child: Container(
-                  color: Colors.black.withOpacity(0),
+            ],
+          ),
+          floatingActionButton: StreamBuilder(
+            stream: universal.audioPlayer.onPlayerStateChanged,
+            builder: (context, snapshot) {
+              return Padding(
+                padding: EdgeInsets.only(bottom: snapshot.hasData? 90 : 0),
+                child: FloatingActionButton(
+                  backgroundColor: primaryColor,
+                  onPressed: () => _showBlurDialog(context),
+                  child: Icon(Icons.add),
                 ),
-              ),
-          ],
-        ),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: primaryColor,
-          onPressed: () => _showBlurDialog(context),
-          child: Icon(Icons.add),
-          
-        ),
-        floatingActionButtonLocation: universal.currentMusic.name != null? FloatingActionButtonLocation.endTop : FloatingActionButtonLocation.endFloat,
-      ),
+              );
+            },
+          )),
     );
   }
 }

@@ -106,7 +106,6 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    print(universal.navigatorIndex);
     return SafeArea(
       child: Scaffold(
         appBar: feedProfileAppBar(),

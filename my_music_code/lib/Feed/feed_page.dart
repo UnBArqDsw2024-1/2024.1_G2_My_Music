@@ -34,7 +34,6 @@ class _FeedPageState extends State<FeedPage> {
 
   @override
   Widget build(BuildContext context) {
-    print(universal.navigatorIndex);
     return SafeArea(
       child: Scaffold(
         backgroundColor: backgroundColor,
