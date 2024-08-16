@@ -33,6 +33,25 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
     super.initState();
   }
 
+  CustomTextField customTextFieldBuilder({required String field, required String hintText, required IconData prefixIcon}) {
+    return CustomTextField(
+      hintText: hintText,
+      hintTextColor: Colors.white.withOpacity(0.25),
+      selectedBorderColor: secondaryColor,
+      fillColor: secondaryColor,
+      prefixIcon: prefixIcon,
+      leadingIconColor: Colors.white,
+      inputTextColor: Colors.white,
+      cursorColor: Colors.white,
+      initialValue: field,
+      onChanged: (value) => updateField(field: field, value: value),
+    );
+  }
+
+  updateField({required String field, required String value}) {
+    setState(() => username = value);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,16 +60,12 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
         backgroundColor: backgroundColor,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
-          onPressed: () {
-            Navigator.pop(context); // Ação para voltar
-          },
+          onPressed: () => Navigator.pop(context),
         ),
         actions: [
           IconButton(
             icon: Icon(Icons.check, color: Colors.white),
-            onPressed: () {
-              Navigator.pop(context);
-            },
+            onPressed: () => updateFirebaseProfile(context, username: username, email: email)
           ),
         ],
         title: Text('Configurar Perfil', style: TextStyle(color: Colors.white, fontSize: 20)),
@@ -70,68 +85,51 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                     backgroundColor: backgroundColor,
                     child: Container(
                       decoration: BoxDecoration(
-                        color: backgroundColor,
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: CachedNetworkImageProvider(
-                            universal.user.photoURL ?? DefaultPlaceholder.image
-                          ),
-                          fit: BoxFit.cover
-                        )
-                      ),
+                          color: backgroundColor,
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              image: CachedNetworkImageProvider(universal.user.photoURL ?? DefaultPlaceholder.image),
+                              fit: BoxFit.cover)),
                     ),
                   ),
                 ),
                 Positioned(
-                    bottom: 0,
-                    right: 0,
-                    child: RawMaterialButton(
-                      onPressed: () async => pickImage(context),
-                      constraints: BoxConstraints(),
-                      shape: CircleBorder(),
-                      child: Container(
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                            color: secondaryColor,
-                            borderRadius: BorderRadius.circular(100),
-                            boxShadow: const [
-                              BoxShadow(
-                                color: Colors.white12,
-                                spreadRadius: 1,
-                                blurRadius: 3,
-                                offset: Offset(0, 1), // changes position of shadow
-                              ),
-                            ]),
-                        alignment: Alignment.center,
-                        child: Icon(Icons.filter_list, color: Colors.white),
+                  bottom: 0,
+                  right: 0,
+                  child: RawMaterialButton(
+                    onPressed: () async => pickImage(context),
+                    constraints: BoxConstraints(),
+                    shape: CircleBorder(),
+                    child: Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        color: secondaryColor,
+                        borderRadius: BorderRadius.circular(100),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.white12,
+                            spreadRadius: 1,
+                            blurRadius: 3,
+                            offset: Offset(0, 1), // changes position of shadow
+                          ),
+                        ]
                       ),
-                    )),
+                      alignment: Alignment.center,
+                      child: Icon(Icons.filter_list, color: Colors.white),
+                    ),
+                  )
+                ),
               ],
             ),
-
-            CustomTextField(
-              hintText: "Nome de usuário",
-              hintTextColor: Colors.white.withOpacity(0.25),
-              selectedBorderColor: secondaryColor,
-              fillColor: secondaryColor,
-              prefixIcon: Icons.alternate_email_rounded,
-              leadingIconColor: Colors.white,
-              inputTextColor: Colors.white,
-              cursorColor: Colors.white,
-              initialValue: username,
-              onChanged: (value) => setState(() => username = value),
-            ),
-            CustomTextField(
+            customTextFieldBuilder(
+              field: email,
               hintText: "Email",
-              hintTextColor: Colors.white.withOpacity(0.25),
-              selectedBorderColor: secondaryColor,
-              fillColor: secondaryColor,
               prefixIcon: Icons.email,
-              leadingIconColor: Colors.white,
-              inputTextColor: Colors.white,
-              cursorColor: Colors.white,
-              initialValue: email,
-              onChanged: (value) => setState(() => email = value),
+            ),
+            customTextFieldBuilder(
+              field: username, 
+              hintText: "Username", 
+              prefixIcon: Icons.alternate_email_rounded
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
