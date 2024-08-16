@@ -58,6 +58,8 @@ Os membros que ficaram responsáveis pela documentação da Visão de Implementa
 
 ### Visão de Dados
 
+o membro responsável pela visão de dados desenvolveu o documento baseado no diagrama de dados e baseado na escolha do tipo de banco de dados utilizado para o desenvolvimento (relacional ou não-relacional).
+
 ### Visão de Casos Usos 
 
 Os membros responsáveis pelo desenvolvimento da visão de casos de uso foram o Carlos Nascimento e o Carlos Eduardo, que juntos, iniciaram o desenvolvimento do conteúdo da wiki, para a dupla, foi de extremo aproveitamento o desenvolvimento desta visão, pois foi possível o aprofundamento nas diversas possibilidades de uso do aplicativo desenvolvido, sempre observando documentos anteriores do desenvolvimento, para que os casos de uso fossem compatíveis com os requisitos elicitados no início do projeto.
