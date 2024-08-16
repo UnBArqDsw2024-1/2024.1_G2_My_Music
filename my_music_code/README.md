@@ -1,12 +1,14 @@
-# Guia de instalação para rodar o projeto 
+<div align="center">
 
- 
+![logo](LogoMyMusic.png)
 
-## Linux (Debian/Ubuntu) 
+</div>
 
- 
+# 👨‍💻 Guia de Instalação
 
-### Primeiro: baixar o Android Studio 
+## 🚀 Linux (Debian/Ubuntu) 
+
+### 1) Baixar o Android Studio 
 
 [Guia de instalação](https://developer.android.com/studio/install?hl=pt-br) 
 
@@ -43,13 +45,13 @@ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-
 
 ” 
 
-### Segundo: baixar o Flutter 
+### 2) Baixar o Flutter 
 
 [Guia de instalação](https://docs.flutter.dev/get-started/install/linux/android) 
 
  
 
-### Terceiro: baixar o vs code 
+### 3) Baixar o VS Code 
 
 [Guia de instalação](https://code.visualstudio.com/docs/setup/linux) 
 
@@ -57,36 +59,36 @@ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-
 
  
 
-### Baixar a extensão do Flutter no vs code
+### 4) Baixar a extensão do Flutter no vs code
 
 ![](./assets/vs_code_extension.png)
 
-### Clonar o repositorio
+### 5) Clonar o repositorio
 
 ![](./assets/clone_rep.png)
 
-### Abrir o repositorio no vs code
+### 6) Abrir o repositorio no vs code
 
-ir pro my_music_code
+Vá para o diretório do projeto
 ```
 cd my_music_code
 ```
 
-Seleciona um emulador de celular
+Selecione um emulador de celular
 
 ![](./assets/image1.png)
 
 ![](./assets/image2.png)
 
 
-Depois roda o projeto
+ 🎼 Rode o projeto e curta uma música 💃 
 ```
 Flutter run
 ```
 
-## Windows
+## 🚀 Windows
 
-### Primeiro: baixar o Android Studio 
+### 1) Baixar o Android Studio 
 
 [Guia de instalação](https://developer.android.com/studio/install?hl=pt-br) 
 
@@ -98,22 +100,22 @@ Para instalar o Android Studio no Windows, siga estas etapas:
 
     Execute o arquivo .exe baixado no site do android studio.  
 
-### Segundo: baixar o Flutter 
+### 2) Baixar o Flutter 
 
 [Guia de instalação]([https://docs.flutter.dev/get-started/install/linux/android](https://docs.flutter.dev/get-started/install/windows/mobile)
 
-### Terceiro: baixar o vs code 
+### 3) Baixar o VS Code 
 
 [Guia de instalação](https://code.visualstudio.com/docs/setup/linux) 
 
 [Download](https://code.visualstudio.com/download) 
 
-### Baixar a extensão do Flutter no vs code
+### 4) Baixar a extensão do Flutter no vs code
 
 ![](./assets/vs_code_extension.png)
 
 
-### Clonar o repositorio
+### 6) Clonar o repositorio
 
 ![](./assets/clone_rep.png)
 
@@ -124,7 +126,7 @@ Seleciona um emulador de celular
 ![](./assets/image2.png)
 
 
-Depois roda o projeto
+ 🎼 Rode o projeto e curta uma música 💃 
 ```
 Flutter run
 ```
