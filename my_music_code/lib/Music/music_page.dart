@@ -1,11 +1,13 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Feed/dialog_qrcode_music.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 import 'package:my_music_code/Models/music_model.dart';
 import 'package:my_music_code/Music/back/setup_music.dart';
 import 'package:my_music_code/universal.dart' as universal;
+import 'package:share_plus/share_plus.dart';
 
 class MusicPage extends StatefulWidget {
   const MusicPage({
@@ -25,11 +27,8 @@ class _MusicPageState extends State<MusicPage> {
 
   setCurrentMusic() {
     setState(() {
-      if(
-        universal.currentMusic.imageUrl != widget.music.imageUrl || // Album Swap
-        (universal.currentMusic.name != widget.music.name &&
-        universal.currentMusic.artist == widget.music.artist)
-      ) {
+      if (universal.currentMusic.imageUrl != widget.music.imageUrl || // Album Swap
+          (universal.currentMusic.name != widget.music.name && universal.currentMusic.artist == widget.music.artist)) {
         universal.currentMusic = widget.music;
         isPlaying = !isPlaying;
         setupMusic();
@@ -91,77 +90,69 @@ class _MusicPageState extends State<MusicPage> {
               ],
             ),
             Divider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(CupertinoIcons.bookmark, color: Colors.white),
-                  onPressed: () {},
-                ),
-                SizedBox(width: 10.0),
-                Text(
-                  'Salvar música em playlist...',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
+            Column(
+              children: [
+                ListTile(
+                  onTap: (){},
+                  leading: Icon(CupertinoIcons.music_albums, color: Colors.white),
+                  title: Text(
+                    'Ver álbum da música',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
                   ),
-                )
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(isFavorite ? CupertinoIcons.heart_fill : CupertinoIcons.heart,
-                      size: 30, color: isFavorite ? primaryColor : Colors.white),
-                  onPressed: () {
+                ),
+                ListTile(
+                  onTap: (){},
+                  leading: Icon(Icons.bookmark_add_outlined, color: Colors.white),
+                  title: Text(
+                    'Salvar música em playlist...',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+                ListTile(
+                  leading: Icon(isFavorite ? CupertinoIcons.heart_fill : CupertinoIcons.heart, color: isFavorite ? primaryColor : Colors.white),
+                  onTap: () {
                     setState(() {
                       isFavorite = !isFavorite;
                     });
                   },
+                  title: Text(
+                    'Favoritar música',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
+                  )
                 ),
-                SizedBox(width: 10.0),
-                Text(
-                  'Favoritar música',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
+                ListTile(
+                  leading: Icon(CupertinoIcons.arrowshape_turn_up_right, color: Colors.white),
+                  onTap: () async {
+                    await Share.share("Ouça essa música:\n${widget.music.link!} \nVocê vai amar!");
+                  },
+                  title: Text(
+                    'Compartilhar música',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
                   ),
-                )
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(CupertinoIcons.arrowshape_turn_up_right, color: Colors.white),
-                  onPressed: () {},
                 ),
-                SizedBox(width: 10.0),
-                Text(
-                  'Compartilhar música',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
+                ListTile(
+                  leading: Icon(CupertinoIcons.waveform, color: Colors.white),
+                  title: Text(
+                    'Ver ID no MyMusic',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
                   ),
-                )
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(CupertinoIcons.waveform, color: Colors.white),
-                  onPressed: () {},
+                  onTap: () => showDialog(context: context, builder: (context) => QrcodeGenerator(music: widget.music)),
                 ),
-                SizedBox(width: 10.0),
-                Text(
-                  'Ver ID no MyMusic',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                  ),
-                )
               ],
             ),
           ],
@@ -276,7 +267,7 @@ class _MusicPageState extends State<MusicPage> {
                 ),
               ],
             ),
-      
+
             Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
                 child: StreamBuilder(
@@ -286,7 +277,7 @@ class _MusicPageState extends State<MusicPage> {
                       progress: data.data ?? Duration(milliseconds: 0),
                       buffered: Duration(milliseconds: universal.currentMusic.duration!),
                       onSeek: (duration) => universal.audioPlayer.seek(duration),
-                      total:  Duration(milliseconds: universal.currentMusic.duration!),
+                      total: Duration(milliseconds: universal.currentMusic.duration!),
                       progressBarColor: primaryColor,
                       baseBarColor: Colors.white.withOpacity(0.20),
                       bufferedBarColor: Colors.white.withOpacity(0.20),
@@ -317,15 +308,19 @@ class _MusicPageState extends State<MusicPage> {
                             isScrollControlled: true,
                             useSafeArea: true,
                             context: context,
-                            builder: (context) => MusicPage(music: widget.isRandom? universal.currentListMusicShuffle[(indexListMusic - 1) % universal.currentListMusicShuffle.length] : universal.currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
-                            isRandom: widget.isRandom)
-                          );
+                            builder: (context) => MusicPage(
+                                music: widget.isRandom
+                                    ? universal.currentListMusicShuffle[
+                                        (indexListMusic - 1) % universal.currentListMusicShuffle.length]
+                                    : universal
+                                        .currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
+                                isRandom: widget.isRandom));
                       }
                     },
                   ),
-      
+
                   SizedBox(width: 20), // Espaçamento entre os botões de controle
-      
+
                   RawMaterialButton(
                     constraints: BoxConstraints(),
                     shape: CircleBorder(),
@@ -344,26 +339,30 @@ class _MusicPageState extends State<MusicPage> {
                         color: primaryColor,
                         shape: BoxShape.circle,
                       ),
-                      child:
-                          Icon(isPlaying ? Icons.pause_rounded : Icons.play_arrow_rounded, color: Colors.white, size: 48),
+                      child: Icon(isPlaying ? Icons.pause_rounded : Icons.play_arrow_rounded,
+                          color: Colors.white, size: 48),
                     ),
                   ),
-      
+
                   SizedBox(width: 20), // Espaçamento entre os botões de controle
-      
+
                   IconButton(
                     icon: Icon(CupertinoIcons.forward_end_fill, color: Colors.white, size: 30),
                     onPressed: () {
                       if (universal.currentListMusic.isNotEmpty) {
                         Navigator.pop(context);
-                          showModalBottomSheet(
+                        showModalBottomSheet(
                             useRootNavigator: false,
                             isScrollControlled: true,
                             useSafeArea: true,
                             context: context,
-                            builder: (context) => MusicPage(music: widget.isRandom? universal.currentListMusicShuffle[(indexListMusic + 1) % universal.currentListMusicShuffle.length] : universal.currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
-                            isRandom: widget.isRandom)
-                          );
+                            builder: (context) => MusicPage(
+                                music: widget.isRandom
+                                    ? universal.currentListMusicShuffle[
+                                        (indexListMusic + 1) % universal.currentListMusicShuffle.length]
+                                    : universal
+                                        .currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
+                                isRandom: widget.isRandom));
                       }
                     },
                   ),
