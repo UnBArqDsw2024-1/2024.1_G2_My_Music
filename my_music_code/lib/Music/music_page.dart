@@ -3,15 +3,13 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_music_code/Album/album_page.dart';
-import 'package:my_music_code/Feed/dialog_qrcode_music.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 import 'package:my_music_code/Models/album_model.dart';
 import 'package:my_music_code/Models/music_model.dart';
+import 'package:my_music_code/Music/Components/music_options_modal.dart';
 import 'package:my_music_code/Music/back/setup_music.dart';
 import 'package:my_music_code/universal.dart' as universal;
-import 'package:share_plus/share_plus.dart';
 
 class MusicPage extends StatefulWidget {
   const MusicPage({
@@ -32,7 +30,6 @@ class _MusicPageState extends State<MusicPage> {
   bool isFavorite = false;
 
   setCurrentMusic() {
-
     setState(() {
       if (universal.currentMusic.imageUrl != widget.music.imageUrl || // Album Swap
           (universal.currentMusic.name != widget.music.name && universal.currentMusic.artist == widget.music.artist)) {
@@ -53,133 +50,8 @@ class _MusicPageState extends State<MusicPage> {
     super.initState();
   }
 
-  void _musicOptionsModalBottomSheet(
-      BuildContext context, String artista, String music, String coverAlbum, bool isFavorite) {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: secondaryColor,
-      builder: (context) {
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(8.0),
-                    child: Image.network(
-                      coverAlbum,
-                      width: 50,
-                      height: 50,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                SizedBox(width: 5.0),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      music,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                      ),
-                    ),
-                    Text(
-                      artista,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            Divider(),
-            Column(
-              children: [
-                ListTile(
-                  onTap: () {
-                    if (universal.currentAlbum.id != null) {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => MyAlbumPage(
-                                    album: universal.currentAlbum,
-                                  )));
-                    } else {}
-                  },
-                  // enableFeedback: universal.currentAlbum.id != null,
-                  leading: Icon(CupertinoIcons.music_albums, color: Colors.white),
-                  title: Text(
-                    'Ver álbum da música',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-                ListTile(
-                  onTap: () {},
-                  leading: Icon(Icons.bookmark_add_outlined, color: Colors.white),
-                  title: Text(
-                    'Salvar música em playlist...',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-                ListTile(
-                    leading: Icon(isFavorite ? CupertinoIcons.heart_fill : CupertinoIcons.heart,
-                        color: isFavorite ? primaryColor : Colors.white),
-                    onTap: () {
-                      setState(() {
-                        isFavorite = !isFavorite;
-                      });
-                    },
-                    title: Text(
-                      'Favoritar música',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                      ),
-                    )),
-                ListTile(
-                  leading: Icon(CupertinoIcons.arrowshape_turn_up_right, color: Colors.white),
-                  onTap: () async {
-                    await Share.share("Ouça essa música:\n${widget.music.link!} \nVocê vai amar!");
-                  },
-                  title: Text(
-                    'Compartilhar música',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-                ListTile(
-                  leading: Icon(CupertinoIcons.waveform, color: Colors.white),
-                  title: Text(
-                    'Ver ID no MyMusic',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
-                  ),
-                  onTap: () => showDialog(context: context, builder: (context) => QrcodeGenerator(music: widget.music)),
-                ),
-              ],
-            ),
-          ],
-        );
-      },
-    );
-  }
+  void onFav() => setState(() => isFavorite = !isFavorite);
+
 
   @override
   Widget build(BuildContext context) {
@@ -191,9 +63,7 @@ class _MusicPageState extends State<MusicPage> {
 
       indexListMusic = listNames.indexOf(widget.music.name!);
     } else {
-      List<String> listNames = universal.releaseListMusics.map((e) {
-        return e.name!;
-      }).toList();
+      List<String> listNames = universal.releaseListMusics.map((e) => e.name!).toList();
 
       if (!listNames.contains(widget.music.name!)) {
         universal.releaseListMusics.add(widget.music);
@@ -239,16 +109,15 @@ class _MusicPageState extends State<MusicPage> {
               IconButton(
                 icon: Icon(CupertinoIcons.ellipsis_vertical, color: Colors.white),
                 onPressed: () {
-                  _musicOptionsModalBottomSheet(
+                  musicOptionsModalBottomSheet(
                     context,
-                    universal.currentMusic.artist!,
-                    universal.currentMusic.name!,
-                    universal.currentMusic.imageUrl!,
-                    isFavorite,
+                    music: universal.currentMusic,
+                    onFav: onFav,
                   );
                 },
               ),
-            ]),
+            ]
+          ),
         body: Column(
           children: <Widget>[
             SizedBox(height: 20), // Espaçamento entre a Row e a imagem
