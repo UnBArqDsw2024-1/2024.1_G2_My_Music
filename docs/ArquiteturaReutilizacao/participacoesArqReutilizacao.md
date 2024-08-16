@@ -7,18 +7,18 @@ Este documento contém um breve relato das participações e contribuições dos
 |Nome do Membro | Contribuição (Padrão GoF Criacional) | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -------------- | --------------------------- | --------------------------------- |
 | Ana Luíza | Contribuiu no desenvolvimento da documentação da [Visão de Processo]() | Excelente |
-| Carlos Eduardo | Contribuiu no desenvolvimento da documentação da [Visão de Lógica]() | Nula |
-| Carlos Godoy | Contribuiu no desenvolvimento da documentação da []()| Nula |
-| Henrique Hida | Contribuiu no desenvolvimento da documentação da []()| Nula |
+| Carlos Eduardo | Contribuiu no desenvolvimento da documentação da [Visão de Lógica]() e [Visão de Casos de Uso](), e na revisão da [Visão de Dados]() e [Visão de Processo]()| Nula |
+| Carlos Godoy | Contribuiu no desenvolvimento da documentação da [Visão de Casos de Uso]()| Nula |
+| Henrique Hida | Contribuiu no desenvolvimento da documentação da [Visão Arquitetural Geral]()| Nula |
 | João Maior |  Contribuiu no desenvolvimento da documentação da [Visão de Dados]()| Boa |
 | Israel Thalles | Contribuiu no desenvolvimento da documentação da [Visão de Lógica]() | Boa |
-| Luiz Pettengill | Contribuiu no desenvolvimento da documentação da []() | Boa |
-| Luis Miranda | Contribuiu no desenvolvimento da documentação da [Visão de Implementação]() e revisão da [Visão de Dados]() e [Visão de Implantação]()  | Excelente |
-| Limírio Guimarães | Contribuiu no desenvolvimento da documentação da [Visão de Implementação]() e revisão da [Visão de Dados]()| Excelente |
-| Lucas Vilela | Contribuiu no desenvolvimento da documentação da [Visão de Implantação]() e revisão da [Visão de Implantação]()| Excelente |
+| Luiz Pettengill |  | Boa |
+| Luis Miranda | Contribuiu no desenvolvimento da documentação da [Visão de Implementação]() e revisão da [Visão de Dados]() e [Visão de Geral]()  | Excelente |
+| Limírio Guimarães | Contribuiu no desenvolvimento da documentação da [Visão de Implementação]() e revisão da [Visão de Dados]() e [Visão de Caso de Uso]()| Excelente |
+| Lucas Vilela | Contribuiu no desenvolvimento da documentação da [Visão de Implantação]() e revisão da [Visão de Implantação]() e [Visão de Implementação]()| Excelente |
 | Milena Baruc | Contribuiu no desenvolvimento da documentação da [Visão de Implantação]() | Boas |
 | Rafael Xavier | Contribuiu no desenvolvimento da documentação da [Visão de Processo]() |  Excelente | 
-| Vinícius Mendes | Contribuiu no desenvolvimento da documentação da [Visão de Implantação]() e revisão da [Visão de Lógica]() e [Visão de Processos]()| Excelente 
+| Vinícius Mendes | Contribuiu no desenvolvimento da documentação da [Visão de Implantação]() e revisão da [Visão de Lógica]() e [Visão de Processo]()| Excelente 
 
 <div style="text-align: center">
   <p>Tabela 1: Participações de cada membro no Padrão GoF Criacional. (Fonte: Autores, 2024)</p>
