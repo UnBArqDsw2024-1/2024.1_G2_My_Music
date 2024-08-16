@@ -27,27 +27,28 @@ class _FeedPageState extends State<FeedPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: backgroundColor,
-        appBar: feedProfileAppBar(),
-        drawer: ProfileDrawer(),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              FeedMusicGrid(listaDeMusicas: widget.recentMusics),
-              NewMusicRelease(
-                musicRelease: widget.musicRelease,
-              ),
-              FeedHorizontalScrollComponent(
-                title: "Álbuns recentes",
-                albuns: widget.albumReleases,
-              ),
-              FeedHorizontalScrollComponent(
-                title: "Tocadas recentemente",
-                albuns: widget.albumReleases,
-              ),
-              if (universal.currentMusic.name != null) Container(height: 180),
-            ],
-          ),
-        ));
+      backgroundColor: backgroundColor,
+      appBar: feedProfileAppBar(),
+      drawer: ProfileDrawer(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            FeedMusicGrid(listaDeMusicas: widget.recentMusics),
+            NewMusicRelease(
+              musicRelease: widget.musicRelease,
+            ),
+            FeedHorizontalScrollComponent(
+              title: "Álbuns recentes",
+              albuns: widget.albumReleases,
+            ),
+            FeedHorizontalScrollComponent(
+              title: "Tocadas recentemente",
+              albuns: widget.albumReleases,
+            ),
+            if (universal.currentMusic.name != null) Container(height: 180),
+          ],
+        ),
+      )
+    );
   }
 }
