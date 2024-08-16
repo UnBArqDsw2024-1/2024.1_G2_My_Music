@@ -54,10 +54,13 @@ A seguir podemos observar na figura 1, o diagrama de componentes referente ao c�
 
 ### Diagrama de Componentes
 
-<div style="text-align: center">
-  <img src="../Assets/VisãodeImplementação.png" alt="Modelagem do Diagrama de Componentes" title="Título da Imagem" />
-  <p>Figura 1: Modelagem da Visão de Implementação (Fonte: Limírio Guimarães e Luis Miranda, 2024)</p>
-</div>
+<center>
+
+Figura 1 - Primeira versão do diagrama de Implementação
+![Figura 1](../Assets/VisãodeImplementação.png)
+Autores: [Limírio Guimarães](https://github.com/LimirioGuimaraes) e [Luis Miranda](https://github.com/LuisMiranda10)
+</center>
+
 
 ## Bibliografia
 
