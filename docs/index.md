@@ -92,10 +92,100 @@ Na quarta entrega, tivemos os seguintes aterfatos:
 **Principais Tecnologias Utilizadas e/ou Pretendidas**: Para facilitar o trabalho utilizamos as seguintes tecnologias: GitHub, Discord, Whatsapp, VSCode, Notion e Miro.<br>
 [**Principal(is) Estilo(s) Arquitetural(is) Adotado(s)**:](.//ArquiteturaReutilizacao/estiloEPadroesArquiteturais.md) Visão de lógica, de Processo, de Implementação, de Implantação, de Dados, de Casos de Uso.<br>
 
-## Há algo a ser executado?
+## 👨‍💻 Guia de Instalação
 
-( ) SIM
+### 🚀 Linux (Debian/Ubuntu)
 
-( ) NÃO
+#### 1) Baixar o Android Studio
 
-Se SIM, insira um manual (ou um script) para auxiliar ainda mais os interessados na execução.
+[Guia de instalação](https://developer.android.com/studio/install?hl=pt-br)
+
+[Android Studio download](https://developer.android.com/studio?hl=pt-br)
+
+Para instalar o Android Studio no Linux, siga estas etapas:
+
+    Descompacte o arquivo .tar.gz transferido por download em um local adequado para seus aplicativos, como /usr/local/ para seu perfil de usuário ou /opt/ para usuários compartilhados.  
+
+Em uma versão de 64 bits do Linux, primeiro instale as bibliotecas necessárias para máquinas de 64 bits.  
+
+    Para iniciar o Android Studio, abra um terminal, navegue até o diretório android-studio/bin/ e execute studio.sh. 
+
+    Selecione se você quer ou não importar as configurações anteriores do Android Studio e clique em OK. 
+
+    Conclua as etapas do assistente de configuração do Android Studio, que inclui o download dos componentes do SDK do Android necessários para o desenvolvimento. 
+
+Bibliotecas necessárias para máquinas de 64 bits  
+
+Se você estiver executando uma versão do Ubuntu de 64 bits, será necessário instalar algumas bibliotecas de 32 bits com o seguinte comando:
+
+```bash
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 
+```
+
+#### 2) Baixar o Flutter
+
+[Guia de instalação](https://docs.flutter.dev/get-started/install/linux/android)
+
+#### 3) Baixar o VS Code
+
+[Guia de instalação](https://code.visualstudio.com/docs/setup/linux)
+
+[Download](https://code.visualstudio.com/download)
+
+#### 4) Baixar a extensão do Flutter no vs code
+
+[Extensão](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter)
+
+#### 5) Clonar o repositorio
+
+#### 6) Abrir o repositorio no vs code
+
+Vá para o diretório do projeto
+
+```bash
+cd my_music_code
+```
+
+Selecione um emulador de celular
+
+#### 🎼 Rode o projeto e curta uma música 💃
+
+```bash
+Flutter run
+```
+
+### 🚀 Windows
+
+#### 1) Baixar o Android Studio 
+
+[Guia de instalação](https://developer.android.com/studio/install?hl=pt-br)
+
+[Android Studio download](https://developer.android.com/studio?hl=pt-br)
+
+Para instalar o Android Studio no Windows, siga estas etapas:
+
+    Execute o arquivo .exe baixado no site do android studio.  
+
+#### 2) Baixar o Flutter 
+
+[Guia de instalação](https://docs.flutter.dev/get-started/install/windows/mobile)
+
+#### 3) Baixar o VS Code 
+
+[Guia de instalação](https://code.visualstudio.com/docs/setup/linux)
+
+[Download](https://code.visualstudio.com/download)
+
+#### 4) Baixar a extensão do Flutter no vs code
+
+[Extensão](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter)
+
+#### 5) Clonar o repositorio
+
+Seleciona um emulador de celular
+
+#### 🎼 Rode o projeto e curta uma música 💃
+
+```bash
+Flutter run
+```

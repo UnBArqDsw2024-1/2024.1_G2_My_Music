@@ -1,12 +1,13 @@
 # My_Music
 
+![logo](../docs/Assets/LogoMyMusic.png)
+
 **Código da Disciplina**: FGA0208<br>
 **Número do Grupo**: 02<br>
 
-##  💡 Introdução
+## 💡 Introdução
 
 O objetivo deste repositório é fornecer uma plataforma centralizada para o armazenamento e organização de todos os artefatos e resultados relacionados ao projeto de desenvolvimento da aplicação de reprodução de música do Grupo 2 de Arquitetura e Desenho de Software da Universidade de Brasília (UnB-FGA) no semestre 2024.1. Ele serve como um espaço colaborativo onde os membros do grupo podem compartilhar e acompanhar o progresso do trabalho, documentar decisões tomadas, armazenar código-fonte, artefatos de design, relatórios de progresso, entre outros materiais relevantes.
-
 
 ## 👥 Alunos
 
@@ -26,35 +27,104 @@ O objetivo deste repositório é fornecer uma plataforma centralizada para o arm
 | 200026551   | [Rafael Xavier Canabrava](https://github.com/rafaelxavierr) | <img src="https://github.com/rafaelxavierr.png" width="120px">                           |
 | 211063265   | [Vinícius Mendes Martins](https://github.com/yabamiah) | <img src="https://github.com/yabamiah.png" width="120px">                                 |
 
+## Sobre
 
-## Sobre 
-Contextualize, usando referências, links, e outros materiais como fontes.
+O aplicativo MyMusic, é um aplicativo para que seja possível ouvir músicas e fazer playlist de acordo com seu gosto pessoal.
 
-## Screenshots Primeira Entrega <<FOCO: DSW(Base)>>
-Adicione 2 ou mais screenshots em termos de artefatos da Primeira Entrega.
+## 👨‍💻 Guia de Instalação
 
-## Screenshots Segunda Entrega <<FOCO: DSW(Modelagem)>>
-Adicione 2 ou mais screenshots em termos de artefatos da Segunda Entrega.
+### 🚀 Linux (Debian/Ubuntu)
 
-## Screenshots Terceira Entrega <<FOCO: DSW(Padrões de Projeto)>>
-Adicione 2 ou mais screenshots em termos de artefatos da Terceira Entrega.
+#### 1) Baixar o Android Studio
 
-## Screenshots Quarta Entrega (FINAL) <<FOCOS: Arquitetura & Reutilização de Software & PROJETO FINAL>>
-Adicione 2 ou mais screenshots em termos de artefatos da Quarta Entrega.
+[Guia de instalação](https://developer.android.com/studio/install?hl=pt-br)
 
-## Descritivo dos Principais Aspectos Técnicos 
-**Principal(is) Metodologia(s) Adotada(s)**: xxxxxx<br>
-**Principais Linguagens Utilizadas e/ou Pretendidas**: xxxxxx<br>
-**Principais Tecnologias Utilizadas e/ou Pretendidas**: xxxxxx<br>
-**Principal(is) Estilo(s) Arquitetural(is) Adotado(s)**: xxxxxx<br>
+[Android Studio download](https://developer.android.com/studio?hl=pt-br)
 
-## Há algo a ser executado?
+Para instalar o Android Studio no Linux, siga estas etapas:
 
-( ) SIM
+    Descompacte o arquivo .tar.gz transferido por download em um local adequado para seus aplicativos, como /usr/local/ para seu perfil de usuário ou /opt/ para usuários compartilhados.  
 
-( ) NÃO
+Em uma versão de 64 bits do Linux, primeiro instale as bibliotecas necessárias para máquinas de 64 bits.  
 
-Se SIM, insira um manual (ou um script) para auxiliar ainda mais os interessados na execução.
+    Para iniciar o Android Studio, abra um terminal, navegue até o diretório android-studio/bin/ e execute studio.sh. 
 
-## Informações Complementares 
-Quaisquer outras informações adicionais podem ser descritas nessa seção.
+    Selecione se você quer ou não importar as configurações anteriores do Android Studio e clique em OK. 
+
+    Conclua as etapas do assistente de configuração do Android Studio, que inclui o download dos componentes do SDK do Android necessários para o desenvolvimento. 
+
+Bibliotecas necessárias para máquinas de 64 bits  
+
+Se você estiver executando uma versão do Ubuntu de 64 bits, será necessário instalar algumas bibliotecas de 32 bits com o seguinte comando:
+
+```bash
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 
+```
+
+#### 2) Baixar o Flutter
+
+[Guia de instalação](https://docs.flutter.dev/get-started/install/linux/android)
+
+#### 3) Baixar o VS Code
+
+[Guia de instalação](https://code.visualstudio.com/docs/setup/linux)
+
+[Download](https://code.visualstudio.com/download)
+
+#### 4) Baixar a extensão do Flutter no vs code
+
+[Extensão](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter)
+
+#### 5) Clonar o repositorio
+
+#### 6) Abrir o repositorio no vs code
+
+Vá para o diretório do projeto
+
+```bash
+cd my_music_code
+```
+
+Selecione um emulador de celular
+
+#### 🎼 Rode o projeto e curta uma música 💃
+
+```bash
+Flutter run
+```
+
+### 🚀 Windows
+
+#### 1) Baixar o Android Studio 
+
+[Guia de instalação](https://developer.android.com/studio/install?hl=pt-br)
+
+[Android Studio download](https://developer.android.com/studio?hl=pt-br)
+
+Para instalar o Android Studio no Windows, siga estas etapas:
+
+    Execute o arquivo .exe baixado no site do android studio.  
+
+#### 2) Baixar o Flutter 
+
+[Guia de instalação](https://docs.flutter.dev/get-started/install/windows/mobile)
+
+#### 3) Baixar o VS Code 
+
+[Guia de instalação](https://code.visualstudio.com/docs/setup/linux)
+
+[Download](https://code.visualstudio.com/download)
+
+#### 4) Baixar a extensão do Flutter no vs code
+
+[Extensão](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter)
+
+#### 5) Clonar o repositorio
+
+Seleciona um emulador de celular
+
+#### 🎼 Rode o projeto e curta uma música 💃
+
+```bash
+Flutter run
+```
