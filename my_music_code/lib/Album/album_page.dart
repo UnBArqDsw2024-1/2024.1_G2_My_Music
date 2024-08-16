@@ -275,8 +275,8 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                               leading: Icon(Icons.share_outlined,color: Colors.white),
                               title: Text('Compartilhar música',style: TextStyle(color: Colors.white)),
                               onTap: () async {
-                              await Share.share("Ouça essa música:\n${widget.album.songs!.elementAt(index).externalUrls!.spotify} \nVocê vai amar!");
-                            },,
+                                await Share.share("Ouça essa música:\n${widget.album.songs!.elementAt(index).externalUrls!.spotify} \nVocê vai amar!");
+                              },
                             ),
                           ),
                         ],
