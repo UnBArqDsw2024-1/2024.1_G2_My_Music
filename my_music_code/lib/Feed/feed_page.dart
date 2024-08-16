@@ -47,7 +47,7 @@ class _FeedPageState extends State<FeedPage> {
               //   title: "Tocadas recentemente",
               //   albuns: widget.albumReleases,
               // ),
-              if (universal.currentMusic.name != null) Container(height: 180),
+              if (universal.currentMusic.name != null) Container(height: 90),
             ],
           ),
         )

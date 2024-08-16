@@ -50,10 +50,11 @@ class _FeedHorizontalScrollComponentState extends State<FeedHorizontalScrollComp
                   if (widget.albuns.isEmpty)
                     for (int i = 0; i < 10; i++)
                       Padding(
-                          padding: EdgeInsets.only(right: responsiveFigmaWidth(10)),
-                          child: CubicButtonWithImage(
-                            image: NetworkImage(DefaultPlaceholder.image),
-                          )),
+                        padding: EdgeInsets.only(right: responsiveFigmaWidth(10)),
+                        child: CubicButtonWithImage(
+                          image: NetworkImage(DefaultPlaceholder.image),
+                        )
+                      ),
                 ],
               ),
             )
