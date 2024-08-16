@@ -2,8 +2,10 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
+import 'package:my_music_code/Feed/qrCode_music.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart';
 
 import 'package:my_music_code/universal.dart' as universal;
@@ -26,11 +28,10 @@ class _MusicPageState extends State<MusicPage> {
 
   setCurrentMusic() {
     setState(() {
-      if(
-        universal.currentMusic.imageUrl != widget.music.imageUrl || // Album Swap
-        (universal.currentMusic.name != widget.music.name &&
-        universal.currentMusic.artist == widget.music.artist)
-      ) {
+      if (universal.currentMusic.imageUrl !=
+              widget.music.imageUrl || // Album Swap
+          (universal.currentMusic.name != widget.music.name &&
+              universal.currentMusic.artist == widget.music.artist)) {
         universal.currentMusic = widget.music;
         isPlaying = !isPlaying;
         setupMusic();
@@ -40,7 +41,9 @@ class _MusicPageState extends State<MusicPage> {
 
   setupMusic() async {
     final yt = YoutubeExplode();
-    final result = (await yt.search("${universal.currentMusic.name!} ${widget.music.artist!}")).first;
+    final result = (await yt
+            .search("${universal.currentMusic.name!} ${widget.music.artist!}"))
+        .first;
     final videoId = result.id.value;
 
     final manifest = await yt.videos.streamsClient.getManifest(videoId);
@@ -55,8 +58,8 @@ class _MusicPageState extends State<MusicPage> {
     super.initState();
   }
 
-  void _musicOptionsModalBottomSheet(
-      BuildContext context, String artista, String music, String coverAlbum, bool isFavorite) {
+  void _musicOptionsModalBottomSheet(BuildContext context, String artista,
+      String music, String coverAlbum, bool isFavorite) {
     showModalBottomSheet(
       context: context,
       backgroundColor: secondaryColor,
@@ -68,7 +71,8 @@ class _MusicPageState extends State<MusicPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 10.0, horizontal: 10.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.network(
@@ -123,8 +127,12 @@ class _MusicPageState extends State<MusicPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 IconButton(
-                  icon: Icon(isFavorite ? CupertinoIcons.heart_fill : CupertinoIcons.heart,
-                      size: 30, color: isFavorite ? primaryColor : Colors.white),
+                  icon: Icon(
+                      isFavorite
+                          ? CupertinoIcons.heart_fill
+                          : CupertinoIcons.heart,
+                      size: 30,
+                      color: isFavorite ? primaryColor : Colors.white),
                   onPressed: () {
                     setState(() {
                       isFavorite = !isFavorite;
@@ -145,14 +153,18 @@ class _MusicPageState extends State<MusicPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 IconButton(
-                  icon: Icon(CupertinoIcons.arrowshape_turn_up_right, color: Colors.white),
-                  onPressed: () {},
+                  icon: Icon(CupertinoIcons.arrowshape_turn_up_right,
+                      color: Colors.white),
+                  onPressed: () async {
+                    final result = await Share.share(
+                        "Ouça essa música:\n${widget.music.link} \nVocê vai amar!");
+                  },
                 ),
                 SizedBox(width: 10.0),
                 Text(
                   'Compartilhar música',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 255, 255, 255),
                     fontSize: 16,
                   ),
                 )
@@ -163,7 +175,14 @@ class _MusicPageState extends State<MusicPage> {
               children: <Widget>[
                 IconButton(
                   icon: Icon(CupertinoIcons.waveform, color: Colors.white),
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                            content: QrcodeGenerator(
+                            url: widget.music.link!,
+                            nameMusic: widget.music.name!)));
+                  },
                 ),
                 SizedBox(width: 10.0),
                 Text(
@@ -251,7 +270,8 @@ class _MusicPageState extends State<MusicPage> {
             children: <Widget>[
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -276,8 +296,12 @@ class _MusicPageState extends State<MusicPage> {
                 ),
               ),
               IconButton(
-                icon: Icon(isFavorite ? CupertinoIcons.heart_fill : CupertinoIcons.heart,
-                    size: 30, color: isFavorite ? primaryColor : Colors.white),
+                icon: Icon(
+                    isFavorite
+                        ? CupertinoIcons.heart_fill
+                        : CupertinoIcons.heart,
+                    size: 30,
+                    color: isFavorite ? primaryColor : Colors.white),
                 onPressed: () {
                   setState(() {
                     isFavorite = !isFavorite;
@@ -294,9 +318,11 @@ class _MusicPageState extends State<MusicPage> {
                 builder: (context, data) {
                   return ProgressBar(
                     progress: data.data ?? Duration(milliseconds: 0),
-                    buffered: Duration(milliseconds: universal.currentMusic.duration!),
+                    buffered: Duration(
+                        milliseconds: universal.currentMusic.duration!),
                     onSeek: (duration) => universal.audioPlayer.seek(duration),
-                    total:  Duration(milliseconds: universal.currentMusic.duration!),
+                    total: Duration(
+                        milliseconds: universal.currentMusic.duration!),
                     progressBarColor: primaryColor,
                     baseBarColor: Colors.white.withOpacity(0.20),
                     bufferedBarColor: Colors.white.withOpacity(0.20),
@@ -311,14 +337,17 @@ class _MusicPageState extends State<MusicPage> {
                   );
                 },
               )),
-          SizedBox(height: 20), // Espaçamento entre a barra de progresso e os botões de controle
+          SizedBox(
+              height:
+                  20), // Espaçamento entre a barra de progresso e os botões de controle
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 30.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 IconButton(
-                  icon: Icon(CupertinoIcons.backward_end_fill, color: Colors.white, size: 30),
+                  icon: Icon(CupertinoIcons.backward_end_fill,
+                      color: Colors.white, size: 30),
                   onPressed: () {
                     if (universal.currentListMusic.isNotEmpty) {
                       Navigator.pop(context);
@@ -327,9 +356,16 @@ class _MusicPageState extends State<MusicPage> {
                           isScrollControlled: true,
                           useSafeArea: true,
                           context: context,
-                          builder: (context) => MusicPage(music: widget.isRandom? universal.currentListMusicShuffle[(indexListMusic - 1) % universal.currentListMusicShuffle.length] : universal.currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
-                          isRandom: widget.isRandom)
-                        );
+                          builder: (context) => MusicPage(
+                              music: widget.isRandom
+                                  ? universal.currentListMusicShuffle[
+                                      (indexListMusic - 1) %
+                                          universal
+                                              .currentListMusicShuffle.length]
+                                  : universal.currentListMusic[
+                                      (indexListMusic - 1) %
+                                          universal.currentListMusic.length],
+                              isRandom: widget.isRandom));
                     }
                   },
                 ),
@@ -354,26 +390,38 @@ class _MusicPageState extends State<MusicPage> {
                       color: primaryColor,
                       shape: BoxShape.circle,
                     ),
-                    child:
-                        Icon(isPlaying ? Icons.pause_rounded : Icons.play_arrow_rounded, color: Colors.white, size: 48),
+                    child: Icon(
+                        isPlaying
+                            ? Icons.pause_rounded
+                            : Icons.play_arrow_rounded,
+                        color: Colors.white,
+                        size: 48),
                   ),
                 ),
 
                 SizedBox(width: 20), // Espaçamento entre os botões de controle
 
                 IconButton(
-                  icon: Icon(CupertinoIcons.forward_end_fill, color: Colors.white, size: 30),
+                  icon: Icon(CupertinoIcons.forward_end_fill,
+                      color: Colors.white, size: 30),
                   onPressed: () {
                     if (universal.currentListMusic.isNotEmpty) {
                       Navigator.pop(context);
-                        showModalBottomSheet(
+                      showModalBottomSheet(
                           useRootNavigator: false,
                           isScrollControlled: true,
                           useSafeArea: true,
                           context: context,
-                          builder: (context) => MusicPage(music: widget.isRandom? universal.currentListMusicShuffle[(indexListMusic + 1) % universal.currentListMusicShuffle.length] : universal.currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
-                          isRandom: widget.isRandom)
-                        );
+                          builder: (context) => MusicPage(
+                              music: widget.isRandom
+                                  ? universal.currentListMusicShuffle[
+                                      (indexListMusic + 1) %
+                                          universal
+                                              .currentListMusicShuffle.length]
+                                  : universal.currentListMusic[
+                                      (indexListMusic - 1) %
+                                          universal.currentListMusic.length],
+                              isRandom: widget.isRandom));
                     }
                   },
                 ),

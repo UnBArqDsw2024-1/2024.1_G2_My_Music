@@ -9,6 +9,7 @@ import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/universal.dart' as universal;
 import 'package:my_music_code/Album/save_album.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:spotify/spotify.dart';
 
 class AlbumModel {
@@ -42,7 +43,6 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
   late List<TrackSimple> albumShuffle;
   bool isFavorite = false;
 
-
   // Carrega o status de favorito quando a página é aberta
   void _loadFavoriteStatus() async {
     isFavorite = await isFavoriteAlbum(widget.album.id);
@@ -51,7 +51,6 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
 
   populaAlbum() {
     setState(() {
-
       universal.currentListMusic = List.empty(growable: true);
       for (var music in widget.album.songs!) {
         universal.currentListMusic.add(Music(
@@ -151,7 +150,8 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
             child: ResponsiveContainer(
               height: 60,
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(8)),
+                padding:
+                    EdgeInsets.symmetric(horizontal: responsiveFigmaWidth(8)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -171,82 +171,99 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                         ),
                       ],
                     ),
-                      Row(
-                        children: [
-                          IconButton(
-                            onPressed: () {
-                              setState(() {
-                                isRandom = !isRandom;
-                              });
-                            },
-                            highlightColor: Colors.transparent,
-                            icon: Icon(isRandom? Icons.shuffle_on_outlined : Icons.shuffle, color: Colors.white54),
-                          ),
-                          ResponsiveContainer(width: 12),
-                          IconButton(
-                            onPressed: () {
-                              Music currentMusic = Music(
-                                  name: widget.album.songs!.first.name,
-                                  id: widget.album.songs!.first.id,
-                                  artist: widget.album.songs!.first.artists!.first.name,
-                                  imageUrl: widget.album.image,
-                                  link: widget.album.songs!.first.externalUrls!.spotify,
-                                  duration: widget.album.songs!.first.durationMs,
-                              );
+                    Row(
+                      children: [
+                        IconButton(
+                          onPressed: () {
+                            setState(() {
+                              isRandom = !isRandom;
+                            });
+                          },
+                          highlightColor: Colors.transparent,
+                          icon: Icon(
+                              isRandom
+                                  ? Icons.shuffle_on_outlined
+                                  : Icons.shuffle,
+                              color: Colors.white54),
+                        ),
+                        ResponsiveContainer(width: 12),
+                        IconButton(
+                          onPressed: () {
+                            Music currentMusic = Music(
+                              name: widget.album.songs!.first.name,
+                              id: widget.album.songs!.first.id,
+                              artist:
+                                  widget.album.songs!.first.artists!.first.name,
+                              imageUrl: widget.album.image,
+                              link: widget
+                                  .album.songs!.first.externalUrls!.spotify,
+                              duration: widget.album.songs!.first.durationMs,
+                            );
 
-                              if (isRandom) {
-                                currentMusic = Music(
-                                  name: albumShuffle.first.name,
-                                  id: albumShuffle.first.id,
-                                  artist: albumShuffle.first.artists!.first.name,
-                                  imageUrl: widget.album.image,
-                                  link: albumShuffle.first.externalUrls!.spotify,
-                                  duration: albumShuffle.first.durationMs,
-                                );
-                              }
-                              
-                              showModalBottomSheet(
+                            if (isRandom) {
+                              currentMusic = Music(
+                                name: albumShuffle.first.name,
+                                id: albumShuffle.first.id,
+                                artist: albumShuffle.first.artists!.first.name,
+                                imageUrl: widget.album.image,
+                                link: albumShuffle.first.externalUrls!.spotify,
+                                duration: albumShuffle.first.durationMs,
+                              );
+                            }
+
+                            showModalBottomSheet(
                                 useRootNavigator: false,
                                 isScrollControlled: true,
                                 useSafeArea: true,
                                 context: context,
-                                builder: (context) => MusicPage(music: currentMusic, isRandom: isRandom));
-                            },
-                            padding: EdgeInsets.zero,
-                            icon: ResponsiveContainer(
-                                height: 45,
-                                width: 45,
-                                isCubic: true,
-                                color: secondaryColor,
-                                borderRadius: BorderRadius.circular(100),
-                                child: Icon(Icons.play_arrow_rounded, color: Colors.white, size: 38)),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                                builder: (context) => MusicPage(
+                                    music: currentMusic, isRandom: isRandom));
+                          },
+                          padding: EdgeInsets.zero,
+                          icon: ResponsiveContainer(
+                              height: 45,
+                              width: 45,
+                              isCubic: true,
+                              color: secondaryColor,
+                              borderRadius: BorderRadius.circular(100),
+                              child: Icon(Icons.play_arrow_rounded,
+                                  color: Colors.white, size: 38)),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
-                  return ListTile(
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return ListTile(
                     onTap: () {
                       Music indexMusic = Music(
                         name: widget.album.songs!.elementAt(index).name,
                         id: widget.album.songs!.elementAt(index).id,
-                        artist: widget.album.songs!.elementAt(index).artists!.first.name,
+                        artist: widget.album.songs!
+                            .elementAt(index)
+                            .artists!
+                            .first
+                            .name,
                         imageUrl: widget.album.image,
-                        link: widget.album.songs!.elementAt(index).externalUrls!.spotify,
-                        duration: widget.album.songs!.elementAt(index).durationMs,
+                        link: widget.album.songs!
+                            .elementAt(index)
+                            .externalUrls!
+                            .spotify,
+                        duration:
+                            widget.album.songs!.elementAt(index).durationMs,
                       );
                       showModalBottomSheet(
                           useRootNavigator: false,
                           isScrollControlled: true,
                           useSafeArea: true,
                           context: context,
-                          builder: (context) => MusicPage(music: indexMusic, isRandom: isRandom));
+                          builder: (context) =>
+                              MusicPage(music: indexMusic, isRandom: isRandom));
                     },
                     title: ResponsiveText(
                       text: widget.album.songs!.elementAt(index).name,
@@ -255,7 +272,11 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                       fontWeight: FontWeight.w400,
                     ),
                     subtitle: ResponsiveText(
-                      text: widget.album.songs!.elementAt(index).artists!.first.name,
+                      text: widget.album.songs!
+                          .elementAt(index)
+                          .artists!
+                          .first
+                          .name,
                       fontSize: 12,
                       fontColor: Colors.white54,
                       fontWeight: FontWeight.w400,
@@ -266,8 +287,10 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                       itemBuilder: (BuildContext context) => [
                         PopupMenuItem(
                           child: ListTile(
-                            leading: Icon(Icons.bookmark_border_rounded,color: Colors.white),
-                            title: Text('Adicionar à playlist',style: TextStyle(color: Colors.white)),
+                            leading: Icon(Icons.bookmark_border_rounded,
+                                color: Colors.white),
+                            title: Text('Adicionar à playlist',
+                                style: TextStyle(color: Colors.white)),
                             onTap: () {
                               Navigator.pop(context);
                             },
@@ -275,36 +298,41 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                         ),
                         PopupMenuItem(
                           child: ListTile(
-                            leading: Icon(Icons.favorite_outline_rounded, color: Colors.white),
-                            title: Text('Favoritar música',style: TextStyle(color: Colors.white)),
+                            leading: Icon(Icons.favorite_outline_rounded,
+                                color: Colors.white),
+                            title: Text('Favoritar música',
+                                style: TextStyle(color: Colors.white)),
                             onTap: () {
                               Navigator.pop(context);
                             },
                           ),
                         ),
-                        
                         PopupMenuItem(
                           child: ListTile(
-                            leading: Icon(Icons.share_outlined,color: Colors.white),
-                            title: Text('Compartilhar música',style: TextStyle(color: Colors.white)),
-                            onTap: () {
-                              Navigator.pop(context);
+                            leading:
+                                Icon(Icons.share_outlined, color: Colors.white),
+                            title: Text('Compartilhar música',
+                                style: TextStyle(color: Colors.white)),
+                            onTap: () async {
+                              final result = await Share.share(
+                                  "Ouça essa música:\nhttps://www.youtube.com/watch?v=_7gjq9MFD0I \nVocê vai amar!");
                             },
                           ),
                         ),
                       ],
-                    ) 
+                    )
                     // IconButton(
                     //   onPressed: () {
 
                     //   },
                     //   icon: Icon(Icons.more_vert, color: Colors.white54),
                     // ),
-                  );
-                },
-                childCount: widget.album.songs!.length, // Número de músicas dentro da playlist
-              ),
+                    );
+              },
+              childCount: widget
+                  .album.songs!.length, // Número de músicas dentro da playlist
             ),
+          ),
         ],
       ),
     );
