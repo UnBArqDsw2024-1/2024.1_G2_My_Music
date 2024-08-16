@@ -5,9 +5,10 @@ import 'package:my_music_code/Models/playlist_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/MyPlaylists/new_playlist_page.dart';
-import 'package:my_music_code/MyPlaylists/playlist_page.dart';
-import 'package:my_music_code/Album/album_page.dart';
 import 'package:my_music_code/universal.dart' as universal;
+import 'package:my_music_code/MyPlaylists/playlist_widgets.dart';
+import 'package:my_music_code/Album/album_widgets.dart';
+
 
 class UserPageOfPlaylists extends StatefulWidget {
   const UserPageOfPlaylists({super.key});
@@ -39,13 +40,8 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
     _searchController.addListener(_filterList);
   }
 
-  // @override
-  // void dispose() {
-  //   _searchController.dispose();
-  //   super.dispose();
-  // }
+  int playlistNumber = 30;
 
-  int playlistNumber = 30; // Número de playlists para teste
   void _initializePlaylists() {
     playlists = List.generate(
       playlistNumber,
@@ -54,7 +50,7 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
         creator: 'Milenuda ${index + 1}',
       ),
     );
-    _generatePlaylistWidgets();
+    playlistWidgets = PlaylistWidgets.generatePlaylistWidgets(context, playlists);
   }
 
   void _initializeAlbums() async {
@@ -63,18 +59,17 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
 
     albums = await Future.wait(favoriteAlbumIds.map((id) async {
       try {
-        // Obtém o álbum usando o ID
         final album = await universal.spotifyApi.albums.get(id);
         var pagesTracks = await universal.spotifyApi.albums.tracks(album.id!).first().asStream().first;
 
         return AlbumModel(
-            id: album.id.toString(),
-            name: album.name!,
-            artist: album.artists!.map((artist) => artist.name).join(', '),
-            image: album.images!.first.url!,
-            songs: pagesTracks.items);
+          id: album.id.toString(),
+          name: album.name!,
+          artist: album.artists!.map((artist) => artist.name).join(', '),
+          image: album.images!.first.url!,
+          songs: pagesTracks.items,
+        );
       } catch (e) {
-        // retorna modelo em branco
         return AlbumModel(
           id: id,
           name: 'Unknown Album',
@@ -84,73 +79,11 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
       }
     }));
 
-    _generateAlbumWidgets();
+    albumWidgets = AlbumWidgets.generateAlbumWidgets(context, albums);
+
+    setState(() {});
   }
 
-  void _generatePlaylistWidgets() {
-    playlistWidgets = playlists.map((playlist) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 0),
-        child: InkWell(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => MyPlaylistPage()),
-            );
-          },
-          splashColor: primaryColor.withOpacity(0.3),
-          highlightColor: primaryColor.withOpacity(0.1),
-          borderRadius: BorderRadius.circular(10),
-          child: Container(
-            height: 120,
-            padding: EdgeInsets.all(7.5),
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 15, left: 7.5),
-                  child: Container(
-                    height: 105,
-                    width: 105,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Colors.black,
-                      image: DecorationImage(
-                        image: NetworkImage(DefaultPlaceholder.image),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      playlist.name,
-                      style: TextStyle(
-                        color: primaryFontColor,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 24,
-                      ),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    Text(
-                      playlist.creator,
-                      style: TextStyle(
-                        color: secondaryFontColor,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16,
-                      ),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
-      );
-    }).toList();
-  }
 
   void _generateAlbumWidgets() {
     albumWidgets = albums.map((album) {
@@ -210,6 +143,7 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
         ),
       );
     }).toList();
+
 
     setState(() {
       // Re-renderizar a tela para mostrar os álbuns após a lista ser atualizada
@@ -327,16 +261,12 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
               ),
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    10,
-                  ),
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: TabBar(
                   labelColor: Colors.white,
                   indicator: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      10,
-                    ),
+                    borderRadius: BorderRadius.circular(10),
                     color: primaryColor,
                   ),
                   tabs: List.generate(
@@ -371,28 +301,20 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
                       filled: true,
                       fillColor: Color(0xff373737),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(30),
                         borderSide: BorderSide.none,
                       ),
-                      contentPadding: EdgeInsets.symmetric(vertical: 18),
+                      contentPadding: EdgeInsets.symmetric(vertical: 10.0),
                     ),
                   ),
                 ),
                 Expanded(
                   child: TabBarView(
                     children: [
-                      ListView(
-                        children: playlistWidgets,
-                      ),
-                      ListView(
-                        children: playlistWidgets,
-                      ),
-                      ListView(
-                        children: albumWidgets,
-                      ),
-                      ListView(
-                        children: playlistWidgets,
-                      ),
+                      Container(), 
+                      Container(), 
+                      ListView(children: albumWidgets), 
+                      ListView(children: playlistWidgets), 
                     ],
                   ),
                 ),
@@ -402,18 +324,18 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
               BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
                 child: Container(
-                  color: Colors.black.withOpacity(0.2),
+                  color: Colors.black.withOpacity(0),
                 ),
               ),
           ],
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            _showBlurDialog(context);
-          },
-          backgroundColor: secondaryColor,
-          child: Icon(Icons.add, size: 30),
+          backgroundColor: primaryColor,
+          onPressed: () => _showBlurDialog(context),
+          child: Icon(Icons.add),
+          
         ),
+        floatingActionButtonLocation: universal.currentMusic.name != null? FloatingActionButtonLocation.endTop : FloatingActionButtonLocation.endFloat,
       ),
     );
   }
