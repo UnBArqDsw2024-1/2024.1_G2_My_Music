@@ -27,7 +27,7 @@ PreferredSizeWidget feedProfileAppBar() {
         );
       }),
       title: ResponsiveText(
-        text: "Hi, ${universal.user.displayName ?? universal.userModel.username}, let's play some music.",
+        text: "Olá, ${universal.user.displayName ?? universal.userModel.username}, vamos ouvir uma música?.",
         fontSize: 16,
       )
     ); 
