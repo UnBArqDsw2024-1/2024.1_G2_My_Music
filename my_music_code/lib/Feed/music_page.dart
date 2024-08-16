@@ -167,12 +167,7 @@ class _MusicPageState extends State<MusicPage> {
                   onTap: (){
                     showDialog(
                       context: context,
-                      builder: (context) => AlertDialog(
-                        content: QrcodeGenerator(
-                          url: widget.music.link!,
-                          nameMusic: widget.music.name!
-                        )
-                      )
+                      builder: (context) => QrcodeGenerator(music: widget.music)
                     );
                   },
                   leading: Icon(CupertinoIcons.waveform, color: Colors.white),
