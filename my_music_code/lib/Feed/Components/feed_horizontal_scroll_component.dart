@@ -5,16 +5,7 @@ import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/style.dart';
-
-// class AlbumBase {
-//   final String name;
-//   final String id;
-//   final String artist;
-//   final String imageUrl;
-//   final List<Music> listMusic;
-
-//   AlbumBase({required this.name, required this.id, required this.artist, required this.imageUrl, required this.listMusic});
-// }
+import 'package:my_music_code/Models/album_model.dart';
 
 class FeedHorizontalScrollComponent extends StatefulWidget {
   const FeedHorizontalScrollComponent({super.key, required this.title, required this.albuns});

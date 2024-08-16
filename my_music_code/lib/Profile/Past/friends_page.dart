@@ -16,63 +16,65 @@ class _FriendsPageState extends State<FriendsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: backgroundColor,
-      appBar: AppBar(
+    return SafeArea(
+      child: Scaffold(
         backgroundColor: backgroundColor,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+        appBar: AppBar(
+          backgroundColor: backgroundColor,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios_new, color: Colors.white),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          title: Text(
+            'Seus Amigos',
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          centerTitle: true,
         ),
-        title: Text(
-          'Seus Amigos',
-          style: TextStyle(color: Colors.white, fontSize: 20),
-        ),
-        centerTitle: true,
-      ),
-      body: SizedBox(
-          width: double.infinity,
-          child: Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15),
-                child: CustomTextField(
-                  fillColor: secondaryColor,
-                  leadingIconColor: Colors.white,
-                  cursorColor: Colors.white,
-                  prefixIcon: Icons.search,
-                  hintText: "Pesquisar amigo",
-                  hintTextColor: Colors.white24,
-                  selectedBorderColor: Colors.transparent,
-                  inputTextColor: Colors.white,
-                  onChanged: (value) => setState(() => query = value),
-                ),
-              ),
-              QueryResultWidget(
-                query: query,
-                friendsList: List.generate(30, (index) => "Amigo $index"),
-              ),
-              GestureDetector(
-                onTap: () {
-                },
-                child: Container(
-                  height: 60,
-                  decoration: BoxDecoration(
-                      color: Color(0xff252525), borderRadius: BorderRadius.vertical(top: Radius.circular(5))),
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Adicione um amigo",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: primaryFontColor, fontWeight: FontWeight.w600, fontSize: 16)
+        body: SizedBox(
+            width: double.infinity,
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  child: CustomTextField(
+                    fillColor: secondaryColor,
+                    leadingIconColor: Colors.white,
+                    cursorColor: Colors.white,
+                    prefixIcon: Icons.search,
+                    hintText: "Pesquisar amigo",
+                    hintTextColor: Colors.white24,
+                    selectedBorderColor: Colors.transparent,
+                    inputTextColor: Colors.white,
+                    onChanged: (value) => setState(() => query = value),
                   ),
                 ),
-              ),
-            ],
+                QueryResultWidget(
+                  query: query,
+                  friendsList: List.generate(30, (index) => "Amigo $index"),
+                ),
+                GestureDetector(
+                  onTap: () {
+                  },
+                  child: Container(
+                    height: 60,
+                    decoration: BoxDecoration(
+                        color: Color(0xff252525), borderRadius: BorderRadius.vertical(top: Radius.circular(5))),
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Adicione um amigo",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: primaryFontColor, fontWeight: FontWeight.w600, fontSize: 16)
+                    ),
+                  ),
+                ),
+              ],
+            )
           )
-        )
-      );
+        ),
+    );
   }
 }
 

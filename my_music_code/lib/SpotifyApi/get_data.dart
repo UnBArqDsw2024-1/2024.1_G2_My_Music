@@ -1,7 +1,6 @@
 import 'dart:async';
-
-import 'package:my_music_code/Album/album_page.dart';
-import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
+import 'package:my_music_code/Models/album_model.dart';
+import 'package:my_music_code/Models/music_model.dart';
 import 'package:spotify/spotify.dart';
 import 'package:my_music_code/universal.dart' as universal;
 

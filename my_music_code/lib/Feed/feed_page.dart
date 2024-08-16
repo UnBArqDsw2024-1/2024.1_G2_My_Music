@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:my_music_code/Album/album_page.dart';
 import 'package:my_music_code/Feed/Components/feed_horizontal_scroll_component.dart';
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Feed/Components/feed_profile_app_bar.dart';
 import 'package:my_music_code/Feed/Components/new_music_release.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:my_music_code/Models/album_model.dart';
+import 'package:my_music_code/Models/music_model.dart';
 import 'package:my_music_code/Profile/profile_drawer.dart';
 import 'package:my_music_code/universal.dart' as universal;
 
@@ -26,7 +27,8 @@ class _FeedPageState extends State<FeedPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SafeArea(
+      child: Scaffold(
         backgroundColor: backgroundColor,
         appBar: feedProfileAppBar(),
         drawer: ProfileDrawer(),
@@ -41,13 +43,15 @@ class _FeedPageState extends State<FeedPage> {
                 title: "Álbuns recentes",
                 albuns: widget.albumReleases,
               ),
-              FeedHorizontalScrollComponent(
-                title: "Tocadas recentemente",
-                albuns: widget.albumReleases,
-              ),
+              // FeedHorizontalScrollComponent(
+              //   title: "Tocadas recentemente",
+              //   albuns: widget.albumReleases,
+              // ),
               if (universal.currentMusic.name != null) Container(height: 180),
             ],
           ),
-        ));
+        )
+      ),
+    );
   }
 }

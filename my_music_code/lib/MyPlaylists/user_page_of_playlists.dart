@@ -1,5 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Models/album_model.dart';
+import 'package:my_music_code/Models/playlist_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/MyPlaylists/new_playlist_page.dart';

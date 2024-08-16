@@ -2,10 +2,10 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:my_music_code/Album/album_page.dart';
-import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Feed/feed_page.dart';
 import 'package:my_music_code/Globals/mini_player.dart';
+import 'package:my_music_code/Models/album_model.dart';
+import 'package:my_music_code/Models/music_model.dart';
 import 'package:my_music_code/MyPlaylists/user_page_of_playlists.dart';
 import 'package:my_music_code/Search/search_page.dart';
 import 'package:my_music_code/Globals/style.dart';
@@ -31,8 +31,9 @@ class _NavigatorPageState extends State<NavigatorPage> {
       universal.user = widget.user;
       universal.spotifyApi = widget.spotifyApi;
     });
-    print(universal.userModel.username);
     if (universal.userModel.username.isNotEmpty) {
+      // ignore: avoid_print
+      print(universal.userModel.username);
       widget.user.updateProfile(displayName: universal.userModel.username);
     }
   }

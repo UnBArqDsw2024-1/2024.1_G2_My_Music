@@ -46,16 +46,6 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
             onTap: () => Navigator.push(context,
                 MaterialPageRoute(builder: (context) => ConfigurationPage())),
           ),
-          // ListTile(
-          //   leading: Icon(Icons.people, color: Colors.white),
-          //   title: ResponsiveText(text: "Amizades"),
-          //   onTap: () {
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(builder: (context) => FriendsPage()),
-          //     );
-          //   },
-          // ),
           ListTile(
             leading: Icon(Icons.description, color: Colors.white),
             title: ResponsiveText(text: "Sobre"),
