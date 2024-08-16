@@ -30,7 +30,10 @@ class _LoginPageState extends State<LoginPage> {
               ResponsiveContainer(
                 height: 180,
                 width: double.infinity,
-                child: Icon(MdiIcons.music, color: Colors.white, size: 100),
+                child: Image(
+                    image: AssetImage('assets/LogoMyMusic.png'), // Se precisar alterar a cor da imagem
+                    width: 100, // Ou size dependendo de como deseja ajustar
+                    height: 100,),
               ),
               Container(
                 constraints: BoxConstraints(

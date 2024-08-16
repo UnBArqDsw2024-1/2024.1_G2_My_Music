@@ -28,6 +28,10 @@ class _QrcodeGeneratorState extends State<QrcodeGenerator> {
         child: QrImageView(
           data: widget.url,
           version: QrVersions.auto,
+          embeddedImage: const AssetImage('assets/LogoMyMusic.png'),
+          embeddedImageStyle: QrEmbeddedImageStyle(
+            size: const Size(85,85)
+          ),
           size: 200.0,
         ),
       ),
