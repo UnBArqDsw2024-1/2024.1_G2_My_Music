@@ -47,6 +47,8 @@ Os membros que ficaram responsáveis pela documentação da Visão de Lógica fo
 
 ### Visão de Implementação
 
+Para a dupla, trabalhar na Visão de Implementação do DAS foi uma experiência enriquecedora, pois proporcionou uma compreensão ainda mais profunda do código, tanto em termos de implementação quanto de estrutura. Não foi um artefato que demandou muito esforço imediato, pois foi elaborado com base em um semestre inteiro de estudo e envolvimento com o projeto, o que facilitou sua redação. Essa base sólida permitiu uma documentação mais precisa e detalhada, refletindo o conhecimento acumulado ao longo do desenvolvimento.
+
 ### Visão de Implantação
 
 Os membros que ficaram responsáveis pela documentação da Visão de Implementação foram a Milena e o Vinícius. Realizaram a tarefa em conjunto, na qual ambos deram seus pontos de vistas durante o processe de documentação e realização do diagrama de implantação. Além deste momento, houve posteriormente a ajuda do membros Lucas para o desenvolvimento de uma segunda versão do diagrama, o que contribuiu na melhora do documento.
