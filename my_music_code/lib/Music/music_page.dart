@@ -184,8 +184,7 @@ class _MusicPageState extends State<MusicPage> {
         return e.name!;
       }).toList();
 
-      if (listNames.indexOf(widget.music.name!) == -1)
-      {
+      if (listNames.contains(widget.music.name!)){
         universal.releaseListMusics.add(widget.music);
       }
 
