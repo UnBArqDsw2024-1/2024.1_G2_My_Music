@@ -6,9 +6,10 @@ import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/universal.dart' as universal;
 
 PreferredSizeWidget feedProfileAppBar() {
+
   return AppBar(
     backgroundColor: backgroundColor,
-    leading: Builder(builder: (context) {
+    leading: Builder(builder: (context){
       return IconButton(
         icon: ResponsiveContainer(
           height: 30,
@@ -27,7 +28,7 @@ PreferredSizeWidget feedProfileAppBar() {
       );
     }),
     title: ResponsiveText(
-      text: "Olá, ${universal.user.displayName ?? universal.userModel.username}, vamos ouvir uma música?.",
+      text: "Olá, ${universal.user.displayName ?? universal.userModel.username}, vamos ouvir uma música?",
       fontSize: 16,
     )
   ); 

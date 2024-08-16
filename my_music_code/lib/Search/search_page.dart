@@ -118,7 +118,7 @@ class _SearchPageState extends State<SearchPage> {
         drawer: ProfileDrawer(),
         backgroundColor: backgroundColor,
         body: SingleChildScrollView(
-            child: Column(
+          child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Botão de pesquisa

@@ -42,10 +42,10 @@ class _FeedPageState extends State<FeedPage> {
               title: "Álbuns recentes",
               albuns: widget.albumReleases,
             ),
-            FeedHorizontalScrollComponent(
-              title: "Tocadas recentemente",
-              albuns: widget.albumReleases,
-            ),
+            // FeedHorizontalScrollComponent(
+            //   title: "Tocadas recentemente",
+            //   albuns: widget.albumReleases,
+            // ),
             if (universal.currentMusic.name != null) Container(height: 180),
           ],
         ),
