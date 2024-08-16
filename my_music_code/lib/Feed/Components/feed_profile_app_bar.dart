@@ -1,14 +1,15 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:my_music_code/universal.dart' as universal;
 
-PreferredSizeWidget feedProfileAppBar({required User user}) {
+PreferredSizeWidget feedProfileAppBar() {
+
   return AppBar(
     backgroundColor: backgroundColor,
-    leading: Builder(builder: (context) {
+    leading: Builder(builder: (context){
       return IconButton(
         icon: ResponsiveContainer(
           height: 30,
@@ -18,7 +19,7 @@ PreferredSizeWidget feedProfileAppBar({required User user}) {
           color: backgroundColor,
           image: DecorationImage(
             image: CachedNetworkImageProvider(
-              user.photoURL ?? DefaultPlaceholder.image,
+              universal.user.photoURL ?? DefaultPlaceholder.image,
             ),
             fit: BoxFit.cover,
           ),
@@ -26,6 +27,9 @@ PreferredSizeWidget feedProfileAppBar({required User user}) {
         onPressed: () => Scaffold.of(context).openDrawer(),
       );
     }),
-    title: ResponsiveText(text: "Hi, ${user.displayName}, let's play some music.", fontSize: 16),
-  );
+    title: ResponsiveText(
+      text: "Olá, ${universal.user.displayName ?? universal.userModel.username}, vamos ouvir uma música?",
+      fontSize: 16,
+    )
+  ); 
 }
