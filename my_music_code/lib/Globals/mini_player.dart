@@ -1,6 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:my_music_code/Feed/music_page.dart';
+import 'package:my_music_code/Music/music_page.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/universal.dart' as universal;
 import 'package:my_music_code/Globals/style.dart';

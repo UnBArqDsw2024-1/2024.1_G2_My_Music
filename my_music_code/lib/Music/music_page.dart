@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
-import 'package:youtube_explode_dart/youtube_explode_dart.dart';
-
+import 'package:my_music_code/Music/back/setup_music.dart';
 import 'package:my_music_code/universal.dart' as universal;
 
 class MusicPage extends StatefulWidget {
@@ -36,16 +35,6 @@ class _MusicPageState extends State<MusicPage> {
         setupMusic();
       }
     });
-  }
-
-  setupMusic() async {
-    final yt = YoutubeExplode();
-    final result = (await yt.search("${universal.currentMusic.name!} ${widget.music.artist!}")).first;
-    final videoId = result.id.value;
-
-    final manifest = await yt.videos.streamsClient.getManifest(videoId);
-    final audioUrl = manifest.audioOnly.first;
-    universal.audioPlayer.play(UrlSource(audioUrl.url.toString()));
   }
 
   @override

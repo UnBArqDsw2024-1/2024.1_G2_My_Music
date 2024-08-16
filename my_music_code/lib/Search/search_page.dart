@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
-import 'package:my_music_code/Feed/music_page.dart';
+import 'package:my_music_code/Music/music_page.dart';
 import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Profile/profile_drawer.dart';
 import 'package:my_music_code/Search/Components/filter_item.dart';
