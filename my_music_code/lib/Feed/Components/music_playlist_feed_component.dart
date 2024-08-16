@@ -4,7 +4,7 @@ import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/Models/music_model.dart';
-import 'package:my_music_code/Music/music_page.dart';
+import 'package:my_music_code/Music/Components/modal_music.dart';
 import 'package:my_music_code/universal.dart' as universal;
 
 class MusicPlaylistFeedComponent extends StatefulWidget {
@@ -26,12 +26,7 @@ class _MusicPlaylistFeedComponentState extends State<MusicPlaylistFeedComponent>
         setState(() {
           universal.currentListMusic = List.empty();
         });
-        showModalBottomSheet(
-            useRootNavigator: false,
-            isScrollControlled: true,
-            useSafeArea: true,
-            context: context,
-            builder: (context) => MusicPage(music: widget.music,));
+        showModalMusic(context, music: widget.music);
       },
       child: ResponsiveContainer(
         height: 60,

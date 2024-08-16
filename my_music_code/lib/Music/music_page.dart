@@ -7,6 +7,7 @@ import 'package:my_music_code/Globals/style.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 import 'package:my_music_code/Models/album_model.dart';
 import 'package:my_music_code/Models/music_model.dart';
+import 'package:my_music_code/Music/Components/modal_music.dart';
 import 'package:my_music_code/Music/Components/music_options_modal.dart';
 import 'package:my_music_code/Music/back/setup_music.dart';
 import 'package:my_music_code/universal.dart' as universal;
@@ -28,7 +29,7 @@ class MusicPage extends StatefulWidget {
 class _MusicPageState extends State<MusicPage> {
   bool isPlaying = false;
   bool isFavorite = false;
-
+  List<Music> populatedListMusic = [];
   setCurrentMusic() {
     setState(() {
       if (universal.currentMusic.imageUrl != widget.music.imageUrl || // Album Swap
@@ -40,6 +41,11 @@ class _MusicPageState extends State<MusicPage> {
       if (widget.album != null) {
         universal.currentAlbum = widget.album!;
       }
+      populatedListMusic = universal.currentListMusic.isEmpty? 
+        universal.releaseListMusics : 
+        widget.isRandom? 
+        universal.currentListMusicShuffle : 
+        universal.currentListMusic;
     });
   }
 
@@ -51,7 +57,6 @@ class _MusicPageState extends State<MusicPage> {
   }
 
   void onFav() => setState(() => isFavorite = !isFavorite);
-
 
   @override
   Widget build(BuildContext context) {
@@ -116,8 +121,7 @@ class _MusicPageState extends State<MusicPage> {
                   );
                 },
               ),
-            ]
-          ),
+            ]),
         body: Column(
           children: <Widget>[
             SizedBox(height: 20), // Espaçamento entre a Row e a imagem
@@ -205,32 +209,12 @@ class _MusicPageState extends State<MusicPage> {
                     icon: Icon(CupertinoIcons.backward_end_fill, color: Colors.white, size: 30),
                     onPressed: () {
                       print(indexListMusic);
-                      if (universal.currentListMusic.isNotEmpty) {
-                        Navigator.pop(context);
-                        showModalBottomSheet(
-                            useRootNavigator: false,
-                            isScrollControlled: true,
-                            useSafeArea: true,
-                            context: context,
-                            builder: (context) => MusicPage(
-                                music: widget.isRandom
-                                    ? universal.currentListMusicShuffle[
-                                        (indexListMusic - 1) % universal.currentListMusicShuffle.length]
-                                    : universal
-                                        .currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
-                                isRandom: widget.isRandom));
-                      } else {
-                        Navigator.pop(context);
-                        showModalBottomSheet(
-                            useRootNavigator: false,
-                            isScrollControlled: true,
-                            useSafeArea: true,
-                            context: context,
-                            builder: (context) => MusicPage(
-                                music: universal
-                                    .releaseListMusics[(indexListMusic - 1) % universal.releaseListMusics.length],
-                                isRandom: widget.isRandom));
-                      }
+                      Navigator.pop(context);
+                      showModalMusic(
+                        context,
+                        music: populatedListMusic[(indexListMusic - 1) % populatedListMusic.length],
+                        isRandom: widget.isRandom
+                      );
                     },
                   ),
 
@@ -265,33 +249,12 @@ class _MusicPageState extends State<MusicPage> {
                     icon: Icon(CupertinoIcons.forward_end_fill, color: Colors.white, size: 30),
                     onPressed: () {
                       print("Tamanho: ${universal.releaseListMusics.length}\n");
-                      if (universal.currentListMusic.isNotEmpty) {
-                        Navigator.pop(context);
-                        showModalBottomSheet(
-                            useRootNavigator: false,
-                            isScrollControlled: true,
-                            useSafeArea: true,
-                            context: context,
-                            builder: (context) => MusicPage(
-                                music: widget.isRandom
-                                    ? universal.currentListMusicShuffle[
-                                        (indexListMusic + 1) % universal.currentListMusicShuffle.length]
-                                    : universal
-                                        .currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
-                                isRandom: widget.isRandom));
-                      } else {
-                        Navigator.pop(context);
-                        showModalBottomSheet(
-                          useRootNavigator: false,
-                          isScrollControlled: true,
-                          useSafeArea: true,
-                          context: context,
-                          builder: (context) => MusicPage(
-                              music: universal
-                                  .releaseListMusics[(indexListMusic + 1) % universal.releaseListMusics.length],
-                              isRandom: widget.isRandom),
-                        );
-                      }
+                      Navigator.pop(context);
+                      showModalMusic(
+                        context,
+                        music: populatedListMusic[(indexListMusic - 1) % populatedListMusic.length],
+                        isRandom: widget.isRandom
+                      );
                     },
                   ),
                 ],

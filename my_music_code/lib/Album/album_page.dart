@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Models/album_model.dart';
 import 'package:my_music_code/Models/music_model.dart';
-import 'package:my_music_code/Music/music_page.dart';
+import 'package:my_music_code/Music/Components/modal_music.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
@@ -193,12 +193,7 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                               setState(() {
                                 universal.currentAlbum = widget.album;
                               });
-                              showModalBottomSheet(
-                                  useRootNavigator: false,
-                                  isScrollControlled: true,
-                                  useSafeArea: true,
-                                  context: context,
-                                  builder: (context) => MusicPage(music: currentMusic, isRandom: isRandom, album: widget.album));
+                              showModalMusic(context, music: currentMusic, isRandom: isRandom,album: widget.album);
                             },
                             padding: EdgeInsets.zero,
                             icon: ResponsiveContainer(
@@ -229,12 +224,7 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                           link: widget.album.songs!.elementAt(index).externalUrls!.spotify,
                           duration: widget.album.songs!.elementAt(index).durationMs,
                         );
-                        showModalBottomSheet(
-                            useRootNavigator: false,
-                            isScrollControlled: true,
-                            useSafeArea: true,
-                            context: context,
-                            builder: (context) => MusicPage(music: indexMusic, isRandom: isRandom, album: widget.album));
+                        showModalMusic(context, music: indexMusic, isRandom: isRandom, album: widget.album);
                       },
                       title: ResponsiveText(
                         text: widget.album.songs!.elementAt(index).name,

@@ -1,6 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:my_music_code/Music/music_page.dart';
+import 'package:my_music_code/Music/Components/modal_music.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/universal.dart' as universal;
 import 'package:my_music_code/Globals/style.dart';
@@ -19,28 +19,13 @@ class _MiniPlayerState extends State<MiniPlayer> {
       padding: const EdgeInsets.all(8.0),
       child: RawMaterialButton(
         onPressed: () {
-          showModalBottomSheet(
-            useRootNavigator: false,
-            isScrollControlled: true,
-            useSafeArea: true,
-            context: context,
-            builder: (context) => MusicPage(
-              music: universal.currentMusic,
-            )
-          );
+          showModalMusic(context, music: universal.currentMusic);
         },
         child: Container(
           decoration: BoxDecoration(
-            color: secondaryColor, 
-            borderRadius: BorderRadius.circular(5),
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.black12,
-                blurRadius: 2,
-                spreadRadius: 1
-              )
-            ]  
-          ),
+              color: secondaryColor,
+              borderRadius: BorderRadius.circular(5),
+              boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 2, spreadRadius: 1)]),
           height: 80,
           child: Row(
             children: [
@@ -67,7 +52,8 @@ class _MiniPlayerState extends State<MiniPlayer> {
                           children: [
                             ResponsiveText(
                               text: universal.currentMusic.name!,
-                              fontColor: primaryFontColor, fontSize: 16,
+                              fontColor: primaryFontColor,
+                              fontSize: 16,
                               maxLines: 2,
                               textAlign: TextAlign.justify,
                             ),
@@ -85,15 +71,18 @@ class _MiniPlayerState extends State<MiniPlayer> {
               Padding(
                 padding: const EdgeInsets.only(right: 5.0),
                 child: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      universal.audioPlayer.state == PlayerState.playing?
-                      universal.audioPlayer.pause() : universal.audioPlayer.resume();
-                    });
-                  },
-                  icon: Icon(
-                    universal.audioPlayer.state == PlayerState.paused? Icons.play_arrow_rounded : Icons.pause_rounded, color: Colors.white)
-                ),
+                    onPressed: () {
+                      setState(() {
+                        universal.audioPlayer.state == PlayerState.playing
+                            ? universal.audioPlayer.pause()
+                            : universal.audioPlayer.resume();
+                      });
+                    },
+                    icon: Icon(
+                        universal.audioPlayer.state == PlayerState.paused
+                            ? Icons.play_arrow_rounded
+                            : Icons.pause_rounded,
+                        color: Colors.white)),
               ),
             ],
           ),
