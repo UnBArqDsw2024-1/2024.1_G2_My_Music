@@ -5,6 +5,7 @@ class Music {
   final String? imageUrl;
   final String? link;
   final int? duration;
+  final bool isLiked = false;
 
   Music({this.name, this.id, this.artist, this.imageUrl, this.link, this.duration});
 }

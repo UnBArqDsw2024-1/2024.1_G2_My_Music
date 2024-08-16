@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Models/album_model.dart';
 import 'package:my_music_code/Models/music_model.dart';
@@ -12,8 +11,6 @@ import 'package:my_music_code/universal.dart' as universal;
 import 'package:my_music_code/Album/save_album.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:spotify/spotify.dart';
-
-
 
 class MyAlbumPage extends StatefulWidget {
   const MyAlbumPage({super.key, required this.album});
