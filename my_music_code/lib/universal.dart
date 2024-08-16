@@ -10,6 +10,7 @@ AudioPlayer audioPlayer = AudioPlayer();
 Music currentMusic = Music();
 late User user;
 late SpotifyApi spotifyApi;
+List<Music> releaseListMusics = List.empty(growable: true);
 List<Music> currentListMusic = List.empty(growable: true);
 List<Music> currentListMusicShuffle = List.empty(growable: true);
 SignLoginModel userModel = SignLoginModel();

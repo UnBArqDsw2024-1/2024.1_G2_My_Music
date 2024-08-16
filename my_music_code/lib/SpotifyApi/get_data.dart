@@ -31,9 +31,9 @@ Future<List<AlbumModel>> getAlbumReleasesFromSpotifyApi() async {
   return albumList;
 }
 
-Future<List<Music>> getRecentMusicsFromSpotifyApi() async {
+Future<List<Music>> getRecentMusicsFromSpotifyApi(String searchParam) async {
   List<Music> musicList = [];
-  var search = await universal.spotifyApi.search.get('musicas fair trade').first(30);
+  var search = await universal.spotifyApi.search.get(searchParam).first(30);
   for (var pages in search) {
     if (pages.items != null) {
       for (var music in pages.items!) {

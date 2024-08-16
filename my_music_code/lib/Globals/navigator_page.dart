@@ -50,7 +50,13 @@ class _NavigatorPageState extends State<NavigatorPage> {
   getDataFromApi() async {
     await getAlbumReleasesFromSpotifyApi().then((result) => setState(() => albumReleases = result));
 
-    await getRecentMusicsFromSpotifyApi().then((result) => setState(() => recentMusics = result));
+    await getRecentMusicsFromSpotifyApi('músicas Fair trade').then((result) => setState(() => recentMusics = result));
+
+    await getRecentMusicsFromSpotifyApi('new releases musics 2024').then((result) { 
+      setState(() {
+        universal.releaseListMusics = List.from(result);
+      });
+    });
 
     await getMusicReleaseFromSpotifyApi().then((result) => setState(() => musicRelease = result));
   }
