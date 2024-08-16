@@ -4,7 +4,7 @@ import 'package:my_music_code/Auth/Service/auth_service.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/Profile/configuration_page.dart';
-import 'package:my_music_code/Profile/friends_page.dart';
+// import 'package:my_music_code/Profile/friends_page.dart';
 import 'package:my_music_code/legal/about_page.dart';
 import 'package:my_music_code/universal.dart' as universal;
 
@@ -46,16 +46,16 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
             onTap: () => Navigator.push(context,
                 MaterialPageRoute(builder: (context) => ConfigurationPage())),
           ),
-          ListTile(
-            leading: Icon(Icons.people, color: Colors.white),
-            title: ResponsiveText(text: "Amizades"),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => FriendsPage()),
-              );
-            },
-          ),
+          // ListTile(
+          //   leading: Icon(Icons.people, color: Colors.white),
+          //   title: ResponsiveText(text: "Amizades"),
+          //   onTap: () {
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(builder: (context) => FriendsPage()),
+          //     );
+          //   },
+          // ),
           ListTile(
             leading: Icon(Icons.description, color: Colors.white),
             title: ResponsiveText(text: "Sobre"),
