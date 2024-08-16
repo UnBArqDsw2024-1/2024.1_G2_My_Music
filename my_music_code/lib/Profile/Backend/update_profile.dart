@@ -25,6 +25,10 @@ updateFirebaseProfile(BuildContext context, {required String username, required 
       errorDialogMessage(context, e.toString(), title: "Erro ao atualizar email");
     }
     Navigator.pop(context);
+  
+    if(username.isNotEmpty || email.isNotEmpty) {
+      errorDialogMessage(context, "Suas informações poderão ser visualizadas na próxima vez que você abrir o aplicativo ou realizar login",title: "Login");
+    }
   } catch (e) {
     // ignore: avoid_print
     print("Erro ao atualizar perfil: $e");

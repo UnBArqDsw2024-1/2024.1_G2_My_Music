@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 import 'package:my_music_code/Models/album_model.dart';
 import 'package:my_music_code/Models/music_model.dart';
-import 'package:my_music_code/Music/music_page.dart';
+import 'package:my_music_code/Music/Components/modal_music.dart';
 import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Profile/profile_drawer.dart';
 import 'package:my_music_code/Search/Components/filter_item.dart';
@@ -34,6 +34,7 @@ class _SearchPageState extends State<SearchPage> {
 
   setData() {
     setState(() {
+      universal.navigatorIndex = 1;
       mapaDeResposta["Música"] = widget.recentMusics;
       mapaDeResposta["Álbum"] = widget.albumReleases;
     });
@@ -67,14 +68,7 @@ class _SearchPageState extends State<SearchPage> {
                       constraints: BoxConstraints(),
                       onPressed: () {
                         if (element is Music) {
-                          showModalBottomSheet(
-                              useRootNavigator: false,
-                              isScrollControlled: true,
-                              useSafeArea: true,
-                              context: context,
-                              builder: (context) {
-                                return MusicPage(music: element);
-                              });
+                          showModalMusic(context, music: element);
                         } else if (element is AlbumModel) {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => MyAlbumPage(album: element)));
                         }
@@ -112,13 +106,14 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
+    print(universal.navigatorIndex);
     return SafeArea(
       child: Scaffold(
         appBar: feedProfileAppBar(),
         drawer: ProfileDrawer(),
         backgroundColor: backgroundColor,
         body: SingleChildScrollView(
-          child: Column(
+            child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Botão de pesquisa
@@ -216,7 +211,11 @@ class _SearchPageState extends State<SearchPage> {
                     ? List.from(mapaDeResposta.entries.map((e) => listBuilder(e.value, title: e.key)))
                     : [listBuilder(mapaDeResposta[_selectedFilter]!, title: _selectedFilter)]),
 
-            if (universal.currentMusic.name != null) Container(height: 180),
+            StreamBuilder(
+                stream: universal.audioPlayer.onPlayerStateChanged,
+                builder: (context, snapshot) {
+                  return Container(height: snapshot.data == null ? 0 : 90);
+                })
           ],
         )),
       ),
