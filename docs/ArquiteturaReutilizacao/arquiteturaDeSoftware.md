@@ -14,6 +14,10 @@ Para o back-end, a linguagem escolhida para o desenvolvimento foi Dart, utilizan
 
 Como modelo arquitetural, foi adotado o padrão cliente-servidor. Nesse modelo, a aplicação é dividida em dois componentes principais: o cliente, que é responsável pela interface do usuário e interação com o usuário final; e o servidor, que lida com a lógica de negócios, processamento de dados e comunicação com o banco de dados. Essa separação facilita a escalabilidade e manutenção do sistema, permitindo que cada parte seja desenvolvida, atualizada e escalada de forma independente.
 
+O Firebase foi escolhido para proporcionar uma solução escalável e eficiente para o armazenamento e sincronização de dados em tempo real, enquanto a firestore database foi utilizada para armazenamento de dados. Além disso, o Firebase é utilizado para a autenticação de usuários, garantindo uma camada adicional de segurança com o uso de métodos avançados, como o algoritmo HASH nas senhas, protegendo as informações dos usuários de maneira robusta.
+
+Outro ponto chave do projeto é a integração com a API do Spotify, que permite ao aplicativo oferecer uma experiência musical rica e personalizada, acessando o vasto catálogo de músicas e funcionalidades oferecidas pela plataforma. A integração com a API do Spotify é fundamental para a proposta do projeto, tornando a música acessível de maneira fluida e intuitiva dentro da aplicação.
+
 # 4. Definições, Acrônimos e Abreviações
 
 | Abreviação/Acrônimo                                           | Definição                                                                                                                                                                  |
@@ -22,7 +26,7 @@ Como modelo arquitetural, foi adotado o padrão cliente-servidor. Nesse modelo, 
 | **GRASP** - General Responsibility Assignment Software Patterns | Conjunto de padrões que oferecem diretrizes para atribuição de responsabilidades a classes e objetos em design orientado a objetos.                                      |
 | **GoF** - Gang of Four                                       | Grupo de quatro autores que publicaram o livro "Design Patterns: Elements of Reusable Object-Oriented Software", contendo 23 padrões de design essenciais para o desenvolvimento de software. |
 | **UML** - Unified Modeling Language                         | Linguagem de modelagem unificada utilizada para especificar, visualizar, construir e documentar artefatos de sistemas de software.                                        |
-| **DAS** - Documento de Arquitetura de Software               | Representação visual que demonstra como os componentes de um sistema de software estão organizados e como interagem entre si.                                          |
+| **DAS** - Documento de Arquitetura de Software               |  Define a organização dos componentes do sistema, descreve sua interação e define as diretrizes técnicas e funcionais que guiam o desenvolvimento                                          |
 | **DER** - Diagrama Entidade-Relacionamento                  | Diagrama utilizado para modelar a estrutura lógica de um banco de dados, mostrando as entidades e os relacionamentos entre elas.                                        |
 
 # 5. [Visão Lógica](../../ArquiteturaReutilizacao/visao-de-logica.md)
@@ -85,7 +89,8 @@ Em resumo, o desenvolvimento de um sistema robusto, confiável, seguro e com bom
 5. **The Unified Modeling Language Org.** Activity Diagrams, 2011. Disponível em: <https://www.uml-diagrams.org/activity-diagrams.html>. Acesso em: 12 de agosto 2024.
 6. **MyMusic.** 1.1.4 Protótipo, 2024. Disponível em: <https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/Base/prototipo/>. Acesso em: 11 de agosto 2024.
 7. **AULA - ARQUITETURA & DAS – PARTE II.** Serrano, Milene. Disponível em: [Aprender3](https://aprender3.unb.br/). Acesso em: 11 agosto 2024.
-8. **Documento de arquitetura de Software.** Disponível em: <https://unbarqdsw2023-1.github.io/2023.1_G3_ProjetoMercadoLivre/#/ArquiteturaReutilizacao/DocumentoArquiteturaSoftware)>. Acesso em: 14 ago. 2024.
+8. **Documento de arquitetura de Software.** Disponível em: <https://unbarqdsw2023-1.github.io/2023.1_G3_ProjetoMercadoLivre/#/ArquiteturaReutilizacao/DocumentoArquiteturaSoftware>. Acesso em: 14 ago. 2024.
+9. **Documento de arquitetura de Software: Exemplo e estrutura**: Disponível em: <https://awari.com.br/documento-de-arquitetura-de-software-exemplo-e-estrutura-para-a-documentacao-adequada/>. Acesso em: 16 agosto 2024.
 
 ## 13.2 Referências bibliográficas
 
