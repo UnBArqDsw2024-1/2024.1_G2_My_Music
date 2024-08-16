@@ -289,7 +289,7 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
             ),
 
             StreamBuilder(
-              stream: universal.audioPlayer.onPlayerStateChanged,
+              stream: universal.audioPlayer.onPositionChanged,
               builder: (context, snapshot) {
                 return snapshot.data == null? Container() : 
                   Positioned(

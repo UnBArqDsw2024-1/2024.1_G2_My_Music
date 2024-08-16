@@ -131,7 +131,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   ],
                 ),
                 StreamBuilder(
-                  stream: universal.audioPlayer.onPlayerStateChanged,
+                  stream: universal.audioPlayer.onPositionChanged,
                   builder: (context, snapshot) {
                     return snapshot.data == null? Container() : 
                       Positioned(
