@@ -41,12 +41,16 @@ class _MusicPageState extends State<MusicPage> {
       if (widget.album != null) {
         universal.currentAlbum = widget.album!;
       }
-      populatedListMusic = universal.currentListMusic.isEmpty? 
-        universal.releaseListMusics : 
-        widget.isRandom? 
-        universal.currentListMusicShuffle : 
-        universal.currentListMusic;
+      populatedListMusic = universal.currentListMusic.isEmpty
+          ? universal.releaseListMusics
+          : widget.isRandom
+              ? universal.currentListMusicShuffle
+              : universal.currentListMusic;
     });
+  }
+
+  musicDur() async {
+    print("${await universal.audioPlayer.getCurrentPosition()} / ${await universal.audioPlayer.getDuration()}");
   }
 
   @override
@@ -77,6 +81,12 @@ class _MusicPageState extends State<MusicPage> {
       indexListMusic = listNames.indexOf(widget.music.name!);
       print(indexListMusic);
     }
+    musicDur();
+    universal.audioPlayer.onPlayerComplete.listen((event) {
+      Navigator.pop(context);
+      showModalMusic(context,
+          music: populatedListMusic[(indexListMusic + 1) % populatedListMusic.length], isRandom: widget.isRandom);
+    });
 
     return SafeArea(
       child: Scaffold(
@@ -210,11 +220,9 @@ class _MusicPageState extends State<MusicPage> {
                     onPressed: () {
                       print(indexListMusic);
                       Navigator.pop(context);
-                      showModalMusic(
-                        context,
-                        music: populatedListMusic[(indexListMusic - 1) % populatedListMusic.length],
-                        isRandom: widget.isRandom
-                      );
+                      showModalMusic(context,
+                          music: populatedListMusic[(indexListMusic - 1) % populatedListMusic.length],
+                          isRandom: widget.isRandom);
                     },
                   ),
 
@@ -250,11 +258,9 @@ class _MusicPageState extends State<MusicPage> {
                     onPressed: () {
                       print("Tamanho: ${universal.releaseListMusics.length}\n");
                       Navigator.pop(context);
-                      showModalMusic(
-                        context,
-                        music: populatedListMusic[(indexListMusic - 1) % populatedListMusic.length],
-                        isRandom: widget.isRandom
-                      );
+                      showModalMusic(context,
+                          music: populatedListMusic[(indexListMusic - 1) % populatedListMusic.length],
+                          isRandom: widget.isRandom);
                     },
                   ),
                 ],
