@@ -106,92 +106,84 @@ class _MusicPageState extends State<MusicPage> {
               ],
             ),
             Divider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(CupertinoIcons.bookmark, color: Colors.white),
-                  onPressed: () {},
-                ),
-                SizedBox(width: 10.0),
-                Text(
-                  'Salvar música em playlist...',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
+            Column(
+              children: [
+                ListTile(
+                  leading: Icon(CupertinoIcons.music_albums, color: Colors.white),
+                  onTap: (){},
+                  title: Text(
+                    'Ver álbum da música',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
                   ),
-                )
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(
-                      isFavorite
-                          ? CupertinoIcons.heart_fill
-                          : CupertinoIcons.heart,
-                      size: 30,
-                      color: isFavorite ? primaryColor : Colors.white),
-                  onPressed: () {
+                ),
+                ListTile(
+                  onTap: (){},
+                  leading: Icon(Icons.bookmark_add_outlined, color: Colors.white),
+                  title: Text(
+                    'Salvar música em playlist...',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
+                  )
+                ),
+                ListTile(
+                  onTap: (){
                     setState(() {
                       isFavorite = !isFavorite;
                     });
                   },
-                ),
-                SizedBox(width: 10.0),
-                Text(
-                  'Favoritar música',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
+                  leading: Icon(isFavorite
+                    ? CupertinoIcons.heart_fill
+                    : CupertinoIcons.heart,
+                    size: 30,
+                    color: isFavorite ? primaryColor : Colors.white
                   ),
-                )
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(CupertinoIcons.arrowshape_turn_up_right,
-                      color: Colors.white),
-                  onPressed: () async {
-                    await Share.share(
-                        "Ouça essa música:\n${widget.music.link} \nVocê vai amar!");
+                  title: Text(
+                    'Favoritar música',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
+                  )
+                ),
+                ListTile(
+                  onTap: () async {
+                    await Share.share("Ouça essa música:\n${widget.music.link} \nVocê vai amar!");
                   },
-                ),
-                SizedBox(width: 10.0),
-                Text(
-                  'Compartilhar música',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    fontSize: 16,
+                  leading: Icon(CupertinoIcons.arrowshape_turn_up_right, color: Colors.white),
+                  title: Text(
+                    'Compartilhar música',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      fontSize: 16,
+                    ),
                   ),
-                )
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(CupertinoIcons.waveform, color: Colors.white),
-                  onPressed: () {
+                ),
+                ListTile(
+                  onTap: (){
                     showDialog(
-                        context: context,
-                        builder: (context) => AlertDialog(
-                            content: QrcodeGenerator(
-                            url: widget.music.link!,
-                            nameMusic: widget.music.name!)));
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        content: QrcodeGenerator(
+                          url: widget.music.link!,
+                          nameMusic: widget.music.name!
+                        )
+                      )
+                    );
                   },
+                  leading: Icon(CupertinoIcons.waveform, color: Colors.white),
+                  title: Text(
+                    'Ver ID no MyMusic',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                    ),
+                  )
                 ),
-                SizedBox(width: 10.0),
-                Text(
-                  'Ver ID no MyMusic',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                  ),
-                )
               ],
             ),
           ],
