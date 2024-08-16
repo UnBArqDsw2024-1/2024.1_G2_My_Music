@@ -31,6 +31,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
       universal.user = widget.user;
       universal.spotifyApi = widget.spotifyApi;
     });
+
     if (universal.userModel.username.isNotEmpty) {
       // ignore: avoid_print
       print(universal.userModel.username);

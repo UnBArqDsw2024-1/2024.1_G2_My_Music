@@ -10,6 +10,7 @@ import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/universal.dart' as universal;
 import 'package:my_music_code/Album/save_album.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:spotify/spotify.dart';
 
 
@@ -29,7 +30,6 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
   late List<TrackSimple> albumShuffle;
   bool isFavorite = false;
 
-
   // Carrega o status de favorito quando a página é aberta
   void _loadFavoriteStatus() async {
     isFavorite = await isFavoriteAlbum(widget.album.id);
@@ -38,7 +38,6 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
 
   populaAlbum() {
     setState(() {
-
       universal.currentListMusic = List.empty(growable: true);
       for (var music in widget.album.songs!) {
         universal.currentListMusic.add(Music(
@@ -115,7 +114,7 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                 title: Text.rich(
                   textAlign: TextAlign.center,
                   TextSpan(
-                    text: "${widget.album.name} \n",
+                    text: "${widget.album.name}\n",
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -275,19 +274,13 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                             child: ListTile(
                               leading: Icon(Icons.share_outlined,color: Colors.white),
                               title: Text('Compartilhar música',style: TextStyle(color: Colors.white)),
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
+                              onTap: () async {
+                              await Share.share("Ouça essa música:\n${widget.album.songs!.elementAt(index).externalUrls!.spotify} \nVocê vai amar!");
+                            },,
                             ),
                           ),
                         ],
                       ) 
-                      // IconButton(
-                      //   onPressed: () {
-      
-                      //   },
-                      //   icon: Icon(Icons.more_vert, color: Colors.white54),
-                      // ),
                     );
                   },
                   childCount: widget.album.songs!.length, // Número de músicas dentro da playlist
