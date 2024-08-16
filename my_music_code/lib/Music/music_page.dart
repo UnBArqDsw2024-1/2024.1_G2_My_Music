@@ -3,9 +3,11 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Album/album_page.dart';
 import 'package:my_music_code/Feed/dialog_qrcode_music.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
+import 'package:my_music_code/Models/album_model.dart';
 import 'package:my_music_code/Models/music_model.dart';
 import 'package:my_music_code/Music/back/setup_music.dart';
 import 'package:my_music_code/universal.dart' as universal;
@@ -16,9 +18,11 @@ class MusicPage extends StatefulWidget {
     super.key,
     required this.music,
     this.isRandom = false,
+    this.album,
   });
   final Music music;
   final bool isRandom;
+  final AlbumModel? album;
   @override
   State<MusicPage> createState() => _MusicPageState();
 }
@@ -28,12 +32,16 @@ class _MusicPageState extends State<MusicPage> {
   bool isFavorite = false;
 
   setCurrentMusic() {
+
     setState(() {
       if (universal.currentMusic.imageUrl != widget.music.imageUrl || // Album Swap
           (universal.currentMusic.name != widget.music.name && universal.currentMusic.artist == widget.music.artist)) {
         universal.currentMusic = widget.music;
         isPlaying = !isPlaying;
         setupMusic();
+      }
+      if (widget.album != null) {
+        universal.currentAlbum = widget.album!;
       }
     });
   }
@@ -95,7 +103,17 @@ class _MusicPageState extends State<MusicPage> {
             Column(
               children: [
                 ListTile(
-                  onTap: (){},
+                  onTap: () {
+                    if (universal.currentAlbum.id != null) {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MyAlbumPage(
+                                    album: universal.currentAlbum,
+                                  )));
+                    } else {}
+                  },
+                  // enableFeedback: universal.currentAlbum.id != null,
                   leading: Icon(CupertinoIcons.music_albums, color: Colors.white),
                   title: Text(
                     'Ver álbum da música',
@@ -106,7 +124,7 @@ class _MusicPageState extends State<MusicPage> {
                   ),
                 ),
                 ListTile(
-                  onTap: (){},
+                  onTap: () {},
                   leading: Icon(Icons.bookmark_add_outlined, color: Colors.white),
                   title: Text(
                     'Salvar música em playlist...',
@@ -117,20 +135,20 @@ class _MusicPageState extends State<MusicPage> {
                   ),
                 ),
                 ListTile(
-                  leading: Icon(isFavorite ? CupertinoIcons.heart_fill : CupertinoIcons.heart, color: isFavorite ? primaryColor : Colors.white),
-                  onTap: () {
-                    setState(() {
-                      isFavorite = !isFavorite;
-                    });
-                  },
-                  title: Text(
-                    'Favoritar música',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
-                  )
-                ),
+                    leading: Icon(isFavorite ? CupertinoIcons.heart_fill : CupertinoIcons.heart,
+                        color: isFavorite ? primaryColor : Colors.white),
+                    onTap: () {
+                      setState(() {
+                        isFavorite = !isFavorite;
+                      });
+                    },
+                    title: Text(
+                      'Favoritar música',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                      ),
+                    )),
                 ListTile(
                   leading: Icon(CupertinoIcons.arrowshape_turn_up_right, color: Colors.white),
                   onTap: () async {
@@ -170,14 +188,14 @@ class _MusicPageState extends State<MusicPage> {
       List<String> listNames = universal.currentListMusic.map((e) {
         return e.name!;
       }).toList();
-    
+
       indexListMusic = listNames.indexOf(widget.music.name!);
     } else {
       List<String> listNames = universal.releaseListMusics.map((e) {
         return e.name!;
       }).toList();
 
-      if (!listNames.contains(widget.music.name!)){
+      if (!listNames.contains(widget.music.name!)) {
         universal.releaseListMusics.add(widget.music);
       }
 
@@ -325,19 +343,24 @@ class _MusicPageState extends State<MusicPage> {
                             isScrollControlled: true,
                             useSafeArea: true,
                             context: context,
-                            builder: (context) => MusicPage(music: widget.isRandom? universal.currentListMusicShuffle[(indexListMusic - 1) % universal.currentListMusicShuffle.length] : universal.currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
-                            isRandom: widget.isRandom)
-                          );
+                            builder: (context) => MusicPage(
+                                music: widget.isRandom
+                                    ? universal.currentListMusicShuffle[
+                                        (indexListMusic - 1) % universal.currentListMusicShuffle.length]
+                                    : universal
+                                        .currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
+                                isRandom: widget.isRandom));
                       } else {
                         Navigator.pop(context);
-                          showModalBottomSheet(
+                        showModalBottomSheet(
                             useRootNavigator: false,
                             isScrollControlled: true,
                             useSafeArea: true,
                             context: context,
-                            builder: (context) => MusicPage(music: universal.releaseListMusics[(indexListMusic - 1) % universal.releaseListMusics.length],
-                            isRandom: widget.isRandom)
-                          );
+                            builder: (context) => MusicPage(
+                                music: universal
+                                    .releaseListMusics[(indexListMusic - 1) % universal.releaseListMusics.length],
+                                isRandom: widget.isRandom));
                       }
                     },
                   ),
@@ -380,19 +403,25 @@ class _MusicPageState extends State<MusicPage> {
                             isScrollControlled: true,
                             useSafeArea: true,
                             context: context,
-                            builder: (context) => MusicPage(music: widget.isRandom? universal.currentListMusicShuffle[(indexListMusic + 1) % universal.currentListMusicShuffle.length] : universal.currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
-                            isRandom: widget.isRandom)
-                          );
+                            builder: (context) => MusicPage(
+                                music: widget.isRandom
+                                    ? universal.currentListMusicShuffle[
+                                        (indexListMusic + 1) % universal.currentListMusicShuffle.length]
+                                    : universal
+                                        .currentListMusic[(indexListMusic - 1) % universal.currentListMusic.length],
+                                isRandom: widget.isRandom));
                       } else {
                         Navigator.pop(context);
-                          showModalBottomSheet(
-                            useRootNavigator: false,
-                            isScrollControlled: true,
-                            useSafeArea: true,
-                            context: context,
-                            builder: (context) => MusicPage(music: universal.releaseListMusics[(indexListMusic + 1) % universal.releaseListMusics.length],
-                            isRandom: widget.isRandom),
-                          );
+                        showModalBottomSheet(
+                          useRootNavigator: false,
+                          isScrollControlled: true,
+                          useSafeArea: true,
+                          context: context,
+                          builder: (context) => MusicPage(
+                              music: universal
+                                  .releaseListMusics[(indexListMusic + 1) % universal.releaseListMusics.length],
+                              isRandom: widget.isRandom),
+                        );
                       }
                     },
                   ),
