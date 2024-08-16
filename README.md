@@ -1,6 +1,10 @@
 # My_Music
 
-![logo](../docs/Assets/LogoMyMusic.png)
+<div align="center">
+
+![logo](LogoMyMusic.png)
+
+</div>
 
 **Código da Disciplina**: FGA0208<br>
 **Número do Grupo**: 02<br>
