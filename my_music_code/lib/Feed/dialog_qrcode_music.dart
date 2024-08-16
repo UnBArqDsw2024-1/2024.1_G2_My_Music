@@ -20,61 +20,63 @@ class _QrcodeGeneratorState extends State<QrcodeGenerator> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: backgroundColor,
-      
-      title: Text(
-        "${widget.music.name} • QRCODE",
-        style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
-        textAlign: TextAlign.center,
-      ),
-      
-      content: SpacedColumn(
-        spacing: 10,
-        children: [
-          Container(
-            width: 230,
-            height: 230,
-            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5)),
-            child: Center(
-              child: QrImageView(
-                padding: EdgeInsets.all(5),
-                data: widget.music.link!,
-                version: QrVersions.auto,
-                embeddedImage: const AssetImage('assets/LogoMyMusic.png'),
-                embeddedImageStyle: QrEmbeddedImageStyle(size: const Size(85, 85)),
-                size: 200.0,
-              ),
-            ),
-          ),
-        
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 35),
-            child: GestureDetector(
-              onTap: () => shareQRImage(),
-              child: Container(
-                height: responsiveFigmaHeight(50),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: primaryColor,
-                ),
-                alignment: Alignment.center,
-                child: ResponsiveText(
-                  text: "Compartilhar link",
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
+        backgroundColor: backgroundColor,
+        title: Text(
+          "${widget.music.name} • QRCODE",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+          textAlign: TextAlign.center,
+        ),
+        content: SpacedColumn(
+          spacing: 10,
+          children: [
+            Container(
+              width: 230,
+              height: 230,
+              decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5)),
+              child: Center(
+                child: QrImageView(
+                  padding: EdgeInsets.all(5),
+                  data: widget.music.link!,
+                  version: QrVersions.auto,
+                  embeddedImage: const AssetImage('assets/LogoMyMusic.png'),
+                  embeddedImageStyle: QrEmbeddedImageStyle(size: const Size(85, 85)),
+                  size: 200.0,
                 ),
               ),
             ),
-          ),
-        ],
-      )
-    );
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 35),
+              child: GestureDetector(
+                onTap: () async {
+                  await Share.share("Ouça essa música:\n${widget.music.link} \nVocê vai amar!");
+                              
+                },
+                child: Container(
+                  height: responsiveFigmaHeight(50),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: primaryColor,
+                  ),
+                  alignment: Alignment.center,
+                  child: ResponsiveText(
+                    text: "Compartilhar link",
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ));
   }
 
   Future shareQRImage() async {
     final image = await QrPainter(
-            data: widget.music.link!, version: QrVersions.auto, gapless: false, errorCorrectionLevel: QrErrorCorrectLevel.L)
+            data: widget.music.link!,
+            version: QrVersions.auto,
+            gapless: false,
+            errorCorrectionLevel: QrErrorCorrectLevel.L)
         .toImageData(100.0);
 
     const filename = 'qr_code.png';
