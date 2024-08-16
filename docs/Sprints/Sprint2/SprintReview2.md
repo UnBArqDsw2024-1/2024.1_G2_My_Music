@@ -60,6 +60,8 @@ Os membros que ficaram responsáveis pela documentação da Visão de Implementa
 
 ### Visão de Casos Usos 
 
+Os membros responsáveis pelo desenvolvimento da visão de casos de uso foram o Carlos Nascimento e o Carlos Eduardo, que juntos, iniciaram o desenvolvimento do conteúdo da wiki, para a dupla, foi de extremo aproveitamento o desenvolvimento desta visão, pois foi possível o aprofundamento nas diversas possibilidades de uso do aplicativo desenvolvido, sempre observando documentos anteriores do desenvolvimento, para que os casos de uso fossem compatíveis com os requisitos elicitados no início do projeto.
+
 ### Reutilização
 
 ## Histórico de Versão
@@ -67,3 +69,4 @@ Os membros que ficaram responsáveis pela documentação da Visão de Implementa
 | Versão | Data       | Descrição                                               | Autores                        | Revisores |
 | ------ | ---------- | ------------------------------------------------------- | ------------------------------ | --------- |
 | 0.1    | 23/07/2024 | Criação do documento |  [Luis Miranda](https://github.com/LuisMiranda10), [Vinícius Mendes](https://github.com/yabamiah) | |
+| 0.2    | 16/08/2024 | Adicionando visão de casos de uso |  [Carlos Nascimento](https://github.com/CDGodoy) | |
