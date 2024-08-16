@@ -5,6 +5,7 @@ import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Feed/Components/feed_profile_app_bar.dart';
 import 'package:my_music_code/Feed/Components/new_music_release.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:my_music_code/Models/music_model.dart';
 import 'package:my_music_code/Profile/profile_drawer.dart';
 import 'package:my_music_code/universal.dart' as universal;
 

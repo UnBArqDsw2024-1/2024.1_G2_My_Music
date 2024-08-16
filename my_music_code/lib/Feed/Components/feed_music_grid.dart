@@ -2,17 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/music_playlist_feed_component.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/size_config.dart';
+import 'package:my_music_code/Models/music_model.dart';
 
-class Music {
-  final String? name;
-  final String? id;
-  final String? artist;
-  final String? imageUrl;
-  final String? link;
-  final int? duration;
-
-  Music({this.name, this.id, this.artist, this.imageUrl, this.link, this.duration});
-}
 
 class FeedMusicGrid extends StatefulWidget {
   const FeedMusicGrid({super.key, required this.listaDeMusicas});

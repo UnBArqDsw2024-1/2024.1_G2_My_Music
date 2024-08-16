@@ -3,7 +3,7 @@ library universal;
 import 'package:audioplayers/audioplayers.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:my_music_code/Auth/Service/auth_service.dart';
-import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
+import 'package:my_music_code/Models/music_model.dart';
 import 'package:spotify/spotify.dart' hide User;
 
 AudioPlayer audioPlayer = AudioPlayer();

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:my_music_code/Models/music_model.dart';
 import 'package:my_music_code/Music/music_page.dart';
 import 'package:my_music_code/universal.dart' as universal;
 
