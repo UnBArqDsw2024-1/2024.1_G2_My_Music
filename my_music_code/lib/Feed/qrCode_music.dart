@@ -1,11 +1,10 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:share_plus/share_plus.dart';
+import 'dart:io';
 
 class QrcodeGenerator extends StatefulWidget {
   final String url;
@@ -49,7 +48,7 @@ class _QrcodeGeneratorState extends State<QrcodeGenerator> {
       errorCorrectionLevel: QrErrorCorrectLevel.L
     ).toImageData(100.0);
 
-    final filename = 'qr_code.png';
+    const filename = 'qr_code.png';
     final tempDir =
         await getTemporaryDirectory(); // Get temporary directory to store the generated image
     final file = await File('${tempDir.path}/$filename')

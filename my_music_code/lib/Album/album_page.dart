@@ -314,7 +314,7 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                             title: Text('Compartilhar música',
                                 style: TextStyle(color: Colors.white)),
                             onTap: () async {
-                              final result = await Share.share(
+                              await Share.share(
                                   "Ouça essa música:\nhttps://www.youtube.com/watch?v=_7gjq9MFD0I \nVocê vai amar!");
                             },
                           ),

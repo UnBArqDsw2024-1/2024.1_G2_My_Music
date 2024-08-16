@@ -2,7 +2,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Feed/Components/feed_music_grid.dart';
-import 'package:my_music_code/Feed/qrCode_music.dart';
+import 'package:my_music_code/Feed/qrcode_music.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 import 'package:share_plus/share_plus.dart';
@@ -156,7 +156,7 @@ class _MusicPageState extends State<MusicPage> {
                   icon: Icon(CupertinoIcons.arrowshape_turn_up_right,
                       color: Colors.white),
                   onPressed: () async {
-                    final result = await Share.share(
+                    await Share.share(
                         "Ouça essa música:\n${widget.music.link} \nVocê vai amar!");
                   },
                 ),
