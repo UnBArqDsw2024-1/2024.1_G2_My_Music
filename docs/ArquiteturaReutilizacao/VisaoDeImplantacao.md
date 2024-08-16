@@ -1,3 +1,5 @@
+# Visão de Implantação
+
 ## Introdução
 
 O diagrama de implantação, dentro da linguagem de modelagem unificada (UML), é uma representação gráfica que descreve a estrutura física de um sistema de software, ilustrando como seus componentes são distribuídos e interconectados em um ambiente de hardware¹. Essencialmente, ele mapeia a arquitetura física do software, mostrando a localização e a interação de seus elementos em um ambiente real.

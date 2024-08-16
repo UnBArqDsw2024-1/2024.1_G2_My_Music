@@ -1,6 +1,6 @@
-## Introdução
+# Visão de Dados
 
-__Visão de Dados__
+## Introdução
 
 A visão de dados lida com o armazenamento, a organização e a manipulação das informações dentro do sistema. Ela descreve como os dados são estruturados, acessados e processados, garantindo a integridade, segurança e desempenho adequados.
 

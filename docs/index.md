@@ -32,27 +32,65 @@ O objetivo deste repositório é fornecer uma plataforma centralizada para o arm
 Tabela 1: Integrantes
 </center>
 
+## Sobre
 
-## Sobre 
-Contextualize, usando referências, links, e outros materiais como fontes.
+O aplicativo MyMusic, é um aplicativo para que seja possível ouvir músicas e fazer playlist de acordo com seu gosto pessoal.
 
-## Screenshots Primeira Entrega <<FOCO: DSW(Base)>>
-Adicione 2 ou mais screenshots em termos de artefatos da Primeira Entrega.
+## Primeira Entrega FOCO: DSW(Base)
 
-## Screenshots Segunda Entrega <<FOCO: DSW(Modelagem)>>
-Adicione 2 ou mais screenshots em termos de artefatos da Segunda Entrega.
+Na primeira entrega, tivemos os seguintes artefatos:
 
-## Screenshots Terceira Entrega <<FOCO: DSW(Padrões de Projeto)>>
-Adicione 2 ou mais screenshots em termos de artefatos da Terceira Entrega.
+- [1.1.1. Design Sprint](/docs/Base/Design%20Sprint.md)
+- [1.1.2.1. Brainstorming](/docs/Base/brainstorming.md)
+- [1.1.2.2. Entrevista](/docs/Base/entrevista.md)
+- [1.1.2.3. Questionário](/docs/Base/questionario.md)    - [1.1.3.1. Glossário](/docs/Base/glossário.md)
+- [1.1.3.2. 5W2H](/docs/Base/5w2h.md)
+- [1.1.3.3. Léxico](/docs/Base/lexico.md)
+- [1.1.3.4. Rich Picture](/docs/Base/richpicture.md)
+- [1.1.3.5. Mapa Mental](/docs/Base/mapa_mental.md)
+- [1.1.4. Protótipo](/docs/Base/prototipo.md)
+- [1.2. Módulo Processos/Metodologias/Abordagens](/docs/Base/1.2.ProcessosMetodologiasAbordagens.md)
 
-## Screenshots Quarta Entrega (FINAL) <<FOCOS: Arquitetura & Reutilização de Software & PROJETO FINAL>>
-Adicione 2 ou mais screenshots em termos de artefatos da Quarta Entrega.
+## Segunda Entrega FOCO: DSW(Modelagem)
 
-## Descritivo dos Principais Aspectos Técnicos 
-**Principal(is) Metodologia(s) Adotada(s)**: xxxxxx<br>
-**Principais Linguagens Utilizadas e/ou Pretendidas**: xxxxxx<br>
-**Principais Tecnologias Utilizadas e/ou Pretendidas**: xxxxxx<br>
-**Principal(is) Estilo(s) Arquitetural(is) Adotado(s)**: xxxxxx<br>
+Na segunda entrega, tivemos os seguintes artefatos:
+
+- [2.1.1.1. Diagrama de Classes](/docs/Modelagem/diagramaClasses.md)
+- [2.1.1.2. Diagrama de Pacotes](/docs/Modelagem/diagramaPacotes.md)
+- [2.1.1.3. Diagrama de Componentes](/docs/Modelagem/diagramaComponentes.md)
+- [2.1.2.1. Diagrama de Sequência](/docs/Modelagem/diagramaSequencia.md)
+- [2.1.2.2. Diagrama de Atividade](/docs/Modelagem/diagramaAtividades.md)
+- [2.1.2.3. Diagrama de Estados](/docs/Modelagem/diagramaEstados.md)
+
+## Terceira Entrega FOCO: DSW(Padrões de Projeto)
+
+Na terceira entrega, tivemos os seguintes artefatos:
+
+- [3.1. Módulo Padrões de Projeto GoFs Criacionais](/docs/PadroesDeProjeto/GoFsCriacionais.md)
+- [3.2. Módulo Padrões de Projeto GoFs Estrutural](/docs/PadroesDeProjeto/GoFsEstruturais.md)
+- [3.3.1. Strategy](/docs/PadroesDeProjeto/GoFsExtras.md)
+- [3.3.2. Command](/docs/PadroesDeProjeto/GoFsComportamentais.md)
+-[3.5. Iniciativas Extras](/docs/PadroesDeProjeto/IniciativasExtras.md)
+
+## Quarta Entrega (FINAL) FOCOS: Arquitetura & Reutilização de Software & PROJETO FINAL
+
+Na quarta entrega, tivemos os seguintes aterfatos:
+
+- [4.1. Módulo Visão de Lógica](/docs/ArquiteturaReutilizacao/visao-de-logica.md)
+- [4.2. Módulo Visão de Processo](/docs/ArquiteturaReutilizacao/visao-de-processo.md)
+- [4.3. Módulo Visão de Implementação](/docs/ArquiteturaReutilizacao/VisaoDeImplementacao.md)
+- [4.4. Módulo Visão de Implantação](/docs/ArquiteturaReutilizacao/VisaoDeImplantacao.md)
+- [4.5. Módulo Visão de Dados](/docs/ArquiteturaReutilizacao/visaoDados.md)
+- [4.6. Módulo Visão de Casos de Uso](/docs/ArquiteturaReutilizacao/visao-casos-de-uso.md)
+- [4.7. Módulo Descrição de estilo e Padrão Arquiteturais Utilizados](/docs/ArquiteturaReutilizacao/estiloEPadroesArquiteturais.md)
+- [4.8 Módulo Reutilização de Software](/docs/ArquiteturaReutilizacao/reutilizacao.md)
+
+## Descritivo dos Principais Aspectos Técnicos
+
+[**Principais Metodologias Adotadas**:](.//Base/ProcessosMetodologiasAbordagens.md) Durante o projeto, utilizamos as metodologias Scrum, KanBan e XP.<br>
+**Principais Linguagens Utilizadas e/ou Pretendidas**: Para programação utilizamos as linguagem Flutter e Dart. Para fazer o GitPages foi utilizado o MarkDown. <br>
+**Principais Tecnologias Utilizadas e/ou Pretendidas**: Para facilitar o trabalho utilizamos as seguintes tecnologias: GitHub, Discord, Whatsapp, VSCode, Notion e Miro.<br>
+[**Principal(is) Estilo(s) Arquitetural(is) Adotado(s)**:](.//ArquiteturaReutilizacao/estiloEPadroesArquiteturais.md) Visão de lógica, de Processo, de Implementação, de Implantação, de Dados, de Casos de Uso.<br>
 
 ## Há algo a ser executado?
 
