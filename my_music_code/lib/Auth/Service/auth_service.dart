@@ -10,7 +10,14 @@ Map<String, String> errorMap = {
   'email-already-in-use': 'Este email já está em uso!',
   'weak-passowrd': 'senha fraca!',
   'different-password': 'senhas diferentes!',
+  "missing-android-pkg-name":"erro no pacote Android.",
+  "missing-continue-uri":"Uma URL de continuação deve ser fornecida.",
+  "missing-ios-bundle-id":"erro no IOS bunde ID.",
+  "invalid-continue-uri":"A URL de continuação fornecida é inválida.",
+  "unauthorized-continue-uri":"A URL de continuação não está na lista de autorizados.",
 };
+
+
 
 class SignLoginModel {
   String username = "";

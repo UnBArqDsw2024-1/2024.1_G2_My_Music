@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/style.dart';
-import 'package:my_music_code/Profile/is_added.dart'; 
+import 'package:my_music_code/Profile/Past/is_added.dart'; 
 
 class AddFriendsPage extends StatefulWidget {
   const AddFriendsPage({super.key});

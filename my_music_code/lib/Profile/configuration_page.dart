@@ -1,14 +1,12 @@
 // ignore_for_file: use_build_context_synchronously
-
-import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:my_music_code/Globals/custom_text_field.dart';
 import 'package:my_music_code/Globals/dialogs.dart';
 import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:my_music_code/Profile/Backend/pick_image.dart';
+import 'package:my_music_code/Profile/Backend/update_profile.dart';
 import 'package:my_music_code/universal.dart' as universal;
 
 class ConfigurationPage extends StatefulWidget {
@@ -21,49 +19,18 @@ class ConfigurationPage extends StatefulWidget {
 class _ConfigurationPageState extends State<ConfigurationPage> {
   String email = "";
   String username = "";
-  String password = "";
 
-  Future<void> pickImage() async {
-    final ImagePicker imagePicker = ImagePicker();
-    try {
-      XFile? res = await imagePicker.pickImage(source: ImageSource.gallery);
-
-      if (res != null) {
-        await uploadImageToFirebase(File(res.path));
-      }
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          backgroundColor: Colors.red,
-          content: Text("Falha ao realizar o upload da imagem: $e"),
-        ),
-      );
-    }
+  getUserData() {
+    setState(() {
+      email = universal.user.email!;
+      username = universal.user.displayName ?? universal.userModel.username;
+    });
   }
 
-  Future<void> uploadImageToFirebase(File image) async {
-    String? imageUrl;
-
-    try {
-      Reference reference = FirebaseStorage.instance.ref().child("Images/${universal.user.uid}.png");
-      await reference.putFile(image).whenComplete(() {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            backgroundColor: Colors.green,
-            content: Text("O upload da imagem foi realizado com sucesso!"),
-          ),
-        );
-      });
-      imageUrl = await reference.getDownloadURL();
-      universal.user.updatePhotoURL(imageUrl);
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          backgroundColor: Colors.red,
-          content: Text("Falha ao realizar o upload da imagem: $e"),
-        ),
-      );
-    }
+  @override
+  void initState() {
+    getUserData();
+    super.initState();
   }
 
   @override
@@ -97,19 +64,21 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
             Stack(
               children: [
                 GestureDetector(
-                  onTap: () async {
-                    pickImage();
-                  },
+                  onTap: () async => pickImage(context),
                   child: CircleAvatar(
                     radius: 85,
                     backgroundColor: backgroundColor,
                     child: Container(
                       decoration: BoxDecoration(
-                          color: backgroundColor,
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: CachedNetworkImageProvider(universal.user.photoURL ?? DefaultPlaceholder.image),
-                              fit: BoxFit.cover)),
+                        color: backgroundColor,
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          image: CachedNetworkImageProvider(
+                            universal.user.photoURL ?? DefaultPlaceholder.image
+                          ),
+                          fit: BoxFit.cover
+                        )
+                      ),
                     ),
                   ),
                 ),
@@ -117,9 +86,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                     bottom: 0,
                     right: 0,
                     child: RawMaterialButton(
-                      onPressed: () {
-                        pickImage();
-                      },
+                      onPressed: () async => pickImage(context),
                       constraints: BoxConstraints(),
                       shape: CircleBorder(),
                       child: Container(
@@ -141,6 +108,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                     )),
               ],
             ),
+
             CustomTextField(
               hintText: "Nome de usuário",
               hintTextColor: Colors.white.withOpacity(0.25),
@@ -150,12 +118,8 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
               leadingIconColor: Colors.white,
               inputTextColor: Colors.white,
               cursorColor: Colors.white,
-              initialValue: universal.user.displayName ?? universal.userModel.username,
-              onChanged: (value) {
-                setState(() {
-                  username = value;
-                });
-              },
+              initialValue: username,
+              onChanged: (value) => setState(() => username = value),
             ),
             CustomTextField(
               hintText: "Email",
@@ -166,12 +130,8 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
               leadingIconColor: Colors.white,
               inputTextColor: Colors.white,
               cursorColor: Colors.white,
-              initialValue: universal.user.email,
-              onChanged: (value) {
-                setState(() {
-                  email = value;
-                });
-              },
+              initialValue: email,
+              onChanged: (value) => setState(() => email = value),
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -193,16 +153,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                 padding: EdgeInsets.symmetric(vertical: 17.0, horizontal: 69),
               ),
               child: Text('Salvar perfil', style: TextStyle(color: Colors.white, fontSize: 13)),
-              onPressed: () {
-                // Ação para salvar perfil
-                if ((universal.user.displayName ?? universal.userModel.username) != username && username.isNotEmpty) {
-                  print("${universal.user.displayName} & $username");	
-                  universal.user.updateDisplayName(username);
-                }
-                // if (universal.user.email != email) {
-                //   universal.user.verifyBeforeUpdateEmail(email);
-                Navigator.pop(context);
-              },
+              onPressed: () => updateFirebaseProfile(context, username: username, email: email)
             ),
           ],
         ),
