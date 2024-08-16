@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
