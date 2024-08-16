@@ -20,13 +20,21 @@ class FeedPage extends StatefulWidget {
 }
 
 class _FeedPageState extends State<FeedPage> {
+  setPageIndex(){
+    setState(() {
+      universal.navigatorIndex = 1;
+    });
+  }
+
   @override
   void initState() {
+    setPageIndex();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    print(universal.navigatorIndex);
     return SafeArea(
       child: Scaffold(
         backgroundColor: backgroundColor,

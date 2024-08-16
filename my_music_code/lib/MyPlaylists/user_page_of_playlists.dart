@@ -9,7 +9,6 @@ import 'package:my_music_code/MyPlaylists/playlist_page.dart';
 import 'package:my_music_code/Album/album_page.dart';
 import 'package:my_music_code/universal.dart' as universal;
 
-
 class UserPageOfPlaylists extends StatefulWidget {
   const UserPageOfPlaylists({super.key});
 
@@ -25,8 +24,15 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
   List<Widget> playlistWidgets = [];
   List<Widget> albumWidgets = [];
 
+  setPageIndex() {
+    setState(() {
+      universal.navigatorIndex = 1;
+    });
+  }
+
   @override
   void initState() {
+    setPageIndex();
     super.initState();
     _initializePlaylists();
     _initializeAlbums();
@@ -62,12 +68,11 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
         var pagesTracks = await universal.spotifyApi.albums.tracks(album.id!).first().asStream().first;
 
         return AlbumModel(
-          id: album.id.toString(),
-          name: album.name!,
-          artist: album.artists!.map((artist) => artist.name).join(', '),
-          image: album.images!.first.url!,
-          songs: pagesTracks.items
-        );
+            id: album.id.toString(),
+            name: album.name!,
+            artist: album.artists!.map((artist) => artist.name).join(', '),
+            image: album.images!.first.url!,
+            songs: pagesTracks.items);
       } catch (e) {
         // retorna modelo em branco
         return AlbumModel(
@@ -147,78 +152,75 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
     }).toList();
   }
 
-void _generateAlbumWidgets() {
-  albumWidgets = albums.map((album) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 0),
-      child: InkWell(
-        onTap: () =>
-          Navigator.push(context, MaterialPageRoute(builder: (context) => MyAlbumPage(album: album))),        
-        splashColor: primaryColor.withOpacity(0.3),
-        highlightColor: primaryColor.withOpacity(0.1),
-        borderRadius: BorderRadius.circular(10),
-        child: Container(
-          height: 120,
-          padding: EdgeInsets.all(7.5),
-          child: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 15, left: 7.5),
-                child: Container(
-                  height: 105,
-                  width: 105,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Colors.black,
-                    image: DecorationImage(
-                      image: NetworkImage(album.image),
-                      fit: BoxFit.cover,
+  void _generateAlbumWidgets() {
+    albumWidgets = albums.map((album) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 0),
+        child: InkWell(
+          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MyAlbumPage(album: album))),
+          splashColor: primaryColor.withOpacity(0.3),
+          highlightColor: primaryColor.withOpacity(0.1),
+          borderRadius: BorderRadius.circular(10),
+          child: Container(
+            height: 120,
+            padding: EdgeInsets.all(7.5),
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 15, left: 7.5),
+                  child: Container(
+                    height: 105,
+                    width: 105,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.black,
+                      image: DecorationImage(
+                        image: NetworkImage(album.image),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    album.name,
-                    style: TextStyle(
-                      color: primaryFontColor,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 24,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      album.name,
+                      style: TextStyle(
+                        color: primaryFontColor,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                      ),
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  Text(
-                    album.artist,
-                    style: TextStyle(
-                      color: secondaryFontColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16,
+                    Text(
+                      album.artist,
+                      style: TextStyle(
+                        color: secondaryFontColor,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+                      ),
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-    );
-  }).toList();
+      );
+    }).toList();
 
-  setState(() {
-    // Re-renderizar a tela para mostrar os álbuns após a lista ser atualizada
-  });
-}
-
+    setState(() {
+      // Re-renderizar a tela para mostrar os álbuns após a lista ser atualizada
+    });
+  }
 
   void _filterList() {
     setState(() {
       String query = _searchController.text.toLowerCase();
       List<PlaylistModel> filteredPlaylists = playlists.where((playlist) {
-        return playlist.name.toLowerCase().contains(query) ||
-               playlist.creator.toLowerCase().contains(query);
+        return playlist.name.toLowerCase().contains(query) || playlist.creator.toLowerCase().contains(query);
       }).toList();
 
       // Regenera a lista de widgets filtrada
@@ -306,6 +308,7 @@ void _generateAlbumWidgets() {
 
   @override
   Widget build(BuildContext context) {
+    print(universal.navigatorIndex);
     return DefaultTabController(
       length: 4,
       child: Scaffold(
@@ -313,8 +316,7 @@ void _generateAlbumWidgets() {
         appBar: AppBar(
           backgroundColor: backgroundColor,
           centerTitle: true,
-          title: Text("${DefaultPlaceholder.title}'s Playlists",
-              style: TextStyle(color: Colors.white)),
+          title: Text("${DefaultPlaceholder.title}'s Playlists", style: TextStyle(color: Colors.white)),
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(AppBar().preferredSize.height),
             child: Container(
@@ -339,7 +341,7 @@ void _generateAlbumWidgets() {
                   ),
                   tabs: List.generate(
                     4,
-                        (index) => Tab(
+                    (index) => Tab(
                       text: [
                         'Recent',
                         'Songs',

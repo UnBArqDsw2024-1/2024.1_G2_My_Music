@@ -37,6 +37,7 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
 
   populaAlbum() {
     setState(() {
+      universal.navigatorIndex = 2;
       universal.currentListMusic = List.empty(growable: true);
       for (var music in widget.album.songs!) {
         universal.currentListMusic.add(Music(
@@ -65,6 +66,7 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
 
   @override
   Widget build(BuildContext context) {
+    print(universal.navigatorIndex);
     return SafeArea(
       child: Scaffold(
         backgroundColor: backgroundColor,
@@ -77,6 +79,9 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                     padding: EdgeInsets.zero,
                     onPressed: () {
                       Navigator.pop(context);
+                      setState(() {
+                        universal.navigatorIndex--;
+                      });
                     },
                     icon: ResponsiveContainer(
                       height: 40,
@@ -181,7 +186,7 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                                     link: widget.album.songs!.first.externalUrls!.spotify,
                                     duration: widget.album.songs!.first.durationMs,
                                   );
-            
+
                                   if (isRandom) {
                                     currentMusic = Music(
                                       name: albumShuffle.first.name,
@@ -192,11 +197,11 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                                       duration: albumShuffle.first.durationMs,
                                     );
                                   }
-            
+
                                   setState(() {
                                     universal.currentAlbum = widget.album;
                                   });
-                                  showModalMusic(context, music: currentMusic, isRandom: isRandom,album: widget.album);
+                                  showModalMusic(context, music: currentMusic, isRandom: isRandom, album: widget.album);
                                 },
                                 padding: EdgeInsets.zero,
                                 icon: ResponsiveContainer(
@@ -219,67 +224,66 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                     (BuildContext context, int index) {
                       return Padding(
                         padding: EdgeInsets.only(
-                          bottom: universal.currentMusic.id != null && index == widget.album.songs!.length - 1? 90 : 0
-                        ),
+                            bottom:
+                                universal.currentMusic.id != null && index == widget.album.songs!.length - 1 ? 90 : 0),
                         child: ListTile(
-                          onTap: () {
-                            Music indexMusic = Music(
-                              name: widget.album.songs!.elementAt(index).name,
-                              id: widget.album.songs!.elementAt(index).id,
-                              artist: widget.album.songs!.elementAt(index).artists!.first.name,
-                              imageUrl: widget.album.image,
-                              link: widget.album.songs!.elementAt(index).externalUrls!.spotify,
-                              duration: widget.album.songs!.elementAt(index).durationMs,
-                            );
-                            showModalMusic(context, music: indexMusic, isRandom: isRandom, album: widget.album);
-                          },
-                          title: ResponsiveText(
-                            text: widget.album.songs!.elementAt(index).name,
-                            fontSize: 18,
-                            fontColor: Colors.white,
-                            fontWeight: FontWeight.w400,
-                          ),
-                          subtitle: ResponsiveText(
-                            text: widget.album.songs!.elementAt(index).artists!.first.name,
-                            fontSize: 12,
-                            fontColor: Colors.white54,
-                            fontWeight: FontWeight.w400,
-                          ),
-                          trailing: PopupMenuButton(
-                            color: secondaryColor,
-                            icon: Icon(Icons.more_vert, color: Colors.white54),
-                            itemBuilder: (BuildContext context) => [
-                              PopupMenuItem(
-                                child: ListTile(
-                                  leading: Icon(Icons.bookmark_border_rounded, color: Colors.white),
-                                  title: Text('Adicionar à playlist', style: TextStyle(color: Colors.white)),
-                                  onTap: () {
-                                    Navigator.pop(context);
-                                  },
+                            onTap: () {
+                              Music indexMusic = Music(
+                                name: widget.album.songs!.elementAt(index).name,
+                                id: widget.album.songs!.elementAt(index).id,
+                                artist: widget.album.songs!.elementAt(index).artists!.first.name,
+                                imageUrl: widget.album.image,
+                                link: widget.album.songs!.elementAt(index).externalUrls!.spotify,
+                                duration: widget.album.songs!.elementAt(index).durationMs,
+                              );
+                              showModalMusic(context, music: indexMusic, isRandom: isRandom, album: widget.album);
+                            },
+                            title: ResponsiveText(
+                              text: widget.album.songs!.elementAt(index).name,
+                              fontSize: 18,
+                              fontColor: Colors.white,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            subtitle: ResponsiveText(
+                              text: widget.album.songs!.elementAt(index).artists!.first.name,
+                              fontSize: 12,
+                              fontColor: Colors.white54,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            trailing: PopupMenuButton(
+                              color: secondaryColor,
+                              icon: Icon(Icons.more_vert, color: Colors.white54),
+                              itemBuilder: (BuildContext context) => [
+                                PopupMenuItem(
+                                  child: ListTile(
+                                    leading: Icon(Icons.bookmark_border_rounded, color: Colors.white),
+                                    title: Text('Adicionar à playlist', style: TextStyle(color: Colors.white)),
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                    },
+                                  ),
                                 ),
-                              ),
-                              PopupMenuItem(
-                                child: ListTile(
-                                  leading: Icon(Icons.favorite_outline_rounded, color: Colors.white),
-                                  title: Text('Favoritar música', style: TextStyle(color: Colors.white)),
-                                  onTap: () {
-                                    Navigator.pop(context);
-                                  },
+                                PopupMenuItem(
+                                  child: ListTile(
+                                    leading: Icon(Icons.favorite_outline_rounded, color: Colors.white),
+                                    title: Text('Favoritar música', style: TextStyle(color: Colors.white)),
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                    },
+                                  ),
                                 ),
-                              ),
-                              PopupMenuItem(
-                                child: ListTile(
-                                  leading: Icon(Icons.share_outlined, color: Colors.white),
-                                  title: Text('Compartilhar música', style: TextStyle(color: Colors.white)),
-                                  onTap: () async {
-                                    await Share.share(
-                                        "Ouça essa música:\n${widget.album.songs!.elementAt(index).externalUrls!.spotify} \nVocê vai amar!");
-                                  },
+                                PopupMenuItem(
+                                  child: ListTile(
+                                    leading: Icon(Icons.share_outlined, color: Colors.white),
+                                    title: Text('Compartilhar música', style: TextStyle(color: Colors.white)),
+                                    onTap: () async {
+                                      await Share.share(
+                                          "Ouça essa música:\n${widget.album.songs!.elementAt(index).externalUrls!.spotify} \nVocê vai amar!");
+                                    },
+                                  ),
                                 ),
-                              ),
-                            ],
-                          )
-                        ),
+                              ],
+                            )),
                       );
                     },
                     childCount: widget.album.songs!.length, // Número de músicas dentro da playlist
@@ -287,19 +291,18 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                 ),
               ],
             ),
-
             StreamBuilder(
-              stream: universal.audioPlayer.onPositionChanged,
-              builder: (context, snapshot) {
-                return snapshot.data == null? Container() : 
-                  Positioned(
-                    bottom: 1,
-                    left: 0,
-                    right: 0,
-                    child: MiniPlayer(),
-                  );
-              }
-            ),
+                stream: universal.audioPlayer.onPositionChanged,
+                builder: (context, snapshot) {
+                  return snapshot.data == null
+                      ? Container()
+                      : Positioned(
+                          bottom: 1,
+                          left: 0,
+                          right: 0,
+                          child: MiniPlayer(),
+                        );
+                }),
           ],
         ),
       ),

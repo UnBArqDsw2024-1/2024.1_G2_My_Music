@@ -28,6 +28,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
 
   setUser() {
     setState(() {
+      universal.navigatorIndex = 1;
       universal.user = widget.user;
       universal.spotifyApi = widget.spotifyApi;
     });
@@ -53,7 +54,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
 
     await getRecentMusicsFromSpotifyApi('músicas Fair').then((result) => setState(() => recentMusics = result));
 
-    await getRecentMusicsFromSpotifyApi('new releases musics 2024').then((result) { 
+    await getRecentMusicsFromSpotifyApi('new releases musics 2024').then((result) {
       setState(() {
         universal.releaseListMusics = List.from(result);
       });
@@ -131,17 +132,17 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   ],
                 ),
                 StreamBuilder(
-                  stream: universal.audioPlayer.onPositionChanged,
-                  builder: (context, snapshot) {
-                    return snapshot.data == null? Container() : 
-                      Positioned(
-                        bottom: 1,
-                        left: 0,
-                        right: 0,
-                        child: MiniPlayer(),
-                      );
-                  }
-                )
+                    stream: universal.audioPlayer.onPositionChanged,
+                    builder: (context, snapshot) {
+                      return snapshot.data == null
+                          ? Container()
+                          : Positioned(
+                              bottom: 1,
+                              left: 0,
+                              right: 0,
+                              child: MiniPlayer(),
+                            );
+                    })
               ],
             ),
           ],

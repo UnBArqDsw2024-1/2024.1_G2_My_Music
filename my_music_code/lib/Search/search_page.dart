@@ -34,6 +34,7 @@ class _SearchPageState extends State<SearchPage> {
 
   setData() {
     setState(() {
+      universal.navigatorIndex = 1;
       mapaDeResposta["Música"] = widget.recentMusics;
       mapaDeResposta["Álbum"] = widget.albumReleases;
     });
@@ -105,6 +106,7 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
+    print(universal.navigatorIndex);
     return SafeArea(
       child: Scaffold(
         appBar: feedProfileAppBar(),
@@ -209,13 +211,11 @@ class _SearchPageState extends State<SearchPage> {
                     ? List.from(mapaDeResposta.entries.map((e) => listBuilder(e.value, title: e.key)))
                     : [listBuilder(mapaDeResposta[_selectedFilter]!, title: _selectedFilter)]),
 
-            
             StreamBuilder(
-              stream: universal.audioPlayer.onPlayerStateChanged,
-              builder: (context, snapshot) {
-                return  Container(height: snapshot.data == null? 0 : 90);
-              }
-            )
+                stream: universal.audioPlayer.onPlayerStateChanged,
+                builder: (context, snapshot) {
+                  return Container(height: snapshot.data == null ? 0 : 90);
+                })
           ],
         )),
       ),

@@ -16,3 +16,5 @@ List<Music> currentListMusic = List.empty(growable: true);
 List<Music> currentListMusicShuffle = List.empty(growable: true);
 SignLoginModel userModel = SignLoginModel();
 AlbumModel currentAlbum = AlbumModel();
+
+int navigatorIndex = 0;

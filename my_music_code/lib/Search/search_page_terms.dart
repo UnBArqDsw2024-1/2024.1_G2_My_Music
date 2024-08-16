@@ -45,10 +45,15 @@ class _SearchPageTermsState extends State<SearchPageTerms> {
     });
   }
 
+  setPageIndex() {
+    setState(() {
+    });
+  }
+
   @override
   void initState() {
+    setPageIndex();
     buildResultQuery(universal.spotifyApi, "music");
-
     super.initState();
   }
 
@@ -80,6 +85,8 @@ class _SearchPageTermsState extends State<SearchPageTerms> {
                     icon: Icon(Icons.arrow_back, color: Colors.black), // Ícone no final do campo
                     onPressed: () {
                       Navigator.pop(context);
+                      setState(() {
+                      });
                     },
                   ),
                   hintStyle: TextStyle(color: Colors.grey),

@@ -32,6 +32,11 @@ class _MusicPageState extends State<MusicPage> {
   List<Music> populatedListMusic = [];
   setCurrentMusic() {
     setState(() {
+      if (universal.navigatorIndex == 1) {
+        universal.navigatorIndex = 2;
+      } else {
+        universal.navigatorIndex++;
+      }
       if (universal.currentMusic.imageUrl != widget.music.imageUrl || // Album Swap
           (universal.currentMusic.name != widget.music.name && universal.currentMusic.artist == widget.music.artist)) {
         universal.currentMusic = widget.music;
@@ -64,6 +69,7 @@ class _MusicPageState extends State<MusicPage> {
 
   @override
   Widget build(BuildContext context) {
+    print(universal.navigatorIndex);
     int indexListMusic = 0;
     if (universal.currentListMusic.isNotEmpty) {
       List<String> listNames = universal.currentListMusic.map((e) {
@@ -96,6 +102,9 @@ class _MusicPageState extends State<MusicPage> {
               icon: Icon(CupertinoIcons.chevron_down, color: Colors.white),
               onPressed: () {
                 Navigator.pop(context);
+                setState(() {
+                  universal.navigatorIndex--;
+                });
               },
             ),
             centerTitle: true,
@@ -220,6 +229,11 @@ class _MusicPageState extends State<MusicPage> {
                     onPressed: () {
                       print(indexListMusic);
                       Navigator.pop(context);
+                      if (universal.navigatorIndex > 1) {
+                        setState(() {
+                          universal.navigatorIndex--;
+                        });
+                      }
                       showModalMusic(context,
                           music: populatedListMusic[(indexListMusic - 1) % populatedListMusic.length],
                           isRandom: widget.isRandom);
@@ -258,6 +272,11 @@ class _MusicPageState extends State<MusicPage> {
                     onPressed: () {
                       print("Tamanho: ${universal.releaseListMusics.length}\n");
                       Navigator.pop(context);
+                      if (universal.navigatorIndex > 1) {
+                        setState(() {
+                          universal.navigatorIndex--;
+                        });
+                      }
                       showModalMusic(context,
                           music: populatedListMusic[(indexListMusic - 1) % populatedListMusic.length],
                           isRandom: widget.isRandom);

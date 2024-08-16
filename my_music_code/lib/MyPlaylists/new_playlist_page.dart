@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:my_music_code/Globals/style.dart';
-import 'package:my_music_code/MyPlaylists/playlist_page.dart';
 
 class CreatePlaylistDialog extends StatelessWidget {
   const CreatePlaylistDialog({super.key});
@@ -65,13 +64,7 @@ class CreatePlaylistDialog extends StatelessWidget {
                           foregroundColor: (Colors.white),
                         ),
                         onPressed: () {
-                          Navigator.of(context).pop(); 
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => MyPlaylistPage(),
-                            ),
-                          ); 
+                          Navigator.of(context).pop();
                         },
                         child: Text('Criar'),
                       ),
