@@ -43,11 +43,16 @@ A Sprint Review foi realizada na terça-feira, dia 06/08/2024 às 20h00, e pode 
 
 ### Visão Lógica
 
+Os membros que ficaram responsáveis pela documentação da Visão de Lógica foram o Israel, Luiz Guilherme e o Carlos Eduardo. O grupo teve dificuldade de trabalhar juntos em um momento síncrono, o que dificultou a sua realização e o entendimento do que era para ser feito ou ponto de vista diferente durante a documentação.
+
 ### Visão de Implementação
 
 ### Visão de Implantação
 
+Os membros que ficaram responsáveis pela documentação da Visão de Implementação foram a Milena e o Vinícius. Realizaram a tarefa em conjunto, na qual ambos deram seus pontos de vistas durante o processe de documentação e realização do diagrama de implantação. Além deste momento, houve posteriormente a ajuda do membros Lucas para o desenvolvimento de uma segunda versão do diagrama, o que contribuiu na melhora do documento.
+
 ### Visão de Processos
+
 
 ### Visão de Dados
 
@@ -59,4 +64,4 @@ A Sprint Review foi realizada na terça-feira, dia 06/08/2024 às 20h00, e pode 
 
 | Versão | Data       | Descrição                                               | Autores                        | Revisores |
 | ------ | ---------- | ------------------------------------------------------- | ------------------------------ | --------- |
-| 0.1    | 23/07/2024 | Criação do documento |  [Luis Miranda](https://github.com/LuisMiranda10), [Vinícius Mendes](https://github.com/yabamiah) | [Rafael Xavier](https://github.com/rafaelxavierr) & [João Vítor](https://github.com/Jvsoutomaior) - [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/68#issuecomment-2249232056) |
+| 0.1    | 23/07/2024 | Criação do documento |  [Luis Miranda](https://github.com/LuisMiranda10), [Vinícius Mendes](https://github.com/yabamiah) | |
