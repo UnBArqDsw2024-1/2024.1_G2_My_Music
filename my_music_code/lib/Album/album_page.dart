@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Globals/mini_player.dart';
 import 'package:my_music_code/Models/album_model.dart';
 import 'package:my_music_code/Models/music_model.dart';
 import 'package:my_music_code/Music/Components/modal_music.dart';
@@ -216,7 +217,11 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                 SliverList(
                   delegate: SliverChildBuilderDelegate(
                     (BuildContext context, int index) {
-                      return ListTile(
+                      return Padding(
+                        padding: EdgeInsets.only(
+                          bottom: universal.currentMusic.id != null && index == widget.album.songs!.length - 1? 90 : 0
+                        ),
+                        child: ListTile(
                           onTap: () {
                             Music indexMusic = Music(
                               name: widget.album.songs!.elementAt(index).name,
@@ -273,12 +278,27 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                                 ),
                               ),
                             ],
-                          ));
+                          )
+                        ),
+                      );
                     },
                     childCount: widget.album.songs!.length, // Número de músicas dentro da playlist
                   ),
                 ),
               ],
+            ),
+
+            StreamBuilder(
+              stream: universal.audioPlayer.onPlayerStateChanged,
+              builder: (context, snapshot) {
+                return snapshot.data == null? Container() : 
+                  Positioned(
+                    bottom: 1,
+                    left: 0,
+                    right: 0,
+                    child: MiniPlayer(),
+                  );
+              }
             ),
           ],
         ),

@@ -209,7 +209,13 @@ class _SearchPageState extends State<SearchPage> {
                     ? List.from(mapaDeResposta.entries.map((e) => listBuilder(e.value, title: e.key)))
                     : [listBuilder(mapaDeResposta[_selectedFilter]!, title: _selectedFilter)]),
 
-            if (universal.currentMusic.name != null) Container(height: 180),
+            
+            StreamBuilder(
+              stream: universal.audioPlayer.onPlayerStateChanged,
+              builder: (context, snapshot) {
+                return  Container(height: snapshot.data == null? 0 : 90);
+              }
+            )
           ],
         )),
       ),

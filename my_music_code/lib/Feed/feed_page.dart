@@ -43,11 +43,12 @@ class _FeedPageState extends State<FeedPage> {
                 title: "Álbuns recentes",
                 albuns: widget.albumReleases,
               ),
-              // FeedHorizontalScrollComponent(
-              //   title: "Tocadas recentemente",
-              //   albuns: widget.albumReleases,
-              // ),
-              if (universal.currentMusic.name != null) Container(height: 90),
+              StreamBuilder(
+                stream: universal.audioPlayer.onPlayerStateChanged,
+                builder: (context, snapshot) {
+                  return  Container(height: snapshot.data == null? 0 : 90);
+                }
+              )
             ],
           ),
         )
