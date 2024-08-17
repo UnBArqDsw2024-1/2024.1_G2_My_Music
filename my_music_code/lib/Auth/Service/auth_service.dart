@@ -23,7 +23,7 @@ class AuthService {
     required BuildContext context,
   }) async {
     try {
-      loadingDialog(context);
+      // loadingDialog(context);
       if (universal.userModel.creatingAccount) {
         // Verifica se as não senhas são iguais
         if (universal.userModel.password != universal.userModel.confirmPassword) {
@@ -50,7 +50,7 @@ class AuthService {
     required BuildContext context,
   }) async {
     try {
-      loadingDialog(context);
+      // loadingDialog(context);
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
       if (context.mounted) Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
@@ -64,7 +64,7 @@ class AuthService {
     required BuildContext context,
   }) async {
     try {
-      loadingDialog(context);
+      // loadingDialog(context);
       await FirebaseAuth.instance.currentUser!.updatePassword(password);
       if (context.mounted) Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
