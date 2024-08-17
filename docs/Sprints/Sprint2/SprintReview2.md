@@ -67,9 +67,10 @@ Os membros responsáveis pelo desenvolvimento da visão de casos de uso foram o 
 
 ### Reutilização
 
+Os membros responsáveis pelo processo de reutilização de código foram Lucas Alves Vilela, Vínicius Mendes, Luis Miranda e Límirio. Este grupo realizou boa parte da codificação do projeto, otimizou diversos trechos de componentes do código da aplicação melhorando a legibilidade, acelerando o procesos de desenvolvimento como um todo e melhorando a qualidade da aplicação final, graças a isso foi possível desenvolver o projeto de forma muito mais rápida, prática e eficiente.
+
 ## Histórico de Versão
 
 | Versão | Data       | Descrição                                               | Autores                        | Revisores |
 | ------ | ---------- | ------------------------------------------------------- | ------------------------------ | --------- |
 | 0.1    | 23/07/2024 | Criação do documento |  [Luis Miranda](https://github.com/LuisMiranda10), [Vinícius Mendes](https://github.com/yabamiah) | |
-| 0.2    | 16/08/2024 | Adicionando visão de casos de uso |  [Carlos Nascimento](https://github.com/CDGodoy) | |
