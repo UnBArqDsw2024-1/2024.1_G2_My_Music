@@ -20,19 +20,23 @@ O Flutter fornece uma ampla gama de widgets básicos, como `Container`, `Row`, `
 
 A Figura 1 apresenta um exemplo de reutilização da classe `FeedPage`, que estende `StatefulWidget`:
 
-<div style="text-align: center">
-  <img src="../Assets/reutilizacao1.png" alt="Trecho de código FeedPage" title="Título da Imagem" />
-  <p>Figura 1: Trecho de código FeedPage (Fonte: Limírio Guimarães, 2024)</p>
-</div>
+<center>
+
+Figura 1 - Trecho de código FeedPage
+![Figura 1](../Assets/reutilizacao1.png)
+Autores: [Limírio Guimarães](https://github.com/LimirioGuimaraes) 
+</center>
 
 Nesta implementação, a classe `FeedPage` é um exemplo de como o Flutter permite a criação de widgets personalizados que encapsulam uma lógica específica e podem ser reutilizados em diferentes contextos dentro do aplicativo. Ao estender `StatefulWidget`, a `FeedPage` permite que seu estado seja gerenciado e atualizado de forma independente, promovendo a reutilização do widget com diferentes estados e comportamentos conforme necessário. Este padrão não só contribui para a modularidade do código, mas também facilita a manutenção e a escalabilidade da aplicação.
 
 No desenvolvimento de aplicativos com Flutter, como já citado, a reutilização de widgets e componentes é essencial para manter a consistência e eficiência no código. A Figura 2 ilustra um exemplo de reutilização na classe `_FeedPageState`, que estende `State<FeedPage>`:
 
-<div style="text-align: center">
-  <img src="../Assets/reutilizacao2.png" alt="Trecho de código _FeedPageState" title="Título da Imagem" />
-  <p>Figura 2: Trecho de código _FeedPageState (Fonte: Limírio Guimarães, 2024)</p>
-</div>
+<center>
+
+Figura 1 - Trecho de código _FeedPageState
+![Figura 1](../Assets/reutilizacao2.png)
+Autores: [Limírio Guimarães](https://github.com/LimirioGuimaraes) 
+</center>
 
 ### Explicação das Reutilizações no Trecho Apresentado
 
