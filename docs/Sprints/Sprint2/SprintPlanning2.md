@@ -61,4 +61,4 @@ Foi feita decidido que todo iriam participar das partes do desenvolvimento do ap
 
 | Versão | Data       | Descrição                                               | Autores                        | Revisores |
 | ------ | ---------- | ------------------------------------------------------- | ------------------------------ | --------- |
-| 0.1    | 23/07/2024 | Criação do documento |  [Luis Miranda](https://github.com/LuisMiranda10) | [fulano](Nome) - [Link da revisão]() || 
+| 0.1    | 23/07/2024 | Criação do documento |  [Luis Miranda](https://github.com/LuisMiranda10) |  [Lucas Alves Vilela](https://github.com/Lucas-AV)|
