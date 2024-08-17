@@ -37,6 +37,28 @@ O aplicativo MyMusic, é um aplicativo para que seja possível ouvir músicas e 
 
 ## 👨‍💻 Guia de Instalação
 
+### 🌐 QRcode via site do MyMusic!
+
+Nosso site oferece uma maneira simples e rápida de baixar nosso aplicativo diretamente para o seu dispositivo móvel. Ao acessar o site, você encontrará um QR code centralizado, que pode ser escaneado com a câmera do seu smartphone. Isso permitirá que você baixe nosso aplicativo e comece a curtir suas músicas favoritas imediatamente.
+
+Este site foi cuidadosamente hospedado na AWS (Amazon Web Services), uma das plataformas de nuvem mais confiáveis e escaláveis disponíveis no mercado. Utilizando a AWS, garantimos:
+
+- **Alta disponibilidade:** Seu acesso ao site é contínuo, mesmo durante períodos de alta demanda.
+- **Segurança robusta:** Seus dados e informações são protegidos por medidas de segurança de ponta.
+- **Escalabilidade:** Conforme nossa base de usuários cresce, nossa infraestrutura se adapta automaticamente para manter a performance ideal.
+
+Além disso, a infraestrutura do site foi provisionada e configurada usando **Terraform**, uma ferramenta poderosa de infraestrutura como código (IaC). O uso do Terraform nos permitiu:
+
+- **Automatização:** Implementar e gerenciar a infraestrutura de forma automatizada, reduzindo erros manuais.
+- **Controle de Versão da Infraestrutura:** Como toda a configuração da infraestrutura está codificada, é possível versionar e auditar as mudanças feitas. Isso traz mais segurança e permite reverter a configuração para um estado anterior, caso seja necessário.
+- **Facilidade de manutenção:** Com Terraform, ajustes e melhorias na infraestrutura podem ser feitos de forma simples e eficiente.
+
+### 📱 Como usar o site
+
+1. Acesse o nosso site clicando [AQUI](http://mybuck-terraform-s3.s3-website-sa-east-1.amazonaws.com/) e localize o QR code no centro da página.
+2. Abra a câmera do seu smartphone e aponte-a para o QR code.
+3. Instale o aplicativo e aproveite a melhor experiência musical diretamente no seu dispositivo.
+
 ### 🚀 Linux (Debian/Ubuntu)
 
 #### 1) Baixar o Android Studio
@@ -132,3 +154,8 @@ Seleciona um emulador de celular
 ```bash
 flutter run
 ```
+
+## Histórico de Versão
+| Versão | Data      | Descrição | Autores | Revisor |
+| :-:    | :-----:   | :------   | ----  | ------- |
+| 1.0    |16/08/2024 | Criação do Documento | [Luis Miranda](https://github.com/LuisMiranda10) & [Milena Baruc](https://github.com/MilenaBaruc)| [Lucas Alves Vilela](https://github.com/Lucas-AV), [Link da revisão]([https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/90](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/120))  |
