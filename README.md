@@ -94,7 +94,7 @@ Selecione um emulador de celular
 #### 🎼 Rode o projeto e curta uma música 💃
 
 ```bash
-Flutter run
+flutter run
 ```
 
 ### 🚀 Windows
@@ -130,5 +130,5 @@ Seleciona um emulador de celular
 #### 🎼 Rode o projeto e curta uma música 💃
 
 ```bash
-Flutter run
+flutter run
 ```
