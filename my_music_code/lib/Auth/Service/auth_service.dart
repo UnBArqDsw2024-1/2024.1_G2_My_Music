@@ -35,6 +35,8 @@ class AuthService {
         await FirebaseAuth.instance
             .createUserWithEmailAndPassword(email: universal.userModel.email, password: universal.userModel.password);
         await FirebaseAuth.instance.signOut();
+        if(context.mounted) errorDialogMessage(context, "Conta criada com sucesso", title: "Atenção!");
+
       } else {
         await FirebaseAuth.instance.signInWithEmailAndPassword(email: universal.userModel.email, password: universal.userModel.password);
       }

@@ -126,8 +126,6 @@ class _SignUpPageState extends State<SignUpPage> {
                             onPressed: () async {
                               AuthService().controlSignLogin(context: context);
                               widget.onTapTogglePage!();
-                              Navigator.pop(context);
-                              errorDialogMessage(context, "Conta criada com sucesso", title: "Atenção!");
                             },
                             child: ResponsiveContainer(
                               height: 47,
