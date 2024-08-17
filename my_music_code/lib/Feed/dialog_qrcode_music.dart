@@ -73,19 +73,21 @@ class _QrcodeGeneratorState extends State<QrcodeGenerator> {
 
   Future shareQRImage() async {
     final image = await QrPainter(
-            data: widget.music.link!,
-            version: QrVersions.auto,
-            gapless: false,
-            errorCorrectionLevel: QrErrorCorrectLevel.L)
-        .toImageData(100.0);
+        data: widget.music.link!,
+        version: QrVersions.auto,
+        gapless: false,
+        errorCorrectionLevel: QrErrorCorrectLevel.L,
+        emptyColor: Colors.white,  
+      )
+    .toImageData(100.0);
 
     const filename = 'qr_code.png';
     final tempDir = await getTemporaryDirectory(); // Get temporary directory to store the generated image
     final file = await File('${tempDir.path}/$filename').create(); // Create a file to store the generated image
     var bytes = image!.buffer.asUint8List(); // Get the image bytes
-    await file.writeAsBytes(bytes); // Write the image bytes to the file
-    final xFile = XFile.fromData(bytes, mimeType: 'image/png', name: filename);
-
-    await Share.shareXFiles([xFile], text: 'QR code for ${widget.music.link!}', subject: 'QR Code');
+    await file.writeAsBytes(bytes).then((value){
+      final xFile = XFile.fromData(bytes, mimeType: 'image/png', name: filename);
+      Share.shareXFiles([xFile], text: 'QR code for ${widget.music.link!}', subject: 'QR Code');
+    }); // Write the image bytes to the file
   }
 }
