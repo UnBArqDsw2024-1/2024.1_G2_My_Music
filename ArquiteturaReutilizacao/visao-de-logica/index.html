@@ -14,7 +14,7 @@
       
         <link rel="next" href="../visao-de-processo/">
       
-      <link rel="icon" href="../../Assets/LogoMyMusic.png">
+      <link rel="icon" href="../../assets/LogoMyMusic.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
@@ -89,7 +89,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="../.." title="My Music" class="md-header__button md-logo" aria-label="My Music" data-md-component="logo">
       
-  <img src="../../Assets/LogoMyMusic.png" alt="logo">
+  <img src="../../assets/LogoMyMusic.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -200,7 +200,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="My Music" class="md-nav__button md-logo" aria-label="My Music" data-md-component="logo">
       
-  <img src="../../Assets/LogoMyMusic.png" alt="logo">
+  <img src="../../assets/LogoMyMusic.png" alt="logo">
 
     </a>
     My Music
@@ -1925,7 +1925,7 @@
 <h4 id="pacote-da-camada-frontend">Pacote da camada Frontend</h4>
 <p>Aqui estão os subpacotes pertencentes ao Frontend e a relação entre eles, bem como a interação com o pacote do Backend, que serão explicados mais à frente.</p>
 <h5 id="subpacote-src">Subpacote Src</h5>
-<p>É onde se encontra o código para as telas que serão vistas pelo usuário, nele estão contidos os Components, os Scripts e os Styles, que juntos dão a forma como as páginas serão visualizadas(Style), onde se encontram as funções que ela possuirá(Components) e onde irá procurar o código para executar a ação solicitada(Scripts), e para que isso ocorra sem erros, o subpacote Src importa as Libraries e a Api e acessa os Assets, as Libraries são onde os termos utilizados para criar o código se encontram e serão puxados de lá para que o mesmo entenda o que fazer, a Api é de onde puxa todas as funcionalidades implementadas no Backend e os Assets são onde todas as fontes de imagem se encontram.</p>
+<p>É onde se encontra o código para as telas que serão vistas pelo usuário, nele estão contidos os Components, os Scripts e os Styles, que juntos dão a forma como as páginas serão visualizadas(Style), onde se encontram as funções que ela possuirá(Components) e onde irá procurar o código para executar a ação solicitada(Scripts), e para que isso ocorra sem erros, o subpacote Src importa as Libraries e a Api e acessa os assets, as Libraries são onde os termos utilizados para criar o código se encontram e serão puxados de lá para que o mesmo entenda o que fazer, a Api é de onde puxa todas as funcionalidades implementadas no Backend e os assets são onde todas as fontes de imagem se encontram.</p>
 <h5 id="subpacote-public">Subpacote Public</h5>
 <p>É onde o que será visto pelo usuário será programado, possuindo os subpacotes Pages, que é a implementação das páginas que o aplicativo irá possuir, e Styles, que é onde estas páginas serão estilizadas, ele importa o subpacote Src e Api para que possa funcionar corretamente.</p>
 <h4 id="pacote-da-camada-backend">Pacote da camada Backend</h4>
@@ -1941,7 +1941,7 @@
 <h5 id="subpacote-config">Subpacote Config</h5>
 <p>Presente tanto nos pacotes de Frontend quanto Backend, embora sejam diferentes entre si, funcionam da mesma forma, garantindo que ambos os pacotes estejam implementados de acordo com o definido.</p>
 <h3 id="diagrama-de-classes">Diagrama de classes</h3>
-<p><img alt="Diagrama de atividades de cadastro" src="../Assets/diagramaClasses.png" /></p>
+<p><img alt="Diagrama de atividades de cadastro" src="../../assets/diagramaClasses.png" /></p>
 <div style="text-align: center">
   <p>Figura 3: Diagrama de classes do aplicativo My Music  (Fonte: Ana Luíza Rodrigues e Rafael Xavier, 2024)</p>
 </div>
@@ -1961,25 +1961,25 @@
 <p>É similar, em alguns aspectos, à classe Álbum, como uma lista de músicas associadas e os métodos de adição e remoção de músicas. Entretanto, playlist não necessariamente possui apenas músicas do mesmo álbum ou artista.</p>
 <h3 id="diagrama-de-atividades">Diagrama de atividades</h3>
 <p>O diagrama de atividades serve para que se possa entender como as atividades que serão realizadas pelo usuário irão interagir com a aplicação, mostrando os caminhos possíveis para a ação.</p>
-<p><img alt="Diagrama de atividades de cadastro" src="../Assets/DiagramadeAtividades-Cadastro.png" /></p>
+<p><img alt="Diagrama de atividades de cadastro" src="../../assets/DiagramadeAtividades-Cadastro.png" /></p>
 <div style="text-align: center">
   <p>Figura 4: Diagrama de cadastro. (Fonte: Vinícius Mendes, 2024)</p>
 </div>
 
 <p>O diagrama de cadastro demonstra como o mesmo é efetuado, o usuário que deseja se cadastrar precisa fornecer nome, email, senha e repetir a senha, e a aplicação irá registrar o usuário se todas as etapas tiverem sido executadas sem erros, ou retornar o que está errado.</p>
-<p><img alt="Diagrama de atividades de login" src="../Assets/DiagramadeAtividades-Login.png" /></p>
+<p><img alt="Diagrama de atividades de login" src="../../assets/DiagramadeAtividades-Login.png" /></p>
 <div style="text-align: center">
   <p>Figura 5: Diagrama de login. (Fonte: Vinícius Mendes, 2024)</p>
 </div>
 
 <p>Para efetuar o login, a aplicação pede o nome de usuário ou o email e a senha, e confere na base de dados se eles correspondem a algum existente, efetuando o mesmo se tudo estiver correto ou retornando erro caso contrário.</p>
-<p><img alt="Diagrama de atividades de ouvir música" src="../Assets/DiagramadeAtividades-Ouvirmusica.png" /></p>
+<p><img alt="Diagrama de atividades de ouvir música" src="../../assets/DiagramadeAtividades-Ouvirmusica.png" /></p>
 <div style="text-align: center">
   <p>Figura 6: Diagrama de ouvir música. (Fonte: Vinícius Mendes, 2024)</p>
 </div>
 
 <p>Para encontrar e reproduzir uma música, a aplicação irá possibilitar, além de pesquisar por nome, filtrar por artista, álbum, playlist e estilo musical, caso encontre, irá reproduzir a música, caso contrário, retorna que não encontrou a música pesquisada.</p>
-<p><img alt="Diagrama de atividades de criar playlist" src="../Assets/DiagramadeAtividades-Criarplaylist.png" /></p>
+<p><img alt="Diagrama de atividades de criar playlist" src="../../assets/DiagramadeAtividades-Criarplaylist.png" /></p>
 <div style="text-align: center">
   <p>Figura 7: Diagrama de criar playlist. (Fonte: Vinícius Mendes, 2024)</p>
 </div>
