@@ -7,14 +7,13 @@ import 'package:my_music_code/Models/music_model.dart';
 import 'package:my_music_code/Models/sign_login_model.dart';
 import 'package:spotify/spotify.dart' hide User;
 
-AudioPlayer audioPlayer = AudioPlayer();
-Music currentMusic = Music();
 late User user;
 late SpotifyApi spotifyApi;
+AudioPlayer audioPlayer = AudioPlayer();
+Music currentMusic = Music();
 List<Music> releaseListMusics = List.empty(growable: true);
 List<Music> currentListMusic = List.empty(growable: true);
 List<Music> currentListMusicShuffle = List.empty(growable: true);
 SignLoginModel userModel = SignLoginModel();
 AlbumModel currentAlbum = AlbumModel();
-
 int navigatorIndex = 0;

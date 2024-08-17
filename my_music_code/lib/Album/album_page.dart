@@ -76,7 +76,7 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                   leading: IconButton(
                     padding: EdgeInsets.zero,
                     onPressed: () {
-                      while (universal.navigatorIndex != 1) {
+                      while (universal.navigatorIndex != 1 && Navigator.canPop(context)) {
                         Navigator.pop(context);
                         setState(() {
                           universal.navigatorIndex--;

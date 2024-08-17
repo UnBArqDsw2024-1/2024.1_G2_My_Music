@@ -48,7 +48,7 @@ class _QrcodeGeneratorState extends State<QrcodeGenerator> {
               padding: const EdgeInsets.symmetric(horizontal: 35),
               child: GestureDetector(
                 onTap: () async {
-                  await Share.share("Ouça essa música:\n${widget.music.link} \nVocê vai amar!");
+                  await shareQRImage();
                               
                 },
                 child: Container(
