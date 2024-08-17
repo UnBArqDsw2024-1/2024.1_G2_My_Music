@@ -23,9 +23,10 @@ class _LoginPageState extends State<LoginPage> {
   SignLoginModel signLoginModel = SignLoginModel();
 
   setupModel() {
-    print("teste");
+    String pastUsername = universal.userModel.username;
     setState(() {
       universal.userModel = signLoginModel;
+      universal.userModel.username = pastUsername;
     });
   }
 

@@ -22,9 +22,11 @@ class _SignUpPageState extends State<SignUpPage> {
   SignLoginModel signLoginModel = SignLoginModel();
 
   setupModel() {
-    print("teste");
+    String pastUsername = universal.userModel.username;
     setState(() {
       universal.userModel = signLoginModel;
+
+      universal.userModel.username = pastUsername;
       universal.userModel.creatingAccount = true;
     });
   }
