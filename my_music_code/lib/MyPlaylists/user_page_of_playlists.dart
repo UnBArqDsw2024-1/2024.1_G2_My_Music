@@ -27,6 +27,7 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
   List<Widget> playlistWidgets = [];
   List<Widget> albumWidgets = [];
   List<Widget> musicWidgets = [];
+  int actualIndex = 1;
 
   setPageIndex() {
     setState(() {
@@ -168,6 +169,7 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
+        initialIndex: 1,
         length: 4,
         child: Scaffold(
           backgroundColor: backgroundColor,

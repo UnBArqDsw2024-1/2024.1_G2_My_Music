@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Album/album_page.dart';
 import 'package:my_music_code/Feed/dialog_qrcode_music.dart';
+import 'package:my_music_code/Globals/dialogs.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/Models/music_model.dart';
 import 'package:share_plus/share_plus.dart';
@@ -80,7 +81,9 @@ void musicOptionsModalBottomSheet(BuildContext context, {required Music music, r
                   ),
                 ),
               ListTile(
-                onTap: () {},
+                onTap: () {
+                  errorDialogMessage(context, "Essa funcionalidade ainda não está disponível.", title: "Em breve...");
+                },
                 leading: Icon(Icons.bookmark_add_outlined, color: Colors.white),
                 title: Text(
                   'Salvar música em playlist...',
@@ -92,7 +95,10 @@ void musicOptionsModalBottomSheet(BuildContext context, {required Music music, r
               ),
               ListTile(
                   leading: Icon(CupertinoIcons.heart, color: Colors.white),
-                  onTap: onFav,
+                  onTap: () {
+                    Navigator.pop(context);
+                    onFav();
+                  },
                   title: Text(
                     'Favoritar música',
                     style: TextStyle(

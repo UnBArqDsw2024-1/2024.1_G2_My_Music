@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:my_music_code/Globals/dialogs.dart';
 import 'package:my_music_code/Globals/mini_player.dart';
 import 'package:my_music_code/Models/album_model.dart';
 import 'package:my_music_code/Models/music_model.dart';
@@ -263,6 +264,7 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                                     title: Text('Adicionar à playlist', style: TextStyle(color: Colors.white)),
                                     onTap: () {
                                       Navigator.pop(context);
+                                      errorDialogMessage(context, "Essa funcionalidade ainda não está disponível.", title: "Em breve...");
                                     },
                                   ),
                                 ),
@@ -272,6 +274,7 @@ class _MyAlbumPageState extends State<MyAlbumPage> {
                                     title: Text('Favoritar música', style: TextStyle(color: Colors.white)),
                                     onTap: () {
                                       Navigator.pop(context);
+                                      errorDialogMessage(context, "Essa funcionalidade ainda não está disponível.", title: "Em breve...");
                                     },
                                   ),
                                 ),
