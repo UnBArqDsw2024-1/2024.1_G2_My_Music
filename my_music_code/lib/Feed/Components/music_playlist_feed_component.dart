@@ -26,7 +26,9 @@ class _MusicPlaylistFeedComponentState extends State<MusicPlaylistFeedComponent>
         setState(() {
           universal.currentListMusic = List.empty();
         });
-        showModalMusic(context, music: widget.music);
+        if (widget.music.id != null) {
+          showModalMusic(context, music: widget.music);
+        }
       },
       child: ResponsiveContainer(
         height: 60,

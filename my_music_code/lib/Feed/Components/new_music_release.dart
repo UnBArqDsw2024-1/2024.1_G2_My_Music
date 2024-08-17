@@ -85,7 +85,9 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                       constraints: BoxConstraints(maxHeight: 55, maxWidth: 55),
                       iconSize: 36,
                       onPressed: () {
-                        showModalMusic(context, music: widget.musicRelease);
+                        if(widget.musicRelease.id != null){
+                          showModalMusic(context, music: widget.musicRelease);
+                        }
                       },
                       icon: Container(
                           decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),

@@ -53,6 +53,7 @@ class _FeedHorizontalScrollComponentState extends State<FeedHorizontalScrollComp
                         padding: EdgeInsets.only(right: responsiveFigmaWidth(10)),
                         child: CubicButtonWithImage(
                           image: NetworkImage(DefaultPlaceholder.image),
+                          onPressed: (){},
                         )
                       ),
                 ],

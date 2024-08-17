@@ -53,6 +53,7 @@ dependencies:
   share_plus: ^10.0.0
   qr_flutter: ^4.1.0
   path_provider: ^2.1.4
+  wakelock_plus: ^1.2.8
 
 dev_dependencies:
   flutter_test:

@@ -35,7 +35,9 @@ class _HorizontalScrollComponentState extends State<HorizontalScrollComponent> {
                 for (int i = 0; i < 10; i++)
                   Padding(
                     padding: EdgeInsets.only(right: responsiveFigmaWidth(10)),
-                    child: CubicButtonWithImage(),
+                    child: CubicButtonWithImage(
+                      onPressed: (){},
+                    ),
                   ),
               ],
             ),
