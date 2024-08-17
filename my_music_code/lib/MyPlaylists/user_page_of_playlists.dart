@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Models/album_model.dart';
 import 'package:my_music_code/Models/playlist_model.dart';
@@ -242,8 +243,26 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
                         ],
                       ),
                     ),
-                    ListView(children: musicWidgets),
-                    ListView(children: albumWidgets),
+                    musicWidgets.isEmpty? Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(CupertinoIcons.music_note_2, size: 100, color: Colors.white),
+                          Text("Favorite alguma música para ver aqui!",
+                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
+                        ],
+                      ),
+                    ) : ListView(children: musicWidgets),
+                    albumWidgets.isEmpty? Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(CupertinoIcons.music_note_2, size: 100, color: Colors.white),
+                          Text("Favorite algum album para ver aqui!",
+                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
+                        ],
+                      ),
+                    ) :ListView(children: albumWidgets),
                     Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
