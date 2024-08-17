@@ -1,7 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Models/music_model.dart';
-import 'package:my_music_code/Music/music_page.dart';
+import 'package:my_music_code/Music/Components/modal_music.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/style.dart';
@@ -86,13 +85,7 @@ class _NewMusicReleaseState extends State<NewMusicRelease> {
                       constraints: BoxConstraints(maxHeight: 55, maxWidth: 55),
                       iconSize: 36,
                       onPressed: () {
-                        showModalBottomSheet(
-                            useRootNavigator: false,
-                            isScrollControlled: true,
-                            useSafeArea: true,
-                            context: context,
-                            builder: (context) => MusicPage(music: widget.musicRelease,)
-                          );
+                        showModalMusic(context, music: widget.musicRelease);
                       },
                       icon: Container(
                           decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),

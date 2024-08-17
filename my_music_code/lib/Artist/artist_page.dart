@@ -70,13 +70,7 @@ class _ArtistPageState extends State<ArtistPage> {
                       child: IconButton(
                         padding: EdgeInsets.zero,
                         constraints: BoxConstraints(),
-                        onPressed: () {
-                          showModalBottomSheet(
-                              context: context,
-                              builder: (context) {
-                                return Container();
-                              });
-                        },
+                        onPressed: () {},
                         icon: ResponsiveContainer(
                             height: 55,
                             width: 55,

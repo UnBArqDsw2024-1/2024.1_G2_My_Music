@@ -28,6 +28,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
 
   setUser() {
     setState(() {
+      universal.navigatorIndex = 1;
       universal.user = widget.user;
       universal.spotifyApi = widget.spotifyApi;
     });
@@ -131,7 +132,7 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   ],
                 ),
                 StreamBuilder(
-                    stream: universal.audioPlayer.onPlayerStateChanged,
+                    stream: universal.audioPlayer.onPositionChanged,
                     builder: (context, snapshot) {
                       return snapshot.data == null
                           ? Container()

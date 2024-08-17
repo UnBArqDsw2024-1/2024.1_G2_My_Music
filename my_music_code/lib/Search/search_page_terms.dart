@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Models/music_model.dart';
-import 'package:my_music_code/Music/music_page.dart';
+import 'package:my_music_code/Music/Components/modal_music.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/Search/back/get_query_result.dart';
 import 'package:spotify/spotify.dart' hide Image;
@@ -26,12 +26,7 @@ class _SearchPageTermsState extends State<SearchPageTerms> {
     setState(() {
       buildTile = List.from(listResults.map((music) => ListTile(
           onTap: () {
-            showModalBottomSheet(
-              useRootNavigator: false,
-              isScrollControlled: true,
-              useSafeArea: true,
-              context: context,
-              builder: (context) => MusicPage(music: music));
+            showModalMusic(context, music: music);
           },
           title: Text(music.name!, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500)),
           subtitle: Text(music.artist!, style: TextStyle(color: Colors.white)),
@@ -50,10 +45,15 @@ class _SearchPageTermsState extends State<SearchPageTerms> {
     });
   }
 
+  setPageIndex() {
+    setState(() {
+    });
+  }
+
   @override
   void initState() {
+    setPageIndex();
     buildResultQuery(universal.spotifyApi, "music");
-
     super.initState();
   }
 
@@ -85,6 +85,8 @@ class _SearchPageTermsState extends State<SearchPageTerms> {
                     icon: Icon(Icons.arrow_back, color: Colors.black), // Ícone no final do campo
                     onPressed: () {
                       Navigator.pop(context);
+                      setState(() {
+                      });
                     },
                   ),
                   hintStyle: TextStyle(color: Colors.grey),
