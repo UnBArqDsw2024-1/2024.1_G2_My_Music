@@ -27,7 +27,7 @@ class AuthService {
       if (universal.userModel.creatingAccount) {
         // Verifica se as não senhas são iguais
         if (universal.userModel.password != universal.userModel.confirmPassword) {
-          if (context.mounted) Navigator.pop(context);
+          // if (context.mounted) Navigator.pop(context);
           if (context.mounted) errorDialogMessage(context, errorMap['different-password']!);
           return;
         }
@@ -38,9 +38,9 @@ class AuthService {
       } else {
         await FirebaseAuth.instance.signInWithEmailAndPassword(email: universal.userModel.email, password: universal.userModel.password);
       }
-      if (context.mounted) Navigator.pop(context);
+      // if (context.mounted) Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
-      if (context.mounted) Navigator.pop(context);
+      // if (context.mounted) Navigator.pop(context);
       if (context.mounted) errorDialogMessage(context, errorMap[e.code] ?? e.code);
     }
   }
@@ -52,9 +52,9 @@ class AuthService {
     try {
       // loadingDialog(context);
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
-      if (context.mounted) Navigator.pop(context);
+      // if (context.mounted) Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
-      if (context.mounted) Navigator.pop(context);
+      // if (context.mounted) Navigator.pop(context);
       if (context.mounted) errorDialogMessage(context, errorMap[e.code] ?? e.code);
     }
   }
@@ -66,9 +66,9 @@ class AuthService {
     try {
       // loadingDialog(context);
       await FirebaseAuth.instance.currentUser!.updatePassword(password);
-      if (context.mounted) Navigator.pop(context);
+      // if (context.mounted) Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
-      if (context.mounted) Navigator.pop(context);
+      // if (context.mounted) Navigator.pop(context);
       if (context.mounted) errorDialogMessage(context, errorMap[e.code] ?? e.code);
     }
   }
