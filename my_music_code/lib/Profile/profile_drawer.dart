@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Auth/Service/auth_service.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
@@ -36,11 +37,6 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
                 MaterialPageRoute(builder: (context) => ConfigurationPage())),
           ),
           ListTile(
-            leading: Icon(Icons.add_rounded, color: Colors.white),
-            title: ResponsiveText(text: "Trocar conta"),
-            onTap: () => AuthService().signUserOut(),
-          ),
-          ListTile(
             leading: Icon(Icons.settings, color: Colors.white),
             title: ResponsiveText(text: "Configurar Perfil"),
             onTap: () => Navigator.push(context,
@@ -48,13 +44,18 @@ class _ProfileDrawerState extends State<ProfileDrawer> {
           ),
           ListTile(
             leading: Icon(Icons.description, color: Colors.white),
-            title: ResponsiveText(text: "Sobre"),
+            title: ResponsiveText(text: "Sobre o projeto"),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => AboutPage()),
               );
             },
+          ),
+          ListTile(
+            leading: Icon(CupertinoIcons.arrow_left_circle, color: Colors.white),
+            title: ResponsiveText(text: "Deslogar"),
+            onTap: () => AuthService().signUserOut(),
           ),
         ],
       ),

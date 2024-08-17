@@ -258,6 +258,7 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
                           Icon(CupertinoIcons.music_albums, size: 100, color: Colors.white),
+                          SizedBox(height: 15),
                           Text("Favorite algum album para ver aqui!",
                               style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
                         ],
@@ -268,6 +269,7 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
                           Icon(Icons.public_rounded, size: 100, color: Colors.white),
+                          SizedBox(height: 15),
                           Text("A ser implementado...",
                               style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24)),
                         ],
