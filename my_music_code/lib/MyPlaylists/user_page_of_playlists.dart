@@ -257,7 +257,7 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
-                          Icon(CupertinoIcons.music_note_2, size: 100, color: Colors.white),
+                          Icon(CupertinoIcons.music_albums, size: 100, color: Colors.white),
                           Text("Favorite algum album para ver aqui!",
                               style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
                         ],
