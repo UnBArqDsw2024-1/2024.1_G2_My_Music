@@ -23,7 +23,7 @@ subclasses auxiliares, e você quer localizar qual subclasse auxiliar é
 delegada.  
 
 <div style="text-align: center">
-  <img src="../../Assets/EstruturaFactoryMethod.png" alt="Estrutura do Factory Method" title="Título da Imagem" />
+  <img src="../../assets/EstruturaFactoryMethod.png" alt="Estrutura do Factory Method" title="Título da Imagem" />
   <p>Figura 1: Estrutura do padrão Factory Method (Fonte: Refactoring Guru, 2014-2024)¹</p>
 </div>
 
@@ -37,7 +37,7 @@ Para o desenvolvimento da modelagem do Factory Method no contexto do nosso proje
 Decidimos que poderíamos utilizar o padrão Factory Method na criação da classe abstrata `Perfil`. Essa superclasse possui duas subclasses, `Usuário` e `Artista`, cujas instâncias mudam conforme o contexto, permitindo funcionalidades diferentes no aplicativo para cada tipo de perfil. A modelagem foi realizada pelos membros [Luis Miranda](https://github.com/LuisMiranda10) e [Vinícius Mendes](https://github.com/yabamiah), conforme visualizado na Figura 2.
 
 <div style="text-align: center">
-  <img src="../../Assets/ModelagemFactoryMethod.png" alt="Modelagem do padrão Factory Method" title="Título da Imagem" />
+  <img src="../../assets/ModelagemFactoryMethod.png" alt="Modelagem do padrão Factory Method" title="Título da Imagem" />
   <p>Figura 2: Modelagem do padrão Factory Method (Fonte: Luis Miranda e Vinícius Mendes, 2024)</p>
 </div>
 
@@ -295,7 +295,7 @@ O Singleton previne a criação de múltiplas instâncias através de um constru
 - Cliente: Utiliza a instância única fornecida pelo Singleton para realizar operações necessárias.
 
 <div style="text-align: center">
-  <img src="../../Assets/EstruturaSingleton.png" alt="Estrutura do Singleton" title="Título da Imagem" />
+  <img src="../../assets/EstruturaSingleton.png" alt="Estrutura do Singleton" title="Título da Imagem" />
   <p>Figura 3: Estrutura do padrão Singleton (Fonte: Refactoring Guru, 2014-2024)</p>
 </div>
 
@@ -311,7 +311,7 @@ Determinamos que o padrão Singleton seria ideal para a criação da classe `Con
 A modelagem foi realizada pelos membros Limírio Guimarães e Milena Baruc, conforme visualizado na Figura 4.
 
 <div style="text-align: center">
-  <img src="../../Assets/ModelagemSingleton.png" alt="Modelagem do Singleton" title="Título da Imagem" />
+  <img src="../../assets/ModelagemSingleton.png" alt="Modelagem do Singleton" title="Título da Imagem" />
   <p>Figura 4: Modelagem do padrão Singleton (Fonte: Limírio Guimarães e Milena Baruc, 2024)</p>
 </div>
 
@@ -416,7 +416,7 @@ void main() {
 Para facilitar a leitura e a compreensão do documento, a Figura 5 apresenta uma captura de tela da saída resultante da combinação dos códigos 2 e 3.
 
 <div style="text-align: center">
-  <img src="../../Assets/PrintSingleton.png" alt="Modelagem do Singleton" title="Título da Imagem" />
+  <img src="../../assets/PrintSingleton.png" alt="Modelagem do Singleton" title="Título da Imagem" />
   <p>Figura 5: Print do teste da classe Configuracoes (Fonte: Limírio Guimarães, 2024)</p>
 </div>
 

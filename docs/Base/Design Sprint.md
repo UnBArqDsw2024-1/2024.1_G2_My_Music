@@ -76,14 +76,14 @@ Questionário: Para coletar feedback quantitativo e métricas de desempenho do p
 
 | Logo | Nome          | Uso Planejado                                      |
 |------|---------------|-----------------------------------------------------|
-| ![Miro](../Assets/miro.png){width=100}   | Miro          | Colaboração em diagramas, prototipagem e brainstorming |
-| ![Lucidchart](../Assets/lucidchart.png){width=100}  | Lucidchart    | Criação de diagramas, fluxogramas e wireframes      |
-| ![Discord](../Assets/discord.png){width=100} | Discord       | Comunicação em tempo real, organização de equipes e compartilhamento de informações |
-| ![VSCode](../Assets/vscode.png){width=100}  | VS Code       | Desenvolvimento de software, edição de código-fonte  |
-| ![Whatsapp](../Assets/wpp.png){width=100}  | Whatsapp      | Comunicação em equipe, compartilhamento de informações |
-| ![Github](../Assets/github.png){width=100}  | Github        | Gerenciamento de código-fonte, controle de versão e colaboração em projetos |
-| ![Canva](../Assets/canva.png){width=100}  | Canva         | Design gráfico, criação de materiais visuais         |
-| ![Figma](../Assets/figma.png){width=100}  | Figma         | Prototipagem, design de interfaces e colaboração em tempo real |
+| ![Miro](../assets/miro.png){width=100}   | Miro          | Colaboração em diagramas, prototipagem e brainstorming |
+| ![Lucidchart](../assets/lucidchart.png){width=100}  | Lucidchart    | Criação de diagramas, fluxogramas e wireframes      |
+| ![Discord](../assets/discord.png){width=100} | Discord       | Comunicação em tempo real, organização de equipes e compartilhamento de informações |
+| ![VSCode](../assets/vscode.png){width=100}  | VS Code       | Desenvolvimento de software, edição de código-fonte  |
+| ![Whatsapp](../assets/wpp.png){width=100}  | Whatsapp      | Comunicação em equipe, compartilhamento de informações |
+| ![Github](../assets/github.png){width=100}  | Github        | Gerenciamento de código-fonte, controle de versão e colaboração em projetos |
+| ![Canva](../assets/canva.png){width=100}  | Canva         | Design gráfico, criação de materiais visuais         |
+| ![Figma](../assets/figma.png){width=100}  | Figma         | Prototipagem, design de interfaces e colaboração em tempo real |
 
 <div style="text-align: center">
   <p>Tabela 4: Ferramentas utilizadas. (Fonte: LimírioGuimarães, Lucas Alves Vilela e Vinícius Mendes Martins, 2024)</p>

@@ -57,7 +57,7 @@ A seguir podemos observar na figura 1, o diagrama de componentes referente ao c�
 <center>
 
 Figura 1 - Primeira versão do diagrama de Implementação
-![Figura 1](../Assets/VisãodeImplementação.png)
+![Figura 1](../assets/VisãodeImplementação.png)
 Autores: [Limírio Guimarães](https://github.com/LimirioGuimaraes) e [Luis Miranda](https://github.com/LuisMiranda10)
 </center>
 

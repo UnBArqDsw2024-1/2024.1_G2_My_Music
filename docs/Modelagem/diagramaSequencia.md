@@ -13,16 +13,16 @@ Para realizar a modelagem do Diagrama de Sequência, a equipe utilizou a ferrame
 Logo abaixo são apresentados alguns diagramas de sequência que representam alguns casos de uso do aplicativo.
 <center>
 
-![Diagrama](../Assets/SequenceDiagram1.jpg)
+![Diagrama](../assets/SequenceDiagram1.jpg)
 <font size="3"><p style="text-align: center">Figura 1: Representa o caso do usuário realizar um cadastro no MyMusic. (Fonte: Limírio Guimarães, 2024) </p></font>
 
-![Diagrama](../Assets/SequenceDiagram2.jpg)
+![Diagrama](../assets/SequenceDiagram2.jpg)
 <font size="3"><p style="text-align: center">Figura 2: Representa o caso do usuário realizar o login no MyMusic. (Fonte: Limírio Guimarães, 2024) </p></font>
 
-![Diagrama](../Assets/SequenceDiagram3.jpg)
+![Diagrama](../assets/SequenceDiagram3.jpg)
 <font size="3"><p style="text-align: center">Figura 3: Representa o caso do usuário realizar a busca das músicas de um determinado artista. (Fonte: Limírio Guimarães, 2024) </p></font>
 
-![Diagrama](../Assets/SequenceDiagram4.jpg)
+![Diagrama](../assets/SequenceDiagram4.jpg)
 <font size="3"><p style="text-align: center">Figura 4: Representa o caso do usuário realizar a reprodução de uma faixa de uma playlist presente no MyMusic. (Fonte: Limírio Guimarães, 2024) </p></font>
 
 </center>

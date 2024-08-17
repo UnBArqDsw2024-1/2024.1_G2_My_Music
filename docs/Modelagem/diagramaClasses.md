@@ -11,7 +11,7 @@ Para realizar a modelagem do Diagrama de Classe, a equipe utilizou a ferramenta 
 A modelagem foi feita seguindo o seguinte padrão apresentado na figura 1:
 
 <div style="text-align: center">
-  <img src="../../Assets/diagramaClasseEx.png" alt="Diagrama de classe" title="Título da Imagem" />
+  <img src="../../assets/diagramaClasseEx.png" alt="Diagrama de classe" title="Título da Imagem" />
   <p>Figura 1: Exemplo de classe (Fonte: SpaceProgrammer, 2017)²</p>
 </div>
 
@@ -20,7 +20,7 @@ A modelagem foi feita seguindo o seguinte padrão apresentado na figura 1:
 Na figura 2, temos o diagrama de classes elaborado para o aplicativo. Para melhor avaliação do diagrama acessar o [link.](https://lucid.app/lucidchart/31c29fc7-aa1c-4aa6-9230-582034a77ddf/edit?viewport_loc=-1696%2C-1484%2C6656%2C3352%2CHWEp-vi-RSFO&invitationId=inv_8d8d08ce-dac2-47f2-92ec-4f110c1a106d)
 
 <div style="text-align: center">
-  <img src="../../Assets/diagramaClasses.png" alt="Diagrama de classe" title="Título da Imagem" />
+  <img src="../../assets/diagramaClasses.png" alt="Diagrama de classe" title="Título da Imagem" />
   <p>Figura 2: Diagrama de classes do aplicativo My Music  (Fonte: Ana Luíza Rodrigues e Rafael Xavier, 2024)</p>
 </div>
 

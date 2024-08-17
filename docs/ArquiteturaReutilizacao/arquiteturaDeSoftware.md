@@ -29,29 +29,29 @@ Outro ponto chave do projeto é a integração com a API do Spotify, que permite
 | **DAS** - Documento de Arquitetura de Software               |  Define a organização dos componentes do sistema, descreve sua interação e define as diretrizes técnicas e funcionais que guiam o desenvolvimento                                          |
 | **DER** - Diagrama Entidade-Relacionamento                  | Diagrama utilizado para modelar a estrutura lógica de um banco de dados, mostrando as entidades e os relacionamentos entre elas.                                        |
 
-# 5. [Visão Lógica](../../ArquiteturaReutilizacao/visao-de-logica.md)
+# 5. [Visão Lógica](https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/visao-de-logica/)
 
-<iframe height="600" width="800" src="https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/visao-de-logica</iframe>
+<iframe height="600" width="800" src="https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/visao-de-logica" ></iframe>
 
-# 6. [Visão de Processo](../../ArquiteturaReutilizacao/visao-de-processo.md)
+# 6. [Visão de Processo](https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/visao-de-processo/)
 
-<iframe height="600" width="800" src="https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/visao-de-processo</iframe>
+<iframe height="600" width="800" src="https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/visao-de-processo"></iframe>
 
-# 7. [Visão de Implantação](../../ArquiteturaReutilizacao/VisaoDeImplantacao.md)
+# 7. [Visão de Implantação](https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/VisaoDeImplantacao/)
 
-<iframe height="600" width="800" src="https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/VisaoDeImplantacao</iframe>
+<iframe height="600" width="800" src="https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/VisaoDeImplantacao"></iframe>
 
-# 8. [Visão de Implementação](../../ArquiteturaReutilizacao/VisaoDeImplementacao.md)
+# 8. [Visão de Implementação](https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/VisaoDeImplementacao/)
 
-<iframe height="600" width="800" src="https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/VisaoDeImplementacao</iframe>
+<iframe height="600" width="800" src="https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/VisaoDeImplementacao"></iframe>
 
-# 9. [Visão de Dados](../../ArquiteturaReutilizacao/visaoDados.md)
+# 9. [Visão de Dados](https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/visaoDados/)
 
-<iframe height="600" width="800" src="https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/visaoDados</iframe>
+<iframe height="600" width="800" src="https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/visaoDados"></iframe>
 
-# 10. [Visão de Integração](../../ArquiteturaReutilizacao/visaoIntegracao.md)
+# 10. [Visão de Integração](https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/visaoIntegracao/)
 
-<iframe height="600" width="800" src="https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/visaoIntegracao</iframe>
+<iframe height="600" width="800" src="https://unbarqdsw2024-1.github.io/2024.1_G2_My_Music/ArquiteturaReutilizacao/visaoIntegracao"></iframe>
 
 # 11. Tamanho e desempenho
 
@@ -102,5 +102,5 @@ Em resumo, o desenvolvimento de um sistema robusto, confiável, seguro e com bom
 
 | Versão | Data       | Descrição                                                  | Autor(es)              | Revisor(es)   |
 | ------ | ---------- | ---------------------------------------------------------- | ---------------------- | ------------- |
-| `1.0`  | 12/08/2024 | Criação do documento e adição de todas as visões.                 | Henrique Hida           | [Luis Miranda](https://github.com/LuisMiranda10), [Link da revisão)[https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/116]       |
-| `1.1`  | 14/08/2024 | Update de correções e mudança na ordem dos tópicos    | [Henrique Hida](https://github.com/HenriqueHida)           | [Luis Miranda](https://github.com/LuisMiranda10), [Link da revisão)[https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/116]       |
+| 1.0  | 12/08/2024 | Criação do documento e adição de todas as visões.                 | [Henrique Hida](https://github.com/HenriqueHida)           | [Luis Miranda](https://github.com/LuisMiranda10), [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/116)    |
+| 1.1  | 14/08/2024 | Update de correções e mudança na ordem dos tópicos    | [Henrique Hida](https://github.com/HenriqueHida)           | [Luis Miranda](https://github.com/LuisMiranda10), [Link da revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/116)       |

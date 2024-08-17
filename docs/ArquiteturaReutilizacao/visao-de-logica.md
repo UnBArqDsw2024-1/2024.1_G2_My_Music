@@ -44,7 +44,7 @@ Aqui estão os subpacotes pertencentes ao Frontend e a relação entre eles, bem
 
 ##### Subpacote Src
 
-É onde se encontra o código para as telas que serão vistas pelo usuário, nele estão contidos os Components, os Scripts e os Styles, que juntos dão a forma como as páginas serão visualizadas(Style), onde se encontram as funções que ela possuirá(Components) e onde irá procurar o código para executar a ação solicitada(Scripts), e para que isso ocorra sem erros, o subpacote Src importa as Libraries e a Api e acessa os Assets, as Libraries são onde os termos utilizados para criar o código se encontram e serão puxados de lá para que o mesmo entenda o que fazer, a Api é de onde puxa todas as funcionalidades implementadas no Backend e os Assets são onde todas as fontes de imagem se encontram.
+É onde se encontra o código para as telas que serão vistas pelo usuário, nele estão contidos os Components, os Scripts e os Styles, que juntos dão a forma como as páginas serão visualizadas(Style), onde se encontram as funções que ela possuirá(Components) e onde irá procurar o código para executar a ação solicitada(Scripts), e para que isso ocorra sem erros, o subpacote Src importa as Libraries e a Api e acessa os assets, as Libraries são onde os termos utilizados para criar o código se encontram e serão puxados de lá para que o mesmo entenda o que fazer, a Api é de onde puxa todas as funcionalidades implementadas no Backend e os assets são onde todas as fontes de imagem se encontram.
 
 ##### Subpacote Public
 
@@ -77,7 +77,7 @@ Presente tanto nos pacotes de Frontend quanto Backend, embora sejam diferentes e
 
 ### Diagrama de classes
 
-![Diagrama de atividades de cadastro](../Assets/diagramaClasses.png)
+![Diagrama de atividades de cadastro](../assets/diagramaClasses.png)
 
 <div style="text-align: center">
   <p>Figura 3: Diagrama de classes do aplicativo My Music  (Fonte: Ana Luíza Rodrigues e Rafael Xavier, 2024)</p>
@@ -113,7 +113,7 @@ Um álbum, basicamente, é composto por uma ou mais músicas e está associado a
 
 O diagrama de atividades serve para que se possa entender como as atividades que serão realizadas pelo usuário irão interagir com a aplicação, mostrando os caminhos possíveis para a ação.
 
-![Diagrama de atividades de cadastro](../Assets/DiagramadeAtividades-Cadastro.png)
+![Diagrama de atividades de cadastro](../assets/DiagramadeAtividades-Cadastro.png)
 
 <div style="text-align: center">
   <p>Figura 4: Diagrama de cadastro. (Fonte: Vinícius Mendes, 2024)</p>
@@ -121,7 +121,7 @@ O diagrama de atividades serve para que se possa entender como as atividades que
 
 O diagrama de cadastro demonstra como o mesmo é efetuado, o usuário que deseja se cadastrar precisa fornecer nome, email, senha e repetir a senha, e a aplicação irá registrar o usuário se todas as etapas tiverem sido executadas sem erros, ou retornar o que está errado.
 
-![Diagrama de atividades de login](../Assets/DiagramadeAtividades-Login.png)
+![Diagrama de atividades de login](../assets/DiagramadeAtividades-Login.png)
 
 <div style="text-align: center">
   <p>Figura 5: Diagrama de login. (Fonte: Vinícius Mendes, 2024)</p>
@@ -129,7 +129,7 @@ O diagrama de cadastro demonstra como o mesmo é efetuado, o usuário que deseja
 
 Para efetuar o login, a aplicação pede o nome de usuário ou o email e a senha, e confere na base de dados se eles correspondem a algum existente, efetuando o mesmo se tudo estiver correto ou retornando erro caso contrário.
 
-![Diagrama de atividades de ouvir música](../Assets/DiagramadeAtividades-Ouvirmusica.png)
+![Diagrama de atividades de ouvir música](../assets/DiagramadeAtividades-Ouvirmusica.png)
 
 <div style="text-align: center">
   <p>Figura 6: Diagrama de ouvir música. (Fonte: Vinícius Mendes, 2024)</p>
@@ -137,7 +137,7 @@ Para efetuar o login, a aplicação pede o nome de usuário ou o email e a senha
 
 Para encontrar e reproduzir uma música, a aplicação irá possibilitar, além de pesquisar por nome, filtrar por artista, álbum, playlist e estilo musical, caso encontre, irá reproduzir a música, caso contrário, retorna que não encontrou a música pesquisada.
 
-![Diagrama de atividades de criar playlist](../Assets/DiagramadeAtividades-Criarplaylist.png)
+![Diagrama de atividades de criar playlist](../assets/DiagramadeAtividades-Criarplaylist.png)
 
 <div style="text-align: center">
   <p>Figura 7: Diagrama de criar playlist. (Fonte: Vinícius Mendes, 2024)</p>

@@ -11,7 +11,7 @@ Logo abaixo você encontra as figuras que representam o comportamento do aplicat
 ### Cadastro
 A figura 1 a seguir representa a modelagem de etapa de cadastro no aplicativo My Music.
 
-![Figura 1](../Assets/DiagramadeEstados-Cadastro.png)
+![Figura 1](../assets/DiagramadeEstados-Cadastro.png)
 
 <div style="text-align: center">
   <p>Figura 1: Diagrama de Estados do cadastro. (Fonte: Lucas Alvex Vilela, Henrique Hida, Luiz Guilherme,  2024)</p>
@@ -20,7 +20,7 @@ A figura 1 a seguir representa a modelagem de etapa de cadastro no aplicativo My
 ### Diagrama de Login
 A figura 2 a seguir representa a modelagem da atividade de login no aplicativo My Music.
 
-![Figura 2](../Assets/DiagramadeEstados-Login.png)
+![Figura 2](../assets/DiagramadeEstados-Login.png)
 
 <div style="text-align: center">
   <p>Figura 2: Diagrama de login. (Fonte: Lucas Alves Vilela, Henrique Hida, Luiz Guilherme,  2024)</p>
@@ -29,7 +29,7 @@ A figura 2 a seguir representa a modelagem da atividade de login no aplicativo M
 ### Diagrama de  Música
 A figura 3 a seguir representa a modelagem da atividade de ouvir música, seja acessando-a diretamente, ou indiretamente através de artista/álbum/playlist ou nas recomendações do usuário.
 
-![Figura 3](../Assets/DiagramadeEstados-Musica.png)
+![Figura 3](../assets/DiagramadeEstados-Musica.png)
 
 <div style="text-align: center">
   <p>Figura 3: Diagrama de ouvir música. (Fonte: Lucas Alves Vilela, Henrique Hida, Luiz Guilherme,  2024)</p>

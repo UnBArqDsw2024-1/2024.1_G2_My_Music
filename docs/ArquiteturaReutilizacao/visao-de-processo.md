@@ -17,7 +17,7 @@ Após a reunião dos integrantes responsáveis pela visão de processo, foi deci
 ## Visão de Processo
 
 <div style="text-align: center">
-  <img src="../../Assets/AtivAdicionarPlaylist.png" alt="Modelagem do Diagrama de Componentes" title="Título da Imagem" />
+  <img src="../../assets/AtivAdicionarPlaylist.png" alt="Modelagem do Diagrama de Componentes" title="Título da Imagem" />
   <p>Figura 1: Diagrama de atividades de adicionar música em uma playlist (Fonte: Ana Luíza e Rafael Xavier, 2024)</p>
 </div>
 
@@ -38,7 +38,7 @@ Após a reunião dos integrantes responsáveis pela visão de processo, foi deci
 
 
 <div style="text-align: center">
-  <img src="../../Assets/AtivRemoverPlaylist.png" alt="Modelagem do Diagrama de Componentes" title="Título da Imagem" />
+  <img src="../../assets/AtivRemoverPlaylist.png" alt="Modelagem do Diagrama de Componentes" title="Título da Imagem" />
   <p>Figura 2: Diagrama de atividades de remover música de uma playlist (Fonte: Ana Luíza e Rafael Xavier, 2024)</p>
 </div>
 
@@ -59,7 +59,7 @@ Após a reunião dos integrantes responsáveis pela visão de processo, foi deci
     - A Thread Principal confirma a remoção da música e exibe uma mensagem de sucesso ao usuário.
 
 <div style="text-align: center">
-  <img src="../../Assets/AtivBuscarMusica.jpeg" alt="Modelagem do Diagrama de Componentes" title="Título da Imagem" />
+  <img src="../../assets/AtivBuscarMusica.jpeg" alt="Modelagem do Diagrama de Componentes" title="Título da Imagem" />
   <p>Figura 3: Diagrama de atividades de busca (Fonte: Ana Luíza e Rafael Xavier, 2024)</p>
 </div>
 
@@ -85,7 +85,7 @@ Após a reunião dos integrantes responsáveis pela visão de processo, foi deci
 - Após a notificação, a Thread Principal retoma o controle para executar as ações subsequentes (seleção e reprodução ou exibição de mensagem).
 
 <div style="text-align: center">
-  <img src="../../Assets/AtivCompartilhar.png" alt="Modelagem do Diagrama de Componentes" title="Título da Imagem" />
+  <img src="../../assets/AtivCompartilhar.png" alt="Modelagem do Diagrama de Componentes" title="Título da Imagem" />
   <p>Figura 4: Diagrama de atividades de compartilhar (Fonte: Ana Luíza e Rafael Xavier, 2024)</p>
 </div>
 

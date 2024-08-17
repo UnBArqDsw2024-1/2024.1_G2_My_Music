@@ -2,8 +2,8 @@ site_name: My Music
 theme:
   name: material
   language: pt-BR
-  logo: ../../Assets/LogoMyMusic.png
-  favicon: ../../Assets/LogoMyMusic.png
+  logo: ../../assets/LogoMyMusic.png
+  favicon: ../../assets/LogoMyMusic.png
 
   palette:
 
@@ -82,12 +82,12 @@ nav:
         - 4.1.1. Visão de Implantação: ArquiteturaReutilizacao/VisaoDeImplantacao.md
         - 4.1.2. Visão de Implementação: ArquiteturaReutilizacao/VisaoDeImplementacao.md
         - 4.1.3. Visão dos Casos de Uso: ArquiteturaReutilizacao/visao-casos-de-uso.md
-        - 4.1.4. Visão de logica: ArquiteturaReutilizacao/visao-de-logica.md
+        - 4.1.4. Visão de Lógica: ArquiteturaReutilizacao/visao-de-logica.md
         - 4.1.5. Visão de Processo: ArquiteturaReutilizacao/visao-de-processo.md
         - 4.1.6. Visão de Dados: ArquiteturaReutilizacao/visaoDados.md
+        - 4.1.7. Visão de Integração: ArquiteturaReutilizacao/visaoIntegracao.md
       - 4.2 Módulo Reutilização de Software: ArquiteturaReutilizacao/reutilizacao.md
-      - 4.3 Módulo Arquitetura de Software:
-        - 4.3.1 Arquitetura de software: ArquiteturaReutilizacao/arquiteturaDeSoftware.md
+      - 4.3 Módulo Arquitetura de Software: ArquiteturaReutilizacao/arquiteturaDeSoftware.md
       - 4.4 Participações - Arquitetura & Reutilização de Software: ArquiteturaReutilizacao/participacoesArqReutilizacao.md
   - Reuniões:
     - Ata 01: Atas/ata_1.md

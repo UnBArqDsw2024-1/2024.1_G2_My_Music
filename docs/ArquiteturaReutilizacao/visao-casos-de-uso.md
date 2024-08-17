@@ -89,7 +89,7 @@ Acionado quando o usuário quer compartilhar uma música do aplicativo com outro
 
 ##### Diagrama de casos de uso
 
-![Diagrama de Casos de uso](../Assets/Diagrama-Casos-uso.png)
+![Diagrama de Casos de uso](../assets/Diagrama-Casos-uso.png)
 Figura 1: Diagrama de casos de uso(Fonte: Carlos Nascimento e Carlos Mesquita,2024)
 
 ## Referências Bibliográficas

@@ -21,7 +21,7 @@ Na figura 1 abaixo, contém a visão de dados.
 <center>
 
 Figura 1 - Visão de Dados
-![Figura 1](../Assets/visaoDados.png)
+![Figura 1](../assets/visaoDados.png)
 Autores: [João Vítor](https://github.com/Jvsoutomaior)
 
 </center>

@@ -23,7 +23,7 @@ A Figura 1 apresenta um exemplo de reutilização da classe `FeedPage`, que este
 <center>
 
 Figura 1 - Trecho de código FeedPage
-![Figura 1](../Assets/reutilizacao1.png)
+![Figura 1](../assets/reutilizacao1.png)
 Autores: [Limírio Guimarães](https://github.com/LimirioGuimaraes) 
 </center>
 
@@ -34,7 +34,7 @@ No desenvolvimento de aplicativos com Flutter, como já citado, a reutilização
 <center>
 
 Figura 1 - Trecho de código _FeedPageState
-![Figura 1](../Assets/reutilizacao2.png)
+![Figura 1](../assets/reutilizacao2.png)
 Autores: [Limírio Guimarães](https://github.com/LimirioGuimaraes) 
 </center>
 

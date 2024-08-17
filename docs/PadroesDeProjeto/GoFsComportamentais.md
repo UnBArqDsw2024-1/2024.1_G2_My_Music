@@ -17,7 +17,7 @@ No nosso aplicativo, o padrão Command será extremamente útil para implementar
 O padrão Command segue a seguinte estrutura mostrada na Figura 1.
 
 <div style="text-align: center">
-  <img src="../../Assets/EstruturaCommand.png" alt="Estrutura do Command" title="Command" />
+  <img src="../../assets/EstruturaCommand.png" alt="Estrutura do Command" title="Command" />
   <p>Figura 1: Estrutura do padrão Command (Fonte: Refactoring Guru, 2014-2024)²</p>
 </div>
 
@@ -43,7 +43,7 @@ O padrão Command segue a seguinte estrutura mostrada na Figura 1.
 Para a modelagem do padrão Command, os integrantes se reuniram através de uma chamada no Discord, onde decidiram que usariam o padrão visando a classe `Usuário` que possui os métodos responsáveis por ações como reproduzir/pausar uma música/podcast, adicionar/remover músicas em uma `Playlist` ou na fila de reprodução e etc. Em suma são ações que podem ser feitas e desfeitas, que é o maior foco do padrão. A seguir, na Figura 2, podemos ver a modelagem feita baseada no padrão comportamental Command do nosso aplicativo My Music. Para melhor avaliação do diagrama acessar o [link.](https://lucid.app/lucidchart/fccf9c9b-ae0a-421d-b6cd-ec6e33331cf0/edit?viewport_loc=170%2C404%2C3328%2C1676%2CHWEp-vi-RSFO&invitationId=inv_4e8c6c76-eb97-43b4-a5e2-68be5f711cb5)
 
 <div style="text-align: center">
-  <img src="../../Assets/ModelagemCommand.png" alt="Modelagem do Command" title="Modelagem do Command"/>
+  <img src="../../assets/ModelagemCommand.png" alt="Modelagem do Command" title="Modelagem do Command"/>
   <p>Figura 2: Modelagem do padrão Command (Fonte: Ana Luíza e Rafael Xavier, 2024)</p>
 </div>
 
@@ -424,7 +424,7 @@ void main() {
 }
 ```
 <div style="text-align: center">
-  <img src="../../Assets/codeCommand.png" alt="Modelagem do Command" title="Modelagem do Command"/>
+  <img src="../../assets/codeCommand.png" alt="Modelagem do Command" title="Modelagem do Command"/>
   <p>Figura 2: Resultado da implementação do command (Fonte: Ana Luíza e Rafael Xavier, 2024)</p>
 </div>
 

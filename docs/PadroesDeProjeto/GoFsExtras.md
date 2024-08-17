@@ -18,7 +18,7 @@ Para a criação do strategy o grupo formou um trio (João Vítor, Carlos Godoy 
 
 ## GoFs Comportamentais Strategy
 
-![Figura 1](../Assets/GoFStrategy.png)
+![Figura 1](../assets/GoFStrategy.png)
 
 <div style="text-align: center">
   <p>Figura 1: Diagrama de classes do padrão Strategy (Fonte: João Vítor, Carlos Godoy e Carlos Eduardo, 2024)</p>

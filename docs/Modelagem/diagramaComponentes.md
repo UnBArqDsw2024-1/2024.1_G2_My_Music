@@ -18,7 +18,7 @@ Ao finalizar o Diagrama, foi submetido uma revisão aos membros da equipe, no qu
 
 Logo abaixo é apresentado o diagrama (Figura 1) em que representa o relacionamento entre diferentes componentes de subsistemas.
 
-![Figura 1](../Assets/DiagramadeComponentes.png)
+![Figura 1](../assets/DiagramadeComponentes.png)
 Figura 1 - Diagrama de Componentes. (Fonte: Luis Miranda e Milena Baruc, 2024)
 
 ## Conclusão

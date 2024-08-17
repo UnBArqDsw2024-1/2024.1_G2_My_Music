@@ -29,7 +29,7 @@ Na imagem 1 abaixo, podemos visualizar a primeira versão feita do diagrama de i
 <center>
 
 Figura 1 - Primeira versão do diagrama de Implantação
-![Figura 1](../Assets/DiagramaImplantação.png)
+![Figura 1](../assets/DiagramaImplantação.png)
 Autores: [Milena Baruc](https://github.com/MilenaBaruc) e [Vinícius Mendes](https://github.com/yabamiah)
 </center>
 
@@ -38,7 +38,7 @@ Autores: [Milena Baruc](https://github.com/MilenaBaruc) e [Vinícius Mendes](htt
 A figura abaixo ilustra uma versão atualizada do diagrama contendo um dispositivo como cliente final e um detalhamento sobre os arquivos principais que compõem a aplicação e estão no repositório do github
   
 Figura 2 - Segunda versão do diagrama de implementação
-![Figura2](../Assets/DiagramaImplantação2.png)
+![Figura2](../assets/DiagramaImplantação2.png)
 Autores: [Lucas Alves Vilela](https://github.com/Lucas-AV), [Henrique Hida](https://github.com/HenriqueHida) e [Carlos Godoy](https://github.com/CDGodoy)
 </center>
 
