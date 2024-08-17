@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 import 'package:my_music_code/Auth/Service/auth_service.dart';
 import 'package:my_music_code/Globals/custom_text_field.dart';
-import 'package:my_music_code/Globals/dialogs.dart';
 import 'package:my_music_code/Globals/responsive_container.dart';
 import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:my_music_code/Models/sign_login_model.dart';
 import 'package:my_music_code/universal.dart' as universal;
 
 class SignUpPage extends StatefulWidget {
@@ -19,6 +19,21 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  SignLoginModel signLoginModel = SignLoginModel();
+
+  setupModel() {
+    print("teste");
+    setState(() {
+      universal.userModel = signLoginModel;
+    });
+  }
+
+  @override
+  void initState() {
+    setupModel();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -124,8 +139,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       children: [
                         RawMaterialButton(
                             onPressed: () async {
-                              AuthService().controlSignLogin(context: context);
-                              widget.onTapTogglePage!();
+                              AuthService().controlSignLogin(context: context, onToggle: widget.onTapTogglePage);
                             },
                             child: ResponsiveContainer(
                               height: 47,

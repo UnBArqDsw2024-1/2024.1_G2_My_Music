@@ -21,6 +21,7 @@ Map<String, String> errorMap = {
 class AuthService {
   Future<void> controlSignLogin({
     required BuildContext context,
+    Function()? onToggle,
   }) async {
     try {
       // loadingDialog(context);
@@ -35,8 +36,8 @@ class AuthService {
         await FirebaseAuth.instance
             .createUserWithEmailAndPassword(email: universal.userModel.email, password: universal.userModel.password);
         await FirebaseAuth.instance.signOut();
+        onToggle!();
         if(context.mounted) errorDialogMessage(context, "Conta criada com sucesso", title: "Atenção!");
-
       } else {
         await FirebaseAuth.instance.signInWithEmailAndPassword(email: universal.userModel.email, password: universal.userModel.password);
       }

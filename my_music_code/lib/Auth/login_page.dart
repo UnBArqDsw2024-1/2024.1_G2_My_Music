@@ -8,6 +8,7 @@ import 'package:my_music_code/Globals/responsive_text.dart';
 import 'package:my_music_code/Globals/size_config.dart';
 import 'package:my_music_code/Globals/spaced_column.dart';
 import 'package:my_music_code/Globals/style.dart';
+import 'package:my_music_code/Models/sign_login_model.dart';
 import 'package:my_music_code/universal.dart' as universal;
 
 class LoginPage extends StatefulWidget {
@@ -19,6 +20,15 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  SignLoginModel signLoginModel = SignLoginModel();
+
+  setupModel() {
+    print("teste");
+    setState(() {
+      universal.userModel = signLoginModel;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
