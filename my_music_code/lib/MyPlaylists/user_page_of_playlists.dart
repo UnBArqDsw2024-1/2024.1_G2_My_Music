@@ -1,15 +1,14 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:my_music_code/Album/album_page.dart';
 import 'package:my_music_code/Models/album_model.dart';
 import 'package:my_music_code/Models/playlist_model.dart';
-import 'package:my_music_code/MyPlaylists/playlist_page.dart';
+import 'package:my_music_code/Music/list_liked_music_widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:my_music_code/Globals/style.dart';
 import 'package:my_music_code/MyPlaylists/new_playlist_page.dart';
 import 'package:my_music_code/universal.dart' as universal;
 import 'package:my_music_code/MyPlaylists/playlist_widgets.dart';
 import 'package:my_music_code/Album/album_widgets.dart';
+import 'package:my_music_code/Models/music_model.dart';
 
 class UserPageOfPlaylists extends StatefulWidget {
   const UserPageOfPlaylists({super.key});
@@ -19,12 +18,14 @@ class UserPageOfPlaylists extends StatefulWidget {
 }
 
 class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
-  bool _isBlurred = false;
+  bool isBlurred = false;
   final TextEditingController _searchController = TextEditingController();
   List<PlaylistModel> playlists = [];
   List<AlbumModel> albums = [];
+  List<Music> musics = [];
   List<Widget> playlistWidgets = [];
   List<Widget> albumWidgets = [];
+  List<Widget> musicWidgets = [];
 
   setPageIndex() {
     setState(() {
@@ -38,6 +39,7 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
     super.initState();
     _initializePlaylists();
     _initializeAlbums();
+    _initializeMusics();
     _searchController.addListener(_filterList);
   }
 
@@ -52,6 +54,40 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
       ),
     );
     playlistWidgets = PlaylistWidgets.generatePlaylistWidgets(context, playlists);
+  }
+
+  void _initializeMusics() async {
+    final prefs = await SharedPreferences.getInstance();
+    List<String>? favoriteMusicIds = prefs.getStringList('favoriteMusics') ?? [];
+
+    List<Music> musics = await Future.wait(favoriteMusicIds.map((id) async {
+      try {
+        final track = await universal.spotifyApi.tracks.get(id);
+
+        return Music(
+          id: track.id!,
+          name: track.name!,
+          artist: track.artists!.map((artist) => artist.name).join(', '),
+          imageUrl: track.album!.images!.first.url!,
+          link: track.externalUrls!.spotify!,
+          duration: track.durationMs!,
+        );
+      } catch (e) {
+        return Music(
+          id: id,
+          name: 'Unknown Music',
+          artist: 'Unknown Artist',
+          imageUrl: DefaultPlaceholder.image,
+          link: '',
+          duration: 0,
+        );
+      }
+    }).toList());
+
+    setState(() {
+      this.musics = musics;
+      musicWidgets = MusicWidgets.generateMusicWidgets(context, musics);
+    });
   }
 
   void _initializeAlbums() async {
@@ -80,151 +116,40 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
       }
     }));
 
-    albumWidgets = AlbumWidgets.generateAlbumWidgets(context, albums);
-
-    setState(() {});
-  }
-
-  void _generateAlbumWidgets() {
-    albumWidgets = albums.map((album) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 0),
-        child: InkWell(
-          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MyAlbumPage(album: album))),
-          splashColor: primaryColor.withOpacity(0.3),
-          highlightColor: primaryColor.withOpacity(0.1),
-          borderRadius: BorderRadius.circular(10),
-          child: Container(
-            height: 120,
-            padding: EdgeInsets.all(7.5),
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 15, left: 7.5),
-                  child: Container(
-                    height: 105,
-                    width: 105,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Colors.black,
-                      image: DecorationImage(
-                        image: NetworkImage(album.image),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      album.name,
-                      style: TextStyle(
-                        color: primaryFontColor,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 24,
-                      ),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    Text(
-                      album.artist,
-                      style: TextStyle(
-                        color: secondaryFontColor,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16,
-                      ),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
-      );
-    }).toList();
-
     setState(() {
-      // Re-renderizar a tela para mostrar os álbuns após a lista ser atualizada
+      albumWidgets = AlbumWidgets.generateAlbumWidgets(context, albums);
     });
   }
 
   void _filterList() {
     setState(() {
       String query = _searchController.text.toLowerCase();
+
+      // Filtrando as playlists
       List<PlaylistModel> filteredPlaylists = playlists.where((playlist) {
         return playlist.name.toLowerCase().contains(query) || playlist.creator.toLowerCase().contains(query);
       }).toList();
+      playlistWidgets = PlaylistWidgets.generatePlaylistWidgets(context, filteredPlaylists);
 
-      // Regenera a lista de widgets filtrada
-      playlistWidgets = filteredPlaylists.map((playlist) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 0),
-          child: InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => MyPlaylistPage()),
-              );
-            },
-            splashColor: primaryColor.withOpacity(0.3),
-            highlightColor: primaryColor.withOpacity(0.1),
-            borderRadius: BorderRadius.circular(10),
-            child: Container(
-              height: 120,
-              padding: EdgeInsets.all(7.5),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 15, left: 7.5),
-                    child: Container(
-                      height: 105,
-                      width: 105,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: Colors.black,
-                        image: DecorationImage(
-                          image: NetworkImage(DefaultPlaceholder.image),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        playlist.name,
-                        style: TextStyle(
-                          color: primaryFontColor,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 24,
-                        ),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      Text(
-                        playlist.creator,
-                        style: TextStyle(
-                          color: secondaryFontColor,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 16,
-                        ),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-        );
+      // Filtrando os álbuns
+      List<AlbumModel> filteredAlbums = albums.where((album) {
+        return album.name.toLowerCase().contains(query) || album.artist.toLowerCase().contains(query);
       }).toList();
+      albumWidgets = AlbumWidgets.generateAlbumWidgets(context, filteredAlbums);
+
+      // Filtrando as músicas
+      List<Music> filteredMusics = musics.where((music) {
+        // Verificando se o nome e artista não são nulos antes de chamar toLowerCase() - tava dando erro sem
+        return (music.name?.toLowerCase().contains(query) ?? false) ||
+            (music.artist?.toLowerCase().contains(query) ?? false);
+      }).toList();
+      musicWidgets = MusicWidgets.generateMusicWidgets(context, filteredMusics);
     });
   }
 
-  void _showBlurDialog(BuildContext context) {
+  void showBlurDialog(BuildContext context) {
     setState(() {
-      _isBlurred = true;
+      isBlurred = true;
     });
 
     showDialog(
@@ -234,7 +159,7 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
       },
     ).then((_) {
       setState(() {
-        _isBlurred = false;
+        isBlurred = false;
       });
     });
   }
@@ -242,8 +167,8 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
-      child: Scaffold(
+        length: 4,
+        child: Scaffold(
           backgroundColor: backgroundColor,
           appBar: AppBar(
             backgroundColor: backgroundColor,
@@ -283,63 +208,58 @@ class _UserPageOfPlaylistsState extends State<UserPageOfPlaylists> {
               ),
             ),
           ),
-          body: Stack(
+          body: Column(
             children: [
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: TextField(
-                      controller: _searchController,
-                      style: TextStyle(color: Colors.white),
-                      decoration: InputDecoration(
-                        hintText: 'Buscar...',
-                        hintStyle: TextStyle(color: Colors.grey),
-                        prefixIcon: Icon(Icons.search, color: Colors.grey),
-                        filled: true,
-                        fillColor: Color(0xff373737),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: BorderSide.none,
-                        ),
-                        contentPadding: EdgeInsets.symmetric(vertical: 10.0),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextField(
+                  controller: _searchController,
+                  style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    hintText: 'Buscar...',
+                    hintStyle: TextStyle(color: Colors.grey),
+                    prefixIcon: Icon(Icons.search, color: Colors.grey),
+                    filled: true,
+                    fillColor: Color(0xff373737),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: BorderSide.none,
+                    ),
+                    contentPadding: EdgeInsets.symmetric(vertical: 10.0),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(Icons.public_rounded, size: 100, color: Colors.white),
+                          Text("A ser implementado...",
+                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24)),
+                        ],
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: TabBarView(
-                      children: [
-                        Container(),
-                        Container(),
-                        ListView(children: albumWidgets),
-                        ListView(children: playlistWidgets),
-                      ],
+                    ListView(children: musicWidgets),
+                    ListView(children: albumWidgets),
+                    Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(Icons.public_rounded, size: 100, color: Colors.white),
+                          Text("A ser implementado...",
+                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24)),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              if (_isBlurred)
-                BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-                  child: Container(
-                    color: Colors.black.withOpacity(0),
-                  ),
+                  ],
                 ),
+              ),
             ],
           ),
-          floatingActionButton: StreamBuilder(
-            stream: universal.audioPlayer.onPlayerStateChanged,
-            builder: (context, snapshot) {
-              return Padding(
-                padding: EdgeInsets.only(bottom: snapshot.hasData? 90 : 0),
-                child: FloatingActionButton(
-                  backgroundColor: primaryColor,
-                  onPressed: () => _showBlurDialog(context),
-                  child: Icon(Icons.add),
-                ),
-              );
-            },
-          )),
-    );
+        )
+      );
   }
 }

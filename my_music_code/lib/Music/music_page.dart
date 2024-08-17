@@ -1,5 +1,4 @@
-// ignore_for_file: avoid_print
-
+import 'package:my_music_code/Music/save_music.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -54,6 +53,12 @@ class _MusicPageState extends State<MusicPage> {
     });
   }
 
+  // Future<void> checkIfFavorite() async {
+  //   bool favoriteStatus = await isFavoriteMusic(widget.music.id);
+  //   setState(() {
+  //     isFavorite = favoriteStatus; 
+  //   });
+  // }
   musicDur() async {
     print("${await universal.audioPlayer.getCurrentPosition()} / ${await universal.audioPlayer.getDuration()}");
   }
@@ -65,7 +70,10 @@ class _MusicPageState extends State<MusicPage> {
     super.initState();
   }
 
-  void onFav() => setState(() => isFavorite = !isFavorite);
+  onFav() async { 
+    await toggleFavoriteMusic(widget.music);
+    setState(() => isFavorite = !isFavorite);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -131,7 +139,8 @@ class _MusicPageState extends State<MusicPage> {
             ),
             actions: [
               IconButton(
-                icon: Icon(CupertinoIcons.ellipsis_vertical, color: Colors.white),
+                icon:
+                    Icon(CupertinoIcons.ellipsis_vertical, color: Colors.white),
                 onPressed: () {
                   musicOptionsModalBottomSheet(
                     context,
@@ -158,7 +167,8 @@ class _MusicPageState extends State<MusicPage> {
               children: <Widget>[
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
@@ -183,13 +193,18 @@ class _MusicPageState extends State<MusicPage> {
                   ),
                 ),
                 IconButton(
-                  icon: Icon(isFavorite ? CupertinoIcons.heart_fill : CupertinoIcons.heart,
-                      size: 30, color: isFavorite ? primaryColor : Colors.white),
-                  onPressed: () {
-                    setState(() {
-                      isFavorite = !isFavorite;
-                    });
-                  },
+                  icon: Icon(
+                      isFavorite
+                          ? CupertinoIcons.heart_fill
+                          : CupertinoIcons.heart,
+                      size: 30,
+                      color: isFavorite ? primaryColor : Colors.white),
+                      onPressed: () async {
+                        await toggleFavoriteMusic(widget.music);
+                        setState(() {
+                          isFavorite = !isFavorite;
+                        });
+                      },
                 ),
               ],
             ),
@@ -201,9 +216,12 @@ class _MusicPageState extends State<MusicPage> {
                   builder: (context, data) {
                     return ProgressBar(
                       progress: data.data ?? Duration(milliseconds: 0),
-                      buffered: Duration(milliseconds: universal.currentMusic.duration!),
-                      onSeek: (duration) => universal.audioPlayer.seek(duration),
-                      total: Duration(milliseconds: universal.currentMusic.duration!),
+                      buffered: Duration(
+                          milliseconds: universal.currentMusic.duration!),
+                      onSeek: (duration) =>
+                          universal.audioPlayer.seek(duration),
+                      total: Duration(
+                          milliseconds: universal.currentMusic.duration!),
                       progressBarColor: primaryColor,
                       baseBarColor: Colors.white.withOpacity(0.20),
                       bufferedBarColor: Colors.white.withOpacity(0.20),
@@ -218,14 +236,17 @@ class _MusicPageState extends State<MusicPage> {
                     );
                   },
                 )),
-            SizedBox(height: 20), // Espaçamento entre a barra de progresso e os botões de controle
+            SizedBox(
+                height:
+                    20), // Espaçamento entre a barra de progresso e os botões de controle
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 30.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   IconButton(
-                    icon: Icon(CupertinoIcons.backward_end_fill, color: Colors.white, size: 30),
+                    icon: Icon(CupertinoIcons.backward_end_fill,
+                        color: Colors.white, size: 30),
                     onPressed: () {
                       print(indexListMusic);
                       Navigator.pop(context);
@@ -240,7 +261,8 @@ class _MusicPageState extends State<MusicPage> {
                     },
                   ),
 
-                  SizedBox(width: 20), // Espaçamento entre os botões de controle
+                  SizedBox(
+                      width: 20), // Espaçamento entre os botões de controle
 
                   RawMaterialButton(
                     constraints: BoxConstraints(),
@@ -260,15 +282,21 @@ class _MusicPageState extends State<MusicPage> {
                         color: primaryColor,
                         shape: BoxShape.circle,
                       ),
-                      child: Icon(isPlaying ? Icons.pause_rounded : Icons.play_arrow_rounded,
-                          color: Colors.white, size: 48),
+                      child: Icon(
+                          isPlaying
+                              ? Icons.pause_rounded
+                              : Icons.play_arrow_rounded,
+                          color: Colors.white,
+                          size: 48),
                     ),
                   ),
 
-                  SizedBox(width: 20), // Espaçamento entre os botões de controle
+                  SizedBox(
+                      width: 20), // Espaçamento entre os botões de controle
 
                   IconButton(
-                    icon: Icon(CupertinoIcons.forward_end_fill, color: Colors.white, size: 30),
+                    icon: Icon(CupertinoIcons.forward_end_fill,
+                        color: Colors.white, size: 30),
                     onPressed: () {
                       print("Tamanho: ${universal.releaseListMusics.length}\n");
                       Navigator.pop(context);

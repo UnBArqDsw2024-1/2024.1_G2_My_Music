@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:my_music_code/Globals/mini_player.dart';
 import 'package:my_music_code/Models/album_model.dart';
