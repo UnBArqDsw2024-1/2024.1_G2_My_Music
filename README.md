@@ -158,4 +158,4 @@ flutter run
 ## Histórico de Versão
 | Versão | Data      | Descrição | Autores | Revisor |
 | :-:    | :-----:   | :------   | ----  | ------- |
-| 1.0    |16/08/2024 | Criação do Documento | [Luis Miranda](https://github.com/LuisMiranda10) & (Milena Baruc)[https://github.com/MilenaBaruc]| [Lucas Alves Vilela](https://github.com/Lucas-AV), [Link da revisão]([https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/90](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/120))  |
+| 1.0    |16/08/2024 | Criação do Documento | [Luis Miranda](https://github.com/LuisMiranda10) & [Milena Baruc](https://github.com/MilenaBaruc)| [Lucas Alves Vilela](https://github.com/Lucas-AV), [Link da revisão]([https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/90](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/120))  |
