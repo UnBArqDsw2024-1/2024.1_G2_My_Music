@@ -73,4 +73,4 @@ Os membros responsáveis pelo processo de reutilização de código foram Lucas 
 
 | Versão | Data       | Descrição                                               | Autores                        | Revisores |
 | ------ | ---------- | ------------------------------------------------------- | ------------------------------ | --------- |
-| 0.1    | 23/07/2024 | Criação do documento |  [Luis Miranda](https://github.com/LuisMiranda10), [Vinícius Mendes](https://github.com/yabamiah) |  [Lucas Alves Vilela](https://github.com/Lucas-AV) |
+| 0.1    | 23/07/2024 | Criação do documento |  [Luis Miranda](https://github.com/LuisMiranda10), [Vinícius Mendes](https://github.com/yabamiah) |  [Lucas Alves Vilela](https://github.com/Lucas-AV) [revisão](https://github.com/UnBArqDsw2024-1/2024.1_G2_My_Music/pull/136#pullrequestreview-2243860136) |
