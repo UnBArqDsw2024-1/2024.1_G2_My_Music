@@ -25,6 +25,7 @@ class _SignUpPageState extends State<SignUpPage> {
     print("teste");
     setState(() {
       universal.userModel = signLoginModel;
+      universal.userModel.creatingAccount = true;
     });
   }
 
