@@ -16,7 +16,7 @@ Para realizar a modelagem do Diagrama de Pacotes, a equipe utilizou a ferramenta
 
 Na figura 1 é apresentado o diagrama (figura 1) em que representa a visão geral do diagrama de pacotes
 
-![](images/Diagrama_de_Pacotes_1.png)
+![Figura 1: Diagrama de Pacote geral](images/Diagrama_de_Pacotes_1.png)
 
 <div style="text-align: center">
   <p>Figura 1: Diagrama de Pacote geral. (Fonte: João Vítor, 2024)</p>
@@ -24,13 +24,22 @@ Na figura 1 é apresentado o diagrama (figura 1) em que representa a visão gera
 
 ### Visão mais detalhada do Frontend e Backend
 
-![](images/Diagrama_de_Pacotes_2.png)
+![Figura 1: Diagrama de Pacote geral](images/Diagrama_de_Pacotes_2.png)
 
 <div style="text-align: center">
-  <p>Figura 2: Diagrama de Pacotes do Frontend com Backend. (Fonte: João Vítor, 2024)</p>
+  <p>Figura 1: Diagrama de Pacote geral (Fonte: João Vítor, 2024)</p>
 </div>
 
 Note que as figuras 1 e 2 são apenas um escopo inicial e ainda será refatorado ao longo do desenvolvimento do projeto, note também que a figura 2 não inclui a camada de banco de dados.
+
+### Versão atualizada
+
+![Figura 3: Versão atualizada](images/Diagrama_de_Pacotes_3.png)
+
+<div style="text-align: center">
+  <p>Figura 3: Versão atualizada (Fonte: João Vítor, 2024)</p>
+</div>
+
 
 ## Referências Bibliográficas
 
@@ -43,3 +52,4 @@ Note que as figuras 1 e 2 são apenas um escopo inicial e ainda será refatorado
 |   1.0   | 08/07/2023| Criação da página | [João Vítor](https://github.com/Jvsoutomaior) | [Israel Thalles](https://github.com/IsraelThalles) e [Ana Luíza Rodrigues](https://github.com/analuizargds) |
 |   1.1   | 09/07/2023| correção de alguns erros de português e algumas melhorias| [João Vítor](https://github.com/Jvsoutomaior) | [Israel Thalles](https://github.com/IsraelThalles) e [Ana Luíza Rodrigues](https://github.com/analuizargds)  |
 |   1.2   | 15/07/2023| Padronização das legendas e correção de erros de ortografia| [Ana Luíza Rodrigues](https://github.com/analuizargds) | - |
+|   1.3   | 16/08/2023| Atualização do Diagrama de pacote | [João Vítor](https://github.com/Jvsoutomaior) | - |
